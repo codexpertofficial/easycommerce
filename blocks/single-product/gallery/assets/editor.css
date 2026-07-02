@@ -1,0 +1,33 @@
+.easycommerce-product-list-swiper-slide .swiper-wrapper .swiper-slide {
+    border: 1px solid #1203500d;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.easycommerce-product-list-swiper-slide
+    .swiper-wrapper
+    .swiper-slide.swiper-slide-thumb-active {
+    border: 1px solid var(--color-ec-primary);
+}
+.easycommerce-product-list-swiper-slide .swiper-wrapper .swiper-slide img {
+    border-radius: 8px;
+}
+.easycommerce-product-list-swiper-slide .swiper-button-prev,
+.easycommerce-product-list-swiper-slide .swiper-button-next {
+    width: 32px;
+    height: 32px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0px 3px 40.4px 0px #00000026;
+}
+.easycommerce-product-list-swiper-slide .swiper-button-prev::after,
+.easycommerce-product-list-swiper-slide .swiper-button-next::after {
+    font-size: 12px;
+    color: var(--color-ec-body);
+    line-height: 22px;
+    font-weight: bolder;
+    top: 57%;
+}
+.easycommerce-product-list-swiper-slide .swiper-button-prev:focus::after,
+.easycommerce-product-list-swiper-slide .swiper-button-next:focus::after {
+    color: var(--color-ec-primary);
+}

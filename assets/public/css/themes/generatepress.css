@@ -1,0 +1,105 @@
+.easycommerce-generatepress .easycommerce-qunatity-button,
+.easycommerce.easycommerce-generatepress
+	.easycommerce-dashboard-form-password-input {
+	background-color: #ffffff;
+}
+.easycommerce.easycommerce-generatepress
+	.easycommerce-checkout-wrapper
+	.easycommerce-input-checkoutbox:checked::before {
+	top: -7px;
+}
+.easycommerce.easycommerce-generatepress .site-content .content-area,
+.easycommerce.easycommerce-generatepress
+	#easycommerce_dashboard_render
+	.easycommerce-dashboard-input,
+.easycommerce.easycommerce-generatepress
+	#easycommerce_dashboard_render
+	.easycommerce-dashboard-input-select,
+.easycommerce.easycommerce-generatepress
+	.easycommerce-dashboard-form-password-input {
+	width: 100%;
+}
+.easycommerce.easycommerce-generatepress
+	#easycommerce_dashboard_render
+	.easycommerce-dashboard-form-btn {
+	font-size: 14px;
+}
+.easycommerce.easycommerce-generatepress .easycommerce-summary-item {
+	padding: 5px 4px;
+}
+.easycommerce.easycommerce-generatepress
+	.easycommerce-dashboard-summery-list
+	h4 {
+	font-size: 14px;
+}
+.easycommerce.easycommerce-generatepress
+	.easycommerce-dashboard-summery-list
+	img {
+	width: 2rem;
+	height: 28px;
+}
+.easycommerce.easycommerce-generatepress .easycommerce-quantity-minus-btn {
+	border: none;
+	border-right: 1px solid #1203501A;
+}
+.easycommerce.easycommerce-generatepress .easycommerce-quantity-plus-btn {
+	border: none;
+	border-left: 1px solid #1203501A;
+}
+.easycommerce.easycommerce-generatepress .easycommerce-payment_method-form {
+	margin-top: 12px;
+}
+
+@media (max-width: 1024px) {
+	.easycommerce.easycommerce-generatepress
+		.easycommerce-dashboard-order-info-iteam {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+	.easycommerce.easycommerce-generatepress
+		.easycommerce-dashboard-content-details {
+		padding: 10px;
+	}
+}
+@media screen and (max-width: 425px) {
+	.easycommerce.easycommerce-generatepress
+		.easycommerce-dashboard-order-iteam {
+		padding: 0px;
+	}
+	.easycommerce.easycommerce-generatepress
+		.easycommerce-dashboard-order-iteam-wrap {
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+	.easycommerce.easycommerce-generatepress
+		.easycommerce-dashboard-order-iteam
+		table
+		thead
+		tr
+		th,
+	.easycommerce.easycommerce-generatepress table tbody tr td span {
+		font-size: 13px;
+		padding: 0px;
+	}
+}
+@media screen and (max-width: 320px) {
+	.easycommerce.easycommerce-generatepress
+		#easycommerce-single-product-review-submit-btn {
+		padding: 15px 35px;
+	}
+	.easycommerce.easycommerce-generatepress
+		.easycommerce-reviews-user-wrapper {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+	}
+	.easycommerce.easycommerce-generatepress .easycommerce-star-rating-wrap {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+	}
+	.easycommerce.easycommerce-generatepress .easycommerce-qunatity-button {
+		padding: 10px;
+	}
+}

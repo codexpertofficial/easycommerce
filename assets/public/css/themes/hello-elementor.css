@@ -1,0 +1,51 @@
+.easycommerce-hello-elementor button.easycommerce-add-to-cart-shop,
+.easycommerce-hello-elementor button.easycommerce-add-to-cart-button,
+.easycommerce-hello-elementor button.easycommerce-checkout-cart-item-delete-btn,
+.easycommerce-hello-elementor .easycommerce-dashboard-form-password-show-hide-btn {
+    border: none;
+}
+.easycommerce-hello-elementor .easycommerce-qunatity-button {
+    width: 42px !important;
+}
+.easycommerce-hello-elementor table caption+thead tr:first-child td, table caption+thead tr:first-child th, table colgroup+thead tr:first-child td, table colgroup+thead tr:first-child th, table thead:first-child tr:first-child td, table thead:first-child tr:first-child th, 
+.easycommerce-hello-elementor table td, table th {
+    border: none !important;
+}
+table tbody tr:hover>td, table tbody tr:hover>th,
+table tbody>tr:nth-child(odd)>td, table tbody>tr:nth-child(odd)>th {
+    background-color: hsl(0deg 0% 100% / 7.0) !important;
+}
+.easycommerce-hello-elementor .easycommerce-single-main-wrapper {
+    max-width: 1280px;
+    margin: 0px auto;
+}
+.easycommerce.easycommerce-hello-elementor .easycommerce-quantity-minus-btn {
+	border-right: 1px solid var(--color-ec-border) !important;
+}
+.easycommerce.easycommerce-hello-elementor .easycommerce-quantity-plus-btn {
+	border-left: 1px solid var(--color-ec-border) !important;
+}
+.easycommerce-hello-elementor .easycommerce-add-to-cart [type=button], [type=submit], button {
+    color: #100106;
+    border: none;
+}
+
+.easycommerce-hello-elementor select {
+    background: none;
+}
+.easycommerce-hello-elementor .easycommerce-checkout-right *:focus-visible {
+    outline: none;
+    border: none;
+}
+.easycommerce.easycommerce-hello-elementor
+	.easycommerce-single-product-wrapper {
+	padding-top: 50px;
+	padding-bottom: 50px;
+	max-width: 1380px;
+	display: flex;
+	flex-direction: column;
+	padding-left: 50px;
+	padding-right: 50px;
+	background-color: #ffff;
+	margin: 0px auto;
+}

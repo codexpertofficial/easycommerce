@@ -1,0 +1,6831 @@
+# Copyright (C) 2026 EasyCommerce
+# This file is distributed under the GPLv2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: EasyCommerce 1.31\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/easycommerce\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-06-15T04:34:41+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: easycommerce\n"
+
+#. Plugin Name of the plugin
+#. Author of the plugin
+#: easycommerce.php
+#: app/Controllers/Admin/Init.php:329
+#: app/Controllers/Admin/Init.php:331
+#: app/Controllers/Admin/Init.php:333
+#: app/Controllers/Admin/Init.php:335
+#: app/Controllers/Common/Block.php:119
+#: app/Controllers/Common/Init.php:153
+#: app/Helpers/functions.php:632
+#: app/Helpers/functions.php:638
+#: app/Helpers/functions.php:647
+#: app/Helpers/functions.php:648
+msgid "EasyCommerce"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: easycommerce.php
+msgid "https://wordpress.org/plugins/easycommerce/"
+msgstr ""
+
+#. Description of the plugin
+#: easycommerce.php
+msgid "AI-Powered Ecommerce To Digital Physical & Sell Products"
+msgstr ""
+
+#. Author URI of the plugin
+#: easycommerce.php
+msgid "https://easycommerce.dev/"
+msgstr ""
+
+#: app/Abstracts/Agent.php:36
+msgid "No AI credits available. Please upgrade or use your own API key."
+msgstr ""
+
+#: app/Abstracts/Agent.php:46
+msgid "`message` is required."
+msgstr ""
+
+#: app/Abstracts/Agent.php:86
+msgid "I was unable to complete your request. Please try again."
+msgstr ""
+
+#: app/Abstracts/Agent.php:92
+msgid "Sorry, I had trouble processing your request. Please try again."
+msgstr ""
+
+#: app/API/Abandoned_Cart.php:167
+msgid "Cart removed"
+msgstr ""
+
+#: app/API/Abandoned_Cart.php:167
+msgid "Failed to remove cart"
+msgstr ""
+
+#: app/API/Abandoned_Cart.php:218
+#: app/API/Cart.php:690
+msgid "Reminder sent"
+msgstr ""
+
+#: app/API/Abandoned_Cart.php:218
+#: app/API/Cart.php:690
+msgid "Reminder not sent"
+msgstr ""
+
+#: app/API/Abandoned_Cart.php:272
+msgid "Failed to remove some carts"
+msgstr ""
+
+#: app/API/Abandoned_Cart.php:275
+msgid "Carts deleted successfully."
+msgstr ""
+
+#: app/API/Abandoned_Cart.php:288
+msgid "No abandoned cart hashes provided."
+msgstr ""
+
+#: app/API/Abandoned_Cart.php:327
+msgid "Failed to send some reminders"
+msgstr ""
+
+#: app/API/Abandoned_Cart.php:330
+msgid "Reminders sent successfully."
+msgstr ""
+
+#: app/API/Abandoned_Cart.php:359
+msgid "Failed to clean abandoned carts."
+msgstr ""
+
+#: app/API/Abandoned_Cart.php:378
+msgid "Cleaned abandoned carts."
+msgstr ""
+
+#: app/API/Abandoned_Cart.php:382
+msgid "There is nothing to clean."
+msgstr ""
+
+#: app/API/Abandoned_Cart.php:424
+msgid "Cleaned invalid abandoned carts."
+msgstr ""
+
+#: app/API/Abandoned_Cart.php:444
+msgid "No invalid entries found."
+msgstr ""
+
+#: app/API/Abandoned_Cart.php:462
+msgid "Failed to clean invalid abandoned carts."
+msgstr ""
+
+#: app/API/Addon.php:61
+#: app/API/Connectivity.php:470
+#: app/API/Connectivity.php:539
+#: app/API/Connectivity.php:600
+#: app/API/Connectivity.php:652
+#: app/API/Connectivity.php:683
+msgid "Something went wrong"
+msgstr ""
+
+#: app/API/Addon.php:80
+#: app/API/Connectivity.php:554
+msgid "Free"
+msgstr ""
+
+#: app/API/Addon.php:80
+#: app/API/Connectivity.php:554
+#: app/Helpers/functions.php:633
+msgid "Pro"
+msgstr ""
+
+#: app/API/Addon.php:82
+#: app/API/Connectivity.php:556
+msgid "Disable"
+msgstr ""
+
+#: app/API/Addon.php:82
+#: app/API/Connectivity.php:556
+#: app/Config/settings.php:569
+#: app/Config/settings.php:600
+#: app/Config/settings.php:645
+#: app/Config/settings.php:676
+msgid "Enable"
+msgstr ""
+
+#: app/API/Addon.php:130
+#: app/API/Addon.php:141
+msgid "Invalid addon"
+msgstr ""
+
+#: app/API/Addon.php:137
+msgid "Activate EasyCommerce Pro to install this addon"
+msgstr ""
+
+#. translators: The error message.
+#: app/API/Addon.php:152
+#, php-format
+msgid "Could not install the addon: %s"
+msgstr ""
+
+#: app/API/Addon.php:161
+msgid "Plugin file could not be resolved."
+msgstr ""
+
+#. translators: %s: dependency plugin slug
+#: app/API/Addon.php:195
+#, php-format
+msgid "Required plugin \"%s\" could not be found on WordPress.org."
+msgstr ""
+
+#. translators: %s: dependency plugin slug
+#: app/API/Addon.php:209
+#, php-format
+msgid "Could not install required plugin \"%s\"."
+msgstr ""
+
+#. translators: 1: dependency plugin slug, 2: error message
+#: app/API/Addon.php:230
+#, php-format
+msgid "Could not activate required plugin \"%1$s\": %2$s"
+msgstr ""
+
+#: app/API/Addon.php:259
+#: app/API/Addon.php:525
+msgid "Addon installed and activated"
+msgstr ""
+
+#: app/API/Addon.php:270
+msgid "Plugin is not active"
+msgstr ""
+
+#: app/API/Addon.php:297
+#: app/API/Addon.php:557
+msgid "Addon deactivated"
+msgstr ""
+
+#: app/API/Addon.php:300
+msgid "Addon installed"
+msgstr ""
+
+#: app/API/Addon.php:416
+msgid "Plugin installation failed."
+msgstr ""
+
+#: app/API/Addon.php:424
+msgid "Plugin installed but file path could not be resolved."
+msgstr ""
+
+#: app/API/Addon.php:565
+msgid "Something went wrong.."
+msgstr ""
+
+#. translators: %s: AI feature name.
+#: app/API/AI.php:39
+#, php-format
+msgid "%s is disabled. Enable it from Settings → AI → Generative AI."
+msgstr ""
+
+#: app/API/AI.php:52
+msgid "AI Text Generator"
+msgstr ""
+
+#: app/API/AI.php:88
+#: app/API/AI.php:170
+#: app/API/AI.php:223
+#: app/API/AI.php:276
+#: app/API/AI.php:334
+msgid "AI service error"
+msgstr ""
+
+#: app/API/AI.php:102
+msgid "AI Attribute Generator"
+msgstr ""
+
+#: app/API/AI.php:184
+msgid "AI Template Generator"
+msgstr ""
+
+#: app/API/AI.php:237
+#: app/API/AI.php:290
+#: build/easycommerce.bundle.js:41270
+msgid "AI Image Generator"
+msgstr ""
+
+#: app/API/AI.php:248
+msgid "Image generated"
+msgstr ""
+
+#: app/API/AI.php:306
+msgid "Image edited"
+msgstr ""
+
+#: app/API/Attribute.php:124
+#: app/API/Attribute.php:367
+msgid "Attribute updated."
+msgstr ""
+
+#: app/API/Attribute.php:148
+#: app/API/Attribute.php:194
+msgid "Invalid attribute data."
+msgstr ""
+
+#: app/API/Attribute.php:255
+msgid "Attribute deleted."
+msgstr ""
+
+#: app/API/Attribute.php:265
+msgid "Invalid attribute IDs."
+msgstr ""
+
+#: app/API/Attribute.php:291
+msgid "Attributes deleted."
+msgstr ""
+
+#: app/API/Cart.php:60
+#: app/API/Cart.php:140
+#: app/API/Cart.php:198
+msgid "Cart is locked for payment. Complete or cancel the current payment before making changes."
+msgstr ""
+
+#: app/API/Cart.php:67
+msgid "Invalid product data."
+msgstr ""
+
+#. Translators: %d is the product ID.
+#: app/API/Cart.php:82
+#, php-format
+msgid "Invalid product ID: %d"
+msgstr ""
+
+#: app/API/Cart.php:98
+msgid "Product is out of stock!"
+msgstr ""
+
+#: app/API/Cart.php:111
+msgid "Products added to cart."
+msgstr ""
+
+#: app/API/Cart.php:148
+msgid "Invalid product ID or quantity."
+msgstr ""
+
+#: app/API/Cart.php:154
+#: app/API/Product.php:146
+#: app/API/Product.php:284
+#: app/API/Product.php:329
+msgid "Product not found."
+msgstr ""
+
+#: app/API/Cart.php:170
+msgid "Cart updated."
+msgstr ""
+
+#: app/API/Cart.php:205
+msgid "Invalid product ID."
+msgstr ""
+
+#: app/API/Cart.php:234
+msgid "Product removed from cart."
+msgstr ""
+
+#: app/API/Cart.php:276
+msgid "Cart already locked."
+msgstr ""
+
+#: app/API/Cart.php:284
+msgid "Cart locked for payment."
+msgstr ""
+
+#: app/API/Cart.php:406
+msgid "Shipping methods found"
+msgstr ""
+
+#: app/API/Cart.php:406
+#: views/templates/checkout/template-1/summary.php:119
+#: views/templates/checkout/template-3/summary.php:94
+msgid "No shipping methods found"
+msgstr ""
+
+#: app/API/Cart.php:445
+msgid "Shipping method applied"
+msgstr ""
+
+#: app/API/Cart.php:478
+msgid "Payment method applied"
+msgstr ""
+
+#: app/API/Cart.php:509
+msgid "Invalid coupon code."
+msgstr ""
+
+#: app/API/Cart.php:521
+msgid "Coupon is not applicable."
+msgstr ""
+
+#: app/API/Cart.php:551
+msgid "Coupon applied."
+msgstr ""
+
+#: app/API/Cart.php:580
+msgid "Cart doesn't contain this coupon!"
+msgstr ""
+
+#: app/API/Cart.php:607
+msgid "Coupon removed."
+msgstr ""
+
+#: app/API/Cart.php:646
+msgid "Cart cleared."
+msgstr ""
+
+#: app/API/Connectivity.php:164
+msgid "Store data updated"
+msgstr ""
+
+#: app/API/Connectivity.php:238
+msgid "Enter a username or email address."
+msgstr ""
+
+#: app/API/Connectivity.php:242
+msgid "There is no account with that email address."
+msgstr ""
+
+#: app/API/Connectivity.php:248
+msgid "There is no account with that username."
+msgstr ""
+
+#: app/API/Connectivity.php:273
+msgid "Check your email for the confirmation link."
+msgstr ""
+
+#: app/API/Connectivity.php:280
+msgid "Failed to send reset email. Please try again."
+msgstr ""
+
+#: app/API/Connectivity.php:298
+msgid "Invalid key or login."
+msgstr ""
+
+#: app/API/Connectivity.php:302
+msgid "Password fields cannot be empty."
+msgstr ""
+
+#: app/API/Connectivity.php:306
+#: app/API/Customer.php:31
+msgid "Passwords do not match."
+msgstr ""
+
+#: app/API/Connectivity.php:310
+msgid "Password must be at least 6 characters long."
+msgstr ""
+
+#: app/API/Connectivity.php:326
+msgid "Invalid or expired reset key."
+msgstr ""
+
+#: app/API/Connectivity.php:336
+msgid "Password has been reset successfully."
+msgstr ""
+
+#: app/API/Connectivity.php:387
+msgid "No data found"
+msgstr ""
+
+#: app/API/Connectivity.php:424
+msgid "API not connected"
+msgstr ""
+
+#: app/API/Connectivity.php:448
+msgid "API disconnected"
+msgstr ""
+
+#: app/API/Connectivity.php:520
+msgid "Token not verified"
+msgstr ""
+
+#: app/API/Connectivity.php:594
+msgid "Docs found"
+msgstr ""
+
+#: app/API/Connectivity.php:612
+msgid "Doc found"
+msgstr ""
+
+#: app/API/Connectivity.php:618
+msgid "Doc not found"
+msgstr ""
+
+#: app/API/Coupon.php:101
+msgid "Failed to create coupon."
+msgstr ""
+
+#: app/API/Coupon.php:106
+msgid "Coupon created successfully."
+msgstr ""
+
+#: app/API/Coupon.php:123
+#: app/API/Coupon.php:156
+#: app/API/Coupon.php:239
+msgid "Coupon ID is required."
+msgstr ""
+
+#: app/API/Coupon.php:131
+#: app/API/Coupon.php:160
+#: app/API/Coupon.php:245
+msgid "Coupon not found."
+msgstr ""
+
+#: app/API/Coupon.php:185
+msgid "No valid fields to update."
+msgstr ""
+
+#: app/API/Coupon.php:220
+msgid "Failed to update coupon."
+msgstr ""
+
+#: app/API/Coupon.php:225
+msgid "Coupon updated successfully."
+msgstr ""
+
+#: app/API/Coupon.php:274
+msgid "Failed to delete coupon."
+msgstr ""
+
+#: app/API/Coupon.php:280
+msgid "Coupon deleted successfully."
+msgstr ""
+
+#: app/API/Coupon.php:295
+#: app/API/Coupon.php:344
+msgid "Invalid coupon IDs."
+msgstr ""
+
+#: app/API/Coupon.php:327
+msgid "Failed to delete some coupons."
+msgstr ""
+
+#: app/API/Coupon.php:330
+msgid "coupons deleted successfully."
+msgstr ""
+
+#: app/API/Coupon.php:374
+msgid "Failed to update some coupons."
+msgstr ""
+
+#: app/API/Coupon.php:377
+msgid "Coupons status updated successfully."
+msgstr ""
+
+#: app/API/Customer.php:47
+msgid "Failed to create customer."
+msgstr ""
+
+#: app/API/Customer.php:65
+msgid "Customer created successfully."
+msgstr ""
+
+#: app/API/Customer.php:85
+#: app/API/Customer.php:229
+#: app/API/Customer.php:278
+#: app/API/Customer.php:334
+#: app/API/Profile.php:24
+#: app/API/Profile.php:276
+msgid "Customer not found."
+msgstr ""
+
+#: app/API/Customer.php:246
+msgid "Failed to update customer."
+msgstr ""
+
+#: app/API/Customer.php:260
+msgid "Customer updated successfully."
+msgstr ""
+
+#: app/API/Customer.php:292
+msgid "Failed to delete customer."
+msgstr ""
+
+#: app/API/Customer.php:311
+msgid "Customer deleted successfully."
+msgstr ""
+
+#: app/API/Dashboard.php:83
+msgid "Store stats"
+msgstr ""
+
+#: app/API/Dashboard.php:122
+msgid "Store order statuses"
+msgstr ""
+
+#: app/API/Dashboard.php:131
+#: build/wizard.bundle.js:1686
+msgid "Business Info"
+msgstr ""
+
+#: app/API/Dashboard.php:136
+#: build/wizard.bundle.js:1689
+msgid "Store Pages"
+msgstr ""
+
+#: app/API/Dashboard.php:141
+msgid "Currency & Format"
+msgstr ""
+
+#: app/API/Dashboard.php:146
+msgid "Payment Method"
+msgstr ""
+
+#: app/API/Dashboard.php:181
+msgid "Store setup status"
+msgstr ""
+
+#: app/API/Dashboard.php:321
+msgid "Sales Amount"
+msgstr ""
+
+#: app/API/Dashboard.php:326
+msgid "Sales Count"
+msgstr ""
+
+#: app/API/Dashboard.php:344
+msgid "Store sales"
+msgstr ""
+
+#: app/API/Dashboard.php:391
+msgid "Recent orders"
+msgstr ""
+
+#: app/API/Dashboard.php:480
+msgid "No email address found for this cart."
+msgstr ""
+
+#: app/API/Dashboard.php:498
+msgid "Reminder email sent successfully."
+msgstr ""
+
+#: app/API/Dashboard.php:499
+msgid "Failed to send reminder email."
+msgstr ""
+
+#: app/API/Dashboard.php:577
+msgid "day"
+msgstr ""
+
+#: app/API/Dashboard.php:577
+msgid "days"
+msgstr ""
+
+#: app/API/Dashboard.php:600
+msgid "Most lowest stock"
+msgstr ""
+
+#: app/API/Dashboard.php:668
+msgid "Top sellers"
+msgstr ""
+
+#: app/API/Dashboard.php:731
+msgid "Private Note"
+msgstr ""
+
+#: app/API/Dashboard.php:733
+msgid "Note to Customer"
+msgstr ""
+
+#: app/API/Dashboard.php:759
+msgid "Recent activities"
+msgstr ""
+
+#. Translators: %s is the group label
+#: app/API/Dashboard.php:1079
+#: app/API/Reports/LegacyReports.php:329
+#, php-format
+msgid "%s Count"
+msgstr ""
+
+#. Translators: %s is the group label
+#: app/API/Dashboard.php:1095
+#: app/API/Reports/LegacyReports.php:344
+#, php-format
+msgid "%s Amount"
+msgstr ""
+
+#: app/API/Email_Placeholder.php:21
+msgid "Site Name"
+msgstr ""
+
+#: app/API/Email_Placeholder.php:22
+msgid "Shop Name"
+msgstr ""
+
+#: app/API/Email_Placeholder.php:23
+msgid "Current Year"
+msgstr ""
+
+#: app/API/Email_Placeholder.php:24
+msgid "Shop Page URL"
+msgstr ""
+
+#: app/API/Email_Placeholder.php:25
+msgid "Checkout Page URL"
+msgstr ""
+
+#: app/API/Email_Placeholder.php:26
+msgid "Dashboard Page URL"
+msgstr ""
+
+#: app/API/Email_Placeholder.php:80
+#: app/Controllers/Common/API.php:5051
+#: app/Controllers/Common/API.php:5132
+msgid "Order ID"
+msgstr ""
+
+#: app/API/Email_Placeholder.php:81
+msgid "Customer Full Name"
+msgstr ""
+
+#: app/API/Email_Placeholder.php:82
+msgid "Customer Email Address"
+msgstr ""
+
+#: app/API/Email_Placeholder.php:83
+msgid "Customer Phone Number"
+msgstr ""
+
+#: app/API/Email_Placeholder.php:84
+msgid "Billing First Name"
+msgstr ""
+
+#: app/API/Email_Placeholder.php:85
+msgid "Billing Last Name"
+msgstr ""
+
+#: app/API/Email_Placeholder.php:86
+msgid "Billing Email Address"
+msgstr ""
+
+#: app/API/Email_Placeholder.php:87
+msgid "Billing Phone Number"
+msgstr ""
+
+#: app/API/Email_Placeholder.php:88
+msgid "Billing Address Line 1"
+msgstr ""
+
+#: app/API/Email_Placeholder.php:89
+msgid "Billing Address Line 2"
+msgstr ""
+
+#: app/API/Email_Placeholder.php:90
+msgid "Billing Country"
+msgstr ""
+
+#: app/API/Email_Placeholder.php:91
+msgid "Billing State/Province"
+msgstr ""
+
+#: app/API/Email_Placeholder.php:92
+msgid "Billing City"
+msgstr ""
+
+#: app/API/Email_Placeholder.php:93
+msgid "Billing Postal Code"
+msgstr ""
+
+#: app/API/Email_Placeholder.php:94
+msgid "Full Billing Address"
+msgstr ""
+
+#: app/API/Email_Placeholder.php:95
+msgid "Shipping First Name"
+msgstr ""
+
+#: app/API/Email_Placeholder.php:96
+msgid "Shipping Last Name"
+msgstr ""
+
+#: app/API/Email_Placeholder.php:97
+msgid "Shipping Email Address"
+msgstr ""
+
+#: app/API/Email_Placeholder.php:98
+msgid "Shipping Phone Number"
+msgstr ""
+
+#: app/API/Email_Placeholder.php:99
+msgid "Shipping Address Line 1"
+msgstr ""
+
+#: app/API/Email_Placeholder.php:100
+msgid "Shipping Address Line 2"
+msgstr ""
+
+#: app/API/Email_Placeholder.php:101
+msgid "Shipping Country"
+msgstr ""
+
+#: app/API/Email_Placeholder.php:102
+msgid "Shipping State/Province"
+msgstr ""
+
+#: app/API/Email_Placeholder.php:103
+msgid "Shipping City"
+msgstr ""
+
+#: app/API/Email_Placeholder.php:104
+msgid "Shipping Postal Code"
+msgstr ""
+
+#: app/API/Email_Placeholder.php:105
+msgid "Full Shipping Address"
+msgstr ""
+
+#: app/API/Email_Placeholder.php:106
+msgid "Customer Total Spent"
+msgstr ""
+
+#: app/API/Email_Placeholder.php:107
+msgid "Customer Total Orders"
+msgstr ""
+
+#: app/API/Email_Placeholder.php:108
+msgid "Customer Average Order Value"
+msgstr ""
+
+#: app/API/Email_Placeholder.php:109
+msgid "Product List (HTML)"
+msgstr ""
+
+#: app/API/Email_Placeholder.php:110
+msgid "Product Table (HTML)"
+msgstr ""
+
+#: app/API/Email_Placeholder.php:111
+msgid "Number of Items"
+msgstr ""
+
+#: app/API/Email_Placeholder.php:112
+msgid "Order Total Amount"
+msgstr ""
+
+#: app/API/Email_Placeholder.php:113
+msgid "Cart Hash/ID"
+msgstr ""
+
+#: app/API/Email_Placeholder.php:114
+msgid "Customer Name"
+msgstr ""
+
+#: app/API/Email_Placeholder.php:115
+msgid "Customer Email"
+msgstr ""
+
+#: app/API/Email_Placeholder.php:116
+msgid "Cart Recovery Link"
+msgstr ""
+
+#: app/API/Email_Placeholder.php:117
+msgid "Cart Total Amount"
+msgstr ""
+
+#: app/API/Email_Placeholder.php:118
+msgid "Total Amount"
+msgstr ""
+
+#: app/API/Email_Placeholder.php:119
+msgid "Order Status"
+msgstr ""
+
+#: app/API/Email_Placeholder.php:141
+msgid "Search term is too long"
+msgstr ""
+
+#: app/API/Email_Placeholder.php:198
+msgid "Failed to retrieve email placeholders"
+msgstr ""
+
+#: app/API/Geo.php:33
+#: app/API/Geo.php:41
+msgid "Countries loaded"
+msgstr ""
+
+#: app/API/Geo.php:68
+#: app/API/Geo.php:76
+msgid "States loaded"
+msgstr ""
+
+#: app/API/Geo.php:105
+#: app/API/Geo.php:113
+msgid "Cities loaded"
+msgstr ""
+
+#: app/API/Geo.php:130
+msgid "Currencies loaded"
+msgstr ""
+
+#: app/API/Importer.php:146
+msgid "Import started in background via WP-Cron"
+msgstr ""
+
+#: app/API/Importer.php:183
+msgid "Your demo products are being generated"
+msgstr ""
+
+#: app/API/Importer.php:831
+msgid "Failed to import image"
+msgstr ""
+
+#: app/API/Importer.php:838
+msgid "Image imported"
+msgstr ""
+
+#: app/API/Log.php:71
+msgid "No logs found."
+msgstr ""
+
+#: app/API/Log.php:121
+msgid "Log not found."
+msgstr ""
+
+#: app/API/Log.php:160
+msgid "Failed to add log."
+msgstr ""
+
+#: app/API/Log.php:165
+msgid "Log added successfully."
+msgstr ""
+
+#: app/API/Log.php:184
+msgid "Failed to delete log."
+msgstr ""
+
+#: app/API/Log.php:189
+msgid "Log deleted successfully."
+msgstr ""
+
+#: app/API/Notice.php:41
+msgid "Notice not dismissed"
+msgstr ""
+
+#: app/API/Notice.php:48
+msgid "Notice dismissed"
+msgstr ""
+
+#: app/API/Option.php:20
+#: app/API/Option.php:53
+#: app/API/Option.php:80
+msgid "Option key is required."
+msgstr ""
+
+#: app/API/Option.php:26
+msgid "Option not found."
+msgstr ""
+
+#: app/API/Option.php:67
+msgid "Settings Saved Successfully."
+msgstr ""
+
+#: app/API/Option.php:108
+msgid "Settings Reset successfully."
+msgstr ""
+
+#: app/API/Order.php:62
+msgid "Cart is already completed."
+msgstr ""
+
+#: app/API/Order.php:64
+msgid "Cart is empty or invalid cart hash."
+msgstr ""
+
+#: app/API/Order.php:67
+msgid "Invalid items format."
+msgstr ""
+
+#: app/API/Order.php:79
+msgid "Your cart was updated. Please refresh the page and try again."
+msgstr ""
+
+#: app/API/Order.php:158
+msgid "Failed to create order."
+msgstr ""
+
+#: app/API/Order.php:257
+msgid "Order created successfully."
+msgstr ""
+
+#: app/API/Order.php:277
+#: app/API/Order.php:410
+#: app/API/Order.php:578
+#: app/API/Order.php:628
+#: app/API/Order.php:797
+#: app/API/Refund.php:156
+#: views/shortcodes/payment/template-1.php:17
+msgid "Order not found."
+msgstr ""
+
+#: app/API/Order.php:486
+msgid "Failed to update order."
+msgstr ""
+
+#: app/API/Order.php:491
+msgid "Order updated successfully."
+msgstr ""
+
+#: app/API/Order.php:505
+msgid "Invalid order IDs."
+msgstr ""
+
+#: app/API/Order.php:509
+msgid "Invalid type parameter."
+msgstr ""
+
+#: app/API/Order.php:562
+msgid "Orders updated successfully."
+msgstr ""
+
+#: app/API/Order.php:601
+msgid "Order Deleted"
+msgstr ""
+
+#: app/API/Order.php:607
+msgid "Order deleted successfully."
+msgstr ""
+
+#: app/API/Order.php:644
+msgid "Order refunded successfully."
+msgstr ""
+
+#: app/API/Order.php:649
+msgid "Failed to refund order."
+msgstr ""
+
+#: app/API/Order.php:668
+msgid "Invalid order ID"
+msgstr ""
+
+#: app/API/Order.php:695
+msgid "Email sent."
+msgstr ""
+
+#: app/API/Order.php:707
+msgid "Email not sent"
+msgstr ""
+
+#: app/API/Order.php:738
+#: app/API/Profile.php:166
+msgid "No orders found."
+msgstr ""
+
+#: app/API/Order.php:785
+msgid "Orders deleted successfully."
+msgstr ""
+
+#: app/API/Order.php:802
+msgid "Order is not pending payment."
+msgstr ""
+
+#: app/API/Order.php:828
+msgid "Payment processed successfully."
+msgstr ""
+
+#: app/API/Order_Item.php:22
+msgid "Order ID is required."
+msgstr ""
+
+#: app/API/Order_Item.php:29
+msgid "No items found for this order."
+msgstr ""
+
+#: app/API/Order_Item.php:65
+msgid "Order ID, product ID, quantity, and price are required."
+msgstr ""
+
+#: app/API/Order_Item.php:110
+msgid "Failed to add item to the order."
+msgstr ""
+
+#: app/API/Order_Item.php:115
+msgid "Item added to the order successfully."
+msgstr ""
+
+#: app/API/Order_Item.php:136
+msgid "Item ID, and either quantity or price are required."
+msgstr ""
+
+#: app/API/Order_Item.php:184
+msgid "Failed to update the order item."
+msgstr ""
+
+#: app/API/Order_Item.php:189
+msgid "Item updated successfully."
+msgstr ""
+
+#: app/API/Order_Item.php:206
+msgid "Item ID is required."
+msgstr ""
+
+#: app/API/Order_Item.php:231
+msgid "Failed to delete the order item."
+msgstr ""
+
+#: app/API/Order_Item.php:236
+msgid "Item deleted successfully."
+msgstr ""
+
+#: app/API/Product.php:65
+msgid "No products found"
+msgstr ""
+
+#: app/API/Product.php:242
+msgid "Failed to create product."
+msgstr ""
+
+#: app/API/Product.php:261
+msgid "Product created"
+msgstr ""
+
+#: app/API/Product.php:294
+msgid "Failed to update product."
+msgstr ""
+
+#: app/API/Product.php:311
+msgid "Product updated"
+msgstr ""
+
+#: app/API/Product.php:340
+msgid "Product can't be deleted."
+msgstr ""
+
+#: app/API/Product.php:346
+msgid "Failed to delete product."
+msgstr ""
+
+#: app/API/Product.php:358
+msgid "Product deleted successfully."
+msgstr ""
+
+#: app/API/Product.php:371
+#: app/API/Product.php:419
+msgid "Invalid product IDs."
+msgstr ""
+
+#: app/API/Product.php:407
+msgid "Failed to delete some products."
+msgstr ""
+
+#: app/API/Product.php:410
+msgid "Products deleted successfully."
+msgstr ""
+
+#: app/API/Product.php:453
+msgid "Products updated successfully."
+msgstr ""
+
+#: app/API/Product.php:491
+#: app/API/Product.php:545
+msgid "Review added"
+msgstr ""
+
+#: app/API/Product.php:551
+msgid "Failed to add review."
+msgstr ""
+
+#: app/API/Product.php:596
+msgid "No variations found"
+msgstr ""
+
+#: app/API/Product.php:600
+msgid "Variations found"
+msgstr ""
+
+#: app/API/Product_Review.php:59
+msgid "Review ID is required."
+msgstr ""
+
+#: app/API/Product_Review.php:65
+msgid "Review not found."
+msgstr ""
+
+#: app/API/Product_Review.php:68
+msgid "You do not have permission to delete this review."
+msgstr ""
+
+#: app/API/Product_Review.php:92
+msgid "Failed to delete review."
+msgstr ""
+
+#: app/API/Product_Review.php:97
+msgid "Review deleted successfully."
+msgstr ""
+
+#: app/API/Profile.php:147
+msgid "Customer data updated"
+msgstr ""
+
+#: app/API/Profile.php:220
+#: app/API/Transaction.php:64
+msgid "No transactions found."
+msgstr ""
+
+#: app/API/Refund.php:54
+msgid "No refunds found"
+msgstr ""
+
+#: app/API/Refund.php:106
+#: app/API/Refund.php:270
+#: app/API/Refund.php:306
+msgid "Refund not found."
+msgstr ""
+
+#: app/API/Refund.php:161
+msgid "Refunds are not allowed for this order status."
+msgstr ""
+
+#: app/API/Refund.php:165
+msgid "Refund amount must be greater than zero."
+msgstr ""
+
+#: app/API/Refund.php:179
+msgid "Failed to process refund through payment gateway."
+msgstr ""
+
+#: app/API/Refund.php:215
+#, php-format
+msgid "Refund amount cannot exceed the due amount of %s."
+msgstr ""
+
+#: app/API/Refund.php:224
+msgid "Failed to create refund."
+msgstr ""
+
+#: app/API/Refund.php:253
+msgid "Refund created"
+msgstr ""
+
+#: app/API/Refund.php:276
+msgid "Failed to update refund."
+msgstr ""
+
+#: app/API/Refund.php:289
+msgid "Refund updated"
+msgstr ""
+
+#: app/API/Refund.php:314
+msgid "Failed to delete refund."
+msgstr ""
+
+#: app/API/Refund.php:319
+msgid "Refund deleted successfully."
+msgstr ""
+
+#: app/API/Refund.php:332
+msgid "Invalid refund IDs."
+msgstr ""
+
+#: app/API/Refund.php:358
+msgid "Failed to delete some refunds."
+msgstr ""
+
+#: app/API/Refund.php:361
+msgid "Refunds deleted successfully."
+msgstr ""
+
+#: app/API/Reports/Customers.php:35
+msgid "Total Customers"
+msgstr ""
+
+#: app/API/Reports/Customers.php:41
+#: app/API/Reports/Customers.php:213
+#: app/API/Reports/Products.php:958
+msgid "New Customers"
+msgstr ""
+
+#: app/API/Reports/Customers.php:47
+#: app/API/Reports/Customers.php:219
+#: app/API/Reports/Products.php:964
+msgid "Repeat Customers"
+msgstr ""
+
+#: app/API/Reports/Customers.php:51
+msgid "Customers who have placed more than one order."
+msgstr ""
+
+#: app/API/Reports/Customers.php:54
+#: app/API/Reports/Overview.php:868
+msgid "Orders Per Customer"
+msgstr ""
+
+#: app/API/Reports/Customers.php:60
+msgid "Customer LTV"
+msgstr ""
+
+#: app/API/Reports/Customers.php:64
+msgid "Average Lifetime Value per customer."
+msgstr ""
+
+#: app/API/Reports/Customers.php:67
+msgid "Customer AOV"
+msgstr ""
+
+#: app/API/Reports/Customers.php:71
+msgid "Average Order Value per customer."
+msgstr ""
+
+#: app/API/Reports/Customers.php:225
+msgid "Previous New Customers"
+msgstr ""
+
+#: app/API/Reports/Customers.php:232
+msgid "Previous Repeat Customers"
+msgstr ""
+
+#: app/API/Reports/Orders.php:42
+#: app/API/Reports/Overview.php:39
+#: app/Config/settings.php:389
+#: app/Controllers/Common/Init.php:202
+#: app/Helpers/functions.php:718
+#: app/Helpers/functions.php:719
+#: app/Helpers/functions.php:788
+#: app/Helpers/functions.php:789
+msgid "Orders"
+msgstr ""
+
+#: app/API/Reports/Orders.php:47
+#: app/API/Reports/Overview.php:43
+msgid "All orders except On Hold, Pending, Cancelled."
+msgstr ""
+
+#: app/API/Reports/Orders.php:50
+msgid "Completed Orders"
+msgstr ""
+
+#: app/API/Reports/Orders.php:57
+#: app/API/Reports/Overview.php:53
+#: app/API/Reports/Products.php:64
+#: app/API/Reports/Products.php:736
+#: app/Controllers/Common/Init.php:206
+#: app/Helpers/functions.php:726
+#: app/Helpers/functions.php:727
+#: build/easycommerce.bundle.js:43022
+msgid "Refunds"
+msgstr ""
+
+#: app/API/Reports/Orders.php:64
+#: app/API/Reports/Overview.php:59
+#: app/API/Reports/Revenue.php:41
+msgid "Net Revenue"
+msgstr ""
+
+#: app/API/Reports/Orders.php:68
+#: app/API/Reports/Overview.php:63
+#: app/API/Reports/Revenue.php:45
+msgid "Total revenue after any refunds or deductions."
+msgstr ""
+
+#: app/API/Reports/Orders.php:71
+msgid "Pending Orders"
+msgstr ""
+
+#: app/API/Reports/Orders.php:110
+msgid "Order Count"
+msgstr ""
+
+#: app/API/Reports/Orders.php:116
+msgid "Order Amount"
+msgstr ""
+
+#: app/API/Reports/Orders.php:122
+msgid "Previous Order Count"
+msgstr ""
+
+#: app/API/Reports/Orders.php:129
+msgid "Previous Order Amount"
+msgstr ""
+
+#: app/API/Reports/Overview.php:46
+msgid "Sales"
+msgstr ""
+
+#: app/API/Reports/Overview.php:50
+msgid "Total sales before any refunds or deductions."
+msgstr ""
+
+#: app/API/Reports/Overview.php:66
+#: app/API/Reports/Products.php:342
+msgid "Products Sold"
+msgstr ""
+
+#: app/API/Reports/Overview.php:72
+#: app/Controllers/Common/Init.php:218
+#: app/Helpers/functions.php:750
+#: app/Helpers/functions.php:751
+#: app/Helpers/functions.php:806
+#: app/Helpers/functions.php:807
+msgid "Customers"
+msgstr ""
+
+#: app/API/Reports/Overview.php:512
+msgid "New Orders"
+msgstr ""
+
+#: app/API/Reports/Overview.php:517
+msgid "Renewal Orders"
+msgstr ""
+
+#: app/API/Reports/Overview.php:677
+msgid "Products in Catalog"
+msgstr ""
+
+#: app/API/Reports/Overview.php:682
+msgid "Variations across products"
+msgstr ""
+
+#: app/API/Reports/Overview.php:687
+msgid "Average product price"
+msgstr ""
+
+#: app/API/Reports/Overview.php:692
+msgid "Inventory count"
+msgstr ""
+
+#: app/API/Reports/Overview.php:784
+msgid "New"
+msgstr ""
+
+#: app/API/Reports/Overview.php:789
+msgid "Returning"
+msgstr ""
+
+#: app/API/Reports/Overview.php:859
+msgid "AOV Per Customer"
+msgstr ""
+
+#: app/API/Reports/Overview.php:877
+msgid "Items Per Customer"
+msgstr ""
+
+#: app/API/Reports/Overview.php:992
+msgid "Guest"
+msgstr ""
+
+#: app/API/Reports/Products.php:36
+msgid "Live Products"
+msgstr ""
+
+#: app/API/Reports/Products.php:42
+msgid "Total Stock"
+msgstr ""
+
+#: app/API/Reports/Products.php:47
+msgid "Out of Stock"
+msgstr ""
+
+#: app/API/Reports/Products.php:52
+msgid "Low Stock"
+msgstr ""
+
+#: app/API/Reports/Products.php:57
+msgid "Gross Sales"
+msgstr ""
+
+#: app/API/Reports/Products.php:71
+msgid "Average Rating"
+msgstr ""
+
+#: app/API/Reports/Products.php:599
+#: app/API/Reports/Products.php:627
+#: app/API/Reports/Products.php:786
+#: app/API/Reports/Products.php:931
+#: app/API/Reports/Products.php:1107
+#: app/API/Reports/Products.php:1299
+msgid "Product ID is required"
+msgstr ""
+
+#: app/API/Reports/Products.php:605
+#: app/API/Reports/Products.php:633
+#: app/API/Reports/Products.php:792
+#: app/API/Reports/Products.php:937
+#: app/API/Reports/Products.php:1113
+#: app/API/Reports/Products.php:1305
+msgid "Product not found"
+msgstr ""
+
+#: app/API/Reports/Products.php:730
+msgid "Gross Sale"
+msgstr ""
+
+#: app/API/Reports/Products.php:742
+msgid "Stock"
+msgstr ""
+
+#: app/API/Reports/Products.php:747
+msgid "Avg Rating"
+msgstr ""
+
+#: app/API/Reports/Reports.php:1235
+#: app/Config/settings.php:405
+#: app/Controllers/Payment/Braintree.php:80
+#: app/Controllers/Payment/Cash_On_Delivery.php:50
+#: app/Controllers/Payment/Mollie.php:79
+#: app/Controllers/Payment/PayPal.php:72
+#: app/Controllers/Payment/Square.php:96
+#: app/Controllers/Payment/Stripe.php:271
+#: app/Helpers/functions.php:231
+msgid "Pending"
+msgstr ""
+
+#: app/API/Reports/Reports.php:1236
+#: app/Config/settings.php:407
+#: app/Controllers/Payment/Braintree.php:82
+#: app/Controllers/Payment/Cash_On_Delivery.php:52
+#: app/Controllers/Payment/Mollie.php:81
+#: app/Controllers/Payment/PayPal.php:74
+#: app/Controllers/Payment/Square.php:98
+#: app/Controllers/Payment/Stripe.php:273
+#: app/Helpers/functions.php:232
+msgid "Processing"
+msgstr ""
+
+#: app/API/Reports/Reports.php:1237
+#: app/Config/settings.php:406
+#: app/Controllers/Payment/Braintree.php:81
+#: app/Controllers/Payment/Cash_On_Delivery.php:51
+#: app/Controllers/Payment/Mollie.php:80
+#: app/Controllers/Payment/PayPal.php:73
+#: app/Controllers/Payment/Square.php:97
+#: app/Controllers/Payment/Stripe.php:272
+#: app/Helpers/functions.php:233
+msgid "Completed"
+msgstr ""
+
+#: app/API/Reports/Reports.php:1238
+#: app/Helpers/functions.php:237
+#: build/easycommerce.bundle.js:21714
+msgid "Refunded"
+msgstr ""
+
+#: app/API/Reports/Reports.php:1239
+#: app/Helpers/functions.php:236
+msgid "Partially Refunded"
+msgstr ""
+
+#: app/API/Reports/Reports.php:1240
+#: app/Helpers/functions.php:234
+msgid "Cancelled"
+msgstr ""
+
+#: app/API/Reports/Reports.php:1241
+#: app/Helpers/functions.php:235
+msgid "On Hold"
+msgstr ""
+
+#: app/API/Reports/Revenue.php:34
+msgid "Gross Revenue"
+msgstr ""
+
+#: app/API/Reports/Revenue.php:38
+msgid "Total revenue before any refunds or deductions."
+msgstr ""
+
+#: app/API/Reports/Revenue.php:48
+msgid "Avg Revenue Per Customer"
+msgstr ""
+
+#: app/API/Reports/Revenue.php:54
+msgid "Avg Revenue Per Order"
+msgstr ""
+
+#: app/API/Reports/Revenue.php:60
+msgid "Avg Revenue Per Product"
+msgstr ""
+
+#: app/API/Reports/Revenue.php:100
+msgid "Revenue"
+msgstr ""
+
+#: app/API/Reports/Revenue.php:106
+msgid "Previous Revenue"
+msgstr ""
+
+#: app/API/Shipping_Plan.php:23
+#: app/API/Shipping_Plan.php:130
+#: app/API/Shipping_Plan.php:198
+msgid "Shipping plan not found."
+msgstr ""
+
+#: app/API/Shipping_Plan.php:103
+msgid "Failed to create shipping plan."
+msgstr ""
+
+#: app/API/Shipping_Plan.php:108
+msgid "Shipping plan created successfully."
+msgstr ""
+
+#: app/API/Shipping_Plan.php:124
+#: app/API/Shipping_Plan.php:192
+msgid "Shipping plan ID is required."
+msgstr ""
+
+#: app/API/Shipping_Plan.php:176
+msgid "Failed to update shipping plan."
+msgstr ""
+
+#: app/API/Shipping_Plan.php:179
+msgid "Shipping plan updated successfully."
+msgstr ""
+
+#: app/API/Shipping_Plan.php:222
+msgid "Failed to delete shipping plan."
+msgstr ""
+
+#: app/API/Shipping_Plan.php:225
+msgid "Shipping plan deleted successfully."
+msgstr ""
+
+#: app/API/Shipping_Plan.php:238
+msgid "Region code is required."
+msgstr ""
+
+#: app/API/Shipping_Plan.php:244
+msgid "No shipping plans available for this region."
+msgstr ""
+
+#: app/API/Tax.php:26
+msgid "Tax classes found."
+msgstr ""
+
+#: app/API/Tax.php:68
+msgid "A class with the same name already exists"
+msgstr ""
+
+#: app/API/Tax.php:84
+msgid "Failed to create tax class."
+msgstr ""
+
+#: app/API/Tax.php:89
+msgid "Tax class created successfully."
+msgstr ""
+
+#: app/API/Tax.php:102
+msgid "Tax class not found."
+msgstr ""
+
+#: app/API/Tax.php:119
+msgid "Tax class found."
+msgstr ""
+
+#: app/API/Tax.php:165
+msgid "Failed to update tax class."
+msgstr ""
+
+#: app/API/Tax.php:180
+msgid "Tax class updated successfully."
+msgstr ""
+
+#: app/API/Tax.php:208
+msgid "Failed to delete tax class."
+msgstr ""
+
+#: app/API/Tax.php:220
+msgid "Tax class deleted successfully."
+msgstr ""
+
+#: app/API/Tax.php:269
+msgid "Country parameter is required."
+msgstr ""
+
+#: app/API/Tax.php:278
+msgid "No tax rates found."
+msgstr ""
+
+#: app/API/Taxonomy.php:34
+msgid "Categories found."
+msgstr ""
+
+#: app/API/Taxonomy.php:98
+msgid "Category created."
+msgstr ""
+
+#: app/API/Taxonomy.php:156
+msgid "Category updated."
+msgstr ""
+
+#: app/API/Taxonomy.php:189
+msgid "Category not deleted"
+msgstr ""
+
+#: app/API/Taxonomy.php:196
+msgid "Category deleted"
+msgstr ""
+
+#: app/API/Taxonomy.php:228
+msgid "Categories deleted"
+msgstr ""
+
+#: app/API/Taxonomy.php:254
+msgid "Brands found."
+msgstr ""
+
+#: app/API/Taxonomy.php:318
+msgid "Brand created."
+msgstr ""
+
+#: app/API/Taxonomy.php:376
+msgid "brand updated."
+msgstr ""
+
+#: app/API/Taxonomy.php:410
+msgid "Brand not deleted"
+msgstr ""
+
+#: app/API/Taxonomy.php:417
+msgid "Brand deleted"
+msgstr ""
+
+#: app/API/Taxonomy.php:449
+msgid "Brands deleted"
+msgstr ""
+
+#: app/API/Taxonomy.php:475
+msgid "tags found."
+msgstr ""
+
+#: app/API/Taxonomy.php:537
+msgid "tag created."
+msgstr ""
+
+#: app/API/Taxonomy.php:593
+msgid "tag updated."
+msgstr ""
+
+#: app/API/Taxonomy.php:626
+msgid "tag not deleted"
+msgstr ""
+
+#: app/API/Taxonomy.php:633
+msgid "tag deleted"
+msgstr ""
+
+#: app/API/Taxonomy.php:665
+msgid "tags deleted"
+msgstr ""
+
+#: app/API/Transaction.php:159
+msgid "Failed to delete transaction."
+msgstr ""
+
+#: app/API/Transaction.php:164
+msgid "Transaction deleted successfully."
+msgstr ""
+
+#: app/Bootstrap/Activator/Post_Type.php:22
+msgctxt "post type general name"
+msgid "Products"
+msgstr ""
+
+#: app/Bootstrap/Activator/Post_Type.php:23
+msgctxt "post type singular name"
+msgid "Product"
+msgstr ""
+
+#: app/Bootstrap/Activator/Post_Type.php:24
+msgctxt "admin menu"
+msgid "Products"
+msgstr ""
+
+#: app/Bootstrap/Activator/Post_Type.php:25
+msgctxt "add new on admin bar"
+msgid "Product"
+msgstr ""
+
+#: app/Bootstrap/Activator/Post_Type.php:26
+msgctxt "product"
+msgid "Add New"
+msgstr ""
+
+#: app/Bootstrap/Activator/Post_Type.php:27
+#: build/easycommerce.bundle.js:30011
+msgid "Add New Product"
+msgstr ""
+
+#: app/Bootstrap/Activator/Post_Type.php:28
+msgid "New Product"
+msgstr ""
+
+#: app/Bootstrap/Activator/Post_Type.php:29
+msgid "Edit Product"
+msgstr ""
+
+#: app/Bootstrap/Activator/Post_Type.php:30
+msgid "View Product"
+msgstr ""
+
+#: app/Bootstrap/Activator/Post_Type.php:31
+#: app/Controllers/Common/Init.php:198
+#: app/Helpers/functions.php:671
+#: app/Helpers/functions.php:672
+#: app/Helpers/functions.php:800
+#: app/Helpers/functions.php:801
+#: views/store/common/header.php:30
+msgid "Products"
+msgstr ""
+
+#: app/Bootstrap/Activator/Post_Type.php:32
+msgid "Search Products"
+msgstr ""
+
+#: app/Bootstrap/Activator/Post_Type.php:33
+msgid "Parent Products:"
+msgstr ""
+
+#: app/Bootstrap/Activator/Post_Type.php:34
+#: views/templates/archive-product/layout.php:27
+#: views/templates/single-product/layout-default.php:68
+#: views/templates/single-product/layout.php:103
+msgid "No products found."
+msgstr ""
+
+#: app/Bootstrap/Activator/Post_Type.php:35
+msgid "No products found in Trash."
+msgstr ""
+
+#: app/Bootstrap/Activator/Taxonomy.php:22
+msgctxt "taxonomy general name"
+msgid "Categories"
+msgstr ""
+
+#: app/Bootstrap/Activator/Taxonomy.php:23
+msgctxt "taxonomy singular name"
+msgid "Category"
+msgstr ""
+
+#: app/Bootstrap/Activator/Taxonomy.php:24
+msgid "Search Categories"
+msgstr ""
+
+#: app/Bootstrap/Activator/Taxonomy.php:25
+msgid "All Categories"
+msgstr ""
+
+#: app/Bootstrap/Activator/Taxonomy.php:26
+msgid "Parent Category"
+msgstr ""
+
+#: app/Bootstrap/Activator/Taxonomy.php:27
+msgid "Parent Category:"
+msgstr ""
+
+#: app/Bootstrap/Activator/Taxonomy.php:28
+msgid "Edit Category"
+msgstr ""
+
+#: app/Bootstrap/Activator/Taxonomy.php:29
+msgid "Update Category"
+msgstr ""
+
+#: app/Bootstrap/Activator/Taxonomy.php:30
+msgid "Add New Category"
+msgstr ""
+
+#: app/Bootstrap/Activator/Taxonomy.php:31
+msgid "New Category Name"
+msgstr ""
+
+#: app/Bootstrap/Activator/Taxonomy.php:32
+#: app/Helpers/functions.php:698
+#: app/Helpers/functions.php:699
+#: build/easycommerce.bundle.js:33409
+msgid "Categories"
+msgstr ""
+
+#: app/Bootstrap/Activator/Taxonomy.php:74
+msgctxt "taxonomy general name"
+msgid "Brands"
+msgstr ""
+
+#: app/Bootstrap/Activator/Taxonomy.php:75
+msgctxt "taxonomy singular name"
+msgid "Brand"
+msgstr ""
+
+#: app/Bootstrap/Activator/Taxonomy.php:76
+msgid "Search Brands"
+msgstr ""
+
+#: app/Bootstrap/Activator/Taxonomy.php:77
+msgid "All Brands"
+msgstr ""
+
+#: app/Bootstrap/Activator/Taxonomy.php:78
+msgid "Parent Brand"
+msgstr ""
+
+#: app/Bootstrap/Activator/Taxonomy.php:79
+msgid "Parent Brand:"
+msgstr ""
+
+#: app/Bootstrap/Activator/Taxonomy.php:80
+msgid "Edit Brand"
+msgstr ""
+
+#: app/Bootstrap/Activator/Taxonomy.php:81
+msgid "Update Brand"
+msgstr ""
+
+#: app/Bootstrap/Activator/Taxonomy.php:82
+msgid "Add New Brand"
+msgstr ""
+
+#: app/Bootstrap/Activator/Taxonomy.php:83
+msgid "New Brand Name"
+msgstr ""
+
+#: app/Bootstrap/Activator/Taxonomy.php:84
+#: app/Helpers/functions.php:710
+#: app/Helpers/functions.php:711
+#: build/easycommerce.bundle.js:33421
+msgid "Brands"
+msgstr ""
+
+#: app/Bootstrap/Activator/Taxonomy.php:128
+msgctxt "taxonomy general name"
+msgid "Tags"
+msgstr ""
+
+#: app/Bootstrap/Activator/Taxonomy.php:129
+msgctxt "taxonomy singular name"
+msgid "Tag"
+msgstr ""
+
+#: app/Bootstrap/Activator/Taxonomy.php:130
+msgid "Search Tags"
+msgstr ""
+
+#: app/Bootstrap/Activator/Taxonomy.php:131
+msgid "All Tags"
+msgstr ""
+
+#: app/Bootstrap/Activator/Taxonomy.php:132
+msgid "Parent Tag"
+msgstr ""
+
+#: app/Bootstrap/Activator/Taxonomy.php:133
+msgid "Parent Tag:"
+msgstr ""
+
+#: app/Bootstrap/Activator/Taxonomy.php:134
+msgid "Edit Tag"
+msgstr ""
+
+#: app/Bootstrap/Activator/Taxonomy.php:135
+msgid "Update Tag"
+msgstr ""
+
+#: app/Bootstrap/Activator/Taxonomy.php:136
+msgid "Add New Tag"
+msgstr ""
+
+#: app/Bootstrap/Activator/Taxonomy.php:137
+msgid "New Tag Name"
+msgstr ""
+
+#: app/Bootstrap/Activator/Taxonomy.php:138
+#: app/Helpers/functions.php:704
+#: app/Helpers/functions.php:705
+#: build/easycommerce.bundle.js:33415
+msgid "Tags"
+msgstr ""
+
+#: app/Bootstrap/Activator/User_Role.php:51
+msgid "Manager"
+msgstr ""
+
+#: app/Bootstrap/Activator/User_Role.php:87
+msgid "Customer"
+msgstr ""
+
+#: app/Config/checkout-fields.php:14
+msgid "First Name"
+msgstr ""
+
+#: app/Config/checkout-fields.php:15
+msgid "Your first name"
+msgstr ""
+
+#: app/Config/checkout-fields.php:22
+msgid "Last Name"
+msgstr ""
+
+#: app/Config/checkout-fields.php:23
+msgid "Your last name"
+msgstr ""
+
+#: app/Config/checkout-fields.php:30
+msgid "Email"
+msgstr ""
+
+#: app/Config/checkout-fields.php:31
+#: app/Controllers/Common/API.php:234
+#: app/Controllers/Common/API.php:257
+#: app/Controllers/Common/API.php:312
+#: app/Controllers/Common/API.php:351
+msgid "Your email"
+msgstr ""
+
+#: app/Config/checkout-fields.php:38
+msgid "Phone"
+msgstr ""
+
+#: app/Config/checkout-fields.php:39
+msgid "Enter your phone number"
+msgstr ""
+
+#: app/Config/checkout-fields.php:46
+#: app/Config/settings.php:119
+msgid "Address 1"
+msgstr ""
+
+#: app/Config/checkout-fields.php:47
+#: app/Config/settings.php:120
+msgid "Your address 1"
+msgstr ""
+
+#: app/Config/checkout-fields.php:54
+#: app/Config/settings.php:126
+msgid "Address 2"
+msgstr ""
+
+#: app/Config/checkout-fields.php:55
+#: app/Config/settings.php:127
+msgid "Your address 2"
+msgstr ""
+
+#: app/Config/checkout-fields.php:62
+#: app/Config/settings.php:154
+msgid "Country"
+msgstr ""
+
+#: app/Config/checkout-fields.php:70
+#: app/Config/settings.php:133
+msgid "State"
+msgstr ""
+
+#: app/Config/checkout-fields.php:71
+#: app/Config/settings.php:134
+msgid "Your State"
+msgstr ""
+
+#: app/Config/checkout-fields.php:78
+#: app/Config/settings.php:140
+msgid "City"
+msgstr ""
+
+#: app/Config/checkout-fields.php:79
+#: app/Config/settings.php:141
+msgid "Your City"
+msgstr ""
+
+#: app/Config/checkout-fields.php:86
+#: app/Config/settings.php:147
+msgid "Postcode"
+msgstr ""
+
+#: app/Config/checkout-fields.php:87
+#: app/Config/settings.php:148
+#: views/store/add-attributes/add-new.php:293
+msgid "Write here"
+msgstr ""
+
+#: app/Config/settings.php:40
+msgid "&raquo; Settings"
+msgstr ""
+
+#: app/Config/settings.php:57
+#: app/Controllers/Payment/Cash_On_Delivery.php:42
+msgid "General"
+msgstr ""
+
+#: app/Config/settings.php:64
+msgid "Business"
+msgstr ""
+
+#: app/Config/settings.php:65
+msgid "Adjust business settings for a personalized store experience."
+msgstr ""
+
+#: app/Config/settings.php:68
+msgid "Identity"
+msgstr ""
+
+#: app/Config/settings.php:69
+msgid "Customize your store’s name, logo, and appearance."
+msgstr ""
+
+#: app/Config/settings.php:76
+msgid "Store Logo"
+msgstr ""
+
+#: app/Config/settings.php:77
+msgid "Upload your store’s logo. Recommended dimensions: 512x512 px."
+msgstr ""
+
+#: app/Config/settings.php:78
+#: app/Controllers/Payment/Braintree.php:64
+#: app/Controllers/Payment/Mollie.php:63
+#: app/Controllers/Payment/PayPal.php:56
+#: app/Controllers/Payment/Square.php:80
+#: app/Controllers/Payment/Stripe.php:232
+msgid "Choose logo file"
+msgstr ""
+
+#: app/Config/settings.php:85
+msgid "Business Name"
+msgstr ""
+
+#: app/Config/settings.php:86
+msgid "The name of your store as displayed to customers."
+msgstr ""
+
+#: app/Config/settings.php:87
+msgid "Enter Store Name"
+msgstr ""
+
+#: app/Config/settings.php:94
+msgid "Business Email"
+msgstr ""
+
+#: app/Config/settings.php:95
+msgid "It'll be used for admin communications."
+msgstr ""
+
+#: app/Config/settings.php:104
+msgid "Business Type"
+msgstr ""
+
+#: app/Config/settings.php:105
+msgid "The type of your business."
+msgstr ""
+
+#: app/Config/settings.php:106
+msgid "Enter Business Type"
+msgstr ""
+
+#: app/Config/settings.php:112
+msgid "Address"
+msgstr ""
+
+#: app/Config/settings.php:113
+msgid "Details of your store’s physical location.(If have any)"
+msgstr ""
+
+#: app/Config/settings.php:155
+msgid "The country where your store is based."
+msgstr ""
+
+#: app/Config/settings.php:157
+msgid "Select Country"
+msgstr ""
+
+#: app/Config/settings.php:165
+#: app/Controllers/Admin/Menu.php:93
+#: app/Controllers/Common/Init.php:189
+#: views/store/common/header.php:23
+msgid "Store"
+msgstr ""
+
+#: app/Config/settings.php:166
+#: app/Config/settings.php:749
+#: app/Config/settings.php:801
+msgid "Select the pages used by EasyCommerce for key functionality."
+msgstr ""
+
+#: app/Config/settings.php:169
+msgid "Pages"
+msgstr ""
+
+#: app/Config/settings.php:175
+#: build/wizard.bundle.js:540
+msgid "Shop Page"
+msgstr ""
+
+#: app/Config/settings.php:176
+msgid "The main page where products are displayed for customers to browse."
+msgstr ""
+
+#: app/Config/settings.php:178
+msgid "Select Shop Page"
+msgstr ""
+
+#: app/Config/settings.php:184
+#: build/wizard.bundle.js:544
+msgid "Checkout Page"
+msgstr ""
+
+#. Translators: %s is a shortcode that should be included in the page content.
+#: app/Config/settings.php:186
+#, php-format
+msgid "The page where customers can review their cart and complete their purchase. This page content must contain the %s shortcode."
+msgstr ""
+
+#: app/Config/settings.php:188
+msgid "Select Checkout Page"
+msgstr ""
+
+#: app/Config/settings.php:194
+#: build/wizard.bundle.js:548
+msgid "Customer Dashboard"
+msgstr ""
+
+#. Translators: %s is a shortcode that should be included in the page content.
+#: app/Config/settings.php:196
+#, php-format
+msgid "The account page where customers can view orders, update information, etc. This page content must contain the %s shortcode."
+msgstr ""
+
+#: app/Config/settings.php:198
+msgid "Select Dashboard Page"
+msgstr ""
+
+#: app/Config/settings.php:203
+#: build/wizard.bundle.js:552
+msgid "Payment Page"
+msgstr ""
+
+#. Translators: %s is a shortcode that should be included in the page content.
+#: app/Config/settings.php:205
+#, php-format
+msgid "The page where customers can pay for pending orders. This page content must contain the %s shortcode."
+msgstr ""
+
+#: app/Config/settings.php:207
+msgid "Select Payment Page"
+msgstr ""
+
+#: app/Config/settings.php:212
+msgid "Customer Registration"
+msgstr ""
+
+#. Translators: %s is a shortcode that should be included in the page content.
+#: app/Config/settings.php:214
+#, php-format
+msgid "The page where customers can register and create an account. This page content must contain the %s shortcode."
+msgstr ""
+
+#: app/Config/settings.php:216
+msgid "Select Registration Page"
+msgstr ""
+
+#: app/Config/settings.php:221
+msgid "Customer Reset Password"
+msgstr ""
+
+#. Translators: %s is a shortcode that should be included in the page content.
+#: app/Config/settings.php:223
+#, php-format
+msgid "The page where customers can reset their password. This page content must contain the %s shortcode."
+msgstr ""
+
+#: app/Config/settings.php:225
+msgid "Select Reset Password Page"
+msgstr ""
+
+#: app/Config/settings.php:230
+#: views/shortcodes/register/template-1.php:47
+msgid "Terms of Service"
+msgstr ""
+
+#. Translators: %s is a shortcode that should be included in the page content.
+#: app/Config/settings.php:232
+msgid "The page that contains the terms and conditions for using the site."
+msgstr ""
+
+#: app/Config/settings.php:234
+msgid "Select Terms of Service Page"
+msgstr ""
+
+#: app/Config/settings.php:239
+#: views/shortcodes/checkout/template-3.php:90
+#: views/shortcodes/register/template-1.php:51
+msgid "Privacy Policy"
+msgstr ""
+
+#. Translators: %s is a shortcode that should be included in the page content.
+#: app/Config/settings.php:241
+msgid "The page that contains the privacy policy for using the site."
+msgstr ""
+
+#: app/Config/settings.php:243
+msgid "Select Privacy Policy Page"
+msgstr ""
+
+#: app/Config/settings.php:248
+msgid "Template Width"
+msgstr ""
+
+#: app/Config/settings.php:249
+msgid "Set the maximum width for the page template container."
+msgstr ""
+
+#: app/Config/settings.php:250
+msgid "1200"
+msgstr ""
+
+#: app/Config/settings.php:261
+msgid "Enable Stock Badge"
+msgstr ""
+
+#: app/Config/settings.php:262
+msgid "Display a stock availability badge on product images across the shop and single product pages."
+msgstr ""
+
+#: app/Config/settings.php:270
+#: build/easycommerce.bundle.js:38966
+msgid "Visibility"
+msgstr ""
+
+#: app/Config/settings.php:271
+msgid "Control your store visibility and access settings."
+msgstr ""
+
+#: app/Config/settings.php:274
+msgid "Store Visibility"
+msgstr ""
+
+#: app/Config/settings.php:275
+msgid "Choose if your store is live or still in setup mode."
+msgstr ""
+
+#: app/Config/settings.php:280
+msgid "Store Mode"
+msgstr ""
+
+#: app/Config/settings.php:281
+msgid "Live mode makes your store public; test mode keeps it private for setup and testing."
+msgstr ""
+
+#: app/Config/settings.php:284
+#: app/Controllers/Common/Init.php:497
+#: app/Helpers/functions.php:287
+#: build/easycommerce.bundle.js:30601
+#: build/easycommerce.bundle.js:39247
+msgid "Live"
+msgstr ""
+
+#: app/Config/settings.php:285
+#: app/Controllers/Common/Init.php:497
+msgid "Test"
+msgstr ""
+
+#: app/Config/settings.php:296
+#: app/Controllers/Admin/Init.php:335
+#: views/templates/checkout/template-1/payment-methods.php:10
+#: views/templates/checkout/template-2/payment-methods.php:10
+msgid "Payment"
+msgstr ""
+
+#: app/Config/settings.php:304
+msgid "Pricing"
+msgstr ""
+
+#: app/Config/settings.php:313
+#: app/Controllers/Common/API.php:5061
+#: app/Controllers/Common/API.php:5142
+msgid "Currency"
+msgstr ""
+
+#: app/Config/settings.php:314
+msgid "Select the currency used for pricing and transactions."
+msgstr ""
+
+#: app/Config/settings.php:316
+msgid "Select Currency"
+msgstr ""
+
+#: app/Config/settings.php:323
+msgid "Format"
+msgstr ""
+
+#: app/Config/settings.php:324
+msgid "How should the prices show up?"
+msgstr ""
+
+#: app/Config/settings.php:333
+msgid "Methods"
+msgstr ""
+
+#: app/Config/settings.php:343
+msgid "Enable Payment Methods"
+msgstr ""
+
+#: app/Config/settings.php:344
+#, php-format
+msgid "Select the payment methods you want to enable for checkout. Find more options from the <a href=\"%1$s\">Addons page</a>."
+msgstr ""
+
+#: app/Config/settings.php:346
+msgid "Choose payment methods"
+msgstr ""
+
+#: app/Config/settings.php:394
+msgid "settings"
+msgstr ""
+
+#: app/Config/settings.php:395
+msgid "Select the order default statuses."
+msgstr ""
+
+#: app/Config/settings.php:402
+#: app/Controllers/Payment/Braintree.php:77
+#: app/Controllers/Payment/Cash_On_Delivery.php:47
+#: app/Controllers/Payment/Mollie.php:76
+#: app/Controllers/Payment/PayPal.php:69
+#: app/Controllers/Payment/Square.php:93
+#: app/Controllers/Payment/Stripe.php:268
+msgid "Default Order Status"
+msgstr ""
+
+#: app/Config/settings.php:403
+msgid "The default order status for new orders."
+msgstr ""
+
+#: app/Config/settings.php:410
+#: app/Controllers/Payment/Braintree.php:85
+#: app/Controllers/Payment/Mollie.php:84
+#: app/Controllers/Payment/PayPal.php:77
+#: app/Controllers/Payment/Square.php:101
+#: app/Controllers/Payment/Stripe.php:276
+msgid "Select Default Order Status"
+msgstr ""
+
+#: app/Config/settings.php:415
+msgid "Default Fulfillment Status"
+msgstr ""
+
+#: app/Config/settings.php:416
+msgid "The default Fulfillment status for new orders."
+msgstr ""
+
+#: app/Config/settings.php:418
+#: app/Helpers/functions.php:299
+msgid "Unfulfilled"
+msgstr ""
+
+#: app/Config/settings.php:419
+#: app/Helpers/functions.php:300
+msgid "Fulfilled"
+msgstr ""
+
+#: app/Config/settings.php:420
+#: app/Helpers/functions.php:301
+msgid "Partially Fulfilled"
+msgstr ""
+
+#: app/Config/settings.php:421
+#: app/Helpers/functions.php:302
+msgid "Shipped"
+msgstr ""
+
+#: app/Config/settings.php:422
+#: app/Helpers/functions.php:303
+msgid "Delivered"
+msgstr ""
+
+#: app/Config/settings.php:425
+msgid "Select Default fulfill Status"
+msgstr ""
+
+#: app/Config/settings.php:435
+#: app/Controllers/Admin/Init.php:331
+#: app/Controllers/Common/Init.php:174
+msgid "Checkout"
+msgstr ""
+
+#: app/Config/settings.php:440
+msgid "checkout template"
+msgstr ""
+
+#: app/Config/settings.php:447
+msgid "Default Checkout Template"
+msgstr ""
+
+#: app/Config/settings.php:448
+msgid "The default checkout template. <span id=\"easycommerce-checkout-template-preview-button\">Preview Selected</span>"
+msgstr ""
+
+#: app/Config/settings.php:455
+msgid "Columns"
+msgstr ""
+
+#: app/Config/settings.php:456
+msgid "The number of columns to display."
+msgstr ""
+
+#: app/Config/settings.php:458
+msgid "1"
+msgstr ""
+
+#: app/Config/settings.php:459
+msgid "2"
+msgstr ""
+
+#: app/Config/settings.php:466
+msgid "Enable Direct Checkout"
+msgstr ""
+
+#: app/Config/settings.php:467
+msgid "Allow customers to proceed directly to checkout from product pages without adding to cart."
+msgstr ""
+
+#: app/Config/settings.php:478
+msgid "Emails"
+msgstr ""
+
+#: app/Config/settings.php:485
+#: app/Config/settings.php:721
+#: app/Config/settings.php:773
+#: app/Config/settings.php:825
+#: app/Controllers/Admin/Menu.php:94
+#: app/Controllers/Common/Init.php:230
+#: app/Helpers/functions.php:814
+#: app/Helpers/functions.php:815
+#: views/settings/layout.php:71
+#: build/blocks.bundle.js:4836
+#: build/blocks.bundle.js:4988
+#: build/blocks.bundle.js:5468
+#: build/blocks.bundle.js:5734
+#: build/blocks.bundle.js:5921
+#: build/blocks.bundle.js:6060
+msgid "Settings"
+msgstr ""
+
+#: app/Config/settings.php:489
+#: app/Config/settings.php:525
+msgid "Layout"
+msgstr ""
+
+#: app/Config/settings.php:495
+msgid "Email Header"
+msgstr ""
+
+#: app/Config/settings.php:496
+msgid "It'll be included as the header part of the transactional emails."
+msgstr ""
+
+#: app/Config/settings.php:507
+msgid "Email footer"
+msgstr ""
+
+#: app/Config/settings.php:508
+msgid "Email footer content"
+msgstr ""
+
+#: app/Config/settings.php:531
+msgid "Container width"
+msgstr ""
+
+#: app/Config/settings.php:532
+msgid "The width of the email body container. Default is 600px."
+msgstr ""
+
+#: app/Config/settings.php:544
+msgid "Body Background"
+msgstr ""
+
+#: app/Config/settings.php:545
+msgid "Background color of the main email content"
+msgstr ""
+
+#: app/Config/settings.php:552
+msgid "Container Background"
+msgstr ""
+
+#: app/Config/settings.php:553
+msgid "Background color of the outside wrapper area"
+msgstr ""
+
+#: app/Config/settings.php:561
+msgid "New Account"
+msgstr ""
+
+#: app/Config/settings.php:564
+#: app/Config/settings.php:640
+msgid "Customer Notification"
+msgstr ""
+
+#: app/Config/settings.php:575
+#: app/Config/settings.php:606
+#: app/Config/settings.php:651
+#: app/Config/settings.php:682
+msgid "Email Subject"
+msgstr ""
+
+#: app/Config/settings.php:576
+#: app/Config/settings.php:607
+#: app/Config/settings.php:652
+#: app/Config/settings.php:683
+msgid "The subject line for this email notification."
+msgstr ""
+
+#: app/Config/settings.php:577
+#: app/Config/settings.php:608
+#: app/Config/settings.php:653
+#: app/Config/settings.php:684
+#: app/Config/settings.php:865
+msgid "Enter email subject"
+msgstr ""
+
+#: app/Config/settings.php:584
+#: app/Config/settings.php:615
+#: app/Config/settings.php:660
+#: app/Config/settings.php:691
+msgid "Email Body"
+msgstr ""
+
+#: app/Config/settings.php:586
+#: app/Config/settings.php:617
+#: app/Config/settings.php:662
+#: app/Config/settings.php:693
+#, php-format
+msgid "The main content of the email. To find all the related placeholders <a href=\"%s\" target=\"_blank\">click here.</a>"
+msgstr ""
+
+#: app/Config/settings.php:589
+#: app/Config/settings.php:620
+#: app/Config/settings.php:665
+#: app/Config/settings.php:696
+msgid "Enter email content here"
+msgstr ""
+
+#: app/Config/settings.php:595
+#: app/Config/settings.php:671
+msgid "Admin Notification"
+msgstr ""
+
+#: app/Config/settings.php:715
+#: views/shortcodes/payment/template-1.php:135
+msgid "Shipping"
+msgstr ""
+
+#: app/Config/settings.php:722
+msgid "Shipping related settings"
+msgstr ""
+
+#: app/Config/settings.php:725
+#: app/Config/settings.php:777
+#: views/settings/layout.php:25
+msgid "Reset Settings"
+msgstr ""
+
+#: app/Config/settings.php:729
+#: app/Config/settings.php:781
+#: views/settings/layout.php:29
+#: views/settings/layout.php:228
+msgid "Save Settings"
+msgstr ""
+
+#: app/Config/settings.php:739
+msgid "Shipping Countries"
+msgstr ""
+
+#: app/Config/settings.php:740
+msgid "Choose the countries you ship products to."
+msgstr ""
+
+#: app/Config/settings.php:748
+msgid "Plans"
+msgstr ""
+
+#: app/Config/settings.php:767
+msgid "Taxation"
+msgstr ""
+
+#: app/Config/settings.php:774
+msgid "Tax related settings"
+msgstr ""
+
+#: app/Config/settings.php:791
+msgid "Tax Countries"
+msgstr ""
+
+#: app/Config/settings.php:792
+msgid "Choose the countries you sell products to."
+msgstr ""
+
+#: app/Config/settings.php:800
+msgid "Classes"
+msgstr ""
+
+#: app/Config/settings.php:819
+msgid "Cart Recovery"
+msgstr ""
+
+#: app/Config/settings.php:826
+msgid "Abandoned cart settings"
+msgstr ""
+
+#: app/Config/settings.php:833
+msgid "Delay"
+msgstr ""
+
+#: app/Config/settings.php:834
+msgid "When can we call a cart abandoned?"
+msgstr ""
+
+#: app/Config/settings.php:835
+msgid "Enter time delay in minutes"
+msgstr ""
+
+#: app/Config/settings.php:846
+msgid "Abandoned Cart Discount %"
+msgstr ""
+
+#: app/Config/settings.php:847
+msgid "Set a discount percentage to include in abandoned cart emails. If set to 0, no coupon will be included."
+msgstr ""
+
+#: app/Config/settings.php:848
+msgid "Enter discount percentage (0 to disable)"
+msgstr ""
+
+#: app/Config/settings.php:863
+#: app/Controllers/Common/API.php:323
+#: app/Controllers/Common/API.php:362
+msgid "Subject"
+msgstr ""
+
+#: app/Config/settings.php:870
+msgid "Body"
+msgstr ""
+
+#: app/Config/settings.php:872
+#, php-format
+msgid "To find all the related placesholders <a href=\"%s\" target=\"_blank\">click here.</a>"
+msgstr ""
+
+#: app/Config/settings.php:875
+msgid "Enter email Body"
+msgstr ""
+
+#: app/Config/settings.php:895
+msgid "AI"
+msgstr ""
+
+#: app/Config/settings.php:935
+#: app/Config/settings.php:936
+msgid "Generative AI"
+msgstr ""
+
+#: app/Config/settings.php:943
+msgid "Text Generator"
+msgstr ""
+
+#: app/Config/settings.php:944
+#, php-format
+msgid "Enable AI Writer to suggest and create product descriptions instantly. <a href=\"%1$s\" target=\"_blank\">See more.</a>"
+msgstr ""
+
+#: app/Config/settings.php:950
+#: views/settings/ai-usage.php:52
+msgid "Image Generator"
+msgstr ""
+
+#: app/Config/settings.php:951
+#, php-format
+msgid "Generate high-quality product images with AI directly from your dashboard. <a href=\"%1$s\" target=\"_blank\">See more.</a>"
+msgstr ""
+
+#: app/Config/settings.php:957
+msgid "Template Generator"
+msgstr ""
+
+#: app/Config/settings.php:958
+#, php-format
+msgid "Enable AI Template Generator to create ready-to-use block layouts. <a href=\"%1$s\" target=\"_blank\">See more.</a>"
+msgstr ""
+
+#: app/Config/settings.php:964
+#: views/settings/ai-usage.php:48
+msgid "Attribute Generator"
+msgstr ""
+
+#: app/Config/settings.php:965
+#, php-format
+msgid "Enable AI to suggest product attributes and values instantly. <a href=\"%1$s\" target=\"_blank\">See more.</a>"
+msgstr ""
+
+#: app/Config/settings.php:973
+#: app/Config/settings.php:974
+msgid "Agentic AI"
+msgstr ""
+
+#: app/Config/settings.php:977
+#: views/settings/ai-usage.php:56
+msgid "Shopping Agent"
+msgstr ""
+
+#: app/Config/settings.php:978
+msgid "Your customers will see a chat button on your store where they can ask questions, find products, check stock, or even place orders right from the chatting screen."
+msgstr ""
+
+#: app/Config/settings.php:983
+msgid "Enable Shopping Agent"
+msgstr ""
+
+#: app/Config/settings.php:989
+msgid "Chat Assistant Name"
+msgstr ""
+
+#: app/Config/settings.php:990
+msgid "What customers see at the top of the chat window. Example: \"Store Helper\" or \"Shopping Assistant\"."
+msgstr ""
+
+#: app/Config/settings.php:991
+msgid "Shopping Assistant"
+msgstr ""
+
+#: app/Config/settings.php:996
+msgid "Chat Assistant Avatar"
+msgstr ""
+
+#: app/Config/settings.php:997
+msgid "Profile picture shown in the chat window. Use a square image (at least 80×80 pixels). Leave empty to use a default avatar."
+msgstr ""
+
+#: app/Config/settings.php:1003
+msgid "Chat Button Position"
+msgstr ""
+
+#: app/Config/settings.php:1004
+msgid "Where should the chat button appear on your store pages?"
+msgstr ""
+
+#: app/Config/settings.php:1006
+msgid "Right"
+msgstr ""
+
+#: app/Config/settings.php:1007
+msgid "Left"
+msgstr ""
+
+#: app/Config/settings.php:1014
+msgid "Chat Color Theme"
+msgstr ""
+
+#: app/Config/settings.php:1015
+msgid "Choose the color for the chat button and message bubbles. Use your brand color for consistency."
+msgstr ""
+
+#: app/Config/settings.php:1021
+msgid "Search & Discovery"
+msgstr ""
+
+#: app/Config/settings.php:1022
+msgid "Let AI power your product search and recommendations."
+msgstr ""
+
+#: app/Config/settings.php:1027
+#: views/settings/ai-usage.php:51
+msgid "Smart Search"
+msgstr ""
+
+#: app/Config/settings.php:1028
+#, php-format
+msgid "Help customers find products even with spelling errors. The AI understands what they're looking for and shows the right products. <a href=\"%1$s\" target=\"_blank\">See more.</a>"
+msgstr ""
+
+#: app/Config/settings.php:1034
+msgid "Voice Search"
+msgstr ""
+
+#: app/Config/settings.php:1035
+#, php-format
+msgid "Let customers search by speaking instead of typing. Hands-free shopping experience. (Coming soon) <a href=\"%1$s\" target=\"_blank\">See more.</a>"
+msgstr ""
+
+#: app/Config/settings.php:1041
+msgid "Smart Recommendations"
+msgstr ""
+
+#: app/Config/settings.php:1042
+#, php-format
+msgid "The AI suggests related products to customers based on what they're looking at. Boost average order value. (Coming soon) <a href=\"%1$s\" target=\"_blank\">See more.</a>"
+msgstr ""
+
+#: app/Config/settings.php:1051
+msgid "Usage"
+msgstr ""
+
+#: app/Config/settings.php:1052
+msgid "Your AI credit usage history."
+msgstr ""
+
+#. Translators: %s is the link to the setup wizard
+#: app/Controllers/Admin/Init.php:136
+#, php-format
+msgid "Congratulations on installing <strong>EasyCommerce</strong>! 🎉<br/>You're just a few steps away from launching your store. <a href=\"%s\"><strong>Click here</strong></a> to start the setup wizard and bring your store to life! 🚀"
+msgstr ""
+
+#: app/Controllers/Admin/Init.php:152
+msgid "The <strong>EasyCommerce</strong> Locations database is being downloaded. Countries, states, cities and currencies will not be displayed until the download is complete."
+msgstr ""
+
+#. Translators: %1$s is the link that reschedules the cron to download locations.json file
+#: app/Controllers/Admin/Init.php:171
+#, php-format
+msgid "It looks like the <strong>EasyCommerce</strong> Locations database has not been loaded yet. Countries, states, cities and currencies will not be displayed until it's downloaded. <a href=\"%1$s\">Click here</a> to manually retry downloading it."
+msgstr ""
+
+#: app/Controllers/Admin/Init.php:191
+#, php-format
+msgid "Warning: Your store currency (%1$s) does not match your Square location currency (%2$s). Square payments will not be available until currencies match."
+msgstr ""
+
+#: app/Controllers/Admin/Init.php:241
+msgid "EasyCommerce Year-End Celebration!"
+msgstr ""
+
+#: app/Controllers/Admin/Init.php:242
+msgid "Enjoy a flat 50% discount while building your dream ecommerce store with EasyCommerce Pro!"
+msgstr ""
+
+#: app/Controllers/Admin/Init.php:244
+msgid "Save 50% Now"
+msgstr ""
+
+#: app/Controllers/Admin/Init.php:261
+msgid "You are not logged in!"
+msgstr ""
+
+#: app/Controllers/Admin/Init.php:284
+msgid "Not your download!"
+msgstr ""
+
+#: app/Controllers/Admin/Init.php:291
+msgid "File not found."
+msgstr ""
+
+#: app/Controllers/Admin/Init.php:320
+#, php-format
+msgid "The plugin <strong>%1$s</strong> was deactivated by <strong>EasyCommerce</strong> as it is no longer needed. You can safely delete it if you wish."
+msgstr ""
+
+#: app/Controllers/Admin/Init.php:329
+#: app/Controllers/Common/Init.php:166
+msgid "Shop"
+msgstr ""
+
+#: app/Controllers/Admin/Init.php:333
+#: app/Controllers/Common/Init.php:182
+#: app/Controllers/Common/Init.php:194
+#: app/Helpers/functions.php:663
+#: app/Helpers/functions.php:664
+msgid "Dashboard"
+msgstr ""
+
+#: app/Controllers/Admin/Init.php:427
+msgid "Migration"
+msgstr ""
+
+#: app/Controllers/Admin/Init.php:431
+msgid "EasyCommerce Migration"
+msgstr ""
+
+#: app/Controllers/Admin/Init.php:463
+msgid "You're about to migrate!"
+msgstr ""
+
+#: app/Controllers/Admin/Init.php:466
+msgid "detected. Would you like to migrate your store data to EasyCommerce?"
+msgstr ""
+
+#: app/Controllers/Admin/Init.php:475
+#: views/components/survey.php:76
+#: build/easycommerce.bundle.js:5168
+#: build/easycommerce.bundle.js:5305
+msgid "Cancel"
+msgstr ""
+
+#: app/Controllers/Admin/Init.php:481
+msgid "Start Migration"
+msgstr ""
+
+#: app/Controllers/Admin/Menu.php:92
+#: app/Controllers/Common/Init.php:238
+msgid "Setup Wizard"
+msgstr ""
+
+#: app/Controllers/Common/API.php:104
+msgid "Your setup wizard data"
+msgstr ""
+
+#: app/Controllers/Common/API.php:121
+msgid "Your Username"
+msgstr ""
+
+#: app/Controllers/Common/API.php:126
+msgid "Your Email"
+msgstr ""
+
+#: app/Controllers/Common/API.php:132
+msgid "Your Password"
+msgstr ""
+
+#: app/Controllers/Common/API.php:137
+msgid "Your Confirm Password"
+msgstr ""
+
+#: app/Controllers/Common/API.php:154
+msgid "Username or Email"
+msgstr ""
+
+#: app/Controllers/Common/API.php:171
+msgid "Reset Key"
+msgstr ""
+
+#: app/Controllers/Common/API.php:176
+msgid "User Login"
+msgstr ""
+
+#: app/Controllers/Common/API.php:181
+#: views/shortcodes/reset/template-1.php:21
+msgid "New Password"
+msgstr ""
+
+#: app/Controllers/Common/API.php:186
+#: views/shortcodes/reset/template-1.php:27
+msgid "Confirm Password"
+msgstr ""
+
+#: app/Controllers/Common/API.php:240
+#: app/Controllers/Common/API.php:307
+#: app/Controllers/Common/API.php:346
+msgid "Your name"
+msgstr ""
+
+#: app/Controllers/Common/API.php:263
+msgid "Your token"
+msgstr ""
+
+#: app/Controllers/Common/API.php:290
+msgid "The doc id"
+msgstr ""
+
+#: app/Controllers/Common/API.php:318
+#: app/Controllers/Common/API.php:357
+msgid "Site URL"
+msgstr ""
+
+#: app/Controllers/Common/API.php:328
+#: app/Controllers/Common/API.php:367
+msgid "Message"
+msgstr ""
+
+#: app/Controllers/Common/API.php:401
+#: app/Controllers/Common/API.php:426
+msgid "The addon slug"
+msgstr ""
+
+#: app/Controllers/Common/API.php:405
+#: app/Controllers/Common/API.php:430
+msgid "The action- activate or deactivate"
+msgstr ""
+
+#: app/Controllers/Common/API.php:422
+msgid "The license key"
+msgstr ""
+
+#: app/Controllers/Common/API.php:435
+msgid "User email for license"
+msgstr ""
+
+#: app/Controllers/Common/API.php:458
+#: app/Controllers/Common/API.php:495
+#: app/Controllers/Common/API.php:521
+#: app/Controllers/Common/API.php:680
+msgid "An array of 'from' and 'to', or a string"
+msgstr ""
+
+#: app/Controllers/Common/API.php:558
+#: app/Controllers/Common/API.php:574
+#: app/Controllers/Common/API.php:3046
+#: app/Controllers/Common/API.php:3102
+#: app/Controllers/Common/API.php:3124
+#: app/Controllers/Common/API.php:4383
+#: app/Controllers/Common/API.php:4399
+msgid "The cart hash"
+msgstr ""
+
+#: app/Controllers/Common/API.php:578
+msgid "Email subject line"
+msgstr ""
+
+#: app/Controllers/Common/API.php:582
+msgid "Email message body"
+msgstr ""
+
+#: app/Controllers/Common/API.php:641
+msgid "Activity type: All, Orders, Refunds, Reviews, Others"
+msgstr ""
+
+#: app/Controllers/Common/API.php:647
+msgid "From date (Y-m-d)"
+msgstr ""
+
+#: app/Controllers/Common/API.php:652
+msgid "To date (Y-m-d)"
+msgstr ""
+
+#: app/Controllers/Common/API.php:694
+msgid "The product ID in case of product-specific reports"
+msgstr ""
+
+#: app/Controllers/Common/API.php:709
+#: app/Controllers/Common/API.php:734
+#: app/Controllers/Common/API.php:752
+#: app/Controllers/Common/API.php:770
+#: app/Controllers/Common/API.php:788
+#: app/Controllers/Common/API.php:813
+#: app/Controllers/Common/API.php:849
+#: app/Controllers/Common/API.php:874
+#: app/Controllers/Common/API.php:899
+#: app/Controllers/Common/API.php:924
+msgid "Date range key (e.g., \"today\", \"this-week\", \"this-month\", \"this-year\")"
+msgstr ""
+
+#: app/Controllers/Common/API.php:716
+#: app/Controllers/Common/API.php:795
+#: app/Controllers/Common/API.php:856
+#: app/Controllers/Common/API.php:881
+#: app/Controllers/Common/API.php:906
+#: app/Controllers/Common/API.php:931
+#: app/Controllers/Common/API.php:1034
+#: app/Controllers/Common/API.php:1055
+msgid "Comparison range (e.g., \"previous-day\", \"previous-week\", \"previous-month\", \"previous-year\")"
+msgstr ""
+
+#: app/Controllers/Common/API.php:831
+#: app/Controllers/Common/API.php:1029
+#: app/Controllers/Common/API.php:1108
+msgid "Date range key (e.g., \"today\", \"this-week\", \"this-month\", \"this-year\", \"all-time\")"
+msgstr ""
+
+#: app/Controllers/Common/API.php:949
+#: app/Controllers/Common/API.php:965
+#: app/Controllers/Common/API.php:981
+msgid "Date range key"
+msgstr ""
+
+#: app/Controllers/Common/API.php:997
+#: app/Controllers/Common/API.php:1013
+#: app/Controllers/Common/API.php:1277
+#: app/Controllers/Common/API.php:1335
+#: app/Controllers/Common/API.php:1351
+msgid "Date range key (e.g., \"last-30\", \"this-month\", \"2026-01-01,2026-03-30\")"
+msgstr ""
+
+#: app/Controllers/Common/API.php:1050
+#: app/Controllers/Common/API.php:1071
+#: app/Controllers/Common/API.php:1087
+#: app/Controllers/Common/API.php:1145
+#: app/Controllers/Common/API.php:1166
+msgid "Date range key (e.g., \"today\", \"this-week\", \"this-month\", \"this-year\", \"last-30\")"
+msgstr ""
+
+#: app/Controllers/Common/API.php:1103
+#: app/Controllers/Common/API.php:1124
+#: app/Controllers/Common/API.php:1140
+#: app/Controllers/Common/API.php:1161
+#: app/Controllers/Common/API.php:1182
+#: app/Controllers/Common/API.php:1203
+#: app/Controllers/Common/API.php:1930
+#: app/Controllers/Common/API.php:1947
+#: app/Controllers/Common/API.php:1969
+#: app/Controllers/Common/API.php:2139
+#: app/Controllers/Common/API.php:2202
+#: app/Controllers/Common/API.php:2219
+#: app/Controllers/Common/API.php:2949
+#: app/Controllers/Common/API.php:2984
+#: app/Controllers/Common/API.php:3013
+msgid "The product ID"
+msgstr ""
+
+#: app/Controllers/Common/API.php:1187
+msgid "Number of reviews to return (default: 6)"
+msgstr ""
+
+#: app/Controllers/Common/API.php:1219
+#: app/Controllers/Common/API.php:1240
+#: app/Controllers/Common/API.php:1261
+#: app/Controllers/Common/API.php:1293
+#: app/Controllers/Common/API.php:1314
+#: app/Controllers/Common/API.php:1367
+msgid "Date range key (e.g., \"last-30\", \"this-month\", \"this-year\")"
+msgstr ""
+
+#: app/Controllers/Common/API.php:1224
+#: app/Controllers/Common/API.php:1245
+#: app/Controllers/Common/API.php:1298
+#: app/Controllers/Common/API.php:1319
+msgid "Comparison range key"
+msgstr ""
+
+#: app/Controllers/Common/API.php:1391
+#: app/Controllers/Common/API.php:1407
+#: app/Controllers/Common/API.php:1427
+msgid "The option `key` name"
+msgstr ""
+
+#: app/Controllers/Common/API.php:1411
+msgid "The option `value`"
+msgstr ""
+
+#: app/Controllers/Common/API.php:1450
+#: app/Controllers/Common/API.php:1549
+#: app/Controllers/Common/API.php:1697
+msgid "Attribute name"
+msgstr ""
+
+#: app/Controllers/Common/API.php:1455
+#: app/Controllers/Common/API.php:1554
+msgid "Slug for the attribute"
+msgstr ""
+
+#: app/Controllers/Common/API.php:1460
+#: app/Controllers/Common/API.php:1559
+msgid "Type of the attribute (e.g. select, text)"
+msgstr ""
+
+#: app/Controllers/Common/API.php:1465
+msgid "Array of options with label and value"
+msgstr ""
+
+#: app/Controllers/Common/API.php:1474
+#: app/Controllers/Common/API.php:1479
+#: app/Controllers/Common/API.php:1578
+#: app/Controllers/Common/API.php:1583
+msgid "Display label for the option"
+msgstr ""
+
+#: app/Controllers/Common/API.php:1483
+#: app/Controllers/Common/API.php:1587
+msgid "Stored value for the option"
+msgstr ""
+
+#: app/Controllers/Common/API.php:1504
+#: app/Controllers/Common/API.php:1647
+#: app/Controllers/Common/API.php:2260
+#: app/Controllers/Common/API.php:2581
+#: app/Controllers/Common/API.php:2698
+#: app/Controllers/Common/API.php:2811
+msgid "The page number"
+msgstr ""
+
+#: app/Controllers/Common/API.php:1510
+#: app/Controllers/Common/API.php:1653
+#: app/Controllers/Common/API.php:2587
+#: app/Controllers/Common/API.php:2704
+#: app/Controllers/Common/API.php:2817
+msgid "The number of products per page"
+msgstr ""
+
+#: app/Controllers/Common/API.php:1527
+#: app/Controllers/Common/API.php:1544
+#: app/Controllers/Common/API.php:1608
+msgid "The attribute ID"
+msgstr ""
+
+#: app/Controllers/Common/API.php:1564
+msgid "Array of options with id, name, slug, value"
+msgstr ""
+
+#: app/Controllers/Common/API.php:1573
+msgid "Option ID"
+msgstr ""
+
+#: app/Controllers/Common/API.php:1624
+msgid "The attribute IDs"
+msgstr ""
+
+#: app/Controllers/Common/API.php:1659
+#: app/Controllers/Common/API.php:2280
+msgid "The search query"
+msgstr ""
+
+#: app/Controllers/Common/API.php:1664
+msgid "The SKU of a variation to search product with"
+msgstr ""
+
+#: app/Controllers/Common/API.php:1669
+#: app/Controllers/Common/API.php:1779
+#: app/Controllers/Common/API.php:1984
+msgid "The product status"
+msgstr ""
+
+#: app/Controllers/Common/API.php:1675
+msgid "The product brands"
+msgstr ""
+
+#: app/Controllers/Common/API.php:1680
+msgid "The product categories"
+msgstr ""
+
+#: app/Controllers/Common/API.php:1685
+msgid "The product Sort By"
+msgstr ""
+
+#: app/Controllers/Common/API.php:1690
+msgid "Array of attributes with values"
+msgstr ""
+
+#: app/Controllers/Common/API.php:1702
+msgid "Array of attribute values"
+msgstr ""
+
+#: app/Controllers/Common/API.php:1710
+msgid "Minimum price"
+msgstr ""
+
+#: app/Controllers/Common/API.php:1716
+msgid "Maximum price"
+msgstr ""
+
+#: app/Controllers/Common/API.php:1722
+msgid "Either it should include prices"
+msgstr ""
+
+#: app/Controllers/Common/API.php:1728
+#: app/Controllers/Common/API.php:1740
+msgid "Either it should return HTML"
+msgstr ""
+
+#: app/Controllers/Common/API.php:1734
+msgid "Array of settings"
+msgstr ""
+
+#: app/Controllers/Common/API.php:1746
+msgid "Shop name"
+msgstr ""
+
+#: app/Controllers/Common/API.php:1764
+#: app/Controllers/Common/API.php:1974
+msgid "The product title"
+msgstr ""
+
+#: app/Controllers/Common/API.php:1769
+msgid "The product summary"
+msgstr ""
+
+#: app/Controllers/Common/API.php:1774
+#: app/Controllers/Common/API.php:1979
+msgid "The product description"
+msgstr ""
+
+#: app/Controllers/Common/API.php:1785
+#: app/Controllers/Common/API.php:1990
+msgid "The product slug"
+msgstr ""
+
+#: app/Controllers/Common/API.php:1790
+#: app/Controllers/Common/API.php:1995
+msgid "The product thumbnail ID"
+msgstr ""
+
+#: app/Controllers/Common/API.php:1795
+#: app/Controllers/Common/API.php:2000
+msgid "List of category slugs or IDs"
+msgstr ""
+
+#: app/Controllers/Common/API.php:1801
+#: app/Controllers/Common/API.php:2006
+msgid "List of brand slugs or IDs"
+msgstr ""
+
+#: app/Controllers/Common/API.php:1806
+#: app/Controllers/Common/API.php:2011
+msgid "Product attributes and their values"
+msgstr ""
+
+#: app/Controllers/Common/API.php:1814
+#: app/Controllers/Common/API.php:1879
+#: app/Controllers/Common/API.php:2019
+#: app/Controllers/Common/API.php:2088
+msgid "Attribute ID"
+msgstr ""
+
+#: app/Controllers/Common/API.php:1819
+#: app/Controllers/Common/API.php:2024
+msgid "Attribute values"
+msgstr ""
+
+#: app/Controllers/Common/API.php:1827
+#: app/Controllers/Common/API.php:2032
+msgid "Value ID"
+msgstr ""
+
+#: app/Controllers/Common/API.php:1838
+#: app/Controllers/Common/API.php:2043
+msgid "Product variations"
+msgstr ""
+
+#: app/Controllers/Common/API.php:1871
+#: app/Controllers/Common/API.php:2080
+msgid "Variation attributes and their values"
+msgstr ""
+
+#: app/Controllers/Common/API.php:1884
+#: app/Controllers/Common/API.php:2093
+msgid "Attribute slug"
+msgstr ""
+
+#: app/Controllers/Common/API.php:1889
+#: app/Controllers/Common/API.php:2098
+msgid "Attribute value slug"
+msgstr ""
+
+#: app/Controllers/Common/API.php:1894
+#: app/Controllers/Common/API.php:2103
+msgid "Attribute value ID"
+msgstr ""
+
+#: app/Controllers/Common/API.php:1913
+#: app/Controllers/Common/API.php:2122
+msgid "Product meta data"
+msgstr ""
+
+#: app/Controllers/Common/API.php:1952
+msgid "An object of attributes key-value pair"
+msgstr ""
+
+#: app/Controllers/Common/API.php:2156
+msgid "List of product IDs to delete"
+msgstr ""
+
+#: app/Controllers/Common/API.php:2177
+msgid "List of product IDs to update"
+msgstr ""
+
+#: app/Controllers/Common/API.php:2185
+#: app/Controllers/Common/API.php:3341
+msgid "The new status for the orders"
+msgstr ""
+
+#: app/Controllers/Common/API.php:2224
+msgid "Review text"
+msgstr ""
+
+#: app/Controllers/Common/API.php:2229
+msgid "Rating value, out of 5"
+msgstr ""
+
+#: app/Controllers/Common/API.php:2238
+msgid "Value must be between 1 to 5."
+msgstr ""
+
+#: app/Controllers/Common/API.php:2265
+msgid "Reviews per page"
+msgstr ""
+
+#: app/Controllers/Common/API.php:2297
+msgid "The review ID"
+msgstr ""
+
+#: app/Controllers/Common/API.php:2321
+msgid "The customer first name"
+msgstr ""
+
+#: app/Controllers/Common/API.php:2326
+msgid "The customer last name"
+msgstr ""
+
+#: app/Controllers/Common/API.php:2331
+msgid "The customer photo URL"
+msgstr ""
+
+#: app/Controllers/Common/API.php:2336
+msgid "The customer email address"
+msgstr ""
+
+#: app/Controllers/Common/API.php:2342
+msgid "The customer password"
+msgstr ""
+
+#: app/Controllers/Common/API.php:2350
+msgid "The confirmation password"
+msgstr ""
+
+#: app/Controllers/Common/API.php:2355
+msgid "The key-value pair of meta data"
+msgstr ""
+
+#: app/Controllers/Common/API.php:2372
+#: app/Controllers/Common/API.php:2418
+#: app/Controllers/Common/API.php:2435
+#: app/Controllers/Common/API.php:3163
+#: app/Controllers/Common/API.php:3478
+msgid "The customer ID"
+msgstr ""
+
+#: app/Controllers/Common/API.php:2389
+msgid "Search query for customer name or email"
+msgstr ""
+
+#: app/Controllers/Common/API.php:2394
+#: app/Controllers/Common/API.php:2450
+#: app/Controllers/Common/API.php:3181
+#: app/Controllers/Common/API.php:3453
+msgid "Page number for pagination"
+msgstr ""
+
+#: app/Controllers/Common/API.php:2400
+msgid "Number of customers per page"
+msgstr ""
+
+#: app/Controllers/Common/API.php:2440
+msgid "Search key"
+msgstr ""
+
+#: app/Controllers/Common/API.php:2445
+#: app/Controllers/Common/API.php:2546
+msgid "Filter by transaction status"
+msgstr ""
+
+#: app/Controllers/Common/API.php:2456
+#: app/Controllers/Common/API.php:3187
+#: app/Controllers/Common/API.php:3459
+msgid "Number of transactions per page"
+msgstr ""
+
+#: app/Controllers/Common/API.php:2492
+msgid "Comma separated or an array of fields"
+msgstr ""
+
+#: app/Controllers/Common/API.php:2508
+msgid "An array of key-value pair of fields"
+msgstr ""
+
+#: app/Controllers/Common/API.php:2524
+msgid "Filter by order status"
+msgstr ""
+
+#: app/Controllers/Common/API.php:2529
+msgid "Filter per page"
+msgstr ""
+
+#: app/Controllers/Common/API.php:2605
+#: app/Controllers/Common/API.php:2637
+msgid "The category name"
+msgstr ""
+
+#: app/Controllers/Common/API.php:2610
+#: app/Controllers/Common/API.php:2642
+msgid "The category slug"
+msgstr ""
+
+#: app/Controllers/Common/API.php:2615
+#: app/Controllers/Common/API.php:2647
+msgid "The parent category ID"
+msgstr ""
+
+#: app/Controllers/Common/API.php:2632
+#: app/Controllers/Common/API.php:2665
+msgid "The category ID"
+msgstr ""
+
+#: app/Controllers/Common/API.php:2681
+msgid "The category IDs"
+msgstr ""
+
+#: app/Controllers/Common/API.php:2722
+#: app/Controllers/Common/API.php:2749
+msgid "The brand name"
+msgstr ""
+
+#: app/Controllers/Common/API.php:2727
+#: app/Controllers/Common/API.php:2759
+msgid "The parent brand ID"
+msgstr ""
+
+#: app/Controllers/Common/API.php:2744
+msgid "The brand ID"
+msgstr ""
+
+#: app/Controllers/Common/API.php:2754
+msgid "The brand slug"
+msgstr ""
+
+#: app/Controllers/Common/API.php:2777
+msgid "The brands ID"
+msgstr ""
+
+#: app/Controllers/Common/API.php:2794
+msgid "The brand IDs"
+msgstr ""
+
+#: app/Controllers/Common/API.php:2835
+#: app/Controllers/Common/API.php:2862
+msgid "The tag name"
+msgstr ""
+
+#: app/Controllers/Common/API.php:2840
+#: app/Controllers/Common/API.php:2872
+msgid "The parent tag ID"
+msgstr ""
+
+#: app/Controllers/Common/API.php:2857
+msgid "The tag ID"
+msgstr ""
+
+#: app/Controllers/Common/API.php:2867
+msgid "The tag slug"
+msgstr ""
+
+#: app/Controllers/Common/API.php:2890
+msgid "The tags ID"
+msgstr ""
+
+#: app/Controllers/Common/API.php:2907
+msgid "The tag IDs"
+msgstr ""
+
+#: app/Controllers/Common/API.php:2941
+msgid "Array of products to add, each with an id and quantity."
+msgstr ""
+
+#: app/Controllers/Common/API.php:2953
+msgid "The variation's price_id or an array of attributes"
+msgstr ""
+
+#: app/Controllers/Common/API.php:2959
+msgid "The quantity to add"
+msgstr ""
+
+#: app/Controllers/Common/API.php:2967
+msgid "The user ID"
+msgstr ""
+
+#: app/Controllers/Common/API.php:2989
+#: app/Controllers/Common/API.php:3018
+msgid "The product price ID"
+msgstr ""
+
+#: app/Controllers/Common/API.php:2995
+msgid "The quantity to set"
+msgstr ""
+
+#: app/Controllers/Common/API.php:3050
+#: app/Controllers/Common/API.php:3275
+msgid "The shipping address"
+msgstr ""
+
+#: app/Controllers/Common/API.php:3054
+#: app/Controllers/Common/API.php:3270
+msgid "The billing address"
+msgstr ""
+
+#: app/Controllers/Common/API.php:3070
+msgid "The shipping method ID"
+msgstr ""
+
+#: app/Controllers/Common/API.php:3086
+msgid "The payment method"
+msgstr ""
+
+#: app/Controllers/Common/API.php:3107
+#: app/Controllers/Common/API.php:3129
+msgid "The coupon code"
+msgstr ""
+
+#: app/Controllers/Common/API.php:3172
+#: app/Controllers/Common/API.php:3500
+msgid "You do not have permission to get the customer order."
+msgstr ""
+
+#: app/Controllers/Common/API.php:3176
+msgid "Search by order ID, order name, or customer email"
+msgstr ""
+
+#: app/Controllers/Common/API.php:3193
+#: app/Controllers/Common/API.php:3198
+#: app/Controllers/Common/API.php:3504
+#: app/Controllers/Common/API.php:3509
+#: app/Controllers/Common/API.php:5017
+msgid "Filter by from date"
+msgstr ""
+
+#: app/Controllers/Common/API.php:3217
+msgid "An array of order IDs to delete"
+msgstr ""
+
+#: app/Controllers/Common/API.php:3239
+#: app/Controllers/Common/API.php:3301
+#: app/Controllers/Common/API.php:3364
+#: app/Controllers/Common/API.php:3381
+#: app/Controllers/Common/API.php:3406
+#: app/Controllers/Common/API.php:3423
+msgid "The order ID"
+msgstr ""
+
+#: app/Controllers/Common/API.php:3256
+msgid "The order items or the cart hash"
+msgstr ""
+
+#: app/Controllers/Common/API.php:3260
+msgid "The customer ID or an array of customer data (name and email)"
+msgstr ""
+
+#: app/Controllers/Common/API.php:3264
+msgid "The order status"
+msgstr ""
+
+#: app/Controllers/Common/API.php:3280
+msgid "The meta data"
+msgstr ""
+
+#: app/Controllers/Common/API.php:3285
+msgid "Should we use the billing address as shipping?"
+msgstr ""
+
+#: app/Controllers/Common/API.php:3306
+msgid "The new order status"
+msgstr ""
+
+#: app/Controllers/Common/API.php:3311
+msgid "The new order fulfillment status"
+msgstr ""
+
+#: app/Controllers/Common/API.php:3316
+msgid "The updated total amount of the order"
+msgstr ""
+
+#: app/Controllers/Common/API.php:3333
+msgid "An array of order IDs to update"
+msgstr ""
+
+#: app/Controllers/Common/API.php:3346
+msgid "The type of status to update: status or fulfillment"
+msgstr ""
+
+#: app/Controllers/Common/API.php:3386
+msgid "The refund amount"
+msgstr ""
+
+#: app/Controllers/Common/API.php:3390
+msgid "The refund reason"
+msgstr ""
+
+#: app/Controllers/Common/API.php:3428
+msgid "The email event"
+msgstr ""
+
+#: app/Controllers/Common/API.php:3465
+#: app/Controllers/Common/API.php:5002
+msgid "Filter by order ID"
+msgstr ""
+
+#: app/Controllers/Common/API.php:3474
+#: app/Controllers/Common/API.php:3487
+msgid "You do not have permission to set the customer ID."
+msgstr ""
+
+#: app/Controllers/Common/API.php:3491
+msgid "The customer email"
+msgstr ""
+
+#: app/Controllers/Common/API.php:3514
+msgid "Filter by transaction type"
+msgstr ""
+
+#: app/Controllers/Common/API.php:3531
+msgid "The transaction ID"
+msgstr ""
+
+#: app/Controllers/Common/API.php:3563
+#: app/Controllers/Common/API.php:3673
+msgid "The shipping plan name"
+msgstr ""
+
+#: app/Controllers/Common/API.php:3571
+#: app/Controllers/Common/API.php:3678
+msgid "The shipping plan description"
+msgstr ""
+
+#: app/Controllers/Common/API.php:3576
+#: app/Controllers/Common/API.php:3683
+msgid "The active status of the shipping plan (1 for active, 0 for inactive)"
+msgstr ""
+
+#: app/Controllers/Common/API.php:3582
+#: app/Controllers/Common/API.php:3688
+msgid "If this shipping plan is taxable (1 for active, 0 for inactive)"
+msgstr ""
+
+#: app/Controllers/Common/API.php:3588
+#: app/Controllers/Common/API.php:3695
+msgid "The calculation base for the shipping plan (e.g., price, weight, quantity)"
+msgstr ""
+
+#: app/Controllers/Common/API.php:3596
+msgid "Array of regions associated with this shipping plan"
+msgstr ""
+
+#: app/Controllers/Common/API.php:3603
+msgid "Country code"
+msgstr ""
+
+#: app/Controllers/Common/API.php:3608
+#: app/Controllers/Common/API.php:4175
+#: app/Controllers/Common/API.php:4269
+msgid "State code"
+msgstr ""
+
+#: app/Controllers/Common/API.php:3613
+msgid "City name"
+msgstr ""
+
+#: app/Controllers/Common/API.php:3618
+msgid "Zip/postal code"
+msgstr ""
+
+#: app/Controllers/Common/API.php:3627
+#: app/Controllers/Common/API.php:3718
+msgid "Array of shipping methods for the plan, each including name, min, max, and cost"
+msgstr ""
+
+#: app/Controllers/Common/API.php:3634
+#: app/Controllers/Common/API.php:3725
+msgid "Method name"
+msgstr ""
+
+#: app/Controllers/Common/API.php:3639
+#: app/Controllers/Common/API.php:3730
+msgid "Minimum value for this method range"
+msgstr ""
+
+#: app/Controllers/Common/API.php:3644
+#: app/Controllers/Common/API.php:3735
+msgid "Maximum value for this method range"
+msgstr ""
+
+#: app/Controllers/Common/API.php:3649
+#: app/Controllers/Common/API.php:3740
+msgid "Cost associated with this method range"
+msgstr ""
+
+#: app/Controllers/Common/API.php:3668
+#: app/Controllers/Common/API.php:3759
+msgid "The shipping plan ID"
+msgstr ""
+
+#: app/Controllers/Common/API.php:3703
+msgid "Array of region codes associated with this shipping plan"
+msgstr ""
+
+#: app/Controllers/Common/API.php:3775
+msgid "The region code"
+msgstr ""
+
+#: app/Controllers/Common/API.php:3799
+#: app/Controllers/Common/API.php:3830
+#: app/Controllers/Common/API.php:3866
+msgid "Should it return details information"
+msgstr ""
+
+#: app/Controllers/Common/API.php:3816
+#: app/Controllers/Common/API.php:3847
+#: app/Controllers/Common/API.php:3883
+msgid "The iso2 code of the country name"
+msgstr ""
+
+#: app/Controllers/Common/API.php:3823
+#: app/Controllers/Common/API.php:3854
+#: app/Controllers/Common/API.php:3890
+msgid "Country code must be of 2 characters"
+msgstr ""
+
+#: app/Controllers/Common/API.php:3861
+msgid "The state code"
+msgstr ""
+
+#: app/Controllers/Common/API.php:3925
+#: app/Controllers/Common/API.php:4006
+msgid "The coupon name"
+msgstr ""
+
+#: app/Controllers/Common/API.php:3930
+#: app/Controllers/Common/API.php:4011
+msgid "The unique coupon code"
+msgstr ""
+
+#: app/Controllers/Common/API.php:3935
+#: app/Controllers/Common/API.php:4016
+msgid "The discount type"
+msgstr ""
+
+#: app/Controllers/Common/API.php:3941
+#: app/Controllers/Common/API.php:4022
+msgid "The discounted offer"
+msgstr ""
+
+#: app/Controllers/Common/API.php:3946
+#: app/Controllers/Common/API.php:4027
+msgid "The active status of the coupon (1 for active, 0 for inactive)"
+msgstr ""
+
+#: app/Controllers/Common/API.php:3952
+#: app/Controllers/Common/API.php:4032
+msgid "Array of coupon rules, each with type and value"
+msgstr ""
+
+#: app/Controllers/Common/API.php:3959
+#: app/Controllers/Common/API.php:4039
+msgid "The rule type"
+msgstr ""
+
+#: app/Controllers/Common/API.php:3964
+#: app/Controllers/Common/API.php:4043
+msgid "The rule value"
+msgstr ""
+
+#: app/Controllers/Common/API.php:3984
+#: app/Controllers/Common/API.php:4001
+#: app/Controllers/Common/API.php:4062
+msgid "The coupon ID"
+msgstr ""
+
+#: app/Controllers/Common/API.php:4079
+msgid "List of coupon IDs to delete"
+msgstr ""
+
+#: app/Controllers/Common/API.php:4098
+msgid "List of coupon IDs to update"
+msgstr ""
+
+#: app/Controllers/Common/API.php:4106
+msgid "Status value: active or inactive"
+msgstr ""
+
+#: app/Controllers/Common/API.php:4140
+#: app/Controllers/Common/API.php:4235
+msgid "Tax class name"
+msgstr ""
+
+#: app/Controllers/Common/API.php:4145
+#: app/Controllers/Common/API.php:4240
+msgid "Class name must not be empty."
+msgstr ""
+
+#: app/Controllers/Common/API.php:4152
+#: app/Controllers/Common/API.php:4247
+msgid "Description of the tax class"
+msgstr ""
+
+#: app/Controllers/Common/API.php:4157
+#: app/Controllers/Common/API.php:4252
+msgid "Status of the tax class (1 for active, 0 for inactive)"
+msgstr ""
+
+#: app/Controllers/Common/API.php:4163
+#: app/Controllers/Common/API.php:4257
+msgid "Array of rates for the tax class"
+msgstr ""
+
+#: app/Controllers/Common/API.php:4170
+#: app/Controllers/Common/API.php:4264
+msgid "Country code (ISO2)"
+msgstr ""
+
+#: app/Controllers/Common/API.php:4180
+#: app/Controllers/Common/API.php:4274
+msgid "City code"
+msgstr ""
+
+#: app/Controllers/Common/API.php:4185
+#: app/Controllers/Common/API.php:4279
+msgid "Tax rate percentage"
+msgstr ""
+
+#: app/Controllers/Common/API.php:4190
+#: app/Controllers/Common/API.php:4284
+msgid "Priority of this rate"
+msgstr ""
+
+#: app/Controllers/Common/API.php:4195
+#: app/Controllers/Common/API.php:4289
+msgid "Is this compound"
+msgstr ""
+
+#: app/Controllers/Common/API.php:4214
+#: app/Controllers/Common/API.php:4230
+#: app/Controllers/Common/API.php:4308
+msgid "Tax class ID"
+msgstr ""
+
+#: app/Controllers/Common/API.php:4415
+msgid "List of abandoned cart hashes to delete"
+msgstr ""
+
+#: app/Controllers/Common/API.php:4435
+msgid "List of abandoned cart hashes to remind"
+msgstr ""
+
+#: app/Controllers/Common/API.php:4481
+#: app/Controllers/Common/API.php:4524
+msgid "The `product` name"
+msgstr ""
+
+#: app/Controllers/Common/API.php:4485
+#: app/Controllers/Common/API.php:4508
+#: app/Controllers/Common/API.php:4543
+#: app/Controllers/Common/API.php:4570
+msgid "The `prompt`"
+msgstr ""
+
+#: app/Controllers/Common/API.php:4489
+msgid "Content length- `short` or `long`"
+msgstr ""
+
+#: app/Controllers/Common/API.php:4518
+#: app/Controllers/Common/API.php:4553
+msgid "The quality - `standard`, `hd`"
+msgstr ""
+
+#: app/Controllers/Common/API.php:4539
+msgid "The `image` URL or the attachment_id"
+msgstr ""
+
+#: app/Controllers/Common/API.php:4574
+msgid "The `product`"
+msgstr ""
+
+#: app/Controllers/Common/API.php:4589
+msgid "The product name"
+msgstr ""
+
+#: app/Controllers/Common/API.php:4614
+msgid "Customer message"
+msgstr ""
+
+#: app/Controllers/Common/API.php:4620
+#: app/Controllers/Common/API.php:4650
+msgid "Unique conversation session ID. Omit to start a new session."
+msgstr ""
+
+#: app/Controllers/Common/API.php:4644
+msgid "Admin message or question"
+msgstr ""
+
+#: app/Controllers/Common/API.php:4675
+msgid "Search term to filter placeholders"
+msgstr ""
+
+#: app/Controllers/Common/API.php:4709
+msgid "Column mapping object"
+msgstr ""
+
+#: app/Controllers/Common/API.php:4756
+msgid "The URL to the external image"
+msgstr ""
+
+#: app/Controllers/Common/API.php:4761
+msgid "The post_id to attach this image to"
+msgstr ""
+
+#: app/Controllers/Common/API.php:4767
+msgid "Image description"
+msgstr ""
+
+#: app/Controllers/Common/API.php:4791
+msgid "Filter by object"
+msgstr ""
+
+#: app/Controllers/Common/API.php:4796
+msgid "Filter by action"
+msgstr ""
+
+#: app/Controllers/Common/API.php:4801
+msgid "Filter by log type"
+msgstr ""
+
+#: app/Controllers/Common/API.php:4806
+msgid "Filter by object ID"
+msgstr ""
+
+#: app/Controllers/Common/API.php:4811
+msgid "Filter by user ID"
+msgstr ""
+
+#: app/Controllers/Common/API.php:4816
+msgid "Filter by public status"
+msgstr ""
+
+#: app/Controllers/Common/API.php:4821
+msgid "From date"
+msgstr ""
+
+#: app/Controllers/Common/API.php:4826
+msgid "To date"
+msgstr ""
+
+#: app/Controllers/Common/API.php:4831
+#: app/Controllers/Common/API.php:5027
+msgid "Page number"
+msgstr ""
+
+#: app/Controllers/Common/API.php:4837
+#: app/Controllers/Common/API.php:5033
+msgid "Per page"
+msgstr ""
+
+#: app/Controllers/Common/API.php:4843
+msgid "Sort order (asc or desc)"
+msgstr ""
+
+#: app/Controllers/Common/API.php:4862
+#: app/Controllers/Common/API.php:4927
+msgid "Log ID"
+msgstr ""
+
+#: app/Controllers/Common/API.php:4879
+msgid "Object"
+msgstr ""
+
+#: app/Controllers/Common/API.php:4884
+msgid "Action"
+msgstr ""
+
+#: app/Controllers/Common/API.php:4889
+msgid "Object ID"
+msgstr ""
+
+#: app/Controllers/Common/API.php:4894
+msgid "User ID"
+msgstr ""
+
+#: app/Controllers/Common/API.php:4899
+msgid "Note"
+msgstr ""
+
+#: app/Controllers/Common/API.php:4904
+msgid "IP Address"
+msgstr ""
+
+#: app/Controllers/Common/API.php:4909
+msgid "Seen status"
+msgstr ""
+
+#: app/Controllers/Common/API.php:4951
+msgid "Filter notices by type (e.g., error, success)"
+msgstr ""
+
+#: app/Controllers/Common/API.php:4956
+msgid "Filter notices by screen context (e.g., #/orders)"
+msgstr ""
+
+#: app/Controllers/Common/API.php:4961
+msgid "Number of notices to return"
+msgstr ""
+
+#: app/Controllers/Common/API.php:4979
+msgid "Notife ID to remove"
+msgstr ""
+
+#: app/Controllers/Common/API.php:5007
+msgid "Filter by refund status"
+msgstr ""
+
+#: app/Controllers/Common/API.php:5012
+msgid "Filter by payment gateway"
+msgstr ""
+
+#: app/Controllers/Common/API.php:5022
+msgid "Filter by to date"
+msgstr ""
+
+#: app/Controllers/Common/API.php:5056
+#: app/Controllers/Common/API.php:5137
+msgid "Refund amount"
+msgstr ""
+
+#: app/Controllers/Common/API.php:5067
+#: app/Controllers/Common/API.php:5147
+msgid "Refund reason"
+msgstr ""
+
+#: app/Controllers/Common/API.php:5072
+#: app/Controllers/Common/API.php:5152
+msgid "Refund status"
+msgstr ""
+
+#: app/Controllers/Common/API.php:5078
+#: app/Controllers/Common/API.php:5157
+msgid "Transaction ID"
+msgstr ""
+
+#: app/Controllers/Common/API.php:5083
+#: app/Controllers/Common/API.php:5162
+msgid "Payment gateway"
+msgstr ""
+
+#: app/Controllers/Common/API.php:5088
+#: app/Controllers/Common/API.php:5167
+msgid "Notes"
+msgstr ""
+
+#: app/Controllers/Common/API.php:5093
+#: app/Controllers/Common/API.php:5172
+msgid "Refunded by user ID"
+msgstr ""
+
+#: app/Controllers/Common/API.php:5110
+#: app/Controllers/Common/API.php:5127
+#: app/Controllers/Common/API.php:5189
+msgid "Refund ID"
+msgstr ""
+
+#: app/Controllers/Common/API.php:5206
+msgid "List of refund IDs to delete"
+msgstr ""
+
+#: app/Controllers/Common/Asset.php:410
+msgid "EasyCommerce Compatible Themes"
+msgstr ""
+
+#: app/Controllers/Common/Asset.php:443
+#: views/templates/single-product/product-reivew.php:156
+msgid "Rating and review is required"
+msgstr ""
+
+#: app/Controllers/Common/Asset.php:444
+msgid "Rating is required"
+msgstr ""
+
+#: app/Controllers/Common/Asset.php:445
+msgid "Review is required"
+msgstr ""
+
+#: app/Controllers/Common/Asset.php:520
+msgid "AI Shopping Assistant"
+msgstr ""
+
+#: app/Controllers/Common/Block.php:26
+msgid "EasyCommerce - Shop"
+msgstr ""
+
+#: app/Controllers/Common/Block.php:27
+msgid "EasyCommerce - Product"
+msgstr ""
+
+#: app/Controllers/Common/Block.php:28
+msgid "EasyCommerce - Checkout"
+msgstr ""
+
+#: app/Controllers/Common/Block.php:29
+msgid "EasyCommerce - Dashboard"
+msgstr ""
+
+#: app/Controllers/Common/Block.php:95
+msgid "Single Product 1"
+msgstr ""
+
+#: app/Controllers/Common/Block.php:96
+#: app/Controllers/Common/Block.php:106
+msgctxt "Block pattern description"
+msgid "A pattern that includes all checkout blocks"
+msgstr ""
+
+#: app/Controllers/Common/Block.php:105
+msgid "Single Product 2"
+msgstr ""
+
+#: app/Controllers/Common/Init.php:210
+msgid "Abandoned Cart"
+msgstr ""
+
+#: app/Controllers/Common/Init.php:214
+#: app/Helpers/functions.php:742
+#: app/Helpers/functions.php:743
+msgid "Transactions"
+msgstr ""
+
+#: app/Controllers/Common/Init.php:222
+#: app/Helpers/functions.php:766
+#: app/Helpers/functions.php:767
+msgid "Coupons"
+msgstr ""
+
+#: app/Controllers/Common/Init.php:226
+#: app/Helpers/functions.php:774
+#: app/Helpers/functions.php:775
+msgid "Reports"
+msgstr ""
+
+#: app/Controllers/Common/Init.php:244
+#: app/Helpers/functions.php:823
+#: app/Helpers/functions.php:824
+msgid "Addons"
+msgstr ""
+
+#: app/Controllers/Common/Init.php:250
+#: app/Helpers/functions.php:830
+#: app/Helpers/functions.php:831
+msgid "Help & Support"
+msgstr ""
+
+#: app/Controllers/Common/Init.php:257
+msgid "EasyCommerce Pro"
+msgstr ""
+
+#: app/Controllers/Common/Init.php:259
+#: build/easycommerce.bundle.js:5313
+msgid "Activate License"
+msgstr ""
+
+#: app/Controllers/Common/Init.php:260
+#: app/Helpers/functions.php:639
+msgid "Get Pro"
+msgstr ""
+
+#: app/Controllers/Common/Init.php:299
+msgid "Product Builder"
+msgstr ""
+
+#: app/Controllers/Common/Init.php:403
+msgid "Permalink Not Set"
+msgstr ""
+
+#: app/Controllers/Common/Init.php:404
+msgid "Your permalink structure is set to 'Plain'. Please choose any other option and click 'Save Changes' to make your product and checkout pages work properly."
+msgstr ""
+
+#: app/Controllers/Common/Init.php:406
+msgid "Set Permalink"
+msgstr ""
+
+#: app/Controllers/Common/Init.php:416
+msgid "Missing Required Pages"
+msgstr ""
+
+#: app/Controllers/Common/Init.php:417
+msgid "EasyCommerce needs a Shop page, Checkout page, and Customer Dashboard. One or more is missing or not configured."
+msgstr ""
+
+#: app/Controllers/Common/Init.php:419
+msgid "Configure Settings"
+msgstr ""
+
+#: app/Controllers/Common/Init.php:442
+msgid "Payment Not Configured"
+msgstr ""
+
+#: app/Controllers/Common/Init.php:443
+msgid "Your store doesn't have any payment options configured. Make sure to configure a payment method or start with \"Cash on Delivery\" for testing."
+msgstr ""
+
+#: app/Controllers/Common/Init.php:445
+msgid "Configure Now"
+msgstr ""
+
+#: app/Controllers/Common/Init.php:459
+msgid "EasyCommerce Full Width Layout"
+msgstr ""
+
+#. translators: 1: credits used, 2: monthly credit allowance
+#: app/Controllers/Common/Init.php:545
+#, php-format
+msgid "AI Credits: %1$s/%2$s"
+msgstr ""
+
+#. translators: %s: remaining AI credits
+#: app/Controllers/Common/Init.php:548
+#, php-format
+msgid "AI Credits: %s"
+msgstr ""
+
+#: app/Controllers/Common/Process.php:134
+#, php-format
+msgid "Successfully imported %d of %d demo products"
+msgstr ""
+
+#: app/Controllers/Front/Init.php:246
+#: app/Controllers/Front/Init.php:259
+#: app/Controllers/Front/Init.php:272
+#, php-format
+msgid "<div class=\"easycommerce-notice easycommerce-warning\" style=\"background-color: #fff3cd; border: 1px solid #ffeaa7; color: #856404; padding: 12px; margin-bottom: 20px; border-radius: 4px;\"><p style=\"margin: 0; font-weight: 500;\">%s</p></div>"
+msgstr ""
+
+#: app/Controllers/Front/Init.php:247
+msgid "This page requires an EasyCommerce shop block to function properly. Please add a shop template block to this page."
+msgstr ""
+
+#: app/Controllers/Front/Init.php:260
+msgid "This page is missing the EasyCommerce checkout shortcode. Please add the <span style=\"color: #000;\">&#91;easycommerce-checkout&#93;</span> shortcode to this page to function properly."
+msgstr ""
+
+#: app/Controllers/Front/Init.php:273
+msgid "This page is missing the EasyCommerce dashboard shortcode. Please add the <span style=\"color: #000;\">&#91;easycommerce-dashboard&#93;</span> shortcode to this page to function properly."
+msgstr ""
+
+#: app/Controllers/Front/Shortcode.php:36
+#: app/Controllers/Front/Shortcode.php:119
+msgid "You are already logged in."
+msgstr ""
+
+#: app/Controllers/Front/Shortcode.php:37
+msgid "You cannot reset your password while logged in."
+msgstr ""
+
+#: app/Controllers/Front/Shortcode.php:46
+msgid "Registration Complete please login"
+msgstr ""
+
+#: app/Controllers/Front/Shortcode.php:53
+#: views/shortcodes/register/template-1.php:16
+msgid "Email Address"
+msgstr ""
+
+#: app/Controllers/Front/Shortcode.php:54
+msgid "Password"
+msgstr ""
+
+#: app/Controllers/Front/Shortcode.php:55
+#: views/shortcodes/register/template-1.php:31
+msgid "Remember Me"
+msgstr ""
+
+#: app/Controllers/Front/Shortcode.php:56
+#: app/Controllers/Front/Shortcode.php:100
+msgid "Sign In"
+msgstr ""
+
+#: app/Controllers/Front/Shortcode.php:76
+#: views/shortcodes/register/template-1.php:34
+msgid "Forgot Password?"
+msgstr ""
+
+#: app/Controllers/Front/Shortcode.php:101
+msgid "Welcome back! sign in and let the greenery spark your joy"
+msgstr ""
+
+#: app/Controllers/Front/Shortcode.php:103
+#: views/shortcodes/reset/template-1.php:73
+msgid "Don't have an account?"
+msgstr ""
+
+#: app/Controllers/Front/Shortcode.php:105
+#: views/shortcodes/reset/template-1.php:75
+msgid "Sign Up"
+msgstr ""
+
+#: app/Controllers/Front/Shortcode.php:118
+msgid "You are already registered."
+msgstr ""
+
+#: app/Controllers/Front/Shortcode.php:141
+#, php-format
+msgid "Invlaid template <code>%1$s</code> used. Valid options are: <code>%2$s</code>."
+msgstr ""
+
+#: app/Controllers/Payment/Braintree.php:27
+#: app/Helpers/functions.php:262
+msgid "Braintree"
+msgstr ""
+
+#: app/Controllers/Payment/Braintree.php:28
+msgid "Pay via Braintree"
+msgstr ""
+
+#: app/Controllers/Payment/Braintree.php:51
+#: app/Controllers/Payment/Mollie.php:50
+#: app/Controllers/Payment/PayPal.php:43
+#: app/Controllers/Payment/Square.php:67
+#: app/Controllers/Payment/Stripe.php:219
+msgid "Basic"
+msgstr ""
+
+#: app/Controllers/Payment/Braintree.php:56
+#: app/Controllers/Payment/Mollie.php:55
+#: app/Controllers/Payment/PayPal.php:48
+#: app/Controllers/Payment/Square.php:72
+#: app/Controllers/Payment/Stripe.php:224
+msgid "Sandbox Mode"
+msgstr ""
+
+#: app/Controllers/Payment/Braintree.php:57
+#: app/Controllers/Payment/Mollie.php:56
+#: app/Controllers/Payment/PayPal.php:49
+#: app/Controllers/Payment/Square.php:73
+#: app/Controllers/Payment/Stripe.php:225
+msgid "Enable to process test transactions without real charges."
+msgstr ""
+
+#: app/Controllers/Payment/Braintree.php:62
+#: app/Controllers/Payment/Mollie.php:61
+#: app/Controllers/Payment/PayPal.php:54
+#: app/Controllers/Payment/Square.php:78
+#: app/Controllers/Payment/Stripe.php:230
+msgid "Payment Method Logo"
+msgstr ""
+
+#: app/Controllers/Payment/Braintree.php:63
+#: app/Controllers/Payment/Mollie.php:62
+#: app/Controllers/Payment/PayPal.php:55
+#: app/Controllers/Payment/Square.php:79
+#: app/Controllers/Payment/Stripe.php:231
+msgid "Upload your payment method logo. Recommended dimensions: 512x512 px."
+msgstr ""
+
+#: app/Controllers/Payment/Braintree.php:69
+#: app/Controllers/Payment/Mollie.php:68
+#: app/Controllers/Payment/PayPal.php:61
+#: app/Controllers/Payment/Square.php:85
+#: app/Controllers/Payment/Stripe.php:237
+msgid "Name on Checkout"
+msgstr ""
+
+#: app/Controllers/Payment/Braintree.php:70
+#: app/Controllers/Payment/Mollie.php:69
+#: app/Controllers/Payment/PayPal.php:62
+#: app/Controllers/Payment/Square.php:86
+#: app/Controllers/Payment/Stripe.php:238
+msgid "The name displayed to customers on the checkout page."
+msgstr ""
+
+#: app/Controllers/Payment/Braintree.php:71
+#: app/Controllers/Payment/Braintree.php:72
+#: app/Controllers/Payment/Square.php:87
+#: app/Controllers/Payment/Square.php:88
+#: app/Controllers/Payment/Stripe.php:239
+#: app/Controllers/Payment/Stripe.php:240
+msgid "Credit Card"
+msgstr ""
+
+#: app/Controllers/Payment/Braintree.php:78
+#: app/Controllers/Payment/Cash_On_Delivery.php:48
+#: app/Controllers/Payment/Mollie.php:77
+#: app/Controllers/Payment/PayPal.php:70
+#: app/Controllers/Payment/Square.php:94
+#: app/Controllers/Payment/Stripe.php:269
+msgid "Initial status assigned to new orders placed through this payment method."
+msgstr ""
+
+#: app/Controllers/Payment/Braintree.php:90
+msgid "Braintree Credentials"
+msgstr ""
+
+#: app/Controllers/Payment/Braintree.php:95
+msgid "Merchant ID"
+msgstr ""
+
+#: app/Controllers/Payment/Braintree.php:96
+#: app/Controllers/Payment/Braintree.php:103
+msgid "t6b2r9xxxx"
+msgstr ""
+
+#: app/Controllers/Payment/Braintree.php:97
+msgid "Your Braintree merchant ID. Get this from your <a href=\"https://www.braintreegateway.com/login\" target=\"_blank\">Braintree Control Panel</a> under Account > API Keys."
+msgstr ""
+
+#: app/Controllers/Payment/Braintree.php:102
+msgid "Public Key"
+msgstr ""
+
+#: app/Controllers/Payment/Braintree.php:104
+msgid "Your Braintree public key for API authentication. Found in the <a href=\"https://www.braintreegateway.com/login\" target=\"_blank\">Braintree Control Panel</a> under Account > API Keys."
+msgstr ""
+
+#: app/Controllers/Payment/Braintree.php:109
+msgid "Private Key"
+msgstr ""
+
+#: app/Controllers/Payment/Braintree.php:110
+msgid "4f8a2c6exxxx"
+msgstr ""
+
+#: app/Controllers/Payment/Braintree.php:111
+msgid "Your Braintree private key for server-side API calls. Located in the <a href=\"https://www.braintreegateway.com/login\" target=\"_blank\">Braintree Control Panel</a> under Account > API Keys."
+msgstr ""
+
+#: app/Controllers/Payment/Braintree.php:116
+msgid "Tokenization Key"
+msgstr ""
+
+#: app/Controllers/Payment/Braintree.php:117
+msgid "production_t6b2r9h5_4f8axxxx"
+msgstr ""
+
+#: app/Controllers/Payment/Braintree.php:118
+msgid "Your Braintree tokenization key for client-side payment processing. Generate this in the <a href=\"https://www.braintreegateway.com/login\" target=\"_blank\">Braintree Control Panel</a> under Account > API > Tokenization Keys."
+msgstr ""
+
+#: app/Controllers/Payment/Cash_On_Delivery.php:27
+#: app/Helpers/functions.php:246
+msgid "Cash on Delivery"
+msgstr ""
+
+#: app/Controllers/Payment/Cash_On_Delivery.php:28
+msgid "Pay via Cash on Delivery"
+msgstr ""
+
+#: app/Controllers/Payment/Cash_On_Delivery.php:59
+#: build/easycommerce.bundle.js:40487
+#: build/easycommerce.bundle.js:41305
+#: build/easycommerce.bundle.js:41777
+#: build/editor.bundle.js:898
+msgid "Instruction"
+msgstr ""
+
+#: app/Controllers/Payment/Cash_On_Delivery.php:60
+msgid "Instructions shown to the customer on the checkout page."
+msgstr ""
+
+#: app/Controllers/Payment/Cash_On_Delivery.php:61
+msgid "e.g. Please have the exact amount ready upon delivery."
+msgstr ""
+
+#: app/Controllers/Payment/Mollie.php:26
+#: app/Controllers/Payment/Mollie.php:70
+#: app/Controllers/Payment/Mollie.php:71
+#: app/Helpers/functions.php:266
+msgid "Mollie"
+msgstr ""
+
+#: app/Controllers/Payment/Mollie.php:27
+msgid "Pay via Mollie"
+msgstr ""
+
+#: app/Controllers/Payment/Mollie.php:89
+msgid "Mollie Credentials"
+msgstr ""
+
+#: app/Controllers/Payment/Mollie.php:94
+msgid "API Key"
+msgstr ""
+
+#: app/Controllers/Payment/Mollie.php:95
+msgid "live_dHar4XY7xxxx"
+msgstr ""
+
+#: app/Controllers/Payment/Mollie.php:96
+msgid "Your Mollie API key for authentication. Get this from your <a href=\"https://my.mollie.com/dashboard/developers/api-keys\" target=\"_blank\">Mollie Dashboard API Keys</a> section."
+msgstr ""
+
+#: app/Controllers/Payment/Mollie.php:101
+msgid "Profile ID"
+msgstr ""
+
+#: app/Controllers/Payment/Mollie.php:102
+msgid "pfl_aP3bxxxx"
+msgstr ""
+
+#: app/Controllers/Payment/Mollie.php:103
+msgid "Your Mollie website profile ID. View this in your <a href=\"https://www.mollie.com/dashboard/settings/profiles\" target=\"_blank\">Mollie Dashboard Profiles</a> section."
+msgstr ""
+
+#: app/Controllers/Payment/PayPal.php:19
+#: app/Controllers/Payment/PayPal.php:63
+#: app/Controllers/Payment/PayPal.php:64
+#: app/Helpers/functions.php:254
+msgid "PayPal"
+msgstr ""
+
+#: app/Controllers/Payment/PayPal.php:20
+msgid "Pay via paypal"
+msgstr ""
+
+#: app/Controllers/Payment/PayPal.php:83
+msgid "PayPal Credentials"
+msgstr ""
+
+#: app/Controllers/Payment/PayPal.php:88
+msgid "Client ID"
+msgstr ""
+
+#: app/Controllers/Payment/PayPal.php:89
+msgid "AZDt2lKXsxxxx"
+msgstr ""
+
+#: app/Controllers/Payment/PayPal.php:90
+msgid "Your PayPal client ID for API authentication. Get this from your <a href=\"https://developer.paypal.com/dashboard/applications/sandbox\" target=\"_blank\">PayPal Developer Dashboard</a> under Apps & Credentials."
+msgstr ""
+
+#: app/Controllers/Payment/PayPal.php:95
+msgid "Client Secret Key"
+msgstr ""
+
+#: app/Controllers/Payment/PayPal.php:96
+msgid "EL5G3xxxx"
+msgstr ""
+
+#: app/Controllers/Payment/PayPal.php:97
+msgid "Your PayPal client secret for API authentication. Found in the <a href=\"https://developer.paypal.com/dashboard/applications/sandbox\" target=\"_blank\">PayPal Developer Dashboard</a> under Apps & Credentials."
+msgstr ""
+
+#: app/Controllers/Payment/PayPal.php:102
+msgid "PayPal Merchant ID"
+msgstr ""
+
+#: app/Controllers/Payment/PayPal.php:103
+msgid "QBKKG4xxxx"
+msgstr ""
+
+#: app/Controllers/Payment/PayPal.php:104
+msgid "Your PayPal merchant account ID. View this in your <a href=\"https://www.paypal.com/businessprofile/settings\" target=\"_blank\">PayPal Business Profile</a> settings."
+msgstr ""
+
+#: app/Controllers/Payment/Square.php:38
+#: app/Helpers/functions.php:258
+msgid "Square"
+msgstr ""
+
+#: app/Controllers/Payment/Square.php:39
+msgid "Pay via Square"
+msgstr ""
+
+#: app/Controllers/Payment/Square.php:106
+#: app/Controllers/Payment/Stripe.php:281
+msgid "Credentials"
+msgstr ""
+
+#: app/Controllers/Payment/Square.php:111
+msgid "Application ID"
+msgstr ""
+
+#: app/Controllers/Payment/Square.php:112
+msgid "sq0idp-RmT8xxxx"
+msgstr ""
+
+#: app/Controllers/Payment/Square.php:113
+msgid "Your Square application ID. Get this from your <a href=\"https://developer.squareup.com/apps\" target=\"_blank\">Developer Console</a> under the Credentials section."
+msgstr ""
+
+#: app/Controllers/Payment/Square.php:118
+msgid "Access Token"
+msgstr ""
+
+#: app/Controllers/Payment/Square.php:119
+msgid "EAAAEPjXxxxx"
+msgstr ""
+
+#: app/Controllers/Payment/Square.php:120
+msgid "Your Square access token for API authentication. Found in the <a href=\"https://developer.squareup.com/apps\" target=\"_blank\">Developer Console</a> Credentials section."
+msgstr ""
+
+#: app/Controllers/Payment/Square.php:125
+msgid "Location ID"
+msgstr ""
+
+#: app/Controllers/Payment/Square.php:126
+msgid "L1ABC2xxxx"
+msgstr ""
+
+#: app/Controllers/Payment/Square.php:127
+msgid "Your Square location ID. View this in the <a href=\"https://developer.squareup.com/apps\" target=\"_blank\">Developer Console</a> under the Locations section."
+msgstr ""
+
+#: app/Controllers/Payment/Stripe.php:45
+#: app/Helpers/functions.php:250
+msgid "Stripe"
+msgstr ""
+
+#: app/Controllers/Payment/Stripe.php:46
+msgid "Pay via stripe"
+msgstr ""
+
+#: app/Controllers/Payment/Stripe.php:245
+msgid "Payment Element Layout"
+msgstr ""
+
+#: app/Controllers/Payment/Stripe.php:246
+msgid "Control how payment methods are organized in the checkout form. Tabs show methods in a compact tabbed interface, while accordion expands each method."
+msgstr ""
+
+#: app/Controllers/Payment/Stripe.php:248
+msgid "Tabs (Default)"
+msgstr ""
+
+#: app/Controllers/Payment/Stripe.php:249
+msgid "Accordion"
+msgstr ""
+
+#: app/Controllers/Payment/Stripe.php:256
+msgid "Payment Element Theme"
+msgstr ""
+
+#: app/Controllers/Payment/Stripe.php:257
+msgid "Select the visual appearance of the payment form. Choose from Stripe\"s default styling or alternative themes."
+msgstr ""
+
+#: app/Controllers/Payment/Stripe.php:259
+msgid "Stripe (Default)"
+msgstr ""
+
+#: app/Controllers/Payment/Stripe.php:260
+msgid "Night"
+msgstr ""
+
+#: app/Controllers/Payment/Stripe.php:261
+msgid "Flat"
+msgstr ""
+
+#: app/Controllers/Payment/Stripe.php:286
+msgid "Publishable Key"
+msgstr ""
+
+#: app/Controllers/Payment/Stripe.php:287
+msgid "pk_live_51Abxxxx"
+msgstr ""
+
+#: app/Controllers/Payment/Stripe.php:288
+msgid "Your Stripe publishable key used for client-side operations like displaying payment forms. Available in your <a href=\"https://dashboard.stripe.com/apikeys\" target=\"_blank\">Stripe Dashboard API Keys</a> section."
+msgstr ""
+
+#: app/Controllers/Payment/Stripe.php:293
+msgid "Secret Key"
+msgstr ""
+
+#: app/Controllers/Payment/Stripe.php:294
+msgid "sk_live_51Abxxxx"
+msgstr ""
+
+#: app/Controllers/Payment/Stripe.php:295
+msgid "Your Stripe secret key used for server-side operations like processing payments. Keep this secure and never share it. Found in your <a href=\"https://dashboard.stripe.com/apikeys\" target=\"_blank\">Stripe Dashboard API Keys</a> section."
+msgstr ""
+
+#: app/Controllers/Payment/Stripe.php:300
+msgid "Webhook Secret"
+msgstr ""
+
+#: app/Controllers/Payment/Stripe.php:301
+#: app/Controllers/Payment/Stripe.php:326
+msgid "whsec_xxxx"
+msgstr ""
+
+#. translators: %s: Link to Stripe Dashboard.
+#: app/Controllers/Payment/Stripe.php:304
+#, php-format
+msgid "Secret key for verifying webhook authenticity. The plugin automatically registers webhooks, but you can manually enter the webhook signing secret from your <a href=\"%s\" target=\"_blank\">Stripe Dashboard Webhooks</a> section for additional security."
+msgstr ""
+
+#: app/Controllers/Payment/Stripe.php:311
+msgid "Sandbox Publishable Key"
+msgstr ""
+
+#: app/Controllers/Payment/Stripe.php:312
+msgid "pk_test_51Abxxxx"
+msgstr ""
+
+#: app/Controllers/Payment/Stripe.php:313
+msgid "Your Stripe test publishable key for client-side operations during development. Available in your <a href=\"https://dashboard.stripe.com/test/apikeys\" target=\"_blank\">Stripe Test Dashboard API Keys</a> section."
+msgstr ""
+
+#: app/Controllers/Payment/Stripe.php:318
+msgid "Sandbox Secret Key"
+msgstr ""
+
+#: app/Controllers/Payment/Stripe.php:319
+msgid "sk_test_51Abxxxx"
+msgstr ""
+
+#: app/Controllers/Payment/Stripe.php:320
+msgid "Your Stripe test secret key for server-side operations during development. Keep this secure. Found in your <a href=\"https://dashboard.stripe.com/test/apikeys\" target=\"_blank\">Stripe Test Dashboard API Keys</a> section."
+msgstr ""
+
+#: app/Controllers/Payment/Stripe.php:325
+msgid "Sandbox Webhook Secret"
+msgstr ""
+
+#. translators: %s: Webhook URL.
+#: app/Controllers/Payment/Stripe.php:329
+#, php-format
+msgid "For testing in sandbox mode, use Stripe CLI: <code>stripe listen --skip-verify --forward-to %s</code>. Copy the webhook signing secret shown in the CLI output here. The plugin handles webhook registration automatically."
+msgstr ""
+
+#: app/Controllers/Payment/Stripe.php:353
+msgid "Enabled Payment Methods"
+msgstr ""
+
+#: app/Controllers/Payment/Stripe.php:361
+msgid "No payment methods are currently enabled."
+msgstr ""
+
+#: app/Controllers/Payment/Stripe.php:366
+msgid "Manage Payment Methods"
+msgstr ""
+
+#: app/Controllers/Payment/Stripe.php:371
+#, php-format
+msgid "Configure which payment methods are available in your Stripe account. <a href=\"%s\" target=\"_blank\" class=\"text-blue-600 hover:text-blue-800 underline\">Manage Payment Methods</a>"
+msgstr ""
+
+#: app/Controllers/Payment/Stripe.php:386
+msgid "Payment Methods"
+msgstr ""
+
+#: app/Controllers/Payment/Stripe/API/Webhook.php:28
+msgid "Invalid request."
+msgstr ""
+
+#: app/Controllers/Payment/Stripe/API/Webhook.php:34
+msgid "Missing Stripe signature."
+msgstr ""
+
+#: app/Controllers/Payment/Stripe/Helpers/functions.php:145
+msgid "EasyCommerce Stripe Payment Gateway"
+msgstr ""
+
+#: app/Controllers/Payment/Stripe/Helpers/Payment_Methods.php:209
+msgid "Credit/Debit Cards"
+msgstr ""
+
+#: app/Controllers/Payment/Stripe/Helpers/Payment_Methods.php:210
+msgid "Cartes Bancaires"
+msgstr ""
+
+#: app/Controllers/Payment/Stripe/Helpers/Payment_Methods.php:211
+msgid "Korean Cards"
+msgstr ""
+
+#: app/Controllers/Payment/Stripe/Helpers/Payment_Methods.php:214
+msgid "Alipay"
+msgstr ""
+
+#: app/Controllers/Payment/Stripe/Helpers/Payment_Methods.php:215
+msgid "Amazon Pay"
+msgstr ""
+
+#: app/Controllers/Payment/Stripe/Helpers/Payment_Methods.php:216
+msgid "Apple Pay"
+msgstr ""
+
+#: app/Controllers/Payment/Stripe/Helpers/Payment_Methods.php:217
+msgid "Cash App Pay"
+msgstr ""
+
+#: app/Controllers/Payment/Stripe/Helpers/Payment_Methods.php:218
+msgid "Google Pay"
+msgstr ""
+
+#: app/Controllers/Payment/Stripe/Helpers/Payment_Methods.php:219
+msgid "Kakao Pay"
+msgstr ""
+
+#: app/Controllers/Payment/Stripe/Helpers/Payment_Methods.php:220
+msgid "Link"
+msgstr ""
+
+#: app/Controllers/Payment/Stripe/Helpers/Payment_Methods.php:221
+msgid "MB WAY"
+msgstr ""
+
+#: app/Controllers/Payment/Stripe/Helpers/Payment_Methods.php:222
+msgid "Naver Pay"
+msgstr ""
+
+#: app/Controllers/Payment/Stripe/Helpers/Payment_Methods.php:223
+msgid "PAYCO"
+msgstr ""
+
+#: app/Controllers/Payment/Stripe/Helpers/Payment_Methods.php:224
+msgid "Samsung Pay"
+msgstr ""
+
+#: app/Controllers/Payment/Stripe/Helpers/Payment_Methods.php:225
+msgid "WeChat Pay"
+msgstr ""
+
+#: app/Controllers/Payment/Stripe/Helpers/Payment_Methods.php:228
+msgid "Stablecoins and Crypto"
+msgstr ""
+
+#: app/Controllers/Payment/Stripe/Helpers/Payment_Methods.php:231
+msgid "Multibanco"
+msgstr ""
+
+#: app/Controllers/Payment/Stripe/Helpers/Payment_Methods.php:234
+msgid "Bancontact"
+msgstr ""
+
+#: app/Controllers/Payment/Stripe/Helpers/Payment_Methods.php:235
+msgid "BLIK"
+msgstr ""
+
+#: app/Controllers/Payment/Stripe/Helpers/Payment_Methods.php:236
+msgid "EPS"
+msgstr ""
+
+#: app/Controllers/Payment/Stripe/Helpers/Payment_Methods.php:237
+msgid "giropay"
+msgstr ""
+
+#: app/Controllers/Payment/Stripe/Helpers/Payment_Methods.php:238
+msgid "iDEAL"
+msgstr ""
+
+#: app/Controllers/Payment/Stripe/Helpers/Payment_Methods.php:239
+msgid "Przelewy24"
+msgstr ""
+
+#: app/Controllers/Payment/Stripe/Helpers/Payment_Methods.php:240
+msgid "Sofort"
+msgstr ""
+
+#: app/Controllers/Payment/Stripe/Helpers/Payment_Methods.php:243
+msgid "Affirm"
+msgstr ""
+
+#: app/Controllers/Payment/Stripe/Helpers/Payment_Methods.php:244
+msgid "Afterpay/Clearpay"
+msgstr ""
+
+#: app/Controllers/Payment/Stripe/Helpers/Payment_Methods.php:245
+msgid "Klarna"
+msgstr ""
+
+#: app/Controllers/Payment/Stripe/Helpers/Payment_Methods.php:246
+msgid "Zip"
+msgstr ""
+
+#: app/Controllers/Payment/Stripe/Helpers/Payment_Methods.php:249
+msgid "ACH Direct Debit"
+msgstr ""
+
+#: app/Controllers/Payment/Stripe/Helpers/Payment_Methods.php:250
+msgid "Canadian Pre-authorized Debits"
+msgstr ""
+
+#: app/Controllers/Payment/Stripe/Helpers/Payment_Methods.php:251
+msgid "Bacs Direct Debit"
+msgstr ""
+
+#: app/Controllers/Payment/Stripe/Helpers/Payment_Methods.php:252
+msgid "SEPA Direct Debit"
+msgstr ""
+
+#: app/Controllers/Payment/Stripe/Helpers/Payment_Methods.php:255
+#: app/Helpers/functions.php:274
+msgid "Bank Transfer"
+msgstr ""
+
+#: app/Controllers/Payment/Stripe/Helpers/Payment_Methods.php:258
+msgid "Pix"
+msgstr ""
+
+#: app/Helpers/Field/Media.php:47
+msgid "Upload your file"
+msgstr ""
+
+#: app/Helpers/functions.php:155
+#, php-format
+msgid "[%s] Password Reset"
+msgstr ""
+
+#: app/Helpers/functions.php:157
+msgid "Someone has requested a password reset for the following account:"
+msgstr ""
+
+#: app/Helpers/functions.php:158
+#, php-format
+msgid "Site Name: %s"
+msgstr ""
+
+#: app/Helpers/functions.php:159
+#, php-format
+msgid "Username: %s"
+msgstr ""
+
+#: app/Helpers/functions.php:160
+msgid "If this was a mistake, just ignore this email and nothing will happen."
+msgstr ""
+
+#: app/Helpers/functions.php:161
+msgid "To reset your password, visit the following address:"
+msgstr ""
+
+#: app/Helpers/functions.php:173
+#: app/Helpers/functions.php:184
+msgid "Template 1"
+msgstr ""
+
+#: app/Helpers/functions.php:174
+#: app/Helpers/functions.php:185
+msgid "Template 2"
+msgstr ""
+
+#: app/Helpers/functions.php:186
+msgid "Template 3"
+msgstr ""
+
+#: app/Helpers/functions.php:192
+msgid "Request by Customer"
+msgstr ""
+
+#: app/Helpers/functions.php:193
+msgid "Duplicate"
+msgstr ""
+
+#: app/Helpers/functions.php:194
+msgid "Fraudulent"
+msgstr ""
+
+#: app/Helpers/functions.php:200
+msgid "Low to High"
+msgstr ""
+
+#: app/Helpers/functions.php:201
+msgid "High to Low"
+msgstr ""
+
+#: app/Helpers/functions.php:202
+msgid "Newest"
+msgstr ""
+
+#: app/Helpers/functions.php:203
+msgid "Oldest"
+msgstr ""
+
+#: app/Helpers/functions.php:204
+msgid "Best Selling"
+msgstr ""
+
+#: app/Helpers/functions.php:205
+msgid "Lowest Selling"
+msgstr ""
+
+#: app/Helpers/functions.php:206
+msgid "Top rating"
+msgstr ""
+
+#: app/Helpers/functions.php:207
+msgid "Lowest rating"
+msgstr ""
+
+#: app/Helpers/functions.php:213
+msgid "Pending Order"
+msgstr ""
+
+#: app/Helpers/functions.php:214
+msgid "Processing Order"
+msgstr ""
+
+#: app/Helpers/functions.php:215
+msgid "Completed Order"
+msgstr ""
+
+#: app/Helpers/functions.php:216
+msgid "Cancelled Order"
+msgstr ""
+
+#: app/Helpers/functions.php:217
+msgid "On-hold Order"
+msgstr ""
+
+#: app/Helpers/functions.php:218
+msgid "Refunded Order"
+msgstr ""
+
+#: app/Helpers/functions.php:270
+msgid "Paddle"
+msgstr ""
+
+#: app/Helpers/functions.php:288
+#: views/store/add-product/title.php:10
+#: build/easycommerce.bundle.js:30607
+#: build/easycommerce.bundle.js:39248
+msgid "Draft"
+msgstr ""
+
+#: app/Helpers/functions.php:289
+msgid "Trash"
+msgstr ""
+
+#: app/Helpers/functions.php:304
+msgid "Returned"
+msgstr ""
+
+#: app/Helpers/functions.php:312
+msgid "Millimeter"
+msgstr ""
+
+#: app/Helpers/functions.php:316
+msgid "Centimeter"
+msgstr ""
+
+#: app/Helpers/functions.php:320
+msgid "Inch"
+msgstr ""
+
+#: app/Helpers/functions.php:324
+msgid "Meter"
+msgstr ""
+
+#: app/Helpers/functions.php:328
+msgid "Foot"
+msgstr ""
+
+#: app/Helpers/functions.php:332
+msgid "Yard"
+msgstr ""
+
+#: app/Helpers/functions.php:341
+msgid "Gram"
+msgstr ""
+
+#: app/Helpers/functions.php:345
+msgid "Kilogram"
+msgstr ""
+
+#: app/Helpers/functions.php:349
+msgid "Pound"
+msgstr ""
+
+#: app/Helpers/functions.php:353
+msgid "Ounce"
+msgstr ""
+
+#: app/Helpers/functions.php:379
+msgid "Second"
+msgstr ""
+
+#: app/Helpers/functions.php:380
+msgid "Minute"
+msgstr ""
+
+#: app/Helpers/functions.php:381
+msgid "Hour"
+msgstr ""
+
+#: app/Helpers/functions.php:382
+msgid "Day"
+msgstr ""
+
+#: app/Helpers/functions.php:383
+msgid "Week"
+msgstr ""
+
+#: app/Helpers/functions.php:384
+msgid "Month"
+msgstr ""
+
+#: app/Helpers/functions.php:385
+msgid "Year"
+msgstr ""
+
+#: app/Helpers/functions.php:489
+msgid "Today"
+msgstr ""
+
+#: app/Helpers/functions.php:490
+msgid "Yesterday"
+msgstr ""
+
+#: app/Helpers/functions.php:491
+msgid "This Week"
+msgstr ""
+
+#: app/Helpers/functions.php:492
+msgid "Last Week"
+msgstr ""
+
+#: app/Helpers/functions.php:493
+msgid "Last 7 Days"
+msgstr ""
+
+#: app/Helpers/functions.php:494
+msgid "This Month"
+msgstr ""
+
+#: app/Helpers/functions.php:495
+msgid "Last Month"
+msgstr ""
+
+#: app/Helpers/functions.php:496
+msgid "Last 30 Days"
+msgstr ""
+
+#: app/Helpers/functions.php:497
+msgid "This Year"
+msgstr ""
+
+#: app/Helpers/functions.php:498
+msgid "Last Year"
+msgstr ""
+
+#: app/Helpers/functions.php:656
+#: app/Helpers/functions.php:850
+msgid "Loading.."
+msgstr ""
+
+#: app/Helpers/functions.php:680
+#: app/Helpers/functions.php:681
+msgid "All Products"
+msgstr ""
+
+#: app/Helpers/functions.php:686
+#: app/Helpers/functions.php:687
+msgid "Add Product"
+msgstr ""
+
+#: app/Helpers/functions.php:692
+#: app/Helpers/functions.php:693
+#: views/store/add-attributes/add-new.php:12
+#: views/store/add-product/draggable-grid.php:9
+#: build/easycommerce.bundle.js:36325
+msgid "Attributes"
+msgstr ""
+
+#: app/Helpers/functions.php:734
+#: app/Helpers/functions.php:735
+msgid "Abandoned Carts"
+msgstr ""
+
+#: app/Helpers/functions.php:758
+#: app/Helpers/functions.php:759
+#: views/templates/single-product/product-reivew.php:25
+msgid "Reviews"
+msgstr ""
+
+#: app/Helpers/functions.php:782
+#: app/Helpers/functions.php:783
+msgid "Overview"
+msgstr ""
+
+#: app/Helpers/functions.php:794
+#: app/Helpers/functions.php:795
+msgid "Revenues"
+msgstr ""
+
+#: app/Helpers/functions.php:841
+#: app/Helpers/functions.php:842
+#: app/Helpers/functions.php:857
+#: app/Helpers/functions.php:858
+msgid "Wizard"
+msgstr ""
+
+#: app/Helpers/functions.php:1089
+msgid "Select Business Type"
+msgstr ""
+
+#: app/Helpers/functions.php:1090
+msgid "Art and Antiques"
+msgstr ""
+
+#: app/Helpers/functions.php:1091
+msgid "Clothing & Apparel"
+msgstr ""
+
+#: app/Helpers/functions.php:1092
+msgid "Beauty & Cosmetics"
+msgstr ""
+
+#: app/Helpers/functions.php:1093
+msgid "Electronics & Gadgets"
+msgstr ""
+
+#: app/Helpers/functions.php:1094
+msgid "Home & Kitchen Goods"
+msgstr ""
+
+#: app/Helpers/functions.php:1095
+msgid "Pet Supplies"
+msgstr ""
+
+#: app/Helpers/functions.php:1096
+msgid "Sporting Goods & Fitness Equipment"
+msgstr ""
+
+#: app/Helpers/functions.php:1097
+msgid "Software & SaaS"
+msgstr ""
+
+#: app/Helpers/functions.php:1098
+msgid "eBooks & Online Courses"
+msgstr ""
+
+#: app/Helpers/functions.php:1099
+msgid "Digital Art & Graphics"
+msgstr ""
+
+#: app/Helpers/functions.php:1100
+msgid "Website Themes & Plugins"
+msgstr ""
+
+#: app/Helpers/functions.php:1101
+msgid "Consulting & Coaching Services"
+msgstr ""
+
+#: app/Helpers/functions.php:1102
+msgid "Subscription Boxes"
+msgstr ""
+
+#: app/Helpers/functions.php:1103
+msgid "Gourmet & Specialty Foods"
+msgstr ""
+
+#: app/Helpers/functions.php:1104
+msgid "Coffee & Tea Products"
+msgstr ""
+
+#: app/Helpers/functions.php:1105
+msgid "Automotive Parts & Accessories"
+msgstr ""
+
+#. Translators: %s is the post type that the user should choose.
+#: app/Helpers/Utility.php:271
+#, php-format
+msgid "- Choose a %s -"
+msgstr ""
+
+#: app/Models/Product.php:653
+#, php-format
+msgid "The SKU \"%s\" is already in use."
+msgstr ""
+
+#: app/Services/AI.php:98
+msgid "You don't have your EasyCommerce API connected!"
+msgstr ""
+
+#: app/Services/AI.php:326
+#: app/Services/AI.php:364
+#: app/Services/AI.php:410
+#: app/Services/AI.php:454
+#: app/Services/AI.php:496
+#: app/Services/AI.php:546
+#: app/Services/AI.php:595
+msgid "Service is not ready: Missing API credentials"
+msgstr ""
+
+#: app/Services/AI.php:373
+#: app/Services/AI.php:419
+#: app/Services/AI.php:463
+#: app/Services/AI.php:505
+#: app/Services/AI.php:555
+#: app/Services/AI.php:604
+msgid "No AI credits available. Please upgrade to the Pro plan or use your own API key."
+msgstr ""
+
+#: views/components/survey.php:3
+msgid "Temporary deactivation"
+msgstr ""
+
+#: views/components/survey.php:4
+msgid "Lack of features"
+msgstr ""
+
+#: views/components/survey.php:5
+msgid "Found better alternative"
+msgstr ""
+
+#: views/components/survey.php:6
+msgid "Compatibility issues"
+msgstr ""
+
+#: views/components/survey.php:7
+msgid "Poor UI/UX"
+msgstr ""
+
+#: views/components/survey.php:8
+msgid "Limited customization"
+msgstr ""
+
+#: views/components/survey.php:9
+msgid "Bugs and errors"
+msgstr ""
+
+#: views/components/survey.php:10
+msgid "Performance issues"
+msgstr ""
+
+#: views/components/survey.php:19
+msgid "Others"
+msgstr ""
+
+#: views/components/survey.php:40
+#, php-format
+msgid "We're sorry to see you go, %s!"
+msgstr ""
+
+#: views/components/survey.php:41
+msgid "Would you tell us why you're deactivating?"
+msgstr ""
+
+#: views/components/survey.php:43
+msgid "Building an ecommerce plugin is a big journey, and your thoughtful feedback helps us make EasyCommerce better for everyone."
+msgstr ""
+
+#: views/components/survey.php:66
+msgid "Please explain in a few words.."
+msgstr ""
+
+#: views/components/survey.php:72
+msgid "Skip &amp; Deactivate"
+msgstr ""
+
+#: views/components/survey.php:79
+msgid "Deactivate &amp; Submit"
+msgstr ""
+
+#: views/settings/ai-usage.php:34
+msgid "Connect to unlock AI"
+msgstr ""
+
+#: views/settings/ai-usage.php:35
+msgid "Connect a free API key to power Store Copilot, Shopping Agent, AI Writer and more - 200 free AI credits your first month, then 100 every month."
+msgstr ""
+
+#: views/settings/ai-usage.php:37
+msgid "Connect your store"
+msgstr ""
+
+#: views/settings/ai-usage.php:47
+msgid "AI Writer"
+msgstr ""
+
+#: views/settings/ai-usage.php:49
+msgid "Template Builder"
+msgstr ""
+
+#: views/settings/ai-usage.php:50
+msgid "Spelling Fix"
+msgstr ""
+
+#: views/settings/ai-usage.php:53
+msgid "Image Editor"
+msgstr ""
+
+#: views/settings/ai-usage.php:54
+msgid "Background Removal"
+msgstr ""
+
+#: views/settings/ai-usage.php:55
+msgid "Store Copilot"
+msgstr ""
+
+#: views/settings/ai-usage.php:57
+msgid "AI Agent"
+msgstr ""
+
+#: views/settings/ai-usage.php:211
+msgid "You've used all your AI credits for this period. Upgrade your plan or buy more to keep using AI features."
+msgstr ""
+
+#: views/settings/ai-usage.php:212
+msgid "Upgrade"
+msgstr ""
+
+#: views/settings/ai-usage.php:219
+msgid "Current plan"
+msgstr ""
+
+#: views/settings/ai-usage.php:224
+#, php-format
+msgid "%s credits/month"
+msgstr ""
+
+#: views/settings/ai-usage.php:230
+msgid "Upgrade plan"
+msgstr ""
+
+#: views/settings/ai-usage.php:230
+msgid "Buy more credits"
+msgstr ""
+
+#: views/settings/ai-usage.php:239
+#, php-format
+msgid "%1$s of %2$s credits used"
+msgstr ""
+
+#: views/settings/ai-usage.php:240
+#, php-format
+msgid "Resets %s"
+msgstr ""
+
+#: views/settings/ai-usage.php:247
+msgid "Used this period"
+msgstr ""
+
+#: views/settings/ai-usage.php:251
+msgid "Credits remaining"
+msgstr ""
+
+#: views/settings/ai-usage.php:255
+msgid "Next refill"
+msgstr ""
+
+#: views/settings/ai-usage.php:260
+msgid "Plan credits reset monthly and do not roll over. Top-up credits (coming soon) never expire."
+msgstr ""
+
+#: views/settings/ai-usage.php:265
+msgid "Date"
+msgstr ""
+
+#: views/settings/ai-usage.php:266
+msgid "Feature"
+msgstr ""
+
+#: views/settings/ai-usage.php:267
+msgid "Prompt"
+msgstr ""
+
+#: views/settings/ai-usage.php:268
+msgid "Response"
+msgstr ""
+
+#: views/settings/ai-usage.php:269
+msgid "User"
+msgstr ""
+
+#: views/settings/ai-usage.php:270
+msgid "Credits"
+msgstr ""
+
+#: views/settings/ai-usage.php:275
+msgid "No AI usage yet."
+msgstr ""
+
+#: views/shortcodes/checkout/template-1.php:59
+#: views/shortcodes/checkout/template-2.php:99
+#: views/shortcodes/checkout/template-2.php:168
+msgid "Confirm Order"
+msgstr ""
+
+#: views/shortcodes/checkout/template-2.php:48
+#: views/shortcodes/checkout/template-2.php:123
+msgid "Your Info"
+msgstr ""
+
+#: views/shortcodes/checkout/template-3.php:27
+msgid "Back to shop"
+msgstr ""
+
+#: views/shortcodes/checkout/template-3.php:34
+msgid "Product items"
+msgstr ""
+
+#: views/shortcodes/checkout/template-3.php:77
+#: views/shortcodes/payment/template-1.php:171
+msgid "Pay Now"
+msgstr ""
+
+#: views/shortcodes/checkout/template-3.php:84
+msgid "By clicking this, I agree to "
+msgstr ""
+
+#: views/shortcodes/checkout/template-3.php:86
+msgid "Terms & Conditions"
+msgstr ""
+
+#: views/shortcodes/checkout/template-3.php:88
+msgid " and "
+msgstr ""
+
+#: views/shortcodes/payment/template-1.php:10
+msgid "No order specified."
+msgstr ""
+
+#: views/shortcodes/payment/template-1.php:22
+msgid "This order has already been processed."
+msgstr ""
+
+#. translators: %d: order ID
+#: views/shortcodes/payment/template-1.php:82
+#, php-format
+msgid "Order #%d"
+msgstr ""
+
+#: views/shortcodes/payment/template-1.php:123
+#: views/templates/checkout/template-1/summary.php:34
+#: views/templates/checkout/template-2/summary.php:27
+#: views/templates/checkout/template-3/summary.php:24
+msgid "Subtotal"
+msgstr ""
+
+#: views/shortcodes/payment/template-1.php:129
+#: views/templates/checkout/template-1/summary.php:44
+#: views/templates/checkout/template-2/summary.php:37
+#: views/templates/checkout/template-3/summary.php:34
+msgid "Discount"
+msgstr ""
+
+#: views/shortcodes/payment/template-1.php:141
+msgid "Tax"
+msgstr ""
+
+#: views/shortcodes/payment/template-1.php:146
+msgid "Total"
+msgstr ""
+
+#: views/shortcodes/register/template-1.php:4
+msgid "Registration"
+msgstr ""
+
+#: views/shortcodes/register/template-1.php:7
+msgid "Welcome Back! Sign in and let the greenery spark your joy"
+msgstr ""
+
+#: views/shortcodes/register/template-1.php:12
+msgid "Username"
+msgstr ""
+
+#: views/shortcodes/register/template-1.php:20
+msgid "New password"
+msgstr ""
+
+#: views/shortcodes/register/template-1.php:25
+msgid "Confirm password"
+msgstr ""
+
+#: views/shortcodes/register/template-1.php:40
+msgid "Sign up"
+msgstr ""
+
+#: views/shortcodes/register/template-1.php:45
+msgid "By creating an account, you agree to our"
+msgstr ""
+
+#: views/shortcodes/register/template-1.php:49
+msgid "and"
+msgstr ""
+
+#: views/shortcodes/register/template-1.php:57
+msgid "Don’t have an account?"
+msgstr ""
+
+#: views/shortcodes/register/template-1.php:62
+msgid "Log in"
+msgstr ""
+
+#: views/shortcodes/reset/template-1.php:12
+msgid "Set New Password"
+msgstr ""
+
+#: views/shortcodes/reset/template-1.php:15
+msgid "Enter your new password below."
+msgstr ""
+
+#: views/shortcodes/reset/template-1.php:38
+#: views/shortcodes/reset/template-1.php:67
+msgid "Reset Password"
+msgstr ""
+
+#: views/shortcodes/reset/template-1.php:51
+msgid "Reset your password"
+msgstr ""
+
+#: views/shortcodes/reset/template-1.php:54
+msgid "Enter a valid e-mail to receive instruction on how to reset your password."
+msgstr ""
+
+#: views/shortcodes/reset/template-1.php:60
+msgid "Email or username"
+msgstr ""
+
+#: views/store/add-attributes/add-new.php:3
+#: build/easycommerce.bundle.js:33365
+msgid "Organize"
+msgstr ""
+
+#: views/store/add-attributes/add-new.php:229
+#: views/store/add-product/draggable-grid.php:77
+#: views/store/add-product/draggable-grid.php:167
+msgid "Add New"
+msgstr ""
+
+#: views/store/add-attributes/add-new.php:238
+#: build/easycommerce.bundle.js:13763
+msgid "Name"
+msgstr ""
+
+#: views/store/add-attributes/add-new.php:247
+#: build/easycommerce.bundle.js:38946
+msgid "Slug"
+msgstr ""
+
+#: views/store/add-attributes/add-new.php:257
+msgid "Type"
+msgstr ""
+
+#: views/store/add-attributes/add-new.php:267
+msgid "Select Type"
+msgstr ""
+
+#: views/store/add-attributes/add-new.php:270
+msgid "Image"
+msgstr ""
+
+#: views/store/add-attributes/add-new.php:273
+#: views/store/add-product/draggable-grid.php:47
+msgid "Color"
+msgstr ""
+
+#: views/store/add-attributes/add-new.php:276
+msgid "Text"
+msgstr ""
+
+#: views/store/add-attributes/add-new.php:282
+msgid "Option"
+msgstr ""
+
+#: views/store/add-product/draggable-grid.php:46
+msgid "Size"
+msgstr ""
+
+#: views/store/add-product/draggable-grid.php:48
+msgid "Material"
+msgstr ""
+
+#: views/store/add-product/draggable-grid.php:49
+msgid "Brand"
+msgstr ""
+
+#: views/store/add-product/draggable-grid.php:52
+msgid "Select values"
+msgstr ""
+
+#: views/store/add-product/draggable-grid.php:53
+msgid "Blue"
+msgstr ""
+
+#: views/store/add-product/draggable-grid.php:54
+msgid "Red"
+msgstr ""
+
+#: views/store/add-product/draggable-grid.php:55
+msgid "White"
+msgstr ""
+
+#: views/store/add-product/draggable-grid.php:56
+msgid "Brown"
+msgstr ""
+
+#: views/store/add-product/draggable-grid.php:70
+msgid "Manage"
+msgstr ""
+
+#: views/store/add-product/draggable-grid.php:87
+msgid "Prices"
+msgstr ""
+
+#: views/store/add-product/draggable-grid.php:132
+msgid "Write Plan Name"
+msgstr ""
+
+#: views/store/add-product/draggable-grid.php:134
+#: build/easycommerce.bundle.js:35405
+#: build/easycommerce.bundle.js:35436
+#: build/easycommerce.bundle.js:36197
+msgid "Enter Price"
+msgstr ""
+
+#: views/store/add-product/draggable-grid.php:136
+#: build/easycommerce.bundle.js:35573
+#: build/easycommerce.bundle.js:36217
+#: build/easycommerce.bundle.js:36280
+#: build/easycommerce.bundle.js:36312
+msgid "SKU"
+msgstr ""
+
+#: views/store/add-product/draggable-grid.php:160
+#: build/easycommerce.bundle.js:36763
+msgid "Auto Generate Variants"
+msgstr ""
+
+#: views/store/add-product/draggable-grid.php:177
+#: build/easycommerce.bundle.js:38731
+msgid "Product Description"
+msgstr ""
+
+#: views/store/add-product/draggable-grid.php:215
+msgid "Add Product Summary"
+msgstr ""
+
+#: views/store/add-product/title.php:7
+msgid "Published"
+msgstr ""
+
+#: views/store/add-product/title.php:13
+msgid "Private"
+msgstr ""
+
+#: views/store/add-product/title.php:18
+msgid "Save Product"
+msgstr ""
+
+#: views/templates/archive-product/pagination.php:6
+#: build/wizard.bundle.js:4017
+msgid "Previous"
+msgstr ""
+
+#: views/templates/archive-product/pagination.php:7
+msgid "Next »"
+msgstr ""
+
+#: views/templates/checkout/template-1/billing.php:7
+#: views/templates/checkout/template-3/billing.php:5
+msgid "Billing Address"
+msgstr ""
+
+#: views/templates/checkout/template-1/items.php:11
+#: views/templates/checkout/template-2/items.php:11
+msgid "Your Cart"
+msgstr ""
+
+#: views/templates/checkout/template-1/items.php:96
+#: views/templates/checkout/template-2/items.php:96
+#: views/templates/checkout/template-3/items.php:122
+msgid "No items in the cart"
+msgstr ""
+
+#: views/templates/checkout/template-1/payment-methods.php:78
+#: views/templates/checkout/template-2/payment-methods.php:77
+#: views/templates/checkout/template-3/payment-methods.php:79
+msgid "Please select a payment method"
+msgstr ""
+
+#: views/templates/checkout/template-1/shipping.php:14
+msgid "Shipping Address"
+msgstr ""
+
+#: views/templates/checkout/template-1/shipping.php:23
+msgid "Same as Billing"
+msgstr ""
+
+#: views/templates/checkout/template-1/summary.php:16
+#: views/templates/checkout/template-2/summary.php:8
+#: views/templates/checkout/template-3/summary.php:6
+msgid "Order Summary"
+msgstr ""
+
+#: views/templates/checkout/template-1/summary.php:25
+#: views/templates/checkout/template-2/summary.php:17
+#: views/templates/checkout/template-3/summary.php:15
+msgid "Apply"
+msgstr ""
+
+#: views/templates/checkout/template-1/summary.php:80
+msgid "Shipping Cost"
+msgstr ""
+
+#: views/templates/checkout/template-1/summary.php:103
+#: build/easycommerce.bundle.js:13863
+msgid "Free Shipping"
+msgstr ""
+
+#: views/templates/checkout/template-1/summary.php:125
+#: views/templates/checkout/template-3/summary.php:100
+msgid "Please select a shipping method"
+msgstr ""
+
+#: views/templates/checkout/template-1/summary.php:136
+#: views/templates/checkout/template-3/summary.php:112
+msgid "Product Tax"
+msgstr ""
+
+#: views/templates/checkout/template-1/summary.php:151
+#: views/templates/checkout/template-3/summary.php:125
+msgid "Shipping Tax"
+msgstr ""
+
+#: views/templates/checkout/template-1/summary.php:167
+#: views/templates/checkout/template-2/summary.php:73
+#: views/templates/checkout/template-3/summary.php:138
+#: build/easycommerce.bundle.js:21708
+msgid "Order Total"
+msgstr ""
+
+#: views/templates/checkout/template-3/payment-methods.php:8
+msgid "Select Payment Option"
+msgstr ""
+
+#: views/templates/checkout/template-3/shipping.php:14
+msgid "Same as Billing Address"
+msgstr ""
+
+#: views/templates/checkout/template-3/summary.php:72
+msgid "Shipping Information"
+msgstr ""
+
+#: views/templates/single-product/add-to-cart.php:17
+msgid "Out of stock"
+msgstr ""
+
+#: views/templates/single-product/add-to-cart.php:46
+msgid "Add to Cart"
+msgstr ""
+
+#: views/templates/single-product/buy-it-now.php:2
+msgid "Buy it Now"
+msgstr ""
+
+#. Translators: %s is the stock count
+#: views/templates/single-product/layout.php:77
+#, php-format
+msgid "Only <span class=\"easycommerce-stock-count\">%s</span> items left"
+msgstr ""
+
+#. Translators: %d is the review count
+#: views/templates/single-product/product-reivew.php:30
+#, php-format
+msgid " Showing  reviews %d"
+msgstr ""
+
+#: views/templates/single-product/product-reivew.php:93
+msgid "Write a review"
+msgstr ""
+
+#: views/templates/single-product/product-reivew.php:100
+msgid "Your email address will not be published. required fields are marked"
+msgstr ""
+
+#: views/templates/single-product/product-reivew.php:102
+#: views/templates/single-product/product-reivew.php:126
+msgid "*"
+msgstr ""
+
+#: views/templates/single-product/product-reivew.php:124
+msgid "Your Rating"
+msgstr ""
+
+#: views/templates/single-product/product-reivew.php:153
+msgid "Submit Now"
+msgstr ""
+
+#: views/templates/single-product/product-tab.php:13
+msgid "Product Details"
+msgstr ""
+
+#: views/templates/single-product/product-tab.php:16
+#: build/easycommerce.bundle.js:39004
+msgid "Review"
+msgstr ""
+
+#: views/templates/single-product/summary.php:21
+#: views/templates/single-product/summary.php:28
+#, php-format
+msgid "%s"
+msgstr ""
+
+#: views/templates/single-product/summary.php:23
+msgid "Read More"
+msgstr ""
+
+#: views/templates/single-product/summary.php:30
+msgid "Show Less"
+msgstr ""
+
+#: views/templates/store-mode.php:11
+msgid "Store Launching Soon!"
+msgstr ""
+
+#: views/templates/store-mode.php:14
+msgid "We’re getting ready to welcome you. Stay tuned for the launch."
+msgstr ""
+
+#: build/blocks.bundle.js:353
+msgid "Font Weight"
+msgstr ""
+
+#: build/blocks.bundle.js:396
+msgid "Text Transform"
+msgstr ""
+
+#: build/blocks.bundle.js:418
+msgid "Text Style"
+msgstr ""
+
+#: build/blocks.bundle.js:437
+msgid "Text Decoration"
+msgstr ""
+
+#: build/blocks.bundle.js:4838
+msgid "Number of Gallery Item"
+msgstr ""
+
+#: build/blocks.bundle.js:4991
+msgid "Show Tax included"
+msgstr ""
+
+#: build/blocks.bundle.js:5471
+#: build/blocks.bundle.js:5737
+msgid "Show Rating"
+msgstr ""
+
+#: build/blocks.bundle.js:5745
+msgid "Show SKU"
+msgstr ""
+
+#: build/blocks.bundle.js:5753
+msgid "Show Favourite"
+msgstr ""
+
+#: build/blocks.bundle.js:5760
+#: build/blocks.bundle.js:6359
+msgid "Styles"
+msgstr ""
+
+#: build/blocks.bundle.js:5763
+msgid "Border"
+msgstr ""
+
+#: build/easycommerce.bundle.js:5159
+msgid "Install A New Addon?"
+msgstr ""
+
+#: build/easycommerce.bundle.js:5178
+msgid "Install & Activate"
+msgstr ""
+
+#: build/easycommerce.bundle.js:5296
+#, js-format
+msgid "Unlock %s"
+msgstr ""
+
+#: build/easycommerce.bundle.js:5310
+msgid "See Pro Plans"
+msgstr ""
+
+#: build/easycommerce.bundle.js:6004
+#: build/easycommerce.bundle.js:40538
+#: build/easycommerce.bundle.js:40908
+#: build/easycommerce.bundle.js:41356
+#: build/easycommerce.bundle.js:41797
+#: build/editor.bundle.js:923
+#: build/settings.bundle.js:867
+msgid "No credits available"
+msgstr ""
+
+#: build/easycommerce.bundle.js:6759
+#: build/editor.bundle.js:502
+#: build/settings.bundle.js:1616
+msgid "Remaining"
+msgstr ""
+
+#: build/easycommerce.bundle.js:8099
+msgid "Dismiss this notice"
+msgstr ""
+
+#: build/easycommerce.bundle.js:13775
+msgid "Code"
+msgstr ""
+
+#: build/easycommerce.bundle.js:13823
+msgid "Offers"
+msgstr ""
+
+#: build/easycommerce.bundle.js:13830
+msgid "Discount Type"
+msgstr ""
+
+#: build/easycommerce.bundle.js:13834
+msgid "Percentage Discount"
+msgstr ""
+
+#: build/easycommerce.bundle.js:13844
+msgid "Fixed Cart Discount"
+msgstr ""
+
+#: build/easycommerce.bundle.js:13853
+msgid "Free Products"
+msgstr ""
+
+#: build/easycommerce.bundle.js:14090
+msgid "Active"
+msgstr ""
+
+#: build/easycommerce.bundle.js:14093
+msgid "Inactive"
+msgstr ""
+
+#: build/easycommerce.bundle.js:14270
+msgid "Select status"
+msgstr ""
+
+#: build/easycommerce.bundle.js:14280
+msgid "Save as Inactive"
+msgstr ""
+
+#: build/easycommerce.bundle.js:14280
+msgid "Save as Active"
+msgstr ""
+
+#: build/easycommerce.bundle.js:19756
+msgid "Documentation"
+msgstr ""
+
+#: build/easycommerce.bundle.js:19758
+msgid "Detailed step-by-step guides on how to use and get the best out of EasyCommerce."
+msgstr ""
+
+#: build/easycommerce.bundle.js:21676
+msgid "Failed to process refund. Please try again."
+msgstr ""
+
+#: build/easycommerce.bundle.js:21702
+msgid "Refund Payment"
+msgstr ""
+
+#: build/easycommerce.bundle.js:21720
+msgid "Refundable"
+msgstr ""
+
+#: build/easycommerce.bundle.js:21727
+msgid "Refund Amount"
+msgstr ""
+
+#: build/easycommerce.bundle.js:21735
+msgid "Enter amount"
+msgstr ""
+
+#: build/easycommerce.bundle.js:21752
+msgid "Refund Reason"
+msgstr ""
+
+#: build/easycommerce.bundle.js:21755
+msgid "Select Refund Reason"
+msgstr ""
+
+#: build/easycommerce.bundle.js:21778
+msgid "Enter Refund Transaction ID"
+msgstr ""
+
+#: build/easycommerce.bundle.js:21888
+msgid "Email Event"
+msgstr ""
+
+#: build/easycommerce.bundle.js:21891
+msgid "Select an event"
+msgstr ""
+
+#: build/easycommerce.bundle.js:22941
+msgid "Send Email"
+msgstr ""
+
+#: build/easycommerce.bundle.js:30021
+#: build/easycommerce.bundle.js:30633
+msgid "Save as Draft"
+msgstr ""
+
+#: build/easycommerce.bundle.js:30021
+#: build/easycommerce.bundle.js:30633
+msgid "Save as Live"
+msgstr ""
+
+#: build/easycommerce.bundle.js:30587
+msgid "Loading product data..."
+msgstr ""
+
+#: build/easycommerce.bundle.js:30595
+msgid "Edit: "
+msgstr ""
+
+#: build/easycommerce.bundle.js:30622
+msgid "Preview"
+msgstr ""
+
+#: build/easycommerce.bundle.js:31683
+msgid "Set as thumbnail"
+msgstr ""
+
+#: build/easycommerce.bundle.js:31714
+msgid "Enhance With AI"
+msgstr ""
+
+#: build/easycommerce.bundle.js:31747
+msgid "Uploading images..."
+msgstr ""
+
+#: build/easycommerce.bundle.js:31771
+#: build/easycommerce.bundle.js:35132
+msgid "Click to update"
+msgstr ""
+
+#: build/easycommerce.bundle.js:31771
+#: build/easycommerce.bundle.js:35132
+msgid "or Drag and drop"
+msgstr ""
+
+#: build/easycommerce.bundle.js:31775
+msgid "Upload Images"
+msgstr ""
+
+#: build/easycommerce.bundle.js:31897
+#: build/easycommerce.bundle.js:38509
+#: build/easycommerce.bundle.js:38781
+#: build/easycommerce.bundle.js:39602
+msgid "Generate with AI"
+msgstr ""
+
+#: build/easycommerce.bundle.js:33366
+msgid "Organize your product with Categories, Tags, and Brands for better sorting."
+msgstr ""
+
+#: build/easycommerce.bundle.js:33443
+msgid "Manage Categories"
+msgstr ""
+
+#: build/easycommerce.bundle.js:33463
+msgid "Manage Tags"
+msgstr ""
+
+#: build/easycommerce.bundle.js:33483
+msgid "Manage Brands"
+msgstr ""
+
+#: build/easycommerce.bundle.js:33848
+msgid "Select"
+msgstr ""
+
+#: build/easycommerce.bundle.js:34065
+msgid "Dimension"
+msgstr ""
+
+#: build/easycommerce.bundle.js:34069
+msgid "Height"
+msgstr ""
+
+#: build/easycommerce.bundle.js:34078
+msgid "Set Height"
+msgstr ""
+
+#: build/easycommerce.bundle.js:34143
+msgid "Width"
+msgstr ""
+
+#: build/easycommerce.bundle.js:34152
+msgid "Set Width"
+msgstr ""
+
+#: build/easycommerce.bundle.js:34217
+msgid "Length"
+msgstr ""
+
+#: build/easycommerce.bundle.js:34226
+msgid "Set Length"
+msgstr ""
+
+#: build/easycommerce.bundle.js:34291
+msgid "Weight"
+msgstr ""
+
+#: build/easycommerce.bundle.js:34300
+msgid "Set Weight"
+msgstr ""
+
+#: build/easycommerce.bundle.js:35042
+msgid "Files"
+msgstr ""
+
+#: build/easycommerce.bundle.js:35057
+msgid "File title"
+msgstr ""
+
+#: build/easycommerce.bundle.js:35103
+msgid "Add More Files"
+msgstr ""
+
+#: build/easycommerce.bundle.js:35117
+msgid "Uploading files..."
+msgstr ""
+
+#: build/easycommerce.bundle.js:35136
+msgid "Upload Files"
+msgstr ""
+
+#: build/easycommerce.bundle.js:35218
+msgid "Cost of Goods"
+msgstr ""
+
+#: build/easycommerce.bundle.js:35228
+msgid "Enter Cost"
+msgstr ""
+
+#: build/easycommerce.bundle.js:35249
+msgid "Profit"
+msgstr ""
+
+#: build/easycommerce.bundle.js:35264
+#: build/easycommerce.bundle.js:35283
+msgid "Yet to calculate"
+msgstr ""
+
+#: build/easycommerce.bundle.js:35270
+msgid "Margin"
+msgstr ""
+
+#: build/easycommerce.bundle.js:35395
+msgid "Regular Price"
+msgstr ""
+
+#: build/easycommerce.bundle.js:35424
+msgid "Sale Price"
+msgstr ""
+
+#: build/easycommerce.bundle.js:35447
+msgid "Sale price should be less than regular price."
+msgstr ""
+
+#: build/easycommerce.bundle.js:35631
+msgid "Inventory"
+msgstr ""
+
+#: build/easycommerce.bundle.js:35638
+msgid "Stock Count"
+msgstr ""
+
+#: build/easycommerce.bundle.js:35645
+msgid "Enter Stock Count"
+msgstr ""
+
+#: build/easycommerce.bundle.js:35658
+msgid "Low Stock Limit"
+msgstr ""
+
+#: build/easycommerce.bundle.js:35665
+msgid "Stock Limit"
+msgstr ""
+
+#: build/easycommerce.bundle.js:35862
+msgid "Write variation name"
+msgstr ""
+
+#: build/easycommerce.bundle.js:35915
+msgid "Product Type"
+msgstr ""
+
+#: build/easycommerce.bundle.js:36182
+#: build/easycommerce.bundle.js:36271
+msgid "Variation Name"
+msgstr ""
+
+#: build/easycommerce.bundle.js:36191
+#: build/easycommerce.bundle.js:36340
+msgid "Price"
+msgstr ""
+
+#: build/easycommerce.bundle.js:36326
+msgid "Choose attributes that apply to this pricing option"
+msgstr ""
+
+#: build/easycommerce.bundle.js:36363
+msgid "Add recurring billing to your store with the EasyCommerce Subscription Addon."
+msgstr ""
+
+#: build/easycommerce.bundle.js:36369
+msgid "Enable Subscription"
+msgstr ""
+
+#: build/easycommerce.bundle.js:36391
+msgid "Turn on subscriptions to sell products with recurring payments."
+msgstr ""
+
+#: build/easycommerce.bundle.js:36420
+msgid "Configure your ecommerce store with licensing capability and sell digital products and manage their licenses."
+msgstr ""
+
+#: build/easycommerce.bundle.js:36448
+msgid "Turn on licensing to sell products that require license keys."
+msgstr ""
+
+#: build/easycommerce.bundle.js:36729
+msgid "Set product type, price, sale price, stock count, and dimensions of the product."
+msgstr ""
+
+#: build/easycommerce.bundle.js:36823
+msgid "No prices added yet"
+msgstr ""
+
+#: build/easycommerce.bundle.js:36844
+msgid "Add New Price"
+msgstr ""
+
+#: build/easycommerce.bundle.js:37471
+msgid "Selected"
+msgstr ""
+
+#: build/easycommerce.bundle.js:37481
+msgid "Loading attribute..."
+msgstr ""
+
+#: build/easycommerce.bundle.js:37495
+msgid "Loading..."
+msgstr ""
+
+#: build/easycommerce.bundle.js:37507
+msgid "Select Options"
+msgstr ""
+
+#: build/easycommerce.bundle.js:38171
+msgid "Add to Product"
+msgstr ""
+
+#: build/easycommerce.bundle.js:38434
+msgid "Attributes generated successfully!"
+msgstr ""
+
+#: build/easycommerce.bundle.js:38439
+msgid "Failed to generate attributes"
+msgstr ""
+
+#: build/easycommerce.bundle.js:38459
+msgid "Add attributes to your product to help customers filter and search for products more easily."
+msgstr ""
+
+#: build/easycommerce.bundle.js:38509
+msgid "Generating..."
+msgstr ""
+
+#: build/easycommerce.bundle.js:38561
+msgid "Fetching generated attributes..."
+msgstr ""
+
+#: build/easycommerce.bundle.js:38563
+msgid "No attributes are added yet. Click the \"Add New\" button below to add attributes to this product."
+msgstr ""
+
+#: build/easycommerce.bundle.js:38563
+msgid "Add options like color or size. Click the \"Manage Attributes\" button below or \"Generate with AI\" above."
+msgstr ""
+
+#: build/easycommerce.bundle.js:38583
+msgid "Add Attribute"
+msgstr ""
+
+#: build/easycommerce.bundle.js:38732
+msgid "Provide an in-depth product description of 600–900 words, outlining key features, benefits, and usage instructions."
+msgstr ""
+
+#: build/easycommerce.bundle.js:38971
+msgid "Hide from Shop"
+msgstr ""
+
+#: build/easycommerce.bundle.js:38989
+msgid "Hide from Search Engines"
+msgstr ""
+
+#: build/easycommerce.bundle.js:39009
+msgid "Enable Review"
+msgstr ""
+
+#: build/easycommerce.bundle.js:40216
+#: build/easycommerce.bundle.js:41040
+msgid "1024x1024 Pixels"
+msgstr ""
+
+#: build/easycommerce.bundle.js:40219
+#: build/easycommerce.bundle.js:41043
+msgid "1792x1024 Pixels"
+msgstr ""
+
+#: build/easycommerce.bundle.js:40222
+#: build/easycommerce.bundle.js:41046
+msgid "1024x1792 Pixels"
+msgstr ""
+
+#: build/easycommerce.bundle.js:40230
+#: build/easycommerce.bundle.js:41054
+msgid "Standard"
+msgstr ""
+
+#: build/easycommerce.bundle.js:40233
+#: build/easycommerce.bundle.js:41057
+msgid "HD"
+msgstr ""
+
+#: build/easycommerce.bundle.js:40293
+#: build/easycommerce.bundle.js:40749
+#: build/easycommerce.bundle.js:41123
+#: build/easycommerce.bundle.js:41658
+msgid "An error occurred. Please try again."
+msgstr ""
+
+#: build/easycommerce.bundle.js:40355
+#: build/easycommerce.bundle.js:40813
+#: build/easycommerce.bundle.js:41185
+#: build/easycommerce.bundle.js:41722
+#: build/editor.bundle.js:755
+msgid "Invalid response from AI service. Please try again."
+msgstr ""
+
+#: build/easycommerce.bundle.js:40384
+msgid "No enhanced image to choose from."
+msgstr ""
+
+#: build/easycommerce.bundle.js:40407
+#: build/easycommerce.bundle.js:41237
+msgid "Failed to choose image. Please try again."
+msgstr ""
+
+#: build/easycommerce.bundle.js:40440
+msgid "AI Image Enhancer"
+msgstr ""
+
+#: build/easycommerce.bundle.js:40442
+msgid "Enhance your image with AI"
+msgstr ""
+
+#: build/easycommerce.bundle.js:40463
+#: build/easycommerce.bundle.js:40865
+#: build/easycommerce.bundle.js:41293
+#: build/easycommerce.bundle.js:41767
+#: build/editor.bundle.js:888
+msgid "You have used all your free credits."
+msgstr ""
+
+#: build/easycommerce.bundle.js:40468
+#: build/easycommerce.bundle.js:40870
+#: build/easycommerce.bundle.js:41298
+#: build/easycommerce.bundle.js:41772
+#: build/editor.bundle.js:893
+msgid "Upgrade Now"
+msgstr ""
+
+#: build/easycommerce.bundle.js:40480
+msgid "Original Image"
+msgstr ""
+
+#: build/easycommerce.bundle.js:40491
+#: build/easycommerce.bundle.js:41309
+#: build/easycommerce.bundle.js:41781
+msgid "Please type your instructions here"
+msgstr ""
+
+#: build/easycommerce.bundle.js:40503
+#: build/easycommerce.bundle.js:41321
+msgid "Image Size"
+msgstr ""
+
+#: build/easycommerce.bundle.js:40513
+#: build/easycommerce.bundle.js:41331
+msgid "Quality"
+msgstr ""
+
+#: build/easycommerce.bundle.js:40532
+msgid "Enhance Image"
+msgstr ""
+
+#: build/easycommerce.bundle.js:40569
+#: build/easycommerce.bundle.js:41387
+msgid "Importing..."
+msgstr ""
+
+#: build/easycommerce.bundle.js:40569
+#: build/easycommerce.bundle.js:41387
+msgid "Use This Image"
+msgstr ""
+
+#: build/easycommerce.bundle.js:40585
+msgid "Image Preview."
+msgstr ""
+
+#: build/easycommerce.bundle.js:40830
+msgid "AI Attributes Generator"
+msgstr ""
+
+#: build/easycommerce.bundle.js:40831
+msgid "AI-powered attribute generator to create product attributes"
+msgstr ""
+
+#: build/easycommerce.bundle.js:40878
+msgid "Number of Attributes to Generate"
+msgstr ""
+
+#: build/easycommerce.bundle.js:40890
+msgid "Number of Values Per Attribute"
+msgstr ""
+
+#: build/easycommerce.bundle.js:40917
+#: build/easycommerce.bundle.js:41350
+#: build/easycommerce.bundle.js:41806
+msgid "Generate"
+msgstr ""
+
+#: build/easycommerce.bundle.js:41214
+msgid "No generated image to choose from."
+msgstr ""
+
+#: build/easycommerce.bundle.js:41272
+msgid "Describe what you want to see in the image"
+msgstr ""
+
+#: build/easycommerce.bundle.js:41403
+msgid "Generated image will appear here once created."
+msgstr ""
+
+#: build/easycommerce.bundle.js:41732
+msgid "AI Copywriter"
+msgstr ""
+
+#: build/easycommerce.bundle.js:41733
+msgid "AI-powered copy writer to write your product description and summary"
+msgstr ""
+
+#: build/easycommerce.bundle.js:182078
+msgid "AI connected successfully"
+msgstr ""
+
+#: build/easycommerce.bundle.js:182080
+msgid "AI connection failed. Please try again."
+msgstr ""
+
+#: build/editor.bundle.js:670
+#: build/editor.bundle.js:865
+msgid "AI Template Builder"
+msgstr ""
+
+#: build/editor.bundle.js:671
+msgid "AI Assistant"
+msgstr ""
+
+#: build/editor.bundle.js:762
+msgid "Failed to generate content. Please try again."
+msgstr ""
+
+#: build/editor.bundle.js:867
+msgid "Describe what you want to build"
+msgstr ""
+
+#: build/editor.bundle.js:902
+msgid "Example: Make it 2 columns with a big gallery section at left."
+msgstr ""
+
+#: build/editor.bundle.js:928
+msgid "Building..."
+msgstr ""
+
+#: build/editor.bundle.js:928
+msgid "Build"
+msgstr ""
+
+#: build/shipping.bundle.js:1436
+msgid "No shipping plans configured"
+msgstr ""
+
+#: build/shipping.bundle.js:1438
+msgid "Set up shipping plans to define shipping rates by region. "
+msgstr ""
+
+#: build/shipping.bundle.js:1442
+#: build/tax.bundle.js:304
+msgid "Read docs."
+msgstr ""
+
+#: build/shipping.bundle.js:1445
+msgid "+ Add Plan"
+msgstr ""
+
+#: build/tax.bundle.js:298
+msgid "No tax classes configured"
+msgstr ""
+
+#: build/tax.bundle.js:300
+msgid "Set up tax classes to apply the correct tax amounts to products. "
+msgstr ""
+
+#: build/tax.bundle.js:307
+msgid "+ Add Class"
+msgstr ""
+
+#: build/wizard.bundle.js:133
+msgid "Business Setup"
+msgstr ""
+
+#: build/wizard.bundle.js:135
+msgid "Fill in your business details so your store functions seamlessly and is ready for customers. You can adjust these settings anytime."
+msgstr ""
+
+#: build/wizard.bundle.js:144
+msgid "Store Name"
+msgstr ""
+
+#: build/wizard.bundle.js:160
+msgid "Provide the name your store will use in your storefront and communications."
+msgstr ""
+
+#: build/wizard.bundle.js:160
+msgid "Pick the type that best describes your business. You can update it later if needed."
+msgstr ""
+
+#: build/wizard.bundle.js:160
+msgid "Select the country where your business is located to configure taxes, currency, and shipping correctly."
+msgstr ""
+
+#: build/wizard.bundle.js:181
+msgid "Enter the email address your store will use for notifications and customer communications."
+msgstr ""
+
+#: build/wizard.bundle.js:419
+#: build/wizard.bundle.js:1692
+msgid "Payment Setup"
+msgstr ""
+
+#: build/wizard.bundle.js:421
+msgid "Fill in your payment information so your store is ready to accept payments safely and efficiently. You can change this anytime."
+msgstr ""
+
+#: build/wizard.bundle.js:452
+msgid "Select the currency your store will use for all prices and transactions."
+msgstr ""
+
+#: build/wizard.bundle.js:473
+msgid "Select the format you want for displaying prices in your store."
+msgstr ""
+
+#: build/wizard.bundle.js:541
+msgid "Choose the page where your products will appear. You can also select the “<code>– Create New Page –</code>” option and we’ll set it up for you."
+msgstr ""
+
+#: build/wizard.bundle.js:545
+msgid "Choose the page customers will use to complete checkout. This page should include the shortcode: <code>[easycommerce-checkout]</code>. You may also select the “<code>– Create New Page –</code>” option and we’ll create it for you."
+msgstr ""
+
+#: build/wizard.bundle.js:549
+msgid "Choose the page customers will use to manage their orders and account. This page should include the shortcode: <code>[easycommerce-dashboard]</code>. You can also select the “<code>– Create New Page –</code>” option and we’ll take care of it."
+msgstr ""
+
+#: build/wizard.bundle.js:553
+msgid "Choose the page where customers can pay for pending orders. This page should include the shortcode: <code>[easycommerce-payment]</code>. You can also select the \"– Create New Page –\" option and we’ll set it up for you."
+msgstr ""
+
+#: build/wizard.bundle.js:561
+msgid "Store Setup"
+msgstr ""
+
+#: build/wizard.bundle.js:563
+msgid "Your store needs a Shop page, Checkout page, and Customer Dashboard to work properly. Choose existing pages or let us create them for you."
+msgstr ""
+
+#: build/wizard.bundle.js:1687
+msgid "Set up your store name, location, and contact details"
+msgstr ""
+
+#: build/wizard.bundle.js:1690
+msgid "Create essential pages like Shop, Cart, and Checkout"
+msgstr ""
+
+#: build/wizard.bundle.js:1693
+msgid "Connect payment gateways to start accepting orders"
+msgstr ""
+
+#: build/wizard.bundle.js:1705
+msgid "Welcome to EasyCommerce"
+msgstr ""
+
+#: build/wizard.bundle.js:1707
+msgid "Start selling in a few minutes with 3 easy steps:"
+msgstr ""
+
+#: build/wizard.bundle.js:1727
+msgid "Get Started Now"
+msgstr ""
+
+#: build/wizard.bundle.js:3985
+msgid "Skip"
+msgstr ""
+
+#: build/wizard.bundle.js:4023
+msgid "Next"
+msgstr ""

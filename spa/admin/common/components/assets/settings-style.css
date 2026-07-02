@@ -1,0 +1,11 @@
+#easycommerce-header-settings-dropdown input[type="number"] {
+    border: 1px solid #dbdbdb;
+}
+#easycommerce-header-settings-dropdown input[type="number"]:focus {
+    border: 1px solid var(--color-ec-primary);
+    outline: none;
+    box-shadow: none;
+}
+#easycommerce-header-settings-dropdown input[type="checkbox"] {
+    accent-color: var(--color-ec-primary);
+}

@@ -1,0 +1,15 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "easycommerce/single-product-rating",
+    "version": "0.1.0",
+    "title": "Rating",
+    "category": "easycommerce-product",
+    "description": "This block responsible for Product Rating, SKU & Favourite",
+    "example": {},
+    "supports": {
+        "html": false
+    },
+    "textdomain": "easycommerce",
+    "editorScript": "file:./index.js"
+}

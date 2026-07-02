@@ -1,0 +1,15 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "easycommerce/single-product-attributes",
+    "version": "0.1.0",
+    "title": "Product Attributes",
+    "category": "easycommerce-product",
+    "description": "To show product attributes",
+    "example": {},
+    "supports": {
+        "html": false
+    },
+    "textdomain": "easycommerce",
+    "editorScript": "file:./index.js"
+}

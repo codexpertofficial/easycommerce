@@ -1,0 +1,19 @@
+.easycommerce .easycommerce-order-action-modal-select-input {
+    max-width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    color: var(--color-ec-body);
+    border: 1px solid var(--color-ec-border);
+    border-radius: 6px;
+}
+.easycommerce .easycommerce-order-action-modal-select-input:hover {
+    color: var(--color-ec-body);
+}
+.easycommerce .easycommerce-order-action-modal-select-input:focus {
+    color: var(--color-ec-body);
+    outline: 0;
+    border: 1px solid var(--color-ec-border);
+    box-shadow: none;
+}

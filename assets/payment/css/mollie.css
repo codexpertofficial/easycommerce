@@ -1,0 +1,43 @@
+#easycommerce_mollie_payment_form {
+	margin-bottom: 10px;
+}
+#easycommerce_cardNumber,
+#easycommerce_cvc {
+	margin-top: 5px;
+}
+#easycommerce_cardHolder,
+#easycommerce_cardNumber,
+#easycommerce_verificationCode {
+	position: relative;
+}
+.mollie-component {
+	border-radius: 4px;
+	padding: 13px;
+	border: 1px solid #eee;
+	font-weight: 500;
+}
+#easycommerce_cvc {
+	width: 100%;
+	display: flex;
+	gap: 8px;
+}
+.form-fields {
+	margin-bottom: 24px;
+}
+
+.form-group {
+	width: 100%;
+}
+
+.form-group--expiry-date {
+	margin-right: 8px;
+}
+
+.form-group--verification-code {
+	margin-left: 8px;
+}
+.mollie-placeholder {
+	display: inline-block;
+	font-size: 14px;
+	margin-bottom: 5px;
+}

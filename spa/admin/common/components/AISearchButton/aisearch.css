@@ -1,0 +1,106 @@
+@keyframes ec-typing {
+	0% {
+		transform: translateY(0);
+		opacity: 0.35;
+	}
+	50% {
+		transform: translateY(-6px);
+		opacity: 1;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 0.35;
+	}
+}
+
+.typing-dot {
+	background: #7351fd;
+	opacity: 0.35;
+	animation: ec-typing 0.9s infinite;
+}  
+
+.ai-search-btn {
+	border: 2px solid transparent;
+	background:
+    linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(
+      96.62deg,
+      #A451FD 4.25%,
+      #2977D1 31.45%,
+      #FE0098 100.67%
+    ) border-box;
+}
+
+.easycommerce-ask-ai-generate-text p,
+.easycommerce-ask-ai-generate-text h3 {
+	padding-bottom: 15px;
+}
+
+.easycommerce-ask-ai-generate-text div,
+.easycommerce-ask-ai-generate-text p {
+	font-size: 14px;
+	line-height: 24px;
+}
+
+.easycommerce-ask-ai-generate-text h1 {
+    font-size: 32px;  
+    line-height: 40px;
+    font-weight: 600; 
+}
+
+.easycommerce-ask-ai-generate-text h2 {
+    font-size: 28px;
+    line-height: 36px;
+    font-weight: 600;
+}
+
+.easycommerce-ask-ai-generate-text h3 {
+    font-size: 24px; 
+    line-height: 36px;
+    font-weight: 500;
+}
+
+.easycommerce-ask-ai-generate-text h4 {
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 500;
+}
+
+.easycommerce-ask-ai-generate-text h5 {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;  
+  scrollbar-width: none;    
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;            
+}
+
+/* Thin standard scrollbar */
+.thin-scrollbar {
+  scrollbar-width: thin;            /* Firefox */
+  scrollbar-color: #cbd5e1 transparent;
+}
+
+/* Chrome, Edge, Safari */
+.thin-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.thin-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.thin-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 9999px;
+}
+
+.thin-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #94a3b8;
+}

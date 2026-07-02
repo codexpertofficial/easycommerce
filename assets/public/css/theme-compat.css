@@ -1,0 +1,175 @@
+/*
+ * Generic theme compatibility baseline.
+ *
+ * Forces EasyCommerce storefront form controls, quantity steppers, tables and
+ * buttons to a known baseline inside the plugin's own containers, so the
+ * storefront renders acceptably on ANY theme without a per-theme stylesheet.
+ *
+ * This is the generic baseline beneath the per-theme stylesheets under
+ * assets/public/css/themes/*.css - it makes the storefront acceptable on themes
+ * that have NO file of their own, while the per-theme files remain and layer on
+ * top (they load after this one) for theme-specific fine-tuning. See issue #2862.
+ *
+ * Scoped under body.easycommerce + the plugin's own container/element classes,
+ * so it never touches the theme's own markup. No !important: the per-theme
+ * files and the plugin's own rules still win where they apply.
+ */
+
+/* ---------------------------------------------------------------------------
+ * Storefront shell (views/templates/layout-header.php + layout-footer.php)
+ * One consistent layout for every EasyCommerce page - same background, width,
+ * container and page-title treatment regardless of theme. Background and width
+ * come from the --ec-storefront-bg / --ec-storefront-width custom properties the
+ * shell prints (both filterable - see the layout-header.php hooks).
+ * ------------------------------------------------------------------------- */
+body.easycommerce .easycommerce-storefront {
+	background: var(--ec-storefront-bg, #ffffff);
+	min-height: 60vh;
+}
+body.easycommerce .easycommerce-full-width-container {
+	max-width: var(--ec-storefront-width, 1200px);
+	width: 100%;
+	margin: 50px auto;
+	box-sizing: border-box;
+	position: relative;
+}
+/* Gutter on small screens only so content doesn't touch the phone edge;
+   desktop stays flush within the centered container. */
+@media (max-width: 600px) {
+	body.easycommerce .easycommerce-full-width-container {
+		padding-left: 16px;
+		padding-right: 16px;
+	}
+}
+body.easycommerce .easycommerce-page-title {
+	font-size: 32px;
+	margin-bottom: 20px;
+	padding: 20px 0;
+	text-align: left;
+}
+
+/* ---------------------------------------------------------------------------
+ * Storefront root baseline (scoped to .ec-root)
+ * Gives every EasyCommerce page a consistent typographic foundation regardless
+ * of the theme. Limited to inherited/structural properties (font, colour,
+ * line-height, box-sizing, responsive images) so it never alters the semantics
+ * of user content such as a product description; the plugin's own utility
+ * classes (which build with !important) still win per element.
+ * ------------------------------------------------------------------------- */
+body.easycommerce .ec-root {
+	font-family: 'Inter', sans-serif;
+	color: var(--color-ec-body, #3c3c42);
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+}
+body.easycommerce .ec-root *,
+body.easycommerce .ec-root *::before,
+body.easycommerce .ec-root *::after {
+	box-sizing: border-box;
+}
+body.easycommerce .ec-root img {
+	max-width: 100%;
+	height: auto;
+}
+
+/* ---------------------------------------------------------------------------
+ * Form controls (checkout fields, coupon, search, price range, dashboard)
+ * Themes commonly re-style bare input/select with their own border, background
+ * and box-shadow. Re-assert the plugin baseline.
+ * ------------------------------------------------------------------------- */
+body.easycommerce .easycommerce-checkout-wrapper .easycommerce-checkout_field-wrapper input,
+body.easycommerce .easycommerce-checkout-wrapper .easycommerce-checkout_field-wrapper select,
+body.easycommerce .easycommerce-checkout-wrapper .easycommerce-checkout_input,
+body.easycommerce .easycommerce-checkout-wrapper input#easycommerce-coupon-field,
+body.easycommerce .easycommerce-shop-container-front input.easycommerce-product-search[type="text"],
+body.easycommerce .easycommerce-shop-container-front input.easycommerce-price-range-input-field[type="number"],
+body.easycommerce #easycommerce_dashboard_render .easycommerce-dashboard-input,
+body.easycommerce #easycommerce_dashboard_render .easycommerce-dashboard-input-select,
+body.easycommerce #easycommerce_dashboard_render .easycommerce-dashboard-form-password-input {
+	border: 1px solid var(--color-ec-border);
+	background-color: #ffffff;
+	color: var(--color-ec-body);
+	border-radius: 8px;
+	box-shadow: none;
+	outline: none;
+}
+
+body.easycommerce .easycommerce-checkout-wrapper .easycommerce-checkout_field-wrapper input:hover,
+body.easycommerce .easycommerce-checkout-wrapper .easycommerce-checkout_input:hover,
+body.easycommerce .easycommerce-checkout-wrapper input#easycommerce-coupon-field:hover,
+body.easycommerce .easycommerce-shop-container-front input.easycommerce-product-search[type="text"]:hover {
+	border-color: var(--color-ec-secondary);
+}
+
+body.easycommerce .easycommerce-checkout-wrapper .easycommerce-checkout_field-wrapper input:focus,
+body.easycommerce .easycommerce-checkout-wrapper .easycommerce-checkout_input:focus,
+body.easycommerce .easycommerce-checkout-wrapper input#easycommerce-coupon-field:focus,
+body.easycommerce .easycommerce-shop-container-front input.easycommerce-product-search[type="text"]:focus,
+body.easycommerce .easycommerce-shop-container-front input.easycommerce-price-range-input-field[type="number"]:focus {
+	border-color: var(--color-ec-primary);
+	box-shadow: none;
+	outline: none;
+}
+
+/* Dashboard fields stretch to their container regardless of theme width rules */
+body.easycommerce #easycommerce_dashboard_render .easycommerce-dashboard-input,
+body.easycommerce #easycommerce_dashboard_render .easycommerce-dashboard-input-select,
+body.easycommerce #easycommerce_dashboard_render .easycommerce-dashboard-form-password-input {
+	width: 100%;
+}
+
+/* Selects: themes often paint their own background */
+body.easycommerce .easycommerce-field.easycommerce-field-select,
+body.easycommerce #easycommerce_dashboard_render .easycommerce-dashboard-input-select {
+	background-color: #ffffff;
+}
+
+/* ---------------------------------------------------------------------------
+ * Quantity steppers (shop, single product, checkout cart)
+ * ------------------------------------------------------------------------- */
+body.easycommerce .easycommerce-qunatity-button {
+	border: 1px solid var(--color-ec-border);
+	background-color: #ffffff;
+}
+body.easycommerce .easycommerce-quantity-minus-btn {
+	border: 0;
+	border-right: 1px solid var(--color-ec-border);
+}
+body.easycommerce .easycommerce-quantity-plus-btn {
+	border: 0;
+	border-left: 1px solid var(--color-ec-border);
+}
+body.easycommerce .easycommerce-quantity-minus-btn:focus,
+body.easycommerce .easycommerce-quantity-plus-btn:focus,
+body.easycommerce .easycommerce-qunatity-button:focus,
+body.easycommerce .easycommerce-checkout-cart-quantity-minus-btn:focus,
+body.easycommerce .easycommerce-checkout-cart-quantity-plus-btn:focus {
+	outline: none;
+}
+
+/* ---------------------------------------------------------------------------
+ * Tables (dashboard, recent orders) - strip theme borders/striping, keep a
+ * single bottom rule; keep table headers on a white background.
+ * ------------------------------------------------------------------------- */
+body.easycommerce .easycommerce-dash-roth tr th,
+body.easycommerce .easycommerce-dash-roth tr td,
+body.easycommerce .easycommerce-recent-order-table table > tbody > tr > td {
+	border: 0;
+	border-bottom: 1px solid var(--color-ec-border);
+}
+body.easycommerce table:not(.has-background) th {
+	background-color: #ffffff;
+}
+
+/* ---------------------------------------------------------------------------
+ * Buttons - remove theme focus outlines/chrome from plugin action buttons.
+ * ------------------------------------------------------------------------- */
+body.easycommerce button.easycommerce-add-to-cart-shop:focus,
+body.easycommerce button.easycommerce-add-to-cart-button:focus,
+body.easycommerce .easycommerce-checkout-main-btn:focus,
+body.easycommerce .easycommerce-checkout-cart-item-delete-btn:focus,
+body.easycommerce .easycommerce-dashboard-form-password-show-hide-btn:focus,
+body.easycommerce .easycommerce-dashboard-form-btn:focus,
+body.easycommerce #easycommerce-single-product-review-submit-btn:focus {
+	outline: none;
+}

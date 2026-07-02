@@ -1,0 +1,25 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "easycommerce/single-product-gallery",
+    "version": "0.1.0",
+    "title": "Gallery",
+    "category": "easycommerce-product",
+    "icon": "editor-textcolor",
+    "description": "Product Gallery",
+    "example": {},
+    "attributes": {
+        "GalleryItem": {
+            "type": "integer",
+            "default": 4
+        }
+    },
+    "supports": {
+        "html": false,
+        "align": ["wide", "full"]
+    },
+    "textdomain": "easycommerce",
+    "editorScript": "file:./index.js",
+    "editorStyle": "file:./assets/editor.css",
+    "style": "file:./assets/style.css"
+}

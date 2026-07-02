@@ -1,0 +1,54 @@
+/* .easycommerce-search-container .easycommerce-search-input {
+    border: 1px solid var(--color-ec-border) !important;
+    padding-left: 40px !important;
+} */
+.easycommerce-search-container .easycommerce-content-input,
+.easycommerce-order-container {
+    border: 1px solid var(--color-ec-table-stock);
+    transition: 0.4s all ease-in-out;
+    border-radius: 8px;
+}
+.easycommerce-search-container .easycommerce-content-input:hover {
+    border: 1px solid var(--color-ec-secondary);
+}
+.easycommerce-search-container .easycommerce-content-input:focus,
+.easycommerce-search-container .easycommerce-content-input:focus-visible {
+    box-shadow: none !important;
+}
+.easycommerce-search-container .easycommerce-search-input:hover {
+    border: 1px solid var(--color-ec-secondary) !important;
+}
+.easycommerce-search-container .easycommerce-search-input:focus,
+.easycommerce-order-container:focus {
+    outline: none !important;
+    box-shadow: 0px 2px 4.5px 0px var(--color-ec-tertiary);
+}
+.easycommerce .react-datepicker-wrapper:focus {
+    border: 1px solid var(--color-ec-primary) !important;
+    box-shadow: none !important;
+}
+
+.easycommerce-select-cat-container .easycommerce-select-cat-input:focus,
+.easycommerce-search-container .easycommerce-select-shortby-input:focus {
+    box-shadow: 0 0 0 1px var(--color-ec-primary) !important;
+    border: 1px solid var(--color-ec-primary) !important;
+}
+.easycommerce-select-shortby-input:hover,
+.easycommerce-select-cat-input:hover {
+    color: var(--color-ec-body) !important;
+}
+a.button-default:active,
+a.button-default:hover,
+a.button-default:focus {
+    border: none !important;
+}
+.easycommerce-datepicker {
+    box-shadow: none !important;
+    border-radius: none !important;
+    border: none !important;
+    background-color: none !important;
+    color: none !important;
+}
+.easycommerce-datepicker:focus {
+    box-shadow: none !important;
+}

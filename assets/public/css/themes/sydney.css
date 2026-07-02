@@ -1,0 +1,126 @@
+:root {
+	--ec-btn-text: #ffffff;
+}
+
+body .easycommerce-shop-choose-btn{
+	background-color: var(--color-ec-secondary) !important;
+	color:var(--ec-btn-text) !important;
+}
+body .easycommerce-shop-choose-btn:hover{
+	background-color: var(--color-ec-primary) !important;
+}
+body .font-inter{
+	color: #706F6F !important
+}
+.easycommerce .easycommerce-single-product-gallery-item.swiper-slide-thumb-active{
+	border: 1px solid var(--color-ec-primary) !important;
+}
+
+input.easycommerce-vs-radio:checked+.easycommerce-vs-label {
+    border-color: var(--color-ec-primary) !important;
+    color: var(--color-ec-primary) !important;
+}
+.bg-ec-primary{
+	background-color: var(--color-ec-primary) !important;
+}
+.border-ec-primary{
+	color: var(--color-ec-primary) !important;
+	border-bottom: 1px solid var(--color-ec-primary) !important;
+}
+.easycommcer-proceed-checkout-btn:hover{
+	color: var(--color-ec-primary) !important;
+}
+.easycommcer-proceed-checkout-btn img {
+  filter: invert(62%) sepia(40%) saturate(500%) hue-rotate(40deg);
+}
+.ec-slide-cart-count{
+	background-color: var(--color-ec-secondary) !important;
+}
+.ec-slide-cart-checkout a{
+	background-color: var(--color-ec-secondary) !important;
+}
+.ec-slide-cart-checkout a:hover{
+	background-color: var(--color-ec-primary) !important;
+}
+.easycommerce .easycommerce-checkout-wrapper .easycommerce-payment-wrapper input[type="radio"]:checked {
+    box-shadow: 0 0 0 2px var(--color-ec-primary) !important;
+    background-color: var(--color-ec-primary) !important;
+}
+.easycommerce .easycommerce-checkout-wrapper .easycommerce-payment-wrapper input[type="radio"]:focus {
+    box-shadow: 0 0 0 2px var(--color-ec-primary) !important;
+    color: var(--color-ec-primary) !important;
+}
+.easycommerce .easycommerce-checkout_field-wrapper input:focus
+{
+    border-color: var(--color-ec-primary) !important;
+}
+.easycommerce .easycommerce-checkout_field-wrapper input:hover
+{
+    border-color: var(--color-ec-primary) !important;
+}
+.easycommerce-field-select:hover {
+border-color: var(--color-ec-primary) !important;
+}
+#easycommerce-coupon-field:hover {
+border-color: var(--color-ec-primary) !important;
+}
+.loader {
+ border: 2px solid var(--ec-btn-text);
+    border-top: 4px solid var(--color-ec-primary);
+}
+.easycommerce-qunatity-button {
+	background-color:var(--ec-btn-text) !important;
+}
+.easycommerce-checkout-main-btn:hover{
+background-color:var(--color-ec-primary) !important;
+	outline:none !important;
+}
+.easycommerce.easycommerce-sydney .easycommerce-add-to-cart-shop {
+	border: 1px solid #7351FD0D;
+}
+.easycommerce.easycommerce-sydney .easycommerce-quantity-minus-btn {
+	border: none;
+	border-right: 1px solid #1203501A;
+}
+.easycommerce.easycommerce-sydney .easycommerce-quantity-plus-btn {
+	border: none;
+	border-left: 1px solid #1203501A;
+}
+.easycommerce.easycommerce-sydney .easycommerce-add-to-cart-button {
+	border: 1px solid var(--color-ec-primary);
+}
+.easycommerce.easycommerce-sydney .easycommerce-review-form #easycommerce-single-product-review-submit-btn {
+	border: 1px solid var(--color-ec-primary) !important;
+	color: var(--ec-btn-text) !important;
+}
+.easycommerce.easycommerce-sydney .easycommcer-proceed-checkout-btn img {
+    filter: none;
+}
+.easycommerce.easycommerce-sydney .easycommerce-checkout-cart-item-delete-btn {
+	border: 1px solid #f8f8f8 !important;
+}
+.easycommerce.easycommerce-sydney .easycommerce-checkout-main-btn {
+	color: var(--ec-btn-text) !important;
+}
+.easycommerce.easycommerce-sydney th {
+	border: none;
+	border-bottom: 1px solid var(--color-ec-border);
+}
+.easycommerce.easycommerce-sydney td {
+	border: none;
+	border-bottom: 1px solid var(--color-ec-border);
+}
+.easycommerce.easycommerce-sydney .easycommerce-dashboard-input,
+.easycommerce.easycommerce-sydney .easycommerce-dashboard-input-select {
+	width: 100%;
+	background-color: #ffffff;
+}
+.easycommerce.easycommerce-sydney .easycommerce-dashboard-input-select {
+	background-color: #ffffff;
+}
+.easycommerce.easycommerce-sydney .easycommerce-dashboard-form-password {
+	height: 50px;
+}
+.easycommerce.easycommerce-sydney .easycommerce-dashboard-form-password-show-hide-btn {
+	border: none;
+}

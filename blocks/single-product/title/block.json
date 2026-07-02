@@ -1,0 +1,49 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "easycommerce/single-product-title",
+    "version": "0.1.0",
+    "title": "Product Title",
+    "category": "easycommerce-product",
+    "description": "Product Title",
+    "example": {},
+    "supports": {
+        "html": false
+    },
+    "attributes": {
+        "color": {
+            "type": "string",
+            "default": "var(--color-ec-body)"
+        },
+        "fontSize": {
+            "type": "integer",
+            "default": 30
+        },
+        "fontWeight": {
+            "type": "string",
+            "default": "500"
+        },
+        "textTransfrom": {
+            "type": "string",
+            "default": ""
+        },
+        "style": {
+            "type": "string",
+            "default": ""
+        },
+        "decoration": {
+            "type": "string",
+            "default": ""
+        },
+        "lineHeight": {
+            "type": "integer",
+            "default": 40
+        },
+        "spacing": {
+            "type": "integer",
+            "default": 0
+        }
+    },
+    "textdomain": "easycommerce",
+    "editorScript": "file:./index.js"
+}

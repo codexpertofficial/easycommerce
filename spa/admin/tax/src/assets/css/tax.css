@@ -1,0 +1,45 @@
+.easycommerce .easycommerce-tax-input {
+    width: 96%;
+    padding: 10px 16px;
+    border: 1px solid var(--color-ec-border);
+    border-radius: 8px;
+    transition: 0.3s all ease-in-out;
+}
+.easycommerce .easycommerce-tax-input:hover {
+    border-color: var(--color-ec-secondary);
+}
+.easycommerce .easycommerce-tax-input:focus {
+    border-color: var(--color-ec-primary);
+    box-shadow: 0px 2px 4.5px 0px var(--color-ec-tertiary);
+    outline: none;
+}
+
+.easycommerce .easycommerce-tax-select {
+    width: 98%;
+    max-width: 100%;
+    display: block;
+    color: var(--color-ec-placeholder);
+    padding: 10px;
+    font-family: "Inter", "sans-serif";
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 26px;
+    border: 1px solid var(--color-ec-border);
+    border-radius: 6px;
+    transition: 0.3s all ease-in-out;
+}
+.easycommerce .easycommerce-tax-select:hover {
+    border-color: var(--color-ec-secondary);
+    color: var(--color-ec-body);
+}
+.easycommerce .easycommerce-tax-select:focus {
+    color: var(--color-ec-primary);
+    border: 1px solid var(--color-ec-primary);
+    box-shadow: 0px 2px 4.5px 0px var(--color-ec-tertiary);
+    outline: none;
+}
+.easycommerce .easycommerce-tax-input::placeholder {
+    color: var(--color-ec-placeholder);
+    font-size: 14px;
+    line-height: 16px;
+}

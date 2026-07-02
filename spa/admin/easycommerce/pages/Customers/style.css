@@ -1,0 +1,14 @@
+.easycommerce .easycommerce-new-customer-input {
+    border: 1px solid var(--color-ec-border);
+    border-radius: 6px;
+    padding: 10px;
+    color: var(--color-ec-body);
+    height: 42px;
+    background: #fff;
+}
+.easycommerce .easycommerce-new-customer-input:focus,
+.easycommerce .easycommerce-new-customer-input:focus-visible {
+    border: 1px solid var(--color-ec-primary);
+    outline: none;
+    box-shadow: none;
+}

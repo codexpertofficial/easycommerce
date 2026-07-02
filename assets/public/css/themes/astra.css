@@ -1,0 +1,14 @@
+#ast-scroll-top .ast-arrow-svg{
+    display: unset; 
+}
+
+.ast-plain-container.ast-no-sidebar #primary {
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.easycommerce-storefront {
+    width: 100%;
+    display: block;
+    position: relative;
+}

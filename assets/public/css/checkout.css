@@ -1,0 +1,276 @@
+.easycommerce .easycommerce-clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.easycommerce .easycommerce-checkout_field-wrapper {
+    margin-bottom: 24px;
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.easycommerce .easycommerce-checkout_field-wrapper label {
+    display: block;
+    color: var(--color-ec-body);
+    font-family: "Inter", system-ui;
+    font-weight: 500;
+    line-height: 26px;
+    margin-bottom: 4px;
+    font-size: 16px;
+}
+.easycommerce .easycommerce-checkout_field-wrapper input,
+.easycommerce .easycommerce-checkout_field-wrapper select,
+.easycommerce .easycommerce-checkout_input {
+    width: 100%;
+    margin: 0;
+    border: 1px solid var(--color-ec-border);
+    border-radius: 8px;
+    padding: 11px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 26px;
+    color: var(--color-ec-body);
+    box-shadow: none;
+    height: 48px;
+}
+.easycommerce .easycommerce-checkout_field-wrapper input::placeholder,
+.easycommerce .easycommerce-checkout_field-wrapper select::placeholder,
+.easycommerce .easycommerce-checkout_input::placeholder {
+    color: var(--color-ec-placeholder);
+}
+.easycommerce .easycommerce-checkout_field-wrapper input:hover,
+.easycommerce .easycommerce-checkout_field-wrapper select:hover,
+.easycommerce .easycommerce-checkout_input:hover {
+    border: 1px solid var(--color-ec-secondary);
+}
+.easycommerce .easycommerce-checkout_field-wrapper input:focus,
+.easycommerce .easycommerce-checkout_field-wrapper select:focus {
+    border-color: var(--color-ec-primary);
+    outline: 0;
+    box-shadow: 0px 2px 4.5px 0px var(--color-ec-tertiary);
+}
+
+.easycommerce .easycommerce-col-half {
+    width: 48% !important;
+    float: left !important;
+    margin-left: 1% !important;
+    margin-right: 1% !important;
+}
+.easycommerce .easycommerce-coupon-wrapper input {
+    width: 100%;
+    height: 60px;
+    border: 1px solid var(--color-ec-border);
+    border-radius: 8px;
+    box-shadow: none;
+}
+.easycommerce .easycommerce-coupon-wrapper input:hover {
+    border: 1px solid var(--color-ec-secondary);
+}
+.easycommerce .easycommerce-coupon-wrapper input:focus {
+    border: 1px solid var(--color-ec-secondary);
+    box-shadow: 0px 2px 4.5px 0px var(--color-ec-tertiary);
+}
+.easycommerce-checkout-wrapper h1,
+.easycommerce-checkout-wrapper h2,
+.easycommerce-checkout-wrapper h3,
+.easycommerce-checkout-wrapper h4,
+.easycommerce-checkout-wrapper h5,
+.easycommerce-checkout-wrapper h6 {
+    margin: 0;
+}
+.easycommerce-checkout-wrapper p {
+    margin: 0;
+}
+
+.easycommerce
+    .easycommerce-checkout-wrapper
+    .easycommerce-payment-wrapper
+    input[type="radio"] {
+    box-shadow: 0px 0px 0px 2px #dbdbdb;
+    font-size: 3em;
+    width: 25px;
+    height: 25px;
+    margin-right: 7px;
+    border: 4px solid #fff;
+    background-clip: border-box;
+    border-radius: 50%;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+}
+
+.easycommerce
+    .easycommerce-checkout-wrapper
+    .easycommerce-payment-wrapper
+    input[type="radio"]:checked {
+    box-shadow: 0px 0px 0px 2px var(--color-ec-primary);
+    background-color: var(--color-ec-primary);
+}
+
+.easycommerce
+    .easycommerce-checkout-wrapper
+    .easycommerce-cart-wrapper
+    .easycommerce-qunatity-input {
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    color: var(--color-ec-body);
+    width: 40px;
+    height: 20px;
+    color: var(--color-ec-body);
+    text-align: center;
+}
+.easycommerce
+    .easycommerce-checkout-wrapper
+    .easycommerce-cart-wrapper
+    .easycommerce-qunatity-input:focus {
+    outline: none;
+    box-shadow: none;
+    border: none;
+}
+.easycommerce
+    .easycommerce-checkout-wrapper
+    .easycommerce-checkout_input
+    input {
+    border: 1px solid var(--color-ec-border);
+    box-shadow: none;
+    border-radius: 6px;
+    padding: 7px 10px;
+    color: var(--color-ec-body);
+}
+.easycommerce .easycommerce-checkout-wrapper .easycommerce-checkout_input:focus,
+.easycommerce
+    .easycommerce-checkout-wrapper
+    .easycommerce-checkout_input:focus-visible,
+.easycommerce
+    .easycommerce-checkout-wrapper
+    .easycommerce-checkout_input:visited {
+    outline: none;
+    border: 1px solid var(--color-ec-primary);
+    box-shadow: none;
+    text-decoration: none;
+}
+.easycommerce .easycommerce-checkout-thank-you_wrap h2 {
+    font-family: "Inter", sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 32px;
+    color: var(--color-ec-body);
+}
+.easycommerce
+    .easycommerce-checkout-wrapper
+    .easycommerce-input-checkoutbox:checked::before {
+    content: url(../../admin/img/icons/checked.png);
+    margin: unset;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: -2px;
+    left: 3px;
+}
+
+.easycommerce-css-loader {
+    border: 2px solid #ffffff;
+    border-top: 4px solid var(--color-ec-primary);
+    border-radius: 50%;
+    width: 21px;
+    height: 21px;
+    animation: spin 2s linear infinite;
+}
+.easycommerce-add-to-cart-button.loading {
+    background-color: #f4f0ff;
+}
+.easycommerce .easycommerce-cart-quantity-input::-webkit-outer-spin-button,
+.easycommerce .easycommerce-cart-quantity-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.easycommerce .easycommerce-cart-quantity-input[type="number"] {
+    -moz-appearance: textfield;
+}
+.easycommerce-css-loader-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.easycommerce-checkout-main-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px; 
+}
+/*Paypal Payment Method*/
+.easycommerce
+    .easycommerce-payment_method-paypal
+    #easycommerce_paypal_payment_form,
+.easycommerce
+    .easycommerce-payment_method-stripe
+    #easycommerce-payment_method-stripe-form,
+.easycommerce
+    .easycommerce-payment_method-square
+    #easycommerce-payment_method-square-form,
+.easycommerce
+    .easycommerce-payment_method-braintree
+    #easycommerce-payment_method-braintree-form {
+    display: none;
+}
+.easycommerce-payment_method-form {
+	margin-top: 12px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.es-custom-odersummary {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 46px;
+    margin-top: 12px;
+}
+
+.easycommerce .easycommerce-checkout-wrapper .easycommerce-shipping-method {
+    box-shadow: 0px 0px 0px 2px #dbdbdb;
+    font-size: 3em;
+    margin-right: 7px;
+    border: 4px solid #fff;
+    background-clip: border-box;
+    border-radius: 50%;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+}
+
+input[type="radio"].easycommerce-shipping-method:checked {
+    box-shadow: 0px 0px 0px 2px var(--color-ec-primary);
+    background-color: var(--color-ec-primary);
+}
+.easycommerce-shipping-method {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+}
+span.easycommerce-checkout-shipping-cost label {
+    display: flex;
+    margin-top: 10px;
+    gap: 6px;
+    margin-left: 18px;
+}
+
+.easycommerce-coupon-wrapper button:hover{
+    background-color: #F8F8F8;
+    color: #737791;
+    border-color: #EBEBEB;
+}
+.easycommerce-checkout-shipping-same-as-address{
+    display: none;
+}

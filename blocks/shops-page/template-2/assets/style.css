@@ -1,0 +1,24 @@
+.easycommerce .easycommerce-drawer-product-search {
+    position: relative;
+}
+.easycommerce .easycommerce-drawer-product-search img {
+    position: absolute;
+    margin-left: 12px;
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.easycommerce .easycommerce-product-search {
+    border-radius: 8px;
+    height: 48px;
+    padding-left: 30px;
+    box-shadow: none;
+}
+.easycommerce .easycommerce-product-search:hover {
+    border: 1px solid var(--color-ec-secondary);
+}
+.easycommerce .easycommerce-product-search:focus {
+    outline: none !important;
+    box-shadow: 0px 2px 4.5px 0px var(--color-ec-tertiary);
+}

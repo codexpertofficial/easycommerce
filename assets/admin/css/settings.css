@@ -1,0 +1,228 @@
+.easycommerce-field-wrapper {
+    margin-bottom: 24px;
+    max-width: 712px;
+}
+.switch-wrapper {
+    display: flex;
+    align-items: center;
+}
+.easycommerce-field-wrapper p {
+    font-size: 14px;
+    line-height: 16px;
+    color: var(--color-ec-secondary);
+}
+.easycommerce-field-wrapper p label {
+    display: block;
+    font-size: 16px;
+    line-height: 26px;
+    color: var(--color-ec-body);
+    margin-bottom: 8px;
+}
+.easycommerce-field-wrapper-multicheck h5 {
+    color: var(--color-ec-body);
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+.easycommerce-field-wrapper-multicheck label {
+    display: block;
+    margin-bottom: 16px;
+    color: var(--color-ec-body);
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 400;
+}
+.easycommerce-field-wrapper p textarea {
+    width: 100%;
+    height: 140px;
+    border: 1px solid var(--color-ec-border);
+    border-radius: 8px;
+    padding: 7px 14px;
+    resize: none;
+    margin-bottom: 8px;
+    color: var(--color-ec-body);
+    font-size: 14px;
+    line-height: 26px;
+}
+.easycommerce-field-wrapper p input {
+    width: 100%;
+    border: 1px solid var(--color-ec-border);
+    border-radius: 8px;
+    padding: 7px 14px;
+    resize: none;
+    margin-bottom: 8px;
+    height: var(--height-ec-input);
+}
+.rtl .easycommerce-field-wrapper p input {
+    text-align: right;
+}
+.easycommerce-field-wrapper p input[type="color"] {
+    padding: 0 2px;
+}
+.easycommerce-field-wrapper p input[type="file"],
+.easycommerce-field-wrapper p input[type="file"]:focus {
+    border: none;
+}
+.easycommerce-field-wrapper p textarea:focus,
+.easycommerce-field-wrapper p input:focus {
+    outline: none;
+    border: 1px solid var(--color-ec-primary);
+    box-shadow: 0px 2px 4.5px 0px var(--color-ec-tertiary);
+}
+.easycommerce-field-wrapper select {
+    width: 100%;
+    max-width: 100%;
+    border: 1px solid var(--color-ec-border);
+    border-radius: 8px;
+    padding: 7px 14px;
+    margin-bottom: 8px;
+    display: block;
+    color: var(--color-ec-body);
+    height: var(--height-ec-input);
+}
+.easycommerce-field-wrapper select:hover,
+.easycommerce-field-wrapper select:focus,
+.easycommerce-field-wrapper select:active,
+.easycommerce-field-wrapper select:focus-visible {
+    color: var(--color-ec-body);
+    box-shadow: none;
+    outline: none;
+    border: 1px solid var(--color-ec-tertiary);
+}
+.easycommerce-field-wrapper select:focus {
+    border: 1px solid var(--color-ec-primary);
+    box-shadow: 0px 2px 4.5px 0px var(--color-ec-tertiary);
+}
+.easycommerce-field-wrapper select:focus {
+    border-color: var(--color-ec-primary);
+}
+.easycommerce-field-wrapper .switch {
+    margin-right: 16px;
+}
+.rtl .easycommerce-field-wrapper .switch {
+    margin-left: 16px;
+}
+.easycommerce-field-wrapper .switch-desc label {
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 500;
+    color: var(--color-ec-body);
+}
+.easycommerce-field-wrapper .switch-desc p {
+    font-size: 12px;
+    line-height: 20px;
+    color: var(--color-ec-placeholder);
+}
+.easycommerce-field-wrapper .easycommerce-field-image {
+    max-height: 200px;
+    cursor: pointer;
+    margin-bottom: 12px;
+    border: 1px solid #ececec;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.easycommerce-field-wrapper label {
+    display: block;
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 400;
+    color: var(--color-ec-body);
+    margin-bottom: 8px;
+}
+.easycommerce-field-wrapper p {
+    margin-top: 6px;
+    color: var(--color-ec-placeholder);
+}
+.easycommerce-field-wrapper a {
+    color: var(--color-ec-primary);
+}
+.easycommerce-field-wrapper p .easycommerce-field-media-url {
+    width: calc(100% - 187px);
+    color: var(--color-ec-secondary);
+    border: 1px solid #dbdbdb;
+}
+.easycommerce-field-image-change {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.easycommerce-field-color {
+    max-width: 120px;
+}
+.easycommerce .easycommerce-shipping-method-select-field {
+    width: 30%;
+}
+.easycommerce .easycommerce-shipping-method-select-field select {
+    display: block;
+    width: 98%;
+    border: 1px solid var(--color-ec-border);
+    padding: 10px;
+    font-size: 16px;
+    line-height: 26px;
+    font-family: "Inter", "sans-serif";
+    color: var(--color-ec-body);
+    border-color: var(--color-ec-border);
+    margin-bottom: 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 400;
+}
+.easycommerce .easycommerce-shipping-method-select-field select:focus {
+    border-color: var(--color-ec-primary);
+    box-shadow: none;
+}
+.easycommerce .select2-selection.select2-selection--multiple {
+    align-items: center;
+    display: flex;
+    padding-bottom: 0;
+    border: 1px solid var(--color-ec-border);
+    border-radius: 8px;
+    transition: 0.3s all ease;
+    padding: 6px;
+}
+.easycommerce .select2-selection.select2-selection--multiple:hover {
+    border-color: var(--color-ec-secondary);
+}
+.easycommerce .select2-selection.select2-selection--multiple:focus {
+    border-color: var(--color-ec-primary);
+    box-shadow: 0px 2px 4.5px 0px var(--color-ec-shadow);
+}
+.select2-container--default
+    .select2-selection--multiple
+    .select2-selection__choice {
+    background-color: #f8f8f8 !important;
+    border-color: var(--color-ec-border) !important;
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
+}
+.select2-container--default
+    .select2-selection--multiple
+    .select2-selection__choice__remove {
+    border-color: var(--color-ec-border) !important;
+}
+.select2-container--default
+    .select2-selection--multiple
+    .select2-selection__choice__remove {
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
+}
+.select2-container--default .select2-search--inline .select2-search__field {
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
+} 
+
+
+@media screen and (max-width: 1440px) {
+    .easycommerce-field-wrapper {
+        max-width: 600px !important;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .easycommerce-field-wrapper {
+        max-width: 442px !important;
+    }
+}

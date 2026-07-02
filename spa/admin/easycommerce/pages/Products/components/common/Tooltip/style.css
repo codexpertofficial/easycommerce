@@ -1,0 +1,11 @@
+.ec-tooltip-container .ec-tooltip {
+    max-width: 300px;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 400;
+    background-color: #7351fd;
+    color: #fff;
+    border-radius: 6px;
+    padding: 12px;
+}

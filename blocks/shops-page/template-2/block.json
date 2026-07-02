@@ -1,0 +1,159 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "easycommerce/template-2",
+    "version": "0.1.1",
+    "title": "Template 2",
+    "category": "easycommerce-shop",
+    "description": "This is shop page",
+    "example": {},
+    "supports": {
+        "backgroundColor": {
+            "type": "string",
+            "default": "some-preset-background-slug"
+        },
+        "color": {
+            "background": false,
+            "text": true
+        },
+        "typography": {
+            "fontSize": true,
+            "lineHeight": true
+        },
+        "spacing": {
+            "margin": true,
+            "padding": true,
+            "blockGap": true
+        },
+        "anchor": true,
+        "html": false,
+
+        "align": true
+    },
+    "attributes": {
+        "ProductPerPage": { "type": "number", "default": 9 },
+        "columns": { "type": "number", "default": 3 },
+        "align": { "type": "string", "default": "wide" },
+        "categoryColor": {
+            "type": "string",
+            "default": "var(--color-ec-secondary)"
+        },
+        "showFilters": { "type": "boolean", "default": true },
+        "categoryFontSize": { "type": "integer", "default": 12 },
+        "categoryFontWeight": { "type": "string", "default": "500" },
+        "categoryTextTransform": { "type": "string", "default": "" },
+        "categoryStyle": { "type": "string", "default": "" },
+        "categoryDecoration": { "type": "string", "default": "" },
+        "categoryLineHeight": { "type": "integer", "default": 20 },
+        "categorySpacing": { "type": "integer", "default": 0 },
+        "titleColor": { "type": "string", "default": "#121216" },
+        "titleHoverColor": { "type": "string", "default": "var(--color-ec-primary)" },
+        "titleFontSize": { "type": "integer", "default": 16 },
+        "titleFontWeight": { "type": "string", "default": "600" },
+        "titleTextTransform": { "type": "string", "default": "" },
+        "titleTextStyle": { "type": "string", "default": "" },
+        "titleDecoration": { "type": "string", "default": "" },
+        "titleLineHeight": { "type": "integer", "default": 26 },
+        "titleSpacing": { "type": "integer", "default": 0 },
+        "starSize": { "type": "integer", "default": 13 },
+        "ratingColor": {
+            "type": "string",
+            "default": "var(--color-ec-secondary)"
+        },
+        "ratingFontSize": { "type": "integer", "default": 16 },
+        "ratingFontWeight": { "type": "string", "default": "400" },
+        "ratingTextTransform": { "type": "string", "default": "" },
+        "ratingStyle": { "type": "string", "default": "" },
+        "ratingDecoration": { "type": "string", "default": "" },
+        "ratingLineHeight": { "type": "integer", "default": 26 },
+        "ratingSpacing": { "type": "integer", "default": 0 },
+        "priceColor": { "type": "string", "default": "#120350" },
+        "priceFontSize": { "type": "integer", "default": 20 },
+        "priceFontWeight": { "type": "string", "default": "600" },
+        "priceTextTransform": { "type": "string", "default": "" },
+        "priceStyle": { "type": "string", "default": "" },
+        "priceDecoration": { "type": "string", "default": "" },
+        "priceLineHeight": { "type": "integer", "default": 32 },
+        "priceSpacing": { "type": "integer", "default": 0 },
+        "salePriceColor": { "type": "string", "default": "#120350" },
+        "salePriceFontSize": { "type": "integer", "default": 16 },
+        "salePriceFontWeight": { "type": "string", "default": "600" },
+        "salePriceTextTransform": { "type": "string", "default": "" },
+        "salePriceStyle": { "type": "string", "default": "" },
+        "salePriceDecoration": { "type": "string", "default": "line-through" },
+        "salePriceLineHeight": { "type": "integer", "default": 32 },
+        "salePriceSpacing": { "type": "integer", "default": 0 },
+        "cartButtonColor": {
+            "type": "string",
+            "default": "var(--color-ec-primary)"
+        },
+        "cartButtonBgColor": {
+            "type": "string",
+            "default": "var(--color-ec-accent)"
+        },
+        "cartButtonFontSize": { "type": "integer", "default": 16 },
+        "cartButtonFontWeight": { "type": "string", "default": "500" },
+        "cartButtonTextTransform": { "type": "string", "default": "" },
+        "cartButtonStyle": { "type": "string", "default": "" },
+        "cartButtonDecoration": { "type": "string", "default": "" },
+        "cartButtonLineHeight": { "type": "integer", "default": 26 },
+        "cartButtonSpacing": { "type": "integer", "default": 0 },
+        "cartButtonHoverColor": {
+            "type": "string",
+            "default": "#ffffff"
+        },
+        "cartButtonHoverBgColor": {
+            "type": "string",
+            "default": "var(--color-ec-primary)"
+        },
+        "cartButtonHoverFontSize": { "type": "integer", "default": 16 },
+        "cartButtonHoverFontWeight": { "type": "string", "default": "500" },
+        "cartButtonHoverTextTransform": { "type": "string", "default": "" },
+        "cartButtonHoverStyle": { "type": "string", "default": "" },
+        "cartButtonHoverDecoration": { "type": "string", "default": "" },
+        "cartButtonHoverLineHeight": { "type": "integer", "default": 26 },
+        "cartButtonHoverSpacing": { "type": "integer", "default": 0 },
+         "cartButtonFocusColor": {
+            "type": "string",
+            "default": "#ffffff"
+        },
+        "cartButtonFocusBgColor": {
+            "type": "string",
+            "default": "var(--color-ec-primary)"
+        },
+        "checkoutButtonColor": {
+            "type": "string",
+            "default": "var(--color-ec-primary)"
+        },
+        "checkoutButtonBgColor": {
+            "type": "string",
+            "default": "var(--color-ec-accent)"
+        },
+        "checkoutButtonFontSize": { "type": "integer", "default": 16 },
+        "checkoutButtonFontWeight": { "type": "string", "default": "500" },
+        "checkoutButtonTextTransform": { "type": "string", "default": "" },
+        "checkoutButtonStyle": { "type": "string", "default": "" },
+        "checkoutButtonDecoration": { "type": "string", "default": "" },
+        "checkoutButtonLineHeight": { "type": "integer", "default": 26 },
+        "checkoutButtonSpacing": { "type": "integer", "default": 0 },
+        "checkoutButtonHoverColor": {
+            "type": "string",
+            "default": "#ffffff"
+        },
+        "checkoutButtonHoverBgColor": {
+            "type": "string",
+            "default": "var(--color-ec-primary)"
+        },
+        "checkoutButtonHoverFontSize": { "type": "integer", "default": 16 },
+        "checkoutButtonHoverFontWeight": { "type": "string", "default": "500" },
+        "checkoutButtonHoverTextTransform": { "type": "string", "default": "" },
+        "checkoutButtonHoverStyle": { "type": "string", "default": "" },
+        "checkoutButtonHoverDecoration": { "type": "string", "default": "" },
+        "checkoutButtonHoverLineHeight": { "type": "integer", "default": 26 },
+        "checkoutButtonHoverSpacing": { "type": "integer", "default": 0 },
+        "showPagination": { "type": "boolean", "default": true }
+    },
+    "textdomain": "easycommerce",
+    "editorScript": "file:./index.js",
+    "style": "file:./assets/style.css"
+}

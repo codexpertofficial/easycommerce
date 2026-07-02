@@ -1,0 +1,39 @@
+#wpcontent {
+    padding-left: 0px;
+}
+.wrap {
+    margin: unset;
+}
+.easycommerce-custom-date-field .react-datepicker-wrapper input {
+    width: 100%;
+    border: 1px solid var(--color-ec-border);
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+.easycommerce-custom-date-field .react-datepicker-wrapper input:focus {
+    box-shadow: none;
+    border: 1px solid var(--color-ec-primary);
+}
+.easycommerce .easycommerce-report-product-search-input {
+    padding: 8px 15px;
+    color: var(--color-ec-body);
+    border: 1px solid #dbdbdb;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    line-height: 26px;
+    border-radius: 8px;
+}
+.easycommerce .easycommerce-report-product-search-input::placeholder {
+    font-size: 16px;
+    color: var(--color-ec-placeholder);
+    font-family: "Inter", sans-serif;
+}
+.easycommerce .easycommerce-report-product-search-input:focus {
+    border: 1px solid #dbdbdb;
+    box-shadow: none;
+}
+
+.toplevel_page_easycommerce-store ul.wp-submenu li.current {
+    box-shadow: inset 4px 0 0 0 #ffffff !important;
+    transition: box-shadow .1s linear;
+}

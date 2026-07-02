@@ -1,0 +1,21 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "easycommerce/single-product-stock",
+    "version": "0.1.0",
+    "title": "Product Stock",
+    "category": "easycommerce-product",
+    "description": "Product Stock",
+    "example": {},
+    "attributes": {
+        "showStock": {
+            "default": true,
+            "type": "boolean"
+        }
+    },
+    "supports": {
+        "html": false
+    },
+    "textdomain": "easycommerce",
+    "editorScript": "file:./index.js"
+}

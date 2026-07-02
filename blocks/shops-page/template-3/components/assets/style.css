@@ -1,0 +1,110 @@
+#easycommerce-filter img {
+    border: 1px solid#DBDBDB;
+    padding: 9px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px 0px #0000001a;
+    backdrop-filter: blur(5px);
+    background: #ffffff0f;
+    left: 20px;
+}
+.easycommerce-thumbnail-img {
+    width: 100%;
+    max-height: 320px;
+    object-fit: cover;
+}
+.easycommerce-add-to-cart-shop:hover {
+    color: #fff !important;
+}
+
+.easycommerce-drawer-container {
+    width: 300px;
+}
+.easycommerce-shop-container {
+    width: calc(100% - 300px);
+}
+.easycommerce-price-range-input-field,
+.easycommerce-price-range-input-field:focus {
+    border: 1px solid var(--color-ec-border) !important;
+}
+.easycommerce-price-range-input-field::-webkit-outer-spin-button,
+.easycommerce-price-range-input-field::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* Firefox */
+.easycommerce-price-range-input-field[type="number"] {
+    -moz-appearance: textfield;
+}
+.easycommerce-drawer-wrap-st {
+    align-self: flex-end !important;
+}
+
+/* Shop Trendy grid/list icon active inactive button color css */
+
+.easycommerce-shop-st-grid-btn svg rect:first-child,
+.easycommerce-shop-st-list-btn svg rect:first-child {
+    fill: #FFFFFF;
+    stroke: #EBEBEB;
+}
+
+.easycommerce-shop-st-grid-btn svg path,
+.easycommerce-shop-st-list-btn svg path {
+    fill: #272435;
+}
+
+/* Active state */
+.easycommerce-shop-st-grid-btn.active svg rect:first-child,
+.easycommerce-shop-st-list-btn.active svg rect:first-child {
+    fill: #272435;
+    stroke: #272435;
+}
+
+.easycommerce-shop-st-grid-btn.active svg path,
+.easycommerce-shop-st-list-btn.active svg path {
+    fill: #FFFFFF;
+}
+
+
+@media (min-width: 1024px) {
+    .easycommerce-drawer-close {
+        visibility: hidden !important;
+    }
+}
+
+@media (max-width: 991px) {
+    /* .easycommerce-shop-container {
+        width: 100%;
+    } */
+    .easycommerce-drawer-wrap-st {
+        margin-top: 34px;
+    }
+}
+@media (max-width: 768px) {
+    /* .easycommerce-shop-container {
+        width: 100%;
+    } */
+    .easycommerce-drawer-wrap-st {
+        margin-top: 47px;
+    }
+}
+@media (max-width: 576px) {
+    .easycommerce-filters-st {
+        width: 80% !important;
+    }
+}
+@media (max-width: 425px) {
+    .easycommerce-shop-container-st.hidden {
+        display: none !important;
+    }
+    .easycommerce-shop-container-st:not(.hidden) {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+    }
+
+    .easycommerce-product-price-wrap-st {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 0.25rem !important;
+    }
+}
+

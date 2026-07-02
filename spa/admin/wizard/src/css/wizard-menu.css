@@ -1,0 +1,80 @@
+:root {
+    --color-ec-border: #7F7F98;
+}
+.wrap {
+    margin: 0;
+}
+@keyframes donut-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.easycommerce.toplevel_page_easycommerce-wizard .easycommerce-wizard-input {
+    border: 1px solid var(--color-ec-border);
+    padding: 15px;
+    font-size: 16px;
+    line-height: 19px;
+    max-width: unset;
+    border-radius: 12px;
+    color: var(--color-ec-body);
+}
+.easycommerce.toplevel_page_easycommerce-wizard
+    .easycommerce-wizard-input:focus {
+    color: var(--color-ec-body);
+    outline: unset !important;
+    box-shadow:0 0 0 5px #F3F0FF;
+    border: 1px solid var(--color-ec-primary);
+}
+.easycommerce.toplevel_page_easycommerce-wizard
+    .easycommerce-wizard-input:hover {
+    color: var(--color-ec-body);
+}
+.easycommerce.toplevel_page_easycommerce-wizard
+    .easycommerce-wizard-input::placeholder {
+    color: var(--color-ec-placeholder);
+}
+.easycommerce.toplevel_page_easycommerce-wizard #easycommerce-custom-color {
+    border-radius: 50%;
+    visibility: hidden;
+    height: 0px;
+}
+.easycommerce.toplevel_page_easycommerce-wizard
+    .easycommerce-wizard-link:hover {
+    color: var(--color-ec-primary);
+}
+
+.easycommerce.toplevel_page_easycommerce-wizard .easycommerce-checkbox-input {
+    border: 2px solid var(--color-ec-primary);
+    background-color: #7351fd20;
+    width: 24px;
+    height: 24px;
+    box-shadow: none !important;
+    margin-top: 1px;
+}
+.easycommerce.toplevel_page_easycommerce-wizard .easycommerce-checkbox-input:checked::before {
+    margin: unset !important;
+    content: url(../../../../../assets/admin/img/icons/small-check.png) !important;
+}
+
+.easycommerce.toplevel_page_easycommerce-wizard .easycommerce-checkbox-input:checked {
+    background-color: var(--color-ec-primary);
+}
+.easycommerece-confetti canvas {
+    width: 100% !important;
+}
+.easycommerce.toplevel_page_easycommerce-wizard #adminmenumain,
+.easycommerce.toplevel_page_easycommerce-wizard #wpadminbar,
+.easycommerce.toplevel_page_easycommerce-wizard #wpbody-content #screen-meta,
+.easycommerce.toplevel_page_easycommerce-wizard #wpbody-content .notice,
+.easycommerce.toplevel_page_easycommerce-wizard #wpfooter {
+    display: none !important;
+}
+.easycommerce.toplevel_page_easycommerce-wizard #wpcontent {
+    margin: 0 !important;
+}
+.easycommerce.toplevel_page_easycommerce-wizard #wpbody {
+    margin-top: -32px !important;
+}

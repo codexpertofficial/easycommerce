@@ -1,0 +1,29 @@
+.idea/
+.vscode/
+.yarn/
+.playwright-mcp/
+vendor/
+node_modules/
+build/
+release/
+docs/*.xml
+/lib/packages/
+/lib/classes/
+
+*.lock
+*-lock.json
+.phpunit.*/
+.phpunit.*.cache
+tree.txt
+*.zip
+.*.json
+
+**/.DS_Store
+
+# Agentic development files
+# .opencode
+opencode.json
+# AGENTS.md
+/.remember/
+.claude/settings.local.json
+/docs/superpowers/*

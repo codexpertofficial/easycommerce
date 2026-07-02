@@ -1,0 +1,25 @@
+.easycommerce-neve.easycommerce
+	#easycommerce_dashboard_render
+	.easycommerce-dashboard-input,
+.easycommerce-neve.easycommerce
+	#easycommerce_dashboard_render
+	.easycommerce-dashboard-input-select {
+	width: 100%;
+}
+.easycommerce-neve.easycommerce
+	.easycommerce-dashboard-form-password
+	[type="password"],
+.easycommerce-neve.easycommerce
+	.easycommerce-dashboard-form-password
+	[type="text"] {
+	width: 100%;
+}
+.easycommerce.easycommerce-neve
+	.easycommerce-checkout-wrapper
+	.easycommerce-input-checkoutbox:checked::before,
+.easycommerce.easycommerce-neve
+	.easycommerce-shop-container-front
+	.easycommerce-input-checkoutbox:checked::before {
+	top: -4px;
+	left: 3px;
+}

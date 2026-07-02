@@ -1,0 +1,119 @@
+.easycommerce.easycommerce-bootstrap-basic4
+	input.easycommerce-product-search[type="text"]:hover {
+	border: 1px solid var(--color-ec-secondary) !important;
+}
+.easycommerce.easycommerce-bootstrap-basic4
+	input.easycommerce-product-search[type="text"]:focus {
+	border-color: #6600ff !important;
+	outline: none;
+}
+.easycommerce.easycommerce-bootstrap-basic4
+	.easycommerce-shop-container-front
+	.easycommerce-input-checkoutbox:checked::before,
+.easycommerce.easycommerce-bootstrap-basic4
+	.easycommerce-checkout-wrapper
+	.easycommerce-input-checkoutbox:checked::before {
+	top: -4px;
+}
+.easycommerce.easycommerce-bootstrap-basic4 .easycommerce-coupon-wrapper input {
+	padding: 12px;
+}
+
+.easycommerce.easycommerce-bootstrap-basic4
+	input.easycommerce-price-range-input-field[type="number"]:focus {
+	border: 1px solid var(--color-ec-border);
+	outline: none;
+}
+.easycommerce.easycommerce-bootstrap-basic4 .easycommerce-product-title-shop {
+	color: var(--color-ec-body);
+}
+.easycommerce.easycommerce-bootstrap-basic4
+	button.easycommerce-add-to-cart-button {
+	border-color: var(--color-ec-border);
+}
+.easycommerce.easycommerce-bootstrap-basic4
+	.easycommerce-dashboard-form-password {
+	height: 52px;
+}
+.easycommerce.easycommerce-bootstrap-basic4
+	button.easycommerce-add-to-cart-button:focus,
+.easycommerce.easycommerce-bootstrap-basic4 #easycommerce-coupon-field:focus,
+.easycommerce.easycommerce-bootstrap-basic4
+	.easycommerce-checkout-main-btn:focus,
+.easycommerce.easycommerce-bootstrap-basic4
+	.easycommerce-dashboard-form-password-show-hide-btn:focus,
+.easycommerce.easycommerce-bootstrap-basic4
+	.easycommerce-dashboard-form-btn.save {
+	outline: none !important;
+}
+.easycommerce.easycommerce-bootstrap-basic4
+	.easycommerce-dashboard-form-password-input {
+	width: 100%;
+	padding-left: 16px;
+}
+.easycommerce.easycommerce-bootstrap-basic4 .easycommerce-quantity-minus-btn,
+.easycommerce.easycommerce-bootstrap-basic4 .easycommerce-quantity-plus-btn,
+.easycommerce.easycommerce-bootstrap-basic4
+	.easycommerce-dashboard-form-password-input,
+.easycommerce.easycommerce-bootstrap-basic4
+	.easycommerce-dashboard-form-password-show-hide-btn {
+	border: none !important;
+}
+.easycommerce.easycommerce-bootstrap-basic4 .easycommerce-quantity-minus-btn {
+	border-right: 1px solid var(--color-ec-border) !important;
+}
+.easycommerce.easycommerce-bootstrap-basic4 .easycommerce-quantity-plus-btn {
+	border-left: 1px solid var(--color-ec-border) !important;
+}
+.easycommerce.easycommerce-bootstrap-basic4
+	.easycommerce-quantity-minus-btn:hover,
+.easycommerce.easycommerce-bootstrap-basic4
+	.easycommerce-quantity-plus-btn:hover,
+.easycommerce.easycommerce-bootstrap-basic4
+	.easycommerce-quantity-minus-btn:focus,
+.easycommerce.easycommerce-bootstrap-basic4
+	.easycommerce-quantity-plus-btn:focus,
+.easycommerce.easycommerce-bootstrap-basic4 .easycommerce-qunatity-button:hover,
+.easycommerce.easycommerce-bootstrap-basic4
+	.easycommerce-qunatity-button:focus {
+	border: 1px solid var(--color-ec-border);
+	outline: none;
+	color: var(--color-ec-secondary) !important;
+}
+.easycommerce.easycommerce-bootstrap-basic4
+	.easycommerce-field.easycommerce-field-select,
+.easycommerce.easycommerce-bootstrap-basic4
+	.easycommerce-dashboard-input-select {
+	background-color: #ffffff;
+}
+.easycommerce.easycommerce-bootstrap-basic4
+	.easycommerce-dashboard-input-select,
+.easycommerce.easycommerce-bootstrap-basic4 .easycommerce-dashboard-input {
+	width: 100%;
+}
+.easycommerce.easycommerce-bootstrap-basic4
+	.easycommerce-checkout-cart-quantity-plus-btn {
+	padding: 5px;
+}
+.easycommerce.easycommerce-bootstrap-basic4 .easycommerce-cart-quantity-wrap {
+	gap: 0px;
+}
+.easycommerce.easycommerce-bootstrap-basic4 .easycommerce-recent-order-table {
+	padding-left: 15px;
+}
+
+.easycommerce.easycommerce-bootstrap-basic4 .easycommerce-qunatity-button {
+	padding: 0px;
+}
+@media (max-width: 320px) {
+	.easycommerce.easycommerce-bootstrap-basic4
+		.easycommerce-coupon-wrapper
+		button {
+		padding-left: 10px !important;
+		padding-right: 10px !important;
+	}
+	.easycommerce.easycommerce-bootstrap-basic4
+		.easycommerce-dashboard-form-submit {
+		gap: 3px;
+	}
+}

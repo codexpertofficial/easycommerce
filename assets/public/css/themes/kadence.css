@@ -1,0 +1,43 @@
+.easycommerce-kadence.easycommerce
+    #easycommerce_dashboard_render
+    .easycommerce-dashboard-input,
+.easycommerce-kadence.easycommerce
+    #easycommerce_dashboard_render
+    .easycommerce-dashboard-input-select {
+    width: 100%;
+}
+.easycommerce.easycommerce-kadence .easycommerce-quantity-minus-btn {
+	border-right: 1px solid var(--color-ec-border) !important;
+}
+.easycommerce.easycommerce-kadence .easycommerce-quantity-plus-btn {
+	border-left: 1px solid var(--color-ec-border) !important;
+}
+.easycommerce.easycommerce-kadence
+    #easycommerce_dashboard_render
+    .easycommerce-dashboard-form-btn {
+    font-size: 14px;
+}
+.easycommerce.easycommerce-kadence
+	.easycommerce-single-product-wrapper {
+	padding-top: 50px;
+	padding-bottom: 50px;
+	max-width: var(--global-content-width);
+	display: flex;
+	flex-direction: column;
+	padding-left: 50px;
+	padding-right: 50px;
+	background-color: #ffff;
+	margin: 0px auto;
+}
+.easycommerce.easycommerce-kadence .easycommerce-single-product-content,
+.easycommerce.easycommerce-kadence .easycommerce-single-product-description {
+    max-width: var(--global-content-width);
+    margin: 0 auto;
+}
+.easycommerce.easycommerce-kadence .easycommerce-qunatity-button {
+    border: 1px solid var(--color-ec-border);
+}
+.easycommerce.easycommerce-kadence .easycommerce-shop-container-front .easycommerce-input-checkoutbox:checked::before {
+    top: -6px;
+}
+

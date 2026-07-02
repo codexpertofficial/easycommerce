@@ -1,0 +1,19 @@
+.easycommerce .easycommerce-single-customer-search-field {
+    border: none !important;
+    background-color: #f9fafb !important;
+}
+.easycommerce .easycommerce-single-customer-search-field:focus,
+.easycommerce .easycommerce-refund-input-field:focus {
+    outline: none;
+    box-shadow: none;
+    border: none;
+}
+.easycommerce .easycommerce-refund-input-field {
+    border: none !important;
+    padding: 0 0 0 16px !important;
+}
+.easycommerce .easycommerce-refund-input-field::-webkit-outer-spin-button,
+.easycommerce .easycommerce-refund-input-field::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}

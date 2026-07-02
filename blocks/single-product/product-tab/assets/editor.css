@@ -1,0 +1,53 @@
+.easycommerce .easycommerce-product-details p {
+    color: var(--color-ec-body);
+    font-family: "Inter", system-ui;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    margin-bottom: 24px;
+}
+.easycommerce .easycommerce-product-details h1,
+.easycommerce .easycommerce-product-details h2,
+.easycommerce .easycommerce-product-details h3,
+.easycommerce .easycommerce-product-details h4,
+.easycommerce .easycommerce-product-details h5,
+.easycommerce .easycommerce-product-details h6 {
+    color: var(--color-ec-body);
+    font-family: "Inter", system-ui;
+    font-weight: 700;
+    line-height: 26px;
+    margin-bottom: 24px;
+}
+.easycommerce .easycommerce-product-details h1 {
+    font-size: 32px;
+}
+.easycommerce .easycommerce-product-details h2 {
+    font-size: 28px;
+}
+.easycommerce .easycommerce-product-details h3 {
+    font-size: 26px;
+}
+.easycommerce .easycommerce-product-details h4 {
+    font-size: 24px;
+}
+.easycommerce .easycommerce-product-details h5 {
+    font-size: 22px;
+}
+.easycommerce .easycommerce-product-details h6 {
+    font-size: 20px;
+}
+.easycommerce .easycommerce-review-form textarea {
+    min-height: 106px;
+}
+.easycommerce .easycommerce-review-form input[type="text"],
+.easycommerce .easycommerce-review-form input[type="email"] {
+    padding: 15px;
+    height: 48px;
+    border: 1px solid var(--color-ec-border);
+}
+.easycommerce .easycommerce-review-form textarea:focus,
+.easycommerce .easycommerce-review-form input:focus {
+    outline: none;
+    box-shadow: none;
+    border: 1px solid var(--color-ec-primary);
+}

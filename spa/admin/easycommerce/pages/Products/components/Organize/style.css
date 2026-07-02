@@ -1,0 +1,62 @@
+.easycommerce-term-container {
+    max-height: 250px;
+    overflow-y: scroll;
+    padding-right: 21px;
+}
+
+.easycommerce-term-container::-webkit-scrollbar {
+	width: 5px;
+    border-radius: 9999px;
+}
+
+.easycommerce-term-container::-webkit-scrollbar-track {
+	background: #F0EDFB;
+    border-radius: 9999px;
+}
+
+.easycommerce-term-container::-webkit-scrollbar-thumb {
+	background-color: #7F7F98; 
+	border-radius: 9999px;
+}
+
+.easycommerce-term-container::-webkit-scrollbar-button {
+    display: none;
+    height: 0;
+    width: 0;
+}
+
+.easycommerce-term-container {
+	scrollbar-width: auto;
+}
+
+.terms-filters-container button {
+    border-radius: 4px 4px 0 0;
+    border: 1px solid #7351FD;
+    background-color: #00000008;
+    min-width: 107px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 16px;
+    margin-bottom: -1px;
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #3C3C42;
+}
+
+.terms-filters-container button.active {
+    border-bottom-color: white;
+    background: white;
+    color: #7351FD;
+}
+
+@media screen and (max-width: 1440px) {
+	.terms-filters-container button {
+		min-width: 65px !important;
+		height: 28px !important;
+		font-size: 12px !important;
+	}
+}

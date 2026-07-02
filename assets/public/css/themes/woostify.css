@@ -1,0 +1,65 @@
+.easycommerce.easycommerce-woostify .easycommerce-product-price-wrap {
+	justify-content: flex-start;
+}
+.easycommerce.easycommerce-woostify .wp-block-easycommerce-single-product-price {
+    display: flex;
+	justify-content: flex-start;
+}
+.easycommerce.easycommerce-woostify .easycommerce-product-details.easycommerce-tabs ul {
+	justify-content: flex-start;
+}
+.easycommerce.easycommerce-woostify 
+.easycommerce-checkout-left > div > div:nth-child(1) {
+	justify-content: flex-start;
+}
+.easycommerce.easycommerce-woostify 
+.easycommerce-checkout-right > div > div:nth-child(1) {
+	justify-content: flex-start;
+}
+.easycommerce.easycommerce-woostify 
+.easycommerce-cart-quantity-wrap {
+    justify-content: flex-start;
+}
+.easycommerce.easycommerce-woostify 
+.easycommerce-cart-product > div:nth-child(1) {
+    width: calc(100% - 130px) !important;
+}
+.easycommerce.easycommerce-woostify 
+.easycommerce-discount-wrapper {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+}
+.easycommerce.easycommerce-woostify 
+.easycommerce-shipping-method-wrapper {
+    display: flex;
+    justify-content: flex-start !important;
+}
+.easycommerce.easycommerce-woostify 
+.easycommerce-payment-wrapper > div:nth-child(1) {
+    justify-content: flex-start;
+}
+.easycommerce.easycommerce-woostify
+.easycommerce-payment_method > div > div {
+    justify-content: flex-start;
+}
+.easycommerce.easycommerce-woostify
+.easycommerce-sidebar {
+    align-items: start;
+}
+.easycommerce.easycommerce-woostify
+.easycommerce-dashboard-input {
+    width: 100%;
+}
+.easycommerce.easycommerce-woostify
+.easycommerce-dashboard-summery-list {
+    width: 100%;
+}
+.easycommerce.easycommerce-woostify
+.easycommerce-dashboard-section > div:nth-child(1) {
+    width: 100%;
+}
+.easycommerce.easycommerce-woostify
+.easycommerce-dash-roth tr td > div {
+    width: 150px !important;
+}

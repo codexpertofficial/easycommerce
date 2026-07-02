@@ -1,0 +1,26 @@
+.easycommerce-gallery-container {
+    max-height: 343px;
+    overflow-y: scroll;
+    padding-right: 16px;
+}
+
+.easycommerce-gallery-container::-webkit-scrollbar {
+	width: 5px;
+    border-radius: 9999px;
+}
+
+.easycommerce-gallery-container::-webkit-scrollbar-track {
+	background: #F0EDFB;
+    border-radius: 9999px;
+}
+
+.easycommerce-gallery-container::-webkit-scrollbar-thumb {
+	background-color: #7F7F98; 
+	border-radius: 9999px;
+}
+
+.easycommerce-gallery-container::-webkit-scrollbar-button {
+    display: none;
+    height: 0;
+    width: 0;
+}

@@ -1,0 +1,17 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "easycommerce/single-product-product-tab",
+    "version": "0.1.0",
+    "title": "Product Tab",
+    "category": "easycommerce-product",
+    "icon": "editor-textcolor",
+    "description": "This block is responsible for Product Tab, Product Description & Review",
+    "example": {},
+    "supports": {
+        "html": false
+    },
+    "textdomain": "easycommerce",
+    "editorScript": "file:./index.js",
+    "editorStyle": "file:./assets/editor.css"
+}

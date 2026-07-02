@@ -1,0 +1,319 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* buttons */
+.easycommerce-primary-button {
+	position: relative;
+	z-index: 1;
+	@apply bg-ec-primary hover:bg-[#6640FF] duration-300 text-white rounded-[8px] py-[11px]
+    font-inter text-[16px] leading-[20px] w-max overflow-hidden;
+}
+
+.easycommerce-primary-button::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	padding: 2px;
+	border-radius: 8px;
+	background: linear-gradient(180deg, #8466ff 0%, #643dff 100%);
+	-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+	-webkit-mask-composite: xor;
+	mask-composite: exclude;
+	z-index: -1;
+}
+
+.easycommerce-outline-button {
+	@apply bg-transparent hover:bg-ec-primary duration-300 text-ec-primary hover:text-white rounded-md flex items-center px-4
+    font-inter text-[16px] leading-[20px] w-max border-[1px] border-solid border-ec-primary h-10;
+}
+.easycommerce-underline-button {
+	@apply text-ec-body focus:text-ec-primary hover:text-ec-primary py-2 font-inter text-[16px] leading-[20px] w-max border-b-[1px] border-solid border-ec-body hover:border-ec-primary duration-300 focus:shadow-none;
+}
+.easycommerce-delete-button {
+	@apply rounded-full w-6 h-6 border-[1px] border-solid border-[#F0EDFB] bg-[#7351FD08] flex items-center justify-center hover:border-[#FF3A52] hover:bg-[#FF3A52] duration-300;
+}
+
+/* Panels */
+.easycommerce-product-section {
+	@apply bg-white rounded-xl;
+}
+.product-panel-heading {
+	@apply py-[14px] px-6 flex items-center justify-between;
+	border-bottom: 1px solid #f0edfb;
+}
+.product-panel-title {
+	@apply flex items-center gap-3 h-[41px];
+}
+.product-panel-title h3 {
+	@apply font-inter text-2xl font-medium text-ec-title leading-[38px];
+}
+.product-panel-title button.panel-info {
+	@apply border-none bg-transparent;
+}
+.product-panel-body {
+	@apply p-6;
+	transition: 0.3s;
+}
+.panel-actions {
+	@apply flex gap-2;
+}
+.panel-actions .ai-generate {
+    @apply bg-transparent rounded-lg px-3 py-2 h-8 flex items-center justify-center gap-2;
+    border: none;
+    position: relative;
+    font-size : 14px;
+    transition: 0.3s;
+}
+
+.panel-actions .ai-generate::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 36px;
+    right: 8px;
+    height: 1px;
+    background: linear-gradient(90deg, #C936ED 0%, #7452FF 100%);
+}
+
+.panel-actions .ai-generate .easycommerce-ai-generate-text {
+	background: linear-gradient(180deg, #3200FF 0%, #FF48E7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 500;
+}
+
+.panel-actions .panel-collapse {
+	@apply rounded-lg p-2 w-8 h-8 flex items-center justify-center bg-white;
+	border: 1px solid #f0edfb;
+}
+.ai-assistant-btn {
+    background: linear-gradient(180deg, #7351fd 0%, #7351fd 100%);
+    border: none;
+}
+.pro-modal {
+    background: linear-gradient(129.64deg, #FFFFFF 0.97%, #FFCCE3 8.9%, #FFFFFF 20.3%, #FFFFFF 27.14%, #FFFFFF 71.24%, #DDD4FF 91.46%, #FFFFFF 100%);
+}
+.pro-img {
+    background: linear-gradient(180deg, #FFC400 0%, #FFAF04 100%);
+    box-shadow: 0px 4px 22.9px 0px #F6EDF5;
+    border-radius: 100%;
+}
+
+.ai-assistant-btn:hover {
+    background: linear-gradient(180deg, #A33BFF 0%, #7351FD 100%);
+    transition: 0.3s;
+}
+button.ai-builder {
+	background: linear-gradient(180deg, #7351fd 0%, #a33bff 100%);
+	border: none;
+}
+button.ai-builder-disable {
+	background: linear-gradient(
+		180deg,
+		rgba(115, 81, 253, 0.5) 0%,
+		rgba(163, 59, 255, 0.5) 100%
+	);
+	border: none;
+}
+a.ai-builder-upgrade {
+	background: linear-gradient(90deg, #fd7f51 0%, #b629f8 100%);
+	border: none;
+	border-radius: 8px;
+}
+button.ai-builder:hover {
+	background: linear-gradient(180deg, #a33bff 0%, #7351fd 100%);
+	transition: 0.3s;
+}
+.panel-actions button.panel-drag {
+	cursor: move;
+}
+.panel-actions button.panel-collapse svg {
+	transition: 0.3s;
+}
+.panel-actions button.panel-collapse.collapsed svg {
+	transform: rotate(180deg);
+	transition: 0.3s;
+}
+.easycommerce-product-section.collapsed .product-panel-body {
+	padding-top: 0;
+	padding-bottom: 0;
+	transition: 0.3s;
+}
+.easycommerce-product-section.collapsed .product-panel-body * {
+	display: none;
+}
+.easycommerce-product-section.collapsed .product-panel-heading {
+	border: none;
+}
+
+/* Input fields */
+.easycommerce-product-section :is(input, textarea) {
+	@apply p-4 rounded-lg font-inter text-[14px] leading-[20px];
+	border: 1px solid #f0edfb;
+}
+.easycommerce-product-section :is(input, textarea)::placeholder {
+	@apply text-ec-placeholder;
+}
+.easycommerce-product-section :is(input, textarea):hover {
+	@apply border-ec-primary;
+	transition: border-color 0.3s ease;
+}
+.easycommerce-product-section :is(input, textarea):focus {
+	@apply border-ec-primary;
+	transition: border-color 0.3s ease;
+	box-shadow: 0 0 0 4px #f3f0ff;
+}
+
+.easycommerce-datepicker-container .react-datepicker {
+	@apply rounded-lg border border-ec-primary font-inter;
+}
+
+.easycommerce-datepicker-container .react-datepicker__header {
+	@apply bg-ec-primary text-white;
+}
+
+.easycommerce-datepicker-container h2.react-datepicker__current-month {
+	@apply text-white text-sm font-medium mb-1;
+}
+
+.easycommerce-datepicker-container .react-datepicker__navigation-icon::before {
+	@apply border-white;
+	border-width: 1px 1px 0 0;
+}
+
+.easycommerce-datepicker-container .react-datepicker__day-name {
+	@apply text-white;
+}
+
+.easycommerce-datepicker-container .react-datepicker__navigation {
+	top: 4px;
+}
+
+.easycommerce-datepicker-container .react-datepicker__day {
+	@apply text-ec-body;
+}
+
+.easycommerce-datepicker-container .react-datepicker__day--outside-month {
+	@apply text-[#bbb];
+}
+
+.easycommerce-datepicker-container
+	.react-datepicker-popper[data-placement^='bottom']
+	.react-datepicker__triangle {
+	fill: #7351fd;
+	color: #7351fd;
+}
+
+.easycommerce-datepicker-container
+	:is(
+		.react-datepicker__day--selected:not([aria-disabled='true']):hover,
+		.react-datepicker__day--in-selecting-range:not(
+				[aria-disabled='true']
+			):hover,
+		.react-datepicker__day--in-range:not([aria-disabled='true']):hover,
+		.react-datepicker__month-text--selected:not([aria-disabled='true']):hover,
+		.react-datepicker__month-text--in-selecting-range:not(
+				[aria-disabled='true']
+			):hover,
+		.react-datepicker__month-text--in-range:not([aria-disabled='true']):hover,
+		.react-datepicker__quarter-text--selected:not([aria-disabled='true']):hover,
+		.react-datepicker__quarter-text--in-selecting-range:not(
+				[aria-disabled='true']
+			):hover,
+		.react-datepicker__quarter-text--in-range:not([aria-disabled='true']):hover,
+		.react-datepicker__year-text--selected:not([aria-disabled='true']):hover,
+		.react-datepicker__year-text--in-selecting-range:not(
+				[aria-disabled='true']
+			):hover,
+		.react-datepicker__year-text--in-range:not([aria-disabled='true']):hover,
+		.react-datepicker__day--selected,
+		.react-datepicker__day--in-selecting-range,
+		.react-datepicker__day--in-range,
+		.react-datepicker__month-text--selected,
+		.react-datepicker__month-text--in-selecting-range,
+		.react-datepicker__month-text--in-range,
+		.react-datepicker__quarter-text--selected,
+		.react-datepicker__quarter-text--in-selecting-range,
+		.react-datepicker__quarter-text--in-range,
+		.react-datepicker__year-text--selected,
+		.react-datepicker__year-text--in-selecting-range,
+		.react-datepicker__year-text--in-range
+	) {
+	@apply bg-ec-table-stock;
+}
+
+.ec-product-status-dropdown button {
+	color: #7351fd !important;
+	border-color: #7351fd !important;
+}
+
+.easycommerce-datepicker-container .react-datepicker__day--keyboard-selected,
+.react-datepicker__month-text--keyboard-selected,
+.react-datepicker__quarter-text--keyboard-selected,
+.react-datepicker__year-text--keyboard-selected {
+    @apply bg-ec-table-stock
+}
+
+/* Accordion animations */
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
+.animate-accordion-down {
+  animation: accordion-down 0.2s ease-out;
+}
+
+.animate-accordion-up {
+  animation: accordion-up 0.2s ease-out;
+}
+
+.easycommerce-datepicker-container .react-datepicker__day--keyboard-selected,
+.react-datepicker__month-text--keyboard-selected,
+.react-datepicker__quarter-text--keyboard-selected,
+.react-datepicker__year-text--keyboard-selected {
+	@apply bg-ec-table-stock;
+}
+
+@keyframes wiggle {
+	0% {
+		transform: rotate(0deg);
+	}
+	10% {
+		transform: rotate(-8deg);
+	}
+	20% {
+		transform: rotate(8deg);
+	}
+	30% {
+		transform: rotate(-5deg);
+	}
+	40% {
+		transform: rotate(5deg);
+	}
+	50% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
+}
+
+.recharts-wrapper *:focus {
+	outline: none;
+}

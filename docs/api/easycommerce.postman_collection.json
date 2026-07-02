@@ -1,0 +1,895 @@
+{
+  "info": {
+    "_postman_id": "8983efe1-43d7-40cc-a3d9-14982c665b53",
+    "name": "EasyCommerce Reports API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "17295910"
+  },
+  "item": [
+    {
+      "name": "Legacy",
+      "item": [
+        {
+          "name": "Dashboard Reports",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{HOME_URL}}/wp-json/easycommerce/v1/dashboard/reports?range=this-month",
+              "host": ["{{HOME_URL}}"],
+              "path": ["wp-json", "easycommerce", "v1", "dashboard", "reports"],
+              "query": [
+                {
+                  "key": "range",
+                  "value": "this-month",
+                  "description": "(Optional) Date range. Values: today, yesterday, this-week, last-week, last-7, this-month, last-month, last-30, this-year, last-year, all-time"
+                },
+                {
+                  "key": "from",
+                  "value": "",
+                  "description": "(Optional) Custom start date (YYYY-MM-DD). Use with 'to' param.",
+                  "disabled": true
+                },
+                {
+                  "key": "to",
+                  "value": "",
+                  "description": "(Optional) Custom end date (YYYY-MM-DD). Use with 'from' param.",
+                  "disabled": true
+                },
+                {
+                  "key": "product_id",
+                  "value": "",
+                  "description": "(Optional) Filter reports by specific product ID.",
+                  "disabled": true
+                }
+              ]
+            },
+            "description": "Get the full report data with charts. Supports range parameter or custom from/to dates. Can filter by product_id for product-specific reports."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Overview",
+      "item": [
+        {
+          "name": "Sales vs Refund vs Revenue",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{HOME_URL}}/wp-json/easycommerce/v1/reports/overview/sales-refund-revenue?range=this-month",
+              "host": ["{{HOME_URL}}"],
+              "path": ["wp-json", "easycommerce", "v1", "reports", "overview", "sales-refund-revenue"],
+              "query": [
+                {
+                  "key": "range",
+                  "value": "this-month",
+                  "description": "(Required) Date range. Values: today, yesterday, this-week, last-week, last-7, this-month, last-month, last-30, this-year, last-year, all-time. Default: last-30"
+                }
+              ]
+            },
+            "description": "Get Sales vs Refund vs Revenue data with chart visualization. Returns labels and datasets with Sales, Refunds, and Revenue data points."
+          },
+          "response": []
+        },
+        {
+          "name": "Stats",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{HOME_URL}}/wp-json/easycommerce/v1/reports/overview/stats?range=this-month",
+              "host": ["{{HOME_URL}}"],
+              "path": ["wp-json", "easycommerce", "v1", "reports", "overview", "stats"],
+              "query": [
+                {
+                  "key": "range",
+                  "value": "this-month",
+                  "description": "(Required) Date range. Values: today, yesterday, this-week, last-week, last-7, this-month, last-month, last-30, this-year, last-year. Default: last-30"
+                },
+                {
+                  "key": "comparison",
+                  "value": "previous-month",
+                  "description": "(Optional) Comparison range for % change calculation. Values: previous-day, previous-week, previous-month, previous-year",
+                  "disabled": true
+                }
+              ]
+            },
+            "description": "Get reports stats overview including Orders, Sales, Refunds, Revenue, Products Sold, and Customers with comparison data."
+          },
+          "response": []
+        },
+        {
+          "name": "Order Status",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{HOME_URL}}/wp-json/easycommerce/v1/reports/overview/order-status?range=this-month",
+              "host": ["{{HOME_URL}}"],
+              "path": ["wp-json", "easycommerce", "v1", "reports", "overview", "order-status"],
+              "query": [
+                {
+                  "key": "range",
+                  "value": "this-month",
+                  "description": "(Required) Date range. Values: today, yesterday, this-week, last-week, last-7, this-month, last-month, last-30, this-year, last-year. Default: last-30"
+                }
+              ]
+            },
+            "description": "Get order status breakdown. Returns counts for Pending, Processing, Completed, Refunded, and Cancelled orders with colors."
+          },
+          "response": []
+        },
+        {
+          "name": "Orders vs Refunds",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{HOME_URL}}/wp-json/easycommerce/v1/reports/overview/order-vs-refund?range=this-month",
+              "host": ["{{HOME_URL}}"],
+              "path": ["wp-json", "easycommerce", "v1", "reports", "overview", "order-vs-refund"],
+              "query": [
+                {
+                  "key": "range",
+                  "value": "this-month",
+                  "description": "(Required) Date range. Values: today, yesterday, this-week, last-week, last-7, this-month, last-month, last-30, this-year, last-year. Default: last-30"
+                }
+              ]
+            },
+            "description": "Get orders vs refund count comparison for chart visualization. Returns order count and refund count datasets."
+          },
+          "response": []
+        },
+        {
+          "name": "Top Selling Products",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{HOME_URL}}/wp-json/easycommerce/v1/reports/overview/top-selling?range=this-month",
+              "host": ["{{HOME_URL}}"],
+              "path": ["wp-json", "easycommerce", "v1", "reports", "overview", "top-selling"],
+              "query": [
+                {
+                  "key": "range",
+                  "value": "this-month",
+                  "description": "(Required) Date range. Values: today, yesterday, this-week, last-week, last-7, this-month, last-month, last-30, this-year, last-year. Default: last-30"
+                }
+              ]
+            },
+            "description": "Get top selling products. Returns top 5 products with rank, name, thumbnail, units sold, and revenue."
+          },
+          "response": []
+        },
+        {
+          "name": "Order Type",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{HOME_URL}}/wp-json/easycommerce/v1/reports/overview/order-type?range=this-month",
+              "host": ["{{HOME_URL}}"],
+              "path": ["wp-json", "easycommerce", "v1", "reports", "overview", "order-type"],
+              "query": [
+                {
+                  "key": "range",
+                  "value": "this-month",
+                  "description": "(Required) Date range. Values: today, yesterday, this-week, last-week, last-7, this-month, last-month, last-30, this-year, last-year. Default: last-30"
+                },
+                {
+                  "key": "comparison",
+                  "value": "previous-month",
+                  "description": "(Optional) Comparison range for % change calculation. Values: previous-day, previous-week, previous-month, previous-year",
+                  "disabled": true
+                }
+              ]
+            },
+            "description": "Get order type breakdown (new vs returning orders). Returns categories and stacked datasets for new orders and renewal orders with previous period comparison. Uses 'categories' key for x-axis labels."
+          },
+          "response": []
+        },
+        {
+          "name": "Catalog Stats",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{HOME_URL}}/wp-json/easycommerce/v1/reports/overview/catalog-stats?range=all-time",
+              "host": ["{{HOME_URL}}"],
+              "path": ["wp-json", "easycommerce", "v1", "reports", "overview", "catalog-stats"],
+              "query": [
+                {
+                  "key": "range",
+                  "value": "all-time",
+                  "description": "(Required) Date range. Values: today, yesterday, this-week, last-week, last-7, this-month, last-month, last-30, this-year, last-year, all-time. Default: all-time"
+                }
+              ]
+            },
+            "description": "Get product catalog stats including Products in Catalog, Variations across products, Average product price, and Inventory count."
+          },
+          "response": []
+        },
+        {
+          "name": "New vs. Returning Customers",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{HOME_URL}}/wp-json/easycommerce/v1/reports/overview/customer-type?range=this-month",
+              "host": ["{{HOME_URL}}"],
+              "path": ["wp-json", "easycommerce", "v1", "reports", "overview", "customer-type"],
+              "query": [
+                {
+                  "key": "range",
+                  "value": "this-month",
+                  "description": "(Required) Date range. Values: today, yesterday, this-week, last-week, last-7, this-month, last-month, last-30, this-year, last-year. Default: last-30"
+                },
+                {
+                  "key": "comparison",
+                  "value": "previous-month",
+                  "description": "(Optional) Comparison range for % change calculation. Values: previous-day, previous-week, previous-month, previous-year",
+                  "disabled": true
+                }
+              ]
+            },
+            "description": "Get new vs returning customers revenue chart data. Returns datasets with current and previous period data."
+          },
+          "response": []
+        },
+        {
+          "name": "Customer Overview",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{HOME_URL}}/wp-json/easycommerce/v1/reports/overview/customer-overview?range=this-month",
+              "host": ["{{HOME_URL}}"],
+              "path": ["wp-json", "easycommerce", "v1", "reports", "overview", "customer-overview"],
+              "query": [
+                {
+                  "key": "range",
+                  "value": "this-month",
+                  "description": "(Required) Date range. Values: today, yesterday, this-week, last-week, last-7, this-month, last-month, last-30, this-year, last-year. Default: this-month"
+                },
+                {
+                  "key": "comparison",
+                  "value": "previous-month",
+                  "description": "(Optional) Comparison range for % change calculation. Values: previous-day, previous-week, previous-month, previous-year",
+                  "disabled": true
+                }
+              ]
+            },
+            "description": "Get customer overview stats including AOV Per Customer, Orders Per Customer, Items Per Customer, and top 10 customers by spending."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Orders",
+      "item": [
+        {
+          "name": "Stats",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{HOME_URL}}/wp-json/easycommerce/v1/reports/orders/stats?range=this-month",
+              "host": ["{{HOME_URL}}"],
+              "path": ["wp-json", "easycommerce", "v1", "reports", "orders", "stats"],
+              "query": [
+                {
+                  "key": "range",
+                  "value": "this-month",
+                  "description": "(Required) Date range. Values: today, yesterday, this-week, last-week, last-7, this-month, last-month, last-30, this-year, last-year. Default: last-30"
+                },
+                {
+                  "key": "comparison",
+                  "value": "previous-month",
+                  "description": "(Optional) Comparison range for % change calculation. Values: previous-day, previous-week, previous-month, previous-year",
+                  "disabled": true
+                }
+              ]
+            },
+            "description": "Get reports orders overview stats including Orders, Completed Orders, Refunds, Net Revenue, and Pending Orders with comparison data."
+          },
+          "response": []
+        },
+        {
+          "name": "Over Time",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{HOME_URL}}/wp-json/easycommerce/v1/reports/orders/over-time?range=this-month",
+              "host": ["{{HOME_URL}}"],
+              "path": ["wp-json", "easycommerce", "v1", "reports", "orders", "over-time"],
+              "query": [
+                {
+                  "key": "range",
+                  "value": "this-month",
+                  "description": "(Required) Date range. Values: today, yesterday, this-week, last-week, last-7, this-month, last-month, last-30, this-year, last-year. Default: last-30"
+                },
+                {
+                  "key": "comparison",
+                  "value": "previous-month",
+                  "description": "(Optional) Comparison range for % change calculation. Values: previous-day, previous-week, previous-month, previous-year",
+                  "disabled": true
+                }
+              ]
+            },
+            "description": "Get orders over time chart data. Returns Order Count and Order Amount datasets with current and previous period comparison."
+          },
+          "response": []
+        },
+        {
+          "name": "Customer Order Frequency",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{HOME_URL}}/wp-json/easycommerce/v1/reports/orders/customers?range=this-month",
+              "host": ["{{HOME_URL}}"],
+              "path": ["wp-json", "easycommerce", "v1", "reports", "orders", "customers"],
+              "query": [
+                {
+                  "key": "range",
+                  "value": "this-month",
+                  "description": "(Required) Date range. Values: today, yesterday, this-week, last-week, last-7, this-month, last-month, last-30, this-year, last-year. Default: last-30"
+                }
+              ]
+            },
+            "description": "Get customer order frequency report. Returns total customers, avg orders per customer, and breakdown by order count (ordered once, twice, three plus)."
+          },
+          "response": []
+        },
+        {
+          "name": "Status Breakdown",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{HOME_URL}}/wp-json/easycommerce/v1/reports/orders/statuses?range=this-month",
+              "host": ["{{HOME_URL}}"],
+              "path": ["wp-json", "easycommerce", "v1", "reports", "orders", "statuses"],
+              "query": [
+                {
+                  "key": "range",
+                  "value": "this-month",
+                  "description": "(Required) Date range. Values: today, yesterday, this-week, last-week, last-7, this-month, last-month, last-30, this-year, last-year. Default: last-30"
+                }
+              ]
+            },
+            "description": "Get orders by status breakdown. Returns status counts with colors for Pending, Processing, Completed, Refunded, and Cancelled orders."
+          },
+          "response": []
+        },
+        {
+          "name": "Fulfillment Breakdown",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{HOME_URL}}/wp-json/easycommerce/v1/reports/orders/fulfillment?range=this-month",
+              "host": ["{{HOME_URL}}"],
+              "path": ["wp-json", "easycommerce", "v1", "reports", "orders", "fulfillment"],
+              "query": [
+                {
+                  "key": "range",
+                  "value": "this-month",
+                  "description": "(Required) Date range. Values: today, yesterday, this-week, last-week, last-7, this-month, last-month, last-30, this-year, last-year. Default: last-30"
+                }
+              ]
+            },
+            "description": "Get orders by fulfillment status breakdown. Returns counts for Unfulfilled, Fulfilled, Partial, and Returned orders with colors."
+          },
+          "response": []
+        },
+        {
+          "name": "Heatmap",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{HOME_URL}}/wp-json/easycommerce/v1/reports/orders/heatmap?range=last-30",
+              "host": ["{{HOME_URL}}"],
+              "path": ["wp-json", "easycommerce", "v1", "reports", "orders", "heatmap"],
+              "query": [
+                {
+                  "key": "range",
+                  "value": "last-30",
+                  "description": "(Required) Date range. Values: today, yesterday, this-week, last-week, last-7, this-month, last-month, last-30, this-year, last-year. Default: last-30"
+                }
+              ]
+            },
+            "description": "Get orders heatmap - hourly order count per date. Returns data with 24 hourly buckets (0-23) for each date in the range. Format: { x: \"6am\", y: \"2026-03-01\", v: 5 }"
+          },
+          "response": []
+        },
+        {
+          "name": "Order by Location",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{HOME_URL}}/wp-json/easycommerce/v1/reports/orders/locations?range=this-month",
+              "host": ["{{HOME_URL}}"],
+              "path": ["wp-json", "easycommerce", "v1", "reports", "orders", "locations"],
+              "query": [
+                {
+                  "key": "range",
+                  "value": "this-month",
+                  "description": "(Required) Date range. Values: today, yesterday, this-week, last-week, last-7, this-month, last-month, last-30, this-year, last-year. Default: last-30"
+                }
+              ]
+            },
+            "description": "Get orders by country. Returns country codes as keys with order counts as values, sorted by count descending. Example: { \"US\": 100, \"GB\": 60, \"DE\": 50 }"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Revenue",
+      "item": [
+        {
+          "name": "Stats",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{HOME_URL}}/wp-json/easycommerce/v1/reports/revenue/stats?range=this-month",
+              "host": ["{{HOME_URL}}"],
+              "path": ["wp-json", "easycommerce", "v1", "reports", "revenue", "stats"],
+              "query": [
+                {
+                  "key": "range",
+                  "value": "this-month",
+                  "description": "(Required) Date range. Values: today, yesterday, this-week, last-week, last-7, this-month, last-month, last-30, this-year, last-year. Default: last-30"
+                },
+                {
+                  "key": "comparison",
+                  "value": "previous-month",
+                  "description": "(Optional) Comparison range for % change calculation.",
+                  "disabled": true
+                }
+              ]
+            },
+            "description": "Get revenue stats including Gross Revenue, Avg Revenue Per Customer, Avg Revenue Per Order, and Avg Revenue Per Product with comparison data."
+          },
+          "response": []
+        },
+        {
+          "name": "Over Time",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{HOME_URL}}/wp-json/easycommerce/v1/reports/revenue/over-time?range=this-month",
+              "host": ["{{HOME_URL}}"],
+              "path": ["wp-json", "easycommerce", "v1", "reports", "revenue", "over-time"],
+              "query": [
+                {
+                  "key": "range",
+                  "value": "this-month",
+                  "description": "(Required) Date range. Values: today, yesterday, this-week, last-week, last-7, this-month, last-month, last-30, this-year, last-year. Default: last-30"
+                },
+                {
+                  "key": "comparison",
+                  "value": "previous-month",
+                  "description": "(Optional) Comparison range for % change calculation.",
+                  "disabled": true
+                }
+              ]
+            },
+            "description": "Get revenue over time chart data. Returns Revenue and Previous Revenue datasets with current and previous period comparison."
+          },
+          "response": []
+        },
+        {
+          "name": "By Country",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{HOME_URL}}/wp-json/easycommerce/v1/reports/revenue/locations?range=this-month",
+              "host": ["{{HOME_URL}}"],
+              "path": ["wp-json", "easycommerce", "v1", "reports", "revenue", "locations"],
+              "query": [
+                {
+                  "key": "range",
+                  "value": "this-month",
+                  "description": "(Required) Date range. Values: today, yesterday, this-week, last-week, last-7, this-month, last-month, last-30, this-year, last-year. Default: last-30"
+                }
+              ]
+            },
+            "description": "Get revenue by country/state location. Returns world type with country data, country names, and numeric codes. For single-country orders, returns states breakdown."
+          },
+          "response": []
+        },
+        {
+          "name": "Top Customers",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{HOME_URL}}/wp-json/easycommerce/v1/reports/revenue/top-customers?range=this-month",
+              "host": ["{{HOME_URL}}"],
+              "path": ["wp-json", "easycommerce", "v1", "reports", "revenue", "top-customers"],
+              "query": [
+                {
+                  "key": "range",
+                  "value": "this-month",
+                  "description": "(Required) Date range. Values: today, yesterday, this-week, last-week, last-7, this-month, last-month, last-30, this-year, last-year. Default: last-30"
+                }
+              ]
+            },
+            "description": "Get top customers by revenue. Returns top 50 customers with rank, customer_id, name, email, first/last order dates, total orders, and revenue earned."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Customer",
+      "item": [
+        {
+          "name": "Stats",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{HOME_URL}}/wp-json/easycommerce/v1/reports/customers/stats?range=this-month",
+              "host": ["{{HOME_URL}}"],
+              "path": ["wp-json", "easycommerce", "v1", "reports", "customers", "stats"],
+              "query": [
+                {
+                  "key": "range",
+                  "value": "this-month",
+                  "description": "(Required) Date range. Values: today, yesterday, this-week, last-week, last-7, this-month, last-month, last-30, this-year, last-year. Default: last-30"
+                },
+                {
+                  "key": "comparison",
+                  "value": "previous-month",
+                  "description": "(Optional) Comparison range for % change calculation.",
+                  "disabled": true
+                }
+              ]
+            },
+            "description": "Get customer stats including Total Customers, New Customers, Repeat Customers, Orders Per Customer, Customer LTV, and Customer AOV with comparison data."
+          },
+          "response": []
+        },
+        {
+          "name": "Over Time",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{HOME_URL}}/wp-json/easycommerce/v1/reports/customers/over-time?range=this-month",
+              "host": ["{{HOME_URL}}"],
+              "path": ["wp-json", "easycommerce", "v1", "reports", "customers", "over-time"],
+              "query": [
+                {
+                  "key": "range",
+                  "value": "this-month",
+                  "description": "(Required) Date range. Values: today, yesterday, this-week, last-week, last-7, this-month, last-month, last-30, this-year, last-year. Default: last-30"
+                },
+                {
+                  "key": "comparison",
+                  "value": "previous-month",
+                  "description": "(Optional) Comparison range for % change calculation.",
+                  "disabled": true
+                }
+              ]
+            },
+            "description": "Get customer over time chart data with new and repeat customer datasets (current + comparison)."
+          },
+          "response": []
+        },
+        {
+          "name": "Heatmap",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{HOME_URL}}/wp-json/easycommerce/v1/reports/customers/heatmap?range=last-30",
+              "host": ["{{HOME_URL}}"],
+              "path": ["wp-json", "easycommerce", "v1", "reports", "customers", "heatmap"],
+              "query": [
+                {
+                  "key": "range",
+                  "value": "last-30",
+                  "description": "(Required) Date range. Values: today, yesterday, this-week, last-week, last-7, this-month, last-month, last-30, this-year, last-year. Default: last-30"
+                }
+              ]
+            },
+            "description": "Get customer heatmap - hourly new customer count per date. Returns data with 24 hourly buckets (0-23) for each date in the range. Format: { x: \"12am\", y: \"2026-03-01\", v: 5 }"
+          },
+          "response": []
+        },
+        {
+          "name": "By Location",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{HOME_URL}}/wp-json/easycommerce/v1/reports/customers/locations?range=this-month",
+              "host": ["{{HOME_URL}}"],
+              "path": ["wp-json", "easycommerce", "v1", "reports", "customers", "locations"],
+              "query": [
+                {
+                  "key": "range",
+                  "value": "this-month",
+                  "description": "(Required) Date range. Values: today, yesterday, this-week, last-week, last-7, this-month, last-month, last-30, this-year, last-year. Default: last-30"
+                }
+              ]
+            },
+            "description": "Get customers by country/state location. Returns world type with country data (order counts), country names, and numeric codes. For single-country orders, returns states breakdown."
+          },
+          "response": []
+        },
+        {
+          "name": "Top Customers",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{HOME_URL}}/wp-json/easycommerce/v1/reports/customers/top-customers?range=this-month",
+              "host": ["{{HOME_URL}}"],
+              "path": ["wp-json", "easycommerce", "v1", "reports", "customers", "top-customers"],
+              "query": [
+                {
+                  "key": "range",
+                  "value": "this-month",
+                  "description": "(Required) Date range. Values: today, yesterday, this-week, last-week, last-7, this-month, last-month, last-30, this-year, last-year. Default: last-30"
+                }
+              ]
+            },
+            "description": "Get top customers by purchase amount. Returns top 50 customers with rank, customer_id, name, total orders, product count, and total purchase."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Products",
+      "item": [
+        {
+          "name": "Stats",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{HOME_URL}}/wp-json/easycommerce/v1/reports/products/stats?range=all-time",
+              "host": ["{{HOME_URL}}"],
+              "path": ["wp-json", "easycommerce", "v1", "reports", "products", "stats"],
+              "query": [
+                {
+                  "key": "range",
+                  "value": "all-time",
+                  "description": "(Required) Date range. Values: today, yesterday, this-week, last-week, last-7, this-month, last-month, last-30, this-year, last-year, all-time. Default: all-time"
+                },
+                {
+                  "key": "comparison",
+                  "value": "previous-month",
+                  "description": "(Optional) Comparison range for % change calculation. Values: previous-day, previous-week, previous-month, previous-year",
+                  "disabled": true
+                }
+              ]
+            },
+            "description": "Get products stats overview including Live Products, Total Stock, Out of Stock, Low Stock, Gross Sales, Refunds, and Average Rating with comparison data."
+          },
+          "response": []
+        },
+        {
+          "name": "Sold Over Time",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{HOME_URL}}/wp-json/easycommerce/v1/reports/products/sold-over-time?range=last-30",
+              "host": ["{{HOME_URL}}"],
+              "path": ["wp-json", "easycommerce", "v1", "reports", "products", "sold-over-time"],
+              "query": [
+                {
+                  "key": "range",
+                  "value": "last-30",
+                  "description": "(Required) Date range. Values: today, yesterday, this-week, last-week, last-7, this-month, last-month, last-30, this-year, last-year. Default: last-30"
+                },
+                {
+                  "key": "comparison",
+                  "value": "previous-month",
+                  "description": "(Optional) Comparison range for % change calculation. Values: previous-day, previous-week, previous-month, previous-year",
+                  "disabled": true
+                }
+              ]
+            },
+            "description": "Get products sold over time with comparison. Returns chart data with current and previous period products sold."
+          },
+          "response": []
+        },
+        {
+          "name": "Most Sold",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{HOME_URL}}/wp-json/easycommerce/v1/reports/products/most-sold?range=last-30",
+              "host": ["{{HOME_URL}}"],
+              "path": ["wp-json", "easycommerce", "v1", "reports", "products", "most-sold"],
+              "query": [
+                {
+                  "key": "range",
+                  "value": "last-30",
+                  "description": "(Required) Date range. Values: today, yesterday, this-week, last-week, last-7, this-month, last-month, last-30, this-year, last-year. Default: last-30"
+                }
+              ]
+            },
+            "description": "Get most sold products with detailed metrics. Returns top 10 products sorted by unit sold descending. Fields: rank, product_id, name, in_stock, unit_sold, total_sale, refunds."
+          },
+          "response": []
+        },
+        {
+          "name": "Least Sold",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{HOME_URL}}/wp-json/easycommerce/v1/reports/products/least-sold?range=last-30",
+              "host": ["{{HOME_URL}}"],
+              "path": ["wp-json", "easycommerce", "v1", "reports", "products", "least-sold"],
+              "query": [
+                {
+                  "key": "range",
+                  "value": "last-30",
+                  "description": "(Required) Date range. Values: today, yesterday, this-week, last-week, last-7, this-month, last-month, last-30, this-year, last-year. Default: last-30"
+                }
+              ]
+            },
+            "description": "Get least sold products with detailed metrics. Returns top 10 products sorted by unit sold ascending. Fields: rank, product_id, name, in_stock, unit_sold, total_sale, refunds."
+          },
+          "response": []
+        },
+        {
+          "name": "Single Stats",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{HOME_URL}}/wp-json/easycommerce/v1/reports/products/single-stats?product_id=123&range=all-time",
+              "host": ["{{HOME_URL}}"],
+              "path": ["wp-json", "easycommerce", "v1", "reports", "products", "single-stats"],
+              "query": [
+                {
+                  "key": "product_id",
+                  "value": "123",
+                  "description": "(Required) Product ID to get stats for."
+                },
+                {
+                  "key": "range",
+                  "value": "all-time",
+                  "description": "(Optional) Date range. Values: today, yesterday, this-week, last-week, last-7, this-month, last-month, last-30, this-year, last-year, all-time. Default: all-time"
+                }
+              ]
+            },
+            "description": "Get single product stats. Returns Gross Sale (count + amount), Refunds (count + amount), Stock, and Avg Rating for a specific product."
+          },
+          "response": []
+        },
+        {
+          "name": "Single Info",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{HOME_URL}}/wp-json/easycommerce/v1/reports/products/single-info?product_id=123",
+              "host": ["{{HOME_URL}}"],
+              "path": ["wp-json", "easycommerce", "v1", "reports", "products", "single-info"],
+              "query": [
+                {
+                  "key": "product_id",
+                  "value": "123",
+                  "description": "(Required) Product ID to get info for."
+                }
+              ]
+            },
+            "description": "Get single product basic info with variations. Returns product name, thumbnail, SKU, and list of variations with name, SKU, stock, total sales, and rating."
+          },
+          "response": []
+        },
+        {
+          "name": "Single Sales Over Time",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{HOME_URL}}/wp-json/easycommerce/v1/reports/products/single-sales-over-time?product_id=123&range=last-30",
+              "host": ["{{HOME_URL}}"],
+              "path": ["wp-json", "easycommerce", "v1", "reports", "products", "single-sales-over-time"],
+              "query": [
+                {
+                  "key": "product_id",
+                  "value": "123",
+                  "description": "(Required) Product ID to get sales data for."
+                },
+                {
+                  "key": "range",
+                  "value": "last-30",
+                  "description": "(Optional) Date range. Values: today, yesterday, this-week, last-week, last-7, this-month, last-month, last-30, this-year, last-year. Default: last-30"
+                }
+              ]
+            },
+            "description": "Get single product sales over time with new vs repeat customers. Returns chart data showing new customers and repeat customers by date."
+          },
+          "response": []
+        },
+        {
+          "name": "Single Sale by Location",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{HOME_URL}}/wp-json/easycommerce/v1/reports/products/locations?product_id=123&range=last-30",
+              "host": ["{{HOME_URL}}"],
+              "path": ["wp-json", "easycommerce", "v1", "reports", "products", "locations"],
+              "query": [
+                {
+                  "key": "product_id",
+                  "value": "123",
+                  "description": "(Required) Product ID to get sales by location for."
+                },
+                {
+                  "key": "range",
+                  "value": "last-30",
+                  "description": "(Optional) Date range. Values: today, yesterday, this-week, last-week, last-7, this-month, last-month, last-30, this-year, last-year. Default: last-30"
+                }
+              ]
+            },
+            "description": "Get single product sales by location (country). Returns countries with sales amounts. Type is 'World Choropleth' if multiple countries, otherwise 'Choropleth'."
+          },
+          "response": []
+        },
+        {
+          "name": "Single Reviews",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{HOME_URL}}/wp-json/easycommerce/v1/reports/products/single-reviews?product_id=123&limit=6",
+              "host": ["{{HOME_URL}}"],
+              "path": ["wp-json", "easycommerce", "v1", "reports", "products", "single-reviews"],
+              "query": [
+                {
+                  "key": "product_id",
+                  "value": "123",
+                  "description": "(Required) Product ID to get reviews for."
+                },
+                {
+                  "key": "limit",
+                  "value": "6",
+                  "description": "(Optional) Number of reviews to return. Default: 6"
+                }
+              ]
+            },
+            "description": "Get single product reviews with stats. Returns rating, rating count, rating counts by star (1-5), and list of reviews with date, customer name, avatar, review text, and rating."
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      { "key": "password", "value": "admin", "type": "string" },
+      { "key": "username", "value": "admin", "type": "string" }
+    ]
+  },
+  "variable": [
+    { "key": "HOME_URL", "value": "", "type": "default" }
+  ]
+}

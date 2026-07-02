@@ -1,0 +1,7 @@
+.toplevel_page_easycommerce-store ul.wp-submenu li.current {
+    box-shadow: inset 4px 0 0 0 #ffffff !important;
+    transition: box-shadow .1s linear;
+}
+#easycommerce-connect-box {
+    padding: 0px !important;
+}

@@ -1,0 +1,21 @@
+.mce-window .select2-container--default .select2-selection--single .select2-selection__rendered {
+    padding-right: 28px;
+    padding-left: 8px;
+    color: #333;
+}
+
+.mce-window .select2-container--default .select2-selection--single .select2-selection__rendered:has(.select2-selection__placeholder) {
+    padding-top: 6px;
+}
+
+.select2-container.select2-container--default.select2-container--open {
+    z-index: 1000000 !important;
+}
+
+.easycommerce-field-wrapper .mce-container.mce-btn-group .dashicons-email-alt::before {
+    content: url(../img/icons/email-placeholders.svg);
+    width: 24px;
+    height: 24px;
+    position: relative;
+    display: block;
+}

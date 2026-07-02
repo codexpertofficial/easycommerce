@@ -1,0 +1,28 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "easycommerce/single-product-add-to-cart",
+    "version": "0.1.0",
+    "title": "Add to Cart",
+    "category": "easycommerce-product",
+    "icon": "cart",
+    "description": "Add to Cart form",
+    "example": {},
+    "supports": {
+        "html": false,
+        "color": {
+            "background": false,
+            "text": true
+        },
+        "typography": {
+            "fontSize": true
+        },
+        "spacing": {
+            "margin": true,
+            "padding": true,
+            "blockGap": true
+        }
+    },
+    "textdomain": "easycommerce",
+    "editorScript": "file:./index.js"
+}

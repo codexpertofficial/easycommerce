@@ -1,0 +1,6 @@
+{
+    "textTransfrom": {
+        "type": "string",
+        "default": ""
+    }
+}

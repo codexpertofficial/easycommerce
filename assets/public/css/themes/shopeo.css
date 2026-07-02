@@ -1,0 +1,113 @@
+.easycommerce.easycommerce-shopeo
+	input.easycommerce-product-search[type="text"]:hover {
+	border: 1px solid var(--color-ec-secondary) !important;
+}
+.easycommerce.easycommerce-shopeo
+	input.easycommerce-product-search[type="text"]:focus {
+	border-color: #6600ff !important;
+	outline: none !important;
+}
+.easycommerce.easycommerce-shopeo
+	input.easycommerce-price-range-input-field[type="number"]:focus {
+	border: 1px solid var(--color-ec-border);
+	outline: none;
+}
+.easycommerce.easycommerce-shopeo .easycommerce-product-title-shop {
+	color: var(--color-ec-body);
+}
+.easycommerce.easycommerce-shopeo button.easycommerce-add-to-cart-button {
+	border-color: var(--color-ec-border);
+	padding: 24px !important;
+}
+.easycommerce.easycommerce-shopeo button.easycommerce-add-to-cart-button:focus,
+.easycommerce.easycommerce-shopeo #easycommerce-coupon-field:focus,
+.easycommerce.easycommerce-shopeo .easycommerce-checkout-main-btn:focus,
+.easycommerce.easycommerce-shopeo
+	.easycommerce-dashboard-form-password-show-hide-btn:focus,
+.easycommerce.easycommerce-shopeo .easycommerce-dashboard-form-btn.save,
+.easycommerce.easycommerce-shopeo
+	.easycommerce-button-margin.easycommerce-add-to-cart-shop,
+.easycommerce.easycommerce-shopeo .easycommerce-checkout-cart-item-delete-btn,
+.easycommerce.easycommerce-shopeo
+	#easycommerce-single-product-review-submit-btn {
+	outline: none !important;
+}
+.easycommerce.easycommerce-shopeo .easycommerce-quantity-minus-btn,
+.easycommerce.easycommerce-shopeo .easycommerce-quantity-plus-btn,
+.easycommerce.easycommerce-shopeo .easycommerce-dashboard-form-password-input,
+.easycommerce.easycommerce-shopeo
+	.easycommerce-dashboard-form-password-show-hide-btn,
+.easycommerce.easycommerce-shopeo
+	.easycommerce-button-margin.easycommerce-add-to-cart-shop,
+.easycommerce.easycommerce-shopeo .easycommerce-checkout-cart-item-delete-btn {
+	border: none !important;
+}
+.easycommerce.easycommerce-shopeo .easycommerce-quantity-minus-btn {
+	border-right: 1px solid var(--color-ec-border) !important;
+}
+.easycommerce.easycommerce-shopeo .easycommerce-quantity-plus-btn {
+	border-left: 1px solid var(--color-ec-border) !important;
+}
+.easycommerce.easycommerce-shopeo .easycommerce-quantity-minus-btn:hover,
+.easycommerce.easycommerce-shopeo .easycommerce-quantity-plus-btn:hover,
+.easycommerce.easycommerce-shopeo .easycommerce-quantity-minus-btn:focus,
+.easycommerce.easycommerce-shopeo .easycommerce-quantity-plus-btn:focus,
+.easycommerce.easycommerce-shopeo .easycommerce-qunatity-button:hover,
+.easycommerce.easycommerce-shopeo .easycommerce-qunatity-button:focus {
+	border: 1px solid var(--color-ec-border);
+	outline: none;
+	color: var(--color-ec-secondary) !important;
+}
+.easycommerce.easycommerce-shopeo .easycommerce-field.easycommerce-field-select,
+.easycommerce.easycommerce-shopeo .easycommerce-dashboard-input-select {
+	background-color: #ffffff;
+}
+.easycommerce.easycommerce-shopeo .easycommerce-dashboard-input-select {
+	width: 100%;
+}
+
+/* .easycommerce.easycommerce-shopeo .easycommerce-single-product-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+} */
+.easycommerce.easycommerce-shopeo
+	.easycommerce-single-product-wrapper {
+	padding-top: 50px;
+	padding-bottom: 50px;
+	max-width: 1380px;
+	display: flex;
+	flex-direction: column;
+	padding-left: 50px;
+	padding-right: 50px;
+	background-color: #ffff;
+	margin: 0px auto;
+}
+
+.easycommerce.easycommerce-shopeo .easycommerce-recent-order-table {
+	padding-left: 15px;
+}
+.easycommerce.easycommerce-shopeo
+	.easycommerce-button-margin.easycommerce-add-to-cart-shop {
+	padding-top: 9px;
+}
+.easycommerce.easycommerce-shopeo
+	#easycommerce-single-product-review-submit-btn {
+	line-height: 6px;
+	border: none;
+}
+.easycommerce.easycommerce-shopeo .attribute_size.easycommerce-vs-wrapper {
+	margin-bottom: 1rem !important;
+}
+@media (max-width: 1024px) {
+	.easycommerce.easycommerce-shopeo
+		.easycommerce-single-product-wrapper
+		.easycommerce-single-main-wrapper {
+		width: 100%;
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+}
+
+
+
