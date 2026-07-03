@@ -282,16 +282,15 @@ if (! function_exists('display_attribute')) {
 		</svg>
 	</div>
 
-	<div class="easycommerce-drawer-product-search easycommerce-drawer-shop-search w-full">
-		<input
-			type="text"
-			class="easycommerce-product-search easycommerce-shop-search border border-ec-border pl-14 pr-2 py-1 w-full rounded-lg hover:border-ec-secondary focus:border-ec-primary  placeholder:text-ec-light-black focus:outline-none"
-			placeholder="Search...">
-
+	<div class="easycommerce-drawer-product-search easycommerce-drawer-shop-search w-full relative">
 		<img
 			src="<?php echo esc_url(EASYCOMMERCE_ASSETS_URL . 'common/img/blocks/shop-page/product-search.png'); ?>"
 			alt="Search Icon"
-			class="mr-2" />
+			class="search-icon" />
+		<input
+			type="text"
+			class="easycommerce-product-search easycommerce-shop-search border border-ec-border pl-10 pr-2 py-1 w-full rounded-lg hover:border-ec-secondary focus:border-ec-primary  placeholder:text-ec-light-black focus:outline-none"
+			placeholder="Search...">
 	</div>
 	<!-- Categories Section -->
 	<?php

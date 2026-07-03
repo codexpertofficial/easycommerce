@@ -195,9 +195,9 @@ if ( ! function_exists( 'display_attribute' ) ) {
 		}
 	}
 
-	scrollInners.forEach(checkHeight);
+	accordionContents.forEach(checkHeight);
 
-	scrollInners.forEach((element) => {
+	accordionContents.forEach((element) => {
 		const observer = new MutationObserver(() => checkHeight(element));
 		observer.observe(element, { childList: true, subtree: true });
 	});

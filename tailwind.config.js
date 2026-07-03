@@ -111,9 +111,9 @@ module.exports = {
                 "ec-onHoldText": "#555DFF",
                 "ec-onHoldBg": "#555DFF1A",
                 "ec-onHoldBorder": "#555dff3D",
-                // "ec-failedText": "#f80317f6",
-                // "ec-failedBg": "#f8031717",
-                // "ec-failedBorder": "#f8031717",
+                "ec-failedText": "#f80317f6",
+                "ec-failedBg": "#f8031717",
+                "ec-failedBorder": "#f803173D",
 
                 //fullfillment status colors
                 "ec-fullfillText" : "#00A900",

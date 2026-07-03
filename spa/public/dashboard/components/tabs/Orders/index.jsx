@@ -12,6 +12,7 @@ const statusColors = {
     on_hold: { color: '#555DFF', bgColor: '#555DFF1A' },
     partially_refunded: { color: '#F89102', bgColor: '#F891021A' },
     refunded: { color: '#FF001F', bgColor: '#FF001F1A' },
+    failed: { color: '#EF4444', bgColor: '#EF44440D' },
 };
 
 const Orders = () => {

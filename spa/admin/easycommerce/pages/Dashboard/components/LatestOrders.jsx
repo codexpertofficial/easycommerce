@@ -41,6 +41,11 @@ const LatestOrders = ({ range }) => {
             background: "var(--color-ec-processingBg)",
             border: "1px solid var(--color-ec-processingBorder)",
         },
+        failed: {
+            color: "var(--color-ec-failedText)",
+            background: "var(--color-ec-failedBg)",
+            border: "1px solid var(--color-ec-failedBorder)",
+        },
     };
 
 

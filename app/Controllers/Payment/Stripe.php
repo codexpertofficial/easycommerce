@@ -573,7 +573,10 @@ add_action(
 					return 'pending';
 
 				} catch ( \Throwable $e ) {
-					error_log( 'Stripe payment error: ' . $e->getMessage() );
+					if ( false === get_transient( 'ec_stripe_payment_error_log' ) ) {
+						error_log( 'Stripe payment error: ' . $e->getMessage() );
+						set_transient( 'ec_stripe_payment_error_log', 1, MINUTE_IN_SECONDS );
+					}
 					return 'failed';
 				}
 			}

@@ -80,7 +80,7 @@ const Orders = ({ page, productId }) => {
         on_hold: "bg-ec-onHoldBg text-ec-onHoldText",
         processing: "bg-ec-processingBg text-ec-processingText",
         partially_refunded: "bg-ec-partiallyRefundedBg text-ec-partiallyRefundedText",
-        // failed: "bg-ec-failedBg text-ec-failedText"
+        failed: "bg-ec-failedBg text-ec-failedText",
     };
 
     const handleTableFilterSubmit = () => {

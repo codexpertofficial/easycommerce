@@ -217,7 +217,7 @@ function easycommerce_email_events() {
 		'on_hold'    => __( 'On-hold Order', 'easycommerce' ),
 		'refunded'   => __( 'Refunded Order', 'easycommerce' ),
 		'partially_refunded' => __( 'Partially Refunded Order', 'easycommerce' ),
-		// 'failed'	 => __( 'Failed Order', 'easycommerce' ),
+		'failed'     => __( 'Failed Order', 'easycommerce' ),
 	);
 }
 
@@ -236,7 +236,7 @@ function easycommerce_order_statuses() {
 		'on_hold'    			=> __( 'On Hold', 'easycommerce' ),
 		'partially_refunded'	=> __( 'Partially Refunded', 'easycommerce' ),
 		'refunded'   			=> __( 'Refunded', 'easycommerce' ),
-		// 'failed'   	 => __( 'Failed', 'easycommerce' ),
+		'failed'   				=> __( 'Failed', 'easycommerce' ),
 	);
 }
 

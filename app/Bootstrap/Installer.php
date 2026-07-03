@@ -25,6 +25,7 @@ class Installer {
 		// Hook for handling data migration for specific tables
 		add_action( 'easycommerce_migrate_coupons_table', array( $installer, 'handle_coupons_data_migration' ), 10, 4 );
 		add_action( 'easycommerce_migrate_cart_sessions_table', array( $installer, 'handle_cart_sessions_data_migration' ), 10, 4 );
+		add_action( 'easycommerce_migrate_orders_table', array( $installer, 'handle_orders_data_migration' ), 10, 4 );
 
 		if ( ! $installer->is_database_up_to_date() ) {
 			$installer->prepare();
@@ -324,6 +325,45 @@ class Installer {
 		}
 
 		$wpdb->query( "ALTER TABLE `{$table_full_name}` MODIFY COLUMN `status` " . $columns['status'] );
+	}
+
+	/**
+	 * Handles schema migration for the orders table during schema updates.
+	 *
+	 * Adds the `failed` value to the `status` ENUM on existing installs and
+	 * back-fills any orders whose status was previously coerced to '' (failed
+	 * payments written before `failed` existed) to `failed`. dbDelta does not
+	 * reliably alter ENUM definitions on existing columns, so the change is
+	 * applied explicitly here.
+	 *
+	 * @param Database $db              Database instance.
+	 * @param string   $table_full_name Full table name with prefix.
+	 * @param array    $columns         Current column definitions from config.
+	 * @param array    $options         Current table options from config.
+	 *
+	 * @return void
+	 */
+	public function handle_orders_data_migration( Database $db, string $table_full_name, array $columns, array $options ) {
+		global $wpdb;
+
+		if ( ! $wpdb->get_var( "SHOW TABLES LIKE '{$table_full_name}'" ) ) {
+			return;
+		}
+
+		if ( empty( $columns['status'] ) ) {
+			return;
+		}
+
+		$row = $wpdb->get_row( "SHOW COLUMNS FROM `{$table_full_name}` LIKE 'status'" );
+
+		// Add the ENUM value if it is not already supported.
+		if ( ! $row || false === stripos( $row->Type, 'failed' ) ) {
+			$wpdb->query( "ALTER TABLE `{$table_full_name}` MODIFY COLUMN `status` " . $columns['status'] );
+		}
+
+		// Recover orders left with an empty status (failed payments written
+		// before `failed` was a valid ENUM value, coerced by MySQL to '').
+		$wpdb->query( "UPDATE `{$table_full_name}` SET `status` = 'failed' WHERE `status` = ''" );
 	}
 
 	/**

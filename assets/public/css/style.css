@@ -278,8 +278,8 @@
 		position: fixed;
 		max-width: 100% !important;
 		width: 100% !important;
-		height: 100vh;
 		top: 0;
+		bottom: 0;
 		left: 0;
 		z-index: 9999;
 		background: #00000082;
@@ -288,7 +288,7 @@
 	}
 	.easycommerce-drawer-wrap {
 		max-width: 300px;
-		height: 100vh;
+		height: 100%;
 		padding-left: 10px;
 		padding-right: 10px;
 		background-color: #ffffff;
@@ -392,6 +392,75 @@
 	color: #ffffff;
 }
 /* Notice ends */
+
+/* Shop page mobile responsive grid.
+   Selector is intentionally 2 classes deep: on the storefront Tailwind is
+   injected at runtime via style-loader (build/tailwind.bundle.js) AFTER this
+   file's <link>, and `important: true` makes grid-cols-N an !important rule.
+   A single-class override would tie on specificity and lose on source order,
+   so scope through the wrapper to win deterministically. */
+@media (max-width: 767px) {
+	.easycommerce-shop-container-front .easycommerce-shop-container {
+		grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+	}
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+	.easycommerce-shop-container-front .easycommerce-shop-container {
+		grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+	}
+}
+
+/* Template-1 filter bar: search icon positioning */
+.easycommerce-drawer-product-search .search-icon {
+	position: absolute;
+	top: 50%;
+	left: 10px;
+	transform: translateY(-50%);
+	width: 18px;
+	height: 18px;
+	object-fit: contain;
+	pointer-events: none;
+}
+
+/* Template-1 filter bar: horizontal scroll buttons */
+.scroll-left,
+.scroll-right {
+	width: 24px;
+	height: 24px;
+	background-color: var(--color-ec-primary);
+	border-radius: 50%;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.2s ease;
+	border: none;
+}
+.scroll-left.visible,
+.scroll-right.visible {
+	opacity: 1;
+	pointer-events: auto;
+}
+.left-blur {
+	position: absolute;
+	left: 24px;
+	top: 0;
+	bottom: 0;
+	width: 40px;
+	background: linear-gradient(to right, #ffffff, transparent);
+	pointer-events: none;
+	z-index: 5;
+	display: none;
+}
+.right-blur {
+	position: absolute;
+	right: 24px;
+	top: 0;
+	bottom: 0;
+	width: 40px;
+	background: linear-gradient(to left, #ffffff, transparent);
+	pointer-events: none;
+	z-index: 5;
+	display: none;
+}
 
 /* Store Status Style */
 .easycommerce-coming-soon-wrapper {

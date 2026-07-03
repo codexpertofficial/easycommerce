@@ -13,6 +13,7 @@ const statusColorMapping = {
     refunded: { textColor: "#FF001F", bgColor: "#FF001F1A" },
     partially_refunded: { textColor: "#F89102", bgColor: "#F891021A" },
     on_hold: { textColor: "#555DFF", bgColor: "#555DFF1A" },
+    failed: { textColor: "#EF4444", bgColor: "#EF44440D" },
 };
 
 const RecentOrders = ({ orders }) => {

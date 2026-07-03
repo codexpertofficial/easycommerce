@@ -68,7 +68,7 @@ const statusOptions = [
 	{ label: "Pending", value: "pending" },
 	{ label: "On hold", value: "on_hold" },
 	{ label: "Processing", value: "processing" },
-    // { label: "Failed", value: "failed" },
+    { label: "Failed", value: "failed" },
 ];
 
 const OrderInfo = ({ order, selectModal, setStatusCounts, updateOrder }) => {

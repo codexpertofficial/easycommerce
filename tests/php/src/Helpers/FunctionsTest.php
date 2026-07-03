@@ -95,6 +95,34 @@ class FunctionsTest extends EasyCommerceTestCase {
 		$statuses = easycommerce_order_statuses();
 		$this->assertIsArray( $statuses );
 		$this->assertNotEmpty( $statuses );
+		$this->assertArrayHasKey( 'failed', $statuses, "'failed' must be a recognised order status" );
+	}
+
+	/**
+	 * Test easycommerce_email_events registers the 'failed' event.
+	 */
+	public function test_easycommerce_email_events_includes_failed() {
+		$events = easycommerce_email_events();
+		$this->assertIsArray( $events );
+		$this->assertArrayHasKey( 'failed', $events, "'failed' must be a registered email event" );
+	}
+
+	/**
+	 * Test easycommerce_email_default returns a complete template for 'failed'.
+	 */
+	public function test_easycommerce_email_default_failed_has_complete_template() {
+		$default = easycommerce_email_default( 'failed' );
+
+		$this->assertIsArray( $default );
+		$this->assertArrayHasKey( 'customer_subject', $default );
+		$this->assertArrayHasKey( 'customer_body', $default );
+		$this->assertArrayHasKey( 'admin_subject', $default );
+		$this->assertArrayHasKey( 'admin_body', $default );
+
+		$this->assertNotEmpty( $default['customer_subject'] );
+		$this->assertNotEmpty( $default['customer_body'] );
+		$this->assertNotEmpty( $default['admin_subject'] );
+		$this->assertNotEmpty( $default['admin_body'] );
 	}
 
 	/**

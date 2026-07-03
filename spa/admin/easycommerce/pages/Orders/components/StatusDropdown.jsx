@@ -43,11 +43,11 @@ const StatusDropdown = ({
             background: "var(--color-ec-onHoldBg)",
             border: "1px solid var(--color-ec-onHoldBorder)",
         },
-        // failed: {
-        //     color: "var(--color-ec-failedText)",
-        //     background: "var(--color-ec-failedBg)",
-        //     border: "1px solid var(--color-ec-failedBorder)",
-        // },
+        failed: {
+            color: "var(--color-ec-failedText)",
+            background: "var(--color-ec-failedBg)",
+            border: "1px solid var(--color-ec-failedBorder)",
+        },
         processing: {
             color: "var(--color-ec-processingText)",
             background: "var(--color-ec-processingBg)",

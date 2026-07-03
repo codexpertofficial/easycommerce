@@ -30,7 +30,7 @@ const AddShipping = ({ handleCancel, showToast, ShippingPlanId }) => {
 		{
 			name: "",
 			min: 0,
-			max: 0,
+			max: null,
 			cost: 0,
 			min_unit: 'kg',
 			max_unit: 'kg',
@@ -68,7 +68,7 @@ const AddShipping = ({ handleCancel, showToast, ShippingPlanId }) => {
 		newShippingMethodList.splice(index + 1, 0, {
 			name: "",
 			min: 0,
-			max: 0,
+			max: null,
 			cost: 0,
 			min_unit: 'kg',
 			max_unit: 'kg',
@@ -157,7 +157,7 @@ const AddShipping = ({ handleCancel, showToast, ShippingPlanId }) => {
 			methods: shippingMethodList.map(method => ({
 				name: method.name,
 				min: parseFloat(method.min) || 0,
-				max: parseFloat(method.max) || 0,
+				max: method.max !== null && method.max !== '' ? parseFloat(method.max) : null,
 				cost: parseFloat(method.cost) || 0,
 				min_unit: method.min_unit,
 				max_unit: method.max_unit,
@@ -264,7 +264,7 @@ const AddShipping = ({ handleCancel, showToast, ShippingPlanId }) => {
 			methods: shippingMethodList.map(method => ({
 				name: method.name,
 				min: parseFloat(method.min) || 0,
-				max: parseFloat(method.max) || 0,
+				max: method.max !== null && method.max !== '' ? parseFloat(method.max) : null,
 				cost: parseFloat(method.cost) || 0,
 				min_unit: method.min_unit,
 				max_unit: method.max_unit,
@@ -361,7 +361,7 @@ const AddShipping = ({ handleCancel, showToast, ShippingPlanId }) => {
 					const methods = fetchedPlan.methods.map((method) => ({
 						name: method.name || "",
 						min: parseFloat(method.min) || 0,
-						max: parseFloat(method.max) || 0,
+						max: method.max !== null && method.max !== undefined ? parseFloat(method.max) : null,
 						cost: parseFloat(method.cost) || 0,
 						min_unit: method.min_unit || 'kg',
 						max_unit: method.max_unit || 'kg',
@@ -840,7 +840,7 @@ const AddShipping = ({ handleCancel, showToast, ShippingPlanId }) => {
 																			"max"
 																		)
 																	}
-																	value={method.max}
+																	value={method.max ?? ''}
 																	placeholder="Write max weight"
 																/>
 																{shippingPlan.calculation_base === "weight" && (

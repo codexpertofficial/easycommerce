@@ -2,10 +2,10 @@
 
 Contributors: easycommerce, easysuite
 Donate link: https://easycommerce.dev
-Tags: ecommerce, online store, store builder, shopping cart, ai ecommerce, payments, coupons, shipping, inventory, digital downloads, product reviews, abandoned cart
+Tags: ecommerce, online store, ai ecommerce, store builder, digital downloads
 Requires at least: 6.0
 Tested up to: 7.0
-Stable tag: 1.41
+Stable tag: 1.42
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -20,22 +20,13 @@ EasyCommerce's built-in AI shopping agent searches your catalog, filters by colo
 
 That's not a future feature. That's EasyCommerce today.
 
-**Rated 4.7★ by store owners on WordPress.org.**
-
 ---
 
-= Why Store Owners Are Switching From WooCommerce =
+= Everything Built In, Free at the Core =
 
-Running WooCommerce properly costs money most people don't talk about:
+The core plugin is **completely free**. Sell digital products, physical goods, subscriptions, and software licenses from one plugin - no separate third-party extension stack to assemble and maintain.
 
-- Subscriptions extension: **$199/year**
-- License Manager: **$129/year**
-- AI content tools: **$29-80/month**
-- AI image tools: **$10-30/month**
-
-Total: **$728-$1,528/year** - before you've sold a single product.
-
-EasyCommerce includes all of this. The core plugin is **completely free**, with zero transaction fees. Every AI feature - shopping agent, content writer, image generator, business analyst - is built in and runs on **100 free credits every month**, refreshed automatically.
+Every AI feature - Shopping Agent, Store Copilot, content writer, image generator- is built in and runs on **100 free credits every month** (200 first month), refreshed automatically. Connect your EasyCommerce account and they work out of the box; there are no third-party AI keys or subscriptions to configure.
 
 [Try it live - no signup required](https://tastewp.com/recipe/easycommerce)
 
@@ -43,11 +34,11 @@ EasyCommerce includes all of this. The core plugin is **completely free**, with 
 
 = What Is EasyCommerce? =
 
-EasyCommerce is a WordPress online store builder and AI ecommerce plugin built from the ground up for the AI era. While WooCommerce, Easy Digital Downloads, and other traditional platforms were designed before AI existed, EasyCommerce was built with it at the core - not bolted on.
+EasyCommerce is a WordPress online store builder and AI ecommerce plugin built for the AI era, with conversational selling and store management at its core rather than bolted on afterwards. It's a modern alternative to WooCommerce and Easy Digital Downloads (EDD), and a free Migration addon brings your existing store across in one click.
 
-**Built on dedicated database tables** (not WordPress posts), EasyCommerce delivers 3-5x faster performance than post-based systems, handles 10,000+ products without slowdown, and keeps your site lean even as your catalog grows.
+**Built on dedicated database tables** (not WordPress posts), EasyCommerce is engineered for performance at scale - it handles large catalogs of 10,000+ products without slowdown and keeps your site lean as your catalog grows.
 
-Sell **digital products**, **physical goods**, **software licenses**, and **subscriptions** - all in one plugin, without the 10-15 extension stack WooCommerce requires.
+Sell **digital products**, **physical goods**, **software licenses**, and **subscriptions** - all from one plugin, with no separate extension stack to assemble.
 
 ---
 
@@ -80,7 +71,7 @@ Available on every EasyCommerce admin page. Ask questions and take action in pla
 - "Issue a refund on order #1042" Validates balance, updates status, sends refund email.
 - "Show customers who haven't purchased in 90 days" Instant filtered list.
 
-**Replaces:** $50-500/month in business intelligence tools.
+Natural-language analytics and store actions, built into the admin - no separate business-intelligence tool to set up.
 
 **[Multi-Channel Agent](https://easycommerce.dev/features/ai/agentic/multi-channel)**
 Extend the shopping agent to Facebook Messenger and WhatsApp via addons. Each channel is a separate addon - launch one, then add more.
@@ -97,7 +88,7 @@ Understands intent even with typos and natural language.
 - "apple's phone" iPhone products
 - "wirless hedphones" Wireless headphones
 
-WooCommerce requires exact keyword matches and charges $79-199/year for intelligent search. EasyCommerce includes it free.
+Intent-based matching is built in and free - shoppers find the right product even when the exact keyword isn't typed.
 
 ---
 
@@ -115,7 +106,7 @@ Generate professional product descriptions from your product title and a custom 
 - Long descriptions: 600-900 words (product pages)
 - SEO-optimised and conversion-focused
 
-**Replaces:** $29-80/month on Jasper AI, Copy.ai, or freelance copywriters.
+Write catalog-ready product descriptions in seconds, directly on the product screen.
 
 **[AI Image Generator](https://easycommerce.dev/features/ai/generative/image-generator)**
 
@@ -127,7 +118,7 @@ Create professional product visuals from a text description.
 - Marketing graphics and social media assets
 - Product visualisations before a photoshoot
 
-**Replaces:** $10-30/month on Midjourney or DALL-E.
+Generate product visuals on demand, without a separate design tool.
 
 **[AI Image Editor](https://easycommerce.dev/features/ai/generative/image-editor)**
 
@@ -139,7 +130,7 @@ Professional photo editing with simple text commands.
 - Image enhancement: lighting, clarity, colour
 - Style transformation and object editing
 
-**Replaces:** $9-29/month on removal.bg, Canva Pro, or Photoshop.
+Edit and clean up product photos with text commands, no design software required.
 
 **[Luna](https://easycommerce.dev/features/ai/agentic/luna)** - Always-free in-dashboard help assistant. Answers how-to questions whenever you're stuck.
 
@@ -152,7 +143,7 @@ Professional photo editing with simple text commands.
 - [Ecommerce Features](https://easycommerce.dev/features/ecommerce) - Complete ecommerce feature list
 - [Addons](https://easycommerce.dev/addons) - 25+ free addons: Mailchimp, Klaviyo, FluentCRM, HubSpot, Zendesk, Slack, Google Sheets Sync, WPBakery, Paddle, PDF Invoices, Points & Rewards, Wishlist, Sliding Cart, Delivery Date Picker, and more
 - [Pricing](https://easycommerce.dev/pricing)
-- [Compare](https://easycommerce.dev/compare) - vs WooCommerce, EDD, FluentCart, SureCart
+- [Comparisons](https://easycommerce.dev/compare)
 - [Documentation](https://easycommerce.dev/docs/)
 - [Developer Docs](https://easycommerce.dev/docs/dev/)
 - [Support](https://support.easycommerce.dev/)
@@ -162,11 +153,10 @@ Professional photo editing with simple text commands.
 = Who Is EasyCommerce For? =
 
 **[Digital Product Creators](https://easycommerce.dev/use-cases/digital-products)**
-Course creators, authors, designers, and software developers selling ebooks, templates, PDFs, videos, music, and downloadable files.
+Course creators, authors, designers, and software developers selling ebooks, templates, PDFs, videos, music, and downloadable files. Coming from Easy Digital Downloads? Bring your catalog across in one click.
 - Secure digital file delivery with download limits
 - AI-generated product descriptions and cover images
 - Software license management (Pro addon)
-- Zero per-transaction fees
 
 **[Subscription Businesses](https://easycommerce.dev/features/ecommerce/subscriptions)**
 SaaS founders, membership sites, coaching programmes, and communities selling recurring access.
@@ -192,40 +182,34 @@ Retailers and handmade goods sellers managing real inventory.
 
 **[WordPress Agencies](https://easycommerce.dev/use-cases/agencies)**
 Web developers building ecommerce sites for clients.
-- One plugin instead of a 10+ extension stack
+- One plugin for the whole store instead of assembling many extensions
 - Clean, well-documented codebase with hooks, filters, and full REST API
-- AI features clients immediately understand and love
-- Predictable pricing - no surprise extension bills
+- AI features clients can use right away
+- Predictable pricing
 
 ---
 
-= EasyCommerce vs WooCommerce =
+= Built In, Not Bolted On =
 
-WooCommerce has been the default for 15 years. It's also become bloated, extension-dependent, and expensive. [See the full breakdown](https://easycommerce.dev/compare/woocommerce).
+Moving from WooCommerce or Easy Digital Downloads? These capabilities ship inside one plugin - and the free Migration addon brings your products, orders, and customers across in one click. [See the details](https://easycommerce.dev/compare/woocommerce).
 
 **Performance**
-WooCommerce: post tables degrade with large catalogs.
-EasyCommerce: dedicated database tables - 3-5x faster, scales to 10,000+ products without slowdown.
+Dedicated database tables (not WordPress posts) are engineered to scale to large catalogs of 10,000+ products without slowdown.
 
 **AI Shopping Agent**
-WooCommerce: no conversational agent exists at any price point.
-EasyCommerce: built-in AI handles product discovery, order placement, and post-purchase support 24/7.
+A built-in conversational agent handles product discovery, order placement, and post-purchase support on your storefront around the clock.
 
 **Store Management**
-WooCommerce: no AI management tools.
-EasyCommerce: Store Copilot answers questions, updates orders, and runs analytics in natural language.
+Store Copilot answers questions, updates orders, and runs analytics from the admin in natural language.
 
 **AI Content & Images**
-WooCommerce: external tools at $30-100/month each.
-EasyCommerce: 8+ AI features built in with 100 free credits refreshed every month.
+8+ AI features - content writer, image generator, image editor, and more - are built in and run on 100 free credits refreshed every month.
 
-**Annual Cost**
-WooCommerce with subscriptions, license manager, and AI tools: **$728-$1,528/year**.
-EasyCommerce: **Free core**, optional Pro for advanced features.
+**Cost**
+The core plugin is free; an optional Pro tier adds subscriptions and license management.
 
 **Setup**
-WooCommerce: 10-15 plugins needed.
-EasyCommerce: everything included or available as one-click addons.
+Core features are included out of the box, with the rest available as one-click addons.
 
 ---
 
@@ -237,7 +221,6 @@ EasyCommerce: everything included or available as one-click addons.
 - **[Multi-Channel Agent](https://easycommerce.dev/features/ai/agentic/multi-channel)** - Extend to Facebook Messenger and WhatsApp via addons
 - **[Luna Help Assistant](https://easycommerce.dev/features/ai/agentic/luna)** - Always-free in-dashboard help for store owners
 - **[AI Smart Search](https://easycommerce.dev/features/ai/agentic/smart-search)** - Intent-based search with typo correction and natural language understanding
-- **AI Business Analyst** - Natural language business intelligence across your entire store
 
 **Generative AI**
 - **[AI Content Writer](https://easycommerce.dev/features/ai/generative/writer)** - Product descriptions and summaries from title and prompt
@@ -254,9 +237,9 @@ EasyCommerce: everything included or available as one-click addons.
 - **[Variable Products](https://easycommerce.dev/features/ecommerce/product-variations)** - Auto-generate all variants with one click
 - **Mixed Physical + Digital** - One listing, both variant types, each delivers correctly
 
-**[Payments](https://easycommerce.dev/features/ecommerce/payments) - Zero Transaction Fees**
+**[Payments](https://easycommerce.dev/features/ecommerce/payments)**
 - Stripe, PayPal, Mollie, Braintree, Square, Cash on Delivery, bKash, Nagad - 200+ countries, 135+ currencies
-- Apple Pay & Google Pay via Stripe; no platform fees - keep 100% of revenue
+- Apple Pay & Google Pay via Stripe
 
 **Marketing & Conversion**
 - **[Abandoned Cart Recovery](https://easycommerce.dev/features/ecommerce/abandoned-carts)** - Automated personalised reminder emails
@@ -280,7 +263,7 @@ EasyCommerce: everything included or available as one-click addons.
 - Six built-in shortcodes: `[easycommerce-checkout]`, `[easycommerce-dashboard]`, `[easycommerce-login]`, `[easycommerce-register]`, `[easycommerce-reset]`, `[easycommerce-payment]`
 
 **Performance & Developer**
-- Dedicated database tables - 3-5x faster, handles 10,000+ products without degradation
+- Dedicated database tables - engineered for scale, handles 10,000+ products without degradation
 - REST API, 100+ action hooks, 50+ filter hooks, headless support
 - **[Developer Documentation](https://easycommerce.dev/docs/dev/)** - REST API, hooks, data models, custom payment gateways, building addons
 
@@ -326,7 +309,7 @@ Five dedicated report pages with interactive charts, GeoMap, and heatmaps:
 
 = Abandoned Cart Recovery =
 
-The average ecommerce abandonment rate is 70%. EasyCommerce recovers those sales automatically.
+Many shoppers add to cart but leave before paying. EasyCommerce helps win those sales back with automated reminder emails.
 
 - **Configurable recovery timer** - set the delay before a reminder triggers
 - **Personalised emails** - customer name, cart items, total, and direct checkout link
@@ -337,7 +320,7 @@ The average ecommerce abandonment rate is 70%. EasyCommerce recovers those sales
 
 = Payments & Checkout =
 
-- **Zero platform fees** - keep 100% of revenue. Only standard processor fees apply.
+- **No added transaction fees** - EasyCommerce adds no fees of its own; you pay only your payment processor's standard rates.
 - **135+ currencies** - auto-detection based on customer location
 - **Guest checkout** - no account required; auto-created after purchase if email is new
 - **Direct checkout** - send customers straight to checkout, bypassing the cart
@@ -356,9 +339,9 @@ Active development. These features are in progress and will ship in upcoming rel
 
 ---
 
-= Migrate From WooCommerce in One Click =
+= Migrate From WooCommerce or Easy Digital Downloads in One Click =
 
-Install the free [Migration addon](https://easycommerce.dev/addons/easycommerce-migration), click "Start Migration", wait 5-30 minutes. Migrates all products (simple, variable, digital), images, categories, orders, customer accounts, and reviews. Zero downtime - store stays live throughout. Pro customers get free white-glove migration assistance.
+Install the free [Migration addon](https://easycommerce.dev/addons/easycommerce-migration), click "Start Migration", wait 5-30 minutes. It imports from both WooCommerce and Easy Digital Downloads (EDD): all products (simple, variable, digital), images, categories, orders, customer accounts, and reviews. Zero downtime - your store stays live throughout. Pro customers get free white-glove migration assistance.
 
 ---
 
@@ -371,7 +354,7 @@ Install the free [Migration addon](https://easycommerce.dev/addons/easycommerce-
 **Store Experience:** Points & Rewards, Wishlist, Sliding Cart, Delivery Date Picker
 **Payments:** Paddle, bKash, Nagad, Rocket, Bank Transfer
 **Content & Design:** WPBakery integration, PDF Invoices, Checkout Editor
-**Migration:** WooCommerce Migration (one-click import of all products, orders, customers, and reviews)
+**Migration:** WooCommerce & Easy Digital Downloads migration (one-click import of all products, orders, customers, and reviews)
 
 All addons are free. Premium addons are included in Pro.
 
@@ -379,7 +362,7 @@ All addons are free. Premium addons are included in Pro.
 
 = Community =
 
-- [Facebook Community](https://www.facebook.com/groups/easycommerce.community/) - Tips, questions, and store owner discussions
+- [Community](https://community.codexpert.io/c/space/easycommerce) - Tips, questions, and store owner discussions
 - [Facebook Page](https://www.facebook.com/easycommercedev) - Product updates and announcements
 - [X (Twitter)](https://x.com/easycommercedev)
 - [LinkedIn](https://www.linkedin.com/company/easycommercedev/)
@@ -392,7 +375,24 @@ All addons are free. Premium addons are included in Pro.
 **Clean architecture:** Modern, maintainable codebase. Dedicated database tables. WordPress coding standards.
 **Extensible:** Complete REST API. 100+ action hooks. 50+ filter hooks. Headless support.
 **Well-documented:** [easycommerce.dev/docs/dev](https://easycommerce.dev/docs/dev/) - REST API, hooks, data models, custom payment gateways, building addons.
-**Performance:** Optimised SQL queries. Minimal database calls. Cache-friendly. Lazy-loaded assets. 3-5x faster than post-based systems.
+**Performance:** Optimised SQL queries. Minimal database calls. Cache-friendly. Lazy-loaded assets. Dedicated tables engineered for scale.
+
+---
+
+= Source Code & Build =
+
+EasyCommerce is fully open source (GPLv2 or later). The complete, human-readable source - including the un-minified React and JavaScript in `spa/` and `blocks/` that compiles to the bundled files in `build/` - is published at:
+
+https://github.com/codexpertofficial/easycommerce
+
+To build the compiled assets from source:
+
+1. Clone the repository
+2. Install PHP dependencies: `composer install`
+3. Install JavaScript dependencies: `npm install`
+4. Build all bundles and blocks: `npm run build`
+
+Build tools: Node.js 20+, npm, Composer, and Webpack (configuration in `webpack.config.js`). Full developer documentation at [easycommerce.dev/docs/dev](https://easycommerce.dev/docs/dev/).
 
 ---
 
@@ -400,15 +400,15 @@ All addons are free. Premium addons are included in Pro.
 
 = What is EasyCommerce? =
 
-EasyCommerce is an AI ecommerce plugin for WordPress with a built-in AI shopping agent that sells on your storefront 24/7, a Store Copilot that manages your store in natural language, and a full suite of generative AI tools for content, images, and analytics. Sell digital products, physical goods, and subscriptions with dedicated database architecture for 3-5× faster performance and zero transaction fees.
+EasyCommerce is an AI ecommerce plugin for WordPress with a built-in AI shopping agent that sells on your storefront 24/7, a Store Copilot that manages your store in natural language, and a full suite of generative AI tools for content, images, and analytics. Sell digital products, physical goods, and subscriptions on a dedicated database architecture engineered for performance at scale.
 
 = Is EasyCommerce free? =
 
-Yes. The core plugin is completely free with no transaction fees. The optional Pro version unlocks Subscription Management and License Management. You only ever pay standard payment processor fees (Stripe, PayPal, etc.).
+Yes. The core plugin is completely free. The optional Pro version unlocks Subscription Management and License Management. You pay only standard payment processor fees (Stripe, PayPal, etc.).
 
-= How is EasyCommerce different from WooCommerce? =
+= Is EasyCommerce a WooCommerce or EDD alternative? =
 
-EasyCommerce includes a built-in AI shopping agent that handles the full customer purchase journey - no WooCommerce equivalent exists at any price. It ships with 8+ AI features (shopping agent, Store Copilot, smart search, content writer, image generator, image editor, business analyst) that WooCommerce completely lacks. Built on dedicated database tables for 3-5× faster performance. Pro includes subscriptions and license management - WooCommerce charges $328+/year for equivalent extensions. [Full comparison →](https://easycommerce.dev/compare/woocommerce)
+Yes. EasyCommerce is a WordPress ecommerce plugin built as an alternative to WooCommerce and Easy Digital Downloads. It ships with a built-in AI shopping agent that handles the full customer purchase journey, plus 8+ AI features (shopping agent, Store Copilot, smart search, content writer, image generator, image editor, business analyst) built into the core. It runs on dedicated database tables engineered for performance at scale, and Pro adds subscription and license management. A free Migration addon moves your store across in one click. [See the details →](https://easycommerce.dev/compare/woocommerce)
 
 = What can the AI Shopping Agent do? =
 
@@ -428,7 +428,7 @@ Stripe, PayPal, Mollie, Braintree, and Square are built in. Regional gateways in
 
 = Do you charge transaction fees? =
 
-No. Zero platform fees, ever. You keep 100% of revenue and pay only standard processor fees (Stripe ~2.9% + 30¢, PayPal similar).
+No. EasyCommerce adds no transaction fees of its own. You pay only your payment processor's standard rates (Stripe ~2.9% + 30¢, PayPal similar).
 
 = How do AI credits work? =
 
@@ -459,7 +459,7 @@ Enter your product title and an optional prompt ("Emphasise durability and the 2
 
 = Can I remove product image backgrounds automatically? =
 
-Yes. The AI Image Editor removes backgrounds, enhances lighting, and creates studio-quality product photos using simple text commands - no Photoshop or design skills needed. Uses 50 credits per edit.
+Yes. The AI Image Editor removes backgrounds, enhances lighting, and creates studio-quality product photos using simple text commands - no design software or design skills needed. Uses 50 credits per edit.
 
 = What's included in EasyCommerce Pro? =
 
@@ -469,9 +469,9 @@ Pro includes Subscription Management (recurring billing, automatic renewals, fre
 
 Yes. With the Pro Subscriptions addon, EasyCommerce handles recurring billing, member self-service dashboards, flexible billing intervals (weekly, monthly, yearly), and subscription lifecycle management - pause, cancel, expiry. Used for coaching programmes, online course platforms, exclusive communities, and SaaS businesses.
 
-= Can I migrate from WooCommerce? =
+= Can I migrate from WooCommerce or Easy Digital Downloads? =
 
-Yes. The free [Migration addon](https://easycommerce.dev/addons/easycommerce-migration) transfers all products, orders, customers, and reviews in one click with zero downtime. Takes 5-30 minutes depending on catalog size. Pro customers get free white-glove migration assistance.
+Yes. The free [Migration addon](https://easycommerce.dev/addons/easycommerce-migration) transfers all products, orders, customers, and reviews from both WooCommerce and Easy Digital Downloads (EDD) in one click with zero downtime. Takes 5-30 minutes depending on catalog size. Pro customers get free white-glove migration assistance.
 
 = Does EasyCommerce work with my WordPress theme? =
 
@@ -483,7 +483,7 @@ Yes. 135+ currencies via payment gateway integrations, with auto-detection based
 
 = Is EasyCommerce fast with large product catalogs? =
 
-Yes. Dedicated database tables instead of WordPress posts deliver 3-5× faster queries even with 10,000+ products. Performance does not degrade as your catalog grows.
+Yes. Dedicated database tables instead of WordPress posts keep queries fast even with 10,000+ products. Performance does not degrade as your catalog grows.
 
 = What are the system requirements? =
 
@@ -556,7 +556,7 @@ Free community support via WordPress.org forums and the [Facebook Community](htt
 10. Coupons - flexible discounts: percentage or fixed, with min/max spend, product targeting, and expiry dates.
 11. Abandoned Cart Recovery - overview of abandoned carts with one-click reminder email sending.
 12. Shipping - zone-based shipping plans with country/state/city rates and flexible calculation methods.
-13. Integrations - built-in payment gateways (Stripe, PayPal, Square, Braintree, Mollie), CRM and marketing addons, WooCommerce migration, and more.
+13. Integrations - built-in payment gateways (Stripe, PayPal, Square, Braintree, Mollie), CRM and marketing addons, WooCommerce & EDD migration, and more.
 
 == External services ==
 
@@ -573,6 +573,51 @@ The plugin contacts these third-party services, each only when its feature is us
 * **CARTO** (basemaps.cartocdn.com) — loads background map tiles for the Reports location maps; no data is sent. Terms: https://carto.com/legal/ — Privacy: https://carto.com/privacy/
 
 == Changelog ==
+
+= 1.42 - 2026-07-03 =
+
+**🔒 Security**
+
+- [security] Prevented SQL injection through ORDER BY identifier validation in database queries
+- [security] Replaced raw unserialize() with maybe_unserialize() in abandoned cart retrieval to harden against object injection
+- [security] Stripe payment intent creation now enforces order ownership
+
+**✨ New**
+
+- [add] Generate and share a payment link for unpaid orders directly from the order screen
+- [add] Editable abandoned-cart reminder email popup with an automatic daily reminder cron
+- [add] Failed payments now show a proper "Failed" order status instead of "N/A"
+
+**💳 Payments**
+
+- [fix] Cash on Delivery no longer creates a false transaction entry on order placement
+- [fix] Stripe Buy Now, Pay Later methods are hidden when the order exceeds their maximum amount
+- [fix] Rate-limited Stripe payment error logging to prevent log flooding
+
+**🛒 Cart, Checkout & Shipping**
+
+- [fix] Unified backend payment lock stops the cart from changing during payment
+- [fix] Checkout now auto-selects the cheapest available shipping method
+- [fix] A shipping maximum of 0 now correctly means "unlimited" instead of disabling the method
+- [fix] Draft and other non-published products can no longer be added to the cart
+
+**📦 Orders & Reports**
+
+- [fix] Clearer feedback and error handling for invalid or missing order IDs
+- [fix] Order amount getters now return floats for PHP 8.x strict-type safety
+- [fix] Revenue report validates its date range against the supported ranges
+
+**🎨 Storefront & Email**
+
+- [ui] Fixed the shop page on mobile and tablet: responsive product grid and full-height filter drawer
+- [content] Rewrote all default transactional email templates (order, refund, account) for clearer copy
+
+**📝 WordPress.org & Developer**
+
+- [i18n] Resolved WordPress.org guideline issues: text domain/i18n, CDN asset offloading, and composer.json
+- [docs] Disclosed all external services in the readme
+- [docs] Shortened the plugin display name and cleaned up readme metadata
+- [test] Fixed OrderFactory test failures from non-scalar defaults and documented the related test bugs
 
 = 1.41 - 2026-06-23 =
 

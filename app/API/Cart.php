@@ -349,7 +349,7 @@ class Cart extends API {
 					}
 					foreach ( $plan['methods'] as $method ) {
 						$min = $method->min;
-						$max = $method->max > 0 ? $method->max : PHP_INT_MAX;
+						$max = $method->max !== null ? $method->max : PHP_INT_MAX;
 
 						if ( $min <= $physical_subtotal && $max >= $physical_subtotal ) {
 							$methods[] = array(
@@ -368,7 +368,7 @@ class Cart extends API {
 					foreach ( $plan['methods'] as $method ) {
 						// Convert min and max to grams based on their units
 						$min_grams = $method->min * ( $unit_conversions[$method->min_unit] ?? 1 );
-						$max_grams = $method->max > 0 ? $method->max * ( $unit_conversions[$method->max_unit] ?? 1 ) : PHP_INT_MAX;
+						$max_grams = $method->max !== null ? $method->max * ( $unit_conversions[$method->max_unit] ?? 1 ) : PHP_INT_MAX;
 
 						// Compare cart weight (in grams) with method range (in grams)
 						if ( $min_grams <= $cart_weight_grams && $cart_weight_grams <= $max_grams ) {
@@ -384,7 +384,7 @@ class Cart extends API {
 					foreach ( $plan['methods'] as $method ) {
 
 						$min = $method->min;
-						$max = $method->max > 0 ? $method->max : PHP_INT_MAX;
+						$max = $method->max !== null ? $method->max : PHP_INT_MAX;
 
 						if ( $min <= $cart_quantity && $max >= $cart_quantity ) {
 							$methods[] = array(

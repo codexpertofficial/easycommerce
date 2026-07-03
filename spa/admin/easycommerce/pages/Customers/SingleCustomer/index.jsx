@@ -44,11 +44,11 @@ const statusClassMap = {
         text: "text-ec-onHoldText",
         border: "border-ec-onHoldBorder",
     },
-    // failed: {
-    //     bg: "bg-ec-failedBg",
-    //     text: "text-ec-failedText",
-    //     border: "border-ec-failedBorder",
-    // },
+    failed: {
+        bg: "bg-ec-failedBg",
+        text: "text-ec-failedText",
+        border: "border-ec-failedBorder",
+    },
 };
 
 const fulfill_status_class_map = {

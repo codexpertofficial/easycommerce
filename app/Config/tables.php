@@ -294,7 +294,7 @@ $easycommerce_tables = array(
 			'id'             => 'BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT',
 			'customer_id'    => 'BIGINT(20) UNSIGNED NULL DEFAULT NULL',
 			'total'          => 'DECIMAL(10, 2) NOT NULL',
-			'status'         => "ENUM('pending', 'processing', 'completed', 'cancelled', 'on_hold', 'partially_refunded', 'refunded' ) NOT NULL DEFAULT 'pending'",
+			'status'         => "ENUM('pending', 'processing', 'completed', 'cancelled', 'on_hold', 'partially_refunded', 'refunded', 'failed' ) NOT NULL DEFAULT 'pending'",
 			'fulfill_status' => "ENUM('unfulfilled', 'fulfilled', 'partially_fulfilled', 'shipped', 'delivered', 'returned') NOT NULL DEFAULT 'unfulfilled'",
 			'payment_method' => 'VARCHAR(255) NOT NULL',
 			'created_at'     => 'TIMESTAMP DEFAULT CURRENT_TIMESTAMP',
@@ -491,7 +491,7 @@ $easycommerce_tables = array(
 			'min_unit'	=> 'VARCHAR(255) NOT NULL',
 			'min'     	=> 'DECIMAL(10, 2) NOT NULL DEFAULT 0.00',
 			'max_unit'	=> 'VARCHAR(255) NOT NULL',
-			'max'     	=> 'DECIMAL(10, 2) NOT NULL',
+			'max'     	=> 'DECIMAL(10, 2) DEFAULT NULL',
 			'cost'    	=> 'DECIMAL(10, 2) NOT NULL DEFAULT 0.00',
 		),
 		'options' => array(

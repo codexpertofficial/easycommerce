@@ -314,6 +314,53 @@ class OrderTest extends EasyCommerceTestCase {
 	}
 
 	/**
+	 * Regression: set_status('failed') must persist as 'failed' and not be
+	 * coerced to an empty string by the orders.status ENUM. Before 'failed'
+	 * was added to the ENUM, MySQL silently stored '' (the "Order Status N/A"
+	 * bug) for declined payments.
+	 */
+	public function test_set_status_failed_persists_and_is_not_coerced() {
+		global $wpdb;
+
+		$order    = $this->make_order( [ 'status' => 'pending', 'total' => 42.00 ] );
+		$order_id = $order->get_id();
+
+		$order->set_status( 'failed' );
+
+		// In-memory and reloaded model both report 'failed'.
+		$this->assertEquals( 'failed', $order->get_status() );
+		$this->assertEquals( 'failed', ( new Order( $order_id ) )->get_status() );
+
+		// Raw DB value is exactly 'failed', proving no ENUM coercion to ''.
+		$raw = $wpdb->get_var( $wpdb->prepare(
+			"SELECT status FROM {$wpdb->prefix}ec_orders WHERE id = %d",
+			$order_id
+		) );
+		$this->assertSame( 'failed', $raw );
+	}
+
+	/**
+	 * Test list() with a 'failed' status filter returns only failed orders.
+	 */
+	public function test_list_filter_by_failed_status() {
+		$this->make_order( [ 'status' => 'failed', 'total' => 30.00 ] );
+		$this->make_order( [ 'status' => 'completed', 'total' => 30.00 ] );
+
+		$result = Order::list( [
+			'per_page' => 50,
+			'page'     => 1,
+			'status'   => 'failed',
+		] );
+
+		$this->assertIsArray( $result['orders'] );
+		$this->assertGreaterThanOrEqual( 1, count( $result['orders'] ) );
+
+		foreach ( $result['orders'] as $order ) {
+			$this->assertEquals( 'failed', $order['status'] );
+		}
+	}
+
+	/**
 	 * Test set_fulfillment_status() updates in-memory state immediately.
 	 */
 	public function test_set_fulfillment_status() {
