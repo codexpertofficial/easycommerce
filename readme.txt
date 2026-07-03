@@ -5,7 +5,7 @@ Donate link: https://easycommerce.dev
 Tags: ecommerce, online store, ai ecommerce, store builder, digital downloads
 Requires at least: 6.0
 Tested up to: 7.0
-Stable tag: 1.42
+Stable tag: 1.42.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -17,8 +17,6 @@ Ecommerce for WordPress: online store builder with an AI shopping agent, content
 **A customer visits your store at 2 AM and types: "Do you have red sneakers in size 10 under $80?"**
 
 EasyCommerce's built-in AI shopping agent searches your catalog, filters by color and size, shows matching products with prices, collects the customer's details, places the order, and delivers a payment link - all in one conversation. No staff required. No abandoned browsing sessions. A completed sale while you slept.
-
-That's not a future feature. That's EasyCommerce today.
 
 ---
 
@@ -36,9 +34,7 @@ Every AI feature - Shopping Agent, Store Copilot, content writer, image generato
 
 EasyCommerce is a WordPress online store builder and AI ecommerce plugin built for the AI era, with conversational selling and store management at its core rather than bolted on afterwards. It's a modern alternative to WooCommerce and Easy Digital Downloads (EDD), and a free Migration addon brings your existing store across in one click.
 
-**Built on dedicated database tables** (not WordPress posts), EasyCommerce is engineered for performance at scale - it handles large catalogs of 10,000+ products without slowdown and keeps your site lean as your catalog grows.
-
-Sell **digital products**, **physical goods**, **software licenses**, and **subscriptions** - all from one plugin, with no separate extension stack to assemble.
+**Built on dedicated database tables** (not WordPress posts), EasyCommerce is engineered for performance at scale - it handles large catalogs of 10,000+ products without slowdown.
 
 ---
 
@@ -71,8 +67,6 @@ Available on every EasyCommerce admin page. Ask questions and take action in pla
 - "Issue a refund on order #1042" Validates balance, updates status, sends refund email.
 - "Show customers who haven't purchased in 90 days" Instant filtered list.
 
-Natural-language analytics and store actions, built into the admin - no separate business-intelligence tool to set up.
-
 **[Multi-Channel Agent](https://easycommerce.dev/features/ai/agentic/multi-channel)**
 Extend the shopping agent to Facebook Messenger and WhatsApp via addons. Each channel is a separate addon - launch one, then add more.
 
@@ -87,8 +81,6 @@ Understands intent even with typos and natural language.
 - "ifon" iPhone products
 - "apple's phone" iPhone products
 - "wirless hedphones" Wireless headphones
-
-Intent-based matching is built in and free - shoppers find the right product even when the exact keyword isn't typed.
 
 ---
 
@@ -106,8 +98,6 @@ Generate professional product descriptions from your product title and a custom 
 - Long descriptions: 600-900 words (product pages)
 - SEO-optimised and conversion-focused
 
-Write catalog-ready product descriptions in seconds, directly on the product screen.
-
 **[AI Image Generator](https://easycommerce.dev/features/ai/generative/image-generator)**
 
 Create professional product visuals from a text description.
@@ -118,8 +108,6 @@ Create professional product visuals from a text description.
 - Marketing graphics and social media assets
 - Product visualisations before a photoshoot
 
-Generate product visuals on demand, without a separate design tool.
-
 **[AI Image Editor](https://easycommerce.dev/features/ai/generative/image-editor)**
 
 Professional photo editing with simple text commands.
@@ -129,8 +117,6 @@ Professional photo editing with simple text commands.
 - Background removal (studio-quality results)
 - Image enhancement: lighting, clarity, colour
 - Style transformation and object editing
-
-Edit and clean up product photos with text commands, no design software required.
 
 **[Luna](https://easycommerce.dev/features/ai/agentic/luna)** - Always-free in-dashboard help assistant. Answers how-to questions whenever you're stuck.
 
@@ -573,6 +559,12 @@ The plugin contacts these third-party services, each only when its feature is us
 * **CARTO** (basemaps.cartocdn.com) — loads background map tiles for the Reports location maps; no data is sent. Terms: https://carto.com/legal/ — Privacy: https://carto.com/privacy/
 
 == Changelog ==
+
+= 1.42.1 - 2026-07-03 =
+
+- [add] Test-mode banner on the storefront for logged-in admins, with a "Go Live" shortcut - so admins can tell that customers are blocked at checkout while the store is in Test mode
+- [fix] Test mode now also hides single product pages and the product archive, which were still reachable by direct URL
+- [fix] "Store Launching Soon" page no longer renders a duplicate, misplaced header/footer and now shows the theme footer correctly
 
 = 1.42 - 2026-07-03 =
 

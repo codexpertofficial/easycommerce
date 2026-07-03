@@ -17,7 +17,7 @@ $store_mode = Utility::get_option( 'general', 'visibility', 'store_mode' ) ?: 't
 
 if ( $store_mode === 'test' && ! current_user_can( 'manage_options' ) ) {
 	include EASYCOMMERCE_PLUGIN_DIR . 'views/templates/store-mode.php';
-    exit;
+	return;
 }
 
 $settings                   		  = $attributes;

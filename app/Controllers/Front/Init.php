@@ -31,6 +31,8 @@ class Init {
 		$this->filter( 'easycommerce_api_product_list', array( $this, 'smart_search' ), 10, 3 );
 		$this->filter( 'the_content', array( $this, 'check_required_elements' ), 10, 1 );
 		$this->action( 'wp_body_open', array( $this, 'show_notices' ) );
+		$this->action( 'wp_body_open', array( $this, 'show_test_mode_banner' ) );
+		$this->action( 'wp_footer', array( $this, 'show_test_mode_banner' ) );
 	}
 
 	public function add_body_class( $classes ) {
@@ -302,5 +304,49 @@ class Init {
 				</div>
 			" );
 		}
+	}
+
+	/**
+	 * Show an admin-only banner on the storefront when the store is in Test mode.
+	 *
+	 * Admins are exempt from the Test-mode checkout/dashboard gate, so the storefront
+	 * looks live to them while real customers are silently blocked at checkout. This
+	 * banner closes that awareness gap. Hooked to wp_body_open (primary) with a
+	 * wp_footer fallback for themes that don't fire wp_body_open; a static guard
+	 * prevents duplicate output when a theme fires both.
+	 */
+	public function show_test_mode_banner() {
+		static $printed = false;
+
+		if ( $printed ) {
+			return;
+		}
+
+		if ( is_admin() || ! current_user_can( 'manage_options' ) ) {
+			return;
+		}
+
+		$store_mode = Utility::get_option( 'general', 'visibility', 'store_mode' ) ?: 'test';
+
+		if ( $store_mode !== 'test' ) {
+			return;
+		}
+
+		$printed = true;
+
+		$settings_url = admin_url( 'admin.php?page=easycommerce-settings&tab=general&submenu=visibility' );
+
+		$message = sprintf(
+			/* translators: %s: bold "Test" mode label */
+			esc_html__( 'Store in %s mode - customers cannot check out.', 'easycommerce' ),
+			'<strong>' . esc_html__( 'Test', 'easycommerce' ) . '</strong>'
+		);
+
+		printf(
+			'<div class="easycommerce-test-mode-banner" role="alert" style="width:100%%;box-sizing:border-box;background:#fff8e5;border-bottom:1px solid #f0c33c;color:#1e1e1e;padding:10px 16px;font-size:13px;line-height:1.4;font-family:-apple-system,BlinkMacSystemFont,\'Segoe UI\',Roboto,Helvetica,Arial,sans-serif;display:flex;align-items:center;justify-content:center;gap:12px;box-shadow:0 1px 4px rgba(0,0,0,0.08);"><span aria-hidden="true" style="font-size:16px;line-height:1;">&#9888;&#65039;</span><span>%s</span><a href="%s" style="background:#7351FD;color:#fff;text-decoration:none;padding:5px 14px;border-radius:4px;font-weight:600;white-space:nowrap;">%s</a></div>',
+			wp_kses_post( $message ),
+			esc_url( $settings_url ),
+			esc_html__( 'Go Live', 'easycommerce' )
+		);
 	}
 }

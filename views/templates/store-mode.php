@@ -3,8 +3,6 @@
  * Store Mode Template
  */
 defined( 'ABSPATH' ) || exit;
-
-get_header();
 ?>
 <div class="easycommerce-coming-soon-wrapper">
     <h2 class="easycommerce-coming-soon-title">
@@ -14,5 +12,3 @@ get_header();
         <?php esc_html_e( 'We’re getting ready to welcome you. Stay tuned for the launch.', 'easycommerce' ); ?>
     </p>
 </div>
-<?php
-get_footer();
