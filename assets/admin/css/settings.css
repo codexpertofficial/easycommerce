@@ -70,7 +70,8 @@
     border: 1px solid var(--color-ec-primary);
     box-shadow: 0px 2px 4.5px 0px var(--color-ec-tertiary);
 }
-.easycommerce-field-wrapper select {
+.easycommerce-field-wrapper select,
+.easycommerce-field-wrapper input[list] {
     width: 100%;
     max-width: 100%;
     border: 1px solid var(--color-ec-border);
@@ -84,17 +85,23 @@
 .easycommerce-field-wrapper select:hover,
 .easycommerce-field-wrapper select:focus,
 .easycommerce-field-wrapper select:active,
-.easycommerce-field-wrapper select:focus-visible {
+.easycommerce-field-wrapper select:focus-visible,
+.easycommerce-field-wrapper input[list]:hover,
+.easycommerce-field-wrapper input[list]:focus,
+.easycommerce-field-wrapper input[list]:active,
+.easycommerce-field-wrapper input[list]:focus-visible {
     color: var(--color-ec-body);
     box-shadow: none;
     outline: none;
     border: 1px solid var(--color-ec-tertiary);
 }
-.easycommerce-field-wrapper select:focus {
+.easycommerce-field-wrapper select:focus,
+.easycommerce-field-wrapper input[list]:focus {
     border: 1px solid var(--color-ec-primary);
     box-shadow: 0px 2px 4.5px 0px var(--color-ec-tertiary);
 }
-.easycommerce-field-wrapper select:focus {
+.easycommerce-field-wrapper select:focus,
+.easycommerce-field-wrapper input[list]:focus {
     border-color: var(--color-ec-primary);
 }
 .easycommerce-field-wrapper .switch {

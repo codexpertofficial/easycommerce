@@ -245,8 +245,8 @@ class Init {
 			$show_shop_page_notice = apply_filters( 'easycommerce_show_shop_page_missing_shortcode_notice', true, $post );
 			if ( ! $has_block && $show_shop_page_notice ) {
 				$notice = sprintf(
-					__( '<div class="easycommerce-notice easycommerce-warning" style="background-color: #fff3cd; border: 1px solid #ffeaa7; color: #856404; padding: 12px; margin-bottom: 20px; border-radius: 4px;"><p style="margin: 0; font-weight: 500;">%s</p></div>', 'easycommerce' ),
-					__( 'This page requires an EasyCommerce shop block to function properly. Please add a shop template block to this page.', 'easycommerce' )
+					'<div class="easycommerce-notice easycommerce-warning"><p>%s</p></div>',
+					esc_html__( 'This page requires an EasyCommerce shop block to function properly. Please add a shop template block to this page.', 'easycommerce' )
 				);
 			}
 		}
@@ -258,8 +258,12 @@ class Init {
 
 			if ( ! $has_checkout_shortcode && $show_checkout_page_notice ) {
 				$notice = sprintf(
-					__( '<div class="easycommerce-notice easycommerce-warning" style="background-color: #fff3cd; border: 1px solid #ffeaa7; color: #856404; padding: 12px; margin-bottom: 20px; border-radius: 4px;"><p style="margin: 0; font-weight: 500;">%s</p></div>', 'easycommerce' ),
-					__( 'This page is missing the EasyCommerce checkout shortcode. Please add the <span style="color: #000;">&#91;easycommerce-checkout&#93;</span> shortcode to this page to function properly.', 'easycommerce' )
+					'<div class="easycommerce-notice easycommerce-warning"><p>%s</p></div>',
+					sprintf(
+						/* translators: %s: the [easycommerce-checkout] shortcode */
+						esc_html__( 'This page is missing the EasyCommerce checkout shortcode. Please add the %s shortcode to this page to function properly.', 'easycommerce' ),
+						'<span class="easycommerce-notice-code">&#91;easycommerce-checkout&#93;</span>'
+					)
 				);
 			}
 		}
@@ -271,8 +275,12 @@ class Init {
 			
 			if ( ! $has_dashboard_shortcode && $show_dashboard_page_notice ) {
 				$notice = sprintf(
-					__( '<div class="easycommerce-notice easycommerce-warning" style="background-color: #fff3cd; border: 1px solid #ffeaa7; color: #856404; padding: 12px; margin-bottom: 20px; border-radius: 4px;"><p style="margin: 0; font-weight: 500;">%s</p></div>', 'easycommerce' ),
-					__( 'This page is missing the EasyCommerce dashboard shortcode. Please add the <span style="color: #000;">&#91;easycommerce-dashboard&#93;</span> shortcode to this page to function properly.', 'easycommerce' )
+					'<div class="easycommerce-notice easycommerce-warning"><p>%s</p></div>',
+					sprintf(
+						/* translators: %s: the [easycommerce-dashboard] shortcode */
+						esc_html__( 'This page is missing the EasyCommerce dashboard shortcode. Please add the %s shortcode to this page to function properly.', 'easycommerce' ),
+						'<span class="easycommerce-notice-code">&#91;easycommerce-dashboard&#93;</span>'
+					)
 				);
 			}
 		}
@@ -343,7 +351,7 @@ class Init {
 		);
 
 		printf(
-			'<div class="easycommerce-test-mode-banner" role="alert" style="width:100%%;box-sizing:border-box;background:#fff8e5;border-bottom:1px solid #f0c33c;color:#1e1e1e;padding:10px 16px;font-size:13px;line-height:1.4;font-family:-apple-system,BlinkMacSystemFont,\'Segoe UI\',Roboto,Helvetica,Arial,sans-serif;display:flex;align-items:center;justify-content:center;gap:12px;box-shadow:0 1px 4px rgba(0,0,0,0.08);"><span aria-hidden="true" style="font-size:16px;line-height:1;">&#9888;&#65039;</span><span>%s</span><a href="%s" style="background:#7351FD;color:#fff;text-decoration:none;padding:5px 14px;border-radius:4px;font-weight:600;white-space:nowrap;">%s</a></div>',
+			'<div class="easycommerce-test-mode-banner" role="alert"><span class="easycommerce-test-mode-banner-icon" aria-hidden="true">&#9888;&#65039;</span><span>%s</span><a class="easycommerce-test-mode-banner-btn" href="%s">%s</a></div>',
 			wp_kses_post( $message ),
 			esc_url( $settings_url ),
 			esc_html__( 'Go Live', 'easycommerce' )

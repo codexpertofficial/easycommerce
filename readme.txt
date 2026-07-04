@@ -5,7 +5,7 @@ Donate link: https://easycommerce.dev
 Tags: ecommerce, online store, ai ecommerce, store builder, digital downloads
 Requires at least: 6.0
 Tested up to: 7.0
-Stable tag: 1.42.1
+Stable tag: 1.42.2
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -175,30 +175,6 @@ Web developers building ecommerce sites for clients.
 
 ---
 
-= Built In, Not Bolted On =
-
-Moving from WooCommerce or Easy Digital Downloads? These capabilities ship inside one plugin - and the free Migration addon brings your products, orders, and customers across in one click. [See the details](https://easycommerce.dev/compare/woocommerce).
-
-**Performance**
-Dedicated database tables (not WordPress posts) are engineered to scale to large catalogs of 10,000+ products without slowdown.
-
-**AI Shopping Agent**
-A built-in conversational agent handles product discovery, order placement, and post-purchase support on your storefront around the clock.
-
-**Store Management**
-Store Copilot answers questions, updates orders, and runs analytics from the admin in natural language.
-
-**AI Content & Images**
-8+ AI features - content writer, image generator, image editor, and more - are built in and run on 100 free credits refreshed every month.
-
-**Cost**
-The core plugin is free; an optional Pro tier adds subscriptions and license management.
-
-**Setup**
-Core features are included out of the box, with the rest available as one-click addons.
-
----
-
 = Complete Feature List =
 
 **Agentic AI**
@@ -265,18 +241,6 @@ Everything in one place. No switching between five menus.
 - **Profit calculator** - enter your product cost and see profit amount and margin update in real time
 - **Mixed physical + digital variants** - one product listing with both types; each delivers correctly
 - **CSV import** - bulk-upload simple and variable products via CSV
-
----
-
-= Shop Display & Product Experience =
-
-Your storefront is the first impression. EasyCommerce ships three fully responsive shop templates with AJAX filtering - no page reloads when customers browse by category, price, or attribute.
-
-- **Variation Swatches** - Color, image, and label selectors replace dropdowns on product pages and shop grids
-- **Quick View** - Customers inspect product details in a lightbox without navigating away from the shop
-- **Product Comparisons** - Side-by-side feature and price comparison so customers make faster decisions
-- **Advanced AJAX Filters** - Filter by category, brand, price range, and attributes simultaneously; results update instantly
-- **Variation Images** - Each variant shows its own image when selected
 
 ---
 
@@ -356,15 +320,6 @@ All addons are free. Premium addons are included in Pro.
 
 ---
 
-= Why Developers Choose EasyCommerce =
-
-**Clean architecture:** Modern, maintainable codebase. Dedicated database tables. WordPress coding standards.
-**Extensible:** Complete REST API. 100+ action hooks. 50+ filter hooks. Headless support.
-**Well-documented:** [easycommerce.dev/docs/dev](https://easycommerce.dev/docs/dev/) - REST API, hooks, data models, custom payment gateways, building addons.
-**Performance:** Optimised SQL queries. Minimal database calls. Cache-friendly. Lazy-loaded assets. Dedicated tables engineered for scale.
-
----
-
 = Source Code & Build =
 
 EasyCommerce is fully open source (GPLv2 or later). The complete, human-readable source - including the un-minified React and JavaScript in `spa/` and `blocks/` that compiles to the bundled files in `build/` - is published at:
@@ -379,6 +334,20 @@ To build the compiled assets from source:
 4. Build all bundles and blocks: `npm run build`
 
 Build tools: Node.js 20+, npm, Composer, and Webpack (configuration in `webpack.config.js`). Full developer documentation at [easycommerce.dev/docs/dev](https://easycommerce.dev/docs/dev/).
+
+== External services ==
+
+The plugin contacts these third-party services, each only when its feature is used or enabled:
+
+* **EasyCommerce AI** (my.easycommerce.dev) — powers all AI features; sends your prompt plus the product/order/conversation data needed to answer, authenticated by your connected account. Terms: https://easycommerce.dev/terms-of-service — Privacy: https://easycommerce.dev/privacy-policy
+* **EasyCommerce geo database** (cdn.easycommerce.dev) — downloads the country/state/city list for shipping, tax and address forms; no data is sent. Terms: https://easycommerce.dev/terms-of-service — Privacy: https://easycommerce.dev/privacy-policy
+* **Stripe** (js.stripe.com) — loads Stripe.js at checkout and sends card, order and billing data to process the payment. Terms: https://stripe.com/legal — Privacy: https://stripe.com/privacy
+* **PayPal** (paypal.com) — loads the PayPal SDK at checkout and sends order data to process the payment. Terms: https://www.paypal.com/us/legalhub/useragreement-full — Privacy: https://www.paypal.com/us/legalhub/privacy-full
+* **Mollie** (js.mollie.com) — loads Mollie Components at checkout and sends payment data to process the payment. Terms: https://www.mollie.com/user-agreement — Privacy: https://www.mollie.com/privacy
+* **Braintree** (js.braintreegateway.com) — loads the Braintree Drop-in at checkout and sends card and order data to process the payment. Terms: https://www.braintreepayments.com/legal/braintree-services-agreement — Privacy: https://www.braintreepayments.com/legal/braintree-privacy-policy
+* **Square** (web.squarecdn.com) — loads the Square Web Payments SDK at checkout and sends card and order data to process the payment. Terms: https://squareup.com/us/en/legal/general/ua — Privacy: https://squareup.com/us/en/legal/general/privacy
+* **Luna** (helpwp.dev) — optional admin help widget; sends the questions you type to answer how-to queries. Terms: https://helpwp.dev/terms/ — Privacy: https://helpwp.dev/privacy/
+* **CARTO** (basemaps.cartocdn.com) — loads background map tiles for the Reports location maps; no data is sent. Terms: https://carto.com/legal/ — Privacy: https://carto.com/privacy/
 
 ---
 
@@ -544,21 +513,14 @@ Free community support via WordPress.org forums and the [Facebook Community](htt
 12. Shipping - zone-based shipping plans with country/state/city rates and flexible calculation methods.
 13. Integrations - built-in payment gateways (Stripe, PayPal, Square, Braintree, Mollie), CRM and marketing addons, WooCommerce & EDD migration, and more.
 
-== External services ==
-
-The plugin contacts these third-party services, each only when its feature is used or enabled:
-
-* **EasyCommerce AI** (my.easycommerce.dev) — powers all AI features; sends your prompt plus the product/order/conversation data needed to answer, authenticated by your connected account. Terms: https://easycommerce.dev/terms-of-service — Privacy: https://easycommerce.dev/privacy-policy
-* **EasyCommerce geo database** (cdn.easycommerce.dev) — downloads the country/state/city list for shipping, tax and address forms; no data is sent. Terms: https://easycommerce.dev/terms-of-service — Privacy: https://easycommerce.dev/privacy-policy
-* **Stripe** (js.stripe.com) — loads Stripe.js at checkout and sends card, order and billing data to process the payment. Terms: https://stripe.com/legal — Privacy: https://stripe.com/privacy
-* **PayPal** (paypal.com) — loads the PayPal SDK at checkout and sends order data to process the payment. Terms: https://www.paypal.com/us/legalhub/useragreement-full — Privacy: https://www.paypal.com/us/legalhub/privacy-full
-* **Mollie** (js.mollie.com) — loads Mollie Components at checkout and sends payment data to process the payment. Terms: https://www.mollie.com/user-agreement — Privacy: https://www.mollie.com/privacy
-* **Braintree** (js.braintreegateway.com) — loads the Braintree Drop-in at checkout and sends card and order data to process the payment. Terms: https://www.braintreepayments.com/legal/braintree-services-agreement — Privacy: https://www.braintreepayments.com/legal/braintree-privacy-policy
-* **Square** (web.squarecdn.com) — loads the Square Web Payments SDK at checkout and sends card and order data to process the payment. Terms: https://squareup.com/us/en/legal/general/ua — Privacy: https://squareup.com/us/en/legal/general/privacy
-* **Luna** (helpwp.dev) — optional admin help widget; sends the questions you type to answer how-to queries. Terms: https://helpwp.dev/terms/ — Privacy: https://helpwp.dev/privacy/
-* **CARTO** (basemaps.cartocdn.com) — loads background map tiles for the Reports location maps; no data is sent. Terms: https://carto.com/legal/ — Privacy: https://carto.com/privacy/
-
 == Changelog ==
+
+= 1.42.2 - 2026-07-04 =
+
+- [add] Select settings fields can now allow free-text input - pick from the list or type your own value
+- [add] Store address State and City fields now let you type a custom value when it isn't in the list
+- [fix] Reordered the store address fields to the standard country-first order
+- [ui] Added help descriptions to the remaining settings fields
 
 = 1.42.1 - 2026-07-03 =
 

@@ -153,18 +153,39 @@ jQuery(function ($) {
 	var $geoCity    = $('#easycommerce-field-city[data-geo]');
 
 	if ($geoCountry.length && $geoState.length) {
-		function ecPopulateGeoOptions($select, items, savedValue) {
-			var placeholder = $select.data('placeholder') || 'Select ' + $select.data('geo');
-			$select.empty().append('<option value="">' + placeholder + '</option>');
+		// Reset a geo field to empty. Handles both a <select> and an
+		// open-text <input list> (allow_input) backed by a <datalist>.
+		function ecResetGeo($el, label) {
+			if ($el.is('input')) {
+				$('#' + $el.attr('list')).empty();
+				$el.val('');
+				return;
+			}
+			$el.empty().append('<option value="">' + label + '</option>');
+		}
+
+		function ecPopulateGeoOptions($el, items, savedValue) {
+			// Open-text mode: fill the linked <datalist> instead of the input.
+			if ($el.is('input')) {
+				var $list = $('#' + $el.attr('list')).empty();
+				$.each(items, function (i, val) {
+					$list.append('<option value="' + val + '"></option>');
+				});
+				if (savedValue) $el.val(savedValue);
+				return;
+			}
+
+			var placeholder = $el.data('placeholder') || 'Select ' + $el.data('geo');
+			$el.empty().append('<option value="">' + placeholder + '</option>');
 			$.each(items, function (i, val) {
-				$select.append('<option value="' + val + '">' + val + '</option>');
+				$el.append('<option value="' + val + '">' + val + '</option>');
 			});
-			if (savedValue) $select.val(savedValue);
+			if (savedValue) $el.val(savedValue);
 		}
 
 		function ecFetchCities(country, state, savedCity) {
 			if (!country || !state) {
-				$geoCity.empty().append('<option value="">Select City</option>');
+				ecResetGeo($geoCity, 'Select City');
 				return;
 			}
 			$.ajax({
@@ -180,8 +201,8 @@ jQuery(function ($) {
 
 		function ecFetchStates(country, savedState, savedCity) {
 			if (!country) {
-				$geoState.empty().append('<option value="">Select State</option>');
-				$geoCity.empty().append('<option value="">Select City</option>');
+				ecResetGeo($geoState, 'Select State');
+				ecResetGeo($geoCity, 'Select City');
 				return;
 			}
 			$.ajax({

@@ -113,41 +113,6 @@ $easycommerce_settings_menus = apply_filters(
 							'desc'   => __( 'Details of your store’s physical location.(If have any)', 'easycommerce' ),
 							'fields' => array(
 								// Dropdown for selecting the store's country
-								'address_1'    => array(
-									'id'          => 'address_1',
-									'type'        => 'text',
-									'label'       => __( 'Address 1', 'easycommerce' ),
-									'placeholder' => __( 'Your address 1', 'easycommerce' ),
-									'required'    => true,
-								),
-								'address_2'    => array(
-									'id'          => 'address_2',
-									'type'        => 'text',
-									'label'       => __( 'Address 2', 'easycommerce' ),
-									'placeholder' => __( 'Your address 2', 'easycommerce' ),
-									'required'    => false,
-								),
-								'state'        => array(
-									'id'          => 'state',
-									'type'        => 'select',
-									'label'       => __( 'State', 'easycommerce' ),
-									'placeholder' => __( 'Your State', 'easycommerce' ),
-									'required'    => false,
-								),
-								'city'         => array(
-									'id'          => 'city',
-									'type'        => 'select',
-									'label'       => __( 'City', 'easycommerce' ),
-									'placeholder' => __( 'Your City', 'easycommerce' ),
-									'required'    => true,
-								),
-								'postcode'     => array(
-									'id'          => 'postcode',
-									'type'        => 'text',
-									'label'       => __( 'Postcode', 'easycommerce' ),
-									'placeholder' => __( 'Write here', 'easycommerce' ),
-									'required'    => false,
-								),
 								'country'      => array(
 									'id'          => 'country',
 									'type'        => 'select',
@@ -155,6 +120,48 @@ $easycommerce_settings_menus = apply_filters(
 									'description' => __( 'The country where your store is based.', 'easycommerce' ),
 									'options'     => easycommerce_countries(),
 									'placeholder' => __( 'Select Country', 'easycommerce' ),
+								),
+								'address_1'    => array(
+									'id'          => 'address_1',
+									'type'        => 'text',
+									'label'       => __( 'Address 1', 'easycommerce' ),
+									'description' => __( 'Street address, P.O. box, or company name.', 'easycommerce' ),
+									'placeholder' => __( 'Your address 1', 'easycommerce' ),
+									'required'    => true,
+								),
+								'address_2'    => array(
+									'id'          => 'address_2',
+									'type'        => 'text',
+									'label'       => __( 'Address 2', 'easycommerce' ),
+									'description' => __( 'Apartment, suite, unit, building, or floor (optional).', 'easycommerce' ),
+									'placeholder' => __( 'Your address 2', 'easycommerce' ),
+									'required'    => false,
+								),
+								'state'        => array(
+									'id'          => 'state',
+									'type'        => 'select',
+									'allow_input' => true,
+									'label'       => __( 'State', 'easycommerce' ),
+									'description' => __( 'Pick your state from the list, or type it in if it\'s not listed.', 'easycommerce' ),
+									'placeholder' => __( 'Your State', 'easycommerce' ),
+									'required'    => false,
+								),
+								'city'         => array(
+									'id'          => 'city',
+									'type'        => 'select',
+									'allow_input' => true,
+									'label'       => __( 'City', 'easycommerce' ),
+									'description' => __( 'Pick your city from the list, or type it in if it\'s not listed.', 'easycommerce' ),
+									'placeholder' => __( 'Your City', 'easycommerce' ),
+									'required'    => true,
+								),
+								'postcode'     => array(
+									'id'          => 'postcode',
+									'type'        => 'text',
+									'label'       => __( 'Postcode', 'easycommerce' ),
+									'description' => __( 'The ZIP or postal code of your store\'s location.', 'easycommerce' ),
+									'placeholder' => __( 'Write here', 'easycommerce' ),
+									'required'    => false,
 								),
 							),
 						),
@@ -567,6 +574,7 @@ $easycommerce_settings_menus = apply_filters(
 										'id'    => 'customer_enabled',
 										'type'  => 'switch',
 										'label' => __( 'Enable', 'easycommerce' ),
+										'description' => __( 'Send this email notification to the customer.', 'easycommerce' ),
 									),
 									// Text field for email subject
 									'customer_subject' => array(
@@ -598,6 +606,7 @@ $easycommerce_settings_menus = apply_filters(
 										'id'    => 'admin_enabled',
 										'type'  => 'switch',
 										'label' => __( 'Enable', 'easycommerce' ),
+										'description' => __( 'Send this email notification to the store admin.', 'easycommerce' ),
 									),
 									// Text field for email subject
 									'admin_subject' => array(
@@ -643,6 +652,7 @@ $easycommerce_settings_menus = apply_filters(
 											'id'    => 'customer_enabled',
 											'type'  => 'switch',
 											'label' => __( 'Enable', 'easycommerce' ),
+											'description' => __( 'Send this email notification to the customer.', 'easycommerce' ),
 										),
 										// Text field for email subject
 										'customer_subject' => array(
@@ -674,6 +684,7 @@ $easycommerce_settings_menus = apply_filters(
 											'id'    => 'admin_enabled',
 											'type'  => 'switch',
 											'label' => __( 'Enable', 'easycommerce' ),
+											'description' => __( 'Send this email notification to the store admin.', 'easycommerce' ),
 										),
 										// Text field for email subject
 										'admin_subject' => array(
@@ -868,6 +879,7 @@ $easycommerce_settings_menus = apply_filters(
 									'id'          => 'subject',
 									'type'        => 'text',
 									'label'       => __( 'Subject', 'easycommerce' ),
+									'description' => __( 'The subject line for the abandoned cart reminder email.', 'easycommerce' ),
 									'default'     => '##shop_name##- Your Order Is Yet to Be Placed!',
 									'placeholder' => __( 'Enter email subject', 'easycommerce' ),
 								),
@@ -988,6 +1000,7 @@ Best,
 									'id'          => 'enable',
 									'type'        => 'checkbox',
 									'label'       => __( 'Enable Shopping Agent', 'easycommerce' ),
+									'description' => __( 'Show the AI shopping chat button on your storefront so customers can ask questions and place orders.', 'easycommerce' ),
 									'default'     => true,
 								),
 								'agent_name' => array(
