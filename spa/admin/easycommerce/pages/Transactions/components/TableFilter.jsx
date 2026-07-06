@@ -27,7 +27,7 @@ const TableFilter = ({
     const datePlaceholder = `eg. ${fmt(past30)} - ${fmt(today)} ${today.getFullYear()}`;
 
     return (
-        <div className="flex justify-between items-center 2xl:order-2 xl:order-1">
+        <div className="flex justify-between items-center">
             <div className="flex items-center justify-between gap-3">
                 {transactionsFiltered && (
                     <button
@@ -45,9 +45,9 @@ const TableFilter = ({
                         handleSubmit();
                     }}
                 >
-                <div className="easycommerce-search-container relative flex items-start">
+                <div className="easycommerce-search-container w-[190px] relative flex items-start">
                     <TextField
-                        className="w-[190px] 2xl:w-[190px] xl:w-[514px] h-ec-input"
+                        className="h-ec-input"
                         name="search"
                         value={formState.search}
                         onChange={handleInputChange}
@@ -67,7 +67,7 @@ const TableFilter = ({
                         }));
                     }}
                     placeholderText={datePlaceholder}
-                    width="w-[220px] h-ec-input"
+                    width="w-[200px] h-ec-input"
                     minDate={new Date("1972-01-01")}
                 />
                 {/*  <div className="easycommerce-select-container relative flex items-center ">

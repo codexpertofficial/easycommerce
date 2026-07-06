@@ -17,7 +17,7 @@ const TBody = ({
                 <>
                         <tr
                             key={index}
-                            className="border-b border-ec-table-stock h-[70px] transition-shadow hover:shadow-[0px_4px_40px_0px_#00000014] group/carts"
+                            className="border-b ec-db-lg:text-sm text-xs border-ec-table-stock h-[70px] transition-shadow hover:shadow-[0px_4px_40px_0px_#00000014] group/carts"
                         >
                             {columnList.map((column) => {
                                 if (column === "name") {
@@ -31,8 +31,8 @@ const TBody = ({
                                                 className="min-w-5 h-5 accent-ec-primary cursor-pointer mr-2 easycommerce-input-checkoutbox"
                                             />
                                             <div className="relative w-full min-w-0 h-10 ml-4 rtl:mr-4">
-                                                <span className="text-sm text-ec-body font-inter font-normal absolute top-1/2 -translate-y-1/2 group-hover/carts:top-0 group-hover/carts:translate-y-0 duration-300">
-                                                    {(cart.name || "(No Name)").length > 20 ? (cart.name || "(No Name)").slice(0, 20) + "…" : (cart.name || "(No Name)")}
+                                                <span className="text-ec-body font-inter font-normal absolute top-1/2 -translate-y-1/2 group-hover/carts:top-0 group-hover/carts:translate-y-0 duration-300 w-full truncate block">
+                                                    {cart.name || "(No Name)"}
                                                 </span>
                                                 <div className="invisible group-hover/carts:visible opacity-0 group-hover/carts:opacity-100 duration-300 absolute bottom-0">
                                                     <div className="flex items-center gap-1.5 font-inter font-normal text-xs text-ec-light-black">
@@ -53,7 +53,7 @@ const TBody = ({
                                 if (column === "email") {
                                     return (
                                         <td key="email" className="p-5 w-1/4">
-                                            <span className="font-inter text-sm leading-[26px] text-ec-body">
+                                            <span className="font-inter leading-[26px] text-ec-body">
                                                 {cart.email}
                                             </span>
                                         </td>
@@ -62,7 +62,7 @@ const TBody = ({
 
                                 if (column === "items") {
                                     return (
-                                        <td key="items" className="font-inter text-sm text-ec-body p-5 w-[20%]">
+                                        <td key="items" className="font-inter text-ec-body p-5 w-[20%]">
                                             {cart.product_names && cart.product_names.length > 0 ? (
                                                 <ul className="space-y-0.5">
                                                     {cart.product_names.map((item, i) => (
@@ -84,7 +84,7 @@ const TBody = ({
 
                                 if (column === "total") {
                                     return (
-                                        <td key="total" className="font-inter text-sm text-ec-body p-5 w-[10%]">
+                                        <td key="total" className="font-inter text-ec-body p-5 w-[10%]">
                                             {cart.total}
                                         </td>
                                     );
@@ -92,7 +92,7 @@ const TBody = ({
 
                                 if (column === "Last Activity") {
                                     return (
-                                        <td key="last-activity" className="font-inter text-sm text-ec-body capitalize p-5 w-1/5">
+                                        <td key="last-activity" className="font-inter text-ec-body capitalize p-5 w-1/5">
                                             {cart.updated_at}
                                         </td>
                                     );
@@ -100,7 +100,7 @@ const TBody = ({
 
                                 if (column === "reminders") {
                                     return (
-                                        <td key="reminders" className="font-inter text-sm text-ec-body capitalize p-5 w-[10%]">
+                                        <td key="reminders" className="font-inter text-ec-body capitalize p-5 w-[10%]">
                                             {cart.reminders}
                                         </td>
                                     );
@@ -111,7 +111,7 @@ const TBody = ({
                                         <td key="actions" className="p-5 w-[10%]">
                                             <button
                                                 onClick={() => onRemindClick(cart)}
-                                                className="relative h-ec-input group text-sm font-inter text-ec-primary font-medium border border-ec-primary py-2 
+                                                className="relative h-ec-input group font-inter text-ec-primary font-medium border border-ec-primary py-2 
                                                 px-3 rounded-lg hover:bg-ec-primary hover:text-white transition duration-200 ease-in-out flex items-center gap-2"
                                             >
                                                 Remind

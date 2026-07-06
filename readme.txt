@@ -5,7 +5,7 @@ Donate link: https://easycommerce.dev
 Tags: ecommerce, online store, ai ecommerce, store builder, digital downloads
 Requires at least: 6.0
 Tested up to: 7.0
-Stable tag: 1.42.2
+Stable tag: 1.43
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -514,6 +514,13 @@ Free community support via WordPress.org forums and the [Facebook Community](htt
 13. Integrations - built-in payment gateways (Stripe, PayPal, Square, Braintree, Mollie), CRM and marketing addons, WooCommerce & EDD migration, and more.
 
 == Changelog ==
+
+= 1.43 - 2026-07-06 =
+
+- [add] Orders now store the selected shipping method and display its name in the order details
+- [add] Order API responses now include coupon, shipping method, and shipping method label data
+- [add] Extensibility slot on the order details page for addons to inject custom content
+- [ui] Responsive layout improvements across all admin pages - dashboard, products, orders, customers, reports, coupons, attributes, brands, categories, tags, shipping, tax, and help
 
 = 1.42.2 - 2026-07-04 =
 

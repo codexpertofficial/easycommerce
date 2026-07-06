@@ -91,7 +91,7 @@ const SalesChart = ({ data, isLoading }) => {
     return (
         <>
             {!isLoading ? (
-                <div className="w-full 2xl:w-[80%] 2xl:mx-auto ec-db-lg:w-full 3xl:mx-0 h-[350px] min-h-60 px-[30px]">
+                <div className="w-full 2xl:w-[80%] 2xl:mx-auto ec-db-xl:w-full 3xl:mx-0 h-[350px] min-h-60 px-[30px]">
                     <Line data={chartData} options={options} className="!w-full" />
                 </div>
             ) : (

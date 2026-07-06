@@ -39,14 +39,14 @@ const CustomerOverview = ({ endpoint, params = {} }) => {
 
 	return (
 		<div className="flex gap-4">
-			<div className="flex flex-col w-[260px] border border-[#F0EDFB] rounded-lg">
+			<div className="flex flex-col ec-db-lg:w-[260px] w-[195px] border border-[#F0EDFB] rounded-lg">
 				{customerData.overview.map((item, index) => (
 					<div
 						className={`p-4 ${index !== customerData.overview.length - 1 ? 'border-b border-[#F0EDFB]' : ''}`}
 						key={index}
 					>
 						<div className="flex items-center gap-3">
-							<div className="rounded-[10px] bg-[#F3F3FF] flex items-center justify-center w-11 h-11">
+							<div className="rounded-[10px] bg-[#F3F3FF] ec-db-lg:flex items-center justify-center w-11 h-11 hidden">
 								<img
 									src={
 										EASYCOMMERCE.assets +
@@ -60,7 +60,7 @@ const CustomerOverview = ({ endpoint, params = {} }) => {
 							<h3 className="text-base text-ec-title mb-2">{item.title}</h3>
 						</div>
 
-						<div className="flex items-end gap-2 ml-[56px] mt-3">
+						<div className="flex items-end gap-2 ec-db-lg:ml-[56px] ml-0 mt-3">
 							<h4 className="text-2xl font-medium text-[#3C3C42]">
 								{item.value}
 							</h4>

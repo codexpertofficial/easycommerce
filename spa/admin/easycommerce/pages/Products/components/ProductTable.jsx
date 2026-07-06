@@ -44,7 +44,7 @@ const ProductTable = ({
 
     return (
  		<div className="w-full overflow-x-auto h-full">
-			<table className="min-w-full xl:min-w-[1300px] w-full border-collapse border-spacing-0"> 
+			<table className="min-w-full w-full border-collapse border-spacing-0"> 
                 <thead>
                     <tr className="h-auto">
                         {tableColumns.includes("title") && (
@@ -94,7 +94,7 @@ const ProductTable = ({
                             className="border-b border-ec-table-stock h-[80px] transition-shadow hover:shadow-[0px_4px_40px_0px_#00000014] group"
                         >
                             {tableColumns.includes("title") && (
-                                <td className="leading-[26px] pl-5 w-[30%] lg:w-[32%] rtl:pr-5">
+                                <td className="leading-[26px] pl-5 w-[30%] rtl:pr-5">
                                     <div className="flex items-center gap-4 lg:gap-3 justify-start mt-1 w-full">
                                         <input
                                             type="checkbox"
@@ -150,7 +150,7 @@ const ProductTable = ({
                                 </td>
                             )}
                             {tableColumns.includes("status") && (
-                                <td className="w-[15%] min-[1500px]:w-[10%] py-4 pr-3 lg:pr-0">
+                                <td className="w-[15%] py-4 pr-3 lg:pr-0">
                                     <ProductStatusDropdown
                                         options={productStatusOptions}
                                         productId={product.id}
@@ -182,7 +182,7 @@ const ProductTable = ({
                             )}
 
                             {tableColumns.includes("category") && (
-                                <td className="w-[20%] lg:w-[15%] py-4 pr-3 lg:pr-0">
+                                <td className="w-[20%] py-4 pr-3 lg:pr-0">
                                     <span className="flex flex-col min-[1500px]:flex-row min-[1500px]:items-center gap-1 items-start">
                                         {product.categories.length > 0 && (
                                             <>
@@ -204,7 +204,7 @@ const ProductTable = ({
                                 </td>
                             )}
                             {tableColumns.includes("price") && (
-                                <td className="font-inter font-normal text-sm text-ec-body pr-3 lg:pr-0 w-[15%] min-[1500px]:w-[10%] py-4 ">
+                                <td className="font-inter font-normal text-sm text-ec-body pr-3 lg:pr-0 w-[15%] py-4 ">
                                     {(!product.sale_price || parseFloat(
                                         typeof product.sale_price === "string"
                                             ? product.sale_price.replace(/[^0-9.]/g, "")

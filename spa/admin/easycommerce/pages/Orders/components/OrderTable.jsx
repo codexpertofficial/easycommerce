@@ -37,12 +37,12 @@ const columnList = [
 	{
 		title: 'Transactions ID',
 		name: 'transactions',
-		width: '19',
+		width: '15',
 	},
 	{
 		title: 'Date & Time',
 		name: 'created_at',
-		width: '10',
+		width: '14',
 	},
 ];
 
@@ -54,7 +54,6 @@ const statusOptions = [
 	{ label: 'Pending', value: 'pending' },
 	{ label: 'On hold', value: 'on_hold' },
 	{ label: 'Processing', value: 'processing' },
-	// { label: "Failed", value: "failed" },
 ];
 
 const OrderTable = ({
@@ -81,8 +80,8 @@ const OrderTable = ({
 
 	return (
 		<>
-			<div className="w-full overflow-x-auto h-full">
-				<table className="min-w-full xl:min-w-[1300px] w-full border-collapse border-spacing-0">
+			<div className="w-full h-full">
+				<table className="w-full border-collapse border-spacing-0">
 					<thead>
 						<tr className="h-auto">
 							{columnList.map((item, index) => {
@@ -243,7 +242,7 @@ const OrderTable = ({
 									</td>
 								)}
 								{tableColumns.includes('items') && (
-									<td className="font-inter font-normal pl-5 lg:text-sm text-ec-body md:text-[14px] lg:w-[8%]">
+									<td className="font-inter font-normal text-center pl-5 lg:text-sm text-ec-body md:text-[14px] lg:w-[8%]">
 										{order?.items}
 									</td>
 								)}
@@ -257,7 +256,7 @@ const OrderTable = ({
 									(order.transactions ? (
 										<td
 											key={order.transactions.id}
-											className="flex items-center gap-2 mr-2 pl-5 py-[20px] text-sm lg:w-[19%]"
+											className="flex items-center gap-2 mr-2 pl-5 py-[20px] text-sm w-[15%]"
 										>
 											{order.transactions.payment_gateway ? (
 												<img
@@ -299,10 +298,10 @@ const OrderTable = ({
 									))}
 
 								{tableColumns.includes('created_at') && (
-									<td className="lg:w-[10%] pl-5">
+									<td className="w-[14%] pl-5">
 										<div className="flex flex-col">
 											<p className="font-inter font-normal mb-1 lg:text-sm text-ec-body md:text-[14px]">
-												{order.created_at ? order.created_at : 'N/A'}
+												{order.created_at_formatted ? order.created_at_formatted : 'N/A'}
 											</p>
 											<span className="text-ec-placeholder text-sm font-inter leading-4">
 												{order.created_time ? order.created_time : 'N/A'}

@@ -24,7 +24,7 @@ const CustomerDetails = ({ customer }) => {
     return (
         <>
             {customer && (
-                <div className="w-[626px] bg-white pt-[17px] rounded-2xl">
+                <div className="w-1/2 bg-white pt-[17px] rounded-2xl">
                     <div className=" border-b border-ec-table-stock">
                          <p className="text-ec-title font-medium font-inter lg:text-xl md:text-lg leading-8 pb-4 px-6">
                             Customer Details

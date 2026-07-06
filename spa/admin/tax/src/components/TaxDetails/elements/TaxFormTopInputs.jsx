@@ -3,7 +3,7 @@ import React from "react";
 const TaxFormTopInputs = ({ name, description, status, onChange }) => {
     return (
         <>
-            <p className="flex items-center py-4">
+            <p className="flex ec-db-lg:items-center items-start py-4 ec-db-lg:flex-row flex-col ec-db-lg:gap-0 gap-4">
                 <label
                     className="text-ec-body font-inter font-normal text-base leading-4 w-[180px]"
                     htmlFor="easycommerce-tax-name"
@@ -23,7 +23,7 @@ const TaxFormTopInputs = ({ name, description, status, onChange }) => {
                     </div>
                 </div>
             </p>
-            <p className="flex items-center py-4">
+            <p className="flex ec-db-lg:items-center items-start py-4 ec-db-lg:flex-row flex-col ec-db-lg:gap-0 gap-4">
                 <label
                     className="text-ec-body font-inter font-normal text-base leading-4 w-[180px]"
                     htmlFor="easycommerce-tax-description"

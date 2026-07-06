@@ -68,7 +68,7 @@ const CustomerTable = ({
     return (
         <>
             <div className="w-full overflow-y-hidden xl:overflow-x-auto">
-                <table className="min-w-full xl:min-w-[1300px] w-full border-collapse border-spacing-0"> 
+                <table className="w-full border-collapse border-spacing-0"> 
                     <thead>
                         {!isLoading && customers.length > 0 && (
                             <tr className="bg-ec-modal">

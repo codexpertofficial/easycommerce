@@ -49,7 +49,7 @@ const CopyButton = ({ copy }) => {
     };
 
     return (
-        <div className="relative w-[75px] flex justify-center items-center group">
+        <div className="relative flex justify-center items-center group">
             <img
                 src={isCopied ? copiedTooltip : copyTooltip}
                 className={`${

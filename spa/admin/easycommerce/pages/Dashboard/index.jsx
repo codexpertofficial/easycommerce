@@ -24,29 +24,29 @@ const Dashboard = () => {
                 setRange={setRange}
             />
             <div className="my-6 flex gap-6">
-                <div className="flex flex-col gap-6 w-[70%]">
+                <div className="flex flex-col gap-6 ec-db-lg:w-[70%] w-[60%]">
                     <Stats range={range.value} />
 
-                    <div className="flex gap-6">
-                        <div className="w-1/2">
+                    <div className="flex gap-6 ec-db-lg:flex-nowrap flex-wrap">
+                        <div className="ec-db-lg:w-1/2 w-full">
                             <Container title="Latest Orders" fillHeight button_url="admin.php?page=easycommerce#/orders">
                                 <LatestOrders range={range.value} />
                             </Container>
                         </div>
-                        <div className="w-1/2">
+                        <div className="ec-db-lg:w-1/2 w-full">
                             <Container title="Recent Sales" fillHeight>
                                 <RecentSales range={range.value} />
                             </Container>
                         </div>
                     </div>
 
-                    <div className="flex gap-6">
-                        <div className="w-1/2">
+                    <div className="flex gap-6 ec-db-lg:flex-nowrap flex-wrap">
+                        <div className="ec-db-lg:w-1/2 w-full">
                             <Container title="Top Selling" fillHeight>
                                 <TopSelling range={range.value} />
                             </Container>
                         </div>
-                        <div className="w-1/2">
+                        <div className="ec-db-lg:w-1/2 w-full">
                             <Container title="Low Stock" fillHeight>
                                 <LowStocks />
                             </Container>
@@ -54,7 +54,7 @@ const Dashboard = () => {
                     </div>
                 </div>
 
-                <div className="flex flex-col gap-6 w-[30%]">
+                <div className="flex flex-col gap-6 ec-db-lg:w-[30%] w-[40%]">
                     <Container title="Abandoned Carts" button_url="admin.php?page=easycommerce#/abandoned-cart">
                         <AbandonedCarts range={range.value} />
                     </Container>

@@ -2,7 +2,7 @@ import React from 'react'
 
 const CardsSkeleton = ({ count = 4 }) => {
     return (
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6'>
+        <div className='grid grid-cols-3 ec-db-lg:grid-cols-4 gap-6'>
             {Array.from({ length: count }).map((_, index) => (
                 <div
                     key={index}

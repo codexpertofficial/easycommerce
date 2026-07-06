@@ -397,7 +397,7 @@ const TaxDetails = ({ hideAddNew, taxId, preloadedData = [] }) => {
                             onChange={handleTaxDataChange}
                         />
 
-                        <p className="flex items-start py-4">
+                        <p className="flex items-start py-4 ec-db-lg:flex-row flex-col ec-db-lg:gap-0 gap-4">
                             <label
                                 className="text-ec-body font-inter font-normal text-base leading-4 w-[180px]"
                                 htmlFor="easycommerce-tax-regions"

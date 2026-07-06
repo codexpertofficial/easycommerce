@@ -91,7 +91,7 @@ if ( is_array( $save_conf ) ) {
 			<div class="w-full flex bg-white rounded-xl flex-col">
 				<div class="flex p-6">
 					<!-- Sidebar for main menu navigation -->
-					<div class="w-[267px] border border-ec-table-stock rounded-lg">
+					<div class="ec-db-lg:w-[267px] w-[180px] border border-ec-table-stock rounded-lg">
 						<div class="" id="easycommerce-settings-sidebar">
 							<div id="easycommerce-settings-menus">
 								<ul id="easycommerce-settings-menus-list">
@@ -132,7 +132,7 @@ if ( is_array( $save_conf ) ) {
 					</div>
 
 					<!-- Main content area where submenu content is displayed -->
-					<div class="w-full min-h-screen pb-0" id="easycommerce-settings-<?php echo esc_attr( $active_menu_id ); ?>">
+					<div class="ec-db-lg:w-[calc(100%-267px)] w-[calc(100%-180px)] min-h-screen pb-0" id="easycommerce-settings-<?php echo esc_attr( $active_menu_id ); ?>">
 						<div class="w-full min-h-full pl-6 bg-white rounded-lg rtl:pr-6 rtl:pl-0" id="easycommerce-settings-content">
 							<?php if ( ! isset( $active_menu['hide_form'] ) || true !== $active_menu['hide_form'] ) { ?>
 							<form class="easycommerce-settings-form" data-option_key="<?php echo esc_attr( $option_key ); ?>" data-reload="<?php echo esc_attr( $active_menu['reload'] ?? '' ); ?>" id="" method="post">

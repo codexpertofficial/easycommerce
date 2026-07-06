@@ -60,7 +60,7 @@ const RefundsTable = ({ refunds }) => {
 
 	return (
 		<div className="w-full overflow-x-auto">
-			<table className="min-w-full xl:min-w-[1300px] w-full border-collapse border-spacing-0">
+			<table className="w-full border-collapse border-spacing-0">
 				<thead>
 					<tr className="h-auto">
 						{tableColumns.map((col, index) => (

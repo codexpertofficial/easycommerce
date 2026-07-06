@@ -362,8 +362,8 @@ const EditProduct = ({ id, setBreadcrumbTitle }) => {
 								className="h-ec-input"
 							/>
 						</div>
-						<div className="grid grid-cols-3 gap-4">
-							<div className="col-span-2 flex flex-col gap-4">
+						<div className="flex gap-4">
+							<div className="flex-grow max-w-[calc(100%-426px)] ec-db-lg:max-w-[calc(100%-510px)] flex flex-col gap-4">
 								<ProductSummary
 									prevData={productData.summary}
 									productTitle={productTitle}
@@ -389,7 +389,7 @@ const EditProduct = ({ id, setBreadcrumbTitle }) => {
 									prevData={productData.description}
 								/>
 							</div>
-							<div className="col-span-1 flex flex-col gap-4">
+							<div className="w-[410px] ec-db-lg:w-[510px] flex flex-col gap-4">
 								<Gallery
 									productTitle={productTitle}
 									prevFiles={productData.meta.gallery}

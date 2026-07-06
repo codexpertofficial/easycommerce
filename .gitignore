@@ -12,6 +12,7 @@ docs/*.xml
 
 *.lock
 *-lock.json
+!package-lock.json
 .phpunit.*/
 .phpunit.*.cache
 tree.txt

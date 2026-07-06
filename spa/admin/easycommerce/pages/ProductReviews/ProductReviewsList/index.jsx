@@ -17,10 +17,10 @@ const ProductReviewsList = ({ productReviews, tableColumns, deleteReview }) => {
     };
 
     return (
-        <div className="w-full overflow-auto">
+        <div className="w-full">
             <div className="bg-white rounded-xl">
-                <div className="w-full overflow-y-hidden xl:overflow-x-auto">
-                    <table className="min-w-full xl:min-w-[1300px] w-full border-collapse border-spacing-0"> 
+                <div className="w-full">
+                    <table className="w-full border-collapse border-spacing-0"> 
                         <THead
                             tableColumns={tableColumns}
                         />

@@ -52,7 +52,7 @@ const Refunds = ({ page }) => {
 				</div>
 			</div>
 
-			<div className="2xl:max-w-full min-[1440px]:max-w-[1000px] min-[1300px]:max-w-[954px] xl:max-w-[830px] bg-white border border-solid border-ec-table-stock rounded-xl p-6 min-h-screen flex flex-col h-[94%]">
+			<div className="w-full bg-white border border-solid border-ec-table-stock rounded-xl p-6 min-h-screen flex flex-col h-[94%]">
 				<div className="flex justify-between gap-5 mb-4">
 					{/* Status */}
 					{/* Filters */}

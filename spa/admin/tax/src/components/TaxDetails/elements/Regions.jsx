@@ -19,7 +19,7 @@ const Regions = ({
 }) => {
     return (
         <div className="w-full">
-            <div className="w-full border border-ec-border px-4 py-4 rounded-lg">
+            <div className="w-full border border-ec-border px-4 py-4 rounded-lg overflow-x-auto">
                 <table className="w-full">
                     <RegionsHeader />
 

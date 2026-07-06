@@ -56,7 +56,7 @@ const Price = ({ priceItem, setPriceItem, id }) => {
 	}, []);
 
 	return (
-		<div className=" grid grid-cols-3 gap-4 mt-3">
+		<div className="grid ec-db-lg:grid-cols-3 grid-cols-2 gap-4 mt-3">
 			<div>
 				<h5 className="text-base font-normal text-[#282828] font-inter mb-[6px]">
 					{__('Regular Price', 'easycommerce')}

@@ -265,8 +265,8 @@ const Brands = ({page}) => {
             <div className="product-panel-title mb-4">
                 <h3>Brands</h3>
             </div>
-            <div className="grid min-[1400px]:grid-cols-10 min-[1280px]:grid-cols-12 gap-6 items-start">
-                <div className="bg-white min-[1400px]:col-span-6 min-[1280px]:col-span-12 w-full self-start border border-solid border-ec-table-stock rounded-xl">
+            <div className="grid grid-cols-12 gap-6 items-start">
+                <div className="bg-white ec-db-lg:col-span-8 col-span-7 w-full self-start border border-solid border-ec-table-stock rounded-xl">
                     <div className="flex items-center border-b px-6 h-[60px]">
                         {bulkDeleteIds.length > 0 ? (
                             <button
@@ -317,7 +317,7 @@ const Brands = ({page}) => {
                 </div>
 
                 {/* Form Section */}
-                <div className="bg-white min-[1400px]:col-span-4 min-[1280px]:col-span-12 w-full self-start border border-solid border-ec-table-stock rounded-xl">
+                <div className="bg-white ec-db-lg:col-span-4 col-span-5 w-full self-start border border-solid border-ec-table-stock rounded-xl">
                     <div className="flex items-center border-b pl-6 py-3.5 rtl:pr-6">
                         <Title title={ editingBrand ? 'Edit Brand: ' + brandsData.brands[0].brand_name : "Add New Brand"} />
                     </div>

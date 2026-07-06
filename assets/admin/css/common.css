@@ -268,3 +268,6 @@
     display: none;
 }
 
+.easycommerce-doc-content-wrap iframe {
+  max-width: 100%;
+}

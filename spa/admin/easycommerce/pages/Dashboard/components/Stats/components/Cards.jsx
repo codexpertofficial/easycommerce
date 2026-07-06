@@ -3,12 +3,9 @@ import React, { useState } from 'react';
 const Cards = ({ items }) => {
     const [activeDropdown, setActiveDropdown] = useState(null);
     const [hideDigits, setHideDigits] = useState([]);
-    const gridClass = items.length === 6
-        ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'
-        : 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6';
 
     return (
-        <div className={gridClass}>
+        <div className='grid grid-cols-2 ec-db-lg:grid-cols-3 gap-6'>
             {items.map((data, index) => {
                 return (
                     <div key={index} className="flex flex-col justify-between h-[144px] bg-white rounded-lg border border-transparent hover:border-ec-table-stock duration-300 p-5 hover:shadow-[0px_4px_10px_0px_#0000001A]">

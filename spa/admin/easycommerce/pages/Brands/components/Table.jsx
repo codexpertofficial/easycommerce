@@ -57,9 +57,9 @@ const Table = ({ brands, fetchData, onEdit, isLoading, bulkDeleteIds, setBulkDel
                                         }}
                                     />
                                 </th>
-                                <th className="w-[18%] font-normal rtl:text-right">Name</th>
-                                <th className="w-[18%] font-normal">Slug</th>
-                                <th className="w-[39%] font-normal">Parent</th>
+                                <th className="w-[25%] font-normal rtl:text-right">Name</th>
+                                <th className="w-[25%] font-normal">Slug</th>
+                                <th className="w-[25%] font-normal">Parent</th>
                                 <th className="w-[17%] text-center pr-5 font-normal rounded-r-md">Action</th>
                             </tr>
                         </thead>

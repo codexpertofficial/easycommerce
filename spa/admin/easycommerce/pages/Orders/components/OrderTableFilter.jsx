@@ -27,7 +27,7 @@ const OrderTableFilter = ({
     };
 
     return (
-        <div className="flex justify-between items-center 2xl:order-2 xl:order-1">
+        <div className="flex justify-between items-center">
             <div className="flex items-center justify-between gap-3">
                 {ordersFiltered && (
                     <button
@@ -46,7 +46,7 @@ const OrderTableFilter = ({
                 >
                 <div className="easycommerce-search-container relative flex items-start">
                     <TextField
-                        className="w-[120px] min-[1440px]:w-[190px] lg:w-[514px] h-ec-input px-3 py-2"
+                        className="w-[190px] h-ec-input px-3 py-2"
                         name="searchquery"
                         value={formState.searchquery}
                         onChange={handleInputChange}

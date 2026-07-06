@@ -40,7 +40,7 @@ const Table = ({ categories, fetchData, onEdit , isLoading, bulkDeleteIds, setBu
                 <TableSkeleton numberOfRows={3} SkeletonHeight={30} />
             ) : categories && categories.length > 0 ? (
                  <>
-                    <table className="w-full text-left text-ec-body bg-white border-separate border-spacing-0 overflow-hidden mb-6" >
+                    <table className="w-full table-fixed text-left text-ec-body bg-white overflow-hidden mb-6" >
                         <thead>
                             <tr className="w-full h-[44px] text-ec-title text-sm bg-ec-table-bg">
                                 <th className="w-[8%] pl-5 font-normal rounded-l-md">
@@ -58,9 +58,9 @@ const Table = ({ categories, fetchData, onEdit , isLoading, bulkDeleteIds, setBu
                                         }}
                                     />
                                 </th>
-                                <th className="w-[20%] font-normal rtl:text-right">Name</th>
-                                <th className="w-[15%] font-normal">Slug</th>
-                                <th className="w-[40%] font-normal">Parent</th>
+                                <th className="w-[25%] font-normal rtl:text-right">Name</th>
+                                <th className="w-[25%] font-normal">Slug</th>
+                                <th className="w-[25%] font-normal">Parent</th>
                                 <th className="w-[17%] text-center pr-5 font-normal rounded-r-md">
                                     Action
                                 </th>
@@ -70,7 +70,7 @@ const Table = ({ categories, fetchData, onEdit , isLoading, bulkDeleteIds, setBu
                             {categories.map((category, i) => (
                                 <tr key={category.id} className={`w-full text-sm font-normal`} style={{ height: '56px' }}>
                                     <td
-                                        className={`pl-5 ${
+                                        className={`w-[8%] pl-5 ${
                                             i !== categories.length - 1
                                                 ? 'border-b border-ec-table-stock'
                                                 : ''
@@ -91,7 +91,7 @@ const Table = ({ categories, fetchData, onEdit , isLoading, bulkDeleteIds, setBu
                                     </td>
                                     
                                     <td
-                                        className={`${
+                                        className={`w-[25%] truncate ${
                                             i !== categories.length - 1
                                                 ? 'border-b border-ec-table-stock rtl:text-right'
                                                 : 'rtl:text-right'
@@ -101,7 +101,7 @@ const Table = ({ categories, fetchData, onEdit , isLoading, bulkDeleteIds, setBu
                                     </td>
 
                                     <td
-                                        className={`${
+                                        className={`w-[25%] truncate ${
                                             i !== categories.length - 1
                                                 ? 'border-b border-ec-table-stock'
                                                 : ''
@@ -111,7 +111,7 @@ const Table = ({ categories, fetchData, onEdit , isLoading, bulkDeleteIds, setBu
                                     </td>
 
                                     <td
-                                        className={`${
+                                        className={`w-[25%] truncate ${
                                             i !== categories.length - 1
                                                 ? 'border-b border-ec-table-stock'
                                                 : ''
@@ -121,7 +121,7 @@ const Table = ({ categories, fetchData, onEdit , isLoading, bulkDeleteIds, setBu
                                     </td>
 
                                     <td
-                                        className={`text-center pr-5 ${
+                                        className={`w-[17%] text-center pr-5 ${
                                             i !== categories.length - 1
                                                 ? 'border-b border-ec-table-stock'
                                                 : ''

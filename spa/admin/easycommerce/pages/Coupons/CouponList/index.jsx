@@ -121,7 +121,7 @@ const CouponList = ({
  	return (
  		<div className="flex flex-col pb-16 h-full">
  			<div className="flex flex-row justify-between lg:flex-wrap items-center mb-4">
-				<div className="flex justify-between gap-5 2xl:order-1 xl:order-2">
+				<div className="flex justify-between gap-5">
 					<div className="w-max flex gap-4">
 						{selectedCoupons.length > 0 ? (
 							<ActionBar
@@ -179,7 +179,7 @@ const CouponList = ({
 			) : (
 				<>
 					<div className="w-full overflow-x-auto h-full">
-						<table className="min-w-full xl:min-w-[1300px] w-full border-collapse border-spacing-0">
+						<table className="w-full border-collapse border-spacing-0">
 							<THead
 								columnList={columnList}
 								allChecked={filteredCoupons.length > 0 && selectedCoupons.length === filteredCoupons.length}

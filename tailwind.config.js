@@ -47,7 +47,8 @@ module.exports = {
             },
             screens: {
                 "ec-db-md": "874px",
-                "ec-db-lg": "1920px",
+                "ec-db-lg": "1620px",
+                "ec-db-xl": "1920px",
             },
             colors: {
                 "ec-title": "#121216",

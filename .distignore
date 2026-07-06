@@ -3,8 +3,10 @@
 webpack*.js
 package.*
 package-*.*
+composer.json
 composer.lock
 composer.phar
+/vendor/bin/
 yarn.*
 *.config.js
 *.js.map
@@ -38,6 +40,13 @@ yarn.lock
 # Testing and CI
 tests/
 .github/
+.syncignore
+.env*
+*.sh
+tree.txt
+
+# Debug-only controller (never ship)
+app/Controllers/Front/Debug.php
 
 # IDE and editor files
 /.vscode/

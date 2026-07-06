@@ -16,6 +16,7 @@ import CustomerInfo from "./components/CustomerInfo";
 import CustomerAddress from "./components/CustomerAddress";
 import Refunds from "./components/Refunds";
 import Notes from "./components/Notes";
+import SlotField from "../../../../common/components/SlotField";
 
 const SingleOrder = ({ id }) => {
     const [order, setOrder] = useState(null);
@@ -102,6 +103,11 @@ const SingleOrder = ({ id }) => {
                                     </table>
                                 </div>
                             </div>
+
+                            <SlotField
+                                name="easycommerce.order.details.after_items"
+                                item={order}
+                            />
 
                             {(() => {
                                 const refundedTotal = parseFloat(order.refunded_total.replace(/[^0-9.]/g, ""))

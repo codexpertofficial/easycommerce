@@ -68,6 +68,7 @@ class Order extends API {
 			$cart      = new Cart( $cart_hash );
 			$cart_data = $cart->get_data( 'data' );
 			$items     = $cart->get_items();
+			$shipping_method = $cart->get_shipping_method() ?: [ 'id' => '', 'name' => '' ];
 			$coupons   = $cart_data && isset( $cart_data['coupons'] ) ? $cart_data['coupons'] : '';
 
 			if ( $cart->get_status() == 'completed' ) {
@@ -160,6 +161,8 @@ class Order extends API {
 						'billing_address'  => $billing_address,
 						'shipping_address' => $shipping_address,
 						'coupons'          => $coupons,
+						'shipping_method'  => $shipping_method['id'] ?? '',
+						'shipping_method_label' => $shipping_method['name'] ?? '',
 						'tax'         	   => $cart_amounts['tax'] ?? 0,
 						'shipping_tax'     => $cart_amounts['shipping_tax'] ?? 0,
 					)
@@ -348,6 +351,9 @@ class Order extends API {
 		$order_data['meta'] = array(
 			'billing'  => $order->get_meta( 'billing_address' ) ?: array(),
 			'shipping' => $order->get_meta( 'shipping_address' ) ?: array(),
+			'coupons'  => $order->get_meta( 'coupons' ) ?: array(),
+			'shipping_method' => $order->get_meta( 'shipping_method' ) ?: '',
+			'shipping_method_label' => $order->get_meta( 'shipping_method_label' ) ?: '',
 		);
 
 		$items           = $order->get_items( true );

@@ -87,7 +87,7 @@ const LatestOrders = ({ range }) => {
                                     <a href={`#/orders/${item.id}`} className="font-inter text-sm text-ec-body focus:shadow-none focus:outline-none">
                                         #{item.id}
                                     </a>
-                                    <span className="text-[10px] text-ec-placeholder">
+                                    <span className="text-xs text-ec-placeholder">
                                         {item.created_at ?? "N/A"}
                                     </span>
                                 </div>

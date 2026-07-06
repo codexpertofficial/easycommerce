@@ -191,8 +191,8 @@ const AbandonedCartsList = ({
             {/* Blur background when modal is open */}
             <div className={`${isModalVisible ? "blur-sm pointer-events-none" : ""}`}>
                 {isStatusLoaded && (
-                    <div className="flex xl:flex-wrap flex-row justify-between items-center mb-4 gap-4">
-                        <div className="w-max flex gap-4 flex-wrap 2xl:order-1 xl:order-2">
+                    <div className="flex justify-between items-center mb-4 gap-4">
+                        <div className="w-max flex gap-4 items-end">
                             {selectedCarts.length > 0 ? (
                                 <ActionBar
                                     selectedCarts={selectedCarts}
@@ -202,7 +202,7 @@ const AbandonedCartsList = ({
                                 />
                             ) : (
                                 <>
-                                    <div className="flex gap-4 flex-wrap border-b-2 border-[#F0EDFB] xl:mt-4">
+                                    <div className="flex gap-4 border-b-2 border-[#F0EDFB] xl:mt-4">
                                         {tabOptions.map((tab) => {
                                             const isActive = activeTab === tab.key;
                                             const count = statusCounts?.[tab.key] ?? 0;
@@ -227,11 +227,11 @@ const AbandonedCartsList = ({
                                         })}
                                     </div>
 
-                                   <div className="flex gap-4 flex-wrap xl:mt-4">
+                                   <div className="flex gap-4">
                                         <button
                                             type="button"
                                             onClick={openCleanModal}
-                                            className="text-ec-primary font-medium text-base underline ml-2"
+                                            className="text-ec-primary font-medium text-base underline ml-2 mb-1.5"
                                         >
                                         Clean
                                         </button>
@@ -242,7 +242,7 @@ const AbandonedCartsList = ({
                         </div>
 
                         {selectedCarts.length === 0 && (
-                            <div className="flex items-center gap-6 2xl:order-2 xl:order-1">
+                            <div className="flex items-center gap-6">
                                 <TableFilter
                                     formState={formState}
                                     handleSubmit={handleSubmit}
@@ -264,7 +264,7 @@ const AbandonedCartsList = ({
                         {filteredCarts.length > 0 ? (
                             <>
                                 <div className="w-full overflow-y-hidden xl:overflow-x-auto">
-                                    <table className="min-w-full xl:min-w-[1300px] w-full border-collapse border-spacing-0">
+                                    <table className="w-full border-collapse border-spacing-0">
                                         <THead
                                             columnList={columnList}
                                             allChecked={filteredCarts.length > 0 && selectedCarts.length === filteredCarts.length}

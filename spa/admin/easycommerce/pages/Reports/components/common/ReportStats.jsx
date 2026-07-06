@@ -7,7 +7,7 @@ import Tooltip from './Tooltip';
 
 const ReportStats = ({ endpoint, params = {}, skeletonCount = 6 }) => {
 	const [statsData, setStatsData] = useState([]);
-	const [loading, setLoading] = useState(false);
+	const [loading, setLoading] = useState(true);
 	const [activeDropdown, setActiveDropdown] = useState(null);
 	const [hideDigits, setHideDigits] = useState([]);
 	const dropdownRefs = useRef([]);
@@ -27,7 +27,6 @@ const ReportStats = ({ endpoint, params = {}, skeletonCount = 6 }) => {
 	}, []);
 
 	const fetchStats = async () => {
-		setLoading(true);
 		apiFetch({
 			path: addQueryArgs(endpoint, params),
 		}).then((data) => {
@@ -43,7 +42,7 @@ const ReportStats = ({ endpoint, params = {}, skeletonCount = 6 }) => {
 	return loading ? (
 		<CardsSkeleton count={skeletonCount} />
 	) : (
-		<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+		<div className="grid grid-cols-3 ec-db-lg:grid-cols-4 gap-6">
 			{statsData.map((data, index) => {
 				const vibe =
 					data.comparison?.vibe ||

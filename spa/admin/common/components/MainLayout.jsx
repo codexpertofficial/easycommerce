@@ -22,7 +22,7 @@ const MainLayout = ({ breadcrumb, children }) => {
                     setShowAPIModal={setShowAPIModal}
                     user={user}
                 />
-                <div className="flex-1 px-6 py-4 font-inter">{children}</div>
+                <div className="flex-1 px-6 py-4 font-inter w-[calc(100%-240px)]">{children}</div>
             </div>
         </>
     );

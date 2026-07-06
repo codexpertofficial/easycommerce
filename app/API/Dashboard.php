@@ -371,7 +371,7 @@ class Dashboard extends API {
 					'id'      => $order['id'],
 					'total'   => easycommerce_price( $order['total'] ),
 					'status'  => $order['status'],
-					'created_at' => $order['created_at'],
+					'created_at' => wp_date( 'd/m/Y', strtotime( $order['created_at'] ) ),
 				);
 			},
 			$orders

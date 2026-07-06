@@ -120,6 +120,7 @@ $date_format = get_option( 'date_format' ) . ' ' . get_option( 'time_format' );
 			height: auto !important;
 			font-size: 13px !important;
 			line-height: 1.7 !important;
+			min-height: 0 !important;
 		}
 		.easycommerce-ai-usage .button-primary:hover {
 			background: #5d3fe0 !important;

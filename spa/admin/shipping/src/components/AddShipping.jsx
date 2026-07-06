@@ -433,7 +433,7 @@ const AddShipping = ({ handleCancel, showToast, ShippingPlanId }) => {
 			{!isLoading ? (
 				<div className="bg-white mt-8">
 					<div>
-						<p className="flex items-center py-4">
+						<p className="flex ec-db-lg:items-center items-start py-4 ec-db-lg:flex-row flex-col ec-db-lg:gap-0 gap-4">
 							<label
 								className="text-ec-body font-inter font-normal text-base leading-4 w-[180px]"
 								htmlFor="easycommerce-shipping-name">
@@ -457,7 +457,7 @@ const AddShipping = ({ handleCancel, showToast, ShippingPlanId }) => {
 								</div>
 							</div>
 						</p>
-						<p className="flex items-center py-4">
+						<p className="flex ec-db-lg:items-center items-start py-4 ec-db-lg:flex-row flex-col ec-db-lg:gap-0 gap-4">
 							<label
 								className="text-ec-body font-inter font-normal text-base leading-4 w-[180px]"
 								htmlFor="easycommerce-shipping-description">
@@ -505,7 +505,7 @@ const AddShipping = ({ handleCancel, showToast, ShippingPlanId }) => {
 								</div>
 							</div>
 						</p>
-						<p className="flex items-start py-4">
+						<p className="flex items-start py-4 ec-db-lg:flex-row flex-col ec-db-lg:gap-0 gap-4">
 							<label
 								className="text-ec-body font-inter font-normal text-base leading-4 w-[180px]"
 								htmlFor="easycommerce-shipping-name">
@@ -645,7 +645,7 @@ const AddShipping = ({ handleCancel, showToast, ShippingPlanId }) => {
 								</div>
 							</div>
 						</p>
-						<p className="flex items-center py-4">
+						<p className="flex ec-db-lg:items-center items-start py-4 ec-db-lg:flex-row flex-col ec-db-lg:gap-0 gap-4">
 							<label
 								className="text-ec-body font-inter font-normal text-base leading-4 w-[180px]"
 								htmlFor="easycommerce-shipping-calculcution-base">
@@ -704,7 +704,7 @@ const AddShipping = ({ handleCancel, showToast, ShippingPlanId }) => {
 								</div>
 							</div>
 						</p>
-						<p className="flex items-start py-4">
+						<p className="flex items-start py-4 ec-db-lg:flex-row flex-col ec-db-lg:gap-0 gap-4">
 							<label
 								className="text-ec-body font-inter font-normal text-base leading-4 w-[180px]"
 								htmlFor="easycommerce-shipping-name">

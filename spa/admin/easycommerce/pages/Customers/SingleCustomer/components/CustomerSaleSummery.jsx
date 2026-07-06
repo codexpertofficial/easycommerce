@@ -91,7 +91,7 @@ const CustomerSaleSummery = ({ id }) => {
 
     return (
         <div className="w-full min-h-96 flex justify-center items-center">
-            <div className="w-full p-8">
+            <div className="w-full">
                 <SalesChart data={salesData} isLoading={isLoading} />
             </div>
         </div>

@@ -326,7 +326,7 @@ const PriceItem = ({
 					</div>
 
 					{/* Product Type */}
-					<div className="border-b border-solid border-[#F3F3F3] ec-product-type  grid grid-cols-3 gap-4">
+					<div className="border-b border-solid border-[#F3F3F3] ec-product-type grid ec-db-lg:grid-cols-3 grid-cols-1 gap-4">
 						<ProductType
 							priceItem={priceItem}
 							setPriceItem={setPriceItem}

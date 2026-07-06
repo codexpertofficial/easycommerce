@@ -94,20 +94,20 @@ const AbandonedCarts = ({ range = 'last-30' }) => {
             ) : (
                 <div className="h-fit">
                     <div className="flex items-center bg-ec-table-bg p-3 rounded-lg">
-                        <div className="text-sm font-medium text-ec-body capitalize w-[45%]">Customer</div>
-                        <div className="w-[20%] text-sm font-medium text-ec-body capitalize text-center">Products</div>
-                        <div className="w-[20%] text-sm font-medium text-ec-body capitalize text-center">Total</div>
+                        <div className="text-sm font-medium text-ec-body capitalize w-[40%]">Customer</div>
+                        <div className="w-[15%] text-sm font-medium text-ec-body capitalize text-center">Items</div>
+                        <div className="w-[30%] text-sm font-medium text-ec-body capitalize text-center">Total</div>
                         <div className="w-[15%]"></div>
                     </div>
 
                     {data.map((item, index) => (
                         <div key={index} className="flex items-center p-3 border-b border-[#F8F8F8] last:border-0">
-                            <div className="flex flex-col gap-1 w-[45%]">
-                                <span className="text-sm font-normal text-ec-body">{item.name}</span>
-                                <span className="text-sm font-normal text-[#7A7A99]">{item.email}</span>
+                            <div className="flex flex-col gap-1 w-[40%]">
+                                <span className="text-sm font-normal text-ec-body truncate">{item.name}</span>
+                                <span className="text-sm font-normal text-[#7A7A99] truncate">{item.email}</span>
                             </div>
-                            <div className="w-[20%] text-sm font-normal text-ec-body text-center">{item.items}</div>
-                            <div className="w-[20%] text-sm font-normal text-ec-body text-center">{item.total}</div>
+                            <div className="w-[15%] text-sm font-normal text-ec-body text-center">{item.items}</div>
+                            <div className="w-[30%] text-sm font-normal text-ec-body text-center">{item.total}</div>
                             <div className="w-[15%] text-center">
                                 <button
                                     onClick={() => setSelectedItem(item)}

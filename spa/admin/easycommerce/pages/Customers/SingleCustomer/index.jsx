@@ -180,9 +180,9 @@ const SingleCustomer = ({ id, page = 1, setBreadcrumbTitle }) => {
                         <div className="flex gap-5">
                             <CustomerDetails customer={customer} />
 
-                            <div className="w-[calc(100%_-_626px)] bg-white rounded-2xl">
+                            <div className="w-1/2 bg-white rounded-2xl">
                                 <div className="border-b border-ec-table-stock">
-                                    <p className="text-ec-title font-medium font-inter lg:text-xl md:text-lg leading-8 pb-4 px-6 pt-[17px]">
+                                    <p className="text-ec-title font-medium font-inter lg:text-xl md:text-lg leading-8 p-4">
                                         Orders Over Time
                                     </p>
                                 </div>
@@ -209,11 +209,11 @@ const SingleCustomer = ({ id, page = 1, setBreadcrumbTitle }) => {
                                                 <th className="w-[15%] font-inter font-normal text-sm text-ec-title text-left py-3 pl-5">
                                                     Fullfillment
                                                 </th>
-                                                <th className="w-[12%] font-inter font-normal text-sm text-ec-title text-left py-3">
+                                                <th className="w-[12%] font-inter font-normal text-center text-sm text-ec-title text-left py-3">
                                                     Products
                                                 </th>
                                                 <th className="w-[11%] font-inter font-normal text-sm text-ec-title text-left py-3">
-                                                    offer
+                                                    Amount
                                                 </th>
                                                 <th className="w-[22%] font-inter font-normal text-sm text-ec-title text-left py-3">
                                                     Transactions ID
@@ -276,7 +276,7 @@ const SingleCustomer = ({ id, page = 1, setBreadcrumbTitle }) => {
                                                                 {order.fulfill_status.replace("_", " ")}
                                                             </span>
                                                         </td>
-                                                        <td className="text-ec-body font-inter font-normal text-sm">
+                                                        <td className="text-ec-body text-center font-inter font-normal text-sm">
                                                             {order.items}
                                                         </td>
                                                         <td>

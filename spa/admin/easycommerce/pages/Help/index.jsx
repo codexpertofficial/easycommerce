@@ -43,12 +43,6 @@ const Help = () => {
 
     return (
         <>
-            {/* <CommonHeader
-                parentSlug="easycommerce"
-                parentLavel="EasyCommerce"
-                breadcumpSlug="Help & Support"
-            /> */}
-
             <div className="mt-3 bg-white rounded-xl overflow-hidden">
                 {!isLoading ? (
                     <>
@@ -71,7 +65,7 @@ const Help = () => {
                                 </div>
 
                                 <div className="flex bg-white">
-                                    <div className="w-[354px] p-6 border-r border-ec-border">
+                                    <div className="ec-db-lg:w-[354px] w-[280px] p-6 border-r border-ec-border">
                                         <Accordion
                                             items={docs}
                                             getPostContent={getPostContent}
@@ -81,7 +75,7 @@ const Help = () => {
                                             setPostTitle={setPostTitle}
                                         />
                                     </div>
-                                    <div className="easycommerce-doc-content-wrap w-[calc(100%_-_354px)]">
+                                    <div className="easycommerce-doc-content-wrap ec-db-lg:w-[calc(100%_-_354px)] w-[calc(100%_-_280px)]">
                                         <div className="py-10 px-16">
                                             {!isLoadingContent && (
                                                 <>

@@ -14,7 +14,7 @@ const DatepickerComponent = ({
 
     return (
         <div className="easycommerce-datepicker-container h-ec-height">
-            <div className={`flex items-center relative h-ec-input w-[150px] min-[1440px]:w-[220px] px-3 py-2 gap-2 rounded-lg ${width} 
+            <div className={`flex items-center relative h-ec-input px-3 py-2 gap-2 rounded-lg ${width} 
                 border border-ec-table-stock easycommerce-datepicker-shadow hover:border-ec-secondary transition-all duration-300 focus:border-ec-primary focus:outline-none focus-within:[box-shadow:0_0_0_4px_#F3F0FF]`}>
                 {calendarIcon && (
                     <img
@@ -31,7 +31,7 @@ const DatepickerComponent = ({
                     selectsRange
                     placeholderText={placeholderText}
                     className={`easycommerce-datepicker w-full font-normal text-sm leading-[26px]
-                        font-inter text-ec-body `}
+                        font-inter text-ec-body p-0`}
                     minDate={minDate}
                     dateFormat="dd MMM yyyy"
                 />

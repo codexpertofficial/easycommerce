@@ -274,8 +274,8 @@ const AddProduct = () => {
 								className="h-ec-input"
 							/>
 						</div>
-						<div className="grid min-[1400px]:grid-cols-3 min-[1280px]:grid-cols-1 gap-4">
-							<div className="col-span-2 flex flex-col gap-4">
+						<div className="flex gap-4">
+							<div className="flex-grow max-w-[calc(100%-426px)] ec-db-lg:max-w-[calc(100%-510px)] flex flex-col gap-4">
 								<ProductSummary productTitle={productTitle} />
 								<ProductAttr
 									globalAttributes={globalAttributes}
@@ -291,7 +291,7 @@ const AddProduct = () => {
 								/>
 								<ProductDesc productTitle={productTitle} />
 							</div>
-							<div className="xl:col-span-1 lg:col-span-2 flex flex-col gap-4">
+							<div className="w-[410px] ec-db-lg:w-[510px] flex flex-col gap-4">
 								<Gallery productTitle={productTitle} />
 								<Organize />
 								<Template />

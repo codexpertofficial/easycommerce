@@ -125,9 +125,9 @@ const Table = ({
 										}}
 									/>
 								</th>
-								<th className="w-[20%] font-normal rtl:text-right">Name</th>
+								<th className="w-[25%] font-normal rtl:text-right">Name</th>
 								<th className="w-[15%] font-normal">Type</th>
-								<th className="w-[40%] font-normal">Options</th>
+								<th className="w-[35%] font-normal">Options</th>
 								<th className="w-[17%] text-center pr-5 font-normal rounded-r-md">
 									Action
 								</th>
@@ -137,7 +137,7 @@ const Table = ({
 							{attributes.map((value, i) => (
 								<tr
 									key={value.id}
-									className={`w-full text-sm font-normal`}
+									className={`w-full ec-db-lg:text-sm text-xs font-normal`}
 									style={{ height: '56px' }}
 								>
 									<td
