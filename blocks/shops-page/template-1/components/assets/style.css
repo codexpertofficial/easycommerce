@@ -67,7 +67,7 @@
     width: 300px;
 }
 .easycommerce-shop-container {
-    width: calc(100% - 300px);
+    width: 100%;
 }
 .easycommerce-price-range-input-field,
 .easycommerce-price-range-input-field:focus {

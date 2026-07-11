@@ -529,11 +529,24 @@ class Init {
 			return;
 		}
 
-		// Only when the store is connected to the AI service.
+		// Not connected to the AI service yet: show a "Connect AI" entry that links
+		// to the AI Connectivity tab, which presents the connect call-to-action (its
+		// "Connect your store" button opens the same popup Store Copilot uses).
 		$api = get_option( 'easycommerce_api' );
 		if ( empty( $api->email ) ) {
+			$wp_admin_bar->add_node( array(
+				'id'     => 'easycommerce-ai-credits',
+				'title'  => esc_html__( 'Connect AI', 'easycommerce' ),
+				'href'   => admin_url( 'admin.php?page=easycommerce-settings&menu=ai&submenu=connectivity' ),
+				'parent' => 'top-secondary',
+				// Front-end background relies on Tailwind (loaded on EC storefront
+				// pages); wp-admin uses the rule in admin/css/common.css.
+				'meta'   => array( 'class' => '!bg-ec-primary' ),
+			) );
 			return;
 		}
+
+		$usage_url = admin_url( 'admin.php?page=easycommerce-settings&menu=ai&submenu=usage' );
 
 		$data      = function_exists( 'easycommerce_ai_data' ) ? easycommerce_ai_data() : array();
 		$limit     = (int) ( $data['limit'] ?? 0 );
@@ -551,7 +564,7 @@ class Init {
 		$wp_admin_bar->add_node( array(
 			'id'     => 'easycommerce-ai-credits',
 			'title'  => esc_html( $label ),
-			'href'   => admin_url( 'admin.php?page=easycommerce-settings&menu=ai&submenu=usage' ),
+			'href'   => $usage_url,
 			'parent' => 'top-secondary',
 			// Front-end background relies on Tailwind (loaded on EC storefront
 			// pages); wp-admin uses the rule in admin/css/common.css.

@@ -227,6 +227,49 @@
     }
 }
 
+.easycommerce-shipping-overlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.8);
+    z-index: 10;
+    border-radius: 8px;
+}
+
+.easycommerce-shipping-overlay.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.easycommerce-shipping-loader {
+    text-align: center;
+}
+
+.easycommerce-shipping-loader .spinner {
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid var(--color-ec-primary, #6C5DD3);
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    animation: easycommerce-spin 0.8s linear infinite;
+    margin: 0 auto 8px;
+}
+
+.easycommerce-shipping-loader span {
+    display: block;
+    font-size: 14px;
+    color: #737791;
+}
+
+@keyframes easycommerce-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 .es-custom-odersummary {
     display: flex;
     justify-content: space-between;

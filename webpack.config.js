@@ -86,6 +86,6 @@ module.exports = (env, argv) => {
                 ]
             })
         ],
-        devtool: "source-map",
+        devtool: argv.mode === "production" ? false : "source-map",
     };
 };

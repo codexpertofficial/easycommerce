@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { applyFilters } from '@wordpress/hooks';
 import Header from '../../common/Header';
+import RootToast from '../../common/RootToast';
 import './settings-menu.css';
 
 const App = () => {
@@ -78,6 +79,7 @@ const App = () => {
 				user={user}
 				setUser={setUser}
 			/>
+			<RootToast />
 		</>
 	);
 };

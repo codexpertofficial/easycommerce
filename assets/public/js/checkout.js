@@ -166,8 +166,27 @@ jQuery(function ($) {
         sendShippingMethod(method_id);
     });
 
+    function allShippingFieldsFilled() {
+        var same = $("#easycommerce-checkout-same-as-shipping").is(":checked");
+        var $block = same ? $(".easycommerce-checkout-billing") : $(".easycommerce-checkout-shipping");
+        var required = ["country", "state", "city", "postcode"];
+        for (var i = 0; i < required.length; i++) {
+            if (!$block.find('.easycommerce-field[data-field_id="' + required[i] + '"]').val()) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    function triggerShippingUpdate() {
+        if (allShippingFieldsFilled()) {
+            updateShippingMethods();
+        }
+    }
+
     $(document).on("change", ".easycommerce-checkout-billing .easycommerce-field", function (e) {
         let field_id    = $(this).data("field_id");
+        var same        = $("#easycommerce-checkout-same-as-shipping").is(":checked");
 
         if ( field_id === "country" ) {
             const billingCountry = $( this ).val();
@@ -191,23 +210,20 @@ jQuery(function ($) {
                 cursor: "pointer"
             } );
         }
-        //needs to update tax amount even if same as shipping
-        if (field_id === "city") {
-            updateShippingMethods();
-        }
-        // Copy billing fields to shipping fields if "Same as shipping" is checked
-        if ($("#easycommerce-checkout-same-as-shipping").is(":checked")) {
-            let val         = $(this).val();
+
+        // Copy billing fields to shipping fields if "Same as shipping" is checked, then trigger
+        if (same && (field_id === "country" || field_id === "state" || field_id === "city" || field_id === "postcode")) {
+            let val = $(this).val();
             $(`.easycommerce-checkout-shipping .easycommerce-field[data-field_id="${field_id}"]`).val(val);
+            triggerShippingUpdate();
         }
     });
 
     $(document).on("change", ".easycommerce-checkout-shipping .easycommerce-field", function () {
         if (!$("#easycommerce-checkout-same-as-shipping").is(":checked")) {
             const field_id = $(this).data("field_id");
-
-            if (field_id === "city") {
-                updateShippingMethods();
+            if (field_id === "country" || field_id === "state" || field_id === "city" || field_id === "postcode") {
+                triggerShippingUpdate();
             }
         }
     });
@@ -693,4 +709,33 @@ jQuery(function ($) {
             event.preventDefault();
         }
     });
+
+    // ── Shipping methods loader ──
+    var $sw = $(".easycommerce-summary-wrapper");
+    if ($sw.length) {
+        $sw.wrap('<div class="easycommerce-summary-container" style="position: relative;"></div>');
+
+        var $ol = $(
+            '<div class="easycommerce-shipping-overlay">' +
+                '<div class="easycommerce-shipping-loader">' +
+                    '<div class="spinner"></div>' +
+                    '<span>Loading shipping methods...</span>' +
+                '</div>' +
+            '</div>'
+        );
+        $sw.parent().append($ol);
+
+        var ar = 0;
+        $(document).on("ajaxSend", function (e, x, s) {
+            if (s.url.indexOf("/cart/shipping") !== -1) {
+                ar++;
+                $ol.addClass("active");
+            }
+        }).on("ajaxComplete", function (e, x, s) {
+            if (s.url.indexOf("/cart/shipping") !== -1) {
+                ar--;
+                if (ar <= 0) { ar = 0; $ol.removeClass("active"); }
+            }
+        });
+    }
 });

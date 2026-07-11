@@ -42,6 +42,14 @@ class Asset {
 			EASYCOMMERCE_BUILD_URL . 'blocks.bundle.js',
 			$dependencies
 		);
+
+		if ( is_admin() ) {
+			$this->enqueue_script(
+				'easycommerce-tailwind-editor',
+				EASYCOMMERCE_BUILD_URL . 'tailwind.bundle.js',
+				array()
+			);
+		}
 	}
 
 	/**

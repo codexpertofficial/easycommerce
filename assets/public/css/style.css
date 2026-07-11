@@ -154,6 +154,7 @@
 .accordion-content.open {
 	max-height: 380px;
 	opacity: 1;
+	z-index: 9;
 }
 .easycommerce-categories-scrolling {
 	overflow-y: scroll;
@@ -464,6 +465,13 @@
 	height: 18px;
 	object-fit: contain;
 	pointer-events: none;
+}
+
+/* Template-1 filter bar: horizontal scroll container */
+.scroll-content {
+	overflow: hidden;
+	flex: 1;
+	min-width: 0;
 }
 
 /* Template-1 filter bar: horizontal scroll buttons */

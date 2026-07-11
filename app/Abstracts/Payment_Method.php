@@ -30,6 +30,15 @@ abstract class Payment_Method {
 	protected $description;
 
 	/**
+	 * IDs of already-registered payment methods, used to prevent duplicate
+	 * registration when a legacy standalone addon plugin is active alongside
+	 * the built-in core version of the same gateway.
+	 *
+	 * @var string[]
+	 */
+	private static array $registered_ids = [];
+
+	/**
 	 * Constructor
 	 *
 	 * @param string $id
@@ -40,6 +49,11 @@ abstract class Payment_Method {
 		$this->id          = $id;
 		$this->title       = $title;
 		$this->description = $description;
+
+		if ( in_array( $this->id, self::$registered_ids, true ) ) {
+			return;
+		}
+		self::$registered_ids[] = $this->id;
 
 		/**
 		 * Fires after a payment method is constructed.

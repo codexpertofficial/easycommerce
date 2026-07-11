@@ -234,12 +234,19 @@ add_action(
 
 				$amounts = $cart['amounts'] ?? array();
 
-				$metadata['subtotal']      = isset( $params['meta']['mollie_subtotal'] ) ? (float) $params['meta']['mollie_subtotal'] : ( $amounts['subtotal'] ?? 0 );
-				$metadata['discount']      = isset( $params['meta']['mollie_discount'] ) ? (float) $params['meta']['mollie_discount'] : ( $amounts['discount_amount'] ?? 0 );
-				$metadata['shipping']      = isset( $params['meta']['mollie_shipping'] ) ? (float) $params['meta']['mollie_shipping'] : ( $amounts['shipping_fee'] ?? 0 );
-				$metadata['product_tax']   = isset( $params['meta']['mollie_product_tax'] ) ? (float) $params['meta']['mollie_product_tax'] : ( $amounts['tax'] ?? 0 );
-				$metadata['shipping_tax']   = isset( $params['meta']['mollie_shipping_tax'] ) ? (float) $params['meta']['mollie_shipping_tax'] : ( $amounts['shipping_tax'] ?? 0 );
-				$metadata['total']         = isset( $params['meta']['mollie_total'] ) ? (float) $params['meta']['mollie_total'] : ( $amounts['total'] ?? 0 );
+				$metadata['subtotal']      = (float) ( $amounts['subtotal'] ?? 0 );
+				$metadata['discount']      = (float) ( $amounts['discount_amount'] ?? 0 );
+				$metadata['shipping']      = (float) ( $amounts['shipping_fee'] ?? 0 );
+				$metadata['product_tax']   = (float) ( $amounts['tax'] ?? 0 );
+				$metadata['shipping_tax']  = (float) ( $amounts['shipping_tax'] ?? 0 );
+				$metadata['total']         = (float) ( $amounts['total'] ?? 0 );
+
+				$mollie_idempotency_key = $order->get_meta( 'mollie_idempotency_key' );
+				if ( empty( $mollie_idempotency_key ) ) {
+					$mollie_idempotency_key = hash( 'sha256', $order_id . '_' . number_format( $total_amount, 2, '.', '' ) );
+					$order->add_meta( 'mollie_idempotency_key', $mollie_idempotency_key );
+				}
+				$mollie->setIdempotencyKey( $mollie_idempotency_key );
 
 				$payment = $mollie->payments->create(
 					array(

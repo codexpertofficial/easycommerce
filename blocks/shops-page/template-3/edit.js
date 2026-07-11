@@ -25,7 +25,7 @@ const Edit = ({ attributes, setAttributes }) => {
     const { showShortBy } = attributes;
 
     const [addedToCart, setAddedToCart] = useState({});
-    const blockProps = useBlockProps();
+    const blockProps = useBlockProps({ className: 'easycommerce' });
     const cartButtonClass = `cart-button-${blockProps.id}`;
     const checkoutButtonClass = `checkout-button-${blockProps.id}`;
 

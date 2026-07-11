@@ -4671,7 +4671,7 @@ class API {
 						'sanitize_callback' => 'sanitize_text_field',
 					),
 				),
-				'permission' => array( $this, 'is_user' ),
+				'permission' => array( $this, 'is_nonce_verified' ),
 			)
 		);
 	}

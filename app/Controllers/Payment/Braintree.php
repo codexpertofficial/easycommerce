@@ -264,7 +264,7 @@ add_action(
 						throw new Exception( 'Cart is empty or invalid.' );
 					}
 
-					$total_amount = $cart['amounts']['total'] ?? 0;
+					$total_amount = $order->get_total();
 					$metadata     = array();
 
 					foreach ( $cart['items'] as $index => $item ) {

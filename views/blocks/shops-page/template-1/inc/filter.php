@@ -57,9 +57,9 @@ if (! function_exists('display_attribute')) {
 			<?php
 			if (! empty($categories)) {
 			?>
-				<div class="">
+				<div class="w-max">
 					<div class="py-1 px-4 bg-[#FFFFFF] border border-[#EBEBEB] rounded-full  easycommerce-categories  relative">
-						<h5 class="easycommerce-filter-heading text-base font-normal cursor-pointer text-ec-title w-full flex justify-between items-center shadow-none leading-[26px] easycommerce-categories-title " onclick="toggleAccordion('categories')">
+						<h5 class="easycommerce-filter-heading text-base font-normal cursor-pointer text-ec-title w-full flex justify-between items-center shadow-none leading-[26px] easycommerce-categories-title " onclick="toggleAccordion('categories')" data-section="categories">
 							<?php esc_html_e('Categories', 'easycommerce'); ?>
 							<span id="arrow-categories" class="transform transition-transform ml-2">
 								<svg class="w-4 h-4" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -67,14 +67,6 @@ if (! function_exists('display_attribute')) {
 								</svg>
 							</span>
 						</h5>
-					</div>
-
-					<div id="categories" class="accordion-content hidden absolute top-[50px] bg-white rounded-xl p-6 border border-ec-border w-[210px]">
-						<div class="pt-6 easycommerce-categories-container easycommerce-categories-accordion">
-							<div class="easycommerce-scroll-inner">
-								<?php display_attribute($categories, 'category'); ?>
-							</div>
-						</div>
 					</div>
 				</div>
 			<?php
@@ -85,7 +77,7 @@ if (! function_exists('display_attribute')) {
 			<?php if (! empty($brands)) : ?>
 				<div class="">
 					<div class="easycommerce-brands py-1 px-4 bg-[#FFFFFF] border border-[#EBEBEB]  rounded-full  relative">
-						<h5 class="easycommerce-filter-heading text-base font-normal leading-[26px] cursor-pointer text-ec-title w-full flex justify-between items-center shadow-none" onclick="toggleAccordion('brands')">
+						<h5 class="easycommerce-filter-heading text-base font-normal leading-[26px] cursor-pointer text-ec-title w-full flex justify-between items-center shadow-none" onclick="toggleAccordion('brands')" data-section="brands">
 							<?php esc_html_e('Brands', 'easycommerce'); ?>
 							<span id="arrow-brands" class="transform transition-transform ml-2">
 								<svg class="w-4 h-4" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -94,21 +86,13 @@ if (! function_exists('display_attribute')) {
 							</span>
 						</h5>
 					</div>
-
-					<div id="brands" class="accordion-content hidden absolute top-[50px] bg-white rounded-xl p-6 border border-ec-border w-[210px]">
-						<div class="flex flex-col gap-5 py-4 easycommerce-brands-accordion">
-							<div class="easycommerce-scroll-inner">
-								<?php display_attribute($brands, 'brand'); ?>
-							</div>
-						</div>
-					</div>
 				</div>
 			<?php endif; ?>
 
 			<!-- Price Slider Section -->
-			<div class="">
+			<div class="w-max">
 				<div class="py-1 px-4 bg-[#FFFFFF] border border-[#EBEBEB]  rounded-full easycommerce-prices relative">
-					<h5 class=" easycommerce-filter-heading text-base font-normal leading-[26px] text-ec-title cursor-pointer colorec-body w-full flex justify-between items-center shadow-none" onclick="toggleAccordion('price-slider')">
+					<h5 class=" easycommerce-filter-heading text-base font-normal leading-[26px] text-ec-title cursor-pointer colorec-body w-full flex justify-between items-center shadow-none" onclick="toggleAccordion('price-slider')" data-section="price-slider">
 						<?php esc_html_e('Price', 'easycommerce'); ?>
 						<span id="arrow-price-slider" class="transform transition-transform ml-2">
 							<svg class="w-4 h-4" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -116,39 +100,6 @@ if (! function_exists('display_attribute')) {
 							</svg>
 						</span>
 					</h5>
-				</div>
-
-				<div id="price-slider" class="flex-col gap-5 accordion-content hidden absolute top-[50px] bg-white rounded-xl p-6 border border-ec-border w-max">
-					<div class="bg-white rounded-md mt-4 easycommerce-prices-accordion">
-						<div class="relative h-2 bg-gray-200 rounded">
-							<div class="absolute h-full bg-ec-primary rounded w-full"></div>
-							<div class="slider">
-								<div class="absolute h-full bg-ec-primary rounded"></div>
-								<div class="easycommerce-handle-min cursor-pointer"></div>
-								<div class="absolute w-6 h-6 bg-white border-4 border-ec-primary rounded-full cursor-pointer -top-2 easycommerce-handle-max" style="left: 80%;"></div>
-							</div>
-						</div>
-						<div class="flex justify-between mt-4 gap-10">
-							<div class="flex flex-col">
-								<label class="text-[12px] mb-1 text-ec-placeholder">
-									<?php esc_html_e('Min Price', 'easycommerce'); ?>
-								</label>
-								<div class="relative">
-									<input type="number" id="easycommerce-min-price" class="easycommerce-price-range-input-field" value="<?php echo esc_attr($min_price); ?>" class="border border-ec-body rounded px-2 py-1 w-full pr-10" min="<?php echo esc_attr($min_price); ?>" max="<?php echo esc_attr($max_price); ?>" />
-									<span class="absolute top-[7px] inset-y-0 right-0 pr-3 flex items-center text-ec-secondary">$</span>
-								</div>
-							</div>
-							<div class="flex flex-col">
-								<label class="text-[12px] mb-1 text-ec-placeholder">
-									<?php esc_html_e('Max Price', 'easycommerce'); ?>
-								</label>
-								<div class="relative">
-									<input type="number" id="easycommerce-max-price" class="easycommerce-price-range-input-field" value="<?php echo esc_attr($max_price); ?>" class="border border-ec-body rounded px-2 py-1 w-full pr-10" min="<?php echo esc_attr($min_price); ?>" max="<?php echo esc_attr($max_price); ?>" />
-									<span class="absolute top-[7px] inset-y-0 right-0 pr-3 flex items-center text-ec-secondary">$</span>
-								</div>
-							</div>
-						</div>
-					</div>
 				</div>
 			</div>
 
@@ -163,11 +114,12 @@ if (! function_exists('display_attribute')) {
 					if (empty($attribute_name) || empty($attribute->values)) continue;
 
 				?>
-					<div class="">
+					<div class="w-max">
 						<div class="py-1 px-4 bg-[#FFFFFF] border border-[#EBEBEB] rounded-full relative easycommerce-attributes">
 							<h5
 								class="easycommerce-attributes-heading easycommerce-filter-heading text-base font-normal leading-[26px] text-ec-title cursor-pointer w-full flex justify-between items-center shadow-none"
-								onclick="toggleAccordion('<?php echo esc_js($attribute_name); ?>')">
+								onclick="toggleAccordion('<?php echo esc_js($attribute_name); ?>')"
+								data-section="<?php echo esc_attr($attribute_name); ?>">
 								<?php echo esc_html($attribute_name); ?>
 								<span id="arrow-<?php echo esc_attr($attribute_name); ?>" class="transform transition-transform ml-2">
 									<svg class="w-4 h-4" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -175,21 +127,6 @@ if (! function_exists('display_attribute')) {
 									</svg>
 								</span>
 							</h5>
-						</div>
-
-						<div id="<?php echo esc_attr($attribute_name); ?>" class="accordion-content hidden absolute top-[50px] bg-white rounded-xl p-6 border border-ec-border w-[210px]">
-							<div class="flex flex-col gap-5 easycommerce-attributes-accordion">
-								<?php
-								foreach ($values as $value_key => $value_obj) :
-								?>
-									<div class="flex justify-between">
-										<label class="flex items-center gap-2">
-											<input type="checkbox" class="easycommerce-input-checkoutbox easycommerce-input-attribute" data-attribute="<?php echo esc_attr($attribute_slug); ?>" name="<?php echo esc_attr($value_obj->slug); ?>" value="<?php echo esc_attr($value_obj->slug); ?>" />
-											<?php echo esc_html($value_obj->name); ?>
-										</label>
-									</div>
-								<?php endforeach; ?>
-							</div>
 						</div>
 					</div>
 				<?php endforeach; ?>
@@ -201,6 +138,85 @@ if (! function_exists('display_attribute')) {
 				<path d="M1 1L5 5L1 9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
 			</svg>
 		</button>
+
+		<!-- Dropdown portal: outside .scroll-content, still inside .w-[65%] to avoid overflow clipping -->
+		<div id="dropdown-portal">
+			<?php if (! empty($categories)) : ?>
+				<div id="categories" class="accordion-content hidden absolute z-50 bg-white rounded-xl p-6 border border-ec-border w-[210px]">
+					<div class="pt-6 easycommerce-categories-container easycommerce-categories-accordion">
+						<div class="easycommerce-scroll-inner">
+							<?php display_attribute($categories, 'category'); ?>
+						</div>
+					</div>
+				</div>
+			<?php endif; ?>
+
+			<?php if (! empty($brands)) : ?>
+				<div id="brands" class="accordion-content hidden absolute z-50 bg-white rounded-xl p-6 border border-ec-border w-[210px]">
+					<div class="flex flex-col gap-5 py-4 easycommerce-brands-accordion">
+						<div class="easycommerce-scroll-inner">
+							<?php display_attribute($brands, 'brand'); ?>
+						</div>
+					</div>
+				</div>
+			<?php endif; ?>
+
+			<div id="price-slider" class="flex-col gap-5 accordion-content hidden absolute z-50 bg-white rounded-xl p-6 border border-ec-border w-max">
+				<div class="bg-white rounded-md mt-4 easycommerce-prices-accordion">
+					<div class="relative h-2 bg-gray-200 rounded">
+						<div class="absolute h-full bg-ec-primary rounded w-full"></div>
+						<div class="slider">
+							<div class="absolute h-full bg-ec-primary rounded"></div>
+							<div class="easycommerce-handle-min cursor-pointer"></div>
+							<div class="absolute w-6 h-6 bg-white border-4 border-ec-primary rounded-full cursor-pointer -top-2 easycommerce-handle-max" style="left: 80%;"></div>
+						</div>
+					</div>
+					<div class="flex justify-between mt-4 gap-10">
+						<div class="flex flex-col">
+							<label class="text-[12px] mb-1 text-ec-placeholder">
+								<?php esc_html_e('Min Price', 'easycommerce'); ?>
+							</label>
+							<div class="relative">
+								<input type="number" id="easycommerce-min-price" class="easycommerce-price-range-input-field" value="<?php echo esc_attr($min_price); ?>" class="border border-ec-body rounded px-2 py-1 w-full pr-10" min="<?php echo esc_attr($min_price); ?>" max="<?php echo esc_attr($max_price); ?>" />
+								<span class="absolute top-[7px] inset-y-0 right-0 pr-3 flex items-center text-ec-secondary">$</span>
+							</div>
+						</div>
+						<div class="flex flex-col">
+							<label class="text-[12px] mb-1 text-ec-placeholder">
+								<?php esc_html_e('Max Price', 'easycommerce'); ?>
+							</label>
+							<div class="relative">
+								<input type="number" id="easycommerce-max-price" class="easycommerce-price-range-input-field" value="<?php echo esc_attr($max_price); ?>" class="border border-ec-body rounded px-2 py-1 w-full pr-10" min="<?php echo esc_attr($min_price); ?>" max="<?php echo esc_attr($max_price); ?>" />
+								<span class="absolute top-[7px] inset-y-0 right-0 pr-3 flex items-center text-ec-secondary">$</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<?php foreach ($attributes as $attribute) :
+				$attribute_name         = $attribute->name;
+				$attribute_slug         = $attribute->slug;
+				$attribute_values_model = new Attribute_Value();
+				$values                 = $attribute_values_model->get_by($attribute->id);
+				$attribute->values      = wp_list_pluck($values, 'name', 'slug');
+
+				if (empty($attribute_name) || empty($attribute->values)) continue;
+			?>
+				<div id="<?php echo esc_attr($attribute_name); ?>" class="accordion-content hidden absolute z-50 bg-white rounded-xl p-6 border border-ec-border w-[210px]">
+					<div class="flex flex-col gap-5 easycommerce-attributes-accordion">
+						<?php foreach ($values as $value_key => $value_obj) : ?>
+							<div class="flex justify-between">
+								<label class="flex items-center gap-2">
+									<input type="checkbox" class="easycommerce-input-checkoutbox easycommerce-input-attribute" data-attribute="<?php echo esc_attr($attribute_slug); ?>" name="<?php echo esc_attr($value_obj->slug); ?>" value="<?php echo esc_attr($value_obj->slug); ?>" />
+									<?php echo esc_html($value_obj->name); ?>
+								</label>
+							</div>
+						<?php endforeach; ?>
+					</div>
+				</div>
+			<?php endforeach; ?>
+		</div>
 
 	</div>
 
@@ -456,6 +472,10 @@ if (! function_exists('display_attribute')) {
 			if (content !== el) {
 				content.classList.add('hidden');
 				content.classList.remove('open');
+				if (content.closest('#dropdown-portal')) {
+					content.style.top = '';
+					content.style.left = '';
+				}
 			}
 		});
 
@@ -465,6 +485,17 @@ if (! function_exists('display_attribute')) {
 			}
 		});
 
+		if (el.closest('#dropdown-portal')) {
+			const trigger = document.querySelector(`[data-section="${section}"]`);
+			const container = document.querySelector('.w-\\[65\\%\\]');
+			if (trigger && container) {
+				const triggerRect = trigger.getBoundingClientRect();
+				const containerRect = container.getBoundingClientRect();
+				el.style.top = (triggerRect.bottom - containerRect.top + 18) + 'px';
+				el.style.left = (triggerRect.left - containerRect.left - 14) + 'px';
+			}
+		}
+
 		el.classList.toggle('hidden');
 		el.classList.toggle('open');
 		arrow.classList.toggle('rotate-180');
@@ -473,10 +504,6 @@ if (! function_exists('display_attribute')) {
 			'.easycommerce-categories-accordion, .easycommerce-brands-accordion, .easycommerce-prices-accordion, .easycommerce-attributes-accordion, .easycommerce-filters-accordion'
 		);
 		if (!panel) return;
-
-		const rect = el.previousElementSibling.getBoundingClientRect();
-		panel.style.top = rect.bottom + 8 + 'px';
-		panel.style.left = rect.left + 'px';
 
 		if (panel.scrollHeight > 380) {
 			panel.classList.add('easycommerce-scroll');
@@ -500,6 +527,10 @@ if (! function_exists('display_attribute')) {
 			const transitionHandler = () => {
 				content.classList.add('hidden');
 				content.classList.remove('closing');
+				if (content.closest('#dropdown-portal')) {
+					content.style.top = '';
+					content.style.left = '';
+				}
 				content.removeEventListener('transitionend', transitionHandler);
 			};
 
@@ -523,6 +554,10 @@ if (! function_exists('display_attribute')) {
 			document.querySelectorAll('.accordion-content').forEach(content => {
 				content.classList.add('hidden');
 				content.classList.remove('open');
+				if (content.closest('#dropdown-portal')) {
+					content.style.top = '';
+					content.style.left = '';
+				}
 			});
 			document.querySelectorAll('[id^="arrow-"]').forEach(arrow => {
 				arrow.classList.remove('rotate-180');
@@ -597,7 +632,10 @@ if (! function_exists('display_attribute')) {
 
 			updateScrollButtons();
 
-			container.addEventListener('scroll', updateScrollButtons);
+			container.addEventListener('scroll', () => {
+				updateScrollButtons();
+				closeAllAccordionsSmooth();
+			});
 
 			leftBtn.addEventListener('click', () => {
 				container.scrollBy({

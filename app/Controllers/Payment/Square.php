@@ -262,7 +262,7 @@ add_action(
 
 				if ( $locations->isSuccess() ) {
 					$cart         = ( new Cart() )->get( true, false );
-					$total_amount = $cart['amounts']['total'];
+					$total_amount = $order->get_total();
 					$metadata     = array();
 
 					// Calculate total amount and set metadata
@@ -275,12 +275,12 @@ add_action(
 
 					$amounts = $cart['amounts'] ?? array();
 
-					$metadata['subtotal']      = isset( $params['meta']['square_subtotal'] ) ? (float) $params['meta']['square_subtotal'] : ( $amounts['subtotal'] ?? 0 );
-					$metadata['discount']      = isset( $params['meta']['square_discount'] ) ? (float) $params['meta']['square_discount'] : ( $amounts['discount_amount'] ?? 0 );
-					$metadata['shipping']      = isset( $params['meta']['square_shipping'] ) ? (float) $params['meta']['square_shipping'] : ( $amounts['shipping_fee'] ?? 0 );
-					$metadata['product_tax']   = isset( $params['meta']['square_product_tax'] ) ? (float) $params['meta']['square_product_tax'] : ( $amounts['tax'] ?? 0 );
-					$metadata['shipping_tax']  = isset( $params['meta']['square_shipping_tax'] ) ? (float) $params['meta']['square_shipping_tax'] : ( $amounts['shipping_tax'] ?? 0 );
-					$metadata['total']         = isset( $params['meta']['square_total'] ) ? (float) $params['meta']['square_total'] : ( $amounts['total'] ?? 0 );
+					$metadata['subtotal']      = (float) ( $amounts['subtotal'] ?? 0 );
+					$metadata['discount']      = (float) ( $amounts['discount_amount'] ?? 0 );
+					$metadata['shipping']      = (float) ( $amounts['shipping_fee'] ?? 0 );
+					$metadata['product_tax']   = (float) ( $amounts['tax'] ?? 0 );
+					$metadata['shipping_tax']  = (float) ( $amounts['shipping_tax'] ?? 0 );
+					$metadata['total']         = (float) ( $amounts['total'] ?? 0 );
 
 					$billing_address = $params['billing_address'];
 
@@ -395,7 +395,12 @@ add_action(
 
 						$order_request = new CreateOrderRequest();
 						$order_request->setOrder( $square_order );
-						$order_request->setIdempotencyKey( uniqid() );
+						$sq_order_idem = $order->get_meta( 'square_order_idempotency_key' );
+						if ( empty( $sq_order_idem ) ) {
+							$sq_order_idem = hash( 'sha256', 'sq_order_' . $order_id . '_' . number_format( $total_amount, 2, '.', '' ) );
+							$order->add_meta( 'square_order_idempotency_key', $sq_order_idem );
+						}
+						$order_request->setIdempotencyKey( $sq_order_idem );
 
 						$square_order_id     = null;
 						$square_order_total  = $this->to_square_amount( $total_amount, $currency );
@@ -416,11 +421,21 @@ add_action(
 							}
 						}
 
+						$intended_square_total = $this->to_square_amount( $total_amount, $currency );
+						if ( abs( $square_order_total - $intended_square_total ) > 1 ) {
+							return $status;
+						}
+
 						$amount_money = new Money();
 						$amount_money->setAmount( $square_order_total );
 						$amount_money->setCurrency( $currency );
 
-						$body = new CreatePaymentRequest( (string) $square_token, uniqid() );
+						$sq_payment_idem = $order->get_meta( 'square_payment_idempotency_key' );
+						if ( empty( $sq_payment_idem ) ) {
+							$sq_payment_idem = hash( 'sha256', 'sq_payment_' . $order_id . '_' . number_format( $total_amount, 2, '.', '' ) );
+							$order->add_meta( 'square_payment_idempotency_key', $sq_payment_idem );
+						}
+						$body = new CreatePaymentRequest( (string) $square_token, $sq_payment_idem );
 						$body->setAmountMoney( $amount_money );
 						$body->setAutocomplete( true );
 						$body->setCustomerId( $square_customer_id );
@@ -524,7 +539,12 @@ add_action(
 					$amount_money->setAmount( $this->to_square_amount( (float) $amount, $currency ) );
 					$amount_money->setCurrency( $currency );
 
-					$body = new RefundPaymentRequest( uniqid(), $amount_money );
+					$sq_refund_idem = $order->get_meta( 'square_refund_idempotency_key' );
+					if ( empty( $sq_refund_idem ) ) {
+						$sq_refund_idem = hash( 'sha256', 'sq_refund_' . $order_id . '_' . number_format( (float) $amount, 2, '.', '' ) );
+						$order->add_meta( 'square_refund_idempotency_key', $sq_refund_idem );
+					}
+					$body = new RefundPaymentRequest( $sq_refund_idem, $amount_money );
 					$body->setPaymentId( $payment_id );
 					$body->setReason( $reason );
 

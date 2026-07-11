@@ -27,6 +27,26 @@ trait Auth {
 	}
 
 	/**
+	 * Check if the request is from a logged-in user or carries a valid wp_rest nonce.
+	 *
+	 * Used for storefront endpoints that incur real costs (e.g. AI credits) but must
+	 * remain accessible to guest users who loaded the storefront and received a nonce
+	 * via EASYCOMMERCE.nonce. Raw unauthenticated API calls without a nonce are rejected.
+	 *
+	 * @param WP_REST_Request $request The request object.
+	 * @return bool
+	 */
+	public function is_nonce_verified( $request ) {
+		if ( is_user_logged_in() ) {
+			return true;
+		}
+
+		$nonce = $request->get_header( 'x-wp-nonce' ) ?: $request->get_param( '_wpnonce' );
+
+		return ! empty( $nonce ) && wp_verify_nonce( $nonce, 'wp_rest' ) !== false;
+	}
+
+	/**
 	 * Check if the current user is a guest (not logged in).
 	 *
 	 * @param WP_REST_Request $request The request object.

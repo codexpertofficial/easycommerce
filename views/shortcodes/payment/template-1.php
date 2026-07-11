@@ -37,6 +37,7 @@ $stub_cart = new class( $order ) {
 	public function __construct( $order ) { $this->order = $order; }
 	public function has_item_type( $type ) { return $type === 'physical'; }
 	public function get_payment_method() { return ''; }
+	public function get_items() { return array(); }
 };
 ?>
 <script>

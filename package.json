@@ -1,7 +1,8 @@
 {
   "scripts": {
-    "build": "webpack",
-    "watch": "webpack --watch",
+    "build": "webpack --mode production",
+    "build:dev": "webpack --mode development",
+    "watch": "webpack --watch --mode development",
     "minify:js": "find assets -name '*.js' -not -name '*.min.js' -exec terser '{}' --compress --mangle -o '{}' \\;",
     "minify:css": "find assets -name '*.css' -not -name '*.min.css' -exec sh -c 'uglifycss \"{}\" > \"{}.tmp\" && mv \"{}.tmp\" \"{}\"' \\;",
     "minify": "npm run minify:js && npm run minify:css"

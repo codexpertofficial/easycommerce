@@ -9,6 +9,11 @@ $store_name       = Utility::get_option( 'general', 'business', 'store_name' );
 $store_logo       = Utility::get_option( 'general', 'business', 'logo' );
 $full_address     = Utility::get_option( 'general', 'business', 'full_address' );
 
+// AI service connection state - drives the AI tab set (see the tail of this file):
+// disconnected shows a "Connectivity" tab, connected shows "Usage".
+$ec_api           = get_option( 'easycommerce_api' );
+$ec_ai_connected  = ! empty( $ec_api->email );
+
 
 
 
@@ -914,8 +919,8 @@ Best,
 			'label'      => __( 'AI', 'easycommerce' ),
 			'icon'       => EASYCOMMERCE_ASSETS_URL . 'admin/img/settings/ai.png',
 			'hover-icon' => EASYCOMMERCE_ASSETS_URL . 'admin/img/settings/ai-hover.png',
-			// Usage tab is read-only; drop the settings form + Save/Reset there.
-			'hide_form'  => ( isset( $_GET['submenu'] ) && 'usage' === $_GET['submenu'] ),
+			// Usage + Connectivity tabs are read-only; drop the settings form + Save/Reset there.
+			'hide_form'  => in_array( isset( $_GET['submenu'] ) ? sanitize_key( $_GET['submenu'] ) : '', array( 'usage', 'connectivity' ), true ),
 			'submenus'   => array(
 				// 'service' => array(
 				// 	'label'    => __( 'Service Provider', 'easycommerce' ),
@@ -1082,3 +1087,26 @@ Best,
 		)
 	)
 );
+
+// The AI tab set depends on the AI service connection state:
+// - disconnected: prepend a "Connectivity" tab and hide "Usage" (no credits yet).
+// - connected: no "Connectivity"; "Usage" stays last (defined inline above).
+if ( isset( $easycommerce_settings_menus['ai']['submenus'] ) ) {
+	if ( ! $ec_ai_connected ) {
+		unset( $easycommerce_settings_menus['ai']['submenus']['usage'] );
+
+		$easycommerce_settings_menus['ai']['submenus'] = array(
+			'connectivity' => array(
+				'label'        => __( 'Connectivity', 'easycommerce' ),
+				'desc'         => __( 'Connect your store to the EasyCommerce AI service.', 'easycommerce' ),
+				'save_button'  => array( 'show' => false ),
+				'reset_button' => array( 'show' => false ),
+				'sections'     => array(
+					array(
+						'template' => EASYCOMMERCE_PLUGIN_DIR . 'views/settings/ai-connectivity.php',
+					),
+				),
+			),
+		) + $easycommerce_settings_menus['ai']['submenus'];
+	}
+}

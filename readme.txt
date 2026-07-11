@@ -5,7 +5,7 @@ Donate link: https://easycommerce.dev
 Tags: ecommerce, online store, ai ecommerce, store builder, digital downloads
 Requires at least: 6.0
 Tested up to: 7.0
-Stable tag: 1.43
+Stable tag: 1.44
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -514,6 +514,32 @@ Free community support via WordPress.org forums and the [Facebook Community](htt
 13. Integrations - built-in payment gateways (Stripe, PayPal, Square, Braintree, Mollie), CRM and marketing addons, WooCommerce & EDD migration, and more.
 
 == Changelog ==
+
+= 1.44 - 2026-07-11 =
+
+**🔒 Security**
+
+- [security] Square and Mollie payment amounts are now derived entirely from the server-side cart, preventing tampered checkout requests from altering the charged or recorded totals
+- [security] Braintree and Square now charge the order's locked total instead of a live-recomputed cart total at payment time
+- [security] AI Shopping Agent endpoint now requires a valid nonce or logged-in user, so unauthenticated requests can no longer consume AI credits
+
+**💳 Payments**
+
+- [fix] Added deterministic idempotency keys to Mollie and Square payments, preventing duplicate charges on webhook retries and double-submits
+- [fix] Payment no longer processes twice per checkout when a legacy standalone gateway addon (Stripe, PayPal, Square, Cash on Delivery) is active alongside the core gateway
+- [fix] Fixed a fatal error on the payment page when the Subscriptions addon is active
+
+**🛒 Checkout & Shipping**
+
+- [add] Shipping methods now show a loading overlay while rates are being fetched, and rates refresh only after all required address fields are filled
+- [fix] Simplified and fixed the billing-to-shipping address copying at checkout
+
+**🎨 Storefront & Admin**
+
+- [fix] Restored shop block styling and Tailwind classes in the block editor preview
+- [ui] Shop page filter bar now scrolls horizontally on narrow screens, with corrected filter dropdown positioning
+- [add] AI settings now show connection-aware Connectivity and Usage tabs, plus a "Connect AI" admin-bar shortcut when the store is disconnected
+- [fix] Success toaster now appears after connecting AI from the Settings page popup
 
 = 1.43 - 2026-07-06 =
 

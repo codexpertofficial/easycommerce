@@ -173,14 +173,6 @@
     box-shadow: 0px 2px 4.5px 0px var(--color-ec-tertiary);
 }
 
-.scroll-content .easycommerce-attributes-accordion,
-.scroll-content .easycommerce-categories-accordion,
-.scroll-content .easycommerce-brands-accordion,
-.scroll-content .easycommerce-prices-accordion {
-    position: fixed;    
-    z-index: 9999;  
-}
-
 .accordion-content {
     transition: opacity 0.7s ease-in-out, transform 0.7s ease-in-out;
     opacity: 1;
