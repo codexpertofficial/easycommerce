@@ -636,6 +636,14 @@ class Connectivity extends API {
 
 	public function feedback( $request ) {
 
+		$deactivated = (int) $request->get_param( 'deactivated' );
+
+		// Bump the lifetime deactivation counter before building the snapshot so
+		// it reflects the current deactivation (repeat vs first-time churner).
+		if ( $deactivated ) {
+			update_option( 'easycommerce_deactivation_count', (int) get_option( 'easycommerce_deactivation_count', 0 ) + 1 );
+		}
+
 		$args = array(
 			'body' => array(
 				'email'		=> $request->get_param( 'email' ),
@@ -643,9 +651,11 @@ class Connectivity extends API {
 				'home'		=> $request->get_param( 'home' ),
 				'subject'	=> $request->get_param( 'subject' ),
 				'message'	=> $request->get_param( 'message' ),
+				'deactivated' => $deactivated,
 				'activated' => get_option( 'easycommerce_activated' ),
 				'plugins'	=> get_option( 'active_plugins' ),
 				'theme'		=> get_option( 'template' ),
+				'onboarding' => easycommerce_onboarding_snapshot(),
 			),
 		);
 

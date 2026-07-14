@@ -132,23 +132,26 @@ const OrderNotes = ({ orderId }) => {
     };
 
     return (
-        <div className="bg-white rounded-2xl">
-            <div className="flex flex-col border-b border-gray-200 pt-4 px-6">
-                <h3 className="text-xl font-medium leading-8 pb-4">
+        <div className="bg-white">
+            <div className="flex flex-col border-b border-ec-border px-5 py-4 bg-ec-table-bg">
+                <h3 className="text-base font-semibold leading-6 text-ec-body flex items-center gap-2 m-0">
+                    <svg className="w-4 h-4 text-ec-primary" data-slot="icon" fill="none" stroke="currentColor" strokeWidth="1.7" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
+                    </svg>
                     Order Notes
                 </h3>
             </div>
                 {/* Notes List */}
-            <div ref={notesListRef} className="notes-list-container space-y-4 mb-8 max-h-[500px] overflow-y-auto p-4">
+            <div ref={notesListRef} className="notes-list-container space-y-3 max-h-[500px] overflow-y-auto p-5">
                 {loading ? (
-                    <div>Loading notes...</div>
+                    <div className="text-sm text-ec-placeholder">Loading notes...</div>
                 ) : notes.length === 0 ? (
-                    <div className="text-center py-8 text-ec-body">
+                    <div className="text-center py-8 text-ec-placeholder text-sm">
                         No notes found for this order
                     </div>
                 ) : (
                     notes.map((note) => (
-                        <div key={note.id} className="bg-white rounded-lg p-4 border border-[#F0EDFB] hover:shadow-[0px_5px_27.1px_0px_#00000017] relative">
+                        <div key={note.id} className="bg-white rounded-xl p-4 border border-ec-border relative">
                             <div className="flex items-start justify-between mb-3">
                                 <div className="flex items-center space-x-3">
                                     <div className="w-8 h-8 flex items-center justify-center">

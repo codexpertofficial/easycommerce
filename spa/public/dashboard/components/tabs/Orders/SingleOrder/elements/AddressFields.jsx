@@ -11,8 +11,18 @@ const applyFilters = (hookName, ...params) => {
     return params[0];
 };
 
-const AddressSection = ({ title = "Billing", address }) => {
-    if (!address || (Array.isArray(address) && address.length === 0)) return null;
+/**
+ * Renders an address as a label/value grid (no card chrome). Wrapped by
+ * AddressTabs, which supplies the card, header and Billing/Shipping tabs.
+ */
+const AddressFields = ({ address }) => {
+    if (!address || (Array.isArray(address) && address.length === 0)) {
+        return (
+            <div className="w-full p-6 text-sm text-ec-placeholder">
+                No address provided.
+            </div>
+        );
+    }
 
     const addressFields = [
         {
@@ -45,32 +55,23 @@ const AddressSection = ({ title = "Billing", address }) => {
     );
 
     return (
-        <div className="flex flex-col">
-            <div className="w-full p-4 pb-3 border border-b-0 border-ec-border rounded-tl-lg rounded-tr-lg">
-                <h3 className="font-inter easycommerce-dashboard-order-section-title">
-                    {title} Address
-                </h3>
-            </div>
-
-            <div className="w-full h-full flex flex-col gap-1 p-4 pt-10 border border-ec-border rounded-bl-lg rounded-br-lg">
-                {filteredAddressFields.map((field, index) => (
-                    <div
-                        key={index}
-                        className="pb-[3px] flex justify-start gap-1 text-ec-placeholder font-inter text-sm leading-[26px] font-normal"
+        <div className="w-full h-full grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 p-6">
+            {filteredAddressFields.map((field, index) => (
+                <div key={index} className="flex flex-col gap-0.5 font-inter min-w-0">
+                    <p className="text-xs font-medium uppercase tracking-wide text-ec-placeholder">
+                        {field.label}
+                    </p>
+                    <p
+                        className={`text-sm text-ec-body font-medium ${
+                            field.label === "Email" ? "break-all" : ""
+                        }`}
                     >
-                        <p>{field.label}:</p>
-                        <p
-                            className={`text-ec-body ${
-                                field.label === "Email" ? "break-all" : ""
-                            }`}
-                        >
-                            {field.value || "N/A"}
-                        </p>
-                    </div>
-                ))}
-            </div>
+                        {field.value || "N/A"}
+                    </p>
+                </div>
+            ))}
         </div>
     );
 };
 
-export default AddressSection;
+export default AddressFields;

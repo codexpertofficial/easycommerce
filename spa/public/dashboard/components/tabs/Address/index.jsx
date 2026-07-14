@@ -261,7 +261,7 @@ const Address = () => {
 
 	return (
 		<>
-			<h3 class="easycommerce-dashboard-section-title !text-lg sm:!text-2xl">
+			<h3 className="easycommerce-dashboard-section-title !text-lg sm:!text-2xl mb-6">
 				Address
 			</h3>
 			{!isLoading ? (

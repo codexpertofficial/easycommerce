@@ -37,10 +37,9 @@
 
 		<div class="easycommerce-survey-header">
 			<img src="<?php echo EASYCOMMERCE_ASSETS_URL . '/admin/img/survey.gif'; ?>" alt="">
-			<h3><?php printf( esc_html__( 'We\'re sorry to see you go, %s!', 'easycommerce' ), esc_html( $get_user ) ); ?></h3>
-			<h2><?php esc_html_e( 'Would you tell us why you\'re deactivating?', 'easycommerce' ); ?></h2>
-			
-			<!-- <p><?php esc_html_e( 'Building an ecommerce plugin is a big journey, and your thoughtful feedback helps us make EasyCommerce better for everyone.', 'easycommerce' ); ?></p> -->
+			<h2><?php esc_html_e( 'Thanks for trying! What made you deactivate EasyCommerce?', 'easycommerce' ); ?></h2>
+
+			<p><?php esc_html_e( 'Building a store is hard, and so is building the tool behind it. Your honest feedback is what makes EasyCommerce better, and we read every single response.', 'easycommerce' ); ?></p>
 		</div>
 
 		<form method="post" id="easycommerce-survey-form" action="<?php echo esc_attr( $deactivation_url ); ?>">
@@ -50,10 +49,10 @@
 					printf(
 						'<label for="easycommerce-survey-item_%1$s" class="easycommerce-survey-item-wrap">
 								<p>%2$s</p>
-                                <input type="checkbox" name="reason" id="easycommerce-survey-item_%1$s" class="easycommerce-survey-reason easycommerce-input-checkoutbox easycommerce-survey-item-checkbox" value="%1$s">
+                                <input type="radio" name="reason" id="easycommerce-survey-item_%1$s" class="easycommerce-survey-reason easycommerce-input-checkoutbox easycommerce-survey-item-checkbox" value="%1$s" required>
 							</label>',
 						$reason,
-						$label
+						esc_html( $label )
 					)
 					?>
 					<?php
@@ -63,20 +62,29 @@
 
 			<div id="easycommerce-survey-message">
 				<textarea name="message" id="easycommerce-survey-comment" class="easycommerce-survey-comment"
-					placeholder="<?php esc_attr_e( 'Please explain in a few words..', 'easycommerce' ); ?>"></textarea>
+					placeholder="<?php esc_attr_e( 'What would have made you stay? (optional, but it really helps)', 'easycommerce' ); ?>"></textarea>
 			</div>
+
+			<p class="easycommerce-survey-support">
+				<?php
+				printf(
+					/* translators: %s: support link */
+					esc_html__( 'Stuck on something? %s and we\'ll help you sort it out before you go.', 'easycommerce' ),
+					'<a href="https://support.easycommerce.dev" target="_blank" rel="noopener noreferrer">' . esc_html__( 'Reach out to support', 'easycommerce' ) . '</a>'
+				);
+				?>
+			</p>
 
 			<div class="easycommerce-submit-deactive">
 				<div>
-					<a class="easycommerce-survey-skip-deactive" href="<?php echo esc_attr( $deactivation_url ); ?>"
-						class=""><?php echo esc_html( __( 'Skip &amp; Deactivate', 'easycommerce' ) ); ?></a>
+					<a class="easycommerce-survey-skip-deactive" href="<?php echo esc_attr( $deactivation_url ); ?>"><?php echo esc_html( __( 'Deactivate without feedback', 'easycommerce' ) ); ?></a>
 				</div>
 				<div class="easycommerce-survey-bottom-wrapper">
-					<button
+					<button type="button"
 						class="easycommerce-survey-bottom easycommerce-survey-cross-icon-bottom easycommerce-survey-cross"><?php esc_html_e( 'Cancel', 'easycommerce' ); ?></button>
 					<button type="submit"
 						class="easycommerce-survey-bottom">
-						<?php echo esc_attr( __( 'Deactivate &amp; Submit', 'easycommerce' ) ); ?>
+						<?php echo esc_html( __( 'Send &amp; Deactivate', 'easycommerce' ) ); ?>
 						<div class="loader">
 
 						</div>

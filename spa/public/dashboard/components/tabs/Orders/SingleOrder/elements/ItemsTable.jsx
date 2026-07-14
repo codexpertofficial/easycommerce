@@ -35,7 +35,7 @@ const ItemsTable = ({ order }) => {
                                     }`}
                                 >
                                     <span className="flex justify-start items-start gap-7">
-                                        <span className="w-[80px] h-[80px]">
+                                        <span className="w-[80px] h-[80px] shrink-0">
                                             <img
                                                 src={
                                                     item?.variation?.thumbnail?.url ||
@@ -43,7 +43,7 @@ const ItemsTable = ({ order }) => {
                                                     dummyImageUrl
                                                 }
                                                 alt={item?.variation?.name || item?.product?.name || "Product Image"}
-                                                className="w-full h-full rounded pointer-events-none"
+                                                className="w-full h-full rounded-xl border border-ec-border object-cover bg-ec-accent pointer-events-none"
                                             />
                                         </span>
                                         <span className="flex flex-col gap-3">
@@ -70,8 +70,11 @@ const ItemsTable = ({ order }) => {
                                             <a
                                                 href={item.variation.downloads[0].secure_url}
                                                 download
-                                                className="mt-2 inline-block text-sm text-blue-600 hover:underline"
+                                                className="mt-2 inline-flex items-center gap-1.5 text-sm font-medium text-ec-primary no-underline hover:gap-2 transition-all"
                                             >
+                                                <svg className="w-4 h-4" data-slot="icon" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                                                </svg>
                                                 Download {item.variation.downloads[0].filename}
                                             </a>
                                         )}
@@ -210,7 +213,7 @@ const ItemsTable = ({ order }) => {
                     </td>
                     <td className="col-span-2 p-0 pt-5 border-0 border-t border-ec-border"></td>
                     <td className="col-span-2 p-0 pt-5 pr-4 text-right border-0 border-t border-ec-border">
-                        <span className="font-inter font-semibold text-base leading-[26px] text-ec-body">
+                        <span className="font-inter font-bold text-base leading-[26px] text-ec-primary">
                             {order.total}
                         </span>
                     </td>

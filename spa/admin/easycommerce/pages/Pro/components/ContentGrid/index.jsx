@@ -3068,6 +3068,148 @@ const ImageFive = (
 	</svg>
 );
 
+const ImageSix = (
+	<svg
+		className="w-full h-auto"
+		width="476"
+		height="406"
+		viewBox="0 0 476 406"
+		fill="none"
+		xmlns="http://www.w3.org/2000/svg"
+	>
+		<g clip-path="url(#clip0_messenger_card)">
+			<rect width="476" height="406" rx="12" fill="#EBF5FF" />
+			<rect
+				x="55.2771"
+				y="53.2771"
+				width="366.371"
+				height="300.446"
+				rx="6.66239"
+				fill="white"
+			/>
+			<rect
+				x="55.2771"
+				y="53.2771"
+				width="366.371"
+				height="300.446"
+				rx="6.66239"
+				stroke="#BFDFFF"
+				stroke-width="0.554184"
+			/>
+			<path
+				d="M55 58.2046C55 55.3302 57.3302 53 60.2046 53H416.72C419.595 53 421.925 55.3302 421.925 58.2046V88H55V58.2046Z"
+				fill="#0084FF"
+			/>
+			<circle cx="78" cy="70.5" r="9.5" fill="white" />
+			<path
+				d="M71.5 74.5L77.6 68L80.7 71.1L84.5 68L78.4 74.5L75.3 71.4L71.5 74.5Z"
+				fill="#0084FF"
+			/>
+			<rect x="95" y="62.5" width="92" height="7" rx="3.5" fill="white" opacity="0.9" />
+			<rect x="95" y="73.5" width="58" height="5" rx="2.5" fill="white" opacity="0.5" />
+			<rect x="72" y="104" width="172" height="34" rx="10" fill="#E5F2FF" />
+			<rect x="84" y="116.5" width="148" height="9" rx="4.5" fill="#A6D4FF" />
+			<rect x="216" y="150" width="188" height="34" rx="10" fill="#0084FF" />
+			<rect x="228" y="162.5" width="164" height="9" rx="4.5" fill="white" opacity="0.85" />
+			<rect
+				x="72.5"
+				y="196.5"
+				width="215"
+				height="89"
+				rx="9.5"
+				fill="white"
+				stroke="#BFDFFF"
+			/>
+			<rect x="84" y="208" width="66" height="66" rx="8" fill="#EBF5FF" />
+			<circle cx="103" cy="228" r="5" fill="#A6D4FF" />
+			<path d="M88 266L104 248L114 258L124 250L146 270H88V266Z" fill="#A6D4FF" />
+			<rect x="162" y="214" width="112" height="9" rx="4.5" fill="#3F3F51" opacity="0.8" />
+			<rect x="162" y="230" width="76" height="8" rx="4" fill="#A6D4FF" />
+			<rect x="162" y="250" width="64" height="18" rx="9" fill="#0084FF" />
+			<rect x="72" y="304" width="292" height="30" rx="15" fill="#EBF5FF" />
+			<rect x="88" y="315" width="122" height="8" rx="4" fill="#A6D4FF" />
+			<circle cx="390" cy="319" r="15" fill="#0084FF" />
+			<path d="M383.5 319L396.5 312.5L392 319L396.5 325.5L383.5 319Z" fill="white" />
+		</g>
+		<defs>
+			<clipPath id="clip0_messenger_card">
+				<rect width="476" height="406" rx="12" fill="white" />
+			</clipPath>
+		</defs>
+	</svg>
+);
+
+const ImageSeven = (
+	<svg
+		className="w-full h-auto"
+		width="476"
+		height="406"
+		viewBox="0 0 476 406"
+		fill="none"
+		xmlns="http://www.w3.org/2000/svg"
+	>
+		<g clip-path="url(#clip0_whatsapp_card)">
+			<rect width="476" height="406" rx="12" fill="#EDFAF2" />
+			<rect
+				x="55.2771"
+				y="53.2771"
+				width="366.371"
+				height="300.446"
+				rx="6.66239"
+				fill="white"
+			/>
+			<rect
+				x="55.2771"
+				y="53.2771"
+				width="366.371"
+				height="300.446"
+				rx="6.66239"
+				stroke="#BFE8D0"
+				stroke-width="0.554184"
+			/>
+			<path
+				d="M55 58.2046C55 55.3302 57.3302 53 60.2046 53H416.72C419.595 53 421.925 55.3302 421.925 58.2046V88H55V58.2046Z"
+				fill="#25D366"
+			/>
+			<circle cx="78" cy="70.5" r="9.5" fill="white" />
+			<path
+				d="M74.6 65.8C74.1 65.3 73.3 65.3 72.8 65.8L71.9 66.7C71.1 67.5 71 68.7 71.6 69.7C73.3 72.5 75.5 74.7 78.3 76.4C79.3 77 80.5 76.9 81.3 76.1L82.2 75.2C82.7 74.7 82.7 73.9 82.2 73.4L80.4 71.6C80 71.2 79.3 71.1 78.8 71.4L77.9 71.9C76.8 71.2 76 70.4 75.3 69.3L75.8 68.4C76.1 67.9 76 67.2 75.6 66.8L74.6 65.8Z"
+				fill="#25D366"
+			/>
+			<rect x="95" y="62.5" width="92" height="7" rx="3.5" fill="white" opacity="0.9" />
+			<rect x="95" y="73.5" width="58" height="5" rx="2.5" fill="white" opacity="0.5" />
+			<rect x="72" y="104" width="172" height="34" rx="10" fill="#E7F8EF" />
+			<rect x="84" y="116.5" width="148" height="9" rx="4.5" fill="#A8E6C5" />
+			<rect x="216" y="150" width="188" height="34" rx="10" fill="#25D366" />
+			<rect x="228" y="162.5" width="164" height="9" rx="4.5" fill="white" opacity="0.85" />
+			<rect
+				x="72.5"
+				y="196.5"
+				width="215"
+				height="89"
+				rx="9.5"
+				fill="white"
+				stroke="#BFE8D0"
+			/>
+			<rect x="84" y="208" width="66" height="66" rx="8" fill="#EDFAF2" />
+			<circle cx="103" cy="228" r="5" fill="#A8E6C5" />
+			<path d="M88 266L104 248L114 258L124 250L146 270H88V266Z" fill="#A8E6C5" />
+			<rect x="162" y="214" width="112" height="9" rx="4.5" fill="#3F3F51" opacity="0.8" />
+			<rect x="162" y="230" width="76" height="8" rx="4" fill="#A8E6C5" />
+			<rect x="162" y="250" width="64" height="18" rx="9" fill="#25D366" />
+			<rect x="72" y="304" width="292" height="30" rx="15" fill="#EDFAF2" />
+			<rect x="88" y="315" width="122" height="8" rx="4" fill="#A8E6C5" />
+			<circle cx="390" cy="319" r="15" fill="#25D366" />
+			<path d="M383.5 319L396.5 312.5L392 319L396.5 325.5L383.5 319Z" fill="white" />
+		</g>
+		<defs>
+			<clipPath id="clip0_whatsapp_card">
+				<rect width="476" height="406" rx="12" fill="white" />
+			</clipPath>
+		</defs>
+	</svg>
+);
+
 const ContentGrid = () => {
 	const [showFeedback, setShowFeedback] = useState(false);
 	const contents = [
@@ -3082,6 +3224,18 @@ const ContentGrid = () => {
 			title: 'Sell Licensed Products',
 			desc: 'Automate license generation, activation, and renewals. It’s perfect for digital products and software sales.',
 			comingSoon: false,
+		},
+		{
+			image: ImageSix,
+			title: 'Sell on Facebook Messenger',
+			desc: 'Bring your AI shopping assistant to Messenger, so customers can discover products and place orders right in the chat.',
+			comingSoon: false,
+		},
+		{
+			image: ImageSeven,
+			title: 'Sell on WhatsApp',
+			desc: 'Let customers chat with your AI shopping assistant on WhatsApp, from product discovery to checkout in the app they use every day.',
+			comingSoon: true,
 		},
 		{
 			image: ImageThree,

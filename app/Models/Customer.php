@@ -6,6 +6,7 @@ defined( 'ABSPATH' ) || exit;
 use EasyCommerce\Abstracts\User;
 use EasyCommerce\Helpers\Utility;
 use EasyCommerce\Models\Order;
+use EasyCommerce\Models\Product_Variation;
 use WP_User_Query as User_Query;
 
 /**
@@ -236,12 +237,15 @@ class Customer extends User {
 	}
 
 	/**
-	 * Get completed orders
+	 * Get the customer's orders filtered by one or more statuses.
 	 *
-	 * @param int $count
+	 * @param string|array $status One status or a list of statuses.
+	 * @param int          $count  Number of orders to return (-1 for all).
 	 * @return array
 	 */
-	public function get_orders_by_status( $count = -1 ) {
+	public function get_orders_by_status( $status, $count = -1 ) {
+		$statuses = (array) $status;
+
 		$result = Order::list(
 			array(
 				'customer_id' => $this->id,
@@ -249,7 +253,89 @@ class Customer extends User {
 			)
 		);
 
-		return $result['orders'];
+		return array_values(
+			array_filter(
+				$result['orders'],
+				function ( $order ) use ( $statuses ) {
+					return in_array( $order['status'], $statuses, true );
+				}
+			)
+		);
+	}
+
+	/**
+	 * Order statuses that entitle a customer to access digital downloads.
+	 *
+	 * Excludes unpaid (`pending`), aborted (`cancelled`, `on_hold`) and
+	 * fully-refunded (`refunded`) orders. A paid order that is still
+	 * `processing` counts, so buyers are not blocked before completion.
+	 *
+	 * @since 1.32
+	 * @return array
+	 */
+	public static function downloadable_order_statuses() {
+		/**
+		 * Filters the order statuses that grant digital-download access.
+		 *
+		 * @since 1.32
+		 * @param array $statuses The entitled order statuses.
+		 */
+		return apply_filters(
+			'easycommerce_downloadable_order_statuses',
+			array( 'processing', 'completed', 'partially_refunded' )
+		);
+	}
+
+	/**
+	 * Get the customer's downloadable files, keyed by media ID.
+	 *
+	 * Single source of truth for download entitlement: only orders whose
+	 * status is in {@see self::downloadable_order_statuses()} are considered,
+	 * and only `digital` variations contribute files. Used by both the
+	 * dashboard list (`/me/downloads`) and the secure-download handler so the
+	 * two can never disagree.
+	 *
+	 * @since 1.32
+	 * @return array<int,object> media_id => decorated download object.
+	 */
+	public function get_downloads() {
+		$statuses      = self::downloadable_order_statuses();
+		$downloads_map = array();
+
+		foreach ( $this->get_orders() as $order ) {
+			if ( ! in_array( $order['status'], $statuses, true ) ) {
+				continue;
+			}
+
+			$order_obj = new Order( $order['id'] );
+
+			foreach ( $order_obj->get_items() as $order_item ) {
+				$variation = new Product_Variation( $order_item->variation_id );
+
+				if ( 'digital' !== $variation->get_type() ) {
+					continue;
+				}
+
+				$result = $variation->get_downloads();
+
+				if ( empty( $result['downloads'] ) ) {
+					continue;
+				}
+
+				foreach ( $result['downloads'] as $download ) {
+					$media_id = (int) $download->media_id;
+
+					if ( isset( $downloads_map[ $media_id ] ) ) {
+						continue;
+					}
+
+					$download->order_id         = $order['id'];
+					$downloads_map[ $media_id ] = $download;
+				}
+			}
+		}
+
+		return $downloads_map;
 	}
 
 	/**

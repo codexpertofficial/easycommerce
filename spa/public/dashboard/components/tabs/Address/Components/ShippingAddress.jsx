@@ -11,14 +11,17 @@ const ShippingAddress = ({
 }) => {
 	return (
 		<form onSubmit={handleShippingFormSubmit}>
-			<div className="w-full h-[57px] flex items-center px-5  border border-ec-border rounded-tl-lg rounded-tr-lg">
+			<div className="bg-white border border-ec-border rounded-2xl overflow-hidden shadow-[0_2px_16px_-8px_rgba(18,3,80,0.10)]">
+			<div className="w-full flex items-center gap-2 px-6 py-4 border-b border-ec-border bg-ec-table-bg">
+				<svg className="w-[18px] h-[18px] text-ec-primary" data-slot="icon" fill="none" stroke="currentColor" strokeWidth="1.7" viewBox="0 0 24 24">
+					<path strokeLinecap="round" strokeLinejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
+				</svg>
 				<h3 className="easycommerce-dashboard-address-title">
 					Shipping Address
 				</h3>
 			</div>
 			<div
-				className="grid grid-cols-1 sm:grid-cols-2 gap-4 px-5 pt-6 pb-[30px] border border-ec-border border-t-0 
-                rounded-bl-lg rounded-br-lg">
+				className="grid grid-cols-1 sm:grid-cols-2 gap-5 p-6">
 				<div className="col-span-1 flex flex-col gap-2 items-start">
 					<label
 						htmlFor="shipping_first_name"
@@ -227,12 +230,13 @@ const ShippingAddress = ({
 					/>
 				</div>
 			</div>
-			<div className="easycommerce-dashboard-form-submit w-full mt-4 flex justify-end items-center">
+			<div className="flex justify-end items-center px-6 py-4 border-t border-ec-border">
 				<button
 					className="easycommerce-dashboard-form-btn save"
 					type="submit">
 					Update Address
 				</button>
+			</div>
 			</div>
 		</form>
 	);

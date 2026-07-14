@@ -93,142 +93,143 @@ const Sidebar = ({ activeTab }) => {
     }, []);
 
     return (
-        <div className="dashboard-sidebar w-full ec-db-md:w-[268px] flex flex-col sm:gap-10 gap-1 border-r border-r-ec-border p-[26px]">
-            <div className="w-full pb-[15px] flex flex-col justify-center items-center gap-3 border-b border-b-ec-border">
-                <div className="border border-[#F8F8F8] p-1 rounded-full inline-block mb-[10px]">
+        <div className="dashboard-sidebar w-full ec-db-md:w-[268px] flex flex-col sm:gap-8 gap-1 bg-white border-r border-r-ec-border p-5 sm:p-6">
+            <div className="w-full pb-6 flex flex-col justify-center items-center gap-3 border-b border-b-ec-border">
+                <div className="p-1 rounded-full inline-block mb-[6px] border border-ec-border bg-white">
                     <img
                         src={userInfo.image}
                         alt="User Profile Image"
-                        className="w-[118px] h-[118px] rounded-full object-fill"
+                        className="w-[104px] h-[104px] rounded-full object-cover"
                     />
                 </div>
-                <h3 className="font-inter dashboard-sidebar-title">
+                <h3 className="font-inter dashboard-sidebar-title text-center">
                     {userInfo.name}
                 </h3>
             </div>
 
             <div
-                className="w-full flex flex-col"
+                className="w-full flex flex-col gap-1"
                 id="easycommerce-sidebar-menu-list"
             >
-                {filteredSidemenuList.map((item) => (
-                    <div
-                        key={item.id}
-                        className={
-                            item.subMenu ? "easycommerce-sidebar-submenu" : ""
-                        }
-                    >
-                        {item.id === "logout" ? (
-                            <a
-                                href={EASYCOMMERCE.logout_url}
-                                className={`easycommerce-sidebar-btn w-full p-4 gap-4 cursor-pointer text-ec-placeholder`}
-                            >
-                                <span className="flex justify-start items-center gap-4">
-                                    <img
-                                        src={
-                                            activeTab === item.id
-                                                ? item.activeIcon
-                                                : item.icon
-                                        }
-                                        alt={item.title}
-                                        className="w-[14px] h-[14px] pointer-events-none"
-                                    />
-                                    <span
-                                        className={`${
-                                            activeTab === item.id
-                                                ? "text-ec-body"
-                                                : "text-ec-placeholder"
-                                        } font-inter font-medium text-base leading-[26px]`}
-                                    >
-                                        {item.title}
-                                    </span>
-                                </span>
-                            </a>
-                        ) : (
-                            <Link
-                                to={ item.id === "dashboard" ? "/" : `/${item.id}`}
-                                className="easycommerce-sidebar-btn w-full p-4  gap-4 cursor-pointer"
-                            >
-                                <span className="flex justify-start items-center gap-4">
-                                    <img
-                                        src={
-                                            activeTab === item.id ||
-                                            (item.subMenu &&
-                                                item.subMenuList.filter(
-                                                    (subItem) =>
-                                                        subItem.id === activeTab
-                                                ).length > 0)
-                                                ? item.activeIcon
-                                                : item.icon
-                                        }
-                                        alt={item.title}
-                                        className="w-[14px] h-[14px] pointer-events-none"
-                                    />
-                                    <span
-                                        className={`${
-                                            activeTab === item.id ||
-                                            (item.subMenu &&
-                                                item.subMenuList.filter(
-                                                    (subItem) =>
-                                                        subItem.id === activeTab
-                                                ).length > 0)
-                                                ? "text-ec-body"
-                                                : "text-ec-placeholder"
-                                        } font-inter font-medium text-base leading-[26px]`}
-                                    >
-                                        {item.title}
-                                    </span>
-                                </span>
-                                {item.subMenu && (
-                                    <img
-                                        src={
-                                            activeTab === item.id ||
-                                            (item.subMenu &&
-                                                item.subMenuList.filter(
-                                                    (subItem) =>
-                                                        subItem.id === activeTab
-                                                ).length > 0)
-                                                ? activeArrowDownIcon
-                                                : defaultArrowDownIcon
-                                        }
-                                        alt="arrow"
-                                        className="w-[15px] h-2"
-                                    />
-                                )}
-                            </Link>
-                        )}
+                {filteredSidemenuList.map((item) => {
+                    const isActive =
+                        activeTab === item.id ||
+                        (item.subMenu &&
+                            item.subMenuList.some(
+                                (subItem) => subItem.id === activeTab
+                            ));
 
-                                {item.subMenu && (
-                                    <div
-                                        id={`easycommerce-submenu-${item.id}`}
-                                        className={twMerge(
-                                            `easycommerce-submenu-wrapper pl-6`,
-                                           ( item.subMenuList.filter((subItem) => subItem.id === activeTab).length > 0 ) ? "block" : "hidden"
-                                        )}
-                                    >
-                                        <div className="border-l border-l-ec-border">
-                                            {item.subMenuList.map((subItem) => (
+                    const isLogout = item.id === "logout";
+
+                    const labelClass = `font-inter font-medium text-base leading-[26px] ${
+                        isActive ? "text-ec-primary" : "text-ec-placeholder"
+                    }`;
+
+                    const btnClass = `easycommerce-sidebar-btn w-full p-3 sm:p-[14px] gap-4 cursor-pointer rounded-xl transition-colors duration-200 hover:bg-ec-active ${
+                        isActive && !isLogout ? "bg-ec-active" : ""
+                    }`;
+
+                    const iconSrc = isActive ? item.activeIcon : item.icon;
+
+                    return (
+                        <div
+                            key={item.id}
+                            className={
+                                item.subMenu ? "easycommerce-sidebar-submenu" : ""
+                            }
+                        >
+                            {isLogout ? (
+                                <a
+                                    href={EASYCOMMERCE.logout_url}
+                                    className={`easycommerce-sidebar-btn w-full p-3 sm:p-[14px] gap-4 cursor-pointer rounded-xl transition-colors duration-200 hover:bg-ec-red-bg group`}
+                                >
+                                    <span className="flex justify-start items-center gap-4">
+                                        <img
+                                            src={iconSrc}
+                                            alt={item.title}
+                                            className="w-[16px] h-[16px] pointer-events-none"
+                                        />
+                                        <span className="font-inter font-medium text-base leading-[26px] text-ec-placeholder group-hover:text-ec-red">
+                                            {item.title}
+                                        </span>
+                                    </span>
+                                </a>
+                            ) : (
+                                <Link
+                                    to={item.id === "dashboard" ? "/" : `/${item.id}`}
+                                    className={btnClass}
+                                >
+                                    <span className="flex justify-start items-center gap-4">
+                                        <img
+                                            src={iconSrc}
+                                            alt={item.title}
+                                            className="w-[16px] h-[16px] pointer-events-none"
+                                        />
+                                        <span className={labelClass}>
+                                            {item.title}
+                                        </span>
+                                    </span>
+                                    {item.subMenu && (
+                                        <img
+                                            src={
+                                                isActive
+                                                    ? activeArrowDownIcon
+                                                    : defaultArrowDownIcon
+                                            }
+                                            alt="arrow"
+                                            className={`w-[15px] h-2 transition-transform duration-200 ${
+                                                isActive ? "rotate-180" : ""
+                                            }`}
+                                        />
+                                    )}
+                                </Link>
+                            )}
+
+                            {item.subMenu && (
+                                <div
+                                    id={`easycommerce-submenu-${item.id}`}
+                                    className={twMerge(
+                                        `easycommerce-submenu-wrapper pl-6 pt-1`,
+                                        item.subMenuList.some(
+                                            (subItem) => subItem.id === activeTab
+                                        )
+                                            ? "block"
+                                            : "hidden"
+                                    )}
+                                >
+                                    <div className="flex flex-col gap-1">
+                                        {item.subMenuList.map((subItem) => {
+                                            const subActive =
+                                                subItem.id === activeTab;
+
+                                            return (
                                                 <Link
                                                     key={subItem.id}
-                                                    className={`easycommerce-submenu-btn text-left rtl:text-right w-full block px-6 py-3 cursor-pointer group`}
+                                                    className={`easycommerce-submenu-btn text-left rtl:text-right w-full block px-4 py-2 cursor-pointer group rounded-xl transition-colors duration-200 ${
+                                                        subActive
+                                                            ? "bg-ec-active"
+                                                            : "hover:bg-ec-active"
+                                                    }`}
                                                     to={subItem.id}
                                                 >
                                                     <span
                                                         className={`${
-                                                            subItem.id === activeTab
-                                                                ? "text-ec-body"
+                                                            subActive
+                                                                ? "text-ec-primary font-medium"
                                                                 : "text-ec-placeholder"
-                                                        } font-inter font-normal text-base leading-[26px]`}
+                                                        } font-inter text-base leading-[26px]`}
                                                     >
                                                         {subItem.label}
                                                     </span>
                                                 </Link>
-                                            ))}
-                                        </div>
+                                            );
+                                        })}
                                     </div>
-                                )}
-                    </div>
-                ))}
+                                </div>
+                            )}
+                        </div>
+                    );
+                })}
             </div>
         </div>
     );

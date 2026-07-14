@@ -933,6 +933,10 @@ class Product extends Model {
 							}
 						}
 					}
+					// Replace variation downloads: clear existing rows first so removed
+					// files don't persist and re-sent files don't duplicate on save.
+					$product_variation_downloads->delete_by_variation( $variation_id );
+
 					// Add variation downloads
 					if ( ! empty( $variation_data['downloads'] ) && is_array( $variation_data['downloads'] ) ) {
 						foreach ( $variation_data['downloads'] as $download ) {

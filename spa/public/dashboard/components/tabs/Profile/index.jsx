@@ -141,10 +141,10 @@ const Profile = () => {
                     </div>
 
                     <form
-                        className="pt-[60px] flex flex-col gap-12"
+                        className="pt-10 flex flex-col gap-8"
                         onSubmit={handleFormSubmit}
                     >
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 bg-white border border-ec-border rounded-2xl p-6 shadow-[0_2px_16px_-8px_rgba(18,3,80,0.10)]">
                             <div className="col-span-1 flex flex-col gap-2 items-start">
                                 <label
                                     htmlFor="fname"
@@ -301,7 +301,7 @@ const Profile = () => {
                             </div>
                         </div>
 
-                        <div className="easycommerce-dashboard-form-submit flex justify-end items-center gap-[17px]">
+                        <div className="flex justify-end items-center gap-3">
                             <button
                                 className="easycommerce-dashboard-form-btn"
                                 type="button"

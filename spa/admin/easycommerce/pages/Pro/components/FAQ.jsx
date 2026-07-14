@@ -18,6 +18,10 @@ const FAQ = () => {
 			answer: 'EasyCommerce Pro enables access to premium addons such as "License Manager" for managing digital product licenses and "Subscriptions" for handling recurring payments. These addons provide powerful tools to expand your store\'s functionality and revenue streams.',
 		},
 		{
+			question: 'Can customers shop through Messenger or WhatsApp?',
+			answer: 'Yes. The Messenger Integration addon connects your Facebook Page to the EasyCommerce AI shopping assistant, so customers can discover products, check stock, and place orders without leaving the chat. WhatsApp integration is coming soon and will work the same way.',
+		},
+		{
 			question: 'Are future pro addons included?',
 			answer: 'Yes, all future pro addons will be included automatically with your EasyCommerce Pro subscription. As we release new premium features and addons, you\'ll have immediate access without any additional purchases.',
 		},

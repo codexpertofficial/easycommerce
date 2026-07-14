@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { __ } from '@wordpress/i18n';
 import TextField from '../../../../../../../common/components/inputs/TextField';
 const loader = `${EASYCOMMERCE.assets}admin/img/loader.gif`;
@@ -88,14 +88,21 @@ const FileUpload = ({ wpNonce, setDownloads, prevFiles }) => {
         }
     }, [prevFiles]);
 
+    const didMount = useRef(false);
     useEffect(() => {
-        if (uploadedFiles.length > 0) {
-            const files = uploadedFiles.map((file) => ({
-                media_id: file.id,
-                name: file.filename,
-            }));
-            setDownloads(files);
+        // Skip the initial mount so we don't clobber the parent's loaded
+        // downloads with [] before prevFiles has finished loading. After that,
+        // always propagate — including the empty case, so removing the last
+        // file actually clears it from the save payload.
+        if (!didMount.current) {
+            didMount.current = true;
+            return;
         }
+        const files = uploadedFiles.map((file) => ({
+            media_id: file.id,
+            name: file.filename,
+        }));
+        setDownloads(files);
     }, [uploadedFiles]);
 
     const handleDrop = async (e) => {

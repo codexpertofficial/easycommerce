@@ -1585,6 +1585,110 @@ function easycommerce_get_ai_credits() {
     return apply_filters( 'easycommerce_ai_credits', $credits );
 }
 
+/**
+ * Server-side onboarding/engagement snapshot for the deactivation survey.
+ *
+ * Every value is derived from existing WordPress state (options, post counts,
+ * the ec_orders table) — nothing is tracked client-side, so it can't be spoofed
+ * and costs the user no effort. Booleans are emitted as 'yes'/'no' strings and
+ * counts are bucketed so the values map cleanly onto FluentCRM custom-field
+ * filters/segments on the hub. Attached to the feedback body by
+ * Connectivity::feedback() and forwarded to the CRM as ec_* custom fields.
+ *
+ * @return array
+ */
+function easycommerce_onboarding_snapshot() {
+
+	// is_plugin_active() lives in wp-admin includes, which are NOT loaded in the
+	// REST context this runs in.
+	if ( ! function_exists( 'is_plugin_active' ) ) {
+		require_once ABSPATH . 'wp-admin/includes/plugin.php';
+	}
+
+	$yes_no = function ( $flag ) {
+		return $flag ? 'yes' : 'no';
+	};
+
+	$bucket = function ( $n ) {
+		$n = (int) $n;
+		if ( $n <= 0 ) {
+			return '0';
+		}
+		if ( $n <= 10 ) {
+			return '1-10';
+		}
+		if ( $n <= 100 ) {
+			return '11-100';
+		}
+		return '100+';
+	};
+
+	global $wpdb;
+
+	$activated       = (int) get_option( 'easycommerce_activated' );
+	$order_count     = (int) $wpdb->get_var( "SELECT COUNT(*) FROM {$wpdb->prefix}ec_orders" );
+	$product_count   = (int) wp_count_posts( 'product' )->publish;
+	$active_gateways = easycommerce_active_payment_methods();
+	$ai              = easycommerce_ai_data();
+	$api             = get_option( 'easycommerce_api' );
+
+	// Recency: days since the most recent order. Distinguishes "tried and
+	// abandoned day one" from "used for months, then left" — tenure alone can't.
+	$last_order = $wpdb->get_var( "SELECT MAX(created_at) FROM {$wpdb->prefix}ec_orders" );
+	$last_order_days = $last_order ? (int) floor( ( time() - strtotime( $last_order ) ) / DAY_IN_SECONDS ) : null;
+
+	// Active plugins as a CSV of slugs (dir/file.php → dir), for conflict analysis.
+	$active_plugins = array_map(
+		function ( $plugin ) {
+			return strtok( $plugin, '/' );
+		},
+		(array) get_option( 'active_plugins', array() )
+	);
+
+	// The four onboarding milestones (unordered — a user can hit them in any order).
+	$wizard_completed   = (bool) get_option( 'easycommerce-setup_wizard' );
+	$payment_configured = ! empty( $active_gateways );
+	$has_product        = $product_count > 0;
+	$ai_connected       = ! empty( $api->email );
+
+	// A convenience 0-4 score for coarse "stalled user" segments; the per-step
+	// booleans below are what real segmentation filters on.
+	$score = (int) $wizard_completed + (int) $payment_configured + (int) $has_product + (int) $ai_connected;
+
+	$snapshot = array(
+		'days_active'        => $activated ? (int) floor( ( time() - $activated ) / DAY_IN_SECONDS ) : 0,
+		'wizard_completed'   => $yes_no( $wizard_completed ),
+		'payment_configured' => $yes_no( $payment_configured ),
+		'has_product'        => $yes_no( $has_product ),
+		'ai_connected'       => $yes_no( $ai_connected ),
+		'onboarding_score'   => $score,
+		'last_order_days'    => $last_order_days,
+		'product_bucket'     => $bucket( $product_count ),
+		'order_bucket'       => $bucket( $order_count ),
+		'deactivation_count' => (int) get_option( 'easycommerce_deactivation_count', 0 ),
+		'active_gateways'    => implode( ',', (array) $active_gateways ),
+		'ai_plan'            => isset( $ai['plan'] ) ? $ai['plan'] : 'free',
+		'ai_credits_used'    => isset( $ai['used'] ) ? (int) $ai['used'] : 0,
+		'addons'             => implode( ',', array_keys( (array) get_option( 'easycommerce_addons', array() ) ) ),
+		'active_plugins'     => implode( ',', $active_plugins ),
+		'active_theme'       => (string) get_option( 'stylesheet' ),
+		'plugin_version'     => defined( 'EASYCOMMERCE_VERSION' ) ? EASYCOMMERCE_VERSION : '',
+		'wp_version'         => get_bloginfo( 'version' ),
+		'php_version'        => PHP_VERSION,
+		'locale'             => get_locale(),
+		'multisite'          => $yes_no( is_multisite() ),
+		'woo_active'         => $yes_no( is_plugin_active( 'woocommerce/woocommerce.php' ) ),
+	);
+
+	/**
+	 * Filters the deactivation onboarding snapshot before it is sent to the hub.
+	 *
+	 * @since 1.45
+	 * @param array $snapshot The derived onboarding/engagement values.
+	 */
+	return apply_filters( 'easycommerce_onboarding_snapshot', $snapshot );
+}
+
 function easycommerce_deduct_ai_credits( $deduct = 1, $credits = null ) {
 
 	if( is_null( $credits ) ) {

@@ -47,22 +47,21 @@ const Summery = ({ data }) => {
                 Summary
             </h3>
 
-            <div className="easycommerce-dashboard-summery-list grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div className="easycommerce-dashboard-summery-list grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {summaryItems.map((item, index) => (
                     <div
                         key={index}
-                        className="easycommerce-summary-item col-span-1 flex justify-start items-center gap-4 px-4 py-[14px] border 
-                        border-ec-border rounded-[10px]"
+                        className="easycommerce-summary-item col-span-1 flex justify-start items-center gap-4 p-5 rounded-2xl border border-ec-border bg-white transition-shadow duration-200 hover:shadow-[0_4px_20px_-12px_rgba(18,3,80,0.16)]"
                     >
                         <img
                             src={item.icon}
                             alt="icon"
-                            className="w-10 h-[37px] pointer-events-none"
+                            className="w-11 h-11 object-contain pointer-events-none shrink-0"
                         />
 
-                        <div>
-                            <h4 className="font-inter">{item.value}</h4>
-                            <p className="font-inter">{item.title}</p>
+                        <div className="flex flex-col gap-0.5 min-w-0">
+                            <h4 className="font-inter font-semibold text-lg leading-tight text-ec-title truncate">{item.value}</h4>
+                            <p className="font-inter text-sm font-medium text-ec-light-black">{item.title}</p>
                         </div>
                     </div>
                 ))}

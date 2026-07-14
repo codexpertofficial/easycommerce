@@ -6,7 +6,6 @@ defined( 'ABSPATH' ) || exit;
 use EasyCommerce\Abstracts\API;
 use EasyCommerce\Models\Order;
 use EasyCommerce\Models\Transaction;
-use EasyCommerce\Models\Product_Variation;
 use EasyCommerce\Models\Customer;
 use EasyCommerce\Abstracts\User;
 use EasyCommerce\Helpers\Utility;
@@ -276,31 +275,14 @@ class Profile extends API {
 			return $this->response_success( array( 'message' => __( 'Customer not found.', 'easycommerce' ) ) );
 		}
 
-		$downloads_map = array();
-		foreach ( $customer->get_orders() as $order ) {
-			if ( $order['status'] !== 'completed' ) {
-				continue;
-			}
-			
-			$order_obj = new Order( $order['id'] );
+		// Shared entitlement: paid orders, digital variations, keyed by media_id.
+		$downloads_map = $customer->get_downloads();
 
-			foreach ( $order_obj->get_items() as $order_item ) {
-				$variation_obj 		= new Product_Variation( $order_item->variation_id );
-				$variation_result 	= $variation_obj->get_downloads();
-
-				if ( ! empty( $variation_result['downloads'] ) ) {
-					foreach ( $variation_result['downloads'] as $variation_download ) {
-						$media_id = $variation_download->media_id;
-						if ( ! isset( $downloads_map[ $media_id ] ) ) {
-							$variation_download->type     = easycommerce_get_file_type( $variation_download->filename );
-							$variation_download->order_id = $order['id'];
-							$variation_download->url      = easycommerce_secure_download( $variation_download->media_id );
-
-							$downloads_map[ $media_id ] = $variation_download;
-						}
-					}
-				}
-			}
+		foreach ( $downloads_map as $download ) {
+			$download->type = easycommerce_get_file_type( $download->filename );
+			// Expose only the gated URL; never leak the raw public attachment URL.
+			$download->url = easycommerce_secure_download( $download->media_id );
+			unset( $download->secure_url );
 		}
 
 		$all_downloads 	 	 = array_values( $downloads_map );

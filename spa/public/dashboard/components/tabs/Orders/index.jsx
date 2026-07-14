@@ -1,19 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import TableSkeleton from '../../../../../admin/common/TableSkeleton';
 import Pagination from '../../../../../admin/common/components/Pagination';
-
-const viewIcon = `${EASYCOMMERCE.assets}public/img/icons/dashboard-view-icon.png`;
-
-const statusColors = {
-    pending: { color: '#F68D2B', bgColor: '#F68D2B0D' },
-    processing: { color: '#344BFD', bgColor: '#009D680D' },
-    cancelled: { color: '#EF4444', bgColor: '#EF44440D' },
-    completed: { color: '#009D68', bgColor: '#344BFD0D' },
-    on_hold: { color: '#555DFF', bgColor: '#555DFF1A' },
-    partially_refunded: { color: '#F89102', bgColor: '#F891021A' },
-    refunded: { color: '#FF001F', bgColor: '#FF001F1A' },
-    failed: { color: '#EF4444', bgColor: '#EF44440D' },
-};
+import StatusBadge from '../../common/StatusBadge';
+import ViewButton from '../../common/ViewButton';
+import EmptyState from '../../common/EmptyState';
 
 const Orders = () => {
     const [totalPage, setTotalPage] = useState(1);
@@ -72,105 +62,77 @@ const Orders = () => {
                     {!isLoading ? (
                         <>
                             {orders.length > 0 ? (
-                                <table className="w-full border-none m-0">
-                                    <thead className="easycommerce-dash-roth">
-                                        <tr className="h-[42px]">
-                                            <th className="font-inter font-medium text-left rtl:text-right rtl:pr-4 text-base leading-[26px] text-ec-placeholder border-b border-b-ec-border border-r-0 pl-0">
-                                                Order ID
-                                            </th>
-                                            <th className="font-inter font-medium text-left rtl:text-right text-base leading-[26px] text-ec-placeholder border-b border-b-ec-border border-r-0">
-                                                Date
-                                            </th>
-                                            <th className="font-inter font-medium text-left rtl:text-right text-base leading-[26px] text-ec-placeholder border-b border-b-ec-border border-r-0">
-                                                Amount
-                                            </th>
-                                            <th className="font-inter font-medium text-left rtl:text-right text-base leading-[26px] text-ec-placeholder border-b border-b-ec-border border-r-0">
-                                                Status
-                                            </th>
-                                            <th className="font-inter font-medium text-left rtl:text-right text-base leading-[26px] text-ec-placeholder border-b border-b-ec-border border-r-0">
-                                                Action
-                                            </th>
-                                        </tr>
-                                    </thead>
+                                <div className="w-full border border-ec-border rounded-2xl overflow-x-auto bg-white">
+                                    <table className="w-full min-w-[500px] border-none m-0">
+                                        <thead className="easycommerce-dash-roth bg-ec-table-bg">
+                                            <tr>
+                                                <th className="font-inter font-semibold text-xs uppercase tracking-wide text-left rtl:text-right text-ec-light-black py-3.5 px-5 border-0">
+                                                    Order ID
+                                                </th>
+                                                <th className="font-inter font-semibold text-xs uppercase tracking-wide text-left rtl:text-right text-ec-light-black py-3.5 px-5 border-0">
+                                                    Date
+                                                </th>
+                                                <th className="font-inter font-semibold text-xs uppercase tracking-wide text-left rtl:text-right text-ec-light-black py-3.5 px-5 border-0">
+                                                    Amount
+                                                </th>
+                                                <th className="font-inter font-semibold text-xs uppercase tracking-wide text-left rtl:text-right text-ec-light-black py-3.5 px-5 border-0">
+                                                    Status
+                                                </th>
+                                                <th className="font-inter font-semibold text-xs uppercase tracking-wide text-right rtl:text-left text-ec-light-black py-3.5 px-5 border-0">
+                                                    Action
+                                                </th>
+                                            </tr>
+                                        </thead>
 
-                                    <tbody className="easycommerce-dash-roth">
-                                        {orders.map((order, index) => {
-                                            const date =
-                                                order.created_at.split(' ')[0];
-                                            const status =
-                                                order.status
-                                                    .charAt(0)
-                                                    .toUpperCase() +
-                                                order.status.slice(1);
-                                            const statusColor =
-                                                statusColors[order.status]?.color ||
-                                                '#000';
-                                            const statusBgColor =
-                                                statusColors[order.status]
-                                                    ?.bgColor || '#0000';
-
-                                            return (
+                                        <tbody className="easycommerce-dash-roth">
+                                            {orders.map((order, index) => (
                                                 <tr
                                                     key={index}
-                                                    className={`h-[76px] ${
+                                                    className={`transition-colors duration-150 hover:bg-ec-active ${
                                                         index === orders.length - 1
                                                             ? 'last-row'
                                                             : ''
                                                     }`}
                                                 >
-                                                    <td className="font-inter font-normal text-left rtl:text-right rtl:pr-4 text-base leading-[26px] text-ec-body border-b border-b-ec-border border-r-0 pl-0">
+                                                    <td className="font-inter font-semibold text-sm text-left rtl:text-right text-ec-title py-4 px-5 border-0 border-b border-b-ec-border/70">
                                                         #{order.id}
                                                     </td>
-                                                    <td className="font-inter font-normal text-left rtl:text-right text-base leading-[26px] text-ec-body border-b border-b-ec-border border-r-0">
+                                                    <td className="font-inter text-sm text-left rtl:text-right text-ec-body py-4 px-5 border-0 border-b border-b-ec-border/70">
                                                         <span className="flex flex-col justify-start items-start">
-                                                            <span>
+                                                            <span className="font-medium">
                                                                 {order.created_at
                                                                     ? order.created_at
                                                                     : 'N/A'}
                                                             </span>
-                                                            <span className="text-sm leading-4 text-ec-placeholder">
+                                                            <span className="text-xs leading-4 text-ec-placeholder">
                                                                 {order.created_time
                                                                     ? order.created_time
                                                                     : 'N/A'}
                                                             </span>
                                                         </span>
                                                     </td>
-                                                    <td className="font-inter font-normal text-left rtl:text-right text-base leading-[26px] text-ec-body border-b border-b-ec-border border-r-0">
-                                                        {
-                                                            EASYCOMMERCE.currency_symbol
-                                                        }
+                                                    <td className="font-inter font-semibold text-sm text-left rtl:text-right text-ec-title py-4 px-5 border-0 border-b border-b-ec-border/70">
+                                                        {EASYCOMMERCE.currency_symbol}
                                                         {order.total}
                                                     </td>
-                                                    <td className="font-inter font-normal text-left rtl:text-right text-base leading-[26px] text-ec-body border-b border-b-ec-border border-r-0">
-                                                        <span
-                                                            className="p-[3px] rounded-[4px] text-sm leading-4 font-medium"
-                                                            style={{
-                                                                color: statusColor,
-                                                                backgroundColor:
-                                                                    statusBgColor,
-                                                            }}
-                                                        >
-                                                            {EASYCOMMERCE.order_statuses?.[order.status] ?? order.status}
-                                                        </span>
+                                                    <td className="font-inter text-sm text-left rtl:text-right py-4 px-5 border-0 border-b border-b-ec-border/70">
+                                                        <StatusBadge status={order.status} />
                                                     </td>
-                                                    <td className="font-inter font-normal text-left rtl:text-right text-base leading-[26px] text-ec-body border-b border-b-ec-border border-r-0">
-                                                        <a
-                                                            href={`#orders/${order.id}`}
-                                                        >
-                                                            <img
-                                                                src={viewIcon}
-                                                                alt="view-icon"
-                                                                className="w-[42px] h-6 pointer-events-none"
-                                                            />
-                                                        </a>
+                                                    <td className="font-inter text-sm text-right rtl:text-left py-4 px-5 border-0 border-b border-b-ec-border/70">
+                                                        <ViewButton href={`#orders/${order.id}`} title="View order" />
                                                     </td>
                                                 </tr>
-                                            );
-                                        })}
-                                    </tbody>
-                                </table>
+                                            ))}
+                                        </tbody>
+                                    </table>
+                                </div>
                             ) : (
-                                <div>No orders available</div>
+                                <div className="w-full border border-ec-border rounded-2xl bg-white">
+                                    <EmptyState
+                                        title="No orders available"
+                                        message="Orders you place will appear here."
+                                    />
+                                </div>
                             )}
                         </>
                     ) : (

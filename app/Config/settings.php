@@ -353,7 +353,7 @@ $easycommerce_settings_menus = apply_filters(
 										'id'          => 'active_methods',
 										'type'        => 'multicheck',
 										'label'       => __( 'Enable Payment Methods', 'easycommerce' ),
-										'description' => sprintf( __( 'Select the payment methods you want to enable for checkout. Find more options from the <a href="%1$s">Addons page</a>.', 'easycommerce' ), admin_url( 'admin.php?page=easycommerce#/addons' ) ),
+										'description' => sprintf( __( 'Select the payment methods you want to enable for checkout. Find more options from the <a href="%1$s">Addons page</a>.', 'easycommerce' ), admin_url( 'admin.php?page=easycommerce#/addons/payment' ) ),
 										'options'     => $payment_options,
 										'placeholder' => __( 'Choose payment methods', 'easycommerce' ),
 										'class'       => 'payment-methods',

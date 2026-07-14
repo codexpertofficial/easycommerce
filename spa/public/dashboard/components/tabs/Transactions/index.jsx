@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import TableSkeleton from "../../../../../admin/common/TableSkeleton";
 import Pagination from "../../../../../admin/common/components/Pagination";
+import EmptyState from "../../common/EmptyState";
 // import { setCurrentTab } from "./redux-store/slices/currentTab";
 
 const typeColors = {
@@ -65,6 +66,21 @@ const Transactions = () => {
             });
     }, [page, postPerPage]);
 
+    const handleCopy = (value, id) => {
+        if (!value) return;
+
+        const done = () => {
+            setCopiedTransactionId(id);
+            setTimeout(() => setCopiedTransactionId(null), 2000);
+        };
+
+        if (navigator.clipboard?.writeText) {
+            navigator.clipboard.writeText(value).then(done).catch(done);
+        } else {
+            done();
+        }
+    };
+
     return (
         <>
             <div className="easycommerce-dashboard-section pb-[55px] flex flex-col gap-4">
@@ -75,148 +91,156 @@ const Transactions = () => {
                     {!isLoading ? (
                         <>
                             {transactions.length > 0 ? (
-                                <table className="w-full border-none m-0">
-                                    <thead className="easycommerce-dash-roth">
-                                        <tr className="h-[42px]">
-                                            <th className="font-inter font-medium text-left rtl:text-right rtl:pr-4 text-base leading-[26px] text-ec-placeholder border-b border-b-ec-border border-r-0 pl-0">
-                                                Order ID
-                                            </th>
-                                            <th className="font-inter font-medium text-left rtl:text-right text-base leading-[26px] text-ec-placeholder border-b border-b-ec-border border-r-0">
-                                                Amount
-                                            </th>
-                                            <th className="font-inter font-medium text-left rtl:text-right text-base leading-[26px] text-ec-placeholder border-b border-b-ec-border border-r-0">
-                                                Transaction ID
-                                            </th>
-                                            <th className="font-inter font-medium text-left rtl:text-right text-base leading-[26px] text-ec-placeholder border-b border-b-ec-border border-r-0">
-                                                Type
-                                            </th>
-                                            <th className="font-inter font-medium text-left rtl:text-right text-base leading-[26px] text-ec-placeholder border-b border-b-ec-border border-r-0">
-                                                Date
-                                            </th>
-                                        </tr>
-                                    </thead>
+                                <div className="w-full border border-ec-border rounded-2xl overflow-x-auto bg-white">
+                                    <table className="w-full min-w-[560px] border-none m-0">
+                                        <thead className="easycommerce-dash-roth bg-ec-table-bg">
+                                            <tr>
+                                                <th className="font-inter font-semibold text-xs uppercase tracking-wide text-left rtl:text-right text-ec-light-black py-3.5 px-5 border-0">
+                                                    Order ID
+                                                </th>
+                                                <th className="font-inter font-semibold text-xs uppercase tracking-wide text-left rtl:text-right text-ec-light-black py-3.5 px-5 border-0">
+                                                    Amount
+                                                </th>
+                                                <th className="font-inter font-semibold text-xs uppercase tracking-wide text-left rtl:text-right text-ec-light-black py-3.5 px-5 border-0">
+                                                    Transaction ID
+                                                </th>
+                                                <th className="font-inter font-semibold text-xs uppercase tracking-wide text-left rtl:text-right text-ec-light-black py-3.5 px-5 border-0">
+                                                    Type
+                                                </th>
+                                                <th className="font-inter font-semibold text-xs uppercase tracking-wide text-left rtl:text-right text-ec-light-black py-3.5 px-5 border-0">
+                                                    Date
+                                                </th>
+                                            </tr>
+                                        </thead>
 
-                                    <tbody className="easycommerce-dash-roth">
-                                        {transactions.map((transaction, index) => {
-                                            const type = transaction.type
-                                                ? transaction.type.toLowerCase()
-                                                : "unknown";
-                                            const { color, background } =
-                                                typeColors[type] || {
-                                                    color: "#000",
-                                                    background: "#fff",
-                                                };
+                                        <tbody className="easycommerce-dash-roth">
+                                            {transactions.map((transaction, index) => {
+                                                const type = transaction.type
+                                                    ? transaction.type.toLowerCase()
+                                                    : "unknown";
+                                                const { color, background } =
+                                                    typeColors[type] || {
+                                                        color: "#000",
+                                                        background: "#fff",
+                                                    };
 
-                                            const orderId =
-                                                transaction.order_id || "N/A";
-                                            const amount =
-                                                transaction.amount || "$0.00";
-                                            const transactionId =
-                                                transaction.transaction_id ||
-                                                "**** ****";
+                                                const orderId =
+                                                    transaction.order_id || "N/A";
+                                                const amount =
+                                                    transaction.amount || "$0.00";
+                                                const transactionId =
+                                                    transaction.transaction_id ||
+                                                    "**** ****";
 
-                                            const paymentGateway = transaction.payment_gateway
-                                                ? transaction.payment_gateway
-                                                : "unknown";
-                                            const paymentMethod = paymentMethods[paymentGateway];
+                                                const paymentGateway = transaction.payment_gateway
+                                                    ? transaction.payment_gateway
+                                                    : "unknown";
+                                                const paymentMethod = paymentMethods[paymentGateway];
 
-                                            const paymentIcon = paymentMethod?.icon;
+                                                const paymentIcon = paymentMethod?.icon;
 
-                                            return (
-                                                <tr
-                                                    key={transaction.id}
-                                                    className={`h-[76px] ${
-                                                        index ===
-                                                        transactions.length - 1
-                                                            ? "last-row"
-                                                            : ""
-                                                    }`}>
-                                                    <td className="font-inter font-normal text-left rtl:text-right rtl:pr-4 text-base leading-[26px] text-ec-body border-b border-b-ec-border border-r-0 pl-0">
-                                                        #{orderId}
-                                                    </td>
-                                                    <td className="font-inter font-normal text-left rtl:text-right text-base leading-[26px] text-ec-body border-b border-b-ec-border border-r-0">
-                                                        {amount}
-                                                    </td>
-                                                    <td className="font-inter font-normal text-left rtl:text-right text-base leading-[26px] text-ec-body border-b border-b-ec-border border-r-0">
-                                                        <div className="flex h-10 w-10 items-center gap-2">
-                                                            {paymentIcon ? (
-                                                                <img
-                                                                    src={paymentIcon}
-                                                                    alt="card-icon"
-                                                                    className="w-[65px] h-[40px] pointer-events-none object-contain"
-                                                                />
-                                                            ) : (
-                                                                <span className="text-ec-body font-semibold font-inter text-base border border-[#ffeeee] p-[9px]">
-                                                                    {transaction.payment_gateway}
+                                                return (
+                                                    <tr
+                                                        key={transaction.id}
+                                                        className={`transition-colors duration-150 hover:bg-ec-active ${
+                                                            index ===
+                                                            transactions.length - 1
+                                                                ? "last-row"
+                                                                : ""
+                                                        }`}>
+                                                        <td className="font-inter font-semibold text-sm text-left rtl:text-right text-ec-title py-4 px-5 border-0 border-b border-b-ec-border/70">
+                                                            #{orderId}
+                                                        </td>
+                                                        <td className="font-inter font-semibold text-sm text-left rtl:text-right text-ec-title py-4 px-5 border-0 border-b border-b-ec-border/70">
+                                                            {amount}
+                                                        </td>
+                                                        <td className="font-inter text-sm text-left rtl:text-right text-ec-body py-4 px-5 border-0 border-b border-b-ec-border/70">
+                                                            <div className="flex items-center gap-3">
+                                                                {paymentIcon ? (
+                                                                    <img
+                                                                        src={paymentIcon}
+                                                                        alt="card-icon"
+                                                                        className="w-[52px] h-[32px] pointer-events-none object-contain"
+                                                                    />
+                                                                ) : (
+                                                                    <span className="text-ec-body font-medium font-inter text-xs rounded-md border border-ec-border px-2 py-1 capitalize">
+                                                                        {transaction.payment_gateway}
+                                                                    </span>
+                                                                )}
+                                                                {transactionId && transactionId !== "-" && (
+                                                                    <div
+                                                                        className="relative"
+                                                                        onMouseEnter={() => setHoveredTransactionId(transaction.id)}
+                                                                        onMouseLeave={() => setHoveredTransactionId(null)}>
+                                                                        <p
+                                                                            className="text-ec-body font-inter text-sm font-normal leading-[26px] cursor-pointer inline-flex items-center gap-1.5 hover:text-ec-primary transition-colors"
+                                                                            onClick={() => handleCopy(transactionId, transaction.id)}
+                                                                            title="Click to copy"
+                                                                        >
+                                                                            {transactionId.length > 15
+                                                                                ? `${transactionId.substring(0, 15)}...`
+                                                                                : transactionId}
+                                                                            <svg className="w-3.5 h-3.5 opacity-60" data-slot="icon" fill="none" stroke="currentColor" strokeWidth="1.6" viewBox="0 0 24 24">
+                                                                                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H9.75" />
+                                                                            </svg>
+                                                                        </p>
+                                                                        {hoveredTransactionId === transaction.id && copiedTransactionId !== transaction.id && (
+                                                                            <span className="absolute text-xs text-ec-placeholder -top-4 left-2">
+                                                                                Copy
+                                                                            </span>
+                                                                        )}
+                                                                        {copiedTransactionId === transaction.id && (
+                                                                            <span className="absolute text-xs text-ec-green -top-4 left-2">
+                                                                                Copied!
+                                                                            </span>
+                                                                        )}
+                                                                    </div>
+                                                                )}
+                                                            </div>
+                                                        </td>
+                                                        <td className="font-inter text-sm text-left rtl:text-right text-ec-body py-4 px-5 border-0 border-b border-b-ec-border/70">
+                                                            <span
+                                                                className="inline-flex items-center rounded-full font-inter font-semibold text-xs leading-4 py-1 px-3 capitalize"
+                                                                style={{
+                                                                    color: color,
+                                                                    backgroundColor:
+                                                                        background,
+                                                                }}>
+                                                                {transaction.type
+                                                                    ? transaction.type
+                                                                        .charAt(0)
+                                                                        .toUpperCase() +
+                                                                    transaction.type.slice(
+                                                                        1
+                                                                    )
+                                                                    : "Pending"}
+                                                            </span>
+                                                        </td>
+                                                        <td className="font-inter text-sm text-left rtl:text-right text-ec-body py-4 px-5 border-0 border-b border-b-ec-border/70">
+                                                            <span className="flex flex-col justify-start items-start">
+                                                                <span className="font-medium">
+                                                                    {transaction.created_at ? transaction.created_at : "N/A"}
                                                                 </span>
-                                                            )}
-                                                            {transactionId && transactionId !== "-" && (
-                                                                <div 
-                                                                    className="relative" 
-                                                                    onMouseEnter={() => setHoveredTransactionId(transaction.id)} 
-                                                                    onMouseLeave={() => setHoveredTransactionId(null)}>
-                                                                    <p
-                                                                        className="text-ec-body font-inter text-base font-normal leading-[26px] cursor-pointer"
-                                                                        onClick={() => handleCopy(transactionId, transaction.id)}
-                                                                        title="Click to copy"
-                                                                    >
-                                                                        {transactionId.length > 15
-                                                                            ? `${transactionId.substring(0, 15)}...`
-                                                                            : transactionId}
-                                                                    </p>
-                                                                    {hoveredTransactionId === transaction.id && copiedTransactionId !== transaction.id && (
-                                                                        <span className="absolute text-sm text-ec-placeholder top-[-15px] left-[30px]">
-                                                                            Copy
-                                                                        </span>
-                                                                    )}
-                                                                    {copiedTransactionId === transaction.id && (
-                                                                        <span className="absolute text-sm text-ec-placeholder top-[-15px] left-[30px]">
-                                                                            Copied!
-                                                                        </span>
-                                                                    )}
-                                                                </div>
-                                                            )}
-                                                        </div>
-                                                    </td>
-                                                    <td className="font-inter font-normal text-left rtl:text-right text-base leading-[26px] text-ec-body border-b border-b-ec-border border-r-0">
-                                                        <span
-                                                            className="border rounded-[5px] font-inter font-normal text-base leading-[26px] py-[3px] px-[10px]"
-                                                            style={{
-                                                                color: color,
-                                                                backgroundColor:
-                                                                    background,
-                                                                borderColor:
-                                                                    background,
-                                                            }}>
-                                                            {transaction.type
-                                                                ? transaction.type
-                                                                    .charAt(0)
-                                                                    .toUpperCase() +
-                                                                transaction.type.slice(
-                                                                    1
-                                                                )
-                                                                : "Pending"}
-                                                        </span>
-                                                    </td>
-                                                    <td className="font-inter font-normal text-left rtl:text-right text-base leading-[26px] text-ec-body border-b border-b-ec-border border-r-0">
-                                                        <span className="flex flex-col justify-start items-start">
-                                                            <span>
-                                                                {transaction.created_at ? transaction.created_at : "N/A"}
+                                                                <span className="text-xs leading-4 text-ec-placeholder">
+                                                                    {transaction.created_time ? transaction.created_time : "N/A"}
+                                                                </span>
                                                             </span>
-                                                            <span className="text-sm leading-4 text-ec-placeholder">
-                                                                {transaction.created_time ? transaction.created_time : "N/A"}
-                                                            </span>
-                                                        </span>
-                                                    </td>
-                                                </tr>
-                                            );
-                                        })}
-                                    </tbody>
-                                </table>
+                                                        </td>
+                                                    </tr>
+                                                );
+                                            })}
+                                        </tbody>
+                                    </table>
+                                </div>
                             ) : (
-                                <div>No transactions available</div>
+                                <div className="w-full border border-ec-border rounded-2xl bg-white">
+                                    <EmptyState
+                                        title="No transactions available"
+                                        message="Your payment history will appear here."
+                                    />
+                                </div>
                             )}
-                                                    
+
                         </>
                     ) : (
                         <TableSkeleton numberOfRows={10} SkeletonHeight={30} />

@@ -31,6 +31,8 @@ const CompareTable = () => {
 		{ title: 'Popular Payment Gateways (Stripe, PayPal, Mollie, etc)' },
 		{ title: 'Subscriptions Management', pro: true },
 		{ title: 'License Management', pro: true },
+		{ title: 'Facebook Messenger Integration (AI Shopping Assistant)' },
+		{ title: 'WhatsApp Integration (AI Shopping Assistant)', upcoming: true },
 		{ title: 'Marketing & Automation Integrations' },
 		{ title: 'Membership Management', pro: true, upcoming: true },
 		{ title: 'Multivendor Marketplace', pro: true, upcoming: true },

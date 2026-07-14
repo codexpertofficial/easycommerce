@@ -6,17 +6,10 @@ import "react-loading-skeleton/dist/skeleton.css";
 const CardSkeleton = () => {
     return (
         <>
-            <div className="easycommerce-addons-heading text-center">
-                <Skeleton
-                    height={40}
-                    width={600}
-                    style={{ marginBottom: "15px" }}
-                />
-                <Skeleton
-                    height={20}
-                    width={700}
-                    style={{ marginBottom: "40px" }}
-                />
+            <div className="flex gap-6 border-b-2 border-[#F0EDFB] mb-8 pb-2">
+                {[...Array(7)].map((_, index) => (
+                    <Skeleton key={index} width={90} height={24} borderRadius={12} />
+                ))}
             </div>
 
             <div className="grid grid-cols-4 gap-[30px]">

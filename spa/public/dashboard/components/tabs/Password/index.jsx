@@ -106,10 +106,10 @@ const Password = () => {
     return (
         <>
             <div>
-                <h3 class="easycommerce-dashboard-section-title !text-lg sm:!text-2xl">
+                <h3 className="easycommerce-dashboard-section-title !text-lg sm:!text-2xl">
                     Set your password
                 </h3>
-                <div className="w-full sm:w-[620px] mt-4 sm:mt-[50px] py-4 sm:py-[60px] px-3 sm:px-10 mx-auto border border-ec-border rounded-lg">
+                <div className="w-full sm:w-[620px] mt-4 sm:mt-[50px] py-8 sm:py-[60px] px-4 sm:px-10 mx-auto bg-white border border-ec-border rounded-2xl shadow-[0_2px_16px_-8px_rgba(18,3,80,0.10)]">
                     <div className="flex flex-col justify-center items-center gap-[6px]">
                         <h2 className="easycommerce-dashboard-password-heading">
                             Change your Password
@@ -132,13 +132,13 @@ const Password = () => {
                                     New password
                                 </label>
 
-                                <div className="easycommerce-dashboard-form-password h-13 flex justify-between items-center gap-3 pr-4 border border-[#DBDBDB] rounded-lg hover:!border-ec-secondary focus:!border-ec-primary">
+                                <div className="easycommerce-dashboard-form-password h-12 flex justify-between items-center gap-3 pl-4 pr-4 border border-[#DBDBDB] rounded-xl hover:!border-ec-secondary focus:!border-ec-primary">
                                     <input
                                         type={newPassType}
                                         id="newPassword"
                                         name="newPassword"
                                         placeholder="Enter new password"
-                                        className="easycommerce-dashboard-form-password-input border border-[#DBDBDB] rounded-lg focus:outline-none"
+                                        className="easycommerce-dashboard-form-password-input flex-1 bg-transparent focus:outline-none"
                                         required
                                     />
 
@@ -174,13 +174,13 @@ const Password = () => {
                                     Confirm new password
                                 </label>
 
-                                <div className="easycommerce-dashboard-form-password h-13 flex justify-between items-center gap-3 pr-4 border border-[#DBDBDB] rounded-md hover:border-ec-secondary focus:border-ec-primary">
+                                <div className="easycommerce-dashboard-form-password h-12 flex justify-between items-center gap-3 pl-4 pr-4 border border-[#DBDBDB] rounded-xl hover:border-ec-secondary focus:border-ec-primary">
                                     <input
                                         type={confPassType}
                                         id="confirmNewPassword"
                                         name="confirmNewPassword"
                                         placeholder="Confirm new password"
-                                        className="easycommerce-dashboard-form-password-input"
+                                        className="easycommerce-dashboard-form-password-input flex-1 bg-transparent focus:outline-none"
                                         required
                                     />
 
@@ -209,13 +209,14 @@ const Password = () => {
                             </div>
                         </div>
 
-                        <button
-                            className="easycommerce-dashboard-form-btn save"
-                            type="submit"
-                            style={{ width: "100%" }}
-                        >
-                            Change Password
-                        </button>
+                        <div className="flex justify-center">
+                            <button
+                                className="easycommerce-dashboard-form-btn save"
+                                type="submit"
+                            >
+                                Change Password
+                            </button>
+                        </div>
                     </form>
                 </div>
             </div>

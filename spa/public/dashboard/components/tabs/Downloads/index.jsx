@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from "react";
 import TableSkeleton from "../../../../../admin/common/TableSkeleton";
 import Pagination from "../../../../../admin/common/components/Pagination";
-
-const defaultDownloadIcon = `${EASYCOMMERCE.assets}public/img/icons/dashboard-default-download-icon.png`;
-const hoverDownloadIcon = `${EASYCOMMERCE.assets}public/img/icons/dashboard-hover-download-icon.png`;
+import EmptyState from "../../common/EmptyState";
 
 const Downloads = () => {
-    const [ordersData, setOrdersData] = useState([]);
     const [downloads, setDownloads] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [totalPage, setTotalPage] = useState(1);
@@ -30,27 +27,6 @@ const Downloads = () => {
         document.addEventListener('click', handleClick, true);
         return () => document.removeEventListener('click', handleClick, true);
     }, []);
-
-    useEffect(() => {
-        if (ordersData.length === 0) {
-            fetch(`${EASYCOMMERCE.rest_base}/me/orders?per_page=9999`, {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-WP-Nonce': EASYCOMMERCE.nonce,
-                },
-            })
-                .then((res) => res.json())
-                .then((data) => {
-                    if (data.success && data.data?.orders) {
-                        setOrdersData(data.data.orders);
-                    }
-                })
-                .catch((error) => {
-                    console.error("Error fetching orders:", error);
-                });
-        }
-    }, [ordersData.length]);
 
     const getFileIcon = (type) => {
         const iconUrl = `${EASYCOMMERCE.assets}common/img/file-extension/`;
@@ -99,15 +75,8 @@ const Downloads = () => {
             });
     }, [page, postPerPage]);
 
-    const getOrderStatus = (orderId) => {
-        const order = ordersData.find(order => order.id === orderId);
-        return order ? order.status : null;
-    };
-
-    const completedDownloads = downloads.filter((download) => {
-        const orderStatus = getOrderStatus(download.order_id);
-        return orderStatus === 'completed';
-    });
+    // `/me/downloads` already returns only entitled (paid) downloads; render as-is.
+    const completedDownloads = downloads;
 
     return (
         <>
@@ -119,82 +88,81 @@ const Downloads = () => {
                     {!isLoading ? (
                         <>
                             {completedDownloads.length > 0 ? (
-                                <table className="w-full border-none m-0">
-                                    <thead>
-                                        <tr className="h-[42px]">
-                                            <th className="font-inter font-medium text-left rtl:text-right rtl:pr-4 text-base leading-[26px] text-ec-placeholder border-b border-b-ec-border border-r-0 pl-0">
-                                                File Name
-                                            </th>
-                                            <th className="font-inter font-medium text-left rtl:text-right text-base leading-[26px] text-ec-placeholder border-b border-b-ec-border border-r-0">
-                                                Size
-                                            </th>
-                                            <th className="font-inter font-medium text-left rtl:text-right text-base leading-[26px] text-ec-placeholder border-b border-b-ec-border border-r-0">
-                                                Order ID
-                                            </th>
-                                            <th className="border-b border-b-ec-border border-r-0"></th>
-                                        </tr>
-                                    </thead>
-
-                                    <tbody>
-                                        {completedDownloads.map((download, index) => (
-                                            <tr
-                                                className={`h-[76px] ${
-                                                    index === completedDownloads.length - 1
-                                                        ? "last-row"
-                                                        : ""
-                                                }`}
-                                            >
-                                                <td className="font-inter font-normal text-left rtl:text-right rtl:pr-4 text-base leading-[26px] text-ec-body border-b border-b-ec-border border-r-0 pl-0">
-                                                    <span className="flex justify-start items-center gap-3">
-                                                        <span>
-                                                            <img
-                                                                src={getFileIcon(
-                                                                    download.type
-                                                                )}
-                                                                alt={`${download.type} icon`}
-                                                                className="w-9 h-9 pointer-events-none"
-                                                            />
-                                                        </span>
-                                                        <span>{download.name}</span>
-                                                    </span>
-                                                </td>
-                                                <td className="font-inter font-normal text-left rtl:text-right text-base leading-[26px] text-ec-body border-b border-b-ec-border border-r-0">
-                                                    {download.size}
-                                                </td>
-                                                <td className="font-inter font-normal text-left rtl:text-right text-base leading-[26px] text-ec-body border-b border-b-ec-border border-r-0">
-                                                    {download.order_id}
-                                                </td>
-                                                <td className="border-b border-b-ec-border border-r-0">
-                                                    <a
-                                                        href={download.url}
-                                                        className="easycommerce-dashboard-download-btn flex justify-start items-center gap-[7px] group"
-                                                    >
-                                                        <span>
-                                                            <img
-                                                                src={
-                                                                    defaultDownloadIcon
-                                                                }
-                                                                alt="download-icon"
-                                                                className="!w-[14px] h-[14px] pointer-events-none block group-hover:hidden"
-                                                            />
-                                                            <img
-                                                                src={
-                                                                    hoverDownloadIcon
-                                                                }
-                                                                alt="download-icon"
-                                                                className="!w-[14px] h-[14px] pointer-events-none hidden group-hover:block"
-                                                            />
-                                                        </span>
-
-                                                        <span>Download</span>
-                                                    </a>
-                                                </td>
+                                <div className="w-full border border-ec-border rounded-2xl overflow-x-auto bg-white">
+                                    <table className="w-full min-w-[520px] border-none m-0">
+                                        <thead className="bg-ec-table-bg">
+                                            <tr>
+                                                <th className="font-inter font-semibold text-xs uppercase tracking-wide text-left rtl:text-right text-ec-light-black py-3.5 px-5 border-0">
+                                                    File Name
+                                                </th>
+                                                <th className="font-inter font-semibold text-xs uppercase tracking-wide text-left rtl:text-right text-ec-light-black py-3.5 px-5 border-0">
+                                                    Size
+                                                </th>
+                                                <th className="font-inter font-semibold text-xs uppercase tracking-wide text-left rtl:text-right text-ec-light-black py-3.5 px-5 border-0">
+                                                    Order ID
+                                                </th>
+                                                <th className="py-3.5 px-5 border-0"></th>
                                             </tr>
-                                        ))}
-                                    </tbody>
-                                </table>
+                                        </thead>
+
+                                        <tbody>
+                                            {completedDownloads.map((download, index) => (
+                                                <tr
+                                                    key={index}
+                                                    className={`transition-colors duration-150 hover:bg-ec-active ${
+                                                        index === completedDownloads.length - 1
+                                                            ? "last-row"
+                                                            : ""
+                                                    }`}
+                                                >
+                                                    <td className="font-inter text-sm text-left rtl:text-right text-ec-body py-4 px-5 border-0 border-b border-b-ec-border/70">
+                                                        <span className="flex justify-start items-center gap-3">
+                                                            <span className="shrink-0 w-10 h-10 flex items-center justify-center rounded-xl bg-ec-accent">
+                                                                <img
+                                                                    src={getFileIcon(
+                                                                        download.type
+                                                                    )}
+                                                                    alt={`${download.type} icon`}
+                                                                    className="w-6 h-6 pointer-events-none"
+                                                                />
+                                                            </span>
+                                                            <span className="font-medium text-ec-title break-all">{download.name}</span>
+                                                        </span>
+                                                    </td>
+                                                    <td className="font-inter text-sm text-left rtl:text-right text-ec-body py-4 px-5 border-0 border-b border-b-ec-border/70">
+                                                        {download.size}
+                                                    </td>
+                                                    <td className="font-inter text-sm text-left rtl:text-right text-ec-body py-4 px-5 border-0 border-b border-b-ec-border/70">
+                                                        #{download.order_id}
+                                                    </td>
+                                                    <td className="py-4 px-5 border-0 border-b border-b-ec-border/70 text-right rtl:text-left">
+                                                        <a
+                                                            href={download.url}
+                                                            className="inline-flex justify-center items-center gap-2 px-4 py-2 rounded-xl bg-ec-primary text-white font-inter font-medium text-sm no-underline hover:bg-ec-secondary transition-colors duration-200"
+                                                        >
+                                                            <svg className="w-4 h-4" data-slot="icon" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
+                                                                <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                                                            </svg>
+                                                            Download
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            ))}
+                                        </tbody>
+                                    </table>
+                                </div>
                             ) : (
-                                <div>No downloads available</div>
+                                <div className="w-full border border-ec-border rounded-2xl bg-white">
+                                    <EmptyState
+                                        title="No downloads available"
+                                        message="Files from your purchases will appear here."
+                                        icon={
+                                            <svg className="w-8 h-8" data-slot="icon" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                                            </svg>
+                                        }
+                                    />
+                                </div>
                             )}
                         </>
                     ) : (

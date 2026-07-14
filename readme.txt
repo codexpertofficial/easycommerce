@@ -5,7 +5,7 @@ Donate link: https://easycommerce.dev
 Tags: ecommerce, online store, ai ecommerce, store builder, digital downloads
 Requires at least: 6.0
 Tested up to: 7.0
-Stable tag: 1.44
+Stable tag: 1.45
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -514,6 +514,13 @@ Free community support via WordPress.org forums and the [Facebook Community](htt
 13. Integrations - built-in payment gateways (Stripe, PayPal, Square, Braintree, Mollie), CRM and marketing addons, WooCommerce & EDD migration, and more.
 
 == Changelog ==
+
+= 1.45 - 2026-07-14 =
+
+- [security] Digital download links are now only available once an order is paid - unpaid or cancelled orders can no longer access files
+- [add] Addons screen now has category filter tabs for quicker browsing, and the payment settings link straight to the Payments category
+- [fix] Removing a download file from a product variation now actually deletes it - removed files no longer reappear after saving
+- [ui] Redesigned the customer account dashboard with a modern look and a cleaner order details layout
 
 = 1.44 - 2026-07-11 =
 

@@ -90,4 +90,21 @@ class Product_Variation_Download extends Model {
 	public function delete( $id ) {
 		return $this->db->delete_row( $id );
 	}
+
+	/**
+	 * Delete all downloads belonging to a variation.
+	 *
+	 * @param int $variation_id
+	 * @return bool
+	 */
+	public function delete_by_variation( $variation_id ) {
+		$rows = $this->db->get_rows( array( 'variation_id' => $variation_id ) );
+		$ids  = array_column( $rows, 'id' );
+
+		if ( empty( $ids ) ) {
+			return true;
+		}
+
+		return $this->db->delete_rows( $ids );
+	}
 }

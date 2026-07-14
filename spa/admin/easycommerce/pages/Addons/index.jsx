@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import Cookies from "universal-cookie";
 
 // components
 import Card from "./components/Card";
+import FilterTabs from "./components/FilterTabs";
 import CommonHeader from "../../../common/components/CommonHeader";
 import APIScreen from "../../../common/components/APIScreen";
 import APIVarification from "../../../common/components/APIScreen/elements/APIVarification";
@@ -14,12 +15,20 @@ import LicenseScreen from "../../../common/components/LicenseScreen";
 
 const noDataIcon = `${EASYCOMMERCE.assets}admin/img/nofound/no-data.png`;
 
-const Addons = () => {
+// The route re-mounts this component on every category change; cache the
+// addons list so filter clicks don't refetch and re-show the skeleton.
+let addonsCache = null;
+
+const Addons = ({ category = null }) => {
     const [user, setUser] = useState(null);
-    const [addons, setAddons] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
+    const [addons, setAddons] = useState(addonsCache || []);
+    const [isLoading, setIsLoading] = useState(!addonsCache);
+
+    const activeCategory = category || "all";
 
     useEffect(() => {
+        if (addonsCache) return;
+
         fetch(`${EASYCOMMERCE.rest_base}/addons`, {
             method: "GET",
             headers: {
@@ -31,8 +40,8 @@ const Addons = () => {
             .then((data) => {
                 setIsLoading(false);
                 if (data.success && data.data?.addons) {
-                    const addonsArray = Object.values(data.data.addons);
-                    setAddons(addonsArray);
+                    addonsCache = Object.values(data.data.addons);
+                    setAddons(addonsCache);
                 }
             });
     }, []);
@@ -41,6 +50,49 @@ const Addons = () => {
         const cookies = new Cookies(null, { path: "/" });
         const easyUser = cookies.get("easycommerce-user");
     }, [user]);
+
+    const tabs = useMemo(() => {
+        const map = new Map();
+
+        addons.forEach((addon) => {
+            (addon.categories || []).forEach((cat) => {
+                if (!cat?.slug) return;
+
+                const existing = map.get(cat.slug);
+                if (existing) {
+                    existing.count += 1;
+                } else {
+                    map.set(cat.slug, {
+                        key: cat.slug,
+                        label: cat.name || cat.slug,
+                        count: 1,
+                    });
+                }
+            });
+        });
+
+        const categoryTabs = Array.from(map.values()).sort(
+            (a, b) => b.count - a.count || a.label.localeCompare(b.label)
+        );
+
+        return [
+            { key: "all", label: "All", count: addons.length },
+            ...categoryTabs,
+        ];
+    }, [addons]);
+
+    const visibleAddons = useMemo(() => {
+        if (activeCategory === "all") return addons;
+
+        return addons.filter((addon) =>
+            (addon.categories || []).some((cat) => cat?.slug === activeCategory)
+        );
+    }, [addons, activeCategory]);
+
+    const handleTabChange = (key) => {
+        window.location.hash =
+            key === "all" ? "#/addons" : `#/addons/${key}`;
+    };
 
     return (
         <>
@@ -51,27 +103,32 @@ const Addons = () => {
             /> */}
 
             <div className="mt-3 bg-white max-w-full py-[50px] px-[30px] rounded-xl">
+                <div className="easycommerce-addons-heading text-center">
+                    <h2 className="text-center text-[32px] font-inter font-normal text-ec-title leading-[48px] mb-3">
+                        EasyCommerce Addons
+                    </h2>
+                    <p className="text-ec-body text-base font-inter font-normal leading-[26px] mb-12">
+                        Use EasyCommerce addons to extend and customize the functionality of your online store.
+                    </p>
+                </div>
+
                 {!isLoading ? (
                     <>
                         {addons.length > 0 ? (
                             <>
-                                <div className="easycommerce-addons-heading text-center">
-                                    <h2 className="text-center text-[32px] font-inter font-normal text-ec-title leading-[48px] mb-3">
-                                        EasyCommerce Addons
-                                    </h2>
-                                    <p className="text-ec-body text-base font-inter font-normal leading-[26px] mb-12">
-                                        Use EasyCommerce addons to extend and customize the functionality of your online store.
-                                    </p>
-                                </div>
+                                <FilterTabs
+                                    tabs={tabs}
+                                    active={activeCategory}
+                                    onChange={handleTabChange}
+                                />
 
                                 <div className="grid 2xl:grid-cols-4 xl:grid-cols-4 gap-[30px]">
-                                    {addons.length > 0 &&
-                                        addons.map((addon, index) => (
-                                            <Card
-                                                key={index}
-                                                addon={addon}
-                                            />
-                                        ))}
+                                    {visibleAddons.map((addon, index) => (
+                                        <Card
+                                            key={addon.slug || index}
+                                            addon={addon}
+                                        />
+                                    ))}
                                 </div>
                             </>
                         ) : (

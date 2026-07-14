@@ -72,6 +72,7 @@ const App = () => {
     const [customerId, setCustomerId] = useState(null);
     const [page, setPage] = useState(1);
     const [couponView, setCouponView] = useState(null);
+    const [addonCategory, setAddonCategory] = useState(null);
     const [productFilterId, setProductFilterId] = useState(null);
     const [reportProductId, setReportProductId] = useState(null);
     const [reportProductName, setReportProductName] = useState('');
@@ -306,6 +307,7 @@ const App = () => {
             },
             "/addons": () => {
                 dispatch(setCurrentTab("/addons"));
+                setAddonCategory(null);
             },
             "/get-pro": () => {
                 dispatch(setCurrentTab("/get-pro"));
@@ -333,6 +335,10 @@ const App = () => {
             singleProductReport: (match) => {
                 dispatch(setCurrentTab("/reports/products"));
                 setReportProductId(match[1]);
+            },
+            addonCategory: (match) => {
+                dispatch(setCurrentTab("/addons"));
+                setAddonCategory(match[1]);
             }
         };
 
@@ -347,6 +353,7 @@ const App = () => {
                 [routeConfig.editCoupon, /^\/coupons\/edit\/(\d+)$/],
                 [routeConfig.ordersByProduct, /^\/orders\/product\/(\d+)$/],
                 [routeConfig.singleProductReport, /^\/reports\/products\/(\d+)$/],
+                [routeConfig.addonCategory, /^\/addons\/([\w-]+)$/],
             ];
 
             let matched = false;
@@ -490,7 +497,7 @@ const App = () => {
                 PageComponent = () => <Help page={page} />;
                 break;
             case "/addons":
-                PageComponent = () => <Addons page={page} />;
+                PageComponent = () => <Addons category={addonCategory} />;
                 break;
             case "/get-pro":
                 PageComponent = () => <Pro page={page} />;

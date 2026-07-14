@@ -31,10 +31,10 @@ const App = () => {
     return (
         <>
             <div className="w-full flex flex-col gap-[50px] py-10">
-                <div className="w-full flex border easycommerce-sidebar ec-db-md:flex-row flex-col border-ec-border rounded-lg">
+                <div className="w-full flex easycommerce-sidebar ec-db-md:flex-row flex-col bg-white border border-ec-border rounded-2xl shadow-[0_10px_40px_-12px_rgba(18,3,80,0.12)] overflow-hidden">
                     <Sidebar activeTab={activeTab || "dashboard"}/>
 
-                    <div className="easycommerce-dashboard-content-details ec-db-md:w-[calc(100%_-_268px)] w-full p-3 sm:p-[30px]">
+                    <div className="easycommerce-dashboard-content-details ec-db-md:w-[calc(100%_-_268px)] w-full p-4 sm:p-8 lg:p-10 bg-[#FCFCFE]">
                         <Outlet/>
                     </div>
                 </div>

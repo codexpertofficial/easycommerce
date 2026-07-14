@@ -11,12 +11,16 @@ const BillingAddress = ({
 }) => {
 	return (
 		<form onSubmit={handleBillingFormSubmit}>
-			<div className="w-full h-[57px] flex items-center px-5 border border-ec-border rounded-tl-lg rounded-tr-lg">
+			<div className="bg-white border border-ec-border rounded-2xl overflow-hidden shadow-[0_2px_16px_-8px_rgba(18,3,80,0.10)]">
+			<div className="w-full flex items-center gap-2 px-6 py-4 border-b border-ec-border bg-ec-table-bg">
+				<svg className="w-[18px] h-[18px] text-ec-primary" data-slot="icon" fill="none" stroke="currentColor" strokeWidth="1.7" viewBox="0 0 24 24">
+					<path strokeLinecap="round" strokeLinejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" />
+				</svg>
 				<h3 className="easycommerce-dashboard-address-title">
-					Billing Addressd
+					Billing Address
 				</h3>
 			</div>
-			<div className="easycommerce-dashboard-address-wrapper grid grid-cols-1 sm:grid-cols-2 gap-4 px-5 pt-6 pb-[30px] border border-ec-border border-t-0 rounded-bl-lg rounded-br-lg">
+			<div className="easycommerce-dashboard-address-wrapper grid grid-cols-1 sm:grid-cols-2 gap-5 p-6">
 				<div className="col-span-1 flex flex-col gap-2 items-start">
 					<label
 						htmlFor="billing_first_name"
@@ -225,12 +229,13 @@ const BillingAddress = ({
 					/>
 				</div>
 			</div>
-			<div className="easycommerce-dashboard-form-submit w-full mt-4 flex justify-end items-center">
+			<div className="flex justify-end items-center px-6 py-4 border-t border-ec-border">
 				<button
 					className="easycommerce-dashboard-form-btn save"
 					type="submit">
 					Update Address
 				</button>
+			</div>
 			</div>
 		</form>
 	);

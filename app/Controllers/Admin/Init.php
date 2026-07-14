@@ -6,8 +6,6 @@ defined( 'ABSPATH' ) || exit;
 
 use EasyCommerce\Helpers\Utility;
 use EasyCommerce\Models\Customer;
-use EasyCommerce\Models\Order;
-use EasyCommerce\Models\Product_Variation;
 use EasyCommerce\Traits\Asset;
 use EasyCommerce\Traits\Cache;
 use EasyCommerce\Traits\Cleaner;
@@ -261,26 +259,12 @@ class Init {
             wp_die( esc_html__( 'You are not logged in!', 'easycommerce' ) );
         }
 
-        // Check if the media ID is within the allowed downloads
-        $customer       = new Customer( get_current_user_id() );
-        $download_ids   = array(); // Collect all allowed download IDs for the customer
+        // Collect the customer's entitled downloads (paid orders, digital only).
+        $customer     = new Customer( get_current_user_id() );
+        $download_ids = array_keys( $customer->get_downloads() );
 
-        foreach ( $customer->get_orders() as $order ) {
-            $order_obj = new Order( $order['id'] );
-            foreach ( $order_obj->get_items() as $order_item ) {
-                $variation_obj          = new Product_Variation( $order_item->variation_id );
-                $variation_downloads    = $variation_obj->get_downloads();
-
-                if ( ! empty( $variation_downloads['downloads'] ) ) {
-                    foreach ( $variation_downloads['downloads'] as $download_obj ) {
-                        $download_ids[] = $download_obj->media_id;
-                    }
-                }
-            }
-        }
-
-        // Check if the media ID is within the allowed downloads
-        if ( ! in_array( $media_id, $download_ids ) ) {
+        // Check if the media ID is within the allowed downloads.
+        if ( ! in_array( (int) $media_id, $download_ids, true ) ) {
             wp_die( esc_html__( 'Not your download!', 'easycommerce' ) );
         }
 
