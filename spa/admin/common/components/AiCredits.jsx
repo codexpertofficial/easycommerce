@@ -1,18 +1,20 @@
 import React from 'react';
-import { __ } from '@wordpress/i18n';
-
-const pluralize = (word, count) => {
-    return count > 1 ? `${word}s` : word;
-}
+import { __, _n, sprintf } from '@wordpress/i18n';
 
 const AiCredits = ({ usage }) => {
 	return (
         <>
             <span className="text-ec-light-black">
-                {__(`Uses ${usage} ${pluralize('credit', usage)}.`, 'easycommerce')}
+                {
+                    // translators: %d: number of AI credits this action uses.
+                    sprintf( _n( 'Uses %d credit.', 'Uses %d credits.', usage, 'easycommerce' ), usage )
+                }
             </span>{' '}
             <span className="text-ec-title">
-                {EASYCOMMERCE.credits + ' ' + pluralize('Credit', EASYCOMMERCE.credits)}
+                {
+                    // translators: %d: number of AI credits remaining.
+                    sprintf( _n( '%d Credit', '%d Credits', EASYCOMMERCE.credits, 'easycommerce' ), EASYCOMMERCE.credits )
+                }
             </span>{' '}
             <span className="text-ec-light-black">
                 {__('Remaining', 'easycommerce')}

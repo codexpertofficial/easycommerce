@@ -79,6 +79,7 @@ class Notice {
 			'message'		=> $data['message'] ?? null,
 			'button'		=> $data['button'] ?? null,
 			'url'			=> $data['url'] ?? null,
+			'target'		=> $data['target'] ?? null,
 			'dismissible'	=> $data['dismissible'] ?? true,
 		];
 

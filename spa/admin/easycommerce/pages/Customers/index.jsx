@@ -10,6 +10,7 @@ import CustomerTableFilter from './components/CustomerTableFilter';
 import Pagination from '../../../common/components/Pagination';
 import NotFound from '../../../common/NotFound';
 import TableSkeleton from '../../../common/TableSkeleton';
+import { __, sprintf } from '@wordpress/i18n';
 import { use } from 'react';
 
 const noCustomers = `${EASYCOMMERCE.assets}admin/img/nofound/no-customer.png`;
@@ -49,17 +50,17 @@ const Customers = ({ page }) => {
 
 	const tabOptions = [
 		{
-			label: 'All',
+			label: __( 'All', 'easycommerce' ),
 			key: 'all',
 			bg: 'bg-ec-allBg text-ec-allText',
 		},
 		{
-			label: 'Recurring',
+			label: __( 'Recurring', 'easycommerce' ),
 			key: 'recurring',
 			bg: 'bg-ec-recurringBg text-ec-recurringText',
 		},
 		{
-			label: 'One-time',
+			label: __( 'One-time', 'easycommerce' ),
 			key: 'one_time',
 			bg: 'bg-ec-oneTimeBg text-ec-oneTimeText',
 		},
@@ -71,8 +72,9 @@ const Customers = ({ page }) => {
 		setIsFiltering(false);
 		window.location.hash = '#/customers';
 	}, []);
-	const tabLabel =
-		tabOptions.find((t) => t.key === activeTab)?.label.toLowerCase() || 'all';
+	// Keep the raw key for comparisons; the label is translated and must not drive logic.
+	const tabKey = tabOptions.find((t) => t.key === activeTab)?.key || 'all';
+	const tabLabel = tabOptions.find((t) => t.key === tabKey)?.label || '';
 	const fetchCustomersStatuses = async () => {
 		try {
 			const url = `${EASYCOMMERCE.rest_base}/customers`;
@@ -157,7 +159,7 @@ const Customers = ({ page }) => {
 		<>
 			<div className="flex items-center justify-start gap-4 mb-4">
 				<div className="product-panel-title">
-					<h3>Customers</h3>
+					<h3>{ __( 'Customers', 'easycommerce' ) }</h3>
 				</div>
 
 				{/* <button
@@ -245,18 +247,26 @@ const Customers = ({ page }) => {
 						) : (
 							<NotFound
 								ImageUrl={noCustomers}
-								title={`No ${
-									tabLabel !== 'all'
-										? `${tabOptions.find((tab) => tab.key === tabLabel)?.label || tabLabel} Customers`
-										: 'Customers'
-								} Found`}
+								title={
+									tabKey !== 'all'
+										? sprintf(
+												// translators: %s: customer type label (e.g. Recurring).
+												__( 'No %s Customers Found', 'easycommerce' ),
+												tabLabel,
+										  )
+										: __( 'No Customers Found', 'easycommerce' )
+								}
 								description={`${
-									tabLabel === 'all'
-										? `You're yet to receive any customers in your store.`
-										: `No ${tabLabel} customers in your store.`
-								} Keep promoting \nyour store to bring in your first customer.`}
+									tabKey === 'all'
+										? __( "You're yet to receive any customers in your store.", 'easycommerce' )
+										: sprintf(
+												// translators: %s: customer type label (e.g. Recurring).
+												__( 'No %s customers in your store.', 'easycommerce' ),
+												tabLabel,
+										  )
+								} ${ __( 'Keep promoting \nyour store to bring in your first customer.', 'easycommerce' ) }`}
 								isBtn={false}
-								btnText="Add Customer"
+								btnText={ __( 'Add Customer', 'easycommerce' ) }
 								btnCallBack={() => setIsAddNew(false)}
 							/>
 						)}

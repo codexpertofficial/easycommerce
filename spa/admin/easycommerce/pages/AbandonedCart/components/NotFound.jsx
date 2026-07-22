@@ -1,8 +1,9 @@
 import React from "react";
+import { __ } from "@wordpress/i18n";
 
 const noAbandonedCartsIcon = `${EASYCOMMERCE.assets}admin/img/abandoned-cart.png`;
 
-const NotFound = ({ title = "No Abandoned Carts found" }) => {
+const NotFound = ({ title = __("No Abandoned Carts found", "easycommerce") }) => {
     return (
         <div className="w-full h-full pt-[130px]  bg-white flex justify-center items-center">
             <div className="min-w-[320px] flex flex-col justify-between items-center gap-[30px]">
@@ -16,7 +17,7 @@ const NotFound = ({ title = "No Abandoned Carts found" }) => {
                         {title}
                     </p>
                     <p className="font-inter text-base leading-[26px] text-ec-light-black w-[300px] text-center">
-                        All Abandoned Carts will appear here once they occur.
+                        {__("All Abandoned Carts will appear here once they occur.", "easycommerce")}
                     </p>
                 </div>
             </div>

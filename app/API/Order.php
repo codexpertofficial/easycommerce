@@ -13,21 +13,10 @@ use EasyCommerce\Models\Customer;
 use EasyCommerce\Abstracts\API;
 use EasyCommerce\Helpers\Utility;
 use EasyCommerce\Models\Log as Log_Model;
-use EasyCommerce\Traits\Cache;
 use WP_REST_Request;
 use WP_REST_Response;
 
 class Order extends API {
-	use Cache;
-
-	private function delete_order_cache() {
-		$ranges = array( 'this-week', 'last-7', 'this-month', 'last-30', 'this-year' );
-
-		$this->delete_cache( 'report_overview_stats' );
-		foreach ( $ranges as $range ) {
-			$this->delete_cache( 'report_overview_stats_range_' . $range );
-		}
-	}
 
 	/**
 	 * Create a new order.
@@ -122,8 +111,8 @@ class Order extends API {
 			$shipping_address = $billing_address;
 		}
 
-		$customer_obj->update_meta( 'billing_address', $billing_address );
-		$customer_obj->update_meta( 'shipping_address', $shipping_address );
+		$customer_obj->update_meta( 'billing_address', $this->sanitize_address( $billing_address ) );
+		$customer_obj->update_meta( 'shipping_address', $this->sanitize_address( $shipping_address ) );
 
 		/**
 		 * Fires before creating an order.
@@ -266,7 +255,8 @@ class Order extends API {
 			$redirect = $customer_obj->get_login_link( 1, $redirect );
 		}
 
-		do_action( 'easycommerce_log', array( 'object' => 'order', 'action' => 'create', 'object_id' => $order_id, 'note' => 'Order ID #' . $order_id ) );
+		// translators: %d: order ID.
+		do_action( 'easycommerce_log', array( 'object' => 'order', 'action' => 'create', 'object_id' => $order_id, 'note' => sprintf( __( 'Order ID #%d', 'easycommerce' ), $order_id ) ) );
 
 		$this->response_success(
 			array(
@@ -470,7 +460,8 @@ class Order extends API {
 						'action'    => 'order_status',
 						'object_id' => $order_id,
 						'type'      => 'order_status',
-						'note'      => 'Order status changed from ' . ( $order_statuses[ $old_status ] ?? $old_status ) . ' to ' . ( $order_statuses[ $new_status ] ?? $new_status ),
+						// translators: %1$s: previous order status label. %2$s: new order status label.
+						'note'      => sprintf( __( 'Order status changed from %1$s to %2$s', 'easycommerce' ), $order_statuses[ $old_status ] ?? $old_status, $order_statuses[ $new_status ] ?? $new_status ),
 					)
 				);
 
@@ -501,7 +492,8 @@ class Order extends API {
 						'action'    => 'fulfillment_status',
 						'object_id' => $order_id,
 						'type'      => 'fulfillment_status',
-						'note'      => 'Order fulfillment status changed from ' . ( $fulfill_statuses[ $old_fulfillment_status ] ?? $old_fulfillment_status ) . ' to ' . ( $fulfill_statuses[ $new_fulfillment_status ] ?? $new_fulfillment_status ),
+						// translators: %1$s: previous fulfillment status label. %2$s: new fulfillment status label.
+						'note'      => sprintf( __( 'Order fulfillment status changed from %1$s to %2$s', 'easycommerce' ), $fulfill_statuses[ $old_fulfillment_status ] ?? $old_fulfillment_status, $fulfill_statuses[ $new_fulfillment_status ] ?? $new_fulfillment_status ),
 					)
 				);
 			}
@@ -558,7 +550,8 @@ class Order extends API {
 					 */
 					do_action( 'easycommerce_order_status_updated', $order_id, $status, $old_status );
 
-					do_action( 'easycommerce_log', array( 'object' => 'order', 'action' => 'order_update', 'object_id' => $order_id, 'type' => 'order_status', 'note'=> 'Order status changed from ' . ( $order_statuses[ $old_status ] ?? $old_status ) . ' to ' . ( $order_statuses[ $status ] ?? $status ) ) );
+					// translators: %1$s: previous order status label. %2$s: new order status label.
+					do_action( 'easycommerce_log', array( 'object' => 'order', 'action' => 'order_update', 'object_id' => $order_id, 'type' => 'order_status', 'note'=> sprintf( __( 'Order status changed from %1$s to %2$s', 'easycommerce' ), $order_statuses[ $old_status ] ?? $old_status, $order_statuses[ $status ] ?? $status ) ) );
 				}
 			} elseif ( $type === 'fulfillment' ) {
 				$old_status = $order->get_fulfillment_status();
@@ -575,7 +568,8 @@ class Order extends API {
 					 */
 					do_action( 'easycommerce_order_fulfillment_status_updated', $order_id, $status, $old_status );
 
-				    do_action( 'easycommerce_log', array( 'object' => 'order', 'action' => 'fulfillment_status', 'object_id' => $order_id, 'type' => 'fulfillment_status', 'note'=> 'Order fulfillment status changed from ' . ( $fulfill_statuses[ $old_status ] ?? $old_status ) . ' to ' . ( $fulfill_statuses[ $status ] ?? $status ) ) );
+				    // translators: %1$s: previous fulfillment status label. %2$s: new fulfillment status label.
+				    do_action( 'easycommerce_log', array( 'object' => 'order', 'action' => 'fulfillment_status', 'object_id' => $order_id, 'type' => 'fulfillment_status', 'note'=> sprintf( __( 'Order fulfillment status changed from %1$s to %2$s', 'easycommerce' ), $fulfill_statuses[ $old_status ] ?? $old_status, $fulfill_statuses[ $status ] ?? $status ) ) );
 				}
 			}
 
@@ -600,7 +594,7 @@ class Order extends API {
 		$order    = new Order_Model( $order_id );
 
 		if ( ! $order->exists() ) {
-			$this->response_success( array( 'message' => __( 'Order not found.', 'easycommerce' ) ) );
+			$this->response_error( array( 'message' => __( 'Order not found.', 'easycommerce' ) ) );
 		}
 
 		/**
@@ -624,8 +618,6 @@ class Order extends API {
 		do_action( 'easycommerce_after_delete_order', $order_id, $request );
 
 		do_action( 'easycommerce_log', array( 'object' => 'order', 'action' => 'delete', 'object_id' => $order_id, 'note' => __( 'Order Deleted', 'easycommerce' ) . ' #' . $order_id ) );
-
-		$this->delete_order_cache();
 
 		$this->response_success(
 			array(
@@ -662,7 +654,8 @@ class Order extends API {
 		// (so get_total_refunded() in email placeholders returns the correct amount).
 		do_action( 'easycommerce_order_email', 'refunded', $order_id );
 
-		do_action( 'easycommerce_log', array( 'object' => 'order', 'action' => 'refund', 'object_id' => $order_id, 'meta' => array( 'refund_amount' => $amount, 'reason' => $reason ), 'note' => 'Refund: ' . easycommerce_price( $amount ) ) );
+		// translators: %s: formatted refund amount.
+		do_action( 'easycommerce_log', array( 'object' => 'order', 'action' => 'refund', 'object_id' => $order_id, 'meta' => array( 'refund_amount' => $amount, 'reason' => $reason ), 'note' => sprintf( __( 'Refund: %s', 'easycommerce' ), easycommerce_price( $amount ) ) ) );
 
 		return $this->response_success(
 			array(
@@ -713,7 +706,8 @@ class Order extends API {
 				$mail_sent = apply_filters( 'easycommerce_mail_sent', false );
 
 				if ( $mail_sent ) {
-					do_action( 'easycommerce_log', array( 'object' => 'order', 'action' => 'email_send', 'object_id' => $order_id, 'meta' => array( 'event' => $event ), 'note' => 'Email sent: ' . $event ) );
+					// translators: %s: email event name.
+					do_action( 'easycommerce_log', array( 'object' => 'order', 'action' => 'email_send', 'object_id' => $order_id, 'meta' => array( 'event' => $event ), 'note' => sprintf( __( 'Email sent: %s', 'easycommerce' ), $event ) ) );
 
 					$this->response_success(
 						array(
@@ -725,7 +719,8 @@ class Order extends API {
 			}
 		}
 
-		do_action( 'easycommerce_log', array( 'object' => 'order', 'action' => 'email_fail', 'type' => 'error', 'object_id' => $order_id, 'meta' => array( 'event' => $event ), 'note' => 'Email failed: ' . $event ) );
+		// translators: %s: email event name.
+		do_action( 'easycommerce_log', array( 'object' => 'order', 'action' => 'email_fail', 'type' => 'error', 'object_id' => $order_id, 'meta' => array( 'event' => $event ), 'note' => sprintf( __( 'Email failed: %s', 'easycommerce' ), $event ) ) );
 
 		$this->response_error(
 			array(
@@ -804,8 +799,6 @@ class Order extends API {
 		 */
 		do_action( 'easycommerce_after_bulk_delete_order', $order_ids );
 
-		$this->delete_order_cache();
-
 		return $this->response_success(
 			array( 'message' => __( 'Orders deleted successfully.', 'easycommerce' ) )
 		);
@@ -823,14 +816,32 @@ class Order extends API {
 			return;
 		}
 
-		if ( $order->get_status() !== 'pending' ) {
-			$this->response_error( __( 'Order is not pending payment.', 'easycommerce' ), 400 );
-			return;
-		}
-
 		$params = array_merge( (array) $request->get_params(), $_POST ); // phpcs:ignore WordPress.Security.NonceVerification
 
 		$customer_id = $order->get_customer_id();
+
+		// Require a known, online payment method — reject empty, unrecognized, or offline methods
+		// so the order cannot advance to a paid status without a real gateway firing.
+		$requested_method = $params['easycommerce-payment_method'] ?? '';
+		$method_instance  = easycommerce_payment_method_class( $requested_method );
+
+		if ( ! $method_instance ) {
+			$this->response_error( __( 'Invalid payment method.', 'easycommerce' ), 400 );
+			return;
+		}
+
+		if ( $method_instance->is_offline() ) {
+			$this->response_error( __( 'Offline payment methods are not accepted here.', 'easycommerce' ), 400 );
+			return;
+		}
+
+		// Strip any client-supplied Stripe intent ID and substitute the server-stored one
+		// so the gateway cannot be fed a recycled/fake intent.
+		unset( $params['meta']['stripePaymentIntentId'] );
+		$server_intent_id = $order->get_meta( '_ec_pending_stripe_intent_id' );
+		if ( $server_intent_id ) {
+			$params['meta']['stripePaymentIntentId'] = $server_intent_id;
+		}
 
 		do_action( 'easycommerce_after_create_order', $order_id, $params, $customer_id );
 
@@ -843,7 +854,7 @@ class Order extends API {
 		$order->set_status( $status );
 		$order->set_fulfillment_status( $fulfill_status );
 
-		$payment_methods = array_keys( easycommerce_payment_methods());
+		$payment_methods = array_keys( easycommerce_payment_methods() );
 
 		if ( ! empty( $params['easycommerce-payment_method'] ) && in_array( $params['easycommerce-payment_method'], $payment_methods, true ) ) {
 			$order->update( array( 'payment_method' => sanitize_text_field( $params['easycommerce-payment_method'] ) ) );
@@ -871,6 +882,30 @@ class Order extends API {
 	 * @param string $type      'billing' or 'shipping'.
 	 * @return WP_REST_Response|null Null on success, error response on failure.
 	 */
+	private function sanitize_address( $address ) {
+		if ( ! is_array( $address ) ) {
+			return $address;
+		}
+
+		$text_fields = array( 'first_name', 'last_name', 'address_1', 'address_2', 'city', 'state', 'country', 'postcode' );
+
+		foreach ( $text_fields as $field ) {
+			if ( isset( $address[ $field ] ) ) {
+				$address[ $field ] = sanitize_text_field( $address[ $field ] );
+			}
+		}
+
+		if ( isset( $address['email'] ) ) {
+			$address['email'] = sanitize_email( $address['email'] );
+		}
+
+		if ( isset( $address['phone'] ) ) {
+			$address['phone'] = sanitize_text_field( $address['phone'] );
+		}
+
+		return $address;
+	}
+
 	private function validate_address_fields( $address, $type ) {
 		if ( ! is_array( $address ) ) {
 			return $this->response_error(

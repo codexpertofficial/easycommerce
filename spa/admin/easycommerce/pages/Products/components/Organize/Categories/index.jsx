@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { __ } from '@wordpress/i18n';
 
 const Categories = ({ active, categories, selected, setSelected }) => {
 
@@ -77,7 +78,7 @@ const Categories = ({ active, categories, selected, setSelected }) => {
                 {safeCategories.length > 0 ? (
                     renderCategories(safeCategories)
                 ) : (
-                    <div className="text-gray-500 text-sm">No categories available</div>
+                    <div className="text-gray-500 text-sm">{__('No categories available', 'easycommerce')}</div>
                 )}
             </div>
             <input

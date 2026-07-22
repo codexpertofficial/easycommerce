@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { __ } from '@wordpress/i18n';
 import { toast } from 'react-toastify';
 import ProductReviewsList from './ProductReviewsList';
 import Pagination from '../../../common/components/Pagination';
@@ -114,18 +115,18 @@ const ProductReviews = ({ page }) => {
 			.then((data) => {
 				easycommerce_modal(false);
 				if (data.success) {
-					toast.success(data.data?.message || 'Review deleted successfully');
+					toast.success(data.data?.message || __('Review deleted successfully', 'easycommerce'));
 					setProductReviews((prevReviews) =>
 						prevReviews.filter((review) => review.id !== reviewId),
 					);
 					fetchProductReviews();
 				} else {
-					toast.error(data.data?.message || 'Failed to delete review');
+					toast.error(data.data?.message || __('Failed to delete review', 'easycommerce'));
 				}
 			})
 			.catch((error) => {
 				easycommerce_modal(false);
-				toast.error('An error occurred while deleting the review');
+				toast.error(__('An error occurred while deleting the review', 'easycommerce'));
 				console.error('Error deleting review:', error);
 			});
 	};
@@ -133,7 +134,7 @@ const ProductReviews = ({ page }) => {
 	return (
 		<>
 			<div className="product-panel-title mb-4">
-				<h3>Product Reviews</h3>
+				<h3>{__('Product Reviews', 'easycommerce')}</h3>
 			</div>
 			<div className="w-full bg-white border border-solid border-ec-table-stock rounded-xl p-6 min-h-screen flex flex-col">
 				<div className="flex justify-between gap-5 mb-4">
@@ -175,13 +176,13 @@ const ProductReviews = ({ page }) => {
 								ImageUrl={noProductReviewsIcon}
 								title={
 									reviewsFiltered
-										? 'No Reviews Yet for Your Search'
-										: 'No Reviews Yet'
+										? __('No Reviews Yet for Your Search', 'easycommerce')
+										: __('No Reviews Yet', 'easycommerce')
 								}
 								description={
 									reviewsFiltered
-										? 'No reviews match your search criteria. Try a different search.'
-										: 'All customer reviews and feedback will appear here once they’re submitted.'
+										? __('No reviews match your search criteria. Try a different search.', 'easycommerce')
+										: __('All customer reviews and feedback will appear here once they’re submitted.', 'easycommerce')
 								}
 							/>
 						)}

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { __ } from "@wordpress/i18n";
 import AddressFields from "./AddressFields";
 
 const billingIcon = (
@@ -15,8 +16,8 @@ const AddressTabs = ({ billing, shipping }) => {
     const [active, setActive] = useState("billing");
 
     const tabs = [
-        { id: "billing", label: "Billing Address", icon: billingIcon },
-        { id: "shipping", label: "Shipping Address", icon: shippingIcon },
+        { id: "billing", label: __( "Billing Address", "easycommerce" ), icon: billingIcon },
+        { id: "shipping", label: __( "Shipping Address", "easycommerce" ), icon: shippingIcon },
     ];
 
     const address = active === "billing" ? billing : shipping;

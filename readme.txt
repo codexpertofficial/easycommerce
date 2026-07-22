@@ -5,7 +5,7 @@ Donate link: https://easycommerce.dev
 Tags: ecommerce, online store, ai ecommerce, store builder, digital downloads
 Requires at least: 6.0
 Tested up to: 7.0
-Stable tag: 1.45
+Stable tag: 1.46
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -515,6 +515,46 @@ Free community support via WordPress.org forums and the [Facebook Community](htt
 
 == Changelog ==
 
+= 1.46 - 2026-07-22 =
+
+**🔒 Security**
+
+- [security] Option REST endpoints are now restricted to EasyCommerce settings keys, so arbitrary WordPress options can no longer be read or changed through the API
+- [security] Hardened the CSV importer's remote image download against server-side request forgery
+
+**✨ New**
+
+- [add] Setup wizard now creates the Shop, Checkout, and Customer Dashboard pages automatically - the page-selection step is gone
+- [add] Starter store designs: ready-made page sections and full-page layouts to launch a store faster
+- [add] WooCommerce migration can now be started from the setup wizard and a new "Migrate" admin-bar button, with automatic detection of installed platforms
+- [ui] Redesigned media uploader with an inline upload area and improved gallery resizing
+
+**💳 Payments & Checkout**
+
+- [fix] Stripe now reuses a single customer record across all payment flows instead of creating duplicates
+- [fix] Mollie refunds can now be issued from the order screen
+- [fix] Restored double-payment protection - the cart is locked while a payment is in progress
+- [fix] Geo lookup failures at checkout now show a clear error instead of failing silently
+- [fix] Improved name validation on the checkout form
+
+**🐛 Fixes**
+
+- [fix] Installer no longer edits wp-config.php; a notice now warns when PHP memory is below the recommended 256M
+- [fix] Locations database download now retries with a cap and exponential backoff, and validates the downloaded file before saving
+- [fix] Removed a broken dashboard API route that returned a server error when called
+- [fix] Corrected transaction ID and payment URL labels in order details
+- [fix] Repositioned the Store Mode indicator in the admin bar with a clearer message
+- [fix] Clearer empty-state message for attributes on the add product page
+- [imp] More consistent error handling across admin pages
+- [perf] Added missing database indexes for faster queries on large stores
+- [perf] Block editor assets now load only on pages that actually use EasyCommerce blocks
+
+**🧹 Internal**
+
+- [refactor] Unified report cache invalidation behind a single easycommerce_clear_cache action
+- [refactor] Removed dead code and resolved codebase audit inconsistencies
+- [test] Test bootstrap now resets the correct database tables
+
 = 1.45 - 2026-07-14 =
 
 - [security] Digital download links are now only available once an order is paid - unpaid or cancelled orders can no longer access files
@@ -703,208 +743,6 @@ The headline feature of 1.40. EasyCommerce now ships autonomous AI agents that s
 - Fixed the WordPress admin sidebar not highlighting the EasyCommerce Dashboard
 - Fixed a broken placeholder page link in email settings
 - Fixed documentation page not loading
-
-= 1.31 - 2026-04-29 =
-
-- [fix] Fixed Mozart compatibility
-
-= 1.30 - 2026-04-29 =
-
-**📊 Reports Overhaul**
-
-- Complete Reports API and frontend restructure with improved architecture
-- New Overview, Orders, Revenue, Customers, and Products report pages
-- Added stats cards with comparison periods and tooltips
-- Added interactive Line, Doughnut, and Bar charts using Recharts/CanvasJS
-- Added GeoMap for orders and customers by location
-- Added Heatmap for customer activity patterns
-- Added Top Customers component with revenue breakdown
-- Added Single Product report page with sales, refunds, stock, and rating stats
-- Added Most Sold and Least Sold product lists
-- Added order type and customer type (new vs returning) breakdowns
-- Improved report caching with full cache invalidation on order/review changes
-- Fixed JOIN-multiplication bugs and revenue decimal precision issues
-- Fixed order/refund calculations across all report endpoints
-- Fixed country hover highlighting on GeoMap
-
-**📈 Dashboard Improvements**
-
-- Added Recent Sales chart with dual Y-axis
-- Added Recent Activities feed with per-type filtering
-- Added Abandoned Cart modal with custom reminder email support
-- Added predicted days until out-of-stock for low stock items
-- Fixed dashboard stats caching issue
-- Fixed dashboard date range filter
-
-**💳 Payments**
-
-- Added Square and Mollie order metadata display in order details
-- Fixed Braintree Mozart namespace issues and JS re-initialization race condition
-- Added PayPal backend validation and improved payment form handling
-
-**🏪 Store**
-
-- Added store visibility settings with store mode (coming soon / maintenance)
-- Added admin bar indicator for store mode
-- Added currency mismatch notice in settings
-- Added payment breakdown in order details
-
-**🐛 Bug Fixes**
-
-- Fixed dependent addon installation failing for non-canonical plugin directories
-- Fixed abandoned cart clean action not working
-- Fixed email sending issues including missing refund emails and empty recipient guard
-- Fixed help and support page doc API path
-- Fixed products tab display issue
-
-**🎨 UI**
-
-- Updated sidebar icons with hover and active states
-- Fixed active menu color and hover icon in sidebar
-- Updated order fulfillment status colors to match dropdown
-
-**⚙️ Developer / CI**
-
-- Added PR quality check workflow
-- Added PHPUnit test suite with PSR-4 layout and base test case
-- Added Reports architecture documentation
-
-= 1.29 - 2026-04-14 =
-
-- [fix] Fix initialization error
-- [fix] Fix Braintree error message handling
-- [fix] Fix API key modal error
-- [fix] Fix AI assistant button error
-- [fix] Fix coupon discount type field error
-- [fix] Fix out of stock issue for templates 1 and 3
-- [fix] Fix stock badge initialization issue
-- [fix] Fix product count issue on single product page
-- [fix] Prevent adding out of stock products to cart
-- [fix] Add correct link for addon page
-- [feat] Add stock badge feature with enable/disable option
-- [feat] Add stock badge for templates 1, 2, and 3
-- [feat] Add fallback value to stock badge
-- [feat] Set stock badge button default value
-- [feat] Update stock count logic
-- [feat] Preserve dashboard data when navigating setup wizard
-- [feat] Reset offer value to empty array when switching to Free Products type
-- [ui] Change background color for stock badge
-
-= 1.28 - 2026-04-02 =
-
-- [feat] Add store status feature - display status badge on shop, checkout, and dashboard pages
-- [feat] Add visibility tab - visibility settings for store pages
-- [feat] Remove store mode field from business settings tab
-- [ui] Improve store status badge styling and add dot indicator
-- [ui] Improve multicheck render function styling
-- [ui] Update tab content and layout across store pages
-- [ui] Include utility helper class in checkout template 2
-- [fix] Fix stock status style issue
-- [refactor] Restructure store mode function for improved maintainability
-
-= 1.27 - 2026-03-15 =
-
-- [feat] Add payment method API with enhanced checkout flow - store selected payment method in cart data
-- [feat] Add fallback payment method selection when selected method is unavailable for digital products
-- [feat] Add payment method handling in checkout templates 2 and 3
-- [fix] Fix downloads pagination issue in dashboard
-- [fix] Fix navigation issues for dashboard downloads, transactions, and orders tabs
-- [fix] Fix shipping tax calculation when billing/shipping countries differ
-- [fix] Fix shipping method radio button value type in order summary
-- [fix] Fix various PHP warnings
-- [refactor] Optimize code and improve payment method selection logic
-
-= 1.26 - 2026-03-12 =
-
-- [fix] Fix order status display in orders tab, recent orders widget, and order info
-- [fix] Fix order notes status format consistency
-- [refactor] Stripe code refactoring for improved maintainability
-- [refactor] Replace PascalCase naming with snake_case naming convention
-- [db] Add one-time migration code for future updates
-- [fix] Declare variables for order and fulfill statuses functions
-
-= 1.25 - 2026-03-12 =
-
-- [security] Fix privilege escalation vulnerability (CVE-2026-3397, CVSS 8.8) in REST API profile endpoint
-- [feat] Separate product and shipping tax - display taxes independently in admin and frontend order views
-- [feat] Add business address fields settings for tax calculations
-- [feat] RTL support for all admin pages - settings, dashboard, products, orders, customers, coupons, transactions, checkout templates
-- [fix] Shipping tax calculation when billing/shipping countries differ
-- [fix] Disable shipping taxable button when shipping country is not in taxable country list
-- [fix] Show discount label only when coupon is applied
-- [fix] Show shipping and discount in order details only when greater than 0
-- [fix] Fix transaction ID display - limit to 10 characters visible, store 13 characters
-- [fix] Fix partial refund display - add colored badge for order count
-- [fix] Fix order note default appearing issue
-- [fix] Fix logs API permission issue
-- [fix] Fix checkout preview button functionality
-- [fix] Fix shipping method radio button value type in order summary
-- [fix] Fix Stripe payment element load errors
-- [fix] Fix title length truncation in product lists
-- [fix] Improve cart fragment updates on billing address changes
-- [fix] Improve payment method updates when amount changes
-- [ui] Add padding to settings and help/support pages
-- [ui] Fix dashboard visibility issues
-
-= 1.24 - 2026-03-03 =
-
-- [fix] Fix PayPal breakdown issue and payment payload bugs
-- [fix] Fix shipping fee calculation issues during checkout
-- [fix] Fix cart API response issues
-- [imp] Update PayPal JavaScript integration
-- [imp] Improve prompts for AI image generator, image enhancement, and analyst templates
-
-= 1.23 - 2026-02-26 =
-
-- [fix] Fix fatal error while activating this plugin in (WP 6.0) & (PHP 7.4) version
-- [fix] Handle empty results in AI data retrieval. Return 'no data found' for missing data
-- [fix] Fix save button text is not updating based on the status dropdown field
-- [fix] Fix variation not displaying on frontend
-- [feat] Change discount type input field from dropdown to radio
-- [feat] Use active or inactive dropdown to save coupon status
-- [ui] Use dropdown and remove active and inactive toggle switcher for coupon creation
-- [ui] Make some changes in the coupon creation UI
-- [refactor] Remove unused variable and redundant attribute deletion logic in product variations
-
-= 1.22 - 2026-02-26 =
-
-- [feat] Improve smart search functionality with enhanced fuzzy matching
-- [feat] Add SKU generation for price items based on product title and attributes
-- [fix] Remove border from add-to-cart button on shop page
-- [fix] Fix image editor file missing error
-- [fix] Fix duplicate attribute issue in product editor
-- [fix] Fix demo product import errors
-- [fix] Resolve undefined variable warning
-- [fix] Remove duplicate id and slug in taxonomy handling
-- [ui] Change styling of 'partially refunded' status across all admin screens
-- [ui] Add styling for partiallyRefunded order status in dashboard
-- [ui] Update navigation links to point to 'get-pro' page in Header, ProModal, and CommonHeader components
-- [refactor] Refactor abandoned cart API methods to simplify naming conventions
-- [refactor] Refactor abandoned cart methods to unify naming conventions and improve clarity
-
-= 1.21 - 2026-02-24 =
-
-- [feat] Bulk delete functionality for taxonomies - Added bulk delete for attributes, brands, categories, and tags with confirmation modals in both API and frontend
-- [feat] Store updater automation - Enhanced store update mechanism
-- [add] Documentation links for shipping and taxation settings screens
-- [add] Hamburger icon at the top of order single page
-- [add] Filter to prepare method of AI service
-- [fix] 'Read more' button displayed even when summary is not too long
-- [fix] SKU calculation logic to handle previous SKU data correctly
-- [fix] Pro menu not navigating to 'pro' page
-- [fix] AI modal access condition based on licensing status
-- [fix] Package compatibility issues
-- [fix] CSS consistency for shipping and taxation screen
-- [refactor] Refactor sidebar rendering functions and move to helpers
-- [refactor] Refactor API modal components and improve user session handling
-- [refactor] Remove unnecessary dependency from SKU component useEffect
-- [refactor] Button styles for bulk delete functionality across attributes, brands, categories, and tags
-- [ui] Improve setup wizard UI
-
-= 1.20.1 - 2026-02-19 =
-
-- [feat] Add credit notice in AI Analyst
-- [add] Add explainer videos
 
 == Upgrade Notice ==
 

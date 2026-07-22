@@ -1,9 +1,47 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { applyFilters } from '@wordpress/hooks';
+import { __ } from '@wordpress/i18n';
 import Header from '../../common/Header';
 import RootToast from '../../common/RootToast';
 import './settings-menu.css';
+
+/**
+ * Translated labels for the settings menu slugs.
+ *
+ * The slug itself stays the lookup key, only the label is translated.
+ */
+const menuLabels = {
+	'general': __( 'General', 'easycommerce' ),
+	'payment': __( 'Payment', 'easycommerce' ),
+	'order': __( 'Orders', 'easycommerce' ),
+	'checkout': __( 'Checkout', 'easycommerce' ),
+	'email': __( 'Emails', 'easycommerce' ),
+	'shipping': __( 'Shipping', 'easycommerce' ),
+	'tax': __( 'Taxation', 'easycommerce' ),
+	'abandoned-cart': __( 'Cart Recovery', 'easycommerce' ),
+	'ai': __( 'AI', 'easycommerce' ),
+};
+
+/**
+ * Resolves a menu slug to its translated label.
+ *
+ * Unknown slugs (added by third parties) fall back to the slug, title cased.
+ *
+ * @param {string} slug The menu slug.
+ * @return {string} The label to display.
+ */
+const getMenuLabel = ( slug ) => {
+	const key = String( slug ).toLowerCase();
+
+	return (
+		menuLabels[ key ] ||
+		String( slug )
+			.split( '-' )
+			.map( ( word ) => word.charAt( 0 ).toUpperCase() + word.slice( 1 ) )
+			.join( ' ' )
+	);
+};
 
 const App = () => {
 	/**
@@ -63,11 +101,7 @@ const App = () => {
 	 */
 	const breadcrumbs = applyFilters(
 		'easycommerce.settings.breadcrumbs',
-		['Settings', currentMenu].map((item) =>
-			item.split('-').map(
-					(word) => word.charAt(0).toUpperCase() + word.slice(1)
-				).join(' ')
-		)
+		[__( 'Settings', 'easycommerce' ), getMenuLabel( currentMenu )]
 	);
 
 	return (

@@ -33,7 +33,7 @@ const ProductSettings = ({ productTitle, productSlug, prevData }) => {
 	return (
 		<div className="bg-white rounded-xl border-ec-table-stock border border-solid">
 			<div className="py-[14px] px-6 flex items-center justify-between border-b border-ec-table-stock border-solid">
-				<PanelTitle title="Settings" notice="Configure general product settings like visibility, URL slug, and reviews." />
+				<PanelTitle title={__('Settings', 'easycommerce')} notice={__('Configure general product settings like visibility, URL slug, and reviews.', 'easycommerce')} />
 
 				<div className="panel-actions">
 					<button
@@ -90,7 +90,7 @@ const ProductSettings = ({ productTitle, productSlug, prevData }) => {
 									onChange={(e) => setSlug(e.target.value)}
 								/>
 							</div>
-							<p className="text-sm text-ec-body mt-4 mb-2">URL:</p>
+							<p className="text-sm text-ec-body mt-4 mb-2">{__('URL:', 'easycommerce')}</p>
 							<p className="text-sm text-ec-body break-all focus:shadow-none focus:outline-none">{EASYCOMMERCE.home_url}/products/<strong>{slug}</strong></p>
 
 						</div>

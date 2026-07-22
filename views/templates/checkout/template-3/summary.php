@@ -8,7 +8,7 @@ use EasyCommerce\Helpers\Utility;
 </div>
 <div>
 	<div class="easycommerce-coupon-wrapper relative mb-4">
-		<input type="text" placeholder="Discount code" id="easycommerce-coupon-field" class="placeholder:text-[#737791] text-[#737791] easycommerce-trendy-coupon-field"/>
+		<input type="text" placeholder="<?php esc_attr_e( 'Discount code', 'easycommerce' ); ?>" id="easycommerce-coupon-field" class="placeholder:text-[#737791] text-[#737791] easycommerce-trendy-coupon-field"/>
 		<button type="button"
 			class="absolute top-[9px] right-[9px] rtl:right-auto rtl:left-[9px] py-1 md:py-[7px] px-5 border rounded-[6px] focus:border-ec-border text-base font-inter font-normal leading-[26px] shadow-none easycommerce-trendy-coupon-apply"
 			id="easycommerce-coupon-apply">
@@ -79,14 +79,19 @@ use EasyCommerce\Helpers\Utility;
 					foreach ( $shipping_methods as $index => $shipping_method ) {
 						$shipping_method = is_array( $shipping_method ) ? $shipping_method : (array) $shipping_method;
 						$is_checked      = ( $selected_method === null && $index === 0 ) || ( $selected_method == $shipping_method['id'] ) ? 'checked' : '';
+						$method_label    = sprintf(
+							// translators: 1: shipping method name, 2: formatted shipping cost.
+							esc_html__( '%1$s at %2$s', 'easycommerce' ),
+							esc_html( $shipping_method['name'] ),
+							esc_html( easycommerce_price( $shipping_method['cost'] ) )
+						);
 						printf(
 							'<label class="easycommerce-shipping-label font-inter font-normal text-base text-[#737791] p-4 rounded-md">
-								<input type="radio" name="shipping_method" value="%1$s" class="easycommerce-shipping-method" %4$s required />
-								<span class="shipping-label-text"> %2$s at %3$s </span>
+								<input type="radio" name="shipping_method" value="%1$s" class="easycommerce-shipping-method" %3$s required />
+								<span class="shipping-label-text"> %2$s </span>
 							</label><br />',
 							$shipping_method['id'],
-							$shipping_method['name'],
-							easycommerce_price( $shipping_method['cost'] ),
+							$method_label,
 							esc_attr( $is_checked )
 						);
 					}

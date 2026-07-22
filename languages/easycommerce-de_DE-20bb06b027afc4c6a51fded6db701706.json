@@ -1,0 +1,99 @@
+{
+    "translation-revision-date": "YEAR-MO-DA HO:MI+ZONE",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "blocks\/shops-page\/template-2\/edit.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "de_DE",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "No products found.": [
+                "Keine Produkte gefunden."
+            ],
+            "Checkout": [
+                "Kasse"
+            ],
+            "Color": [
+                "Farbe"
+            ],
+            "Normal": [
+                "Normal"
+            ],
+            "Product Settings": [
+                "Produkteinstellungen"
+            ],
+            "Products Per Page": [
+                "Produkte pro Seite"
+            ],
+            "Grid Settings": [
+                "Raster-Einstellungen"
+            ],
+            "Show Filters": [
+                "Filter anzeigen"
+            ],
+            "Show Pagination": [
+                "Seitennummerierung anzeigen"
+            ],
+            "Number of Columns": [
+                "Anzahl der Spalten"
+            ],
+            "Product Title": [
+                "Produkttitel"
+            ],
+            "Text Color": [
+                "Textfarbe"
+            ],
+            "Hover Text Color": [
+                "Textfarbe beim Hover"
+            ],
+            "Product Category": [
+                "Produktkategorie"
+            ],
+            "Product Rating": [
+                "Produktbewertung"
+            ],
+            "Star Size": [
+                "Sterngr\u00f6\u00dfe"
+            ],
+            "Product Price": [
+                "Produktpreis"
+            ],
+            "Regular Price": [
+                "Normalpreis"
+            ],
+            "Sale Price": [
+                "Angebotspreis"
+            ],
+            "Cart Button": [
+                "Warenkorb-Button"
+            ],
+            "Hover": [
+                "Hover"
+            ],
+            "Background Color": [
+                "Hintergrundfarbe"
+            ],
+            "Focus Text Color": [
+                "Textfarbe bei Fokus"
+            ],
+            "Focus Background Color": [
+                "Hintergrundfarbe bei Fokus"
+            ],
+            "Text Color (Hover)": [
+                "Textfarbe (Hover)"
+            ],
+            "Background Color (Hover)": [
+                "Hintergrundfarbe (Hover)"
+            ],
+            "Checkout Button": [
+                "Kasse-Button"
+            ],
+            "Add To Cart": [
+                "In den Warenkorb"
+            ]
+        }
+    }
+}

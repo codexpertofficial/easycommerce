@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { __ } from "@wordpress/i18n";
 import Modal from "./Modal";
 
 const Feedback = () => {
@@ -15,7 +16,7 @@ const Feedback = () => {
                 className="flex items-center cursor-pointer p-2 font-inter 
                 font-medium text-sm leading-5 ec-body hover:text-ec-primary"
             >
-                Feedback
+                { __( 'Feedback', 'easycommerce' ) }
             </button>
             {showModal && <Modal setShowModal={setShowModal} />}
         </>

@@ -1,4 +1,16 @@
 <?php
+/**
+ * Checkout Template Two - the compact checkout.
+ *
+ * By design this template collects only first_name, last_name, email and
+ * country (see the array_filter allow-lists below), giving a low-friction
+ * single-step checkout for stores that don't need a full address here (e.g.
+ * digital goods). Shipping is therefore not recalculated from this template;
+ * stores needing a full billing/shipping address should use template-1 or
+ * template-3. The short field list is intentional, not a missing-address bug.
+ */
+defined( 'ABSPATH' ) || exit;
+
 use EasyCommerce\Models\Cart;
 
 $cart_obj   = new Cart();

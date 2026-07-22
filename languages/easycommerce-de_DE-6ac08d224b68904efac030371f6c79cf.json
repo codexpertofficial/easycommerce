@@ -1,0 +1,444 @@
+{
+    "translation-revision-date": "YEAR-MO-DA HO:MI+ZONE",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "build\/dashboard.bundle.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "de_DE",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Passwords do not match": [
+                "Passw\u00f6rter stimmen nicht \u00fcberein"
+            ],
+            "Payment Method": [
+                "Zahlungsmethode"
+            ],
+            "Order ID": [
+                "Bestell-ID"
+            ],
+            "Order Status": [
+                "Bestellstatus"
+            ],
+            "Orders": [
+                "Bestellungen"
+            ],
+            "Pending": [
+                "Ausstehend"
+            ],
+            "Processing": [
+                "In Bearbeitung"
+            ],
+            "Completed": [
+                "Abgeschlossen"
+            ],
+            "Refunded": [
+                "Erstattet"
+            ],
+            "Cancelled": [
+                "Storniert"
+            ],
+            "On Hold": [
+                "In Wartestellung"
+            ],
+            "Dashboard": [
+                "\u00dcbersicht"
+            ],
+            "First Name": [
+                "Vorname"
+            ],
+            "Last Name": [
+                "Nachname"
+            ],
+            "Email": [
+                "E-Mail"
+            ],
+            "Phone": [
+                "Telefon"
+            ],
+            "Enter your phone number": [
+                "Geben Sie Ihre Telefonnummer ein"
+            ],
+            "Address 1": [
+                "Adresse 1"
+            ],
+            "Address 2": [
+                "Adresse 2"
+            ],
+            "Country": [
+                "Land"
+            ],
+            "State": [
+                "Bundesland"
+            ],
+            "City": [
+                "Stadt"
+            ],
+            "Business Type": [
+                "Unternehmenstyp"
+            ],
+            "Address": [
+                "Adresse"
+            ],
+            "Settings": [
+                "Einstellungen"
+            ],
+            "Shipping": [
+                "Versand"
+            ],
+            "Cancel": [
+                "Abbrechen"
+            ],
+            "Your Email": [
+                "Ihre E-Mail"
+            ],
+            "Action": [
+                "Aktion"
+            ],
+            "Transaction ID": [
+                "Transaktions-ID"
+            ],
+            "Transactions": [
+                "Transaktionen"
+            ],
+            "Product Image": [
+                "Produktbild"
+            ],
+            "Date": [
+                "Datum"
+            ],
+            "Pay Now": [
+                "Jetzt bezahlen"
+            ],
+            "Subtotal": [
+                "Zwischensumme"
+            ],
+            "Discount": [
+                "Rabatt"
+            ],
+            "Total": [
+                "Gesamt"
+            ],
+            "Type": [
+                "Typ"
+            ],
+            "Size": [
+                "Gr\u00f6\u00dfe"
+            ],
+            "Billing Address": [
+                "Rechnungsadresse"
+            ],
+            "Shipping Address": [
+                "Lieferadresse"
+            ],
+            "Product Tax": [
+                "Produktsteuer"
+            ],
+            "Shipping Tax": [
+                "Versandsteuer"
+            ],
+            "Select City": [
+                "Stadt ausw\u00e4hlen"
+            ],
+            "Select State": [
+                "Bundesland ausw\u00e4hlen"
+            ],
+            "Quantity": [
+                "Menge"
+            ],
+            "Password": [
+                "Passwort"
+            ],
+            "New password": [
+                "Neues Passwort"
+            ],
+            "Enter new password": [
+                "Neues Passwort eingeben"
+            ],
+            "Confirm new password": [
+                "Neues Passwort best\u00e4tigen"
+            ],
+            "Select your country": [
+                "W\u00e4hlen Sie Ihr Land"
+            ],
+            "Purchases": [
+                "K\u00e4ufe"
+            ],
+            "Downloads": [
+                "Downloads"
+            ],
+            "Profile": [
+                "Profil"
+            ],
+            "Logout": [
+                "Abmelden"
+            ],
+            "Unknown User": [
+                "Unbekannter Benutzer"
+            ],
+            "User Profile Image": [
+                "Benutzerprofilbild"
+            ],
+            "arrow": [
+                "Pfeil"
+            ],
+            "Total Orders": [
+                "Bestellungen gesamt"
+            ],
+            "N\/A": [
+                "N\/V"
+            ],
+            "Total Spent": [
+                "Gesamtausgaben"
+            ],
+            "Average Orders": [
+                "Durchschnittliche Bestellungen"
+            ],
+            "Customer since": [
+                "Kunde seit"
+            ],
+            "Summary": [
+                "Zusammenfassung"
+            ],
+            "icon": [
+                "Symbol"
+            ],
+            "View": [
+                "Ansehen"
+            ],
+            "Recent Orders": [
+                "Letzte Bestellungen"
+            ],
+            "View More": [
+                "Mehr anzeigen"
+            ],
+            "No orders yet": [
+                "Noch keine Bestellungen"
+            ],
+            "When you place an order it will show up here.": [
+                "Wenn Sie eine Bestellung aufgeben, wird sie hier angezeigt."
+            ],
+            "Amount": [
+                "Betrag"
+            ],
+            "Status": [
+                "Status"
+            ],
+            "View order": [
+                "Bestellung ansehen"
+            ],
+            "Back": [
+                "Zur\u00fcck"
+            ],
+            "Next": [
+                "Weiter"
+            ],
+            "No orders available": [
+                "Keine Bestellungen vorhanden"
+            ],
+            "Orders you place will appear here.": [
+                "Ihre aufgegebenen Bestellungen erscheinen hier."
+            ],
+            "card-icon": [
+                "card-icon"
+            ],
+            "Click to copy": [
+                "Zum Kopieren klicken"
+            ],
+            "Copy": [
+                "Kopieren"
+            ],
+            "Copied!": [
+                "Kopiert!"
+            ],
+            "No transactions available": [
+                "Keine Transaktionen vorhanden"
+            ],
+            "Your payment history will appear here.": [
+                "Ihr Zahlungsverlauf erscheint hier."
+            ],
+            "File Name": [
+                "Dateiname"
+            ],
+            "%s icon": [
+                "%s-Symbol"
+            ],
+            "Download": [
+                "Download"
+            ],
+            "No downloads available": [
+                "Keine Downloads vorhanden"
+            ],
+            "Files from your purchases will appear here.": [
+                "Dateien aus Ihren K\u00e4ufen erscheinen hier."
+            ],
+            "Select Image": [
+                "Bild ausw\u00e4hlen"
+            ],
+            "Use selected image": [
+                "Ausgew\u00e4hltes Bild verwenden"
+            ],
+            "user": [
+                "Benutzer"
+            ],
+            "camera": [
+                "Kamera"
+            ],
+            "Your profile": [
+                "Ihr Profil"
+            ],
+            "Profile updated successfully": [
+                "Profil erfolgreich aktualisiert"
+            ],
+            "Profile update failed": [
+                "Profilaktualisierung fehlgeschlagen"
+            ],
+            "Enter your first name": [
+                "Geben Sie Ihren Vornamen ein"
+            ],
+            "Enter your last name": [
+                "Geben Sie Ihren Nachnamen ein"
+            ],
+            "Enter your email": [
+                "Geben Sie Ihre E-Mail-Adresse ein"
+            ],
+            "Phone Number": [
+                "Telefonnummer"
+            ],
+            "Company Name": [
+                "Firmenname"
+            ],
+            "Enter your company name": [
+                "Geben Sie Ihren Firmennamen ein"
+            ],
+            "Tax ID": [
+                "Steuernummer"
+            ],
+            "Enter your tax ID": [
+                "Geben Sie Ihre Steuernummer ein"
+            ],
+            "Select your Business Type": [
+                "W\u00e4hlen Sie Ihren Gesch\u00e4ftstyp"
+            ],
+            "Manufacturing": [
+                "Fertigung"
+            ],
+            "Finance and Insurance": [
+                "Finanzen und Versicherungen"
+            ],
+            "Healthcare": [
+                "Gesundheitswesen"
+            ],
+            "Real Estate": [
+                "Immobilien"
+            ],
+            "Update Profile": [
+                "Profil aktualisieren"
+            ],
+            "Enter company name": [
+                "Firmennamen eingeben"
+            ],
+            "Address Line 1": [
+                "Adresszeile 1"
+            ],
+            "Enter address": [
+                "Adresse eingeben"
+            ],
+            "Address Line 2": [
+                "Adresszeile 2"
+            ],
+            "Apartment, suite, etc.": [
+                "Wohnung, Suite usw."
+            ],
+            "State\/Province": [
+                "Bundesland\/Provinz"
+            ],
+            "ZIP\/Postal Code": [
+                "PLZ\/Postleitzahl"
+            ],
+            "Enter postal code": [
+                "Postleitzahl eingeben"
+            ],
+            "Update Address": [
+                "Adresse aktualisieren"
+            ],
+            "%s Address": [
+                "%s-Adresse"
+            ],
+            "Billing": [
+                "Rechnung"
+            ],
+            "Password must be at least 6 characters long": [
+                "Das Passwort muss mindestens 6 Zeichen lang sein"
+            ],
+            "Password updated successfully": [
+                "Passwort erfolgreich aktualisiert"
+            ],
+            "Error updating password": [
+                "Fehler beim Aktualisieren des Passworts"
+            ],
+            "Set your password": [
+                "Legen Sie Ihr Passwort fest"
+            ],
+            "Change your Password": [
+                "\u00c4ndern Sie Ihr Passwort"
+            ],
+            "Enter a new password below to change your password": [
+                "Geben Sie unten ein neues Passwort ein, um Ihr Passwort zu \u00e4ndern"
+            ],
+            "Change Password": [
+                "Passwort \u00e4ndern"
+            ],
+            "Items": [
+                "Artikel"
+            ],
+            "Free Product": [
+                "Kostenloses Produkt"
+            ],
+            "Download %s": [
+                "%s herunterladen"
+            ],
+            "Order Date": [
+                "Bestelldatum"
+            ],
+            "Fulfilment Status": [
+                "Erf\u00fcllungsstatus"
+            ],
+            "Order info": [
+                "Bestellinfo"
+            ],
+            "No address provided.": [
+                "Keine Adresse angegeben."
+            ],
+            "Full Name": [
+                "Vollst\u00e4ndiger Name"
+            ],
+            "Company": [
+                "Firma"
+            ],
+            "Order Notes": [
+                "Bestellnotizen"
+            ],
+            "Loading notes...": [
+                "Notizen werden geladen..."
+            ],
+            "No notes found for this order": [
+                "Keine Notizen f\u00fcr diese Bestellung gefunden"
+            ],
+            "Track here:": [
+                "Hier verfolgen:"
+            ],
+            "Back to orders": [
+                "Zur\u00fcck zu den Bestellungen"
+            ],
+            "Order #%s": [
+                "Bestellung #%s"
+            ],
+            "No order data found": [
+                "Keine Bestelldaten gefunden"
+            ]
+        }
+    }
+}

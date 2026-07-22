@@ -251,6 +251,7 @@
 .easycommerce-dashboard-content-details > div > form > div:nth-child(2) {
 	border: 1px solid var(--color-ec-border);
 }
+
 @media (max-width: 1060px) {
 	.easycommerce .easycommerce-single-product-wrapper .wp-block-columns {
 		flex-wrap: wrap !important;
@@ -536,3 +537,21 @@
   color: #6b7280;
   max-width: 400px;
 }
+/* React auth "Remember Me" checkbox: center the tick both axes.
+   Overrides the hardcoded top/left tick position from init.css so the
+   check icon sits dead-centre on the box. Scoped to the auth checkbox
+   only, so checkout/shop checkboxes are untouched. */
+.easycommerce #easycommerce-login-form input[type="checkbox"].easycommerce-auth-remember::before {
+	content: none;
+}
+.easycommerce #easycommerce-login-form input[type="checkbox"].easycommerce-auth-remember {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.easycommerce #easycommerce-login-form input[type="checkbox"].easycommerce-auth-remember:checked {
+	background-image: url(../../admin/img/icons/checked.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+

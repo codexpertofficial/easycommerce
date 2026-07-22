@@ -26,12 +26,12 @@ const AiGenerate = ({ contentType, productTitle, setAiOpen, setAiContent }) => {
 		switch (contentType) {
 			case 'summary':
 				setInput(
-					'Write a short, compelling product sumamry with key features and benefits.'
+					__('Write a short, compelling product sumamry with key features and benefits.', 'easycommerce')
 				);
 				break;
 			case 'description':
 				setInput(
-					"Write a detailed, persuasive product description covering features, benefits, use cases, and why it's a great choice. Mention features in ordered list if any."
+					__("Write a detailed, persuasive product description covering features, benefits, use cases, and why it's a great choice. Mention features in ordered list if any.", 'easycommerce')
 				);
 				break;
 		}
@@ -266,7 +266,7 @@ const AiGenerate = ({ contentType, productTitle, setAiOpen, setAiContent }) => {
 								}
 							>
 								{isLoading ? (
-									<img src={loadingGifURL} alt="loading" className="h-8" />
+									<img src={loadingGifURL} alt={__('loading', 'easycommerce')} className="h-8" />
 								) : (
 									<>
 										{generateIcon}

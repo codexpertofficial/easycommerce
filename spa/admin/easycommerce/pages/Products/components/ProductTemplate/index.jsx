@@ -1,12 +1,13 @@
 import React, { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
+import { __ } from '@wordpress/i18n';
 
 import PanelTitle from '../common/PanelTitle';
 import Dropdown from '../../../../../common/components/inputs/Dropdown';
 
 const TEMPLATE_OPTIONS = [
-    { value: 'template-1', label: 'Template 1' },
-    { value: 'template-2', label: 'Template 2' },
+    { value: 'template-1', label: __('Template 1', 'easycommerce') },
+    { value: 'template-2', label: __('Template 2', 'easycommerce') },
 ];
 
 // normalize prevData into "template-1" / "template-2"
@@ -31,7 +32,7 @@ const Template = ({ prevData }) => {
     return (
         <div className="bg-white rounded-xl border-ec-table-stock border border-solid overflow-hidden">
             <div className="py-[14px] px-6 flex items-center justify-between border-b border-ec-table-stock border-solid">
-                <PanelTitle title="Product View" notice="Choose a template to customize how your product page is displayed to customers." />
+                <PanelTitle title={__('Product View', 'easycommerce')} notice={__('Choose a template to customize how your product page is displayed to customers.', 'easycommerce')} />
                 <div className="panel-actions">
                     <button
                         className="panel-collapse"
@@ -68,8 +69,8 @@ const Template = ({ prevData }) => {
                 <div className="p-6 duration-300">
                     <div className="flex flex-col gap-4 h-ec-input">
                         <Dropdown
-                            label="Select Template"
-                            placeholder={"Select a template"}
+                            label={__("Select Template", "easycommerce")}
+                            placeholder={__("Select a template", "easycommerce")}
                             options={TEMPLATE_OPTIONS}
                             value={template}
                             onChange={(e) => {

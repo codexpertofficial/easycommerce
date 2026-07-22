@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
+import { __ } from "@wordpress/i18n";
 import globalToast from "../../../../common/components/globalToast";
 const BulkDelete = `${EASYCOMMERCE.assets}admin/img/icons/BulkDelete.png`;
 const ActionArrowActive = `${EASYCOMMERCE.assets}admin/img/icons/ActionArrowActive.png`;
 const ActionArrowInactive = `${EASYCOMMERCE.assets}admin/img/icons/ActionArrowInactive.png`;
 
 const productStatuses = {
-    publish: "Live",
-    draft: "Draft",
-    trash: "Trash",
+    publish: __("Live", "easycommerce"),
+    draft: __("Draft", "easycommerce"),
+    trash: __("Trash", "easycommerce"),
 };
 
 const ProductShowBulkOptions = ({
@@ -64,7 +65,7 @@ const ProductShowBulkOptions = ({
                 if (data.success) {
                     addToastData({
                         type: "success",
-                        message: data.data.message || "Product status updated successfully.",
+                        message: data.data.message || __("Product status updated successfully.", "easycommerce"),
                     });
                     setProducts((prevProducts) => {
                         const updatedProducts = prevProducts.map((product) => {
@@ -99,7 +100,7 @@ const ProductShowBulkOptions = ({
                 } else {
                     addToastData({
                         type: "error",
-                        message: data.data || "Failed to update product status",
+                        message: data.data || __("Failed to update product status", "easycommerce"),
                     });
                 }
             })
@@ -107,7 +108,7 @@ const ProductShowBulkOptions = ({
                 easycommerce_modal(false);
                 addToastData({
                     type: "error",
-                    message: "An error occurred while updating product status",
+                    message: __("An error occurred while updating product status", "easycommerce"),
                 });
             });
 
@@ -125,11 +126,11 @@ const ProductShowBulkOptions = ({
                         }`}
                         onMouseDown={() => handleOptionClick({ value: "setProductStatus" })}
                     >
-                        Set Product Status
+                        {__("Set Product Status", "easycommerce")}
                         <span className="ml-auto">
                             <img
                                 src={openAccordion === "productStatus" ? ActionArrowActive : ActionArrowInactive}
-                                alt="Action Arrow"
+                                alt={__("Action Arrow", "easycommerce")}
                                 className="w-3"
                             />
                         </span>
@@ -159,8 +160,8 @@ const ProductShowBulkOptions = ({
                     className="group flex items-center justify-between gap-2 px-3 py-2 text-sm text-ec-body font-normal leading-[26px] hover:bg-ec-modal cursor-pointer rounded-[4px]"
                     onMouseDown={() => handleOptionClick({ value: "delete" })}
                 >
-                    Delete
-                    <img src={BulkDelete} alt="Delete" className="w-5 h-4 object-contain" />
+                    {__("Delete", "easycommerce")}
+                    <img src={BulkDelete} alt={__("Delete", "easycommerce")} className="w-5 h-4 object-contain" />
                 </li>
             </ul>
         </div>

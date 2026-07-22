@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { __ } from '@wordpress/i18n';
 import RecursiveOptions from './RecursiveOptions';
 import DualRangeSlider from './DualRangeSlider';
 
@@ -67,7 +68,7 @@ const Filters = () => {
                             className="easycommerce-filter-heading bg-[#F8F8F8] border border-[#EBEBEB] p-2 py-4 rounded-t-lg text-[20px] text-[#272435] font-medium cursor-pointer colorec-body w-full flex justify-between items-center"
                             onClick={() => toggleAccordion("categories")}
                         >
-                            Categories
+                            {__('Categories', 'easycommerce')}
                             <span
                                 className="flex items-center justify-center w-8 h-8 rounded-[4px] cursor-pointer transition-all duration-300 bg-transparent hover:bg-white"
                             >
@@ -99,7 +100,7 @@ const Filters = () => {
                         className="easycommerce-filter-heading p-2 py-4 bg-[#F8F8F8] border border-[#EBEBEB] rounded-t-lg text-[20px] text-[#272435] font-medium cursor-pointer colorec-body w-full flex justify-between items-center"
                         onClick={() => toggleAccordion('price')}
                     >
-                        Price Range
+                        {__('Price Range', 'easycommerce')}
                         <span
                             className="flex items-center justify-center w-8 h-8 rounded-[4px] cursor-pointer transition-all duration-300 bg-transparent hover:bg-white"
                         >
@@ -165,7 +166,7 @@ const Filters = () => {
                             className="easycommerce-filter-heading p-2 py-4 bg-[#F8F8F8] rounded-t-lg text-[20px] text-[#272435] font-medium cursor-pointer border border-[#EBEBEB] colorec-body w-full flex justify-between items-center"
                             onClick={() => toggleAccordion('brands')}
                         >
-                            Brands
+                            {__('Brands', 'easycommerce')}
                             <span
                                 className="flex items-center justify-center w-8 h-8 rounded-[4px] cursor-pointer transition-all duration-300 bg-transparent hover:bg-white"
                             >

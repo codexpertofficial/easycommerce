@@ -1,4 +1,59 @@
 jQuery(document).ready(function ($) {
+	// Add-to-cart is delegated on `document` so it works wherever shop product
+	// cards render — including the product-collection block on a homepage — not
+	// only on the Shop page. Registered BEFORE the shop-page guard below, which
+	// early-returns when #shop-settings is absent.
+	$(document).on("click", ".easycommerce-add-to-cart-shop", function () {
+		var $button = $(this);
+		var productId = $button.data("id");
+		var $loader = $button.siblings(".loader");
+		var originalText = $button.text();
+		var $productContainer = $button.closest('.easycommerce-single-product').find(".easycommerce-single-product-checkout-btn-single");
+
+		$button.text("Adding...");
+		$loader.show();
+
+		$.ajax({
+			url: EASYCOMMERCE.rest_base + "/cart",
+			method: "POST",
+			contentType: "application/json",
+			headers: {
+				"X-WP-Nonce": EASYCOMMERCE.nonce,
+			},
+			data: JSON.stringify({ products: [{ id: productId }] }),
+			success: function (data) {
+				if (data.success) {
+					$button.text("Added");
+					// Redirect to the checkout page if Direct checkout is enabled.
+					if ( Boolean( EASYCOMMERCE.direct_checkout ) ) {
+						window.location.href = data.data.redirect;
+
+						return;
+					}
+					$productContainer.show();
+				} else {
+					$button.text(originalText);
+				}
+			},
+			error: function (xhr, status, error) {
+				$button.text(originalText);
+				var res = xhr.responseJSON;
+				var message =
+					(res && res.data && (res.data.message || (typeof res.data === "string" ? res.data : null))) ||
+					(res && typeof res.data === "string" ? res.data : null) ||
+					"Failed to add to cart. Please try again.";
+				if (typeof easycommerce_error_toast === "function") {
+					easycommerce_error_toast(message);
+				}
+			},
+			complete: function () {
+				$loader.hide();
+			},
+		});
+	});
+
+	const { __, _n, sprintf } = wp.i18n;
+
 	var shopSettings = $("#shop-settings").val();
 	if (!shopSettings) return;
 	var settings = JSON.parse(shopSettings);
@@ -173,13 +228,31 @@ jQuery(document).ready(function ($) {
 				let countText = "";
 
 				if (total > perPage) {
-					countText = `Showing ${start}-${end} of ${total} results`;
+					countText = sprintf(
+						// translators: 1: first result index, 2: last result index, 3: total results.
+						_n(
+							"Showing %1$s-%2$s of %3$s result",
+							"Showing %1$s-%2$s of %3$s results",
+							total,
+							"easycommerce"
+						),
+						start,
+						end,
+						total
+					);
 				} else if (total > 0) {
-					countText = `Showing ${total} result${
-						total > 1 ? "s" : ""
-					}`;
+					// translators: %s: total number of results.
+					countText = sprintf(
+						_n(
+							"Showing %s result",
+							"Showing %s results",
+							total,
+							"easycommerce"
+						),
+						total
+					);
 				} else {
-					countText = "No results found";
+					countText = __("No results found", "easycommerce");
 				}
 
 				$(".easycommerce-shop-count").text(countText);
@@ -243,7 +316,7 @@ jQuery(document).ready(function ($) {
 		var originalText = $button.text();
 		var $productContainer = $button.closest('.easycommerce-single-product').find(".easycommerce-single-product-checkout-btn-single");
 	
-		$button.text("Adding...");
+		$button.text(__("Adding...", "easycommerce"));
 		$loader.show();
 	
 		$.ajax({
@@ -256,7 +329,7 @@ jQuery(document).ready(function ($) {
 			data: JSON.stringify({ products: [{ id: productId }] }),
 			success: function (data) {
 				if (data.success) {
-					$button.text("Added");
+					$button.text(__("Added", "easycommerce"));
                     // Redirect to the checkout page if Direct checkout is enabled.
                     if ( Boolean( EASYCOMMERCE.direct_checkout ) ) {
                         window.location.href = data.data.redirect;
@@ -274,7 +347,7 @@ jQuery(document).ready(function ($) {
 				var message =
 					(res && res.data && (res.data.message || (typeof res.data === "string" ? res.data : null))) ||
 					(res && typeof res.data === "string" ? res.data : null) ||
-					"Failed to add to cart. Please try again.";
+					__("Failed to add to cart. Please try again.", "easycommerce");
 				if (typeof easycommerce_error_toast === "function") {
 					easycommerce_error_toast(message);
 				}
@@ -284,7 +357,6 @@ jQuery(document).ready(function ($) {
 			},
 		});
 	});
-	
 
 	$(".easycommerce-filter").on("click", function () {
 		$(".easycommerce-drawer-container").css({ transform: "translateX(0)" });

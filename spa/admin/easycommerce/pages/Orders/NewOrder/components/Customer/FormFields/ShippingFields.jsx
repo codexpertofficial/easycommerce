@@ -1,4 +1,5 @@
 import React from "react";
+import { __ } from "@wordpress/i18n";
 
 const downArrow = `${EASYCOMMERCE.assets}admin/img/icons/arrowDown.png`;
 
@@ -6,14 +7,14 @@ const ShippingFields = ({ shippingData, updateShippingData }) => {
     return (
         <div className="p-3 pb-0">
             <div
-                className="easycommerce-new-order-shipping flex items-center justify-between cursor-pointer 
+                className="easycommerce-new-order-shipping flex items-center justify-between cursor-pointer
                 border-b border-ec-border pb-3"
             >
                 <label
-                    className="text-ec-body font-inter font-medium 
+                    className="text-ec-body font-inter font-medium
                     text-base leading-[26px] cursor-pointer"
                 >
-                    Shipping Address
+                    {__("Shipping Address", "easycommerce")}
                 </label>
                 <img src={downArrow} className="w-3 h-[7px]" />
             </div>
@@ -24,13 +25,13 @@ const ShippingFields = ({ shippingData, updateShippingData }) => {
                     className="block mb-4"
                 >
                     <span className="block mb-1 text-ec-body text-base font-inter leading-8">
-                        First Name
+                        {__("First Name", "easycommerce")}
                     </span>
                     <input
                         id="easycommerce-new-order-shipping-first-name"
                         type="text"
                         name="shipping-first_name"
-                        placeholder="Your first Name"
+                        placeholder={__("Your first Name", "easycommerce")}
                         value={shippingData.shipping_first_name}
                         onChange={(e) =>
                             updateShippingData(
@@ -38,7 +39,7 @@ const ShippingFields = ({ shippingData, updateShippingData }) => {
                                 e.target.value
                             )
                         }
-                        className="easycommerce-order-input w-full h-[42px] border border-ec-border rounded-sm 
+                        className="easycommerce-order-input w-full h-[42px] border border-ec-border rounded-sm
                         placeholder:text-sm font-inter text-sm text-ec-body"
                     />
                 </label>
@@ -47,13 +48,13 @@ const ShippingFields = ({ shippingData, updateShippingData }) => {
                     className="block mb-4"
                 >
                     <span className="block mb-1 text-ec-body text-base font-inter leading-8">
-                        Last Name
+                        {__("Last Name", "easycommerce")}
                     </span>
                     <input
                         id="easycommerce-new-order-shipping-last-name"
                         type="text"
                         name="shipping-last_name"
-                        placeholder="Your last Name"
+                        placeholder={__("Your last Name", "easycommerce")}
                         value={shippingData.shipping_last_name}
                         onChange={(e) =>
                             updateShippingData(
@@ -61,7 +62,7 @@ const ShippingFields = ({ shippingData, updateShippingData }) => {
                                 e.target.value
                             )
                         }
-                        className="easycommerce-order-input w-full h-[42px] border border-ec-border rounded-sm placeholder:text-sm 
+                        className="easycommerce-order-input w-full h-[42px] border border-ec-border rounded-sm placeholder:text-sm
                         font-inter text-sm text-ec-body"
                     />
                 </label>
@@ -70,18 +71,18 @@ const ShippingFields = ({ shippingData, updateShippingData }) => {
                     className="block mb-4"
                 >
                     <span className="block mb-1 text-ec-body text-base font-inter leading-8">
-                        Email
+                        {__("Email", "easycommerce")}
                     </span>
                     <input
                         id="easycommerce-new-order-shipping-email"
                         type="email"
                         name="shipping-email"
-                        placeholder="Enter your email address"
+                        placeholder={__("Enter your email address", "easycommerce")}
                         value={shippingData.shipping_email}
                         onChange={(e) =>
                             updateShippingData("shipping_email", e.target.value)
                         }
-                        className="easycommerce-order-input w-full h-[42px] border border-ec-border rounded-sm placeholder:text-sm 
+                        className="easycommerce-order-input w-full h-[42px] border border-ec-border rounded-sm placeholder:text-sm
                         font-inter text-sm text-ec-body"
                     />
                 </label>
@@ -90,18 +91,18 @@ const ShippingFields = ({ shippingData, updateShippingData }) => {
                     className="block mb-4"
                 >
                     <span className="block mb-1 text-ec-body text-base font-inter leading-8">
-                        Phone
+                        {__("Phone", "easycommerce")}
                     </span>
                     <input
                         id="easycommerce-new-order-shipping-phone"
                         type="tel"
                         name="shipping-phone"
-                        placeholder="Enter your phone number"
+                        placeholder={__("Enter your phone number", "easycommerce")}
                         value={shippingData.shipping_phone}
                         onChange={(e) =>
                             updateShippingData("shipping_phone", e.target.value)
                         }
-                        className="easycommerce-order-input w-full h-[42px] border border-ec-border rounded-sm 
+                        className="easycommerce-order-input w-full h-[42px] border border-ec-border rounded-sm
                         placeholder:text-sm font-inter text-sm text-ec-body"
                     />
                 </label>
@@ -110,13 +111,13 @@ const ShippingFields = ({ shippingData, updateShippingData }) => {
                     className="block mb-4"
                 >
                     <span className="block mb-1 text-ec-body text-base font-inter leading-8">
-                        Address line 1
+                        {__("Address line 1", "easycommerce")}
                     </span>
                     <input
                         id="easycommerce-new-order-shipping-address-1"
                         type="text"
                         name="shipping-address_1"
-                        placeholder="Your address"
+                        placeholder={__("Your address", "easycommerce")}
                         value={shippingData.shipping_address_1}
                         onChange={(e) =>
                             updateShippingData(
@@ -124,7 +125,7 @@ const ShippingFields = ({ shippingData, updateShippingData }) => {
                                 e.target.value
                             )
                         }
-                        className="easycommerce-order-input w-full h-[42px] border border-ec-border rounded-sm 
+                        className="easycommerce-order-input w-full h-[42px] border border-ec-border rounded-sm
                         placeholder:text-sm font-inter text-sm text-ec-body"
                     />
                 </label>
@@ -133,13 +134,13 @@ const ShippingFields = ({ shippingData, updateShippingData }) => {
                     className="block mb-4"
                 >
                     <span className="block mb-1 text-ec-body text-base font-inter leading-8">
-                        Address line 2
+                        {__("Address line 2", "easycommerce")}
                     </span>
                     <input
                         id="easycommerce-new-order-shipping-address-2"
                         type="text"
                         name="shipping-address_2"
-                        placeholder="Your address"
+                        placeholder={__("Your address", "easycommerce")}
                         value={shippingData.shipping_address_2}
                         onChange={(e) =>
                             updateShippingData(
@@ -147,7 +148,7 @@ const ShippingFields = ({ shippingData, updateShippingData }) => {
                                 e.target.value
                             )
                         }
-                        className="easycommerce-order-input w-full h-[42px] border border-ec-border rounded-sm 
+                        className="easycommerce-order-input w-full h-[42px] border border-ec-border rounded-sm
                         placeholder:text-sm font-inter text-sm text-ec-body"
                     />
                 </label>
@@ -158,10 +159,10 @@ const ShippingFields = ({ shippingData, updateShippingData }) => {
                             label
                             className="block mb-1 text-ec-body text-base font-inter leading-8"
                         >
-                            Country
+                            {__("Country", "easycommerce")}
                         </label>
                         <select
-                            className="easycommerce-order-input easycommerce-order-select w-full h-[42px] 
+                            className="easycommerce-order-input easycommerce-order-select w-full h-[42px]
                             text-base text-ec-body font-inter rounded-md"
                             name="shipping-country"
                             value={shippingData.shipping_country}
@@ -172,7 +173,7 @@ const ShippingFields = ({ shippingData, updateShippingData }) => {
                                 )
                             }
                         >
-                            <option value="">Select Country</option>
+                            <option value="">{__("Select Country", "easycommerce")}</option>
                             {EASYCOMMERCE.shipping.countries &&
                                 Object.entries(
                                     EASYCOMMERCE.shipping.countries
@@ -188,12 +189,12 @@ const ShippingFields = ({ shippingData, updateShippingData }) => {
                             htmlFor="easycommerce-new-order-shipping-city"
                             className="block mb-1 text-ec-body text-base font-inter leading-8"
                         >
-                            City
+                            {__("City", "easycommerce")}
                         </label>
                         <input
                             id="easycommerce-new-order-shipping-city"
                             type="text"
-                            placeholder="City"
+                            placeholder={__("City", "easycommerce")}
                             name="shipping-city"
                             value={shippingData.shipping_city}
                             onChange={(e) =>
@@ -202,8 +203,8 @@ const ShippingFields = ({ shippingData, updateShippingData }) => {
                                     e.target.value
                                 )
                             }
-                            className="easycommerce-order-input w-full h-[42px] border border-ec-border 
-                            rounded-sm placeholder:text-sm font-inter text-sm 
+                            className="easycommerce-order-input w-full h-[42px] border border-ec-border
+                            rounded-sm placeholder:text-sm font-inter text-sm
                             text-ec-body"
                         />
                     </div>
@@ -211,12 +212,12 @@ const ShippingFields = ({ shippingData, updateShippingData }) => {
                 <div className="grid grid-cols-2 gap-[10px] mb-6">
                     <div>
                         <label className="block mb-1 text-ec-body text-base font-inter leading-8">
-                            State
+                            {__("State", "easycommerce")}
                         </label>
                         <input
                             id="easycommerce-new-order-shipping-state"
                             type="text"
-                            placeholder="State"
+                            placeholder={__("State", "easycommerce")}
                             name="shipping-state"
                             value={shippingData.shipping_state}
                             onChange={(e) =>
@@ -225,8 +226,8 @@ const ShippingFields = ({ shippingData, updateShippingData }) => {
                                     e.target.value
                                 )
                             }
-                            className="easycommerce-order-input w-full h-[42px] border border-ec-border 
-                            rounded-sm placeholder:text-sm font-inter text-sm 
+                            className="easycommerce-order-input w-full h-[42px] border border-ec-border
+                            rounded-sm placeholder:text-sm font-inter text-sm
                             text-ec-body"
                         />
                     </div>
@@ -235,12 +236,12 @@ const ShippingFields = ({ shippingData, updateShippingData }) => {
                             htmlFor="easycommerce-new-order-shipping-postcode"
                             className="block mb-1 text-ec-body text-base font-inter leading-8"
                         >
-                            ZIP
+                            {__("ZIP", "easycommerce")}
                         </label>
                         <input
                             id="easycommerce-new-order-shipping-postcode"
                             type="text"
-                            placeholder="Zip code"
+                            placeholder={__("Zip code", "easycommerce")}
                             name="shipping-postcode"
                             value={shippingData.shipping_postcode}
                             onChange={(e) =>
@@ -249,8 +250,8 @@ const ShippingFields = ({ shippingData, updateShippingData }) => {
                                     e.target.value
                                 )
                             }
-                            className="easycommerce-order-input w-full h-[42px] border border-ec-border 
-                            rounded-sm placeholder:text-sm font-inter text-sm 
+                            className="easycommerce-order-input w-full h-[42px] border border-ec-border
+                            rounded-sm placeholder:text-sm font-inter text-sm
                             text-ec-body"
                         />
                     </div>

@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import { __, sprintf } from '@wordpress/i18n';
 import { toast } from "react-toastify";
 import DeletePopup from '../../../../common/components/DeletePopup';
 import RefundModal from '../SingleOrder/components/Modal/RefundModal';
@@ -27,7 +28,7 @@ const OrderActions = ({order , setOrder}) => {
                 easycommerce_modal(false);
 
                 if (order.success) {
-                    toast.success('Order Deleted!');
+                    toast.success(__('Order Deleted!', 'easycommerce'));
                     window.location.hash = `#/orders`;
                 }
             });
@@ -59,14 +60,14 @@ const OrderActions = ({order , setOrder}) => {
                             setIsActionOpen(false);
                         }}
                     >
-                        Refund
+                        {__('Refund', 'easycommerce')}
                     </a>
                     <button 
                         type='button' 
                         className={buttonClass + ' text-[#FF3A52] hover:bg-[#FF3A520D]'}
                         onClick={() => setIsDeletePopupOpen(true)}
                     >
-                        Delete
+                        {__('Delete', 'easycommerce')}
                     </button>
                 </div>
             }
@@ -74,7 +75,10 @@ const OrderActions = ({order , setOrder}) => {
             {isDeletePopupOpen && 
                 <DeletePopup
                     onClose={() => setIsDeletePopupOpen(false)}
-                    itemName={"Order #"+order.id}
+                    itemName={
+                        // translators: %s: order ID.
+                        sprintf(__('Order #%s', 'easycommerce'), order.id)
+                    }
                     onConfirm={() => deleteAction()}
                 />
             }

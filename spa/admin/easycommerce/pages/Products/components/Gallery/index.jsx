@@ -22,12 +22,12 @@ const Gallery = ({ productTitle, prevFiles, prevThumbnail }) => {
 			)}
 			<div className="bg-white rounded-xl border-ec-table-stock border border-solid overflow-hidden">
 				<div className="py-[14px] px-6 flex items-center justify-between border-b border-ec-table-stock border-solid">
-					<PanelTitle title="Product Gallery" notice="Upload images to showcase your product visually." />
+					<PanelTitle title={__('Product Gallery', 'easycommerce')} notice={__('Upload images to showcase your product visually.', 'easycommerce')} />
 					<div className="panel-actions">
 						<div>
 							<button
 								data-tooltip-id={!productTitle ? 'ai-gallery' : ''}
-								data-tooltip-content="Add product title first!"
+								data-tooltip-content={__('Add product title first!', 'easycommerce')}
 								className={`ai-generate ${productTitle ? '' : 'grayscale opacity-50 cursor-not-allowed'}`}
 								type="button"
 								onClick={() => productTitle && setAiOpen(true)}
@@ -93,7 +93,7 @@ const Gallery = ({ productTitle, prevFiles, prevThumbnail }) => {
 				>
 					<div className="p-6">
 						<MediaUploader prevFiles={prevFiles} prevThumbnail={prevThumbnail} wpNonce={EASYCOMMERCE.nonce} aiImage={aiImage} />
-						<p className="text-center text-xs text-gray-500 mt-2">For best appearance, use images larger than <span className='font-semibold'>600x600</span> pixels.</p>
+						<p className="text-center text-xs text-gray-500 mt-2">{__('For best appearance, use images larger than', 'easycommerce')} <span className='font-semibold'>600x600</span> {__('pixels.', 'easycommerce')}</p>
 					</div>
 				</motion.div>
 			</div>

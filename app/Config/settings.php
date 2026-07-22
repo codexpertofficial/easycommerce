@@ -353,6 +353,7 @@ $easycommerce_settings_menus = apply_filters(
 										'id'          => 'active_methods',
 										'type'        => 'multicheck',
 										'label'       => __( 'Enable Payment Methods', 'easycommerce' ),
+										/* translators: %1$s: URL of the Addons page. The <a> markup must be kept. */
 										'description' => sprintf( __( 'Select the payment methods you want to enable for checkout. Find more options from the <a href="%1$s">Addons page</a>.', 'easycommerce' ), admin_url( 'admin.php?page=easycommerce#/addons/payment' ) ),
 										'options'     => $payment_options,
 										'placeholder' => __( 'Choose payment methods', 'easycommerce' ),
@@ -596,6 +597,7 @@ $easycommerce_settings_menus = apply_filters(
 										'type'        => 'editor',
 										'label'       => __( 'Email Body', 'easycommerce' ),
 										'description' => sprintf(
+											/* translators: %s: URL of the email placeholders documentation page. The <a> markup must be kept. */
 											__( 'The main content of the email. To find all the related placeholders <a href="%s" target="_blank">click here.</a>', 'easycommerce' ),
 											easycommerce_dev_docs( '/settings/email-placeholders-list/' )
 										),
@@ -628,6 +630,7 @@ $easycommerce_settings_menus = apply_filters(
 										'type'        => 'editor',
 										'label'       => __( 'Email Body', 'easycommerce' ),
 										'description' => sprintf(
+											/* translators: %s: URL of the email placeholders documentation page. The <a> markup must be kept. */
 											__( 'The main content of the email. To find all the related placeholders <a href="%s" target="_blank">click here.</a>', 'easycommerce' ),
 											easycommerce_dev_docs( '/settings/email-placeholders-list/' )
 										),
@@ -674,6 +677,7 @@ $easycommerce_settings_menus = apply_filters(
 											'type'        => 'editor',
 											'label'       => __( 'Email Body', 'easycommerce' ),
 											'description' => sprintf(
+												/* translators: %s: URL of the email placeholders documentation page. The <a> markup must be kept. */
 												__( 'The main content of the email. To find all the related placeholders <a href="%s" target="_blank">click here.</a>', 'easycommerce' ),
 												easycommerce_dev_docs( '/settings/email-placeholders-list/' )
 											),
@@ -706,6 +710,7 @@ $easycommerce_settings_menus = apply_filters(
 											'type'        => 'editor',
 											'label'       => __( 'Email Body', 'easycommerce' ),
 											'description' => sprintf(
+												/* translators: %s: URL of the email placeholders documentation page. The <a> markup must be kept. */
 												__( 'The main content of the email. To find all the related placeholders <a href="%s" target="_blank">click here.</a>', 'easycommerce' ),
 												easycommerce_dev_docs( '/settings/email-placeholders-list/' )
 											),
@@ -885,7 +890,8 @@ $easycommerce_settings_menus = apply_filters(
 									'type'        => 'text',
 									'label'       => __( 'Subject', 'easycommerce' ),
 									'description' => __( 'The subject line for the abandoned cart reminder email.', 'easycommerce' ),
-									'default'     => '##shop_name##- Your Order Is Yet to Be Placed!',
+									/* translators: the ##...## tokens are merge placeholders substituted with real cart data at send time - keep them verbatim. */
+									'default'     => __( '##shop_name##- Your Order Is Yet to Be Placed!', 'easycommerce' ),
 									'placeholder' => __( 'Enter email subject', 'easycommerce' ),
 								),
 								'body'    => array(
@@ -893,11 +899,13 @@ $easycommerce_settings_menus = apply_filters(
 									'type'        => 'editor',
 									'label'       => __( 'Body', 'easycommerce' ),
 									'description' => sprintf(
+										/* translators: %s: URL of the email placeholders documentation page. The <a> markup must be kept. */
 										__( 'To find all the related placesholders <a href="%s" target="_blank">click here.</a>', 'easycommerce' ),
 										easycommerce_dev_docs( '/settings/email-placeholders-list/' )
 									),
 									'placeholder' => __( 'Enter email Body', 'easycommerce' ),
-									'default'     => 'Hi ##name##,
+									/* translators: the ##...## tokens are merge placeholders substituted with real cart data at send time - keep them verbatim. */
+									'default'     => __( 'Hi ##name##,
 We noticed you left some items in your cart at ##shop_name##. Your cart, worth ##cart_total##, is still waiting for you!
 Here’s what you left behind:
 ##product_list##
@@ -905,7 +913,7 @@ Don’t miss out—your items might sell out soon! Click below to return to your
 Go to Checkout 👉 ##cart_link## 
 Need help? Feel free to reach out. We’re happy to assist!
 Best,
-##shop_name## Team',
+##shop_name## Team', 'easycommerce' ),
 								),
 							),
 						),
@@ -965,6 +973,7 @@ Best,
 									'id'          => 'text_generator',
 									'type'        => 'checkbox',
 									'label'       => __( 'Text Generator', 'easycommerce' ),
+									/* translators: %1$s: URL of the AI features documentation page. The <a> markup must be kept. */
 									'description' => sprintf( __( 'Enable AI Writer to suggest and create product descriptions instantly. <a href="%1$s" target="_blank">See more.</a>', 'easycommerce' ), 'https://easycommerce.dev/features/ai/?utm_source=plugin&utm_medium=settings&utm_campaign=text-generator' ),
 									'default'     => true,
 								),
@@ -972,6 +981,7 @@ Best,
 									'id'          => 'image_generator',
 									'type'        => 'checkbox',
 									'label'       => __( 'Image Generator', 'easycommerce' ),
+									/* translators: %1$s: URL of the AI features documentation page. The <a> markup must be kept. */
 									'description' => sprintf( __( 'Generate high-quality product images with AI directly from your dashboard. <a href="%1$s" target="_blank">See more.</a>', 'easycommerce' ), 'https://easycommerce.dev/features/ai/?utm_source=plugin&utm_medium=settings&utm_campaign=image-generator' ),
 									'default'     => true,
 								),
@@ -979,6 +989,7 @@ Best,
 									'id'          => 'template_generator',
 									'type'        => 'checkbox',
 									'label'       => __( 'Template Generator', 'easycommerce' ),
+									/* translators: %1$s: URL of the AI features documentation page. The <a> markup must be kept. */
 									'description' => sprintf( __( 'Enable AI Template Generator to create ready-to-use block layouts. <a href="%1$s" target="_blank">See more.</a>', 'easycommerce' ), 'https://easycommerce.dev/features/ai/?utm_source=plugin&utm_medium=settings&utm_campaign=template-generator' ),
 									'default'     => true,
 								),
@@ -986,6 +997,7 @@ Best,
 									'id'          => 'attribute_generator',
 									'type'        => 'checkbox',
 									'label'       => __( 'Attribute Generator', 'easycommerce' ),
+									/* translators: %1$s: URL of the AI features documentation page. The <a> markup must be kept. */
 									'description' => sprintf( __( 'Enable AI to suggest product attributes and values instantly. <a href="%1$s" target="_blank">See more.</a>', 'easycommerce' ), 'https://easycommerce.dev/features/ai/?utm_source=plugin&utm_medium=settings&utm_campaign=attribute-generator' ),
 									'default'     => true,
 								),
@@ -1050,6 +1062,7 @@ Best,
 									'id'          => 'smart_search',
 									'type'        => 'checkbox',
 									'label'       => __( 'Smart Search', 'easycommerce' ),
+									/* translators: %1$s: URL of the AI features documentation page. The <a> markup must be kept. */
 									'description' => sprintf( __( 'Help customers find products even with spelling errors. The AI understands what they\'re looking for and shows the right products. <a href="%1$s" target="_blank">See more.</a>', 'easycommerce' ), 'https://easycommerce.dev/features/ai/?utm_source=plugin&utm_medium=settings&utm_campaign=smart-search' ),
 									'default'     => false,
 								),
@@ -1057,6 +1070,7 @@ Best,
 									'id'          => 'voice_search',
 									'type'        => 'checkbox',
 									'label'       => __( 'Voice Search', 'easycommerce' ),
+									/* translators: %1$s: URL of the AI features documentation page. The <a> markup must be kept. */
 									'description' => sprintf( __( 'Let customers search by speaking instead of typing. Hands-free shopping experience. (Coming soon) <a href="%1$s" target="_blank">See more.</a>', 'easycommerce' ), 'https://easycommerce.dev/features/ai/?utm_source=plugin&utm_medium=settings&utm_campaign=voice-search' ),
 									'disabled'    => true,
 								),
@@ -1064,6 +1078,7 @@ Best,
 									'id'          => 'cross_sell',
 									'type'        => 'checkbox',
 									'label'       => __( 'Smart Recommendations', 'easycommerce' ),
+									/* translators: %1$s: URL of the AI features documentation page. The <a> markup must be kept. */
 									'description' => sprintf( __( 'The AI suggests related products to customers based on what they\'re looking at. Boost average order value. (Coming soon) <a href="%1$s" target="_blank">See more.</a>', 'easycommerce' ), 'https://easycommerce.dev/features/ai/?utm_source=plugin&utm_medium=settings&utm_campaign=cross-sell' ),
 									'disabled'    => true,
 								),

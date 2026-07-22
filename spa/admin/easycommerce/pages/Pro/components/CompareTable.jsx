@@ -1,4 +1,5 @@
 import React from 'react';
+import { __ } from '@wordpress/i18n';
 
 const yesIcon = (
     <svg className='mx-auto' width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -16,50 +17,50 @@ const noIcon = (
 
 const CompareTable = () => {
 	const features = [
-		{ title: 'AI-Powered Smart Features' },
-		{ title: 'Free AI Credits', pro: true },
-		{ title: 'Drag & Drop Builder Integrations (Gutenberg, WP Bakery)' },
-		{ title: 'Product, Order & Customer Management' },
-		{ title: 'Bring Your Own Key (OpenAI/DeepSeek/Claude)', pro: true },
-		{ title: 'Shipping & Advanced Taxation' },
-		{ title: 'Coupon Management' },
-		{ title: 'Personalized Emails' },
-		{ title: 'Abandoned Cart Recovery' },
-		{ title: 'Automated Abandoned Cart Emails', pro: true },
-		{ title: 'Single Product Templates' },
-		{ title: 'Checkout Templates' },
-		{ title: 'Popular Payment Gateways (Stripe, PayPal, Mollie, etc)' },
-		{ title: 'Subscriptions Management', pro: true },
-		{ title: 'License Management', pro: true },
-		{ title: 'Facebook Messenger Integration (AI Shopping Assistant)' },
-		{ title: 'WhatsApp Integration (AI Shopping Assistant)', upcoming: true },
-		{ title: 'Marketing & Automation Integrations' },
-		{ title: 'Membership Management', pro: true, upcoming: true },
-		{ title: 'Multivendor Marketplace', pro: true, upcoming: true },
-		{ title: 'Learning Management System', pro: true, upcoming: true },
-		{ title: 'Migration Tool' },
-        { title: 'Bookings', pro: true, upcoming: true },
+		{ title: __('AI-Powered Smart Features', 'easycommerce') },
+		{ title: __('Free AI Credits', 'easycommerce'), pro: true },
+		{ title: __('Drag & Drop Builder Integrations (Gutenberg, WP Bakery)', 'easycommerce') },
+		{ title: __('Product, Order & Customer Management', 'easycommerce') },
+		{ title: __('Bring Your Own Key (OpenAI/DeepSeek/Claude)', 'easycommerce'), pro: true },
+		{ title: __('Shipping & Advanced Taxation', 'easycommerce') },
+		{ title: __('Coupon Management', 'easycommerce') },
+		{ title: __('Personalized Emails', 'easycommerce') },
+		{ title: __('Abandoned Cart Recovery', 'easycommerce') },
+		{ title: __('Automated Abandoned Cart Emails', 'easycommerce'), pro: true },
+		{ title: __('Single Product Templates', 'easycommerce') },
+		{ title: __('Checkout Templates', 'easycommerce') },
+		{ title: __('Popular Payment Gateways (Stripe, PayPal, Mollie, etc)', 'easycommerce') },
+		{ title: __('Subscriptions Management', 'easycommerce'), pro: true },
+		{ title: __('License Management', 'easycommerce'), pro: true },
+		{ title: __('Facebook Messenger Integration (AI Shopping Assistant)', 'easycommerce') },
+		{ title: __('WhatsApp Integration (AI Shopping Assistant)', 'easycommerce'), upcoming: true },
+		{ title: __('Marketing & Automation Integrations', 'easycommerce') },
+		{ title: __('Membership Management', 'easycommerce'), pro: true, upcoming: true },
+		{ title: __('Multivendor Marketplace', 'easycommerce'), pro: true, upcoming: true },
+		{ title: __('Learning Management System', 'easycommerce'), pro: true, upcoming: true },
+		{ title: __('Migration Tool', 'easycommerce') },
+        { title: __('Bookings', 'easycommerce'), pro: true, upcoming: true },
 	];
 
 	return (
         <div className="mt-24 py-[100px] px-[120px] rounded-xl bg-ec-table-stock">
             <h1 className='text-center text-4xl leading-[44px] font-medium text-ec-title'>
-                The Best of Both Worlds
-                <span className='block text-ec-primary'>EasyCommerce Free + Pro</span>
+                {__('The Best of Both Worlds', 'easycommerce')}
+                <span className='block text-ec-primary'>{__('EasyCommerce Free + Pro', 'easycommerce')}</span>
             </h1>
 
             <div className="w-full mt-[60px]">
                 <div className="grid grid-cols-5 bg-ec-primary/10 rounded-lg py-5 px-8 text-xl font-medium text-ec-title">
-                    <span className='col-span-3'>Features</span>
-                    <span className='col-span-1 text-center'>Free</span>
-                    <span className='col-span-1 text-center'>Pro</span>
+                    <span className='col-span-3'>{__('Features', 'easycommerce')}</span>
+                    <span className='col-span-1 text-center'>{__('Free', 'easycommerce')}</span>
+                    <span className='col-span-1 text-center'>{__('Pro', 'easycommerce')}</span>
                 </div>
 
 				{features.map((feature, index) => (
 					<div key={index} className="grid grid-cols-5 bg-transparent hover:bg-white duration-300 border-b border-ec-primary/10 py-5 px-8 text-base font-medium text-ec-body">
 						<span className='col-span-3'>
 							{feature.title}
-							{feature.upcoming && <span className='text-ec-primary'> (upcoming)</span>}
+							{feature.upcoming && <span className='text-ec-primary'> {__('(upcoming)', 'easycommerce')}</span>}
 						</span>
 						<span className='col-span-1'>{feature.pro ? noIcon : yesIcon}</span>
 						<span className='col-span-1'>{yesIcon}</span>
@@ -68,10 +69,10 @@ const CompareTable = () => {
                 
                 <div className="grid grid-cols-5 items-center bg-transparent py-5 px-8 text-base font-medium text-ec-title">
                     <span className='col-span-3'></span>
-                    <span className='col-span-1 text-center block'>Your Current Plan</span>
+                    <span className='col-span-1 text-center block'>{__('Your Current Plan', 'easycommerce')}</span>
                     <span className='col-span-1'>
                         <a href='https://easycommerce.dev/pricing?utm_source=inplugin&utm_medium=propage&utm_campaign=BFCM' target='_blank' className="group flex items-center w-max gap-2.5 h-[48px] px-4 text-ec-title text-base font-medium rounded-lg border border-[#F99D1D] bg-[#F99D1D] mx-auto">
-                            Upgrade to PRO
+                            {__('Upgrade to PRO', 'easycommerce')}
                         </a>
                     </span>
                 </div>

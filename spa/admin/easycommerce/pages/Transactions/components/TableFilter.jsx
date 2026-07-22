@@ -1,4 +1,5 @@
 import React from "react";
+import { __, sprintf } from '@wordpress/i18n';
 import { Slot } from '@wordpress/components';
 import DropdownField from "../../Orders/components/DropdownField";
 import DatepickerComponent from "../../../../common/components/DatepickerComponent";
@@ -24,7 +25,7 @@ const TableFilter = ({
     const past30 = new Date(today);
     past30.setDate(today.getDate() - 30);
     const fmt = (d) => d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
-    const datePlaceholder = `eg. ${fmt(past30)} - ${fmt(today)} ${today.getFullYear()}`;
+    const datePlaceholder = sprintf( __( 'eg. %1$s - %2$s %3$s', 'easycommerce' ), fmt(past30), fmt(today), today.getFullYear() );
 
     return (
         <div className="flex justify-between items-center">
@@ -34,7 +35,7 @@ const TableFilter = ({
                         className={`font-inter text-base leading-[26px] font-normal text-ec-secondary border-b border-[#737991]`}
                         onClick={resetFilter}
                     >
-                        Reset
+                        {__( 'Reset', 'easycommerce' )}
                     </button>
                 )}
 
@@ -51,7 +52,7 @@ const TableFilter = ({
                         name="search"
                         value={formState.search}
                         onChange={handleInputChange}
-                        placeholder="Search"
+                        placeholder={__( 'Search', 'easycommerce' )}
                     />
                 </div>
 

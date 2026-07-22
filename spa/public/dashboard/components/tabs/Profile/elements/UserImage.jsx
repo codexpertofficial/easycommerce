@@ -1,4 +1,5 @@
 import React from "react";
+import { __ } from "@wordpress/i18n";
 
 const dummyUser = `${EASYCOMMERCE.assets}public/img/icons/dashboard-default-user.png`;
 const cameraIcon = `${EASYCOMMERCE.assets}public/img/icons/camera-icon.png`;
@@ -6,9 +7,9 @@ const cameraIcon = `${EASYCOMMERCE.assets}public/img/icons/camera-icon.png`;
 const UserImage = ({ userImage, setUserImage }) => {
 	const openMediaLibrary = () => {
 		const frame = wp.media({
-			title: "Select Image",
+			title: __( "Select Image", "easycommerce" ),
 			button: {
-				text: "Use selected image",
+				text: __( "Use selected image", "easycommerce" ),
 			},
 			multiple: false,
 		});
@@ -40,7 +41,7 @@ const UserImage = ({ userImage, setUserImage }) => {
 			onClick={openMediaLibrary}>
 			<img
 				src={userImage.url || dummyUser}
-				alt='user'
+				alt={__( 'user', 'easycommerce' )}
 				className='w-full h-full rounded-full pointer-events-none'
 			/>
 
@@ -49,7 +50,7 @@ const UserImage = ({ userImage, setUserImage }) => {
                 backdrop-blur-sm rounded-full absolute bottom-0 -right-1 border border-[#EEEEEE]'>
 				<img
 					src={cameraIcon}
-					alt='camera'
+					alt={__( 'camera', 'easycommerce' )}
 					className='w-[14px] h-[12px] pointer-events-none'
 				/>
 			</span>

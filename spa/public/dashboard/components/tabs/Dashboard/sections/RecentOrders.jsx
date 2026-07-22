@@ -1,5 +1,6 @@
 import React from "react";
 import { Slot } from '@wordpress/components';
+import { __ } from "@wordpress/i18n";
 import {Link} from "react-router-dom";
 import StatusBadge from "../../../common/StatusBadge";
 import ViewButton from "../../../common/ViewButton";
@@ -15,14 +16,14 @@ const RecentOrders = ({ orders }) => {
         <div className="easycommerce-dashboard-section mt-8 flex flex-col gap-4">
             <div className="flex justify-between items-center">
                 <h3 className="easycommerce-dashboard-section-title !text-lg sm:!text-2xl">
-                    Recent Orders
+                    {__( "Recent Orders", "easycommerce" )}
                 </h3>
 
                 <Link
                     to="orders"
                     className="view-more-btn font-inter font-medium text-sm leading-[26px] flex items-center justify-end gap-1.5 text-ec-primary hover:gap-2.5 transition-all"
                 >
-                    View More
+                    {__( "View More", "easycommerce" )}
                     <svg className="w-4 h-4" data-slot="icon" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                     </svg>
@@ -32,8 +33,8 @@ const RecentOrders = ({ orders }) => {
             {orders.length === 0 ? (
                 <div className="w-full border border-ec-border rounded-2xl bg-white">
                     <EmptyState
-                        title="No orders yet"
-                        message="When you place an order it will show up here."
+                        title={__( "No orders yet", "easycommerce" )}
+                        message={__( "When you place an order it will show up here.", "easycommerce" )}
                     />
                 </div>
             ) : (
@@ -41,11 +42,11 @@ const RecentOrders = ({ orders }) => {
                     <table className="w-full min-w-[500px] border-none m-0">
                         <thead className="easycommerce-dash-roth bg-ec-table-bg">
                             <tr>
-                                <th className={thClass}>Order ID</th>
-                                <th className={thClass}>Date</th>
-                                <th className={thClass}>Amount</th>
-                                <th className={thClass}>Status</th>
-                                <th className={`${thClass} text-right rtl:text-left`}>Action</th>
+                                <th className={thClass}>{__( "Order ID", "easycommerce" )}</th>
+                                <th className={thClass}>{__( "Date", "easycommerce" )}</th>
+                                <th className={thClass}>{__( "Amount", "easycommerce" )}</th>
+                                <th className={thClass}>{__( "Status", "easycommerce" )}</th>
+                                <th className={`${thClass} text-right rtl:text-left`}>{__( "Action", "easycommerce" )}</th>
                             </tr>
                         </thead>
 
@@ -62,10 +63,10 @@ const RecentOrders = ({ orders }) => {
                                     </td>
                                     <td className={tdClass}>
                                         <p className="text-ec-body font-inter font-medium text-sm leading-[22px] mb-0.5">
-                                            {order.created_at ? order.created_at : "N/A"}
+                                            {order.created_at ? order.created_at : __( "N/A", "easycommerce" )}
                                         </p>
                                         <span className="text-ec-placeholder text-xs font-inter leading-4">
-                                            {order.created_time ? order.created_time : "N/A"}
+                                            {order.created_time ? order.created_time : __( "N/A", "easycommerce" )}
                                         </span>
                                     </td>
                                     <td className={`${tdClass} font-semibold text-ec-title`}>
@@ -75,7 +76,7 @@ const RecentOrders = ({ orders }) => {
                                         <StatusBadge status={order.status} />
                                     </td>
                                     <td className={`${tdClass} easycommerce-dashboard-order-view text-right rtl:text-left`}>
-                                        <ViewButton LinkComponent={Link} to={`/orders/${order.id}`} title="View order" />
+                                        <ViewButton LinkComponent={Link} to={`/orders/${order.id}`} title={__( "View order", "easycommerce" )} />
                                     </td>
                                 </tr>
                             ))}

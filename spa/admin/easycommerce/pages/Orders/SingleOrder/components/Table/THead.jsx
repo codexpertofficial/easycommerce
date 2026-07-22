@@ -1,7 +1,8 @@
 import React from "react";
+import { __ } from "@wordpress/i18n";
 
 const THead = () => {
-    const lables = ["Products", "Quantity", "Total"];
+    const lables = [__("Products", "easycommerce"), __("Quantity", "easycommerce"), __("Total", "easycommerce")];
 
     return (
         <thead className="bg-[#00000008]">

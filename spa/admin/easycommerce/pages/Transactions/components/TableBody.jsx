@@ -1,35 +1,36 @@
 import React from "react";
+import { __ } from '@wordpress/i18n';
 import CopyButton from "../../../../common/CopyButton";
 const paymentMethods = EASYCOMMERCE.payment_methods;
 const columnList = [
 	{
-		title: "Order ID",
+		title: __( 'Order ID', 'easycommerce' ),
 		name: "order_id",
 		width:"10",
 	},
 	{
-		title: "Name",
+		title: __( 'Name', 'easycommerce' ),
 		name: "name",
 		width:"12",
 	},
 	{
-		title: "Type",
+		title: __( 'Type', 'easycommerce' ),
 		name: "type",
 		width:"14",
 	},
 	{
-		title: "Amount",
+		title: __( 'Amount', 'easycommerce' ),
 		name: "amount",
 		width:"13",
 	},
 	{
-		title: "Transaction ID",
+		title: __( 'Transaction ID', 'easycommerce' ),
 		name: "transaction_id",
 		width:"20",
 	},
-	
+
 	{
-		title: "Date",
+		title: __( 'Date', 'easycommerce' ),
 		name: "date",
 		width:"10",
 	},
@@ -69,7 +70,7 @@ const TableBody = ({
 									className="bg-ec-modal items-center justify-start gap-2 first:rounded-l-lg last:rounded-r-lg border-r-0 font-inter font-normal text-sm pl-5 text-ec-title text-left rtl:text-right rtl:pr-4">
 									<span>
 										{column.name === "type"
-										? "Type"
+										? __( 'Type', 'easycommerce' )
 										: column.title}
 									</span>
 									
@@ -122,7 +123,7 @@ const TableBody = ({
 														href={`#/orders/${transaction.order_id}`}
 														className="duration-300 hover:text-ec-primary"
 													>
-														View
+														{__( 'View', 'easycommerce' )}
 													</a>
 												</div>
 											</div>
@@ -139,7 +140,7 @@ const TableBody = ({
 													{transaction.customer.id ? (
 														transaction.customer.name
 													) : (
-														"Unknown"
+														__( 'Unknown', 'easycommerce' )
 													)}
 												</span>
 
@@ -188,7 +189,7 @@ const TableBody = ({
 												<img
 													src={paymentIcon}
 													className="pointer-events-none object-contain rounded h-[30px] min-w-[54px] p-[3px]"
-													alt="payment-icon"
+													alt={__( 'payment-icon', 'easycommerce' )}
 													style={{ border: "1px solid #f0edfb" }}
 												/>
 											) : (

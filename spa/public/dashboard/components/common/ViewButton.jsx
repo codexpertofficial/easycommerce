@@ -1,4 +1,5 @@
 import React from "react";
+import { __ } from "@wordpress/i18n";
 
 /**
  * Circular "view" action used in the dashboard order/transaction tables.
@@ -30,7 +31,7 @@ const Eye = () => (
 const CLASSES =
     "inline-flex items-center justify-center w-9 h-9 rounded-full border border-ec-border text-ec-light-black transition-colors duration-200 hover:bg-ec-primary hover:text-white hover:border-ec-primary";
 
-const ViewButton = ({ href, to, LinkComponent, title = "View" }) => {
+const ViewButton = ({ href, to, LinkComponent, title = __( "View", "easycommerce" ) }) => {
     if (LinkComponent && to) {
         const Link = LinkComponent;
         return (

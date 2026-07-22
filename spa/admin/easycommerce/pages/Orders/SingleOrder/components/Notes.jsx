@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { __ } from '@wordpress/i18n';
 import Tooltip from '../../../../../common/components/Tooltip';
 
 const shippingIcon = `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -166,7 +167,7 @@ const Notes = ({ orderId }) => {
         .catch(error => {
             console.error('Error deleting note:', error);
             if (error.message && error.message.includes('500')) {
-                alert('Unable to delete note. Please try again or contact your administrator.');
+                alert(__('Unable to delete note. Please try again or contact your administrator.', 'easycommerce'));
             }
             setShowDeletePopup(false);
             setNoteToDelete(null);
@@ -230,7 +231,7 @@ const Notes = ({ orderId }) => {
             .catch(error => {
                 console.error('Error adding note:', error);
                 if (error.message && error.message.includes('500')) {
-                    alert('Unable to save note. The database may need to be updated. Please contact your administrator.');
+                    alert(__('Unable to save note. The database may need to be updated. Please contact your administrator.', 'easycommerce'));
                 }
             });
         }
@@ -240,17 +241,17 @@ const Notes = ({ orderId }) => {
         <div className="bg-white rounded-2xl">
             <div className="flex flex-col border-b border-gray-200 pt-4 px-6">
                 <h3 className="text-ec-title text-xl font-medium leading-8 pb-4">
-                    Order Notes
+                    {__('Order Notes', 'easycommerce')}
                 </h3>
             </div>
             <div className='p-6'>
                 {/* Notes List */}
                <div ref={notesListRef} className="notes-list-container space-y-4 mb-8 max-h-[500px] overflow-y-auto pr-4">
                     {loading ? (
-                        <div>Loading notes...</div>
+                        <div>{__('Loading notes...', 'easycommerce')}</div>
                     ) : notes.length === 0 ? (
                         <div className="text-center py-8 text-ec-body">
-                            No notes found for this order
+                            {__('No notes found for this order', 'easycommerce')}
                         </div>
                     ) : (
                         notes.map((note) => (
@@ -298,7 +299,7 @@ const Notes = ({ orderId }) => {
                                 
                                 {note.trackingLink && (
                                     <div className="mt-2 pl-11">
-                                        <span className="text-ec-body text-sm">Track here: </span>
+                                        <span className="text-ec-body text-sm">{__('Track here:', 'easycommerce')} </span>
                                         <a 
                                             href="#" 
                                             className="text-[#7351FD] text-sm hover:text-[#7351FD] underline"
@@ -315,14 +316,14 @@ const Notes = ({ orderId }) => {
                 {/* Add Note Section */}
                 <div className="border-t pt-6">
                     <div className="flex items-center space-x-2 mb-4">
-                        <h2 className="text-ec-title">Add Note</h2>
-                        <Tooltip text="Required" />
+                        <h2 className="text-ec-title">{__('Add Note', 'easycommerce')}</h2>
+                        <Tooltip text={__('Required', 'easycommerce')} />
                     </div>
                     
                     <textarea
                         value={newNote}
                         onChange={(e) => setNewNote(e.target.value)}
-                        placeholder="Write your note here"
+                        placeholder={__('Write your note here', 'easycommerce')}
                         className="mb-5 p-4 rounded-lg font-inter text-[14px] leading-[20px] border border-ec-table-stock placeholder-ec-placeholder hover:border-ec-primary focus:border-ec-primary focus:outline-none focus:[box-shadow:0_0_0_4px_#F3F0FF] transition-colors duration-300 ease-in-out w-full disabled:cursor-not-allowed disabled:bg-ec-table-stock disabled:hover:border-ec-table-stock disabled:focus:border-ec-table-stock px-3 py-2 h-[120px]"
                     />
                     
@@ -332,8 +333,8 @@ const Notes = ({ orderId }) => {
                             onChange={(e) => setNoteType(e.target.value)}
                             className="p-4 rounded-lg font-inter text-[14px] leading-[20px] border border-ec-table-stock placeholder-ec-placeholder hover:border-ec-primary focus:border-ec-primary focus:outline-none focus:[box-shadow:0_0_0_4px_#F3F0FF] transition-colors duration-300 ease-in-out w-full disabled:cursor-not-allowed disabled:bg-ec-table-stock disabled:hover:border-ec-table-stock disabled:focus:border-ec-table-stock px-3 py-2 h-ec-input"
                         >
-                            <option value="note_to_customer">Note To Customer</option>
-                            <option value="private_note">Private Note</option>
+                            <option value="note_to_customer">{__('Note To Customer', 'easycommerce')}</option>
+                            <option value="private_note">{__('Private Note', 'easycommerce')}</option>
                         </select>
                         
                         <button
@@ -341,7 +342,7 @@ const Notes = ({ orderId }) => {
                             className="easycommerce-outline-button w-[150px] flex justify-center mt-0"
                             disabled={!newNote.trim()}
                         >
-                            Add Note
+                            {__('Add Note', 'easycommerce')}
                         </button>
                     </div>
                 </div>
@@ -351,22 +352,22 @@ const Notes = ({ orderId }) => {
             {showDeletePopup && (
                 <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
                     <div className="bg-white p-6 rounded-lg max-w-sm w-full mx-4 shadow-xl">
-                        <h3 className="text-lg font-semibold text-gray-900 mb-4">Delete Note</h3>
+                        <h3 className="text-lg font-semibold text-gray-900 mb-4">{__('Delete Note', 'easycommerce')}</h3>
                         <p className="text-ec-body mb-6">
-                            Are you sure you want to delete this note? This action cannot be undone.
+                            {__('Are you sure you want to delete this note? This action cannot be undone.', 'easycommerce')}
                         </p>
                         <div className="flex space-x-3 justify-end">
                             <button
                                 onClick={cancelDelete}
                                 className="px-4 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300 transition-colors"
                             >
-                                Cancel
+                                {__('Cancel', 'easycommerce')}
                             </button>
                             <button
                                 onClick={confirmDelete}
                                 className="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition-colors"
                             >
-                                Delete
+                                {__('Delete', 'easycommerce')}
                             </button>
                         </div>
                     </div>

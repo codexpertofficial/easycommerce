@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { createPortal } from 'react-dom';
+import { __ } from '@wordpress/i18n';
 import AiChat from './ai-chat/AiChat';
 import './aisearch.css';
 
@@ -105,7 +106,7 @@ const AiSearch = ({ user, setShowAPIModal }) => {
 				onClick={openModal}
 			>
 				{btnIcon}
-				<span className="pt-px">Store Copilot</span>
+				<span className="pt-px">{ __( 'Store Copilot', 'easycommerce' ) }</span>
 			</button>
 
 			{isOpen && createPortal(AIChatBox, document.body)}

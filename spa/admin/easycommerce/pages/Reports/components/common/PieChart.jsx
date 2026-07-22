@@ -1,5 +1,6 @@
 'use client';
 
+import { __ } from '@wordpress/i18n';
 import { PieChart as RePieChart, Pie, Cell, LabelList } from 'recharts';
 import {
 	ChartContainer,
@@ -11,7 +12,7 @@ export default function PieChart({ data = [] }) {
 	if (!data.length) {
 		return (
 			<div className="h-[300px] w-full flex items-center justify-center text-gray-400">
-				No data available
+				{__( 'No data available', 'easycommerce' )}
 			</div>
 		);
 	}

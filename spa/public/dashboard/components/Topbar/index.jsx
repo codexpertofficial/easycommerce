@@ -1,4 +1,5 @@
 import React from "react";
+import { __ } from "@wordpress/i18n";
 
 const whiteSearchIcon = `${EASYCOMMERCE.assets}public/img/icons/white-search-icon.png`;
 
@@ -29,7 +30,7 @@ const Topbar = ({ sectionTitle, placeholderText, handleSubmit }) => {
                 >
                     <img
                         src={whiteSearchIcon}
-                        alt="search-icon"
+                        alt={__( "search-icon", "easycommerce" )}
                         className="w-4 h-4 pointer-events-none"
                     />
                 </button>

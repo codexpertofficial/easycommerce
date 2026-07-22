@@ -38,74 +38,12 @@ class Connectivity extends API {
 			$grouped[ "{$section}-{$sub}" ][ $field ] = $value;
 		}
 
-		if ( isset( $grouped['general-store'] ) && 'store' === $type ) {
-			$group = &$grouped['general-store'];
-
-			foreach ( array( 'dashboard', 'shop', 'checkout', 'payment' ) as $page ) {
-				if ( empty( $group[ $page ] ) || ! get_post( $group[ $page ] ) ) {
-					$group[ $page ] = 'create';
-				}
-			}
-
-			// Get the selected page template (default to full-width)
-			$page_template = ! empty( $group['page-template'] ) ? $group['page-template'] : 'full-width-layout.php';
-
-			if ( 'create' === $group['dashboard'] ) {
-				$group['dashboard'] = Utility::create_post(
-					array(
-						'type'    => 'page',
-						'title'   => 'Dashboard',
-						'content' => '[easycommerce-dashboard]',
-					)
-				);
-				// Set page template immediately after creation
-				if ( $group['dashboard'] ) {
-					update_post_meta( $group['dashboard'], '_wp_page_template', $page_template );
-				}
-			}
-
-			if ( 'create' === $group['shop'] ) {
-				$group['shop'] = Utility::create_post(
-					array(
-						'type'    => 'page',
-						'title'   => 'Shop',
-						'content' => '<!-- wp:easycommerce/template-2 {"ProductPerPage":9,"columns":3} /-->',
-					)
-				);
-				// Set page template immediately after creation
-				if ( $group['shop'] ) {
-					update_post_meta( $group['shop'], '_wp_page_template', $page_template );
-				}
-			}
-
-			if ( 'create' === $group['checkout'] ) {
-				$group['checkout'] = Utility::create_post(
-					array(
-						'type'    => 'page',
-						'title'   => 'Checkout',
-						'content' => '[easycommerce-checkout]',
-					)
-				);
-				// Set page template immediately after creation
-				if ( $group['checkout'] ) {
-					update_post_meta( $group['checkout'], '_wp_page_template', $page_template );
-				}
-			}
-
-			if ( 'create' === ( $group['payment'] ?? '' ) ) {
-				$group['payment'] = Utility::create_post(
-					array(
-						'type'    => 'page',
-						'title'   => 'Payment',
-						'content' => '[easycommerce-payment]',
-					)
-				);
-				if ( $group['payment'] ) {
-					update_post_meta( $group['payment'], '_wp_page_template', $page_template );
-				}
-			}
-
-			update_option( 'easycommerce-general-store', $group );
+		if ( 'store' === $type ) {
+			// Pages are created in the background on install; ensure they exist
+			// here too (idempotent) so finishing the wizard never leaves the
+			// store without its core pages. Dropdowns were removed, so any
+			// submitted group only carries incidental keys (e.g. page-template).
+			easycommerce_ensure_store_pages( $grouped['general-store'] ?? array() );
 		}
 
 		if ( isset( $grouped['general-store'] ) ) {
@@ -139,6 +77,10 @@ class Connectivity extends API {
 					$this->schedule( 'easycommerce_install_addon', array( 'slug' => $addon_slug ) );
 				}
 			}
+		}
+
+		if ( isset( $data['woocommerce_migration'] ) ) {
+			$this->schedule( 'easycommerce_install_addon', array( 'slug' => 'easycommerce-migration' ) );
 		}
 
 		$country          = easycommerce_business_country();
@@ -175,19 +117,22 @@ class Connectivity extends API {
 		$confirm_password = $request->get_param( 'confirmPassword' );
 
 		if ( empty( $username ) || empty( $email ) || empty( $new_password ) || empty( $confirm_password ) ) {
-			$errors->add( 'field', 'Required form field is missing' );
+			$errors->add( 'field', __( 'Required form field is missing', 'easycommerce' ) );
 		}
 		if ( username_exists( $username ) ) {
-			$errors->add( 'username_exists', 'Username already exists' );
+			$errors->add( 'username_exists', __( 'Username already exists', 'easycommerce' ) );
 		}
 		if ( ! is_email( $email ) ) {
-			$errors->add( 'email_invalid', 'Email is not valid' );
+			$errors->add( 'email_invalid', __( 'Email is not valid', 'easycommerce' ) );
 		}
 		if ( email_exists( $email ) ) {
-			$errors->add( 'email_exists', 'Email already registered' );
+			$errors->add( 'email_exists', __( 'Email already registered', 'easycommerce' ) );
 		}
 		if ( $new_password !== $confirm_password ) {
-			$errors->add( 'password_mismatch', 'Passwords do not match' );
+			$errors->add( 'password_mismatch', __( 'Passwords do not match', 'easycommerce' ) );
+		}
+		if ( strlen( (string) $new_password ) < 6 ) {
+			$errors->add( 'password_too_short', __( 'Password must be at least 6 characters long.', 'easycommerce' ) );
 		}
 		if ( empty( $errors->get_error_messages() ) ) {
 			/**
@@ -231,57 +176,34 @@ class Connectivity extends API {
 	 * Handle reset password request
 	 */
 	public function reset_password_request( $request ) {
-		$errors     = new \WP_Error();
 		$user_login = sanitize_text_field( $request->get_param( 'user_login' ) );
 
 		if ( empty( $user_login ) ) {
-			$errors->add( 'empty_username', __( 'Enter a username or email address.', 'easycommerce' ) );
-		} elseif ( strpos( $user_login, '@' ) ) {
-			$user_data = get_user_by( 'email', trim( wp_unslash( $user_login ) ) );
-			if ( empty( $user_data ) ) {
-				$errors->add( 'invalid_email', __( 'There is no account with that email address.', 'easycommerce' ) );
-			}
-		} else {
-			$login     = trim( wp_unslash( $user_login ) );
-			$user_data = get_user_by( 'login', $login );
-			if ( empty( $user_data ) ) {
-				$errors->add( 'invalid_username', __( 'There is no account with that username.', 'easycommerce' ) );
-			}
-		}
-
-		if ( ! empty( $errors->get_error_messages() ) ) {
-			foreach ( $errors->get_error_messages() as $error ) {
-				wp_send_json_error( array( 'message' => $error ), 400 );
-			}
+			wp_send_json_error( array( 'message' => __( 'Enter a username or email address.', 'easycommerce' ) ), 400 );
 			return;
 		}
 
-		// Generate reset key
-		$key = get_password_reset_key( $user_data );
+		$user_data = strpos( $user_login, '@' )
+			? get_user_by( 'email', trim( wp_unslash( $user_login ) ) )
+			: get_user_by( 'login', trim( wp_unslash( $user_login ) ) );
 
-		if ( is_wp_error( $key ) ) {
-			wp_send_json_error( array( 'message' => $key->get_error_message() ), 400 );
-			return;
+		// Send the reset email only when the account exists, but always return the
+		// same response either way so this endpoint cannot be used to discover
+		// which emails/usernames are registered (user enumeration).
+		if ( ! empty( $user_data ) ) {
+			$key = get_password_reset_key( $user_data );
+
+			if ( ! is_wp_error( $key ) ) {
+				send_reset_password_email( $user_data, $key );
+			}
 		}
 
-		// Send reset email by custom function
-		$reset_sent = send_reset_password_email( $user_data, $key );
-
-		if ( $reset_sent ) {
-			wp_send_json_success(
-				array(
-					'message' => __( 'Check your email for the confirmation link.', 'easycommerce' ),
-				),
-				200
-			);
-		} else {
-			wp_send_json_error(
-				array(
-					'message' => __( 'Failed to send reset email. Please try again.', 'easycommerce' ),
-				),
-				500
-			);
-		}
+		wp_send_json_success(
+			array(
+				'message' => __( 'If an account matches that email or username, a password reset link has been sent.', 'easycommerce' ),
+			),
+			200
+		);
 	}
 
 	/**
@@ -340,6 +262,119 @@ class Connectivity extends API {
 		);
 	}
 
+	/**
+	 * Authenticate a user for the React auth screens.
+	 *
+	 * Mirrors the native wp_login_form behaviour (which posts to wp-login.php)
+	 * but returns JSON so the storefront can log in without a full page reload
+	 * being driven by the browser's form submit. On success wp_signon sets the
+	 * auth cookies, and the client redirects to the dashboard.
+	 */
+	public function login( $request ) {
+		$user_login    = trim( (string) $request->get_param( 'user_login' ) );
+		$user_password = (string) $request->get_param( 'password' );
+		$remember      = filter_var( $request->get_param( 'remember' ), FILTER_VALIDATE_BOOLEAN );
+
+		if ( empty( $user_login ) || empty( $user_password ) ) {
+			wp_send_json_error( array( 'message' => __( 'Email/username and password are required.', 'easycommerce' ) ), 400 );
+			return;
+		}
+
+		// Throttle repeated failed logins per client IP to blunt brute-force /
+		// credential-stuffing. Set the max-attempts filter to 0 to disable.
+		$max_attempts = (int) apply_filters( 'easycommerce_login_max_attempts', 10 );
+		$window       = (int) apply_filters( 'easycommerce_login_attempt_window', 15 * MINUTE_IN_SECONDS );
+		$throttle_key = $this->login_throttle_key();
+		$attempts     = (int) get_transient( $throttle_key );
+
+		if ( $max_attempts > 0 && $attempts >= $max_attempts ) {
+			wp_send_json_error(
+				array( 'message' => __( 'Too many failed login attempts. Please try again in a few minutes.', 'easycommerce' ) ),
+				429
+			);
+			return;
+		}
+
+		/**
+		 * Fires before a storefront login attempt.
+		 *
+		 * The plaintext password is deliberately NOT passed to listeners.
+		 *
+		 * @since 1.32
+		 * @param string $user_login The username or email.
+		 */
+		do_action( 'easycommerce_before_user_login', $user_login );
+
+		$user = wp_signon(
+			array(
+				'user_login'    => $user_login,
+				'user_password' => $user_password,
+				'remember'      => $remember,
+			),
+			is_ssl()
+		);
+
+		if ( is_wp_error( $user ) ) {
+			if ( $max_attempts > 0 ) {
+				set_transient( $throttle_key, $attempts + 1, $window );
+			}
+
+			wp_send_json_error(
+				array( 'message' => __( 'Invalid email/username or password.', 'easycommerce' ) ),
+				401
+			);
+			return;
+		}
+
+		// A successful login clears this client's failed-attempt counter.
+		delete_transient( $throttle_key );
+
+		wp_set_current_user( $user->ID );
+
+		/**
+		 * Fires after a successful storefront login.
+		 *
+		 * @since 1.32
+		 * @param WP_User $user The logged-in user.
+		 * @param WP_REST_Request $request The request object.
+		 */
+		do_action( 'easycommerce_after_user_login', $user, $request );
+
+		$redirect = get_permalink( easycommerce_dashboard_page() );
+
+		wp_send_json_success(
+			array(
+				'redirect_url' => $redirect ? $redirect : home_url(),
+				'nonce'        => wp_create_nonce( 'wp_rest' ),
+			),
+			200
+		);
+	}
+
+	/**
+	 * Best-effort client IP for login throttling.
+	 *
+	 * Uses REMOTE_ADDR only (proxy headers are spoofable and must not be trusted
+	 * for a security control); sites behind a trusted proxy can override via the
+	 * easycommerce_client_ip filter.
+	 *
+	 * @return string
+	 */
+	private function client_ip() {
+		$ip = isset( $_SERVER['REMOTE_ADDR'] ) ? sanitize_text_field( wp_unslash( $_SERVER['REMOTE_ADDR'] ) ) : '';
+
+		return (string) apply_filters( 'easycommerce_client_ip', $ip );
+	}
+
+	/**
+	 * Transient key holding the failed-login count for the current client.
+	 *
+	 * @return string
+	 */
+	private function login_throttle_key() {
+		return 'easycommerce_login_fails_' . md5( $this->client_ip() );
+	}
+
 	public function get_setup_wizard( $request ) {
 		$data = array(
 			'currency'        => '',
@@ -387,6 +422,36 @@ class Connectivity extends API {
 			$this->response_success( array( 'message' => __( 'No data found', 'easycommerce' ) ) );
 		}
 
+		// Ready-made store designs for the Store Setup step (#3174).
+		$designs = array();
+		foreach ( easycommerce_store_designs() as $design_id => $design ) {
+			$designs[] = array(
+				'id'          => $design_id,
+				'label'       => $design['label'] ?? $design_id,
+				'description' => $design['description'] ?? '',
+				'screenshot'  => $design['screenshot'] ?? '',
+			);
+		}
+		$data['designs'] = $designs;
+		$data['design']  = get_option( 'easycommerce_store_design', '' );
+
+		// Whether the site already has a static front page — the wizard uses this
+		// to default the "set as homepage" opt-in OFF on existing/live sites.
+		$data['has_static_front'] = ( 'page' === get_option( 'show_on_front' ) && (int) get_option( 'page_on_front' ) > 0 );
+
+		// Whether the store already has any products (any status) — the wizard
+		// only auto-checks "import demo products" on design select when the store
+		// is empty. Mirrors the demo importer's own empty-store guard in
+		// Process::import_sample_products().
+		$product_counts = wp_count_posts( 'product' );
+		$product_total  = 0;
+		if ( $product_counts ) {
+			foreach ( (array) $product_counts as $count ) {
+				$product_total += (int) $count;
+			}
+		}
+		$data['has_products'] = $product_total > 0;
+
 		/**
 		 * Filters the setup wizard data.
 		 *
@@ -397,6 +462,77 @@ class Connectivity extends API {
 		$data = apply_filters( 'easycommerce_get_setup_wizard_data', $data, $request );
 
 		$this->response_success( array( 'data' => $data ) );
+	}
+
+	/**
+	 * Apply a ready-made store design from the setup wizard (#3174).
+	 *
+	 * By default this only *creates* the design's pages and leaves the site's
+	 * front page untouched — safest for existing/live sites. The new home page
+	 * is set as the static front page ONLY when the store owner explicitly opts
+	 * in (`set_homepage`), so we never silently clobber a live homepage.
+	 *
+	 * @param \WP_REST_Request $request Request object.
+	 * @return \WP_REST_Response
+	 */
+	public function apply_design( $request ) {
+		$design_id    = sanitize_key( (string) $request->get_param( 'design_id' ) );
+		$set_homepage = (bool) $request->get_param( 'set_homepage' );
+
+		// Skipping is a no-op — current behaviour (pages already created in the
+		// background per #3170) is left untouched.
+		if ( '' === $design_id || 'skip' === $design_id ) {
+			return $this->response_success( array( 'skipped' => true ) );
+		}
+
+		$group = easycommerce_apply_store_design( $design_id );
+
+		if ( false === $group ) {
+			return $this->response_error( __( 'Unknown store design.', 'easycommerce' ), 400 );
+		}
+
+		$home_id   = isset( $group['home'] ) ? (int) $group['home'] : 0;
+		$front_set = false;
+
+		// Only touch the front page on an explicit opt-in.
+		if ( $home_id && $set_homepage ) {
+			update_option( 'show_on_front', 'page' );
+			update_option( 'page_on_front', $home_id );
+			$front_set = true;
+		}
+
+		return $this->response_success(
+			array(
+				'design_id' => $design_id,
+				'home_id'   => $home_id,
+				'home_url'  => $home_id ? get_permalink( $home_id ) : home_url( '/' ),
+				'front_set' => $front_set,
+			)
+		);
+	}
+
+	/**
+	 * Set a page as the static front page (used to confirm an overwrite from the
+	 * wizard after the user opts in). #3174.
+	 *
+	 * @param \WP_REST_Request $request Request object.
+	 * @return \WP_REST_Response
+	 */
+	public function set_front_page( $request ) {
+		$page_id = (int) $request->get_param( 'page_id' );
+
+		if ( ! $page_id || 'page' !== get_post_type( $page_id ) ) {
+			return $this->response_error( __( 'Invalid page.', 'easycommerce' ), 400 );
+		}
+
+		update_option( 'show_on_front', 'page' );
+		update_option( 'page_on_front', $page_id );
+
+		return $this->response_success(
+			array(
+				'home_url' => get_permalink( $page_id ),
+			)
+		);
 	}
 
 	public function check( $request ) {

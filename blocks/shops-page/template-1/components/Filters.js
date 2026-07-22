@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Slot } from '@wordpress/components';
 import { applyFilters } from '@wordpress/hooks';
+import { __ } from '@wordpress/i18n';
 import RecursiveOptions from './RecursiveOptions';
 import DualRangeSlider from './DualRangeSlider';
 
@@ -21,14 +22,14 @@ const Filters = () => {
      * @param {Object} options The sort options object.
      */
     const sortOptions = applyFilters('easycommerce.blocks.shop.filters.sort.options', {
-        'low-to-high': 'Low to High',
-        'high-to-low': 'High to Low',
-        'newest': 'Newest',
-        'oldest': 'Oldest',
-        'best-selling': 'Best Selling',
-        'lowest-selling': 'Lowest Selling',
-        'top-rating': 'Top rating',
-        'lowest-rating': 'Lowest rating',
+        'low-to-high': __('Low to High', 'easycommerce'),
+        'high-to-low': __('High to Low', 'easycommerce'),
+        'newest': __('Newest', 'easycommerce'),
+        'oldest': __('Oldest', 'easycommerce'),
+        'best-selling': __('Best Selling', 'easycommerce'),
+        'lowest-selling': __('Lowest Selling', 'easycommerce'),
+        'top-rating': __('Top rating', 'easycommerce'),
+        'lowest-rating': __('Lowest rating', 'easycommerce'),
     });
 
     useEffect(() => {
@@ -79,7 +80,7 @@ const Filters = () => {
                             className="easycommerce-filter-heading text-base font-normal cursor-pointer colorec-body w-full flex justify-between items-center"
                             onClick={() => toggleAccordion('categories')}
                         >
-                            Categories
+                            {__('Categories', 'easycommerce')}
                             <span
                                 className={`transform transition-transform ml-2 ${
                                     isAccordionOpen.categories ? 'rotate-180' : ''
@@ -117,7 +118,7 @@ const Filters = () => {
                             className="easycommerce-filter-heading text-base font-normal cursor-pointer colorec-body w-full flex justify-between items-center"
                             onClick={() => toggleAccordion('brands')}
                         >
-                            Brands
+                            {__('Brands', 'easycommerce')}
                             <span
                                 className={`transform transition-transform ml-2 ${
                                     isAccordionOpen.brands ? 'rotate-180' : ''
@@ -153,7 +154,7 @@ const Filters = () => {
                         className="easycommerce-filter-heading text-base font-normal cursor-pointer colorec-body w-full flex justify-between items-center"
                         onClick={() => toggleAccordion('price')}
                     >
-                        Price Range
+                        {__('Price Range', 'easycommerce')}
                         <span
                             className={`transform transition-transform ml-2 ${
                                 isAccordionOpen.price ? 'rotate-180' : ''
@@ -234,13 +235,13 @@ const Filters = () => {
                 <div className="w-[70%] easycommerce-drawer-product-search relative">
                     <img
                         src={`${EASYCOMMERCE.assets}common/img/blocks/shop-page/product-search.png`}
-                        alt="Search Icon"
+                        alt={__('Search Icon', 'easycommerce')}
                         className="search-icon"
                     />
                     <input
                         type="text"
                         className="easycommerce-product-search search-text border border-ec-border pl-16 pr-2 py-1 w-full rounded-full hover:border-ec-secondary focus:border-ec-primary"
-                        placeholder=" Search"
+                        placeholder={__(' Search', 'easycommerce')}
                     />
                 </div>
                 {/* Sorting Options */}
@@ -249,7 +250,7 @@ const Filters = () => {
                         className="easycommerce-filter-heading text-base font-normal cursor-pointer colorec-body w-full flex justify-between items-center"
                         onClick={() => toggleAccordion('sort')}
                     >
-                        Sort by
+                        {__('Sort by', 'easycommerce')}
                         <span
                             className={`transform transition-transform ${
                                 isAccordionOpen.sort ? 'rotate-180' : ''

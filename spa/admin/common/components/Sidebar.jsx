@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { __ } from '@wordpress/i18n';
 
 const SideBar = () => {
 	const [currentPage, setCurrentPage] = useState('');
@@ -41,7 +40,7 @@ const SideBar = () => {
 			setCurrentPage(normalizedSlug);
 
 			const menus = EASYCOMMERCE.admin.menus || [];
-			const storeMenu = menus.find(menu => menu.title === 'EasyCommerce');
+			const storeMenu = menus.find(menu => menu.slug === 'easycommerce');
 
 			let toOpen = {};
 
@@ -77,7 +76,7 @@ const SideBar = () => {
 	};
 
 	const menus = EASYCOMMERCE.admin.menus || [];
-	const storeMenu = menus.find(menu => menu.title === 'EasyCommerce');
+	const storeMenu = menus.find(menu => menu.slug === 'easycommerce');
 	if (!storeMenu) return null;
 	const hasActiveChild = (items) => {
 		return items.some(child =>

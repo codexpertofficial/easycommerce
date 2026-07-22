@@ -1,8 +1,9 @@
 import React from "react";
+import { __ } from "@wordpress/i18n";
 import Confetti from "react-confetti-boom";
 
 const bannerImage = (
-    <svg xmlns="http://www.w3.org/2000/svg" width="823" height="272" viewBox="0 0 823 272" fill="none">
+    <svg xmlns="http://www.w3.org/2000/svg" width="823" height="272" viewBox="0 0 823 272" fill="none" className="w-full h-auto">
     <g clip-path="url(#clip0_938_3601)">
     <rect width="823" height="272" rx="16" fill="#F7F5FF"/>
     <path d="M505.001 165.015L508.969 178.322L494.255 179.743L492.662 165.884L505.001 165.015Z" fill="#FFB5B3"/>
@@ -227,44 +228,100 @@ const bannerImage = (
     </svg>
 )
 
-const Success = () => {
+const Success = ({ designResult = null }) => {
+    const hasDesign = designResult && designResult.home_url;
+    const storeUrl = hasDesign ? designResult.home_url : (EASYCOMMERCE?.home_url || "/");
+
+    const visitStore = () => {
+        window.open(storeUrl, "_blank", "noopener,noreferrer");
+    };
+
     return (
         <div className="relative h-full">
             {/* Success Message Container */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 flex justify-center items-center flex-col">
-                <div className="w-[870px] h-[654px] rounded-[20px] bg-white p-6">
+                <div className="w-[870px] rounded-[20px] bg-white px-[70px] pt-[45px] pb-[60px]">
                     <div className="flex items-center justify-center mb-6">
                         {bannerImage}
                     </div>
                     <div className="mt-14 w-[492px] mx-auto">
                         <h1 className="text-ec-title text-2xl text-center font-medium font-inter">
-                            Congratulations, you're all set!
+                            {__("Congratulations, you're all set!", 'easycommerce')}
                         </h1>
                         <p className="text-ec-body text-base text-center mt-4 font-inter">
-                            You've set up EasyCommerce on your website. Now, start by adding your first product or check the{" "}
-                            <a
-                                href="https://easycommerce.dev/docs/"
-                                target="_blank"
-                                className="underline text-ec-primary"
-                            >
-                                documentation
-                            </a>{" "}
-                            to learn more about using EasyCommerce.
+                            {hasDesign
+                                ? (
+                                    <>
+                                        {__("Your store design is live. Visit your storefront to see it, or head to the dashboard to keep customizing. Explore the ", 'easycommerce')}{" "}
+                                        <a
+                                            href="https://easycommerce.dev/docs/"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="underline text-ec-primary"
+                                        >
+                                            {__('documentation', 'easycommerce')}
+                                        </a>
+                                        {__(', or', 'easycommerce')}{" "}
+                                        <a
+                                            href={EASYCOMMERCE.community_url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="underline text-ec-primary"
+                                        >
+                                            {__('join the EasyCommerce Community', 'easycommerce')}
+                                        </a>{" "}
+                                        {__('to ask questions and connect with other store owners.', 'easycommerce')}
+                                    </>
+                                )
+                                : (
+                                    <>
+                                        {__("You've set up EasyCommerce on your website. Now, start by adding your first product. Check the", 'easycommerce')}{" "}
+                                        <a
+                                            href="https://easycommerce.dev/docs/"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="underline text-ec-primary"
+                                        >
+                                            {__('documentation', 'easycommerce')}
+                                        </a>
+                                        {__(', or', 'easycommerce')}{" "}
+                                        <a
+                                            href={EASYCOMMERCE.community_url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="underline text-ec-primary"
+                                        >
+                                            {__('join the EasyCommerce Community', 'easycommerce')}
+                                        </a>{" "}
+                                        {__('to ask questions and connect with other store owners.', 'easycommerce')}
+                                    </>
+                                )}
                         </p>
                     </div>
+
                     <div className="mt-[50px] flex gap-4 justify-center">
                         <a
                             className="min-w-[175px] text-center rounded-lg border border-ec-primary text-ec-primary text-base py-4 px-6 duration-300"
                             href="admin.php?page=easycommerce"
                         >
-                            Store Dashboard
+                            {__('Store Dashboard', 'easycommerce')}
                         </a>
-                        <a
-                            className="min-w-[175px] text-center rounded-lg bg-ec-primary text-white text-base py-4 px-6 duration-300"
-                            href="admin.php?page=easycommerce#/products/add"
-                        >
-                            Add A Product
-                        </a>
+                        {hasDesign ? (
+                            <button
+                                type="button"
+                                onClick={visitStore}
+                                className="min-w-[175px] text-center rounded-lg bg-ec-primary text-white text-base py-4 px-6 duration-300"
+                            >
+                                {__('Visit Your Store', 'easycommerce')}
+                            </button>
+                        ) : (
+                            <a
+                                className="min-w-[175px] text-center rounded-lg bg-ec-primary text-white text-base py-4 px-6 duration-300"
+                                href="admin.php?page=easycommerce#/products/add"
+                            >
+                                Add A Product
+                            </a>
+                        )}
                     </div>
                 </div>
             </div>

@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { addToastData } from '../../redux-store/slices/toastSlice';
+import globalToast from '../../../common/components/globalToast';
+import { __ } from '@wordpress/i18n';
 import CouponsSkeleton from './components/CouponsSkeleton';
 import CouponList from './CouponList';
 import DeletePopup from '../../../common/components/DeletePopup';
 
 const Coupons = ({ page }) => {
-	const dispatch = useDispatch();
+	const { addToastData } = globalToast();
 	const [coupons, setCoupons] = useState([]);
 	const [isShowModal, setIsShowModal] = useState(false);
 	const [couponIdToDelete, setCouponIdToDelete] = useState(null);
@@ -35,6 +35,13 @@ const Coupons = ({ page }) => {
 					setStatusCounts(data.data.statuses);
 				}
 				setIsStatusLoaded(true);
+			})
+			.catch(() => {
+				setIsStatusLoaded(true);
+				addToastData({
+					type: 'error',
+					message: __( 'Unable to load coupon status counts. Please refresh and try again.', 'easycommerce' ),
+				});
 			});
 	};
 
@@ -50,18 +57,27 @@ const Coupons = ({ page }) => {
 		})
 			.then((res) => res.json())
 			.then((data) => {
-				easycommerce_modal(false);
 				if (data.success && data.data?.id) {
-					dispatch(
-						addToastData({
-							type: 'success',
-							message: data.data?.message || 'Coupon Deleted',
-						}),
-					);
+					addToastData({
+						type: 'success',
+						message: data.data?.message || __( 'Coupon Deleted', 'easycommerce' ),
+					});
 					setCoupons((prev) => prev.filter((coupon) => coupon.id !== id));
 					fetchStatusCounts();
+				} else {
+					addToastData({
+						type: 'error',
+						message: data.data?.message || 'Failed to delete the coupon.',
+					});
 				}
-			});
+			})
+			.catch(() =>
+				addToastData({
+					type: 'error',
+					message: 'Something went wrong. Please try again.',
+				}),
+			)
+			.finally(() => easycommerce_modal(false));
 	};
 
 	const handleInputChange = (e) => {
@@ -104,7 +120,7 @@ const Coupons = ({ page }) => {
 		<>
 			<div className="flex items-center justify-start gap-4 mb-4">
 				<div className="product-panel-title">
-					<h3>Coupons</h3>
+					<h3>{__( 'Coupons', 'easycommerce' )}</h3>
 				</div>
 				<a
 					href="#/coupons/new"
@@ -129,7 +145,7 @@ const Coupons = ({ page }) => {
 							d="M12 4.5v15m7.5-7.5h-15"
 						></path>
 					</svg>
-					Create Coupon
+					{__( 'Create Coupon', 'easycommerce' )}
 				</a>
 			</div>
 			<div className="w-full bg-white border border-ec-table-stock rounded-xl p-6 h-full">

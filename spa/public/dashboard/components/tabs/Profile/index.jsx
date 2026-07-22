@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { __ } from "@wordpress/i18n";
 import UserImage from "./elements/UserImage";
 
 // toastify
@@ -48,7 +49,7 @@ const Profile = () => {
             const result = await response.json();
             setUser((prevUser) => ({ ...prevUser, ...payload.fields }));
             easycommerce_modal(false);
-            toast.success("Profile updated successfully", {
+            toast.success(__( "Profile updated successfully", "easycommerce" ), {
                 position: "top-right",
                 style: {
                     margin: "30px 0 0 0",
@@ -67,7 +68,7 @@ const Profile = () => {
                 transition: Bounce,
             });
         } catch (error) {
-            toast.error("Profile update failed", {
+            toast.error(__( "Profile update failed", "easycommerce" ), {
                 position: "top-right",
                 style: {
                     margin: "30px 0 0 0",
@@ -131,7 +132,7 @@ const Profile = () => {
                     <div className="flex justify-center flex-col align-center gap-4 pb-8 border-b border-b-ec-border">
                         <div className="h-12">
                             <h3 className="easycommerce-dashboard-section-title !text-lg sm:!text-2xl">
-                                Your profile
+                                {__( "Your profile", "easycommerce" )}
                             </h3>
                         </div>
                         <UserImage
@@ -150,14 +151,14 @@ const Profile = () => {
                                     htmlFor="fname"
                                     className="font-inter font-medium text-base leading-[26px] text-ec-body"
                                 >
-                                    First Name
+                                    {__( "First Name", "easycommerce" )}
                                 </label>
                                 <input
                                     type="text"
                                     name="fname"
                                     id="fname"
                                     className="easycommerce-dashboard-input"
-                                    placeholder="Enter your first name"
+                                    placeholder={__( "Enter your first name", "easycommerce" )}
                                     defaultValue={user?.first_name || ""}
                                 />
                             </div>
@@ -166,14 +167,14 @@ const Profile = () => {
                                     htmlFor="lname"
                                     className="font-inter font-medium text-base leading-[26px] text-ec-body"
                                 >
-                                    Last Name
+                                    {__( "Last Name", "easycommerce" )}
                                 </label>
                                 <input
                                     type="text"
                                     name="lname"
                                     id="lname"
                                     className="easycommerce-dashboard-input"
-                                    placeholder="Enter your last name"
+                                    placeholder={__( "Enter your last name", "easycommerce" )}
                                     defaultValue={user?.last_name || ""}
                                 />
                             </div>
@@ -182,14 +183,14 @@ const Profile = () => {
                                     htmlFor="email"
                                     className="font-inter font-medium text-base leading-[26px] text-ec-body"
                                 >
-                                    Your Email
+                                    {__( "Your Email", "easycommerce" )}
                                 </label>
                                 <input
                                     type="email"
                                     name="email"
                                     id="email"
                                     className="easycommerce-dashboard-input bg-gray-100"
-                                    placeholder="Enter your email"
+                                    placeholder={__( "Enter your email", "easycommerce" )}
                                     defaultValue={user?.email || ""}
                                     disabled
                                 />
@@ -199,14 +200,14 @@ const Profile = () => {
                                     htmlFor="phone"
                                     className="font-inter font-medium text-base leading-[26px] text-ec-body"
                                 >
-                                    Phone Number
+                                    {__( "Phone Number", "easycommerce" )}
                                 </label>
                                 <input
                                     type="text"
                                     name="phone"
                                     id="phone"
                                     className="easycommerce-dashboard-input"
-                                    placeholder="Enter your phone number"
+                                    placeholder={__( "Enter your phone number", "easycommerce" )}
                                     defaultValue={user?.phone || ""}
                                 />
                             </div>
@@ -215,14 +216,14 @@ const Profile = () => {
                                     htmlFor="cname"
                                     className="font-inter font-medium text-base leading-[26px] text-ec-body"
                                 >
-                                    Company Name
+                                    {__( "Company Name", "easycommerce" )}
                                 </label>
                                 <input
                                     type="text"
                                     name="cname"
                                     id="cname"
                                     className="easycommerce-dashboard-input"
-                                    placeholder="Enter your company name"
+                                    placeholder={__( "Enter your company name", "easycommerce" )}
                                     defaultValue={user?.company_name || ""}
                                 />
                             </div>
@@ -231,14 +232,14 @@ const Profile = () => {
                                     htmlFor="taxid"
                                     className="font-inter font-medium text-base leading-[26px] text-ec-body"
                                 >
-                                    Tax ID
+                                    {__( "Tax ID", "easycommerce" )}
                                 </label>
                                 <input
                                     type="text"
                                     name="taxid"
                                     id="taxid"
                                     className="easycommerce-dashboard-input"
-                                    placeholder="Enter your tax ID"
+                                    placeholder={__( "Enter your tax ID", "easycommerce" )}
                                     defaultValue={user?.tax_id || ""}
                                 />
                             </div>
@@ -247,7 +248,7 @@ const Profile = () => {
                                     htmlFor="country"
                                     className="font-inter font-medium text-base leading-[26px] text-ec-body"
                                 >
-                                    Country
+                                    {__( "Country", "easycommerce" )}
                                 </label>
                                 <select
                                     name="country"
@@ -256,7 +257,7 @@ const Profile = () => {
                                     defaultValue={user?.country || ""}
                                 >
                                     <option value="">
-                                        Select your country
+                                        {__( "Select your country", "easycommerce" )}
                                     </option>
                                     {EASYCOMMERCE.countries &&
                                         Object.entries(
@@ -274,7 +275,7 @@ const Profile = () => {
                                     htmlFor="businessType"
                                     className="font-inter font-medium text-base leading-[26px] text-ec-body"
                                 >
-                                    Business Type
+                                    {__( "Business Type", "easycommerce" )}
                                 </label>
                                 <select
                                     name="businessType"
@@ -283,19 +284,19 @@ const Profile = () => {
                                     defaultValue={user?.business_type || ""}
                                 >
                                     <option value="">
-                                        Select your Business Type
+                                        {__( "Select your Business Type", "easycommerce" )}
                                     </option>
                                     <option value="manufacturing">
-                                        Manufacturing
+                                        {__( "Manufacturing", "easycommerce" )}
                                     </option>
                                     <option value="finance">
-                                        Finance and Insurance
+                                        {__( "Finance and Insurance", "easycommerce" )}
                                     </option>
                                     <option value="healthcare">
-                                        Healthcare
+                                        {__( "Healthcare", "easycommerce" )}
                                     </option>
                                     <option value="realestate">
-                                        Real Estate
+                                        {__( "Real Estate", "easycommerce" )}
                                     </option>
                                 </select>
                             </div>
@@ -306,13 +307,13 @@ const Profile = () => {
                                 className="easycommerce-dashboard-form-btn"
                                 type="button"
                             >
-                                Cancel
+                                {__( "Cancel", "easycommerce" )}
                             </button>
                             <button
                                 className="easycommerce-dashboard-form-btn save"
                                 type="submit"
                             >
-                                Update Profile
+                                {__( "Update Profile", "easycommerce" )}
                             </button>
                         </div>
                     </form>

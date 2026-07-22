@@ -3,6 +3,10 @@
     "build": "webpack --mode production",
     "build:dev": "webpack --mode development",
     "watch": "webpack --watch --mode development",
+    "make-pot": "wp i18n make-pot . languages/easycommerce.pot --slug=easycommerce",
+    "make-mo": "wp i18n make-mo languages/ languages/",
+    "make-json": "wp i18n make-json languages/ --pretty-print",
+    "i18n": "npm run build && npm run make-pot && npm run make-mo && npm run make-json",
     "minify:js": "find assets -name '*.js' -not -name '*.min.js' -exec terser '{}' --compress --mangle -o '{}' \\;",
     "minify:css": "find assets -name '*.css' -not -name '*.min.css' -exec sh -c 'uglifycss \"{}\" > \"{}.tmp\" && mv \"{}.tmp\" \"{}\"' \\;",
     "minify": "npm run minify:js && npm run minify:css"

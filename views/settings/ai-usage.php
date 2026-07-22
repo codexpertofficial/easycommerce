@@ -214,7 +214,10 @@ $date_format = get_option( 'date_format' ) . ' ' . get_option( 'time_format' );
 					<span class="text-ec-title text-2xl font-semibold"><?php echo esc_html( $ec_plan_label ); ?></span>
 					<?php if ( $ec_limit > 0 ) : ?>
 						<span style="display:inline-block;font-size:12px;font-weight:600;padding:2px 8px;border-radius:9999px;background:#f0edff;color:#7351FD;white-space:nowrap;">
-							<?php echo esc_html( sprintf( __( '%s credits/month', 'easycommerce' ), number_format_i18n( $ec_limit ) ) ); ?>
+							<?php
+							// translators: %s: number of AI credits included per month.
+							echo esc_html( sprintf( __( '%s credits/month', 'easycommerce' ), number_format_i18n( $ec_limit ) ) );
+							?>
 						</span>
 					<?php endif; ?>
 				</div>
@@ -229,8 +232,18 @@ $date_format = get_option( 'date_format' ) . ' ' . get_option( 'time_format' );
 				<div style="height:100%;width:<?php echo esc_attr( $ec_pct ); ?>%;background:#7351FD;border-radius:9999px;"></div>
 			</div>
 			<div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;" class="text-sm text-ec-body">
-				<span><?php echo esc_html( sprintf( __( '%1$s of %2$s credits used', 'easycommerce' ), number_format_i18n( $ec_used_period ), number_format_i18n( $ec_limit ) ) ); ?></span>
-				<span><?php echo esc_html( sprintf( __( 'Resets %s', 'easycommerce' ), $ec_next_label ) ); ?></span>
+				<span>
+					<?php
+					// translators: 1: number of credits used, 2: total credits available.
+					echo esc_html( sprintf( __( '%1$s of %2$s credits used', 'easycommerce' ), number_format_i18n( $ec_used_period ), number_format_i18n( $ec_limit ) ) );
+					?>
+				</span>
+				<span>
+					<?php
+					// translators: %s: date on which the credit allowance resets.
+					echo esc_html( sprintf( __( 'Resets %s', 'easycommerce' ), $ec_next_label ) );
+					?>
+				</span>
 			</div>
 		<?php endif; ?>
 	</div>

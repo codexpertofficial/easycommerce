@@ -189,6 +189,7 @@ $allowed_column_classes = array(
 			if ( $show_pagination ) {
 				if ( $product_per_page < $products_count ) {
 					printf(
+						// translators: 1: first result number, 2: last result number, 3: total number of results.
 						esc_html__( 'Showing %1$s–%2$s of %3$s results', 'easycommerce' ),
 						$current_page,
 						$product_per_page,
@@ -196,6 +197,7 @@ $allowed_column_classes = array(
 					);
 				} else {
 					printf(
+						// translators: %s: number of results.
 						_n(
 							'Showing %s result',
 							'Showing %s results',
@@ -213,7 +215,7 @@ $allowed_column_classes = array(
 		do_action( 'easycommerce_before_shop_item' );
 	?>
 	<div id="easycommerce-filter" class="easycommerce-filter cursor-pointer flex justify-start items-center mb-4">
-		<img id="easycommerce-filter-icon" class="w-9 h-9 object-contain" src="<?php echo esc_url( EASYCOMMERCE_ASSETS_URL . 'common/img/blocks/shop-page/filter.png' ); ?>" alt="filter-icon" />
+		<img id="easycommerce-filter-icon" class="w-9 h-9 object-contain" src="<?php echo esc_url( EASYCOMMERCE_ASSETS_URL . 'common/img/blocks/shop-page/filter.png' ); ?>" alt="<?php esc_attr_e( 'Filter', 'easycommerce' ); ?>" />
 	</div>
 	<div class="easycommerce-shop-container-front">
 		<input type="hidden" id="shop-settings" name="shop-settings" value='<?php echo wp_json_encode( $settings ); ?>'>

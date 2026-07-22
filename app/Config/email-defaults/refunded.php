@@ -1,7 +1,9 @@
 <?php
 return array(
-	'customer_subject' => 'Your Refund for Order ###order_id## Has Been Processed - ##shop_name##',
-	'customer_body'    => '
+	/* translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim. */
+	'customer_subject' => __( 'Your Refund for Order ###order_id## Has Been Processed - ##shop_name##', 'easycommerce' ),
+	/* translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim. */
+	'customer_body'    => __( '
 Hi ##customer_name##,
 
 Your refund for order ###order_id## has been processed. The amount should appear in your account within a few business days, depending on your payment provider.
@@ -19,10 +21,12 @@ We\'re sorry things didn\'t work out this time. If there\'s anything we can do b
 
 Warm regards,
 The ##shop_name## Team
-',
+', 'easycommerce' ),
 
-	'admin_subject'    => 'Refund Issued - Order ###order_id## - ##customer_name## - ##shop_name##',
-	'admin_body'       => '
+	/* translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim. */
+	'admin_subject'    => __( 'Refund Issued - Order ###order_id## - ##customer_name## - ##shop_name##', 'easycommerce' ),
+	/* translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim. */
+	'admin_body'       => __( '
 Hi there,
 
 A full refund has been processed for order ###order_id## from ##customer_name##.
@@ -41,5 +45,5 @@ Phone: ##customer_phone##
 
 Best regards,
 The ##shop_name## Team
-',
+', 'easycommerce' ),
 );

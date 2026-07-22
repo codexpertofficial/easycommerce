@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Line } from "react-chartjs-2";
 import apiFetch from '@wordpress/api-fetch';
 import { addQueryArgs } from '@wordpress/url';
+import { __, sprintf } from '@wordpress/i18n';
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -100,7 +101,8 @@ const LineChart = ({ endpoint, params = {}, data = [], isLoading: externalLoadin
         if (!serie.previous) return [main];
 
         const previous = {
-            label: `Previous ${serie.id}`,
+            // translators: %s: data series name.
+            label: sprintf( __( 'Previous %s', 'easycommerce' ), serie.id ),
             data: serie.previous.map((point) => point.y),
             borderColor: serie.previousColor ?? serie.color,
             borderWidth: 1.5,

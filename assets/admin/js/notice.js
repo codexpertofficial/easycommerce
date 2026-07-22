@@ -1,4 +1,6 @@
  jQuery(document).ready(function($) {
+    const { __ } = wp.i18n;
+
     $(document).on('click', '.easycommerce-pro-notice .notice-dismiss', function() {
         $.post(ajaxurl, {
             action: 'easycommerce_dismiss_pro_notice',
@@ -80,7 +82,7 @@
         e.preventDefault();
         var $button = $(this);
         var originalText = $button.text();
-        $button.text("Installing..").prop('disabled', true);
+        $button.text(__("Installing..", 'easycommerce')).prop('disabled', true);
 
         $.ajax({
             url: EASYCOMMERCE_NOTICE.migration_api_root + "easycommerce/v1/addons",
@@ -95,20 +97,20 @@
             success: function(response) {
                 if (response.data.status === true) {
                     $(".migration-popup-wrapper").removeClass("active");
-                    showToast("Migration addon activated successfully!", "success");
+                    showToast(__("Migration addon activated successfully!", 'easycommerce'), "success");
                     setTimeout(() => {
                         window.location.href = EASYCOMMERCE_NOTICE.migration_addon_page;
                     }, 2000);
                 } else {
                     $button.text(originalText).prop("disabled", false);
                     $(".migration-popup-wrapper").removeClass("active");
-                    showToast(response.message || "Failed to install migration addon.", "error");
+                    showToast(response.message || __("Failed to install migration addon.", 'easycommerce'), "error");
                 }
             },
             error: function(xhr, status, error) {
                 $button.text(originalText).prop("disabled", false);
                 $(".migration-popup-wrapper").removeClass("active");
-                showToast("Failed to install migration addon.", "error");
+                showToast(__("Failed to install migration addon.", 'easycommerce'), "error");
             }
         });
     });

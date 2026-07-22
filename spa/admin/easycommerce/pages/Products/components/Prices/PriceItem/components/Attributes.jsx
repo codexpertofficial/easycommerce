@@ -1,4 +1,4 @@
-import { __ } from '@wordpress/i18n';
+import { __, sprintf } from '@wordpress/i18n';
 import { flushSync } from 'react-dom';
 
 import Dropdown from '../../../../../../../common/components/inputs/Dropdown';
@@ -128,7 +128,10 @@ const Attributes = ({
 						</h5>
 						<div className="h-ec-input">
 							<Dropdown
-								placeholder={`${__('Select', 'easycommerce')} ${attributeData.name}`}
+								placeholder={
+									// translators: %s: attribute name.
+									sprintf(__('Select %s', 'easycommerce'), attributeData.name)
+								}
 								value={selectedValue?.value || null}
 								options={attrOptions}
 								onChange={(selected) => {

@@ -1,4 +1,5 @@
 import React from "react";
+import { __ } from "@wordpress/i18n";
 
 const ShippingAddress = ({
 	data,
@@ -17,7 +18,7 @@ const ShippingAddress = ({
 					<path strokeLinecap="round" strokeLinejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
 				</svg>
 				<h3 className="easycommerce-dashboard-address-title">
-					Shipping Address
+					{__( "Shipping Address", "easycommerce" )}
 				</h3>
 			</div>
 			<div
@@ -26,14 +27,14 @@ const ShippingAddress = ({
 					<label
 						htmlFor="shipping_first_name"
 						className="font-inter font-medium text-base leading-[26px] text-ec-body">
-						First Name
+						{__( "First Name", "easycommerce" )}
 					</label>
 					<input
 						type="text"
 						name="first_name"
 						id="shipping_first_name"
 						className="easycommerce-dashboard-input"
-						placeholder="Enter your first name"
+						placeholder={__( "Enter your first name", "easycommerce" )}
 						value={data.first_name}
 						onChange={handleShippingDataChange}
 						required
@@ -43,14 +44,14 @@ const ShippingAddress = ({
 					<label
 						htmlFor="shipping_last_name"
 						className="font-inter font-medium text-base leading-[26px] text-ec-body">
-						Last Name
+						{__( "Last Name", "easycommerce" )}
 					</label>
 					<input
 						type="text"
 						name="last_name"
 						id="shipping_last_name"
 						className="easycommerce-dashboard-input"
-						placeholder="Enter your last name"
+						placeholder={__( "Enter your last name", "easycommerce" )}
 						value={data.last_name}
 						onChange={handleShippingDataChange}
 						required
@@ -60,14 +61,14 @@ const ShippingAddress = ({
 					<label
 						htmlFor="shipping_email"
 						className="font-inter font-medium text-base leading-[26px] text-ec-body">
-						Email
+						{__( "Email", "easycommerce" )}
 					</label>
 					<input
 						type="email"
 						name="email"
 						id="shipping_email"
 						className="easycommerce-dashboard-input"
-						placeholder="Enter your email"
+						placeholder={__( "Enter your email", "easycommerce" )}
 						value={data.email}
 						onChange={handleShippingDataChange}
 						required
@@ -77,14 +78,14 @@ const ShippingAddress = ({
 					<label
 						htmlFor="shipping_company"
 						className="font-inter font-medium text-base leading-[26px] text-ec-body">
-						Company Name
+						{__( "Company Name", "easycommerce" )}
 					</label>
 					<input
 						type="text"
 						name="company"
 						id="shipping_company"
 						className="easycommerce-dashboard-input"
-						placeholder="Enter company name"
+						placeholder={__( "Enter company name", "easycommerce" )}
 						value={data.company}
 						onChange={handleShippingDataChange}
 					/>
@@ -93,14 +94,14 @@ const ShippingAddress = ({
 					<label
 						htmlFor="shipping_phone"
 						className="font-inter font-medium text-base leading-[26px] text-ec-body">
-						Phone Number
+						{__( "Phone Number", "easycommerce" )}
 					</label>
 					<input
 						type="tel"
 						name="phone"
 						id="shipping_phone"
 						className="easycommerce-dashboard-input"
-						placeholder="Enter your phone number"
+						placeholder={__( "Enter your phone number", "easycommerce" )}
 						value={data.phone}
 						onChange={handleShippingDataChange}
 					/>
@@ -109,14 +110,14 @@ const ShippingAddress = ({
 					<label
 						htmlFor="shipping_address_1"
 						className="font-inter font-medium text-base leading-[26px] text-ec-body">
-						Address Line 1
+						{__( "Address Line 1", "easycommerce" )}
 					</label>
 					<input
 						type="text"
 						name="address_1"
 						id="shipping_address_1"
 						className="easycommerce-dashboard-input"
-						placeholder="Enter address"
+						placeholder={__( "Enter address", "easycommerce" )}
 						value={data.address_1}
 						onChange={handleShippingDataChange}
 					/>
@@ -125,14 +126,14 @@ const ShippingAddress = ({
 					<label
 						htmlFor="shipping_address_2"
 						className="font-inter font-medium text-base leading-[26px] text-ec-body">
-						Address Line 2
+						{__( "Address Line 2", "easycommerce" )}
 					</label>
 					<input
 						type="text"
 						name="address_2"
 						id="shipping_address_2"
 						className="easycommerce-dashboard-input"
-						placeholder="Apartment, suite, etc."
+						placeholder={__( "Apartment, suite, etc.", "easycommerce" )}
 						value={data.address_2}
 						onChange={handleShippingDataChange}
 					/>
@@ -141,7 +142,7 @@ const ShippingAddress = ({
 					<label
 						htmlFor="shipping_country"
 						className="font-inter font-medium text-base leading-[26px] text-ec-body">
-						Country
+						{__( "Country", "easycommerce" )}
 					</label>
 					<select
 						name="country"
@@ -153,7 +154,7 @@ const ShippingAddress = ({
 							fetchAndStoreStates(e.target.value, "shipping");
 						}}
 						required>
-						<option value="">Select your country</option>
+						<option value="">{__( "Select your country", "easycommerce" )}</option>
 						{EASYCOMMERCE.shipping.countries &&
 							Object.entries(EASYCOMMERCE.shipping.countries).map(
 								([code, countryName]) => (
@@ -168,7 +169,7 @@ const ShippingAddress = ({
 					<label
 						htmlFor="shipping_state"
 						className="font-inter font-medium text-base leading-[26px] text-ec-body">
-						State/Province
+						{__( "State/Province", "easycommerce" )}
 					</label>
 					<select
 						name="state"
@@ -183,7 +184,7 @@ const ShippingAddress = ({
 								"shipping"
 							);
 						}}>
-						<option value="">Select State</option>
+						<option value="">{__( "Select State", "easycommerce" )}</option>
 						{shippingStates.length > 0 &&
 							shippingStates.map((state) => (
 								<option key={state} value={state}>
@@ -196,7 +197,7 @@ const ShippingAddress = ({
 					<label
 						htmlFor="shipping_city"
 						className="font-inter font-medium text-base leading-[26px] text-ec-body">
-						City
+						{__( "City", "easycommerce" )}
 					</label>
 					<select
 						name="city"
@@ -204,7 +205,7 @@ const ShippingAddress = ({
 						className="easycommerce-dashboard-input-select"
 						value={data.city}
 						onChange={handleShippingDataChange}>
-						<option value="">Select City</option>
+						<option value="">{__( "Select City", "easycommerce" )}</option>
 						{shippingCities.length > 0 &&
 							shippingCities.map((city) => (
 								<option key={city} value={city}>
@@ -217,14 +218,14 @@ const ShippingAddress = ({
 					<label
 						htmlFor="shipping_postcode"
 						className="font-inter font-medium text-base leading-[26px] text-ec-body">
-						ZIP/Postal Code
+						{__( "ZIP/Postal Code", "easycommerce" )}
 					</label>
 					<input
 						type="text"
 						name="postcode"
 						id="shipping_postcode"
 						className="easycommerce-dashboard-input"
-						placeholder="Enter postal code"
+						placeholder={__( "Enter postal code", "easycommerce" )}
 						value={data.postcode}
 						onChange={handleShippingDataChange}
 					/>
@@ -234,7 +235,7 @@ const ShippingAddress = ({
 				<button
 					className="easycommerce-dashboard-form-btn save"
 					type="submit">
-					Update Address
+					{__( "Update Address", "easycommerce" )}
 				</button>
 			</div>
 			</div>

@@ -1,7 +1,9 @@
 <?php
 return array(
-	'customer_subject' => 'Your Order ###order_id## Has Been Cancelled - ##shop_name##',
-	'customer_body'    => '
+	/* translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim. */
+	'customer_subject' => __( 'Your Order ###order_id## Has Been Cancelled - ##shop_name##', 'easycommerce' ),
+	/* translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim. */
+	'customer_body'    => __( '
 Hi ##customer_name##,
 
 We\'re sorry to let you know that your order ###order_id## has been cancelled. We understand that\'s not what you were hoping to hear.
@@ -17,10 +19,12 @@ If you have any questions or think this was a mistake, please don\'t hesitate to
 
 Warm regards,
 The ##shop_name## Team
-',
+', 'easycommerce' ),
 
-	'admin_subject'    => 'Order ###order_id## Cancelled - ##customer_name## - ##shop_name##',
-	'admin_body'       => '
+	/* translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim. */
+	'admin_subject'    => __( 'Order ###order_id## Cancelled - ##customer_name## - ##shop_name##', 'easycommerce' ),
+	/* translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim. */
+	'admin_body'       => __( '
 Hi there,
 
 Order ###order_id## from ##customer_name## has been cancelled.
@@ -37,5 +41,5 @@ If this needs your attention, you can reach the customer directly or review the 
 
 Best regards,
 The ##shop_name## Team
-',
+', 'easycommerce' ),
 );

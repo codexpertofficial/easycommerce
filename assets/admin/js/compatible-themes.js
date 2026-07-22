@@ -1,6 +1,6 @@
 jQuery(document).ready(function($) {
     // Add the custom tab after the "Popular" tab
-    var customTab = '<li><a href="#" data-sort="easycommerce-recommended">EasyCommerce Recommended</a></li>';
+    var customTab = '<li><a href="#" data-sort="easycommerce-recommended">' + compatible_themes.label + '</a></li>';
     $('.filter-links li:first').after(customTab);
 
      // Auto-click the tab if URL contains browse=easycommerce-recommended

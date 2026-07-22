@@ -65,9 +65,9 @@ const Edit = ({ attributes, setAttributes }) => {
     return (
         <>
             <InspectorControls>
-                <PanelBody title="Product Settings">
+                <PanelBody title={__('Product Settings', 'easycommerce')}>
                     <RangeControl
-                        label="Products Per Page"
+                        label={__('Products Per Page', 'easycommerce')}
                         value={ProductPerPage}
                         onChange={(value) =>
                             setAttributes({ ProductPerPage: value })
@@ -76,21 +76,21 @@ const Edit = ({ attributes, setAttributes }) => {
                         max={20}
                     />
                 </PanelBody>
-                <PanelBody title="Grid Settings">
+                <PanelBody title={__('Grid Settings', 'easycommerce')}>
                      <ToggleControl
-                         label="Show Filters"
+                         label={__('Show Filters', 'easycommerce')}
                          checked={!!showFilters}
                          onChange={(value) => setAttributes({ showFilters: value })}
                      />
 
                      <ToggleControl
-                         label="Show Pagination"
+                         label={__('Show Pagination', 'easycommerce')}
                          checked={!!showPagination}
                          onChange={(value) => setAttributes({ showPagination: value })}
                      />
 
                      <RangeControl
-                        label="Number of Columns"
+                        label={__('Number of Columns', 'easycommerce')}
                         value={columns}
                         onChange={(value) => setAttributes({ columns: value })}
                         min={1}
@@ -99,20 +99,20 @@ const Edit = ({ attributes, setAttributes }) => {
                 </PanelBody>
                 <PanelBody
                     initialOpen={false}
-                    title={__('Product Title', 'codesigner')}
+                    title={__('Product Title', 'easycommerce')}
                 >
                     <Color
                         attributes={attributes}
                         attributeName="titleColor"
                         setAttributes={setAttributes}
-                        title="Text Color"
+                        title={__('Text Color', 'easycommerce')}
                     />
 
                     <Color
                         attributes={attributes}
                         attributeName="titleHoverColor"
                         setAttributes={setAttributes}
-                        title="Hover Text Color"
+                        title={__('Hover Text Color', 'easycommerce')}
                     />
 
                     <TypographyControls
@@ -131,13 +131,13 @@ const Edit = ({ attributes, setAttributes }) => {
                 </PanelBody>
                 <PanelBody
                     initialOpen={false}
-                    title={__('Product Category', 'codesigner')}
+                    title={__('Product Category', 'easycommerce')}
                 >
                     <Color
                         attributes={attributes}
                         attributeName="categoryColor"
                         setAttributes={setAttributes}
-                        title="Color"
+                        title={__('Color', 'easycommerce')}
                     />
                     <TypographyControls
                         attributes={attributes}
@@ -155,10 +155,10 @@ const Edit = ({ attributes, setAttributes }) => {
                 </PanelBody>
                 <PanelBody
                     initialOpen={false}
-                    title={__('Product Rating', 'codesigner')}
+                    title={__('Product Rating', 'easycommerce')}
                 >
                     <RangeControl
-                        label="Star Size"
+                        label={__('Star Size', 'easycommerce')}
                         value={starSize}
                         onChange={(value) => setAttributes({ starSize: value })}
                         min={1}
@@ -168,7 +168,7 @@ const Edit = ({ attributes, setAttributes }) => {
                         attributes={attributes}
                         attributeName="ratingColor"
                         setAttributes={setAttributes}
-                        title="Color"
+                        title={__('Color', 'easycommerce')}
                     />
                     <TypographyControls
                         attributes={attributes}
@@ -186,7 +186,7 @@ const Edit = ({ attributes, setAttributes }) => {
                 </PanelBody>
                 <PanelBody
                     initialOpen={false}
-                    title={__('Product Price', 'codesigner')}
+                    title={__('Product Price', 'easycommerce')}
                 >
                     <TabPanel
                         className="price-tabs"
@@ -194,12 +194,12 @@ const Edit = ({ attributes, setAttributes }) => {
                         tabs={[
                             {
                                 name: 'regular',
-                                title: __('Regular Price', 'codesigner'),
+                                title: __('Regular Price', 'easycommerce'),
                                 className: 'regular-price-tab',
                             },
                             {
                                 name: 'sale',
-                                title: __('Sale Price', 'codesigner'),
+                                title: __('Sale Price', 'easycommerce'),
                                 className: 'sale-price-tab',
                             },
                         ]}
@@ -212,7 +212,7 @@ const Edit = ({ attributes, setAttributes }) => {
                                             attributes={attributes}
                                             attributeName="priceColor"
                                             setAttributes={setAttributes}
-                                            title="Color"
+                                            title={__('Color', 'easycommerce')}
                                         />
                                         <TypographyControls
                                             attributes={attributes}
@@ -236,7 +236,7 @@ const Edit = ({ attributes, setAttributes }) => {
                                             attributes={attributes}
                                             attributeName="salePriceColor"
                                             setAttributes={setAttributes}
-                                            title="Color"
+                                            title={__('Color', 'easycommerce')}
                                         />
                                         <TypographyControls
                                             attributes={attributes}
@@ -259,7 +259,7 @@ const Edit = ({ attributes, setAttributes }) => {
                 </PanelBody>
 
                 <PanelBody
-                    title={__('Cart Button', 'codesigner')}
+                    title={__('Cart Button', 'easycommerce')}
                     initialOpen={true}
                 >
                      <TabPanel
@@ -268,12 +268,12 @@ const Edit = ({ attributes, setAttributes }) => {
                         tabs={[
                             {
                                 name: 'normal',
-                                title: __('Normal', 'codesigner'),
+                                title: __('Normal', 'easycommerce'),
                                 className: 'cart-button-normal-tab',
                             },
                             {
                                 name: 'hover',
-                                title: __('Hover', 'codesigner'),
+                                title: __('Hover', 'easycommerce'),
                                 className: 'cart-button-hover-tab',
                             },
                         ]}
@@ -286,26 +286,26 @@ const Edit = ({ attributes, setAttributes }) => {
                                             attributes={attributes}
                                             attributeName="cartButtonColor"
                                             setAttributes={setAttributes}
-                                            title="Text Color"
+                                            title={__('Text Color', 'easycommerce')}
                                         />
                                         <Color
                                             attributes={attributes}
                                             attributeName="cartButtonBgColor"
                                             setAttributes={setAttributes}
-                                            title="Background Color"
+                                            title={__('Background Color', 'easycommerce')}
                                         />
                                         <Color
                                             attributes={attributes}
                                             attributeName="cartButtonFocusColor"
                                             setAttributes={setAttributes}
-                                            title="Focus Text Color"
+                                            title={__('Focus Text Color', 'easycommerce')}
                                         />
 
                                         <Color
                                             attributes={attributes}
                                             attributeName="cartButtonFocusBgColor"
                                             setAttributes={setAttributes}
-                                            title="Focus Background Color"
+                                            title={__('Focus Background Color', 'easycommerce')}
                                         />
                                         <TypographyControls
                                             attributes={attributes}
@@ -329,13 +329,13 @@ const Edit = ({ attributes, setAttributes }) => {
                                             attributes={attributes}
                                             attributeName="cartButtonHoverColor"
                                             setAttributes={setAttributes}
-                                            title="Text Color (Hover)"
+                                            title={__('Text Color (Hover)', 'easycommerce')}
                                         />
                                         <Color
                                             attributes={attributes}
                                             attributeName="cartButtonHoverBgColor"
                                             setAttributes={setAttributes}
-                                            title="Background Color (Hover)"
+                                            title={__('Background Color (Hover)', 'easycommerce')}
                                         />
                                         <TypographyControls
                                             attributes={attributes}
@@ -357,7 +357,7 @@ const Edit = ({ attributes, setAttributes }) => {
                     </TabPanel>
                 </PanelBody>
                 <PanelBody
-                    title={__('Checkout Button', 'codesigner')}
+                    title={__('Checkout Button', 'easycommerce')}
                     initialOpen={true}
                 >
                      <TabPanel
@@ -366,12 +366,12 @@ const Edit = ({ attributes, setAttributes }) => {
                         tabs={[
                             {
                                 name: 'normal',
-                                title: __('Normal', 'codesigner'),
+                                title: __('Normal', 'easycommerce'),
                                 className: 'checkout-button-normal-tab',
                             },
                             {
                                 name: 'hover',
-                                title: __('Hover', 'codesigner'),
+                                title: __('Hover', 'easycommerce'),
                                 className: 'checkout-button-hover-tab',
                             },
                         ]}
@@ -384,13 +384,13 @@ const Edit = ({ attributes, setAttributes }) => {
                                             attributes={attributes}
                                             attributeName="checkoutButtonColor"
                                             setAttributes={setAttributes}
-                                            title="Text Color"
+                                            title={__('Text Color', 'easycommerce')}
                                         />
                                         <Color
                                             attributes={attributes}
                                             attributeName="checkoutButtonBgColor"
                                             setAttributes={setAttributes}
-                                            title="Background Color"
+                                            title={__('Background Color', 'easycommerce')}
                                         />
                                         <TypographyControls
                                             attributes={attributes}
@@ -414,13 +414,13 @@ const Edit = ({ attributes, setAttributes }) => {
                                             attributes={attributes}
                                             attributeName="checkoutButtonHoverColor"
                                             setAttributes={setAttributes}
-                                            title="Text Color (Hover)"
+                                            title={__('Text Color (Hover)', 'easycommerce')}
                                         />
                                         <Color
                                             attributes={attributes}
                                             attributeName="checkoutButtonHoverBgColor"
                                             setAttributes={setAttributes}
-                                            title="Background Color (Hover)"
+                                            title={__('Background Color (Hover)', 'easycommerce')}
                                         />
                                         <TypographyControls
                                             attributes={attributes}
@@ -760,13 +760,13 @@ const Edit = ({ attributes, setAttributes }) => {
                                                             onClick={() => handleAddToCart(product?.id || product?.ID)}
                                                             className={cartButtonClass}
                                                         >
-                                                            Add To Cart
+                                                            {__('Add To Cart', 'easycommerce')}
                                                         </button>
                                                         {(addedToCart[product?.id || product?.ID]) && (
                                                             <button
                                                                 onClick={() => handleCheckout(product?.id || product?.ID)}
                                                                 className={checkoutButtonClass}>
-                                                                Checkout
+                                                                {__('Checkout', 'easycommerce')}
                                                             </button>
                                                         )}
                                                     </div>
@@ -776,7 +776,7 @@ const Edit = ({ attributes, setAttributes }) => {
                                     ))}
                                 </div>
                             ) : (
-                                <p>No products found.</p>
+                                <p>{__('No products found.', 'easycommerce')}</p>
                             ))}
                     </div>
                 </div>

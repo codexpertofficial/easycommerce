@@ -1,11 +1,12 @@
 import React from "react";
 import { ResponsivePie } from "@nivo/pie";
+import { __ } from "@wordpress/i18n";
 
 const Statuses = ({ isLoading, orders }) => {
     if (orders.length === 0) {
         return (
             <div className="easycommerce-dashboard-section mt-8">
-                <p>You have no orders.</p>
+                <p>{__( "You have no orders.", "easycommerce" )}</p>
             </div>
         );
     }
@@ -16,7 +17,7 @@ const Statuses = ({ isLoading, orders }) => {
             rounded-[10px]"
         >
             <h3 className="easycommerce-dashboard-section-title !text-lg sm:!text-2xl">
-                Order Statuses
+                {__( "Order Statuses", "easycommerce" )}
             </h3>
 
             <div className="w-full grid grid-cols-3 gap-4">

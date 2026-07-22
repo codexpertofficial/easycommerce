@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import ActionDropdown from '../../../../common/components/inputs/ActionDropdown';
 import DeletePopup from '../../../../common/components/DeletePopup';
 import { toast } from 'react-toastify';
+import { __, sprintf, _n } from '@wordpress/i18n';
 import BulkPopup from '../../../../common/components/BulkPopup';
 
 const statusOptions = [
-    { label: "Active", value: "active" },
-    { label: "Inactive", value: "inactive" },
+    { label: __( 'Active', 'easycommerce' ), value: "active" },
+    { label: __( 'Inactive', 'easycommerce' ), value: "inactive" },
 ];
 
 const ActionBar = ({ selectedCoupons = [], refreshStatusCounts, setRefreshList, setSelectedCoupons, setCoupons }) => {
@@ -45,7 +46,7 @@ const ActionBar = ({ selectedCoupons = [], refreshStatusCounts, setRefreshList, 
                                 : coupon
                         )
                     );
-                    toast.success('Status updated successfully');
+                    toast.success( __( 'Status updated successfully', 'easycommerce' ) );
                     setSelectedCoupons([]);
                 }
                 easycommerce_modal(false);
@@ -69,7 +70,7 @@ const ActionBar = ({ selectedCoupons = [], refreshStatusCounts, setRefreshList, 
                     refreshStatusCounts();
                     setRefreshList(prev => !prev);
                     setCoupons([]);
-                    toast.success('Coupons deleted successfully');
+                    toast.success( __( 'Coupons deleted successfully', 'easycommerce' ) );
                 }
                 easycommerce_modal(false);
             });
@@ -80,7 +81,7 @@ const ActionBar = ({ selectedCoupons = [], refreshStatusCounts, setRefreshList, 
             <div className="w-[140px]">
                 <ActionDropdown
                     options={statusOptions}
-                    placeholder="Set Status"
+                    placeholder={ __( 'Set Status', 'easycommerce' ) }
                     value={selectedStatus}
                     onChange={handleStatusChange}
                 />
@@ -100,7 +101,7 @@ const ActionBar = ({ selectedCoupons = [], refreshStatusCounts, setRefreshList, 
                 <DeletePopup
                     onClose={() => setShowDeletePopup(false)}
                     onConfirm={handleBulkDelete}
-                    itemName={`${selectedCoupons.length} coupon${selectedCoupons.length > 1 ? 's' : ''}`}
+                    itemName={ sprintf( _n( '%d coupon', '%d coupons', selectedCoupons.length, 'easycommerce' ), selectedCoupons.length ) }
                 />
             )}
 
@@ -108,7 +109,7 @@ const ActionBar = ({ selectedCoupons = [], refreshStatusCounts, setRefreshList, 
                 <BulkPopup
                     onClose={() => setShowBulkPopup(false)}
                     onConfirm={handleBulkApply}
-                    itemName={`${selectedCoupons.length} coupon${selectedCoupons.length > 1 ? 's' : ''}`}
+                    itemName={ sprintf( _n( '%d coupon', '%d coupons', selectedCoupons.length, 'easycommerce' ), selectedCoupons.length ) }
                 />
             )}
         </div>

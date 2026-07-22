@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { __ } from "@wordpress/i18n";
 import globalToast from "../../../../common/components/globalToast";
 
 const arrowDown = `${EASYCOMMERCE.assets}admin/img/icons/arrowDown.png`;
@@ -13,8 +14,8 @@ const CouponStatusDropdown = ({
 	menuWidth = "150px",
 }) => {
 	const statusOptions = [
-		{ label: "Active", value: "active" },
-		{ label: "Inactive", value: "inactive" },
+		{ label: __( "Active", "easycommerce" ), value: "active" },
+		{ label: __( "Inactive", "easycommerce" ), value: "inactive" },
 	];
 
 	const statusColors = {
@@ -59,13 +60,13 @@ const CouponStatusDropdown = ({
 					setSelected(option.value);
 					addToastData({
 						type: "success",
-						message: data.data.message || "Coupon status updated",
+						message: data.data.message || __( "Coupon status updated", "easycommerce" ),
 					});
 					onStatusChange(option.value);
 				} else {
 					addToastData({
 						type: "error",
-						message: data.data?.message || "Failed to update coupon status",
+						message: data.data?.message || __( "Failed to update coupon status", "easycommerce" ),
 					});
 				}
 			})
@@ -73,7 +74,7 @@ const CouponStatusDropdown = ({
 				easycommerce_modal(false);
 				addToastData({
 					type: "error",
-					message: "Something went wrong while updating coupon status",
+					message: __( "Something went wrong while updating coupon status", "easycommerce" ),
 				});
 			});
 	};

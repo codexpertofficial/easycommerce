@@ -17,8 +17,7 @@ const stockItem = (
     </svg>
 );
 
-registerBlockType(metadata.name, {
+registerBlockType(metadata, {
     icon: stockItem,
-    title: metadata.title,
     edit: Edit,
 });

@@ -1,4 +1,5 @@
 import React from "react";
+import { __ } from '@wordpress/i18n';
 
 const deletePopUpClose = `${EASYCOMMERCE.assets}admin/img/icons/delete-popup-close.png`;
 const deleteWarningBg = `${EASYCOMMERCE.assets}admin/img/delete-warning-bg.png`;
@@ -46,10 +47,10 @@ const Popup = ({
 
                 <div className="flex flex-col justify-center items-center mb-6">
                     <h3 className="font-inter font-medium text-xl text-ec-title mb-2">
-                        Are you sure you want to replace?
+                        {__('Are you sure you want to replace?', 'easycommerce')}
                     </h3>
                     <p className="w-9/12 mx-auto text-center font-inter font-normal text-base text-ec-body">
-                        Auto generating variants will replace all existing variants for <strong>{itemName}</strong>.
+                        {__('Auto generating variants will replace all existing variants for', 'easycommerce')} <strong>{itemName}</strong>.
                     </p>
                 </div>
 
@@ -58,14 +59,14 @@ const Popup = ({
                         className="w-[181px] h-[45px] font-inter font-normal text-base border bg-white text-ec-title border-ec-title rounded-lg px-10 py-[10px]"
                         onClick={onClose}
                     >
-                        No, Keep
+                        {__('No, Keep', 'easycommerce')}
                     </button>
                     <button
                         className="w-[181px] h-[45px] font-inter font-normal text-base rounded-lg px-10 py-[10px] border bg-ec-red border-ec-red hover:bg-[#FF3A52CC] hover:border-[#FF3A52CC] text-white transition"
                         onClick={onConfirm}
                         type="button"
                     >
-                        Yes, Replace
+                        {__('Yes, Replace', 'easycommerce')}
                     </button>
                 </div>
             </div>

@@ -53,7 +53,7 @@ $type            = $first_variation ? $first_variation->get_type() : null;
 <div class="easycommerce-single-product-checkout-btn">
 	<a href="<?php echo esc_url( get_permalink( easycommerce_cart_redirect() ) ); ?>"
 		class="easycommcer-proceed-checkout-btn flex items-center gap-3 justify-center p-3 font-inter text-base leading-[26px] w-full border-none rounded-md text-ec-primary focus:text-ec-primary hover:text-ec-primary font-medium"
-		style="outline:none">Proceed to checkout <img className="ml-3" height="10" width="26"
+		style="outline:none"><?php esc_html_e( 'Proceed to checkout', 'easycommerce' ); ?> <img className="ml-3" height="10" width="26"
 			src="<?php echo esc_url( EASYCOMMERCE_ASSETS_URL . 'admin/img/icons/arrow-blue-right.png' ); ?>" alt="">
 	</a>
 </div>

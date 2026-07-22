@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { __ } from "@wordpress/i18n";
 
 const actionIcon = `${EASYCOMMERCE.assets}admin/img/icons/actionIcon.png`;
 
@@ -6,8 +7,8 @@ const ActionDropdown = ({ orderId, onView, onDelete, icons = {}, menuWidth = "12
 	const [isOpen, setIsOpen] = useState(false);
 
 	const Actions = [
-		{ label: "View", value: "view", icon: icons.view },
-		{ label: "Delete", value: "delete", icon: icons.delete },
+		{ label: __("View", "easycommerce"), value: "view", icon: icons.view },
+		{ label: __("Delete", "easycommerce"), value: "delete", icon: icons.delete },
 	];
 
 	const handleOptionClick = (option) => {
@@ -27,7 +28,7 @@ const ActionDropdown = ({ orderId, onView, onDelete, icons = {}, menuWidth = "12
 				onBlur={() => setIsOpen(false)}
 				className="flex items-center justify-center w-8 h-8 rounded-md mr-6"
 			>
-				<img src={actionIcon} alt="Action Icon" className="w-3" />
+				<img src={actionIcon} alt={__("Action Icon", "easycommerce")} className="w-3" />
 			</button>
 
 			{isOpen && (

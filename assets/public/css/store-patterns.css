@@ -1,0 +1,177 @@
+/**
+ * EasyCommerce store patterns — classic-theme compatibility layer.
+ *
+ * Loaded ONLY on classic (non-block) themes. Block themes get spacing, colour
+ * and layout tokens from theme.json; classic themes do not, so the store
+ * patterns (which assume block-theme conventions) would otherwise collapse:
+ * padding disappears, full-width sections get boxed, colour presets do nothing.
+ *
+ * Everything here is scoped to `.ec-pattern` — the wrapper class every store
+ * pattern emits on its root block — so the theme's own pages stay untouched.
+ */
+
+/* ---------------------------------------------------------------------------
+ * Box model + spacing preset scale
+ * The patterns use var:preset|spacing tokens (var(--wp--preset--spacing--NN)).
+ * Classic themes never define them, so padding/margins collapse. Provide a
+ * sensible scale, scoped to our patterns.
+ * ------------------------------------------------------------------------- */
+.ec-pattern,
+.ec-pattern * {
+	box-sizing: border-box;
+}
+
+.ec-pattern {
+	--ec-content: 1200px;
+	--wp--preset--spacing--10: 8px;
+	--wp--preset--spacing--20: 16px;
+	--wp--preset--spacing--30: 24px;
+	--wp--preset--spacing--40: 32px;
+	--wp--preset--spacing--50: 48px;
+	--wp--preset--spacing--60: 64px;
+	--wp--preset--spacing--70: 80px;
+	--wp--preset--spacing--80: 96px;
+}
+
+/* ---------------------------------------------------------------------------
+ * Full-width + wide alignment
+ * Classic themes box our full-width sections inside the content column. Break
+ * out with the standard full-bleed technique, and constrain inner content.
+ * ------------------------------------------------------------------------- */
+.ec-pattern.alignfull {
+	width: 100vw;
+	max-width: 100vw;
+	margin-left: calc(50% - 50vw);
+	margin-right: calc(50% - 50vw);
+}
+
+.ec-pattern.alignwide {
+	max-width: var(--ec-content);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Centre + cap the inner content of our full-width groups. */
+.ec-pattern.wp-block-group.alignfull > .wp-block-group__inner-container,
+.ec-pattern.wp-block-group.alignfull > *:not(.alignfull):not(.wp-block-cover__background):not(.wp-block-cover__inner-container) {
+	max-width: var(--ec-content);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Cover blocks used as full-width heroes/banners. */
+.ec-pattern.wp-block-cover.alignfull {
+	padding-left: 24px;
+	padding-right: 24px;
+}
+.ec-pattern.wp-block-cover .wp-block-cover__inner-container {
+	max-width: var(--ec-content);
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+}
+
+/* ---------------------------------------------------------------------------
+ * Colour preset class fallbacks
+ * Patterns use core colour classes (white text on covers, dark footer, etc.).
+ * Classic themes without a theme.json palette render these as no-ops.
+ * ------------------------------------------------------------------------- */
+.ec-pattern .has-white-color,
+.ec-pattern.has-white-color {
+	color: #ffffff;
+}
+.ec-pattern .has-base-color,
+.ec-pattern.has-base-color {
+	color: #f7f7f9;
+}
+.ec-pattern .has-black-background-color,
+.ec-pattern.has-black-background-color {
+	background-color: #111111;
+}
+.ec-pattern .has-contrast-background-color,
+.ec-pattern.has-contrast-background-color {
+	background-color: #1f1f29;
+}
+
+/* ---------------------------------------------------------------------------
+ * Buttons
+ * Give the block buttons a visible default even without theme button styles.
+ * (The applied design's accent colour overrides this via the inline preset CSS.)
+ * ------------------------------------------------------------------------- */
+.ec-pattern .wp-block-button__link,
+.ec-pattern .wp-element-button {
+	display: inline-block;
+	padding: 12px 24px;
+	border-radius: 6px;
+	background-color: #7351fd;
+	color: #ffffff;
+	text-decoration: none;
+	line-height: 1.4;
+	border: 1px solid transparent;
+}
+.ec-pattern .is-style-outline .wp-block-button__link {
+	background-color: transparent;
+	color: #1f1f29;
+	border: 1px solid currentColor;
+}
+
+/* ---------------------------------------------------------------------------
+ * Headings / spacing niceties
+ * ------------------------------------------------------------------------- */
+.ec-pattern h1,
+.ec-pattern h2,
+.ec-pattern h3,
+.ec-pattern h4 {
+	line-height: 1.2;
+}
+.ec-pattern .wp-block-heading {
+	margin-top: 0;
+}
+
+/* ---------------------------------------------------------------------------
+ * Columns — make them behave and stack on small screens.
+ * ------------------------------------------------------------------------- */
+.ec-pattern .wp-block-columns {
+	display: flex;
+	gap: 24px;
+	flex-wrap: wrap;
+}
+.ec-pattern .wp-block-column {
+	flex: 1 1 0;
+	min-width: 0;
+}
+
+/* Details / FAQ accordion. */
+.ec-pattern .wp-block-details {
+	padding: 12px 0;
+}
+.ec-pattern .wp-block-details summary {
+	cursor: pointer;
+	font-weight: 600;
+}
+
+/* ---------------------------------------------------------------------------
+ * Product Collection grid — responsive fallback.
+ * The block sets grid columns inline; make sure it degrades on small screens.
+ * ------------------------------------------------------------------------- */
+@media (max-width: 781px) {
+	.ec-pattern .wp-block-columns {
+		flex-direction: column;
+	}
+	.ec-pattern .wp-block-column {
+		flex-basis: 100% !important;
+	}
+	.ec-product-collection .easycommerce-shop-container {
+		grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+	}
+}
+
+@media (max-width: 480px) {
+	.ec-product-collection .easycommerce-shop-container {
+		grid-template-columns: 1fr !important;
+	}
+	.ec-pattern.alignfull {
+		padding-left: 16px;
+		padding-right: 16px;
+	}
+}

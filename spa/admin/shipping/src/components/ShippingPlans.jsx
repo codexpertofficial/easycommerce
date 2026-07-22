@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { __ } from '@wordpress/i18n';
 import { Slot } from '@wordpress/components';
 import Pagination from "../../../common/components/Pagination";
 import DeletePopup from '../../../common/components/DeletePopup';
@@ -24,19 +25,19 @@ const ShippingPlans = ({
                     <thead>
                         <tr className="bg-ec-table-bg">
                             <th className="w-[20%] font-inter font-normal text-base text-ec-body text-left py-3 pl-5 first:rounded-l-lg">
-                                Plan
+                                { __( "Plan", "easycommerce" ) }
                             </th>
                             <th className="w-[10%] font-inter font-normal text-base text-ec-body text-left py-3 pl-5">
-                                Status
+                                { __( "Status", "easycommerce" ) }
                             </th>
                             <th className="w-[35%] font-inter font-normal text-base text-ec-body text-left py-3 pl-5 ">
-                                Regions
+                                { __( "Regions", "easycommerce" ) }
                             </th>
                             <th className="w-[25%] font-inter font-normal text-base text-ec-body text-left py-3 pl-5">
-                                Methods
+                                { __( "Methods", "easycommerce" ) }
                             </th>
                             <th className="w-[10%] font-inter font-medium text-base text-left py-3 rounded-e-lg border-r-0">
-                                Action
+                                { __( "Action", "easycommerce" ) }
                             </th>
                         </tr>
                     </thead>
@@ -62,8 +63,8 @@ const ShippingPlans = ({
 
                                             <span>
                                                 {shippingMethod.active
-                                                    ? "Enabled"
-                                                    : "Disabled"}
+                                                    ? __( "Enabled", "easycommerce" )
+                                                    : __( "Disabled", "easycommerce" )}
                                             </span>
                                         </span>
                                     </td>

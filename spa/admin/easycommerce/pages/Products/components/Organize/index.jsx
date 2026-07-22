@@ -38,7 +38,7 @@ const Organize = ({ prevCats, prevTags, prevBrands }) => {
 			const data = await response.json();
 			setCategories(data.data.categories);
 		} catch (error) {
-			toast.error('Failed to fetch categories.');
+			toast.error(__('Failed to fetch categories.', 'easycommerce'));
 		}
 	};
 
@@ -57,7 +57,7 @@ const Organize = ({ prevCats, prevTags, prevBrands }) => {
 			const data = await response.json();
 			setTags(data.data.tags);
 		} catch (error) {
-			toast.error('Failed to fetch tags.');
+			toast.error(__('Failed to fetch tags.', 'easycommerce'));
 		}
 	};
 
@@ -76,7 +76,7 @@ const Organize = ({ prevCats, prevTags, prevBrands }) => {
 			const data = await response.json();
 			setBrands(data.data.brands);
 		} catch (error) {
-			toast.error('Failed to fetch brands.');
+			toast.error(__('Failed to fetch brands.', 'easycommerce'));
 		}
 	};
 

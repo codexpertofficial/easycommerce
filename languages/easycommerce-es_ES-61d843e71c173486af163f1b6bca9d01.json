@@ -1,0 +1,117 @@
+{
+    "translation-revision-date": "YEAR-MO-DA HO:MI+ZONE",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "build\/tax.bundle.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "es_ES",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Country": [
+                "Pa\u00eds"
+            ],
+            "State": [
+                "Provincia"
+            ],
+            "City": [
+                "Ciudad"
+            ],
+            "Cancel": [
+                "Cancelar"
+            ],
+            "Tax class name": [
+                "Nombre de la clase de impuesto"
+            ],
+            "Name": [
+                "Nombre"
+            ],
+            "Status": [
+                "Estado"
+            ],
+            "Are you sure you want to delete?": [
+                "\u00bfSeguro que quieres eliminarlo?"
+            ],
+            "You're going to delete this, are you sure?": [
+                "Vas a eliminar esto, \u00bfseguro?"
+            ],
+            "No, Keep it": [
+                "No, conservarlo"
+            ],
+            "Yes, Delete": [
+                "S\u00ed, eliminar"
+            ],
+            "Delete Permanently": [
+                "Eliminar permanentemente"
+            ],
+            "Description": [
+                "Descripci\u00f3n"
+            ],
+            "Tax Classes": [
+                "Clases de impuestos"
+            ],
+            "Active": [
+                "Activo"
+            ],
+            "Inactive": [
+                "Inactivo"
+            ],
+            "Actions": [
+                "Acciones"
+            ],
+            "Read docs.": [
+                "Leer la documentaci\u00f3n."
+            ],
+            "Write description here": [
+                "Escribe la descripci\u00f3n aqu\u00ed"
+            ],
+            "Enable\/Disable": [
+                "Activar\/Desactivar"
+            ],
+            "Regions": [
+                "Regiones"
+            ],
+            "No tax classes configured": [
+                "No hay clases de impuestos configuradas"
+            ],
+            "Set up tax classes to apply the correct tax amounts to products. ": [
+                "Configura clases de impuestos para aplicar los importes correctos a los productos. "
+            ],
+            "+ Add Class": [
+                "+ A\u00f1adir clase"
+            ],
+            "Add Class": [
+                "A\u00f1adir clase"
+            ],
+            "Class": [
+                "Clase"
+            ],
+            "Rate (%)": [
+                "Tipo (%)"
+            ],
+            "- Select -": [
+                "- Selecciona -"
+            ],
+            "Update Taxation": [
+                "Actualizar impuestos"
+            ],
+            "Create Taxation": [
+                "Crear impuestos"
+            ],
+            "Rates": [
+                "Tipos"
+            ],
+            "Add Tax Class": [
+                "A\u00f1adir clase de impuestos"
+            ],
+            "Populate Tax Rates": [
+                "Rellenar tipos impositivos"
+            ],
+            "Tax rates for all areas of %s": [
+                "Tipos impositivos para todas las zonas de %s"
+            ]
+        }
+    }
+}

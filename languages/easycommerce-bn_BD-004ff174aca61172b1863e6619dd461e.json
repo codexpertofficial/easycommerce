@@ -1,0 +1,195 @@
+{
+    "translation-revision-date": "YEAR-MO-DA HO:MI+ZONE",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "build\/shipping.bundle.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "bn_BD",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Failed to update shipping plan.": [
+                "\u09b6\u09bf\u09aa\u09bf\u0982 \u09aa\u09cd\u09b2\u09cd\u09af\u09be\u09a8 \u0986\u09aa\u09a1\u09c7\u099f \u0995\u09b0\u09a4\u09c7 \u09ac\u09cd\u09af\u09b0\u09cd\u09a5\u0964"
+            ],
+            "Shipping plan updated successfully.": [
+                "\u09b6\u09bf\u09aa\u09bf\u0982 \u09aa\u09cd\u09b2\u09cd\u09af\u09be\u09a8 \u09b8\u09ab\u09b2\u09ad\u09be\u09ac\u09c7 \u0986\u09aa\u09a1\u09c7\u099f \u0995\u09b0\u09be \u09b9\u09af\u09bc\u09c7\u099b\u09c7\u0964"
+            ],
+            "Country": [
+                "\u09a6\u09c7\u09b6"
+            ],
+            "State": [
+                "\u09b0\u09be\u099c\u09cd\u09af"
+            ],
+            "City": [
+                "\u09b6\u09b9\u09b0"
+            ],
+            "Write here": [
+                "\u098f\u0996\u09be\u09a8\u09c7 \u09b2\u09bf\u0996\u09c1\u09a8"
+            ],
+            "Select Country": [
+                "\u09a6\u09c7\u09b6 \u09a8\u09bf\u09b0\u09cd\u09ac\u09be\u099a\u09a8 \u0995\u09b0\u09c1\u09a8"
+            ],
+            "Methods": [
+                "\u09aa\u09a6\u09cd\u09a7\u09a4\u09bf"
+            ],
+            "Cancel": [
+                "\u09ac\u09be\u09a4\u09bf\u09b2"
+            ],
+            "Action": [
+                "\u0985\u09cd\u09af\u09be\u0995\u09b6\u09a8"
+            ],
+            "Name": [
+                "\u09a8\u09be\u09ae"
+            ],
+            "Select City": [
+                "\u09b6\u09b9\u09b0 \u09a8\u09bf\u09b0\u09cd\u09ac\u09be\u099a\u09a8 \u0995\u09b0\u09c1\u09a8"
+            ],
+            "Select State": [
+                "\u09b0\u09be\u099c\u09cd\u09af \u09a8\u09bf\u09b0\u09cd\u09ac\u09be\u099a\u09a8 \u0995\u09b0\u09c1\u09a8"
+            ],
+            "Status": [
+                "\u09b8\u09cd\u099f\u09cd\u09af\u09be\u099f\u09be\u09b8"
+            ],
+            "Are you sure you want to delete?": [
+                "\u0986\u09aa\u09a8\u09bf \u0995\u09bf \u09a8\u09bf\u09b6\u09cd\u099a\u09bf\u09a4\u09ad\u09be\u09ac\u09c7 \u09ae\u09c1\u099b\u09a4\u09c7 \u099a\u09be\u09a8?"
+            ],
+            "You're going to delete this, are you sure?": [
+                "\u0986\u09aa\u09a8\u09bf \u098f\u099f\u09bf \u09ae\u09c1\u099b\u09c7 \u09ab\u09c7\u09b2\u09a4\u09c7 \u09af\u09be\u099a\u09cd\u099b\u09c7\u09a8, \u0986\u09aa\u09a8\u09bf \u0995\u09bf \u09a8\u09bf\u09b6\u09cd\u099a\u09bf\u09a4?"
+            ],
+            "No, Keep it": [
+                "\u09a8\u09be, \u09b0\u09c7\u0996\u09c7 \u09a6\u09bf\u09a8"
+            ],
+            "Yes, Delete": [
+                "\u09b9\u09cd\u09af\u09be\u0981, \u09ae\u09c1\u099b\u09c1\u09a8"
+            ],
+            "Delete Permanently": [
+                "\u09b8\u09cd\u09a5\u09be\u09af\u09bc\u09c0\u09ad\u09be\u09ac\u09c7 \u09ae\u09c1\u099b\u09c1\u09a8"
+            ],
+            "Description": [
+                "\u09ac\u09bf\u09ac\u09b0\u09a3"
+            ],
+            "Enabled": [
+                "\u099a\u09be\u09b2\u09c1"
+            ],
+            "Disabled": [
+                "\u09ac\u09a8\u09cd\u09a7"
+            ],
+            "No shipping plans configured": [
+                "\u0995\u09cb\u09a8\u09cb \u09b6\u09bf\u09aa\u09bf\u0982 \u09aa\u09cd\u09b2\u09cd\u09af\u09be\u09a8 \u0995\u09a8\u09ab\u09bf\u0997\u09be\u09b0 \u0995\u09b0\u09be \u09b9\u09af\u09bc\u09a8\u09bf"
+            ],
+            "Set up shipping plans to define shipping rates by region. ": [
+                "\u0985\u099e\u09cd\u099a\u09b2\u09ad\u09c7\u09a6\u09c7 \u09b6\u09bf\u09aa\u09bf\u0982 \u09b9\u09be\u09b0 \u09a8\u09bf\u09b0\u09cd\u09a7\u09be\u09b0\u09a3 \u0995\u09b0\u09a4\u09c7 \u09b6\u09bf\u09aa\u09bf\u0982 \u09aa\u09cd\u09b2\u09cd\u09af\u09be\u09a8 \u09b8\u09c7\u099f \u0986\u09aa \u0995\u09b0\u09c1\u09a8\u0964 "
+            ],
+            "Read docs.": [
+                "\u09a1\u0995\u09c1\u09ae\u09c7\u09a8\u09cd\u099f\u09c7\u09b6\u09a8 \u09aa\u09a1\u09bc\u09c1\u09a8\u0964"
+            ],
+            "+ Add Plan": [
+                "+ \u09aa\u09cd\u09b2\u09cd\u09af\u09be\u09a8 \u09af\u09cb\u0997 \u0995\u09b0\u09c1\u09a8"
+            ],
+            "Min Price (%s)": [
+                "\u09b8\u09b0\u09cd\u09ac\u09a8\u09bf\u09ae\u09cd\u09a8 \u09a6\u09be\u09ae (%s)"
+            ],
+            "Max Price (%s)": [
+                "\u09b8\u09b0\u09cd\u09ac\u09cb\u099a\u09cd\u099a \u09a6\u09be\u09ae (%s)"
+            ],
+            "Min Weight": [
+                "\u09b8\u09b0\u09cd\u09ac\u09a8\u09bf\u09ae\u09cd\u09a8 \u0993\u099c\u09a8"
+            ],
+            "Max Weight": [
+                "\u09b8\u09b0\u09cd\u09ac\u09cb\u099a\u09cd\u099a \u0993\u099c\u09a8"
+            ],
+            "Min Quantity": [
+                "\u09b8\u09b0\u09cd\u09ac\u09a8\u09bf\u09ae\u09cd\u09a8 \u09aa\u09b0\u09bf\u09ae\u09be\u09a3"
+            ],
+            "Max Quantity": [
+                "\u09b8\u09b0\u09cd\u09ac\u09cb\u099a\u09cd\u099a \u09aa\u09b0\u09bf\u09ae\u09be\u09a3"
+            ],
+            "Min": [
+                "\u09b8\u09b0\u09cd\u09ac\u09a8\u09bf\u09ae\u09cd\u09a8"
+            ],
+            "Max": [
+                "\u09b8\u09b0\u09cd\u09ac\u09cb\u099a\u09cd\u099a"
+            ],
+            "Shipping name here": [
+                "\u098f\u0996\u09be\u09a8\u09c7 \u09b6\u09bf\u09aa\u09bf\u0982\u09af\u09bc\u09c7\u09b0 \u09a8\u09be\u09ae"
+            ],
+            "Write description here": [
+                "\u098f\u0996\u09be\u09a8\u09c7 \u09ac\u09bf\u09ac\u09b0\u09a3 \u09b2\u09bf\u0996\u09c1\u09a8"
+            ],
+            "Enable\/Disable": [
+                "\u099a\u09be\u09b2\u09c1\/\u09ac\u09a8\u09cd\u09a7"
+            ],
+            "Regions": [
+                "\u0985\u099e\u09cd\u099a\u09b2"
+            ],
+            "Zip Code": [
+                "\u099c\u09bf\u09aa \u0995\u09cb\u09a1"
+            ],
+            "Calculation Base": [
+                "\u0997\u09a3\u09a8\u09be\u09b0 \u09ad\u09bf\u09a4\u09cd\u09a4\u09bf"
+            ],
+            "Select Base": [
+                "\u09ad\u09bf\u09a4\u09cd\u09a4\u09bf \u09a8\u09bf\u09b0\u09cd\u09ac\u09be\u099a\u09a8 \u0995\u09b0\u09c1\u09a8"
+            ],
+            "Cart Total": [
+                "\u0995\u09be\u09b0\u09cd\u099f\u09c7\u09b0 \u09ae\u09cb\u099f"
+            ],
+            "Total Weight": [
+                "\u09ae\u09cb\u099f \u0993\u099c\u09a8"
+            ],
+            "Item Count": [
+                "\u0986\u0987\u099f\u09c7\u09ae\u09c7\u09b0 \u09b8\u0982\u0996\u09cd\u09af\u09be"
+            ],
+            "Taxable": [
+                "\u0995\u09b0\u09af\u09cb\u0997\u09cd\u09af"
+            ],
+            "No tax rate configured for this country.": [
+                "\u098f\u0987 \u09a6\u09c7\u09b6\u09c7\u09b0 \u099c\u09a8\u09cd\u09af \u0995\u09cb\u09a8\u09cb \u0995\u09b0\u09c7\u09b0 \u09b9\u09be\u09b0 \u0995\u09a8\u09ab\u09bf\u0997\u09be\u09b0 \u0995\u09b0\u09be \u09b9\u09af\u09bc\u09a8\u09bf\u0964"
+            ],
+            "Method Name": [
+                "\u09aa\u09a6\u09cd\u09a7\u09a4\u09bf\u09b0 \u09a8\u09be\u09ae"
+            ],
+            "Shipping Fee (%s)": [
+                "\u09b6\u09bf\u09aa\u09bf\u0982 \u09ab\u09bf (%s)"
+            ],
+            "Write name here": [
+                "\u098f\u0996\u09be\u09a8\u09c7 \u09a8\u09be\u09ae \u09b2\u09bf\u0996\u09c1\u09a8"
+            ],
+            "Write min weight": [
+                "\u09b8\u09b0\u09cd\u09ac\u09a8\u09bf\u09ae\u09cd\u09a8 \u0993\u099c\u09a8 \u09b2\u09bf\u0996\u09c1\u09a8"
+            ],
+            "Write max weight": [
+                "\u09b8\u09b0\u09cd\u09ac\u09cb\u099a\u09cd\u099a \u0993\u099c\u09a8 \u09b2\u09bf\u0996\u09c1\u09a8"
+            ],
+            "Write your fee": [
+                "\u0986\u09aa\u09a8\u09be\u09b0 \u09ab\u09bf \u09b2\u09bf\u0996\u09c1\u09a8"
+            ],
+            "Calculation base is required.": [
+                "\u0997\u09a3\u09a8\u09be\u09b0 \u09ad\u09bf\u09a4\u09cd\u09a4\u09bf \u0986\u09ac\u09b6\u09cd\u09af\u0995\u0964"
+            ],
+            "Shipping plan name is required.": [
+                "\u09b6\u09bf\u09aa\u09bf\u0982 \u09aa\u09cd\u09b2\u09cd\u09af\u09be\u09a8\u09c7\u09b0 \u09a8\u09be\u09ae \u0986\u09ac\u09b6\u09cd\u09af\u0995\u0964"
+            ],
+            "Update Shipping Plan": [
+                "\u09b6\u09bf\u09aa\u09bf\u0982 \u09aa\u09cd\u09b2\u09cd\u09af\u09be\u09a8 \u0986\u09aa\u09a1\u09c7\u099f \u0995\u09b0\u09c1\u09a8"
+            ],
+            "Save Shipping Plan": [
+                "\u09b6\u09bf\u09aa\u09bf\u0982 \u09aa\u09cd\u09b2\u09cd\u09af\u09be\u09a8 \u09b8\u0982\u09b0\u0995\u09cd\u09b7\u09a3 \u0995\u09b0\u09c1\u09a8"
+            ],
+            "Plan": [
+                "\u09aa\u09cd\u09b2\u09cd\u09af\u09be\u09a8"
+            ],
+            "Add Shipping Plan": [
+                "\u09b6\u09bf\u09aa\u09bf\u0982 \u09aa\u09cd\u09b2\u09cd\u09af\u09be\u09a8 \u09af\u09cb\u0997 \u0995\u09b0\u09c1\u09a8"
+            ],
+            "Shipping Plans": [
+                "\u09b6\u09bf\u09aa\u09bf\u0982 \u09aa\u09cd\u09b2\u09cd\u09af\u09be\u09a8"
+            ],
+            "+ New Plan": [
+                "+ \u09a8\u09a4\u09c1\u09a8 \u09aa\u09cd\u09b2\u09cd\u09af\u09be\u09a8"
+            ]
+        }
+    }
+}

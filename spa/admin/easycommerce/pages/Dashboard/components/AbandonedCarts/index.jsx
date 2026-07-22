@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import apiFetch from '@wordpress/api-fetch';
 import { addQueryArgs } from '@wordpress/url';
+import { __ } from '@wordpress/i18n';
 import TableSkeleton from "../../../../../common/TableSkeleton";
 import AbandonedCartModal from "./components/AbandonedCartModal";
 
@@ -89,14 +90,14 @@ const AbandonedCarts = ({ range = 'last-30' }) => {
                 <TableSkeleton numberOfRows={5} SkeletonHeight={35} />
             ) : data.length === 0 ? (
                 <div className=" text-sm text-ec-body px-[30px] pb-[30px]">
-                    No abandoned carts found.
+                    {__( 'No abandoned carts found.', 'easycommerce' )}
                 </div>
             ) : (
                 <div className="h-fit">
                     <div className="flex items-center bg-ec-table-bg p-3 rounded-lg">
-                        <div className="text-sm font-medium text-ec-body capitalize w-[40%]">Customer</div>
-                        <div className="w-[15%] text-sm font-medium text-ec-body capitalize text-center">Items</div>
-                        <div className="w-[30%] text-sm font-medium text-ec-body capitalize text-center">Total</div>
+                        <div className="text-sm font-medium text-ec-body capitalize w-[40%]">{__( 'Customer', 'easycommerce' )}</div>
+                        <div className="w-[15%] text-sm font-medium text-ec-body capitalize text-center">{__( 'Items', 'easycommerce' )}</div>
+                        <div className="w-[30%] text-sm font-medium text-ec-body capitalize text-center">{__( 'Total', 'easycommerce' )}</div>
                         <div className="w-[15%]"></div>
                     </div>
 
@@ -113,7 +114,7 @@ const AbandonedCarts = ({ range = 'last-30' }) => {
                                     onClick={() => setSelectedItem(item)}
                                     className="font-inter text-ec-primary hover:underline text-sm focus:text-ec-primary"
                                 >
-                                    View
+                                    {__( 'View', 'easycommerce' )}
                                 </button>
                             </div>
                         </div>

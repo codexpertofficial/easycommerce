@@ -1,0 +1,35 @@
+{
+    "translation-revision-date": "YEAR-MO-DA HO:MI+ZONE",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "assets\/public\/js\/shop.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "pt_BR",
+                "plural-forms": "nplurals=2; plural=(n > 1);"
+            },
+            "Showing %s result": [
+                "Exibindo %s resultado",
+                "Exibindo %s resultados"
+            ],
+            "Failed to add to cart. Please try again.": [
+                "Falha ao adicionar ao carrinho. Tente novamente."
+            ],
+            "Showing %1$s-%2$s of %3$s result": [
+                "Exibindo %1$s-%2$s de %3$s resultado",
+                "Exibindo %1$s-%2$s de %3$s resultados"
+            ],
+            "No results found": [
+                "Nenhum resultado encontrado"
+            ],
+            "Adding...": [
+                "Adicionando..."
+            ],
+            "Added": [
+                "Adicionado"
+            ]
+        }
+    }
+}

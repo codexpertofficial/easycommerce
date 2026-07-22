@@ -165,7 +165,7 @@ $stub_cart = new class( $order ) {
 	?>
 	<?php do_action( 'easycommerce/views/templates/checkout/payment_methods', $stub_cart ); ?>
 
-		<div id="easycommerce-payment-message" class="hidden mb-4 px-4 py-3 rounded-lg text-sm"></div>
+		<div id="easycommerce-checkout-order-error" class="w-full mb-4 p-3 rounded-lg text-sm font-inter text-[#FF3A52] bg-[#FFF0F2] border border-[#FF3A52]" style="display: none;"></div>
 
 		<button type="submit"
 			class="easycommerce-checkout-main-btn text-white w-full font-inter bg-ec-primary border border-ec-primary py-[11px] px-8 rounded-lg font-normal hover:text-white hover:bg-ec-secondary hover:border-ec-secondary transition-all ease-in-out duration-500 leading-[26px]">

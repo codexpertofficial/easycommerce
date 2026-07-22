@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useEffect } from 'react';
-import { __ } from '@wordpress/i18n';
+import { __, sprintf } from '@wordpress/i18n';
 import { toast } from 'react-toastify';
 
 // Components
@@ -48,12 +48,12 @@ const EditProduct = ({ id, setBreadcrumbTitle }) => {
 					setBreadcrumbTitle(data.data.title);
 				}
 			} else {
-				toast.error("Product doesn't exist");
+				toast.error(__("Product doesn't exist", 'easycommerce'));
 				window.location.hash = `#/products`;
 			}
 		} catch (error) {
 			easycommerce_modal(false);
-			toast.error('Failed to fetch product data');
+			toast.error(__('Failed to fetch product data', 'easycommerce'));
 			console.error('Error fetching product data:', error);
 		}
 	}, [id]);
@@ -134,7 +134,7 @@ const EditProduct = ({ id, setBreadcrumbTitle }) => {
 			try {
 				variationData = JSON.parse(variationData);
 			} catch (e) {
-				toast.error('Invalid Pricing Data');
+				toast.error(__('Invalid Pricing Data', 'easycommerce'));
 				easycommerce_modal(false);
 				return;
 			}
@@ -159,7 +159,7 @@ const EditProduct = ({ id, setBreadcrumbTitle }) => {
 			});
 
 			if (isDuplicateName === true) {
-				toast.error(`Duplicate pricing plan found: ${variationData.name}`);
+				toast.error(sprintf(__('Duplicate pricing plan found: %s', 'easycommerce'), variationData.name));
 				easycommerce_modal(false);
 				return;
 			}
@@ -197,7 +197,7 @@ const EditProduct = ({ id, setBreadcrumbTitle }) => {
 
 				if (attributesEqual(existing.attributes, variationData.attributes)) {
 					toast.error(
-						`Duplicate attributes found in ${variationData.name} and ${existing.name}`,
+						sprintf(__('Duplicate attributes found in %1$s and %2$s', 'easycommerce'), variationData.name, existing.name),
 					);
 					easycommerce_modal(false);
 					return true; // stops .some and sets hasMatching to true
@@ -252,7 +252,7 @@ const EditProduct = ({ id, setBreadcrumbTitle }) => {
 			.then((data) => {
 				if (data.success && data.data?.product?.id) {
 					easycommerce_modal(false);
-					toast.success(data.data.message || 'Product updated successfully');
+					toast.success(data.data.message || __('Product updated successfully', 'easycommerce'));
 					setProductData((prev) => ({
 						...prev,
 						status: updatedProduct.status,
@@ -271,7 +271,7 @@ const EditProduct = ({ id, setBreadcrumbTitle }) => {
 			})
 			.catch((error) => {
 				easycommerce_modal(false);
-				toast.error('Product update failed');
+				toast.error(__('Product update failed', 'easycommerce'));
 				console.error('Error updating product:', error);
 			});
 	}, [productData]);
@@ -356,7 +356,7 @@ const EditProduct = ({ id, setBreadcrumbTitle }) => {
 						<div className="p-6 bg-white rounded-xl mb-6">
 							<TextField
 								name={`product_title`}
-								placeholder={`Add your product title here`}
+								placeholder={__('Add your product title here', 'easycommerce')}
 								value={productTitle}
 								onChange={(e) => setProductTitle(e.target.value)}
 								className="h-ec-input"

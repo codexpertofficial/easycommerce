@@ -1,0 +1,51 @@
+{
+    "translation-revision-date": "YEAR-MO-DA HO:MI+ZONE",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "assets\/public\/js\/agent-chatbot.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "bn_BD",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Message": [
+                "\u09ac\u09be\u09b0\u09cd\u09a4\u09be"
+            ],
+            "AI Shopping Assistant": [
+                "AI \u09b6\u09aa\u09bf\u0982 \u0985\u09cd\u09af\u09be\u09b8\u09bf\u09b8\u09cd\u099f\u09cd\u09af\u09be\u09a8\u09cd\u099f"
+            ],
+            "Complete your order \u2192": [
+                "\u0986\u09aa\u09a8\u09be\u09b0 \u0985\u09b0\u09cd\u09a1\u09be\u09b0 \u09b8\u09ae\u09cd\u09aa\u09a8\u09cd\u09a8 \u0995\u09b0\u09c1\u09a8 \u2192"
+            ],
+            "Sorry, something went wrong. Please try again.": [
+                "\u09a6\u09c1\u0983\u0996\u09bf\u09a4, \u0995\u09bf\u099b\u09c1 \u098f\u0995\u099f\u09be \u09b8\u09ae\u09b8\u09cd\u09af\u09be \u09b9\u09af\u09bc\u09c7\u099b\u09c7\u0964 \u0985\u09a8\u09c1\u0997\u09cd\u09b0\u09b9 \u0995\u09b0\u09c7 \u0986\u09ac\u09be\u09b0 \u099a\u09c7\u09b7\u09cd\u099f\u09be \u0995\u09b0\u09c1\u09a8\u0964"
+            ],
+            "Connection error. Please try again.": [
+                "\u09b8\u0982\u09af\u09cb\u0997\u09c7 \u09b8\u09ae\u09b8\u09cd\u09af\u09be\u0964 \u0985\u09a8\u09c1\u0997\u09cd\u09b0\u09b9 \u0995\u09b0\u09c7 \u0986\u09ac\u09be\u09b0 \u099a\u09c7\u09b7\u09cd\u099f\u09be \u0995\u09b0\u09c1\u09a8\u0964"
+            ],
+            "Open %s": [
+                "%s \u0996\u09c1\u09b2\u09c1\u09a8"
+            ],
+            "Online": [
+                "\u0985\u09a8\u09b2\u09be\u0987\u09a8"
+            ],
+            "New conversation": [
+                "\u09a8\u09a4\u09c1\u09a8 \u0995\u09a5\u09cb\u09aa\u0995\u09a5\u09a8"
+            ],
+            "Minimize": [
+                "\u09ae\u09bf\u09a8\u09bf\u09ae\u09be\u0987\u099c"
+            ],
+            "Ask about products, orders\u2026": [
+                "\u09aa\u09a3\u09cd\u09af, \u0985\u09b0\u09cd\u09a1\u09be\u09b0 \u09b8\u09ae\u09cd\u09aa\u09b0\u09cd\u0995\u09c7 \u099c\u09bf\u099c\u09cd\u099e\u09be\u09b8\u09be \u0995\u09b0\u09c1\u09a8\u2026"
+            ],
+            "Send": [
+                "\u09aa\u09be\u09a0\u09be\u09a8"
+            ],
+            "Hi! \ud83d\udc4b I'm %s. How can I help you today?": [
+                "\u09b9\u09cd\u09af\u09be\u09b2\u09cb! \ud83d\udc4b \u0986\u09ae\u09bf %s\u0964 \u0986\u099c \u0986\u09ae\u09bf \u0986\u09aa\u09a8\u09be\u0995\u09c7 \u0995\u09c0\u09ad\u09be\u09ac\u09c7 \u09b8\u09be\u09b9\u09be\u09af\u09cd\u09af \u0995\u09b0\u09a4\u09c7 \u09aa\u09be\u09b0\u09bf?"
+            ]
+        }
+    }
+}

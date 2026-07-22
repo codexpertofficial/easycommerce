@@ -8,7 +8,7 @@
  */
 
 if( get_post_type( get_the_ID() ) !== 'product' ) {
-    echo "Post type is not product";
+    esc_html_e( 'Post type is not product', 'easycommerce' );
     return;
 }
 use EasyCommerce\Models\Product as Product_Model;

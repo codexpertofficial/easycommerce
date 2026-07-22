@@ -1,7 +1,9 @@
 <?php
 return array(
-	'customer_subject' => 'Your Order ###order_id## is Complete - ##shop_name##',
-	'customer_body'    => '
+	/* translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim. */
+	'customer_subject' => __( 'Your Order ###order_id## is Complete - ##shop_name##', 'easycommerce' ),
+	/* translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim. */
+	'customer_body'    => __( '
 Hi ##customer_name##,
 
 Your order ###order_id## has been completed - thank you for shopping with ##shop_name##! We hope you love what you ordered.
@@ -21,10 +23,12 @@ If anything isn\'t right, we\'re here to help - just get in touch.
 
 Warm regards,
 The ##shop_name## Team
-',
+', 'easycommerce' ),
 
-	'admin_subject'    => 'Order ###order_id## Completed - ##customer_name## - ##shop_name##',
-	'admin_body'       => '
+	/* translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim. */
+	'admin_subject'    => __( 'Order ###order_id## Completed - ##customer_name## - ##shop_name##', 'easycommerce' ),
+	/* translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim. */
+	'admin_body'       => __( '
 Hi there,
 
 Order ###order_id## from ##customer_name## has been marked as completed.
@@ -45,5 +49,5 @@ Full order details: ##dashboard_page##
 
 Best regards,
 The ##shop_name## Team
-',
+', 'easycommerce' ),
 );

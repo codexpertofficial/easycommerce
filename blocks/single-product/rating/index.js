@@ -17,8 +17,7 @@ const ratingIcon = (
     </svg>
 );
 
-registerBlockType(metadata.name, {
+registerBlockType(metadata, {
     icon: ratingIcon,
-    title: metadata.title,
     edit: Edit,
 });

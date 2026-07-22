@@ -1,4 +1,5 @@
 import React from "react";
+import { __ } from "@wordpress/i18n";
 
 // Icons
 const dateIcon = `${EASYCOMMERCE.assets}admin/img/icons/order/date.png`;
@@ -14,7 +15,7 @@ const CustomerInfo = ({ customer }) => {
                 className="text-left text-ec-title text-xl font-medium font-inter leading-8 pb-4 
                 border-b border--ec-table-stock pt-4 px-6"
             >
-                Customer
+                {__("Customer", "easycommerce")}
             </h3>
             <div className="pt-8 px-6 py-6">
                 <div className='flex gap-5'>
@@ -44,7 +45,7 @@ const CustomerInfo = ({ customer }) => {
                             leading-4 rounded-[4px] hover:text-white hover:bg-ec-accent hover:bg-ec-primary focus:text-white focus-bg-ec-primary
                             focus:shadow-none active:text-white active-bg-ec-primary active:shadow-none focus:outline-none"
                         >
-                            View
+                            {__("View", "easycommerce")}
                             <svg
                                 width="15"
                                 height="11"
@@ -62,9 +63,9 @@ const CustomerInfo = ({ customer }) => {
                     <ul>
                         <li className="h-[60px] mb-0 p-4 border-b border-dashed border-ec-table-stock text-left flex items-center justify-between">
                             <div className="flex items-center" >
-                                <img src={dateIcon} alt="date" className="h-5 w-5 rounded-md mr-2 flex" />
+                                <img src={dateIcon} alt={__("date", "easycommerce")} className="h-5 w-5 rounded-md mr-2 flex" />
                                 <p className="text-ec-title font-normal text-base font-inter leading-[26px]">
-                                    Customer since
+                                    {__("Customer since", "easycommerce")}
                                 </p>
                             </div>
 
@@ -74,9 +75,9 @@ const CustomerInfo = ({ customer }) => {
                         </li>
                         <li className="h-[60px] mb-0 p-4 border-b border-dashed border-ec-table-stock text-left flex items-center justify-between">
                             <div className="flex items-center" >
-                                <img src={totalOrderIcon} alt="date" className="h-5 w-5 rounded-md mr-2 flex" />
+                                <img src={totalOrderIcon} alt={__("date", "easycommerce")} className="h-5 w-5 rounded-md mr-2 flex" />
                                 <p className="text-ec-title font-normal text-base font-inter leading-[26px]">
-                                    Total Orders
+                                    {__("Total Orders", "easycommerce")}
                                 </p>
                             </div>
 
@@ -86,9 +87,9 @@ const CustomerInfo = ({ customer }) => {
                         </li>
                         <li className="h-[60px] mb-0 p-4 border-b border-dashed border-ec-table-stock text-left flex items-center justify-between">
                             <div className="flex items-center" >
-                                <img src={avrageOrderIcon} alt="date" className="h-5 w-5 rounded-md mr-2 flex" />
+                                <img src={avrageOrderIcon} alt={__("date", "easycommerce")} className="h-5 w-5 rounded-md mr-2 flex" />
                                 <p className="text-ec-title font-normal text-base font-inter leading-[26px]">
-                                    Avg. Order Value
+                                    {__("Avg. Order Value", "easycommerce")}
                                 </p>
                             </div>
 
@@ -99,14 +100,14 @@ const CustomerInfo = ({ customer }) => {
 
                         <li className="h-[60px] mb-0 p-4 text-left flex items-center justify-between">
                             <div className="flex items-center" >
-                                <img src={lastOrderIcon} alt="date" className="h-5 w-5 rounded-md mr-2 flex" />
+                                <img src={lastOrderIcon} alt={__("date", "easycommerce")} className="h-5 w-5 rounded-md mr-2 flex" />
                                 <p className="text-ec-title font-normal text-base font-inter leading-[26px]">
-                                   Last Order
+                                   {__("Last Order", "easycommerce")}
                                 </p>
                             </div>
 
                             <p className="text-ec-body text-sm font-normal font-inter leading-[26px]">
-                                {customer.last_order || "N/A"}
+                                {customer.last_order || __("N/A", "easycommerce")}
                             </p>
                         </li>
                     </ul>

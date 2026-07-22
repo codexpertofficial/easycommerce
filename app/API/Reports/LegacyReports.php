@@ -326,6 +326,7 @@ class LegacyReports extends Reports {
 			if ( $key !== 'margin' ) {
 				$datasets[] = array(
 					'id'              => "{$key}-count",
+					/* translators: %s: report data group label, e.g. Orders. */
 					'label'           => sprintf( __( '%s Count', 'easycommerce' ), $group['label'] ),
 					'data'            => $group['count'],
 					'total'           => $group['count_total'],
@@ -341,6 +342,7 @@ class LegacyReports extends Reports {
 
 			$datasets[] = array(
 				'id'              => "{$key}-amount",
+				/* translators: %s: report data group label, e.g. Orders. */
 				'label'           => sprintf( __( '%s Amount', 'easycommerce' ), $group['label'] ),
 				'data'            => $group['amount'],
 				'total'           => $group['amount_total'],

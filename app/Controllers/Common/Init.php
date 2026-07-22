@@ -7,11 +7,13 @@ use EasyCommerce\Traits\Hook;
 use EasyCommerce\Traits\Asset;
 use EasyCommerce\Traits\Cache;
 use EasyCommerce\Traits\Cleaner;
+use EasyCommerce\Traits\Queue;
 use EasyCommerce\Helpers\Utility;
 use EasyCommerce\Models\Product;
 use EasyCommerce\Models\Notice;
 use EasyCommerce\Models\Attribute_Value;
 use EasyCommerce\Models\Log as Log_Model;
+use EasyCommerce\API\Dashboard;
 use EasyCommerce\API\Reports\Reports;
 
 class Init {
@@ -20,6 +22,7 @@ class Init {
 	use Asset;
 	use Cache;
 	use Cleaner;
+	use Queue;
 
 	/**
 	 * Constructor to add all hooks.
@@ -31,15 +34,15 @@ class Init {
 		$this->action( 'template_redirect', array( $this, 'auto_login' ) );
 		$this->filter( 'get_edit_post_link', array( $this, 'edit_product_link' ), 10, 3 );
 		$this->action( 'wp_before_admin_bar_render', array( $this, 'add_admin_bar_menu' ) );
+		$this->action( 'wp_before_admin_bar_render', array( $this, 'add_store_mode_admin_bar' ), 19 );
 		$this->action( 'pre_get_posts', array( $this, 'restrict_media_access' ) );
 		$this->filter( 'map_meta_cap', array( $this, 'map_meta_cap' ), 10, 4 );
 		$this->action( 'easycommerce_log', array( $this, 'add_log' ) );
 		$this->action( 'init', array( $this, 'add_notices' ) );
 		$this->filter( 'theme_page_templates', array( $this, 'register_full_width_template' ) );
 		$this->filter( 'template_include', array( $this, 'load_full_width_template' ) );
-		$this->action( 'admin_bar_menu', array( $this, 'add_store_mode_admin_bar' ), 31 );
 		$this->action( 'admin_bar_menu', array( $this, 'add_ai_credits_admin_bar' ), 999 );
-		$this->action( 'wp_head', array( $this, 'output_admin_bar_css' ) );
+		// admin_head only - the store-mode badge (the sole thing this styles) is wp-admin scoped.
 		$this->action( 'admin_head', array( $this, 'output_admin_bar_css' ) );
 
 		$this->action( 'easycommerce_create_product', array( $this, 'invalidate_cache' ) );
@@ -57,10 +60,54 @@ class Init {
 		$this->action( 'easycommerce_user_updated', array( $this, 'invalidate_cache' ) );
 		$this->action( 'easycommerce_after_user_delete', array( $this, 'invalidate_cache' ) );
 		$this->action( 'easycommerce_review_added', array( $this, 'invalidate_cache' ) );
+
+		$this->action( 'easycommerce_clear_cache', array( $this, 'handle_clear_cache' ), 10, 2 );
 	}
 
 	public function invalidate_cache() {
-		Reports::delete_all_cache();
+		/**
+		 * Clear cached report data.
+		 *
+		 * Fired by EasyCommerce whenever order, product, customer or review
+		 * data changes. Third-party code can also fire this action to flush
+		 * report caches, or hook it to invalidate their own caches.
+		 *
+		 * @since 1.31
+		 * @param string $scope Cache scope: 'all', 'orders', 'products' or 'single_product'.
+		 * @param mixed  $arg   Optional scope argument (e.g. product ID for 'single_product').
+		 */
+		do_action( 'easycommerce_clear_cache', 'all' );
+	}
+
+	/**
+	 * Handle the easycommerce_clear_cache action by delegating to the
+	 * appropriate Reports cache purge for the given scope.
+	 *
+	 * @param string $scope Cache scope to clear. Defaults to 'all'.
+	 * @param mixed  $arg   Optional scope argument (e.g. product ID for 'single_product').
+	 */
+	public function handle_clear_cache( $scope = 'all', $arg = null ) {
+		switch ( $scope ) {
+			case 'orders':
+				Reports::delete_order_cache();
+				Dashboard::delete_orders_cache();
+				break;
+			case 'products':
+				Reports::delete_product_cache();
+				Dashboard::delete_products_cache();
+				break;
+			case 'single_product':
+				if ( $arg ) {
+					Reports::delete_single_product_cache( (int) $arg );
+				}
+				Dashboard::delete_products_cache();
+				break;
+			case 'all':
+			default:
+				Reports::delete_all_cache();
+				Dashboard::delete_dashboard_cache();
+				break;
+		}
 	}
 	/**
 	 * Custom capability mapping for EasyCommerce features
@@ -87,7 +134,7 @@ class Init {
 		$old_name = 'easycommerce/shop';
 		$new_name = 'easycommerce/template-2';
 
-		$result = $wpdb->query(
+		$wpdb->query(
 			"UPDATE {$wpdb->posts}
 			 SET post_content = REPLACE(
 				 post_content,
@@ -97,7 +144,7 @@ class Init {
 			 WHERE post_content LIKE '%<!-- wp:{$old_name}%'"
 		);
 
-		update_option( 'easycommerce_block_migrated', $result );
+		update_option( 'easycommerce_block_migrated', 'done' );
 	}
 
 	public function modal() {
@@ -435,6 +482,24 @@ class Init {
 		// 	] );
 		// }
 
+		// low memory notice
+		$memory_limit = defined( 'WP_MEMORY_LIMIT' ) ? WP_MEMORY_LIMIT : '64M';
+		$memory_mb    = wp_convert_hr_to_bytes( $memory_limit ) / 1024 / 1024;
+		if ( $memory_mb > 0 && $memory_mb < 256 ) {
+			$notice->add( [
+				'id'          => 'low-memory',
+				'title'       => __( 'Low PHP Memory Limit', 'easycommerce' ),
+				'message'     => sprintf(
+					/* translators: %1$s: current memory limit, %2$s: recommended memory limit */
+					__( 'Your PHP memory limit is %1$s. EasyCommerce recommends at least 256M. Add %2$s to your wp-config.php to raise it.', 'easycommerce' ),
+					esc_html( $memory_limit ),
+					'<code>define( \'WP_MEMORY_LIMIT\', \'256M\' );</code>'
+				),
+				'type'        => 'warning',
+				'dismissible' => true,
+			] );
+		}
+
 		// payment method notice
 		if( empty( easycommerce_active_payment_methods() ) ) {
 			$notice->add( [
@@ -445,6 +510,74 @@ class Init {
 				'button'		=> __( 'Configure Now', 'easycommerce' ),
 				'url'			=> admin_url( 'admin.php?page=easycommerce-settings&menu=payment&submenu=methods' ),
 				'dismissible'	=> false,
+			] );
+		}
+
+		// setup wizard notice
+		if( empty( get_option( 'easycommerce-setup_wizard' ) ) ) {
+			$notice->add( [
+				'id'			=> 'setup-wizard',
+				'title'			=> __( 'Congratulations on installing EasyCommerce! 🎉', 'easycommerce' ),
+				'message'		=> __( 'You\'re just a few steps away from launching your store. Start the setup wizard to bring your store to life! 🚀', 'easycommerce' ),
+				'type'			=> 'warning',
+				'button'		=> __( 'Start Setup Wizard', 'easycommerce' ),
+				'url'			=> admin_url( 'admin.php?page=easycommerce-wizard' ),
+				'dismissible'	=> true,
+			] );
+		}
+
+		// locations database notices
+		if( empty( get_option( 'easycommerce-locations_db_loaded' ) ) ) {
+			if( $this->has_schedule( 'easycommerce_prepare_background' ) ) {
+				$notice->add( [
+					'id'			=> 'locations-downloading',
+					'title'			=> __( 'Locations Database Downloading', 'easycommerce' ),
+					'message'		=> __( 'The EasyCommerce Locations database is being downloaded. Countries, states, cities and currencies will not be displayed until the download is complete.', 'easycommerce' ),
+					'type'			=> 'warning',
+					'dismissible'	=> false,
+				] );
+			}
+			else {
+				$notice->add( [
+					'id'			=> 'locations-retry',
+					'title'			=> __( 'Locations Database Missing', 'easycommerce' ),
+					'message'		=> __( 'It looks like the EasyCommerce Locations database has not been loaded yet. Countries, states, cities and currencies will not be displayed until it\'s downloaded.', 'easycommerce' ),
+					'type'			=> 'warning',
+					'button'		=> __( 'Retry Download', 'easycommerce' ),
+					'url'			=> admin_url( 'index.php?action=easycommerce-locations_db' ),
+					'dismissible'	=> false,
+				] );
+			}
+		}
+
+		// Square currency mismatch notice
+		$square_currency = get_transient( 'easycommerce_square_location_currency' );
+		if ( $square_currency && easycommerce_currency() !== $square_currency && in_array( 'square', easycommerce_active_payment_methods(), true ) ) {
+			$notice->add( [
+				'id'			=> 'square-currency',
+				'title'			=> __( 'Square Currency Mismatch', 'easycommerce' ),
+				'message'		=> sprintf(
+					/* translators: 1: store currency code, 2: Square location currency code. */
+					__( 'Warning: Your store currency (%1$s) does not match your Square location currency (%2$s). Square payments will not be available until currencies match.', 'easycommerce' ),
+					easycommerce_currency(),
+					$square_currency
+				),
+				'type'			=> 'error',
+				'dismissible'	=> false,
+			] );
+		}
+
+		// API connectivity notice
+		$api = get_option( 'easycommerce_api' );
+		if ( empty( $api->email ) ) {
+			$notice->add( [
+				'id'			=> 'ai-not-configured',
+				'title'			=> __( 'AI Not Configured', 'easycommerce' ),
+				'message'		=> __( 'Configure your AI settings to enable AI-powered Shopping Agent, Store Copilot, content generation, product suggestions, and store automation.', 'easycommerce' ),
+				'type'			=> 'warning',
+				'button'		=> __( 'Configure Now', 'easycommerce' ),
+				'url'			=> admin_url( 'admin.php?page=easycommerce-settings&menu=ai&submenu=connectivity' ),
+				'dismissible'	=> true,
 			] );
 		}
 	}
@@ -486,26 +619,26 @@ class Init {
 	 *
 	 * @param WP_Admin_Bar $wp_admin_bar Admin bar instance.
 	 */
-	public function add_store_mode_admin_bar( $wp_admin_bar ) {
-		if ( ! current_user_can( 'manage_options' ) ) {
+	public function add_store_mode_admin_bar() {
+		// wp-admin only - the storefront already shows the explanatory
+		// test-mode banner (Front\Init::show_test_mode_banner()).
+		if ( ! is_admin() || ! current_user_can( 'manage_options' ) ) {
 			return;
 		}
 
+		global $wp_admin_bar;
+
 		$mode    = Utility::get_option( 'general', 'visibility', 'store_mode' ) ?: 'test';
 		$is_live = $mode === 'live';
-		$dot_color = $is_live ? '#00a32a' : '#cc1818';
-		$label     = $is_live ? esc_html__( 'Live', 'easycommerce' ) : esc_html__( 'Test', 'easycommerce' );
+		$label     = $is_live ? esc_html__( 'Store is LIVE', 'easycommerce' ) : esc_html__( 'Store in TEST Mode', 'easycommerce' );
 
-		$title = sprintf(
-			'<span style="font-weight:600;color:#000;text-transform:uppercase;font-size:11px;margin-top:2px;">
-				<span style="width:7px;height:7px;min-width:7px;min-height:7px;border-radius:50%%;background:%s;display:inline-block;flex-shrink:0;margin-right:4px;"></span>%s</span>',
-			$dot_color,
-			$label
-		);
+		if ( $is_live ) {
+			return;
+		}
 
 		$wp_admin_bar->add_node( array(
 			'id'    => 'easycommerce-store-mode-badge',
-			'title' => $title,
+			'title' => $label,
 			'href'  => admin_url( 'admin.php?page=easycommerce-settings&tab=general&submenu=visibility' ),
 			'parent' => 'root-default',
 			'meta'  => array(
@@ -585,20 +718,18 @@ class Init {
 			}
 
 			#wpadminbar .quicklinks #wp-admin-bar-easycommerce-store-mode-badge a.ab-item {
-				background: #fff !important;
+				background: red !important;
 				padding: 2px 7px !important;
-				border-radius: 20px !important;
 				display: inline-flex !important;
 				align-items: center !important;
-				height: 15px !important;
+				height: 100% !important;
 				line-height: 1 !important;
 				box-sizing: border-box !important;
 			}
 
 			#wpadminbar .quicklinks #wp-admin-bar-easycommerce-store-mode-badge a.ab-item:hover,
 			#wpadminbar .quicklinks #wp-admin-bar-easycommerce-store-mode-badge a.ab-item:focus {
-				background: #f0f0f0 !important;
-				color: #000 !important;
+				color: #fff !important;
 			}
 		</style>
 		<?php

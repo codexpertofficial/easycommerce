@@ -16,6 +16,20 @@ add_action(
 		class Mollie extends Payment_Method {
 
 			/**
+			 * Transaction ID of the most recent refund.
+			 *
+			 * @var string
+			 */
+			protected $refund_transaction_id = '';
+
+			/**
+			 * Last error message from a failed refund.
+			 *
+			 * @var string
+			 */
+			protected $error_message = '';
+
+			/**
 			 * Constructor
 			 */
 			public function __construct() {
@@ -175,25 +189,31 @@ add_action(
 					return '';
 				}
 
-				return '
+				return sprintf(
+					'
                     <div id="easycommerce_mollie_payment_form">
                         <div id="easycommerce_cardHolder">
-                            <span class="mollie-placeholder">Cardholder Name</span>
+                            <span class="mollie-placeholder">%1$s</span>
                         </div>
                         <div id="easycommerce_cardNumber">
-                            <span class="mollie-placeholder">Card Number</span>
+                            <span class="mollie-placeholder">%2$s</span>
                         </div>
                         <div id="easycommerce_cvc">
                             <div id="easycommerce_expiryDate">
-                                <span class="mollie-placeholder">MM/YY</span>
+                                <span class="mollie-placeholder">%3$s</span>
                             </div>
                             <div id="easycommerce_verificationCode">
-                                <span class="mollie-placeholder">CVC</span>
+                                <span class="mollie-placeholder">%4$s</span>
                             </div>
                         </div>
                     </div>
                     <div id="easycommerce_mollie_payment_errors"></div>
-                    ';
+                    ',
+					esc_html__( 'Cardholder Name', 'easycommerce' ),
+					esc_html__( 'Card Number', 'easycommerce' ),
+					esc_html__( 'MM/YY', 'easycommerce' ),
+					esc_html__( 'CVC', 'easycommerce' )
+				);
 			}
 
 			public function process_payment( $status, $order_id, $params, $customer_id ) {
@@ -310,6 +330,10 @@ add_action(
 				);
 			}
 
+			public function supports_refund() {
+				return true;
+			}
+
 			public function refund( $order_id, $reason, $amount ) {
 				require_once EASYCOMMERCE_PLUGIN_DIR . '/vendor/autoload.php';
 
@@ -318,12 +342,14 @@ add_action(
 				$mollie_payment_id = $order->get_meta( 'mollie_payment_id' );
 
 				if ( empty( $mollie_payment_id ) ) {
+					$this->log_refund_error( $order_id, __( 'No Mollie payment ID stored on the order.', 'easycommerce' ) );
 					return false;
 				}
 
 				$api_key = Utility::get_option( 'payment', 'mollie', 'api_key', '' );
 
 				if ( empty( $api_key ) ) {
+					$this->log_refund_error( $order_id, __( 'Mollie API key is not configured.', 'easycommerce' ) );
 					return false;
 				}
 
@@ -333,15 +359,17 @@ add_action(
 				try {
 					$payment = $mollie->payments->get( $mollie_payment_id );
 
-					// if ( ! $payment->isPaid() ) {
-					// 	return false;
-					// }
+					if ( ! $payment->canBeRefunded() ) {
+						$this->log_refund_error( $order_id, sprintf( /* translators: %s: Mollie payment status. */ __( 'Mollie payment is not refundable (status: %s).', 'easycommerce' ), $payment->status ) );
+						return false;
+					}
 
-					$currency       = $payment->amount->currency;
-					$payment_amount = (float) $payment->amount->value;
-					$refund_amount  = (float) $amount;
+					$currency        = $payment->amount->currency;
+					$refundable_total = $payment->getAmountRemaining();
+					$refund_amount    = (float) $amount;
 
-					if ( $refund_amount <= 0 || $refund_amount > $payment_amount ) {
+					if ( $refund_amount <= 0 || $refund_amount > $refundable_total ) {
+						$this->log_refund_error( $order_id, sprintf( /* translators: 1: requested refund amount, 2: refundable amount. */ __( 'Requested refund %1$s exceeds the refundable amount %2$s.', 'easycommerce' ), $refund_amount, $refundable_total ) );
 						return false;
 					}
 
@@ -361,6 +389,8 @@ add_action(
 					$order->add_meta( 'mollie_refund_id', $refund->id );
 					$order->add_meta( 'mollie_refund_status', $refund->status );
 
+					$this->refund_transaction_id = $refund->id;
+
 					do_action(
 						'easycommerce_mollie_refund_complete',
 						$refund->id,
@@ -372,13 +402,32 @@ add_action(
 					return true;
 
 				} catch ( ApiException $e ) {
+					$this->log_refund_error( $order_id, $e->getMessage() );
 					return false;
 				}
 			}
 
-			public function refund_transaction_id( $order_id ) {
-				$order = new Order( $order_id );
-				return $order->get_meta( 'mollie_refund_id' );
+			public function get_error_message() {
+				return $this->error_message;
+			}
+
+			private function log_refund_error( $order_id, $message ) {
+				$this->error_message = $message;
+
+				do_action(
+					'easycommerce_log',
+					array(
+						'object'    => 'refund',
+						'action'    => 'mollie_refund_failed',
+						'object_id' => $order_id,
+						'note'      => $message,
+						'type'      => 'error',
+					)
+				);
+			}
+
+			public function refund_transaction_id() {
+				return $this->refund_transaction_id;
 			}
 		}
 

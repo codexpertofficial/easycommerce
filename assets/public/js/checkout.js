@@ -1,9 +1,11 @@
 jQuery(function ($) {
+    const { __, sprintf } = wp.i18n;
+
     const VALIDATION_RULES = {
-        name:     { pattern: /^[A-Za-zÀ-ɏ\s'\-.]+$/, message: 'Only letters, spaces, hyphens, apostrophes, and periods are allowed.' },
-        email:    { pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,     message: 'Please enter a valid email address.' },
-        phone:    { pattern: /^[+\d\s\-(). ]{6,20}$/,           message: 'Please enter a valid phone number (6–20 characters).' },
-        postcode: { pattern: /^[A-Za-z0-9\s\-]{3,10}$/,         message: 'Please enter a valid postcode.' },
+        name:     { pattern: /^[\p{L}\p{M}\s'\-.]+$/u, message: __( 'Only letters, spaces, hyphens, apostrophes, and periods are allowed.', 'easycommerce' ) },
+        email:    { pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,     message: __( 'Please enter a valid email address.', 'easycommerce' ) },
+        phone:    { pattern: /^[+\d\s\-(). ]{6,20}$/,           message: __( 'Please enter a valid phone number (6–20 characters).', 'easycommerce' ) },
+        postcode: { pattern: /^[A-Za-z0-9\s\-]{3,10}$/,         message: __( 'Please enter a valid postcode.', 'easycommerce' ) },
     };
 
     function showFieldError( $input, message ) {
@@ -32,7 +34,8 @@ jQuery(function ($) {
 
             if ( isRequired && value === '' ) {
                 var label = $input.closest( '.easycommerce-field-wrapper, .easycommerce-checkout_field-wrapper' ).find( 'label' ).text().replace( '*', '' ).trim();
-                showFieldError( $input, ( label || fieldId ) + ' is required.' );
+                // translators: %s: checkout field label.
+                showFieldError( $input, sprintf( __( '%s is required.', 'easycommerce' ), label || fieldId ) );
                 if ( ! $firstError ) $firstError = $input;
                 isValid = false;
                 return;
@@ -87,15 +90,36 @@ jQuery(function ($) {
     } );
 
     let render_message = (response, msgDivId) => {
-        if (response.success == true) {
-            const message = response.data.message;
+        let color;
+        let message;
 
-            $(msgDivId).css("color", "#4bc30f").text(message).slideDown();
+        if (response && response.success == true) {
+            if (!msgDivId) return;
+
+            color   = "#4bc30f";
+            message = response.data && response.data.message ? response.data.message : "";
         } else {
-            const message = JSON.parse(response.responseText).data.message;
+            msgDivId = msgDivId || "#easycommerce-checkout-order-error";
+            color    = "#FF3A52";
+            message  = "An error occurred. Please try again.";
 
-            $(msgDivId).css("color", "#FF3A52").text(message).slideDown();
+            try {
+                const parsed = JSON.parse(response.responseText);
+                if (parsed && parsed.data && parsed.data.message) {
+                    message = parsed.data.message;
+                }
+            } catch (e) {}
         }
+
+        if (!message) return;
+
+        const isError = color === "#FF3A52";
+
+        $(msgDivId).css("color", color).text(message).slideDown(400, function () {
+            if (isError) {
+                this.scrollIntoView({ behavior: "smooth", block: "center" });
+            }
+        });
     };
     const dispatchEvent = (name) => document.dispatchEvent(new Event(name));
     const paymentEvent = () => dispatchEvent("easycommerceRenderPaymentForm");
@@ -130,7 +154,7 @@ jQuery(function ($) {
                 render_fragments(response.data.cart);
             },
             error: function (error) {
-                render_message(error);
+                render_message(error, "#easycommerce-checkout-order-error");
             },
         });
     }
@@ -305,7 +329,9 @@ jQuery(function ($) {
                         .change();
                 }
             },
-            error: function (error) {},
+            error: function (error) {
+                render_message(error, "#easycommerce-checkout-order-error");
+            },
         });
     }).change();
 
@@ -369,68 +395,108 @@ jQuery(function ($) {
                             .val(EASYCOMMERCE.customer.address[address_type].city)
                             .change();
                     } else {
+                        let cityValue = $(`#easycommerce-field-${address_type}_city`).val()
+                            || EASYCOMMERCE.customer.address[address_type].city
+                            || '';
+
                         $(`#easycommerce-field-${address_type}_city`)
                             .replaceWith(`
-                            <input type="text" id="easycommerce-field-${address_type}_city" name="${address_type}_address[city]" placeholder="Enter city" required class="easycommerce-field" data-field_id="city">
+                            <input type="text" id="easycommerce-field-${address_type}_city" name="${address_type}_address[city]" placeholder="${__( 'Enter city', 'easycommerce' )}" required class="easycommerce-field" data-field_id="city">
                         `);
-                        $(`#easycommerce-field-${address_type}_city`).trigger('change');
+                        $(`#easycommerce-field-${address_type}_city`).val(cityValue).trigger('change');
                     }
                 }
             },
-            error: function (error) {},
+            error: function (error) {
+                render_message(error, "#easycommerce-checkout-order-error");
+            },
         });
     });
 
     /**
      * Coupon button apply button visiable
      */
-    $(document).on("input", '#easycommerce-coupon-field', function (e) {
+    $(document).on("input", "#easycommerce-coupon-field", function () {
         if ($(this).val().trim() !== "") {
-            $("#easycommerce-coupon-apply").css({
-                color: "#ffffff",
-                "background-color": "#272435",
-            });
+            $("#easycommerce-coupon-apply").attr(
+                "style",
+                "background-color:#272435 !important; color:#ffffff !important;"
+            );
         } else {
-            $("#easycommerce-coupon-apply").css({
-                color: "#737791",
-                "background-color": "#F8F8F8",
-            });
+            $("#easycommerce-coupon-apply").attr(
+                "style",
+                "background-color:#F8F8F8 !important; color:#737791 !important;"
+            );
         }
     });
+
 
     /**
      * Apply a coupon
      */
-    $(document).on("click", "#easycommerce-coupon-apply", function (e) {
+       $(document).on("click", "#easycommerce-coupon-apply", function (e) {
+        let $btn   = $(this);
         let coupon = $("#easycommerce-coupon-field").val();
-
+ 
         if (coupon == "") return;
+        if ($btn.prop("disabled")) return; 
+ 
+        $("#easycommerce-checkout-coupon-message").slideUp(); 
+        $btn
+            .css("min-width", $btn.outerWidth()) 
+            .prop("disabled", true)
+            .addClass("easycommerce-is-loading");
+ 
+        const MIN_LOADING_MS = 800; 
+        const startedAt      = Date.now();
 
-        $("#easycommerce-checkout-coupon-message").slideUp(); // Hide any previous messages
+        $btn
+            .prop("disabled", true)
+            .addClass("easycommerce-is-loading");
 
-        $.ajax({
-            url: `${EASYCOMMERCE.rest_base}/cart/coupon`,
-            type: "POST",
-            data: { code: coupon },
-            dataType: "JSON",
-            beforeSend: function (xhr) {
-                xhr.setRequestHeader("X-WP-Nonce", EASYCOMMERCE.nonce);
-            },
-            success: function (success) {
-                render_fragments(success.data.cart);
-                $(".easycommerce-discount-wrapper").show();
-                $(document).trigger('easycommerce_cart_updated');
-            },
-            error: function (error) {
-                render_message(error, "#easycommerce-checkout-coupon-message");
-            },
+
+        requestAnimationFrame(() => {
+            $.ajax({
+                url: `${EASYCOMMERCE.rest_base}/cart/coupon`,
+                type: "POST",
+                data: { code: coupon },
+                dataType: "JSON",
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("X-WP-Nonce", EASYCOMMERCE.nonce);
+                },
+                success: function (success) {
+                    render_fragments(success.data.cart);
+                    render_message(success, "#easycommerce-checkout-coupon-message");
+                    $(".easycommerce-discount-wrapper").show();
+                    $(document).trigger("easycommerce_cart_updated");
+                },
+                error: function (error) {
+                    render_message(error, "#easycommerce-checkout-coupon-message");
+                },
+                complete: function () {
+                    let elapsed = Date.now() - startedAt;
+                    let waitLeft = Math.max(0, MIN_LOADING_MS - elapsed);
+
+                    setTimeout(function () {
+                        $btn
+                            .prop("disabled", false)
+                            .removeClass("easycommerce-is-loading")
+                            .css("min-width", "");
+                    }, waitLeft);
+                },
+            });
         });
+
     });
-
+ 
     $(document).on("click", ".easycommerce-remove-coupon", function (e) {
-        let coupon = $(this).data("id");
+        let $btn = $(this);
+        let coupon = $btn.data("id");
 
-        if (coupon == "") return;
+        if (!coupon) return;
+        if ($btn.data("busy")) return;
+
+        $btn.data("busy", true);
 
         $.ajax({
             url: `${EASYCOMMERCE.rest_base}/cart/coupon/remove`,
@@ -443,14 +509,19 @@ jQuery(function ($) {
             success: function (success) {
                 $(".easycommerce-discount-wrapper").show();
                 render_fragments(success.data.cart);
-                render_message(success);
-                $(document).trigger('easycommerce_cart_updated');
+                render_message(success, "#easycommerce-checkout-coupon-message");
+                $("#easycommerce-checkout-coupon-message").css("color", "#ff3a52");
+                $(document).trigger("easycommerce_cart_updated");
             },
             error: function (error) {
-                render_message(error);
+                render_message(error, "#easycommerce-checkout-coupon-message");
+            },
+            complete: function () {
+                $btn.data("busy", false);
             },
         });
     });
+
 
     /**
      * Place the order
@@ -515,7 +586,7 @@ jQuery(function ($) {
                 $(".easycommerce-checkout-main-btn").show();
                 $(".easycommerce-css-loader-wrapper").hide();
                 render_message(error);
-                let message = "An error occurred. Please try again.";
+                let message = __( "An error occurred. Please try again.", 'easycommerce' );
                 try {
                     const parsed = JSON.parse(error.responseText);
                     message = (parsed.data && parsed.data.message) ? parsed.data.message : (parsed.data || message);
@@ -561,34 +632,47 @@ jQuery(function ($) {
     /**
      * On quantity change, update the cart
      */
+    let qtyUpdateTimer;
     $(document).on("input", ".easycommerce-cart-quantity-input", function(e) {
-        let quantity = $(this).val();
-        let product_id = $(this).attr("product-id");
-        let price_id = $(this).attr("price-id");
+        let $field   = $(this);
+        let maxStock = parseInt($field.attr("data-stock-count"));
+        let quantity = parseInt($field.val());
+
+        if (!isNaN(maxStock) && quantity > maxStock) {
+            quantity = maxStock;
+            $field.val(quantity);
+        }
+
+        let product_id = $field.attr("product-id");
+        let price_id = $field.attr("price-id");
         let data = {
             quantity: quantity,
             id: product_id,
             price_id: price_id,
         };
 
-        $.ajax({
-            url: `${EASYCOMMERCE.rest_base}/cart/update`,
-            type: "POST",
-            data: data,
-            dataType: "JSON",
-            beforeSend: function (xhr) {
-                xhr.setRequestHeader("X-WP-Nonce", EASYCOMMERCE.nonce);
-            },
-            success: function (response) {
-                if (response.success === true) {
-                    render_fragments(response.data.cart);
-                    $("#easycommerce-field-shipping_city").change();
-                }
-            },
-            error: function (error) {
-                render_message(error);
-            },
-        });
+        // Debounce so typing a multi-digit number sends one request, not one per keystroke.
+        clearTimeout(qtyUpdateTimer);
+        qtyUpdateTimer = setTimeout(function () {
+            $.ajax({
+                url: `${EASYCOMMERCE.rest_base}/cart/update`,
+                type: "POST",
+                data: data,
+                dataType: "JSON",
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("X-WP-Nonce", EASYCOMMERCE.nonce);
+                },
+                success: function (response) {
+                    if (response.success === true) {
+                        render_fragments(response.data.cart);
+                        $("#easycommerce-field-shipping_city").change();
+                    }
+                },
+                error: function (error) {
+                    render_message(error, "#easycommerce-checkout-order-error");
+                },
+            });
+        }, 400);
     });
 
     // Delete Product
@@ -630,7 +714,7 @@ jQuery(function ($) {
             },
 
             error: function (error) {
-                render_message(error);
+                render_message(error, "#easycommerce-checkout-order-error");
             },
         });
     });

@@ -178,9 +178,7 @@ class AI {
 			'write'               => 1,
 			'generate_attributes' => 1,
 			'builder'             => 3,
-			'fixspell'            => 1,
 			'agent'               => 1,
-			'removebg'            => 50,
 			'paint'               => 50,
 			'enhance'             => 50,
 		);
@@ -468,48 +466,6 @@ class AI {
 		easycommerce_deduct_ai_credits( $cost, $credits );
 
 		return $this->call( 'builder', [ 'prompt' => $prompt, 'product' => $product ] );
-	}
-
-	/**
-	 * Fixes misspelled words in a phrase.
-	 *
-	 * Uses AI to correct spelling errors in the given phrase while
-	 * considering the context from existing product names in the store.
-	 *
-	 * @since 1.16
-	 *
-	 * @param string $phrase The phrase containing potentially misspelled words.
-	 *
-	 * @return array {
-	 *     Response from the AI service.
-	 *
-	 *     @type bool   $success Whether the request was successful.
-	 *     @type string $message The corrected phrase or error message.
-	 * }
-	 */
-	public function fix_spelling( $phrase ) {
-
-		// if the AI credentials are set
-		if ( ! $this->prepare() ) {
-			return [
-				'success' => false,
-				'message' => __( 'Service is not ready: Missing API credentials', 'easycommerce' )
-			];
-		}
-
-		// if we have enough credits
-		$cost = 1;
-		if ( ( $credits = easycommerce_get_ai_credits() ) < $cost ) {
-			return [
-				'success' => false,
-				'message' => __( 'No AI credits available. Please upgrade to the Pro plan or use your own API key.', 'easycommerce' )
-			];
-		}
-
-		// Deduct one credit for description
-		easycommerce_deduct_ai_credits( $cost, $credits );
-
-		return $this->call( 'fixspell', [ 'phrase' => $phrase ] );
 	}
 
 	/**

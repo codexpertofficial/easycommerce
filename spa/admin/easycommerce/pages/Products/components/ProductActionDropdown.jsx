@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { __ } from "@wordpress/i18n";
 const actionIcon = `${EASYCOMMERCE.assets}admin/img/icons/actionIcon.png`;
 const ProductActionDropdown = ({
 	product,
@@ -16,24 +17,24 @@ const ProductActionDropdown = ({
 
 	if (product.status === "trash") {
 		actions.push({
-			label: "Restore",
+			label: __("Restore", "easycommerce"),
 			value: "restore",
 			icon: icons.restore,
 		});
 	} else {
 		actions.push(
 			{
-				label: "Edit",
+				label: __("Edit", "easycommerce"),
 				value: "edit",
 				icon: icons.edit,
 			},
 			{
-				label: "Builder",
+				label: __("Builder", "easycommerce"),
 				value: "builder",
 				icon: icons.builder,
 			},
 			{
-				label: "View",
+				label: __("View", "easycommerce"),
 				value: "view",
 				icon: icons.view,
 			}
@@ -41,7 +42,7 @@ const ProductActionDropdown = ({
 	}
 
 	actions.push({
-		label: "Delete",
+		label: __("Delete", "easycommerce"),
 		value: "delete",
 		icon: product.status === "trash" ? icons.deleteRed : icons.delete,
 	});
@@ -77,7 +78,7 @@ const ProductActionDropdown = ({
 				onBlur={() => setIsOpen(false)}
 				className="flex items-center justify-center w-8 h-8 rounded-md"
 			>
-				<img src={actionIcon} alt="Action Icon" className="w-3" />
+				<img src={actionIcon} alt={__("Action Icon", "easycommerce")} className="w-3" />
 			</button>
 
 			{isOpen && (

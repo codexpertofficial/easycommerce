@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
+import { __ } from "@wordpress/i18n";
 import Cookies from "universal-cookie";
 
 // components
@@ -76,7 +77,7 @@ const Addons = ({ category = null }) => {
         );
 
         return [
-            { key: "all", label: "All", count: addons.length },
+            { key: "all", label: __("All", "easycommerce"), count: addons.length },
             ...categoryTabs,
         ];
     }, [addons]);
@@ -105,10 +106,10 @@ const Addons = ({ category = null }) => {
             <div className="mt-3 bg-white max-w-full py-[50px] px-[30px] rounded-xl">
                 <div className="easycommerce-addons-heading text-center">
                     <h2 className="text-center text-[32px] font-inter font-normal text-ec-title leading-[48px] mb-3">
-                        EasyCommerce Addons
+                        {__("EasyCommerce Addons", "easycommerce")}
                     </h2>
                     <p className="text-ec-body text-base font-inter font-normal leading-[26px] mb-12">
-                        Use EasyCommerce addons to extend and customize the functionality of your online store.
+                        {__("Use EasyCommerce addons to extend and customize the functionality of your online store.", "easycommerce")}
                     </p>
                 </div>
 
@@ -134,7 +135,7 @@ const Addons = ({ category = null }) => {
                         ) : (
                             <NotFound
                                 ImageUrl={noDataIcon}
-                                title="No Addons Found"
+                                title={__("No Addons Found", "easycommerce")}
                             />
                         )}
                     </>

@@ -366,8 +366,8 @@ add_action(
 					$content .= '<h4 class="text-sm font-medium text-gray-900 mb-2">' . esc_html__( 'Manage Payment Methods', 'easycommerce' ) . '</h4>';
 					$content .= '<p class="text-sm text-gray-600">';
 					$content .= sprintf(
-						/* translators: %s: Stripe dashboard URL */
 						wp_kses(
+							/* translators: %s: URL of the Stripe dashboard payment methods page. The <a> markup must be kept. */
 							__( 'Configure which payment methods are available in your Stripe account. <a href="%s" target="_blank" class="text-blue-600 hover:text-blue-800 underline">Manage Payment Methods</a>', 'easycommerce' ),
 							array(
 								'a' => array(
@@ -423,10 +423,12 @@ add_action(
 				wp_enqueue_script(
 					'easycommerce-stripe',
 					EASYCOMMERCE_ASSETS_URL . 'payment/js/stripe-payment.js',
-					array( 'stripe.js', 'jquery' ),
+					array( 'stripe.js', 'jquery', 'wp-i18n' ),
 					EASYCOMMERCE_VERSION,
 					array( 'in_footer' => true )
 				);
+
+				wp_set_script_translations( 'easycommerce-stripe', 'easycommerce', EASYCOMMERCE_PLUGIN_DIR . 'languages' );
 			}
 
 			/**
@@ -656,7 +658,7 @@ add_action(
 					throw new Exception( 'Stripe is not properly configured.' );
 				}
 
-				$existing_stripe_customer_id = get_user_meta( $customer_id, 'stripe_customer_id', true );
+				$existing_stripe_customer_id = get_user_meta( $customer_id, '_stripe_customer_id', true );
 
 				if ( ! $existing_stripe_customer_id ) {
 					$customer = $this->create_and_assign_customer( $payment_intent_id, $customer_id, $params );
@@ -898,7 +900,7 @@ add_action(
 			public function create_and_assign_customer( $payment_intent_id, $customer_id, $params ): Customer {
 				$customer = $this->create_new_customer( $payment_intent_id, $customer_id, $params );
 
-				update_user_meta( $customer_id, 'stripe_customer_id', $customer->id );
+				update_user_meta( $customer_id, '_stripe_customer_id', $customer->id );
 
 				return $customer;
 			}

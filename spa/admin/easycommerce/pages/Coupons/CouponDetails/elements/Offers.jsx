@@ -73,7 +73,7 @@ const Offers = ({ couponData, handleCouponData, handleFreeProduct, handleRemoveF
                 </div>
 
                 { [ "percentage", "fixed" ].includes( couponData.type ) && <PriceInput
-                    label={"Offer Amount"}
+                    label={ __( "Offer Amount", "easycommerce" ) }
                     Icon={couponData.type === "percentage" ? "%" : EASYCOMMERCE.currency_symbol}
                     id={"offer"}
                     value={couponData.offer ?? 0}
@@ -86,9 +86,9 @@ const Offers = ({ couponData, handleCouponData, handleFreeProduct, handleRemoveF
 
                 { couponData.type === "products" && <MultiSelect
                     id={ "products_offer" }
-                    label={ "Select products to give for free" }
+                    label={ __( "Select products to give for free", "easycommerce" ) }
                     selectedValues={couponData.offer ?? []}
-                    placeholder={"Search for products"}
+                    placeholder={ __( "Search for products", "easycommerce" ) }
                     handleSelect={handleFreeProduct}
                     handleRemove={handleRemoveFreeProduct}
                 /> }

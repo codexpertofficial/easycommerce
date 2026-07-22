@@ -26,13 +26,14 @@ class Init {
      */
     public function __construct() {
         $this->filter( 'admin_body_class', array( $this, 'add_body_class' ) );
-        $this->action( 'admin_notices', array( $this, 'admin_notices' ) );
+        $this->action( 'admin_init', array( $this, 'handle_locations_db_retry' ) );
         $this->action( 'admin_init', array( $this, 'secure_download' ) );
         $this->action( 'after_plugin_row', array( $this, 'show_plugin_notice' ) );
         $this->filter( 'display_post_states', array( $this, 'add_page_labels' ), 10, 2 );
+        $this->action( 'wp_before_admin_bar_render', array( $this,'add_migration_btn_in_admin_bar' ), 20 );
         $this->filter( 'use_block_editor_for_post', array( $this, 'force_block_editor' ), 10, 2 );
         $this->action( 'init', array( $this, 'tinymce_dropdown_init' ) );
-        $this->action( 'admin_bar_menu', array( $this,'add_migration_btn_in_admin_bar' ), 9999 );
+        $this->action( 'admin_enqueue_scripts', array( $this, 'enqueue_email_placeholders_script' ) );
         $this->action( 'admin_footer', array( $this, 'add_migration_popup' ) );
         $this->action( 'admin_footer', array( $this, 'add_ai_assistant' ) );
         $this->action( 'wp_ajax_query-themes', array( $this, 'intercept_theme_query' ), 1 );
@@ -119,132 +120,16 @@ class Init {
     }
 
     /**
-     * Shows different admin notices
+     * Schedules the locations database download when manually retried
+     * via the "Retry Download" notice button.
      */
-    public function admin_notices() {
-
-        /**
-         * If setup wizard was not run
-         */
-        if ( empty( get_option( 'easycommerce-setup_wizard' ) ) ) {
-            printf(
-                '<div class="notice notice-warning is-dismissible easycommerce-notice"><p>%s</p></div>',
-                sprintf(
-                    /* Translators: %s is the link to the setup wizard */
-                    __( 'Congratulations on installing <strong>EasyCommerce</strong>! 🎉<br/>You\'re just a few steps away from launching your store. <a href="%s"><strong>Click here</strong></a> to start the setup wizard and bring your store to life! 🚀', 'easycommerce' ),
-                    esc_url( admin_url( 'admin.php?page=easycommerce-wizard' ) )
-                )
-            );
+    public function handle_locations_db_retry() {
+        if ( isset( $_GET['action'] ) && $_GET['action'] === 'easycommerce-locations_db'
+            && current_user_can( 'manage_options' )
+            && empty( get_option( 'easycommerce-locations_db_loaded' ) )
+            && ! $this->has_schedule( 'easycommerce_prepare_background' ) ) {
+            $this->schedule( 'easycommerce_prepare_background' );
         }
-
-        /**
-         * If locations.json file is not downloaded
-         */
-        elseif ( empty( get_option( 'easycommerce-locations_db_loaded' ) ) ) {
-
-            // if it's scheduled, let the user know
-            if ( $this->has_schedule( 'easycommerce_prepare_background' ) ) {
-                printf(
-                    '<div class="notice notice-warning is-dismissible easycommerce-notice"><p>%s</p></div>',
-                    sprintf(
-                        __( 'The <strong>EasyCommerce</strong> Locations database is being downloaded. Countries, states, cities and currencies will not be displayed until the download is complete.', 'easycommerce' ),
-                    )
-                );
-            }
-
-            // it's not scheduled. Let's proceed to schedule
-            else {
-
-                // set new schedule as requested
-                if ( isset( $_GET['action'] ) && $_GET['action'] == 'easycommerce-locations_db' ) {
-                    $this->schedule( 'easycommerce_prepare_background' );
-                }
-
-                // show notice to the user asking to set a schedule
-                else {
-                    printf(
-                        '<div class="notice notice-warning is-dismissible easycommerce-notice"><p>%s</p></div>',
-                        sprintf(
-                            /* Translators: %1$s is the link that reschedules the cron to download locations.json file */
-                            __( 'It looks like the <strong>EasyCommerce</strong> Locations database has not been loaded yet. Countries, states, cities and currencies will not be displayed until it\'s downloaded. <a href="%1$s">Click here</a> to manually retry downloading it.', 'easycommerce' ),
-                            esc_url( admin_url( 'index.php?action=easycommerce-locations_db' ) )
-                        )
-                    );
-                }
-            }
-        }
-
-        /**
-         * Square currency mismatch warning
-         */
-        $square_currency = get_transient( 'easycommerce_square_location_currency' );
-        if ( $square_currency && easycommerce_currency() !== $square_currency && in_array( 'square', easycommerce_active_payment_methods(), true ) ) {
-            global $current_screen;
-            if ( isset( $current_screen->base ) && strpos( $current_screen->base, 'easycommerce' ) !== false ) {
-                wp_enqueue_style( 'easycommerce-public-style', EASYCOMMERCE_ASSETS_URL . 'public/css/style.css', array(), EASYCOMMERCE_VERSION );
-
-                printf(
-                    '<div class="notice notice-error is-dismissible easycommerce-notice easycommerce-notice-error" style="max-width:calc(100%% - 40px)"><p>%s</p></div>',
-                    sprintf(
-                        __( 'Warning: Your store currency (%1$s) does not match your Square location currency (%2$s). Square payments will not be available until currencies match.', 'easycommerce' ),
-                        esc_html( easycommerce_currency() ),
-                        esc_html( $square_currency )
-                    )
-                );
-            }
-        }
-    }
-
-    /**
-     * Show the EasyCommerce Pro admin notice for Year End campaign
-     */
-    private function show_easycommerce_pro_notice() {
-        $notice = new Notice();
-
-        if ( apply_filters( 'easycommerce-pro_activated', false ) ) {
-            return;
-        }
-
-        // Only show if within the date range
-        if ( ! $notice->is_pro_notice_date_range_active() ) {
-            return;
-        }
-
-        // Only show if user should see the notice (not dismissed or 5 days have passed)
-        if ( ! $notice->should_show_pro_notice() ) {
-            return;
-        }
-
-        // Check if we're on EasyCommerce pages or dashboard
-        global $current_screen;
-
-        // Only show on main dashboard
-
-        if ( $current_screen->base != 'dashboard' ) {
-            return;
-        }
-
-        $discount_img = EASYCOMMERCE_ASSETS_URL . '/admin/img/banner-sale/discount.gif';
-        $discount_url = 'https://easycommerce.dev/pricing?utm_source=wpdashboard&utm_medium=banner&utm_campaign=year-end';
-        $notice_id    = 'easycommerce-year-end-deals-campaign-21-dec';
-
-        echo '
-            <div class="notice notice-info is-dismissible easycommerce-pro-notice" data-notice-id="' . esc_attr( $notice_id ) . '">
-                <div class="easycommerce-year-end-deals-notice">
-                    <div class="discount-image">
-                        <img src="' . esc_url( $discount_img ) . '" alt="WC-Affiliate" class="wc-affiliate-notice-image" >
-                    </div>
-
-                    <div class="year-end-content">
-                        <p class="title">' . __( 'EasyCommerce Year-End Celebration!', 'easycommerce' ) . '</p>
-                        <p class="description">' . __( 'Enjoy a flat 50% discount while building your dream ecommerce store with EasyCommerce Pro!', 'easycommerce' ) . '</p>
-                        <a href="' . esc_url( $discount_url ) . '" class="notice-cta-button" data-id="' . esc_attr( $notice_id ) . '" target="_blank">
-                        ' . __( 'Save 50% Now', 'easycommerce' ) . '
-                        </a>
-                    </div>
-                </div>
-            </div>
-        ';
     }
 
     /**
@@ -301,6 +186,7 @@ class Init {
 
             $plugin_data = get_plugin_data( WP_PLUGIN_DIR . '/' . $plugin_file );
 
+            /* translators: %1$s: name of the deactivated conflicting plugin. The <strong> markup must be kept. */
             $message = sprintf( __( 'The plugin <strong>%1$s</strong> was deactivated by <strong>EasyCommerce</strong> as it is no longer needed. You can safely delete it if you wish.', 'easycommerce' ), esc_html( $plugin_data['Name'] ) );
 
             printf( '<tr class="plugin-update-tr"><td colspan="3" class="plugin-update colspanchange"><div class="update-message notice inline notice-warning notice-alt"><p>%s</p></div></td></tr>', $message );
@@ -333,6 +219,46 @@ class Init {
         }
 
         return $use_block_editor;
+    }
+
+    /**
+     * Register the email-placeholders TinyMCE plugin as a real script handle.
+     *
+     * TinyMCE pulls the file in through `mce_external_plugins`, which never goes
+     * through wp_enqueue_script() - so wp_set_script_translations() never ran for
+     * it and its __() strings always rendered in English. Enqueueing it as a
+     * normal handle (after `wp-tinymce`, so `tinymce` is defined) prints the
+     * locale data and self-registers the plugin with TinyMCE's PluginManager;
+     * TinyMCE then skips its own fetch because the plugin is already in its
+     * lookup table, so the external-plugin registration keeps working untouched.
+     *
+     * @return void
+     */
+    public function enqueue_email_placeholders_script(): void {
+        // Check if WYSIWYG is enabled
+        if ( get_user_option( 'rich_editing' ) !== 'true' ) {
+            return;
+        }
+
+        $current_screen = get_current_screen();
+
+        if ( ! $current_screen ) {
+            return;
+        }
+
+        $screen = str_replace( array( 'toplevel_page_', 'store_page_' ), array(), $current_screen->base );
+
+        if ( 'easycommerce-settings' !== $screen ) {
+            return;
+        }
+
+        $this->enqueue_script(
+            'easycommerce-email-placeholders',
+            EASYCOMMERCE_ASSETS_URL . 'admin/js/email-placeholders.js',
+            array( 'wp-i18n', 'wp-tinymce' )
+        );
+
+        wp_set_script_translations( 'easycommerce-email-placeholders', 'easycommerce', EASYCOMMERCE_PLUGIN_DIR . 'languages' );
     }
 
     /**
@@ -398,8 +324,10 @@ class Init {
     /**
      * Add migration button in the admin secondary top bar
      */
-    public function add_migration_btn_in_admin_bar( $wp_admin_bar ) {
+    public function add_migration_btn_in_admin_bar() {
 		if( ! current_user_can( 'manage_options' ) ) return;
+
+        global $wp_admin_bar;
 		
         $migration_status   = get_option( 'easycommerce_migration_status', 'not_started' );
         $check_status       = array( 'not_started', 'in_progress', 'failed' ); 
@@ -407,8 +335,8 @@ class Init {
 		if ( easycommerce_detect_external_plugins_for_migration() && in_array( $migration_status, $check_status ) ) {
 			$wp_admin_bar->add_node( array(
 				'id'     => 'easycommerce-migration',
-				'parent' => 'top-secondary',
-				'title'  => __( 'Migration', 'easycommerce' ),
+				'parent' => 'root-default',
+				'title'  => __( 'Migrate', 'easycommerce' ),
 				'href'   => '#',
 				'meta'   => array(
 					'class'  => 'easycommerce-migration',
@@ -444,10 +372,10 @@ class Init {
 
                 <div class="container">
                     <h3 class="title">
-                        <?php esc_html_e( "You're about to migrate!", 'easycommerce' ); ?>
+                        <?php esc_html_e( 'Ready to move your store to EasyCommerce?', 'easycommerce' ); ?>
                     </h3>
                     <p class="description">
-                        <b><?php echo easycommerce_detect_external_plugins_for_migration(); ?></b> <?php esc_html_e( 'detected. Would you like to migrate your store data to EasyCommerce?', 'easycommerce' ); ?>
+                        <b><?php echo easycommerce_detect_external_plugins_for_migration(); ?></b> <?php esc_html_e( 'detected. Install the free Migration tool to bring your products, orders, and customers into EasyCommerce.', 'easycommerce' ); ?>
                     </p>
                 </div>
 
@@ -462,7 +390,7 @@ class Init {
                         class="button migration"
                         type="button"
                     >
-                        <?php esc_html_e( 'Start Migration', 'easycommerce' ); ?>
+                        <?php esc_html_e( 'Install Migration Tool', 'easycommerce' ); ?>
                     </button>
                 </div>
             </div>

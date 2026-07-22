@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import apiFetch from '@wordpress/api-fetch';
 import { addQueryArgs } from '@wordpress/url';
+import { __ } from '@wordpress/i18n';
 
 import Table from '../common/Table';
 import SeeReportLink from '../common/SeeReportLink';
@@ -33,12 +34,12 @@ const TopCustomers = ({ range }) => {
 
 	const columns = [
 		{ header: '#', width: '10%', accessor: 'rank' },
-		{ header: 'Customer Name', width: '30%', accessor: 'name' },
-		{ header: 'Order Placed', width: '15%', accessor: 'total_orders' },
-		{ header: 'Product Purchased', width: '15%', accessor: 'product_count' },
-		{ header: 'Total Purchase', width: '20%', accessor: 'total_purchase' },
+		{ header: __( 'Customer Name', 'easycommerce' ), width: '30%', accessor: 'name' },
+		{ header: __( 'Order Placed', 'easycommerce' ), width: '15%', accessor: 'total_orders' },
+		{ header: __( 'Product Purchased', 'easycommerce' ), width: '15%', accessor: 'product_count' },
+		{ header: __( 'Total Purchase', 'easycommerce' ), width: '20%', accessor: 'total_purchase' },
 		{
-			header: ' See Report',
+			header: __( ' See Report', 'easycommerce' ),
 			width: '10%',
 			render: (customer) => <SeeReportLink href={`#/customers/${customer.customer_id}`} />,
 		},

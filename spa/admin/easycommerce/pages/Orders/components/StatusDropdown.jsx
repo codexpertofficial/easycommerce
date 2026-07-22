@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { __ } from "@wordpress/i18n";
 import globalToast from "../../../../common/components/globalToast";
 
 const StatusDropdown = ({
@@ -104,7 +105,7 @@ const StatusDropdown = ({
             } else {
                 addToastData({
                     type: "error",
-                    message: data.data || "Failed to update status",
+                    message: data.data || __("Failed to update status", "easycommerce"),
                 });
             }
         })
@@ -112,7 +113,7 @@ const StatusDropdown = ({
             easycommerce_modal(false);
             addToastData({
                 type: "error",
-                message: "An error occurred while updating status",
+                message: __("An error occurred while updating status", "easycommerce"),
             });
         });
     };

@@ -1,0 +1,21 @@
+{
+    "translation-revision-date": "YEAR-MO-DA HO:MI+ZONE",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "blocks\/single-product\/price\/inspector.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "fr_FR",
+                "plural-forms": "nplurals=2; plural=(n > 1);"
+            },
+            "Settings": [
+                "R\u00e9glages"
+            ],
+            "Show Tax included": [
+                "Afficher taxes incluses"
+            ]
+        }
+    }
+}

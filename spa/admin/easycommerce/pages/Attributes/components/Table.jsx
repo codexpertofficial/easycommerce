@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import DeletePopup from '../../../../common/components/DeletePopup';
 import { toast } from 'react-toastify';
+import { __ } from '@wordpress/i18n';
 import TableSkeleton from '../../../../common/TableSkeleton';
 
 const Table = ({
@@ -86,15 +87,15 @@ const Table = ({
 				setField([{ label: '', color: '', image: null, uploader: false }]);
 				setEditingAttribute(null);
 
-				toast.success('Attribute deleted successfully!');
+				toast.success(__( 'Attribute deleted successfully!', 'easycommerce' ));
 				setAttributeIdToDelete(null);
 				setShowModal(false);
 			} else {
-				toast.error('Failed to delete attribute.');
+				toast.error(__( 'Failed to delete attribute.', 'easycommerce' ));
 			}
 		} catch (error) {
 			console.error('Delete failed', error);
-			toast.error('Delete failed, please try again.');
+			toast.error(__( 'Delete failed, please try again.', 'easycommerce' ));
 			easycommerce_modal(false);
 		} finally {
 			easycommerce_modal(false);
@@ -125,11 +126,11 @@ const Table = ({
 										}}
 									/>
 								</th>
-								<th className="w-[25%] font-normal rtl:text-right">Name</th>
-								<th className="w-[15%] font-normal">Type</th>
-								<th className="w-[35%] font-normal">Options</th>
+								<th className="w-[25%] font-normal rtl:text-right">{ __( 'Name', 'easycommerce' ) }</th>
+								<th className="w-[15%] font-normal">{ __( 'Type', 'easycommerce' ) }</th>
+								<th className="w-[35%] font-normal">{ __( 'Options', 'easycommerce' ) }</th>
 								<th className="w-[17%] text-center pr-5 font-normal rounded-r-md">
-									Action
+									{ __( 'Action', 'easycommerce' ) }
 								</th>
 							</tr>
 						</thead>
@@ -258,7 +259,7 @@ const Table = ({
 				</>
 			) : (
 				<span className="text-ec-body font-inter text-sm leading-[20px]">
-					No attributes found.
+					{ __( 'No attributes found.', 'easycommerce' ) }
 				</span>
 			)}
 

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { __ } from "@wordpress/i18n";
 
 // components
 import Header from "../../../../common/Header";
@@ -11,7 +12,7 @@ const NewOrder = () => {
 
     return (
         <>
-            <Header breadcumpSlug="New Order" />
+            <Header breadcumpSlug={__("New Order", "easycommerce")} />
 
             <div className="mt-[30px] ml-[30px] mr-[30px] max-w-full flex gap-5 items-start justify-between mb-10">
                 <Customer

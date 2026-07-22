@@ -1,4 +1,5 @@
 import React from "react";
+import { __ } from "@wordpress/i18n";
 
 const applyFilters = (hookName, ...params) => {
     if (
@@ -19,33 +20,33 @@ const AddressFields = ({ address }) => {
     if (!address || (Array.isArray(address) && address.length === 0)) {
         return (
             <div className="w-full p-6 text-sm text-ec-placeholder">
-                No address provided.
+                {__( "No address provided.", "easycommerce" )}
             </div>
         );
     }
 
     const addressFields = [
         {
-            label: "Full Name",
+            label: __( "Full Name", "easycommerce" ),
             value:
                 address["first_name"] || address["last_name"]
                     ? `${address["first_name"] || ""} ${address["last_name"] || ""}`.trim()
-                    : "N/A",
+                    : __( "N/A", "easycommerce" ),
         },
-        { label: "Email", value: address["email"] },
-        { label: "Phone", value: address["phone"] },
-        { label: "Address 1", value: address["address_1"] },
-        { label: "Address 2", value: address["address_2"] },
+        { key: "email", label: __( "Email", "easycommerce" ), value: address["email"] },
+        { label: __( "Phone", "easycommerce" ), value: address["phone"] },
+        { label: __( "Address 1", "easycommerce" ), value: address["address_1"] },
+        { label: __( "Address 2", "easycommerce" ), value: address["address_2"] },
         {
-            label: "City",
+            label: __( "City", "easycommerce" ),
             value:
                 address["city"] || address["postcode"]
                     ? `${address["city"] || ""} ${address["postcode"] || ""}`.trim()
-                    : "N/A",
+                    : __( "N/A", "easycommerce" ),
         },
-        { label: "State", value: address["state"] },
-        { label: "Country", value: address["country"] },
-        { label: "Company", value: address["company"] },
+        { label: __( "State", "easycommerce" ), value: address["state"] },
+        { label: __( "Country", "easycommerce" ), value: address["country"] },
+        { label: __( "Company", "easycommerce" ), value: address["company"] },
     ];
 
     const filteredAddressFields = applyFilters(
@@ -63,10 +64,10 @@ const AddressFields = ({ address }) => {
                     </p>
                     <p
                         className={`text-sm text-ec-body font-medium ${
-                            field.label === "Email" ? "break-all" : ""
+                            field.key === "email" ? "break-all" : ""
                         }`}
                     >
-                        {field.value || "N/A"}
+                        {field.value || __( "N/A", "easycommerce" )}
                     </p>
                 </div>
             ))}

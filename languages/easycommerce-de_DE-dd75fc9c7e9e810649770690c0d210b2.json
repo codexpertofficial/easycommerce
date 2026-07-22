@@ -1,0 +1,36 @@
+{
+    "translation-revision-date": "YEAR-MO-DA HO:MI+ZONE",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "assets\/public\/js\/init.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "de_DE",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Price": [
+                "Preis"
+            ],
+            "Your cart is empty.": [
+                "Ihr Warenkorb ist leer."
+            ],
+            "Product": [
+                "Produkt"
+            ],
+            "Quantity": [
+                "Menge"
+            ],
+            "Failed to load cart.": [
+                "Warenkorb konnte nicht geladen werden."
+            ],
+            "Error loading cart.": [
+                "Fehler beim Laden des Warenkorbs."
+            ],
+            "Failed to add to cart. Please try again.": [
+                "Konnte nicht in den Warenkorb gelegt werden. Bitte versuchen Sie es erneut."
+            ]
+        }
+    }
+}

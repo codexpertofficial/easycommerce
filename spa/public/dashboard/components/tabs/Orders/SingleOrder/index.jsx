@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { applyFilters } from "@wordpress/hooks";
+import { __, sprintf } from "@wordpress/i18n";
 
 // Components
 import ItemsTable from "./elements/ItemsTable";
@@ -47,10 +48,10 @@ const SingleOrder = ({ orderId }) => {
 									<svg className="w-4 h-4" data-slot="icon" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
 										<path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
 									</svg>
-									Back to orders
+									{__( "Back to orders", "easycommerce" )}
 								</a>
 								<h3 className="easycommerce-dashboard-section-title !text-lg sm:!text-2xl">
-									Order #{order.id}
+									{sprintf( __( "Order #%s", "easycommerce" ), order.id )}
 								</h3>
 							</div>
 							<div className="easycommerce-dashboard-section grid grid-cols-1 gap-6">
@@ -76,7 +77,7 @@ const SingleOrder = ({ orderId }) => {
 							</div>
 						</div>
 					) : (
-						<div>No order data found</div>
+						<div>{__( "No order data found", "easycommerce" )}</div>
 					)}
 				</>
 			) : (

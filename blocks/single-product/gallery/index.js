@@ -31,8 +31,7 @@ const galleryIcon = (
     </svg>
 );
 
-registerBlockType(metadata.name, {
+registerBlockType(metadata, {
     icon: galleryIcon,
-    title: metadata.title,
     edit: Edit,
 });

@@ -13,6 +13,7 @@ module.exports = (env, argv) => {
             wizard: path.resolve(__dirname, "spa/admin/wizard/src/App.jsx"),
             checkout: path.resolve(__dirname, "spa/public/checkout/App.jsx"),
             dashboard: path.resolve(__dirname, "spa/public/dashboard/App.jsx"),
+            auth: path.resolve(__dirname, "spa/public/auth/App.jsx"),
             blocks: path.resolve(__dirname, "blocks/index.js"),
             tailwind: path.resolve(__dirname, "assets/common/css/tailwind.css"),
             editor: path.resolve(__dirname, "spa/admin/editor/index.js"),

@@ -211,58 +211,6 @@ class Customer extends API {
 	}
 
 	/**
-	 * Update an existing customer.
-	 *
-	 * @param WP_REST_Request $request
-	 * @return WP_REST_Response
-	 */
-	public function update( $request ) {
-		$customer_id = $request->get_param( 'id' );
-		$first_name  = $request->get_param( 'first_name' );
-		$last_name   = $request->get_param( 'last_name' );
-		$email       = $request->get_param( 'email' );
-
-		// Load the customer
-		$customer = new Customer_Model( $customer_id );
-
-		if ( ! $customer->get_id() ) {
-			$this->response_success( array( 'message' => __( 'Customer not found.', 'easycommerce' ) ) );
-		}
-
-		/**
-		 * Fires before updating a customer.
-		 *
-		 * @since 1.9
-		 * @param int $customer_id The customer ID.
-		 * @param WP_REST_Request $request The request object.
-		 */
-		do_action( 'easycommerce_before_update_customer', $customer_id, $request );
-
-		// Update customer details
-		$customer->set_name( $first_name . ' ' . $last_name );
-		$customer->set_email( $email );
-
-		if ( ! $customer->save() ) {
-			$this->response_error( __( 'Failed to update customer.', 'easycommerce' ), 500 );
-		}
-
-		/**
-		 * Fires after updating a customer.
-		 *
-		 * @since 1.9
-		 * @param int $customer_id The customer ID.
-		 * @param WP_REST_Request $request The request object.
-		 */
-		do_action( 'easycommerce_after_update_customer', $customer_id, $request );
-
-		$this->response_success(
-			array(
-				'message' => __( 'Customer updated successfully.', 'easycommerce' ),
-			)
-		);
-	}
-
-	/**
 	 * Delete a customer.
 	 *
 	 * @param WP_REST_Request $request

@@ -1,3 +1,4 @@
+import { __ } from "@wordpress/i18n";
 import { useBlockProps } from "@wordpress/block-editor";
 import { useEffect, useState } from "@wordpress/element";
 
@@ -35,7 +36,7 @@ const Edit = () => {
         </div>
     ) : (
         <div {...blockProps}>
-            <p>Post type is not product.</p>
+            <p>{__("Post type is not product.", "easycommerce")}</p>
         </div>
     );
 };

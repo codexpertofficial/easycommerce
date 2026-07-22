@@ -17,8 +17,7 @@ const AttributesIcon = (
     </svg>
 );
 
-registerBlockType(metadata.name, {
+registerBlockType(metadata, {
     icon: AttributesIcon,
-    title: metadata.title,
     edit: Edit,
 });

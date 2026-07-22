@@ -1,4 +1,5 @@
 import React from "react";
+import { __ } from "@wordpress/i18n";
 
 const PopulateTaxButton = ({ onClick }) => {
     return (
@@ -8,7 +9,7 @@ const PopulateTaxButton = ({ onClick }) => {
                 className="flex justify-center items-center font-inter border-b border-ec-body text-ec-body focus:shadow-none focus:ec-body text-base"
                 onClick={onClick}
             >
-                Populate Tax Rates
+                { __( "Populate Tax Rates", "easycommerce" ) }
             </button>
         </div>
     );

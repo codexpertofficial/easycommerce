@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { __ } from '@wordpress/i18n';
 import DeletePopup from '../../../../common/components/DeletePopup';
 import { toast } from 'react-toastify';
 import TableSkeleton from '../../../../common/TableSkeleton';
@@ -20,13 +21,13 @@ const Table = ({ tags, fetchData, onEdit, isLoading, bulkDeleteIds, setBulkDelet
             const data = await response.json();
 
             if (data.success) {
-                toast.success('Tag deleted successfully');
+                toast.success(__('Tag deleted successfully', 'easycommerce'));
                 fetchData();
             } else {
-                toast.error(data.message || 'Failed to delete');
+                toast.error(data.message || __('Failed to delete', 'easycommerce'));
             }
         } catch (error) {
-            toast.error('Failed to delete');
+            toast.error(__('Failed to delete', 'easycommerce'));
         } finally {
             setShowModal(false);
             setTagIdToDelete(null);
@@ -57,9 +58,9 @@ const Table = ({ tags, fetchData, onEdit, isLoading, bulkDeleteIds, setBulkDelet
                                         }}
                                     />
                                 </th>
-                                <th className="w-[38%] font-normal rtl:text-right">Name</th>
-                                <th className="w-[37%] font-normal">Slug</th>
-                                <th className="w-[17%] text-center pr-5 font-normal rounded-r-md">Action</th>
+                                <th className="w-[38%] font-normal rtl:text-right">{__('Name', 'easycommerce')}</th>
+                                <th className="w-[37%] font-normal">{__('Slug', 'easycommerce')}</th>
+                                <th className="w-[17%] text-center pr-5 font-normal rounded-r-md">{__('Action', 'easycommerce')}</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -112,7 +113,7 @@ const Table = ({ tags, fetchData, onEdit, isLoading, bulkDeleteIds, setBulkDelet
                 
             ) : (
                 <span className='text-ec-body font-inter text-sm leading-[20px]'>
-                    No tags found.
+                    {__('No tags found.', 'easycommerce')}
                 </span>
             )}
           

@@ -1,4 +1,5 @@
 import React from "react";
+import { __, sprintf } from "@wordpress/i18n";
 import { useDispatch } from "react-redux";
 import { addToastData } from "../../../redux-store/slices/toastSlice";
 
@@ -44,7 +45,9 @@ const DeleteAllOrderPopup = ({
                     dispatch(
                         addToastData({
                             type: "success",
-                            message: `Order${isBulk ? 's' : ''} deleted permanently`,
+                            message: isBulk
+                                ? __("Orders deleted permanently", "easycommerce")
+                                : __("Order deleted permanently", "easycommerce"),
                         })
                     );
                     afterInstatntDelete();
@@ -59,19 +62,25 @@ const DeleteAllOrderPopup = ({
                     <div className="w-[86px] h-[86px] flex justify-center items-center rounded-full bg-[#FF3A521A]">
                         <img
                             src={deleteWarningIcon}
-                            alt="delete-warning"
+                            alt={__("delete-warning", "easycommerce")}
                             className="w-10 h-8"
                         />
                     </div>
 
                     <div className="flex flex-col justify-center items-center gap-1">
                         <h3 className="font-inter font-medium text-2xl text-ec-body">
-                            {isBulk ? 'Delete selected orders' : 'Delete this order'}
+                            {isBulk
+                                ? __('Delete selected orders', 'easycommerce')
+                                : __('Delete this order', 'easycommerce')}
                         </h3>
                         <p className="w-9/12 mx-auto text-center font-inter font-normal text-base text-ec-placeholder">
-                            You're going to delete 
-                            {isBulk ? ` ${bulkOrderIds.length} selected orders` : ` the “Order”`} 
-                            {forceDelete && " permanently"} — are you sure?
+                            {isBulk
+                                ? forceDelete
+                                    ? sprintf(__("You're going to delete %d selected orders permanently — are you sure?", "easycommerce"), bulkOrderIds.length)
+                                    : sprintf(__("You're going to delete %d selected orders — are you sure?", "easycommerce"), bulkOrderIds.length)
+                                : forceDelete
+                                    ? __("You're going to delete the “Order” permanently — are you sure?", "easycommerce")
+                                    : __("You're going to delete the “Order” — are you sure?", "easycommerce")}
                         </p>
                     </div>
                 </div>
@@ -82,14 +91,14 @@ const DeleteAllOrderPopup = ({
                         rounded-lg px-[50px] py-[10px]"
                         onClick={discardAction}
                     >
-                        No, Keep it
+                        {__("No, Keep it", "easycommerce")}
                     </button>
                     <button
                         className="font-inter font-medium text-base text-ec-body border border-ec-body 
                         rounded-lg px-[50px] py-[10px] hover:bg-[#FF3A52] hover:border-[#FF3A52] hover:text-white"
                         onClick={deleteNowAll}
                     >
-                        Yes, Delete!
+                        {__("Yes, Delete!", "easycommerce")}
                     </button>
                 </div>
             </div>

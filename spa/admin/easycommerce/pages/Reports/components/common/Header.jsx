@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { __ } from '@wordpress/i18n';
 
 const Header = ({ title, range, setRange, comparison, setComparison }) => {
 	const [activeDropdown, setActiveDropdown] = useState(null);
@@ -16,49 +17,49 @@ const Header = ({ title, range, setRange, comparison, setComparison }) => {
 	}, []);
 
 	const [comparisonOptions, setComparisonOptions] = useState([
-		{ label: 'Prev. 30 days', value: 'prev-30' },
-		{ label: '30 days last year', value: 'last-year-30' },
+		{ label: __( 'Prev. 30 days', 'easycommerce' ), value: 'prev-30' },
+		{ label: __( '30 days last year', 'easycommerce' ), value: 'last-year-30' },
 	]);
 
 	const rangeOptions = [
 		{
-			label: 'Last 7 days',
+			label: __( 'Last 7 days', 'easycommerce' ),
 			value: 'last-7',
 			comparison: [
-				{ label: 'Prev. 7 days', value: 'prev-7' },
-				{ label: '7 days last month', value: 'last-month-7' },
-				{ label: '7 days last year', value: 'last-year-7' },
+				{ label: __( 'Prev. 7 days', 'easycommerce' ), value: 'prev-7' },
+				{ label: __( '7 days last month', 'easycommerce' ), value: 'last-month-7' },
+				{ label: __( '7 days last year', 'easycommerce' ), value: 'last-year-7' },
 			],
 		},
 		{
-			label: 'Last 30 days',
+			label: __( 'Last 30 days', 'easycommerce' ),
 			value: 'last-30',
 			comparison: [
-				{ label: 'Prev. 30 days', value: 'prev-30' },
-				{ label: '30 days last year', value: 'last-year-30' },
+				{ label: __( 'Prev. 30 days', 'easycommerce' ), value: 'prev-30' },
+				{ label: __( '30 days last year', 'easycommerce' ), value: 'last-year-30' },
 			],
 		},
 		{
-			label: 'This week',
+			label: __( 'This week', 'easycommerce' ),
 			value: 'this-week',
 			comparison: [
-				{ label: 'Last week', value: 'last-week' },
-				{ label: 'Same week last month', value: 'last-month-week' },
-				{ label: 'Same week last year', value: 'last-year-week' },
+				{ label: __( 'Last week', 'easycommerce' ), value: 'last-week' },
+				{ label: __( 'Same week last month', 'easycommerce' ), value: 'last-month-week' },
+				{ label: __( 'Same week last year', 'easycommerce' ), value: 'last-year-week' },
 			],
 		},
 		{
-			label: 'This month',
+			label: __( 'This month', 'easycommerce' ),
 			value: 'this-month',
 			comparison: [
-				{ label: 'Last month', value: 'last-month' },
-				{ label: 'Same month last year', value: 'last-year-month' },
+				{ label: __( 'Last month', 'easycommerce' ), value: 'last-month' },
+				{ label: __( 'Same month last year', 'easycommerce' ), value: 'last-year-month' },
 			],
 		},
 		{
-			label: 'This year',
+			label: __( 'This year', 'easycommerce' ),
 			value: 'this-year',
-			comparison: [{ label: 'Last year', value: 'last-year' }],
+			comparison: [{ label: __( 'Last year', 'easycommerce' ), value: 'last-year' }],
 		},
 	];
 
@@ -128,7 +129,7 @@ const Header = ({ title, range, setRange, comparison, setComparison }) => {
 				</div>
 
 				<div className="flex items-center px-4 border-x border-ec-table-stock">
-					vs.
+					{__( 'vs.', 'easycommerce' )}
 				</div>
 
 				<div className="relative">
@@ -224,7 +225,7 @@ const Header = ({ title, range, setRange, comparison, setComparison }) => {
 						</div>
 
 						<div className="flex items-center px-4 border-x border-ec-table-stock">
-							vs.
+							{__( 'vs.', 'easycommerce' )}
 						</div>
 
 						<div className="relative">

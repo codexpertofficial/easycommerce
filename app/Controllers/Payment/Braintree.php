@@ -149,10 +149,12 @@ add_action(
 				wp_enqueue_script(
 					'easycommerce-braintree',
 					EASYCOMMERCE_ASSETS_URL . 'payment/js/braintree.js',
-					array( 'braintree-js', 'jquery' ),
+					array( 'braintree-js', 'jquery', 'wp-i18n' ),
 					EASYCOMMERCE_VERSION,
 					true
 				);
+
+				wp_set_script_translations( 'easycommerce-braintree', 'easycommerce', EASYCOMMERCE_PLUGIN_DIR . 'languages' );
 			}
 
 			public function localized( $vars ) {

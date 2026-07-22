@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { __ } from "@wordpress/i18n";
 import ProductActionDropdown from "./ProductActionDropdown";
 import ProductStatusDropdown from "./ProductStatusDropdown";
 import ProductShowBulkOptions from "./ProductShowBulkOptions";
@@ -30,9 +31,9 @@ const ProductTable = ({
     const [bulkProductStatus, setBulkProductStatus] = useState(null);
     const [productBulkCountChange, setProductBulkCountChange] = useState(null);
     const productStatusOptions = [
-        { label: "Live", value: "publish" },
-        { label: "Draft", value: "draft" },
-        { label: "Trash", value: "trash" },
+        { label: __("Live", "easycommerce"), value: "publish" },
+        { label: __("Draft", "easycommerce"), value: "draft" },
+        { label: __("Trash", "easycommerce"), value: "trash" },
     ];
     const allSelected = Array.isArray(products) && Array.isArray(selectedProducts) && products.length > 0 && selectedProducts.length === products.length;
 
@@ -56,33 +57,33 @@ const ProductTable = ({
                                     className="min-w-5 h-5 accent-ec-primary cursor-pointer mr-2 easycommerce-input-checkoutbox pl-2"
                                 />
                                 <span className="font-inter font-normal text-sm text-ec-title">
-                                    Product Name
+                                    {__("Product Name", "easycommerce")}
                                 </span>
                             </th>
                         )}
                         {tableColumns.includes("status") && (
                             <th className="font-inter font-normal bg-ec-modal text-sm text-ec-title text-left xl:w-[15%] lg:w-[10%] rtl:text-right">
-                                Status
+                                {__("Status", "easycommerce")}
                             </th>
                         )}
                         {tableColumns.includes("category") && (
                             <th className="font-inter font-normal bg-ec-modal text-sm text-ec-title text-left w-[20%] lg:w-[12%] rtl:text-right">
-                                Category
+                                {__("Category", "easycommerce")}
                             </th>
                         )}
                         {tableColumns.includes("price") && (
                             <th className="font-inter font-normal bg-ec-modal text-sm text-ec-title text-left lg:w-[8%] rtl:text-right">
-                                Price
+                                {__("Price", "easycommerce")}
                             </th>
                         )}
                         {tableColumns.includes("stock") && (
                             <th className="font-inter font-normal bg-ec-modal text-sm text-ec-title text-left lg:w-[10%] rtl:text-right">
-                                Quantity
+                                {__("Quantity", "easycommerce")}
                             </th>
                         )}
                         {tableColumns.includes("sales") && (
                             <th className="font-inter font-normal bg-ec-modal text-sm text-ec-title text-left lg:w-[10%] rounded-r-md rtl:text-right">
-                                Total Sale
+                                {__("Total Sale", "easycommerce")}
                             </th>
                         )}
                     </tr>
@@ -119,14 +120,14 @@ const ProductTable = ({
                                                 <div className="invisible group-hover:visible opacity-0 group-hover:opacity-100 duration-300 absolute bottom-0">
                                                     <div className="flex items-center gap-1.5 font-inter font-normal text-xs text-ec-light-black">
                                                         {product.status === "trash" ? (
-                                                            <button className="hover:text-ec-primary duration-300" onClick={() => restoreProduct(product.id, product.title)}>Restore</button>
+                                                            <button className="hover:text-ec-primary duration-300" onClick={() => restoreProduct(product.id, product.title)}>{__("Restore", "easycommerce")}</button>
                                                         ) : (
                                                             <>
-                                                                <a className="hover:text-ec-primary duration-300" href={`#/products/edit/${product.id}`}>Edit</a>
+                                                                <a className="hover:text-ec-primary duration-300" href={`#/products/edit/${product.id}`}>{__("Edit", "easycommerce")}</a>
                                                                 <span className="text-[#bdbdbd]">|</span>
-                                                                <a className="hover:text-ec-primary duration-300" href={`${EASYCOMMERCE.product_edit_base}=${product.id}`}>Builder</a>
+                                                                <a className="hover:text-ec-primary duration-300" href={`${EASYCOMMERCE.product_edit_base}=${product.id}`}>{__("Builder", "easycommerce")}</a>
                                                                 <span className="text-[#bdbdbd]">|</span>
-                                                                <a className="hover:text-ec-primary duration-300" href={`${product.link}`}>View</a>
+                                                                <a className="hover:text-ec-primary duration-300" href={`${product.link}`}>{__("View", "easycommerce")}</a>
                                                             </>
                                                         )}
                                                         
@@ -140,7 +141,7 @@ const ProductTable = ({
                                                             }}
                                                             className="text-ec-red"
                                                         >
-                                                            Delete
+                                                            {__("Delete", "easycommerce")}
                                                         </button>
                                                     </div>
                                                 </div>
@@ -155,7 +156,7 @@ const ProductTable = ({
                                         options={productStatusOptions}
                                         productId={product.id}
                                         value={bulkProductStatus !== null ? bulkProductStatus : product?.status}
-                                        placeholder="Select status"
+                                        placeholder={__("Select status", "easycommerce")}
                                         width="90px"
                                         menuWidth="120px"
                                         productTitle={product.title}

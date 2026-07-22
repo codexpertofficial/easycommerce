@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import apiFetch from '@wordpress/api-fetch';
+import { __ } from '@wordpress/i18n';
 import TableSkeleton from "../../../../common/TableSkeleton";
 
 const statusColors = {
@@ -32,14 +33,14 @@ const LowStocks = () => {
                 <TableSkeleton numberOfRows={5} SkeletonHeight={35} />
             ) : lowStock.length === 0 ? (
                 <div className=" text-sm text-ec-body px-[30px] pb-[30px]">
-                    No low stock products found.
+                    {__( 'No low stock products found.', 'easycommerce' )}
                 </div>
             ): (
                 <div>
                     <div className="flex items-center bg-ec-table-bg py-3 px-3 rounded-lg">
-                        <div className="w-[45%] text-sm font-medium text-ec-body capitalize">Product Name</div>
-                        <div className="w-[25%] text-sm font-medium text-ec-body capitalize text-center">Quantity</div>
-                        <div className="w-[30%] text-sm font-medium text-ec-body capitalize text-center">Out of stock</div>
+                        <div className="w-[45%] text-sm font-medium text-ec-body capitalize">{__( 'Product Name', 'easycommerce' )}</div>
+                        <div className="w-[25%] text-sm font-medium text-ec-body capitalize text-center">{__( 'Quantity', 'easycommerce' )}</div>
+                        <div className="w-[30%] text-sm font-medium text-ec-body capitalize text-center">{__( 'Out of stock', 'easycommerce' )}</div>
                     </div>
 
                     {/* Rows */}

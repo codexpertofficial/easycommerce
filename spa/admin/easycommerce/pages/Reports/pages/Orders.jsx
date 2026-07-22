@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { __ } from '@wordpress/i18n';
 
 // components
 import Container from '../components/common/Container';
@@ -12,19 +13,19 @@ import Customers from '../components/orders/Customers';
 
 const Orders = () => {
 	const [range, setRange] = useState({
-		label: 'Last 30 days',
+		label: __( 'Last 30 days', 'easycommerce' ),
 		value: 'last-30',
 	});
 
 	const [comparison, setComparison] = useState({
-		label: 'Prev. 30 days',
+		label: __( 'Prev. 30 days', 'easycommerce' ),
 		value: 'prev-30'
 	});
 
 	return (
 		<>
 			<Header
-				title="Orders"
+				title={__( 'Orders', 'easycommerce' )}
 				range={range}
 				setRange={setRange}
 				comparison={comparison}
@@ -38,7 +39,7 @@ const Orders = () => {
 			/>
 
 			<div className="my-6">
-				<Container title="Orders Over Time" >
+				<Container title={__( 'Orders Over Time', 'easycommerce' )} >
 					<LineChart
 						endpoint="/easycommerce/v1/reports/orders/over-time"
 						params={{ range: range.value, comparison: comparison.value }}
@@ -48,16 +49,16 @@ const Orders = () => {
 
 			<div className="my-6">
 				<div className="grid grid-cols-3 gap-6">
-					<Container title="Order vs. Customers" >
+					<Container title={__( 'Order vs. Customers', 'easycommerce' )} >
 						<Customers range={range.value} />
 					</Container>
-					<Container title="Order Status Breakdown" >
+					<Container title={__( 'Order Status Breakdown', 'easycommerce' )} >
 						<OrderPieChart 
 							endpoint="/easycommerce/v1/reports/orders/statuses"
 							params={{ range: range.value }}
 						/>
 					</Container>
-					<Container title="Fulfillment Status Breakdown" >
+					<Container title={__( 'Fulfillment Status Breakdown', 'easycommerce' )} >
 						<OrderPieChart 
 							endpoint="/easycommerce/v1/reports/orders/fulfillment"
 							params={{ range: range.value }}
@@ -67,7 +68,7 @@ const Orders = () => {
 			</div>
 
 			<div className="my-6">
-				<Container title="Orders by Location" >
+				<Container title={__( 'Orders by Location', 'easycommerce' )} >
 					<GeoMap
 						endpoint="/easycommerce/v1/reports/orders/locations"
 						params={{ range: range.value }}
@@ -76,7 +77,7 @@ const Orders = () => {
 			</div>
 
 			<div className="my-6">
-				<Container title="Daily Orders Heatmap" >
+				<Container title={__( 'Daily Orders Heatmap', 'easycommerce' )} >
 					<Heatmap
 						endpoint="/easycommerce/v1/reports/orders/heatmap"
 						params={{ range: range.value }}

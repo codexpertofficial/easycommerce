@@ -408,7 +408,7 @@ const PriceItem = ({
 										onClick={() =>
 											handleProClick({
 												slug: 'easycommerce-subscriptions',
-												name: 'Subscription Manager',
+												name: __('Subscription Manager', 'easycommerce'),
 												description: __(
 													'Add recurring billing to your store with the EasyCommerce Subscription Addon.',
 													'easycommerce',
@@ -493,7 +493,7 @@ const PriceItem = ({
 												onClick={() =>
 													handleProClick({
 														slug: 'easycommerce-license',
-														name: 'License Manager',
+														name: __('License Manager', 'easycommerce'),
 														description: __(
 															'Configure your ecommerce store with licensing capability and sell digital products and manage their licenses.',
 															'easycommerce',
@@ -505,7 +505,7 @@ const PriceItem = ({
 												htmlFor={`generate_license`}
 												className="font-inter font-medium text-xl text-ec-title mr-2"
 											>
-												&nbsp; Generate License
+												&nbsp; {__('Generate License', 'easycommerce')}
 											</label>
 											<div className="w-5 h-5 ml-2 flex items-center justify-center">
 												<svg

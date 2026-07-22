@@ -1,11 +1,12 @@
 import React from "react";
+import { __ } from "@wordpress/i18n";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 const DatepickerComponent = ({
     dateRange,
     onRangeChange,
-    placeholderText = "Select date range",
+    placeholderText = __("Select date range", "easycommerce"),
     width = "w-full",
     calendarIcon,
     minDate = new Date(),
@@ -19,7 +20,7 @@ const DatepickerComponent = ({
                 {calendarIcon && (
                     <img
                         src={calendarIcon}
-                        alt="Calendar"
+                        alt={__("Calendar", "easycommerce")}
                         className="w-[16px] h-[16px] pointer-events-none"
                     />
                 )}

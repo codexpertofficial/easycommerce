@@ -28,7 +28,6 @@ const AddToCartIcon = (
  */
 const blockConfig = applyFilters('easycommerce.blocks.add-to-cart.config', {
     icon: AddToCartIcon,
-    title: metadata.title,
     edit: Edit,
 });
 

@@ -50,6 +50,8 @@ const currentHash = window.location.hash;
 //checkout templates @todo remove when settings page is in react
 jQuery(document).ready(function($) {
 
+    const { __ } = wp.i18n;
+
     var templateImages = {
         'template-1': EASYCOMMERCE.assets + 'admin/img/checkout-templates/template-1.png',
         'template-2': EASYCOMMERCE.assets + 'admin/img/checkout-templates/template-2.png',
@@ -60,7 +62,7 @@ jQuery(document).ready(function($) {
     var $wrapper = $('#easycommerce-field-wrapper-checkout_template');
 
     if ($('#easycommerce-checkout-template-preview').length === 0) {
-        $wrapper.after('<img id="easycommerce-checkout-template-preview" alt="Template Preview" src="" style="display:none;margin-top:10px;max-width:100%;border:1px solid #ddd;border-radius:8px;">');
+        $wrapper.after('<img id="easycommerce-checkout-template-preview" alt="' + __( 'Template Preview', 'easycommerce' ) + '" src="" style="display:none;margin-top:10px;max-width:100%;border:1px solid #ddd;border-radius:8px;">');
     }
 
     var $img = $('#easycommerce-checkout-template-preview');

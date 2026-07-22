@@ -1,4 +1,5 @@
 import React from "react";
+import { __ } from "@wordpress/i18n";
 
 // Components
 import DatepickerComponent from "../../../../common/components/DatepickerComponent";
@@ -34,7 +35,7 @@ const OrderTableFilter = ({
                         className={`font-inter text-sm leading-[26px] font-normal text-ec-secondary border-b border-[#737991]`}
                         onClick={resetFilter}
                     >
-                        Reset
+                        {__("Reset", "easycommerce")}
                     </button>
                 )}
                 <form
@@ -50,7 +51,7 @@ const OrderTableFilter = ({
                         name="searchquery"
                         value={formState.searchquery}
                         onChange={handleInputChange}
-                        placeholder="Search"
+                        placeholder={__("Search", "easycommerce")}
                     />
                 </div>
                 <DatepickerComponent
@@ -64,7 +65,7 @@ const OrderTableFilter = ({
                             dateTo: end,
                         }));
                     }}
-                    placeholderText="eg. 12 Sep - 28 Oct 2025"
+                    placeholderText={__("eg. 12 Sep - 28 Oct 2025", "easycommerce")}
                     width="w-[220px]"
                     minDate={new Date("1972-01-01")}
                     cl

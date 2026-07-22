@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { __, sprintf } from '@wordpress/i18n';
+import { toast } from 'react-toastify';
 
 //components
 import TransactionTable from './components/TransactionTable';
@@ -44,15 +46,15 @@ const Transactions = ({ page }) => {
 	};
 
 	const transactionType = {
-		payment: 'Payment',
-		refund: 'Refund',
-		adjustment: 'Adjustment',
+		payment: __( 'Payment', 'easycommerce' ),
+		refund: __( 'Refund', 'easycommerce' ),
+		adjustment: __( 'Adjustment', 'easycommerce' ),
 	};
 
 	// All order statuses
 	const tabOptions = [
 		{
-			label: 'All',
+			label: __( 'All', 'easycommerce' ),
 			key: 'all',
 			bg: 'bg-ec-allBg text-ec-allText',
 		},
@@ -152,6 +154,10 @@ const Transactions = ({ page }) => {
 					}
 				}
 				setIsStatusLoaded(true);
+			})
+			.catch(() => {
+				setIsStatusLoaded(true);
+				toast.error(__('Unable to load transaction status counts. Please refresh and try again.', 'easycommerce'));
 			});
 	};
 
@@ -199,6 +205,11 @@ const Transactions = ({ page }) => {
 					setTotalPage(1);
 					setTransactions([]);
 				}
+			})
+			.catch(() => {
+				setIsLoading(false);
+				setFilterLoader(false);
+				toast.error(__('Unable to load transactions. Please refresh and try again.', 'easycommerce'));
 			});
 	};
 
@@ -213,7 +224,7 @@ const Transactions = ({ page }) => {
 	return (
 		<>
 			<div className="product-panel-title mb-4">
-				<h3>Transactions</h3>
+				<h3>{__( 'Transactions', 'easycommerce' )}</h3>
 			</div>
 			<div className="w-full bg-white border border-solid border-ec-table-stock rounded-xl p-6 min-h-screen">
 				{isStatusLoaded && (
@@ -281,10 +292,13 @@ const Transactions = ({ page }) => {
 								ImageUrl={noTransaction}
 								title={
 									activeTab !== 'all'
-										? `No ${tabOptions.find((tab) => tab.key === activeTab)?.label || activeTab} Transactions Found`
-										: `No Transactions Found.`
+										? (
+											// translators: %s: transaction status label.
+											sprintf( __( 'No %s Transactions Found', 'easycommerce' ), tabOptions.find((tab) => tab.key === activeTab)?.label || activeTab )
+										)
+										: __( 'No Transactions Found.', 'easycommerce' )
 								}
-								description={`All type of payment activities will appear here once they occur`}
+								description={__( 'All type of payment activities will appear here once they occur', 'easycommerce' )}
 							/>
 						)}
 					</>

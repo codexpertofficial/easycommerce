@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { __, sprintf } from "@wordpress/i18n";
 import TableSkeleton from "../../../../../admin/common/TableSkeleton";
 import Pagination from "../../../../../admin/common/components/Pagination";
 import EmptyState from "../../common/EmptyState";
@@ -82,7 +83,7 @@ const Downloads = () => {
         <>
             <div className="easycommerce-dashboard-section pb-[55px] flex flex-col gap-4">
                 <h3 className="easycommerce-dashboard-section-title !text-lg sm:!text-2xl">
-                    Downloads
+                    {__( "Downloads", "easycommerce" )}
                 </h3>
                 <div className="w-full">
                     {!isLoading ? (
@@ -93,13 +94,13 @@ const Downloads = () => {
                                         <thead className="bg-ec-table-bg">
                                             <tr>
                                                 <th className="font-inter font-semibold text-xs uppercase tracking-wide text-left rtl:text-right text-ec-light-black py-3.5 px-5 border-0">
-                                                    File Name
+                                                    {__( "File Name", "easycommerce" )}
                                                 </th>
                                                 <th className="font-inter font-semibold text-xs uppercase tracking-wide text-left rtl:text-right text-ec-light-black py-3.5 px-5 border-0">
-                                                    Size
+                                                    {__( "Size", "easycommerce" )}
                                                 </th>
                                                 <th className="font-inter font-semibold text-xs uppercase tracking-wide text-left rtl:text-right text-ec-light-black py-3.5 px-5 border-0">
-                                                    Order ID
+                                                    {__( "Order ID", "easycommerce" )}
                                                 </th>
                                                 <th className="py-3.5 px-5 border-0"></th>
                                             </tr>
@@ -122,7 +123,10 @@ const Downloads = () => {
                                                                     src={getFileIcon(
                                                                         download.type
                                                                     )}
-                                                                    alt={`${download.type} icon`}
+                                                                    alt={
+                                                                        // translators: %s: file type, e.g. PDF or ZIP.
+                                                                        sprintf( __( "%s icon", "easycommerce" ), download.type )
+                                                                    }
                                                                     className="w-6 h-6 pointer-events-none"
                                                                 />
                                                             </span>
@@ -143,7 +147,7 @@ const Downloads = () => {
                                                             <svg className="w-4 h-4" data-slot="icon" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
                                                                 <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
                                                             </svg>
-                                                            Download
+                                                            {__( "Download", "easycommerce" )}
                                                         </a>
                                                     </td>
                                                 </tr>
@@ -154,8 +158,8 @@ const Downloads = () => {
                             ) : (
                                 <div className="w-full border border-ec-border rounded-2xl bg-white">
                                     <EmptyState
-                                        title="No downloads available"
-                                        message="Files from your purchases will appear here."
+                                        title={__( "No downloads available", "easycommerce" )}
+                                        message={__( "Files from your purchases will appear here.", "easycommerce" )}
                                         icon={
                                             <svg className="w-8 h-8" data-slot="icon" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />

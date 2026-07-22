@@ -1,0 +1,138 @@
+{
+    "translation-revision-date": "YEAR-MO-DA HO:MI+ZONE",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "build\/checkout.bundle.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "bn_BD",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Payment Method": [
+                "\u09aa\u09c7\u09ae\u09c7\u09a8\u09cd\u099f \u09aa\u09a6\u09cd\u09a7\u09a4\u09bf"
+            ],
+            "First Name": [
+                "\u09aa\u09cd\u09b0\u09a5\u09ae \u09a8\u09be\u09ae"
+            ],
+            "Your first name": [
+                "\u0986\u09aa\u09a8\u09be\u09b0 \u09aa\u09cd\u09b0\u09a5\u09ae \u09a8\u09be\u09ae"
+            ],
+            "Last Name": [
+                "\u09b6\u09c7\u09b7 \u09a8\u09be\u09ae"
+            ],
+            "Your last name": [
+                "\u0986\u09aa\u09a8\u09be\u09b0 \u09b6\u09c7\u09b7 \u09a8\u09be\u09ae"
+            ],
+            "Email": [
+                "\u0987\u09ae\u09c7\u0987\u09b2"
+            ],
+            "Your email": [
+                "\u0986\u09aa\u09a8\u09be\u09b0 \u0987\u09ae\u09c7\u0987\u09b2"
+            ],
+            "Phone": [
+                "\u09ab\u09cb\u09a8"
+            ],
+            "Enter your phone number": [
+                "\u0986\u09aa\u09a8\u09be\u09b0 \u09ab\u09cb\u09a8 \u09a8\u09ae\u09cd\u09ac\u09b0 \u09b2\u09bf\u0996\u09c1\u09a8"
+            ],
+            "Country": [
+                "\u09a6\u09c7\u09b6"
+            ],
+            "State": [
+                "\u09b0\u09be\u099c\u09cd\u09af"
+            ],
+            "City": [
+                "\u09b6\u09b9\u09b0"
+            ],
+            "Write here": [
+                "\u098f\u0996\u09be\u09a8\u09c7 \u09b2\u09bf\u0996\u09c1\u09a8"
+            ],
+            "Card Number": [
+                "\u0995\u09be\u09b0\u09cd\u09a1 \u09a8\u09ae\u09cd\u09ac\u09b0"
+            ],
+            "CVC": [
+                "CVC"
+            ],
+            "Confirm Order": [
+                "\u0985\u09b0\u09cd\u09a1\u09be\u09b0 \u09a8\u09bf\u09b6\u09cd\u099a\u09bf\u09a4 \u0995\u09b0\u09c1\u09a8"
+            ],
+            "Subtotal": [
+                "\u0989\u09aa\u09ae\u09cb\u099f"
+            ],
+            "Billing Address": [
+                "\u09ac\u09bf\u09b2\u09bf\u0982 \u09a0\u09bf\u0995\u09be\u09a8\u09be"
+            ],
+            "Shipping Address": [
+                "\u09b6\u09bf\u09aa\u09bf\u0982 \u09a0\u09bf\u0995\u09be\u09a8\u09be"
+            ],
+            "Same as Billing": [
+                "\u09ac\u09bf\u09b2\u09bf\u0982-\u098f\u09b0 \u09ae\u09a4\u09cb\u0987"
+            ],
+            "Discount code": [
+                "\u099b\u09be\u09a1\u09bc\u09c7\u09b0 \u0995\u09cb\u09a1"
+            ],
+            "Apply": [
+                "\u09aa\u09cd\u09b0\u09af\u09bc\u09cb\u0997 \u0995\u09b0\u09c1\u09a8"
+            ],
+            "Order Total": [
+                "\u0985\u09b0\u09cd\u09a1\u09be\u09b0\u09c7\u09b0 \u09ae\u09cb\u099f"
+            ],
+            "Loading...": [
+                "\u09b2\u09cb\u09a1 \u09b9\u099a\u09cd\u099b\u09c7..."
+            ],
+            "Address line 1": [
+                "\u09a0\u09bf\u0995\u09be\u09a8\u09be\u09b0 \u09b2\u09be\u0987\u09a8 1"
+            ],
+            "Your address": [
+                "\u0986\u09aa\u09a8\u09be\u09b0 \u09a0\u09bf\u0995\u09be\u09a8\u09be"
+            ],
+            "Address line 2": [
+                "\u09a0\u09bf\u0995\u09be\u09a8\u09be\u09b0 \u09b2\u09be\u0987\u09a8 2"
+            ],
+            "Select your City": [
+                "\u0986\u09aa\u09a8\u09be\u09b0 \u09b6\u09b9\u09b0 \u09a8\u09bf\u09b0\u09cd\u09ac\u09be\u099a\u09a8 \u0995\u09b0\u09c1\u09a8"
+            ],
+            "Select your State": [
+                "\u0986\u09aa\u09a8\u09be\u09b0 \u09b0\u09be\u099c\u09cd\u09af \u09a8\u09bf\u09b0\u09cd\u09ac\u09be\u099a\u09a8 \u0995\u09b0\u09c1\u09a8"
+            ],
+            "Select your country": [
+                "\u0986\u09aa\u09a8\u09be\u09b0 \u09a6\u09c7\u09b6 \u09a8\u09bf\u09b0\u09cd\u09ac\u09be\u099a\u09a8 \u0995\u09b0\u09c1\u09a8"
+            ],
+            "Postal Code": [
+                "\u09aa\u09cb\u09b8\u09cd\u099f\u09be\u09b2 \u0995\u09cb\u09a1"
+            ],
+            "Your Orders": [
+                "\u0986\u09aa\u09a8\u09be\u09b0 \u0985\u09b0\u09cd\u09a1\u09be\u09b0\u09b8\u09ae\u09c2\u09b9"
+            ],
+            "Shipping Eastimate": [
+                "\u0986\u09a8\u09c1\u09ae\u09be\u09a8\u09bf\u0995 \u09b6\u09bf\u09aa\u09bf\u0982"
+            ],
+            "Tax Eastimate": [
+                "\u0986\u09a8\u09c1\u09ae\u09be\u09a8\u09bf\u0995 \u0995\u09b0"
+            ],
+            "Debit \/ Credit card": [
+                "\u09a1\u09c7\u09ac\u09bf\u099f \/ \u0995\u09cd\u09b0\u09c7\u09a1\u09bf\u099f \u0995\u09be\u09b0\u09cd\u09a1"
+            ],
+            "Internet banking": [
+                "\u0987\u09a8\u09cd\u099f\u09be\u09b0\u09a8\u09c7\u099f \u09ac\u09cd\u09af\u09be\u0982\u0995\u09bf\u0982"
+            ],
+            "Google \/ Apple Wallet": [
+                "Google \/ Apple \u0993\u09af\u09bc\u09be\u09b2\u09c7\u099f"
+            ],
+            "Name on Card": [
+                "\u0995\u09be\u09b0\u09cd\u09a1\u09c7 \u09a5\u09be\u0995\u09be \u09a8\u09be\u09ae"
+            ],
+            "Enter card holder name": [
+                "\u0995\u09be\u09b0\u09cd\u09a1\u09a7\u09be\u09b0\u09c0\u09b0 \u09a8\u09be\u09ae \u09b2\u09bf\u0996\u09c1\u09a8"
+            ],
+            "Expiration date (MM\/YY)": [
+                "\u09ae\u09c7\u09af\u09bc\u09be\u09a6 \u09b6\u09c7\u09b7\u09c7\u09b0 \u09a4\u09be\u09b0\u09bf\u0996 (MM\/YY)"
+            ],
+            "Learn more Taxes and Shipping information": [
+                "\u0995\u09b0 \u0993 \u09b6\u09bf\u09aa\u09bf\u0982 \u09b8\u09ae\u09cd\u09aa\u09b0\u09cd\u0995\u09c7 \u0986\u09b0\u0993 \u099c\u09be\u09a8\u09c1\u09a8"
+            ]
+        }
+    }
+}

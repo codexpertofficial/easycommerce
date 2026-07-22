@@ -225,12 +225,12 @@ if (! function_exists('display_attribute')) {
 		<div class="w-[70%] easycommerce-drawer-product-search relative">
 			<img
 				src="<?php echo esc_url(EASYCOMMERCE_ASSETS_URL . 'common/img/blocks/shop-page/product-search.png'); ?>"
-				alt="Search Icon"
+				alt="<?php esc_attr_e('Search Icon', 'easycommerce'); ?>"
 				class="search-icon" />
 			<input
 				type="text"
 				class="easycommerce-product-search easycommerce-shop-search border border-ec-border pl-10 pr-2 py-1 w-full rounded-full hover:border-ec-secondary focus:border-ec-primary  placeholder:text-ec-light-black focus:outline-none"
-				placeholder="Search...">
+				placeholder="<?php esc_attr_e('Search...', 'easycommerce'); ?>">
 		</div>
 		<div class="easycommerce-drawer-cross-icon bg-[#F8F8F8] border-b border-ec-border p-4">
 			<div class="flex items-center gap-[6px]">
@@ -301,12 +301,12 @@ if (! function_exists('display_attribute')) {
 	<div class="easycommerce-drawer-product-search easycommerce-drawer-shop-search w-full relative">
 		<img
 			src="<?php echo esc_url(EASYCOMMERCE_ASSETS_URL . 'common/img/blocks/shop-page/product-search.png'); ?>"
-			alt="Search Icon"
+			alt="<?php esc_attr_e('Search Icon', 'easycommerce'); ?>"
 			class="search-icon" />
 		<input
 			type="text"
 			class="easycommerce-product-search easycommerce-shop-search border border-ec-border pl-10 pr-2 py-1 w-full rounded-lg hover:border-ec-secondary focus:border-ec-primary  placeholder:text-ec-light-black focus:outline-none"
-			placeholder="Search...">
+			placeholder="<?php esc_attr_e('Search...', 'easycommerce'); ?>">
 	</div>
 	<!-- Categories Section -->
 	<?php

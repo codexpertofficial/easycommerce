@@ -2,6 +2,7 @@ import { registerBlockType } from '@wordpress/blocks';
 import { useBlockProps } from '@wordpress/block-editor';
 import { Slot } from '@wordpress/components';
 import { applyFilters } from '@wordpress/hooks';
+import { __ } from '@wordpress/i18n';
 import './style.css';
 
 const billingAddressIcon = (
@@ -26,7 +27,7 @@ const billingAddressIcon = (
  * @param {Object} config The block configuration.
  */
 const blockConfig = applyFilters('easycommerce.blocks.billing-address.config', {
-    title: 'Billing Address',
+    title: __('Billing Address', 'easycommerce'),
     icon: billingAddressIcon,
     category: 'easycommerce-checkout',
 });
@@ -37,8 +38,8 @@ registerBlockType('easycommerce/checkout--billing-address', {
         const blockProps = useBlockProps();
         return (
             <div {...blockProps}>
-                <h3>Billing Address</h3>
-                <p>This is your billing address being edited.</p>
+                <h3>{__('Billing Address', 'easycommerce')}</h3>
+                <p>{__('This is your billing address being edited.', 'easycommerce')}</p>
                 <Slot name="easycommerce.blocks.billing-address.edit" props={{ blockProps }} />
             </div>
         );
@@ -47,8 +48,8 @@ registerBlockType('easycommerce/checkout--billing-address', {
         const blockProps = useBlockProps.save();
         return (
             <div {...blockProps}>
-                <h3>Billing Address</h3>
-                <p>This is your billing address as saved.</p>
+                <h3>{__('Billing Address', 'easycommerce')}</h3>
+                <p>{__('This is your billing address as saved.', 'easycommerce')}</p>
             </div>
         );
     },

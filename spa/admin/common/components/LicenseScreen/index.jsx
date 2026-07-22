@@ -1,4 +1,5 @@
 import React from "react";
+import { __ } from "@wordpress/i18n";
 import "./assets/style.css";
 
 const logo = `${EASYCOMMERCE.assets}common/img/ec-logo.png`;
@@ -20,7 +21,7 @@ const LicenseScreen = ({
                 <button
                     className="absolute top-[-18px] right-[-23px] group w-6 h-6 rounded-full bg-white hover:bg-[#fa4109] transition-colors duration-200 flex items-center justify-center"
                     onClick={onClose}
-                    aria-label="Close"
+                    aria-label={ __( 'Close', 'easycommerce' ) }
                 >
                     <svg
                         width="16"
@@ -52,7 +53,7 @@ const LicenseScreen = ({
                                 {addon.name}
                             </h2>
                             <p className="w-[74%] mx-auto text-center text-ec-body font-inter font-normal text-base">
-                                If you already purchased the <strong>{addon.name}</strong> addon, enter your license key below to activate it, or purchase a license now to start using its features.
+                                { __( 'If you already purchased the', 'easycommerce' ) } <strong>{addon.name}</strong> { __( 'addon, enter your license key below to activate it, or purchase a license now to start using its features.', 'easycommerce' ) }
                             </p>
                         </div>
 
@@ -63,7 +64,7 @@ const LicenseScreen = ({
                                 border-ec-primary transition-all ease-in-out duration-300"
                                 onClick={switchVariationModalTab}
                             >
-                                Activate License
+                                { __( 'Activate License', 'easycommerce' ) }
                             </button>
                             <button
                                 className="w-full h-12 flex flrx-1 justify-center items-center font-medium font-inter text-base 
@@ -71,7 +72,7 @@ const LicenseScreen = ({
                                 ease-in-out duration-300"
                                 onClick={handleBuyLicense}
                             >
-                                Get Your License Now
+                                { __( 'Get Your License Now', 'easycommerce' ) }
                             </button>
                         </div>
                     </div>

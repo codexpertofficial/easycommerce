@@ -1,4 +1,5 @@
 import React from "react";
+import { __ } from "@wordpress/i18n";
 
 const CustomerDetails = ({ customer }) => {
      
@@ -27,7 +28,7 @@ const CustomerDetails = ({ customer }) => {
                 <div className="w-1/2 bg-white pt-[17px] rounded-2xl">
                     <div className=" border-b border-ec-table-stock">
                          <p className="text-ec-title font-medium font-inter lg:text-xl md:text-lg leading-8 pb-4 px-6">
-                            Customer Details
+                            {__("Customer Details", "easycommerce")}
                         </p>
                     </div>
                     <div className="px-6 pt-8">
@@ -72,7 +73,7 @@ const CustomerDetails = ({ customer }) => {
                                     </div>
                                     <p className="w-full text-ec-body flex items-center justify-between text-base font-inter leading-[26px] font-normal">
                                         <span className="">
-                                             Customer Since
+                                             {__("Customer Since", "easycommerce")}
                                         </span>
                                         <span className="text-ec-title font-inter font-normal text-sm">
                                             {customer.since}
@@ -93,7 +94,7 @@ const CustomerDetails = ({ customer }) => {
                                     </div>
                                     <p className="w-full text-ec-body flex items-center justify-between text-base font-inter leading-[26px] font-normal">
                                         <span className="">
-                                            Total Orders
+                                            {__("Total Orders", "easycommerce")}
                                         </span>
                                         <span className="text-ec-title font-inter font-normal text-sm">
                                             {customer.orders.length ?? "0"}
@@ -108,7 +109,7 @@ const CustomerDetails = ({ customer }) => {
                                     </div>
                                     <p className="w-full text-ec-body flex items-center justify-between text-base font-inter leading-[26px] font-normal">
                                         <span className="">
-                                            Avg. Order Value
+                                            {__("Avg. Order Value", "easycommerce")}
                                         </span>
                                         <span className="text-ec-title font-inter font-normal text-sm">
                                             {customer.aov}
@@ -124,10 +125,10 @@ const CustomerDetails = ({ customer }) => {
                                     </div>
                                     <p className="w-full text-ec-body flex items-center justify-between text-base font-inter leading-[26px] font-normal">
                                         <span className="">
-                                            Last Order
+                                            {__("Last Order", "easycommerce")}
                                         </span>
                                         <span className="text-ec-title font-inter font-normal text-sm">
-                                            {customer.last_order ?? "N/A"}
+                                            {customer.last_order ?? __("N/A", "easycommerce")}
                                         </span>
                                     </p>
                                 </li>

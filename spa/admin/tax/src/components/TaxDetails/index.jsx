@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { __ } from "@wordpress/i18n";
 
 // Components
 import Regions from "./elements/Regions";
@@ -402,7 +403,7 @@ const TaxDetails = ({ hideAddNew, taxId, preloadedData = [] }) => {
                                 className="text-ec-body font-inter font-normal text-base leading-4 w-[180px]"
                                 htmlFor="easycommerce-tax-regions"
                             >
-                                Rates
+                                { __( "Rates", "easycommerce" ) }
                             </label>
                             {!ratesLoader ? (
                                 <Regions

@@ -26,103 +26,78 @@ class Shortcode {
 		$this->shortcode( 'easycommerce-payment', array( $this, 'payment' ) );
 	}
 
+	/**
+	 * Markup for the React auth SPA mount point.
+	 *
+	 * The login/registration/reset-password screens are rendered by the React
+	 * `auth` bundle which mounts into this container. The initial screen is
+	 * passed via data-screen so a directly-loaded shortcode page still opens on
+	 * the expected screen; in-app navigation is handled by the hash router.
+	 *
+	 * @param string $screen One of `login`, `register`, `reset`.
+	 * @return string
+	 */
+	private function auth_container( $screen = 'login' ) {
+		return sprintf(
+			'<div id="easycommerce_auth_render" class="easycommerce-auth" data-screen="%s"></div>',
+			esc_attr( $screen )
+		);
+	}
+
+	/**
+	 * Panel shown when a logged-in user lands on an auth screen.
+	 */
+	private function already_logged_in( $title, $message ) {
+		return sprintf(
+			'<div class="easycommerce-auth-complete text-center !max-w-[620px] mx-auto !my-20 bg-white py-[77px] px-8 rounded-xl">
+				<h3 class="!m-0 !font-inter !font-semibold text-2xl text-ec-body">%s</h3>
+				<p class="!m-0 font-inter font-medium text-base leading-[26px] text-ec-placeholder">%s</p>
+			</div>',
+			esc_html( $title ),
+			esc_html( $message )
+		);
+	}
+
 	public function reset_password() {
 		if ( is_user_logged_in() ) {
-			return sprintf(
-				'<div class="easycommerce-reset-complete text-center !max-w-[620px] mx-auto !my-20 bg-white py-[77px] px-8 rounded-xl">
-					<h3 class="!m-0 !font-inter !font-semibold text-2xl text-ec-body">%s</h3>
-					<p class="!m-0 font-inter font-medium text-base leading-[26px] text-ec-placeholder">%s</p>
-				</div>',
+			return $this->already_logged_in(
 				__( 'You are already logged in.', 'easycommerce' ),
 				__( 'You cannot reset your password while logged in.', 'easycommerce' )
 			);
 		}
-		return Utility::get_template( 'shortcodes/reset/template-1.php' );
+		return $this->auth_container( 'reset' );
 	}
 
 
 	public function login() {
-
-		echo isset( $_GET['registration'] ) ? __( 'Registration Complete please login', 'easycommerce' ) : '';
-
-		ob_start();
-
-		wp_login_form(
-			array(
-				'form_id'        => 'easycommerce-login-form',
-				'label_username' => __( 'Email Address', 'easycommerce' ),
-				'label_password' => __( 'Password', 'easycommerce' ),
-				'label_remember' => __( 'Remember Me', 'easycommerce' ),
-				'label_log_in'   => __( 'Sign In', 'easycommerce' ),
-				'remember'       => true,
-				'value_remember' => true,
-			)
-		);
-
-		$form_output = ob_get_clean();
-
-		// Add "required" attributes to username & password fields
-		$form_output = str_replace(
-			['id="user_login"', 'id="user_pass"'],
-			['id="user_login" required', 'id="user_pass" required'],
-			$form_output
-		);
-
-		// Add "Forgot Password?" link
-		$forgot_password_url  = easycommerce_reset_password_page( true );
-		$forgot_password_link = sprintf(
-			'<p class="forgot-password"><a class="text-ec-placeholder font-inter font-normal text-base leading-[26px] hover:!text-royal-purple focus:text-royal-purple !no-underline" href="%1$s">%2$s</a></p>',
-			esc_url( $forgot_password_url ),
-			__( 'Forgot Password?', 'easycommerce' )
-		);
-
-		$register_page_id  = easycommerce_registration_page( true );
-		$reset_password_url = easycommerce_reset_password_page( true );
-
-		$form_html = sprintf(
-			'<div class="easycommerce-login-form-wrapper !max-w-[620px] mx-auto !my-20 bg-white py-[77px] px-8 rounded-xl">
-				<div class="easycommerce-login-form-header mb-8 flex flex-col gap-2">
-					<h3 class="!m-0 !font-inter !font-semibold text-2xl text-ec-body">%1$s</h3>
-					<p class="!m-0 font-inter font-medium text-base leading-[26px] text-ec-placeholder">%2$s</p>
-				</div>
-
-				<div class="easycommerce-login-form-body">
-					%3$s
-				</div>
-
-				<div class="easycommerce-login-form-footer flex justify-center items-center gap-2">
-					<div class="easycommerce-login-form-footer">
-						%4$s
-						<a href="%5$s" class="font-inter text-royal-purple font-normal text-base leading-[26px] hover:!text-royal-purple focus:text-royal-purple !no-underline">%6$s</a>
-					</div>
-				</div>
-			</div>',
-			__( 'Sign In', 'easycommerce' ),
-			__( 'Welcome back! sign in and let the greenery spark your joy', 'easycommerce' ),
-			$form_output . $forgot_password_link,
-			__( 'Don\'t have an account?', 'easycommerce' ),
-			esc_url( $register_page_id ),
-			__( 'Sign Up', 'easycommerce' )
-		);
-
-		return $form_html;
+		if ( is_user_logged_in() ) {
+			return $this->already_logged_in(
+				__( 'You are already logged in.', 'easycommerce' ),
+				__( 'You are signed in to your account.', 'easycommerce' )
+			);
+		}
+		return $this->auth_container( 'login' );
 	}
 
 	public function register() {
 		if ( is_user_logged_in() ) {
-			return sprintf(
-				'<div class="easycommerce-registration-complete text-center !max-w-[620px] mx-auto !my-20 bg-white py-[77px] px-8 rounded-xl">
-					<h3 class="!m-0 !font-inter !font-semibold text-2xl text-ec-body">%s</h3>
-					<p class="!m-0 font-inter font-medium text-base leading-[26px] text-ec-placeholder">%s</p>
-				</div>',
+			return $this->already_logged_in(
 				__( 'You are already registered.', 'easycommerce' ),
 				__( 'You are already logged in.', 'easycommerce' )
 			);
-		} else {
-			return Utility::get_template( 'shortcodes/register/template-1.php' );
 		}
+		return $this->auth_container( 'register' );
 	}
 
+	/**
+	 * Render the checkout, dispatching to the template chosen in settings.
+	 *
+	 * The active template comes from Settings -> Checkout ("checkout_template").
+	 * Note that template-2 is the intentionally compact checkout: it collects
+	 * only name, email and country and does not gather a full shipping/billing
+	 * address (see views/shortcodes/checkout/template-2.php). That is by design
+	 * for low-friction / digital-goods stores, not a missing-address bug.
+	 */
 	public function checkout( $atts ) {
 
 		$store_mode = Utility::get_option( 'general', 'visibility', 'store_mode' ) ?: 'test';
@@ -138,6 +113,7 @@ class Shortcode {
 		return Utility::get_template( "shortcodes/checkout/{$template}.php", array( 'atts' => $atts ) );
 
 		return sprintf(
+			// translators: 1: template name that was used, 2: comma separated list of valid template names.
 			__( 'Invlaid template <code>%1$s</code> used. Valid options are: <code>%2$s</code>.', 'easycommerce' ),
 			$atts['template'],
 			implode( ', ', $template )
@@ -161,7 +137,7 @@ class Shortcode {
 				return sprintf( '<div id="easycommerce_dashboard_render" class="%s"></div>', $atts['template'] );
 			}
 		} else {
-			echo do_shortcode( '[easycommerce-login]' );
+			return $this->auth_container( 'login' );
 		}
 	}
 

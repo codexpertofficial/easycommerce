@@ -1,4 +1,5 @@
 import React from "react";
+import { __ } from "@wordpress/i18n";
 
 const backIcon = `${EASYCOMMERCE.assets}admin/img/icons/Back.png`;
 
@@ -19,7 +20,7 @@ export default function Previous({ baseSlug = "products", current = 1 }) {
                             className="pointer-events-none"
                         />
                     </div>
-                    <span>Back</span>
+                    <span>{ __( 'Back', 'easycommerce' ) }</span>
                 </a>
             ) : (
                 <div className="flex text-ec-title font-inter text-sm leading-5 items-center gap-2 py-2 px-3 border border-ec-table-stock rounded-[4px] hover:text-ec-title cursor-not-allowed active:text-ec-title active:shadow-none focus:text-ec-title focus:shadow-none">
@@ -32,7 +33,7 @@ export default function Previous({ baseSlug = "products", current = 1 }) {
                             className="pointer-events-none"
                         />
                     </div>
-                    <span>Back</span>
+                    <span>{ __( 'Back', 'easycommerce' ) }</span>
                 </div>
             )}
         </>

@@ -35,7 +35,6 @@ import Categories from "./pages/Categories";
 import Tags from "./pages/Tags";
 import Brands from "./pages/Brands";
 import Orders from "./pages/Orders";
-import NewOrder from "./pages/Orders/NewOrder";
 import SingleOrder from "./pages/Orders/SingleOrder";
 import Transactions from "./pages/Transactions";
 import Customers from "./pages/Customers";
@@ -385,35 +384,35 @@ const App = () => {
     }, []);
 
     const breadcrumbMap = applyFilters("easycommerce.store.breadcrumbMap", {
-        "/dashboard": ["EasyCommerce", "Dashboard"], 
+        "/dashboard": [__("EasyCommerce", "easycommerce"), __("Dashboard", "easycommerce")],
         "/products": productView?.mode === "edit"
-            ? ["EasyCommerce", "Products", editProductTitle || "Edit"]
-            : ["EasyCommerce", "Products"],
-        "/products/add": ["EasyCommerce", "Products", "Add Product"],
-        "/attributes": ["EasyCommerce", "Products", "Attributes"],
-        "/categories": ["EasyCommerce", "Products", "Categories"],
-        "/tags": ["EasyCommerce", "Products", "Tags"],
-        "/brands": ["EasyCommerce", "Products", "Brands"],
-        "/orders": orderId ? ["EasyCommerce", "Orders", `#${orderId}`] : ["EasyCommerce", "Orders"],
-        "/orders/new": ["EasyCommerce", "Orders", "New Order"],
-        "/refunds": ["EasyCommerce", "Refunds"],
-        "/transactions": ["EasyCommerce", "Transactions"],
-        "/customers": customerId ? ["EasyCommerce", "Customers", `#${customerName}`] : ["EasyCommerce", "Customers"],
+            ? [__("EasyCommerce", "easycommerce"), __("Products", "easycommerce"), editProductTitle || __("Edit", "easycommerce")]
+            : [__("EasyCommerce", "easycommerce"), __("Products", "easycommerce")],
+        "/products/add": [__("EasyCommerce", "easycommerce"), __("Products", "easycommerce"), __("Add Product", "easycommerce")],
+        "/attributes": [__("EasyCommerce", "easycommerce"), __("Products", "easycommerce"), __("Attributes", "easycommerce")],
+        "/categories": [__("EasyCommerce", "easycommerce"), __("Products", "easycommerce"), __("Categories", "easycommerce")],
+        "/tags": [__("EasyCommerce", "easycommerce"), __("Products", "easycommerce"), __("Tags", "easycommerce")],
+        "/brands": [__("EasyCommerce", "easycommerce"), __("Products", "easycommerce"), __("Brands", "easycommerce")],
+        "/orders": orderId ? [__("EasyCommerce", "easycommerce"), __("Orders", "easycommerce"), `#${orderId}`] : [__("EasyCommerce", "easycommerce"), __("Orders", "easycommerce")],
+        "/orders/new": [__("EasyCommerce", "easycommerce"), __("Orders", "easycommerce"), __("New Order", "easycommerce")],
+        "/refunds": [__("EasyCommerce", "easycommerce"), __("Refunds", "easycommerce")],
+        "/transactions": [__("EasyCommerce", "easycommerce"), __("Transactions", "easycommerce")],
+        "/customers": customerId ? [__("EasyCommerce", "easycommerce"), __("Customers", "easycommerce"), `#${customerName}`] : [__("EasyCommerce", "easycommerce"), __("Customers", "easycommerce")],
         "/coupons": couponView?.mode === "edit"
-        ? ["EasyCommerce", "Coupons", editCouponTitle || "Edit Coupon"]
+        ? [__("EasyCommerce", "easycommerce"), __("Coupons", "easycommerce"), editCouponTitle || __("Edit Coupon", "easycommerce")]
         : couponView?.mode === "add"
-        ? ["EasyCommerce", "Coupons", "Add Coupon"]
-        : ["EasyCommerce", "Coupons"],
-        "/reports": ["EasyCommerce", "Reports"],
-        "/reports/orders": ["EasyCommerce", "Reports", "Orders"],
-        "/reports/products": reportProductId ? ["EasyCommerce", "Reports", "Products", reportProductName] : ["EasyCommerce", "Reports", "Products"],
-        "/reports/customers": ["EasyCommerce", "Reports", "Customers"],
-        "/reports/revenues": ["EasyCommerce", "Reports", "Revenues"],
-        "/abandoned-cart": ["EasyCommerce", "Abandoned Cart"],
-        "/reviews": ["EasyCommerce", "Product Reviews"],
-        "/addons": ["EasyCommerce", "Addons"],
-        "/help": ["EasyCommerce", "Help & Support"],
-        "/get-pro": ["EasyCommerce", "Pro"],
+        ? [__("EasyCommerce", "easycommerce"), __("Coupons", "easycommerce"), __("Add Coupon", "easycommerce")]
+        : [__("EasyCommerce", "easycommerce"), __("Coupons", "easycommerce")],
+        "/reports": [__("EasyCommerce", "easycommerce"), __("Reports", "easycommerce")],
+        "/reports/orders": [__("EasyCommerce", "easycommerce"), __("Reports", "easycommerce"), __("Orders", "easycommerce")],
+        "/reports/products": reportProductId ? [__("EasyCommerce", "easycommerce"), __("Reports", "easycommerce"), __("Products", "easycommerce"), reportProductName] : [__("EasyCommerce", "easycommerce"), __("Reports", "easycommerce"), __("Products", "easycommerce")],
+        "/reports/customers": [__("EasyCommerce", "easycommerce"), __("Reports", "easycommerce"), __("Customers", "easycommerce")],
+        "/reports/revenues": [__("EasyCommerce", "easycommerce"), __("Reports", "easycommerce"), __("Revenues", "easycommerce")],
+        "/abandoned-cart": [__("EasyCommerce", "easycommerce"), __("Abandoned Cart", "easycommerce")],
+        "/reviews": [__("EasyCommerce", "easycommerce"), __("Product Reviews", "easycommerce")],
+        "/addons": [__("EasyCommerce", "easycommerce"), __("Addons", "easycommerce")],
+        "/help": [__("EasyCommerce", "easycommerce"), __("Help & Support", "easycommerce")],
+        "/get-pro": [__("EasyCommerce", "easycommerce"), __("Pro", "easycommerce")],
     });
 
     const renderContent = () => {
@@ -522,7 +521,7 @@ const App = () => {
 
     return (
         <div className="bg-[#EEF0FF]">
-            {isLoading ? <div>Loading...</div> : renderContent()}
+            {isLoading ? <div>{__("Loading...", "easycommerce")}</div> : renderContent()}
             <RootToast />
         </div>
     );

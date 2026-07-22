@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { __ } from '@wordpress/i18n';
 
 const Refunds = ({ orderId }) => {
 	const [refunds, setRefunds] = useState([]);
@@ -23,27 +24,27 @@ const Refunds = ({ orderId }) => {
 
 	const tableColumns = [
 		{
-			name: 'Reason',
+			name: __('Reason', 'easycommerce'),
 			key: 'reason',
 			widthClass: 'w-[27%]',
 		},
 		{
-			name: 'Amount',
+			name: __('Amount', 'easycommerce'),
 			key: 'amount',
 			widthClass: 'w-[14%]',
 		},
 		{
-			name: 'Transaction ID',
+			name: __('Transaction ID', 'easycommerce'),
 			key: 'transaction_id',
 			widthClass: 'w-[22%]',
 		},
 		{
-			name: 'Refunded By',
+			name: __('Refunded By', 'easycommerce'),
 			key: 'refunded_by',
 			widthClass: 'w-[18%]',
 		},
 		{
-			name: 'Date',
+			name: __('Date', 'easycommerce'),
 			key: 'date',
 			widthClass: 'w-[19%]',
 		},
@@ -54,14 +55,14 @@ const Refunds = ({ orderId }) => {
 			? txnId.length > 10
 				? `...${txnId.slice(txnId.length - 10)}`
 				: txnId
-			: 'N/A';
+			: __('N/A', 'easycommerce');
 	};
 
 	return (
 		<div className="mt-6 bg-white rounded-2xl">
 			<div className="flex flex-col border-b border--ec-table-stock pt-4 px-6">
 				<h3 className="text-ec-title text-xl font-medium font-inter leading-8 pb-4">
-					Refunds
+					{__('Refunds', 'easycommerce')}
 				</h3>
 			</div>
 			<div className="p-5">
@@ -86,7 +87,7 @@ const Refunds = ({ orderId }) => {
 									className="border-b border-ec-table-stock"
 								>
 									<td className="w-[27%] px-4 font-inter text-sm text-ec-body">
-										{EASYCOMMERCE.refund_reasons[refund.reason] || 'N/A'}
+										{EASYCOMMERCE.refund_reasons[refund.reason] || __('N/A', 'easycommerce')}
 									</td>
 									<td className="w-[14%] px-4 font-inter text-sm text-ec-body">
 										${refund.amount}
@@ -110,7 +111,7 @@ const Refunds = ({ orderId }) => {
 															<img
 																src={paymentIcon}
 																className="pointer-events-none object-contain rounded h-[30px] w-[54px] p-[3px]"
-																alt="payment-icon"
+																alt={__('payment-icon', 'easycommerce')}
 																style={{ border: '1px solid #f0edfb' }}
 															/>
 														)}
@@ -133,10 +134,10 @@ const Refunds = ({ orderId }) => {
 											return (
 												<div className="flex flex-col">
 													<p className="font-inter font-normal mb-1 lg:text-sm text-ec-body md:text-[14px]">
-														{date ? date : 'N/A'}
+														{date ? date : __('N/A', 'easycommerce')}
 													</p>
 													<span className="text-ec-placeholder text-sm font-inter leading-4">
-														{time ? time : 'N/A'}
+														{time ? time : __('N/A', 'easycommerce')}
 													</span>
 												</div>
 											);

@@ -1,0 +1,138 @@
+{
+    "translation-revision-date": "YEAR-MO-DA HO:MI+ZONE",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "build\/checkout.bundle.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "es_ES",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Payment Method": [
+                "M\u00e9todo de pago"
+            ],
+            "First Name": [
+                "Nombre"
+            ],
+            "Your first name": [
+                "Tu nombre"
+            ],
+            "Last Name": [
+                "Apellidos"
+            ],
+            "Your last name": [
+                "Tus apellidos"
+            ],
+            "Email": [
+                "Correo electr\u00f3nico"
+            ],
+            "Your email": [
+                "Tu correo electr\u00f3nico"
+            ],
+            "Phone": [
+                "Tel\u00e9fono"
+            ],
+            "Enter your phone number": [
+                "Introduce tu n\u00famero de tel\u00e9fono"
+            ],
+            "Country": [
+                "Pa\u00eds"
+            ],
+            "State": [
+                "Provincia"
+            ],
+            "City": [
+                "Ciudad"
+            ],
+            "Write here": [
+                "Escribe aqu\u00ed"
+            ],
+            "Card Number": [
+                "N\u00famero de tarjeta"
+            ],
+            "CVC": [
+                "CVC"
+            ],
+            "Confirm Order": [
+                "Confirmar pedido"
+            ],
+            "Subtotal": [
+                "Subtotal"
+            ],
+            "Billing Address": [
+                "Direcci\u00f3n de facturaci\u00f3n"
+            ],
+            "Shipping Address": [
+                "Direcci\u00f3n de env\u00edo"
+            ],
+            "Same as Billing": [
+                "Igual que la facturaci\u00f3n"
+            ],
+            "Discount code": [
+                "C\u00f3digo de descuento"
+            ],
+            "Apply": [
+                "Aplicar"
+            ],
+            "Order Total": [
+                "Total del pedido"
+            ],
+            "Loading...": [
+                "Cargando..."
+            ],
+            "Address line 1": [
+                "Direcci\u00f3n l\u00ednea 1"
+            ],
+            "Your address": [
+                "Tu direcci\u00f3n"
+            ],
+            "Address line 2": [
+                "Direcci\u00f3n l\u00ednea 2"
+            ],
+            "Select your City": [
+                "Selecciona tu ciudad"
+            ],
+            "Select your State": [
+                "Selecciona tu provincia"
+            ],
+            "Select your country": [
+                "Selecciona tu pa\u00eds"
+            ],
+            "Postal Code": [
+                "C\u00f3digo postal"
+            ],
+            "Your Orders": [
+                "Tus pedidos"
+            ],
+            "Shipping Eastimate": [
+                "Estimaci\u00f3n de env\u00edo"
+            ],
+            "Tax Eastimate": [
+                "Estimaci\u00f3n de impuestos"
+            ],
+            "Debit \/ Credit card": [
+                "Tarjeta de d\u00e9bito\/cr\u00e9dito"
+            ],
+            "Internet banking": [
+                "Banca por internet"
+            ],
+            "Google \/ Apple Wallet": [
+                "Google \/ Apple Wallet"
+            ],
+            "Name on Card": [
+                "Nombre en la tarjeta"
+            ],
+            "Enter card holder name": [
+                "Introduce el nombre del titular de la tarjeta"
+            ],
+            "Expiration date (MM\/YY)": [
+                "Fecha de caducidad (MM\/AA)"
+            ],
+            "Learn more Taxes and Shipping information": [
+                "M\u00e1s informaci\u00f3n sobre impuestos y env\u00edo"
+            ]
+        }
+    }
+}

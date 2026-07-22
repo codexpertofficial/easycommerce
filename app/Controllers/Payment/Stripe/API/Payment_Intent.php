@@ -42,19 +42,19 @@ class Payment_Intent {
 			if ( $user_id > 0 ) {
 				$user           = wp_get_current_user();
 				$customer_email = $user->user_email;
-				$customer_id    = get_user_meta( $user_id, '_stripe_customer_id', true );
+				$customer_id    = get_user_meta( $user_id, 'stripe_customer_id', true );
 
 				if ( $customer_id ) {
 					try {
 						$customer = $this->api_client->customers->retrieve( $customer_id );
 						if ( ! empty( $customer->deleted ) ) {
-							delete_user_meta( $user_id, '_stripe_customer_id' );
+							delete_user_meta( $user_id, 'stripe_customer_id' );
 							$customer_id = false;
 						} else {
 							return $customer_id;
 						}
 					} catch ( \Exception $e ) {
-						delete_user_meta( $user_id, '_stripe_customer_id' );
+						delete_user_meta( $user_id, 'stripe_customer_id' );
 						$customer_id = false;
 					}
 				}
@@ -78,7 +78,7 @@ class Payment_Intent {
 				if ( ! empty( $existing_customers->data ) ) {
 					$customer_id = $existing_customers->data[0]->id;
 					if ( $user_id > 0 ) {
-						update_user_meta( $user_id, '_stripe_customer_id', $customer_id );
+						update_user_meta( $user_id, 'stripe_customer_id', $customer_id );
 					}
 					return $customer_id;
 				}
@@ -97,7 +97,7 @@ class Payment_Intent {
 			$customer = $this->api_client->customers->create( $customer_data );
 
 			if ( $user_id > 0 ) {
-				update_user_meta( $user_id, '_stripe_customer_id', $customer->id );
+				update_user_meta( $user_id, 'stripe_customer_id', $customer->id );
 			}
 
 			return $customer->id;
@@ -265,6 +265,12 @@ class Payment_Intent {
 				);
 
 				$payment_intent = $this->api_client->paymentIntents->create( $payment_intent_data );
+
+				// Fix 4: Bind the intent to the order server-side so Order::pay() can
+				// verify it without trusting the client-supplied intent ID.
+				if ( $order_id ) {
+					$order->add_meta( '_ec_pending_stripe_intent_id', $payment_intent->id );
+				}
 
 				return array(
 					'client_secret'     => $payment_intent->client_secret,

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { __ } from "@wordpress/i18n";
 
 
 //Images and icons
@@ -22,11 +23,11 @@ const AddNewCustomer = ({ setIsAddNew }) => {
             meta,
         } = event.target;
         if (password.value !== password_again.value) {
-            setPasswordError("Passwords do not match.");
+            setPasswordError(__("Passwords do not match.", "easycommerce"));
             return;
         }
         if (password.value.length < 6) {
-            setPasswordError("Password must be at least 6 characters long.");
+            setPasswordError(__("Password must be at least 6 characters long.", "easycommerce"));
             return;
         }
         easycommerce_modal(true);
@@ -65,9 +66,9 @@ const AddNewCustomer = ({ setIsAddNew }) => {
     const openMediaLibrary = () => {
         // Create the media frame.
         const frame = wp.media({
-            title: "Select a Image",
+            title: __("Select a Image", "easycommerce"),
             button: {
-                text: "Use selected image",
+                text: __("Use selected image", "easycommerce"),
             },
             multiple: false,
         });
@@ -97,7 +98,7 @@ const AddNewCustomer = ({ setIsAddNew }) => {
                     </div>
                     <div className="w-full pt-8 bg-white rounded-t-xl pb-[65px] relative">
                         <h2 className="text-ec-body text-2xl leading-8 font-inter font-medium text-center">
-                            Add New Customer
+                            {__("Add New Customer", "easycommerce")}
                         </h2>
                         <div className="absolute -bottom-[49px] -translate-x-1/2 left-1/2">
                             <div className="relative">
@@ -108,10 +109,10 @@ const AddNewCustomer = ({ setIsAddNew }) => {
                                     <img
                                         src={photo || PreDefinedImage}
                                         className="w-full h-full"
-                                        alt="Customer"
+                                        alt={__("Customer", "easycommerce")}
                                     />
                                     <div className="absolute w-[32px] h-[32px] rounded-full border-[#F0EDFB] bg-[#FFFFFF30] flex items-center justify-center -right-[10px] top-[55px]" style={{boxShadow: '0px 4px 16.1px 0px #00000040', backdropFilter: 'blur(7.099999904632568px)'}}>
-                                        <img  className="w-[17px] h-[14px]" src={cameraIcon} alt="Edit" />
+                                        <img  className="w-[17px] h-[14px]" src={cameraIcon} alt={__("Edit", "easycommerce")} />
                                     </div>
                                 </button>
                             </div>
@@ -125,7 +126,7 @@ const AddNewCustomer = ({ setIsAddNew }) => {
                                 className="block mb-4 h"
                             >
                                 <span className=" text-ec-body block text-base font-medium font-inter leading-4 mb-1">
-                                    First Name
+                                    {__("First Name", "easycommerce")}
                                 </span>
 
                                 <div className="relative">
@@ -141,7 +142,7 @@ const AddNewCustomer = ({ setIsAddNew }) => {
                                     <input
                                         id="easycommerce-first-name"
                                         type="text"
-                                        placeholder="Enter first name"
+                                        placeholder={__("Enter first name", "easycommerce")}
                                         name="first_name"
                                         required
                                         defaultValue=""
@@ -169,7 +170,7 @@ const AddNewCustomer = ({ setIsAddNew }) => {
                                 className="block mb-4"
                             >
                                 <span className="text-ec-body block text-base font-medium font-inter leading-4 mb-1">
-                                    Last Name
+                                    {__("Last Name", "easycommerce")}
                                 </span>
 
                                 <div className="relative">
@@ -186,7 +187,7 @@ const AddNewCustomer = ({ setIsAddNew }) => {
                                     <input
                                         id="easycommerce-last-name"
                                         type="text"
-                                        placeholder="Enter last name"
+                                        placeholder={__("Enter last name", "easycommerce")}
                                         name="last_name"
                                         required
                                         defaultValue=""
@@ -214,7 +215,7 @@ const AddNewCustomer = ({ setIsAddNew }) => {
                                 className="block mb-4"
                             >
                                 <span className="text-ec-body block text-base font-medium font-inter leading-4 mb-1">
-                                    Email Address
+                                    {__("Email Address", "easycommerce")}
                                 </span>
 
                                 <div className="relative">
@@ -230,7 +231,7 @@ const AddNewCustomer = ({ setIsAddNew }) => {
                                     <input
                                         id="easycommerce-email"
                                         type="email"
-                                        placeholder="Enter a valid email address"
+                                        placeholder={__("Enter a valid email address", "easycommerce")}
                                         name="email"
                                         required
                                         defaultValue=""
@@ -258,7 +259,7 @@ const AddNewCustomer = ({ setIsAddNew }) => {
                                 className="block mb-4"
                             >
                                 <span className="text-ec-body block text-base font-medium font-inter leading-4 mb-1">
-                                    Enter Password
+                                    {__("Enter Password", "easycommerce")}
                                 </span>
 
                                 <div className="relative">
@@ -274,7 +275,7 @@ const AddNewCustomer = ({ setIsAddNew }) => {
                                     <input
                                         id="easycommerce-password"
                                         type="password"
-                                        placeholder="Enter new password"
+                                        placeholder={__("Enter new password", "easycommerce")}
                                         name="password"
                                         required
                                         defaultValue=""
@@ -302,7 +303,7 @@ const AddNewCustomer = ({ setIsAddNew }) => {
                                 className="block mb-4"
                             >
                                 <span className="text-ec-body block text-base font-medium font-inter leading-4 mb-1">
-                                    Re-enter Password
+                                    {__("Re-enter Password", "easycommerce")}
                                 </span>
 
                                 <div className="relative">
@@ -318,7 +319,7 @@ const AddNewCustomer = ({ setIsAddNew }) => {
                                     <input
                                         id="easycommerce-password-again"
                                         type="password"
-                                        placeholder="Re-ender password to confirm"
+                                        placeholder={__("Re-ender password to confirm", "easycommerce")}
                                         name="password_again"
                                         required
                                         defaultValue=""
@@ -351,12 +352,12 @@ const AddNewCustomer = ({ setIsAddNew }) => {
                                     onClick={() => setIsAddNew(false)}
                                     className="w-1/2 flex justify-center items-center gap-[8px] font-inter bg-white group border border-ec-primary py-[10px] px-4 rounded-lg text-ec-primary focus:shadow-none text-base font-normal"
                                 >
-                                    Cancel
+                                    {__("Cancel", "easycommerce")}
                                 </button>
                                 <button
                                     class="easycommerce-primary-button w-1/2 py-[11px] font-inter text-base font-normal"
                                 >
-                                    Submit
+                                    {__("Submit", "easycommerce")}
                                 </button>
                             </div>
                         </form>

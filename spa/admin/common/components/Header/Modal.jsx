@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { toast, Bounce } from "react-toastify";
+import { __ } from "@wordpress/i18n";
 
 
 //Icon
@@ -77,10 +78,10 @@ const Modal = ({ setShowModal }) => {
                     {!showMessage && (
                         <>
                             <h2 className="text-center font-inter text-2xl font-medium mb-2 text-ec-title">
-                                Your Voice Matters
+                                { __( 'Your Voice Matters', 'easycommerce' ) }
                             </h2>
                             <p className="max-w-[344px] mx-auto text-center text-ec-body font-inter font-normal text-sm leading-[20px]">
-                                Help us make EasyCommerce the best it can be. Share your feedback and ideas with us!
+                                { __( 'Help us make EasyCommerce the best it can be. Share your feedback and ideas with us!', 'easycommerce' ) }
                             </p>
                             <form
                                 className="w-full mt-5"
@@ -91,7 +92,7 @@ const Modal = ({ setShowModal }) => {
                                         className="block font-inter font-medium text-base leading-[26px] text-ec-body"
                                         htmlFor="easycommerce-feedback-modal-name"
                                     >
-                                        First Name
+                                        { __( 'First Name', 'easycommerce' ) }
                                     </label>
                                     <div className="relative">
                                         <span
@@ -107,7 +108,7 @@ const Modal = ({ setShowModal }) => {
                                             type="text"
                                             name="name"
                                             id="easycommerce-feedback-modal-name"
-                                            placeholder="Enter first name"
+                                            placeholder={ __( 'Enter first name', 'easycommerce' ) }
                                             required
                                             defaultValue=""
                                             onInput={(e) => {
@@ -134,7 +135,7 @@ const Modal = ({ setShowModal }) => {
                                         className="block font-inter font-medium text-base leading-[26px] text-ec-body"
                                         htmlFor="easycommerce-feedback-modal-email"
                                     >
-                                        Email Address
+                                        { __( 'Email Address', 'easycommerce' ) }
                                     </label>
                                     <div className="relative">
                                         <span
@@ -150,7 +151,7 @@ const Modal = ({ setShowModal }) => {
                                             type="email"
                                             name="email"
                                             id="easycommerce-feedback-modal-email"
-                                            placeholder="Enter a valid email address"
+                                            placeholder={ __( 'Enter a valid email address', 'easycommerce' ) }
                                             required
                                             defaultValue=""
                                             onInput={(e) => {
@@ -177,7 +178,7 @@ const Modal = ({ setShowModal }) => {
                                         className="block font-inter font-medium text-base leading-[26px] text-ec-body"
                                         htmlFor="easycommerce-feedback-modal-subject"
                                     >
-                                        Subject
+                                        { __( 'Subject', 'easycommerce' ) }
                                     </label>
                                     <div className="relative">
                                         <span
@@ -195,7 +196,7 @@ const Modal = ({ setShowModal }) => {
                                             type="text"
                                             name="subject"
                                             id="easycommerce-feedback-modal-subject"
-                                            placeholder="Write here"
+                                            placeholder={ __( 'Write here', 'easycommerce' ) }
                                             required
                                             defaultValue=""
                                             onInput={(e) => {
@@ -222,7 +223,7 @@ const Modal = ({ setShowModal }) => {
                                         className="block text-base font-medium leading-[26px] text-ec-body font-inter"
                                         htmlFor="easycommerce-feedback-modal-message"
                                     >
-                                        Message
+                                        { __( 'Message', 'easycommerce' ) }
                                     </label>
                                     <div className="relative">
                                         <span
@@ -240,7 +241,7 @@ const Modal = ({ setShowModal }) => {
 
                                         <textarea
                                             id="easycommerce-feedback-modal-message"
-                                            placeholder="Write here"
+                                            placeholder={ __( 'Write here', 'easycommerce' ) }
                                             name="message"
                                             defaultValue=""
                                             onInput={(e) => {
@@ -268,13 +269,13 @@ const Modal = ({ setShowModal }) => {
                                             onClick={removeModal}
                                             className="w-1/2 flex justify-center items-center gap-[8px] font-inter bg-white group border border-ec-primary py-[10px] px-4 rounded-xl text-ec-primary focus:shadow-none text-base font-normal"
                                         >
-                                            Cancel
+                                            { __( 'Cancel', 'easycommerce' ) }
                                         </button>
                                         <button
                                             type="submit"
                                             className="easycommerce-primary-button w-1/2 py-[11px] font-inter text-base font-normal"
                                         >
-                                            Send Message
+                                            { __( 'Send Message', 'easycommerce' ) }
                                         </button>
                                     </div>
                                 </p>
@@ -291,16 +292,16 @@ const Modal = ({ setShowModal }) => {
                                     alt="Modal"
                                 />
                                 <h4 className="text-center mt-4 text-ec-title font-inter font-medium text-2xl leading-[34px]">
-                                    Thank you for your feedback
+                                    { __( 'Thank you for your feedback', 'easycommerce' ) }
                                 </h4>
                                 <p className="w-[286px] text-center text-ec-body font-inter font-normal text-sm leading-5">
-                                    We will use your feedback to build a better experience for everyone.
+                                    { __( 'We will use your feedback to build a better experience for everyone.', 'easycommerce' ) }
                                 </p>
                                 <button
                                     onClick={removeModal}
                                     className="block w-[98px] h-[47px] easycommerce-primary-button font-inter text-base font-normal my-[16px]"
                                 >
-                                    Close
+                                    { __( 'Close', 'easycommerce' ) }
                                 </button>
                             </div>
                         </>

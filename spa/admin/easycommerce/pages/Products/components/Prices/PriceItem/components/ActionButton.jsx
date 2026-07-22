@@ -1,4 +1,5 @@
  import React from 'react';
+import { __ } from '@wordpress/i18n';
 import { Tooltip } from 'react-tooltip';
 
 // Arrow Up (Plus)
@@ -67,10 +68,10 @@ const ActionButton = ({ onClick, icon, color = 'ec-primary' }) => {
     };
 
     const tooltipContent = {
-        plus: 'Expand',
-        minus: 'Close',
-        copy: 'Duplicate',
-        trash: 'Delete',
+        plus: __('Expand', 'easycommerce'),
+        minus: __('Close', 'easycommerce'),
+        copy: __('Duplicate', 'easycommerce'),
+        trash: __('Delete', 'easycommerce'),
     };
 
     return (

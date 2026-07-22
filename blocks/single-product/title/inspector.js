@@ -14,10 +14,10 @@ const Inspector = (props) => {
     const { color } = attributes;
 
     const colors = [
-        { name: "Body", color: "var(--color-ec-body)" },
-        { name: "Primary", color: "var(--color-ec-primary)" },
-        { name: "Body Light", color: "var(--color-ec-secondary)" },
-        { name: "Title", color: "#120350" },
+        { name: __("Body", "easycommerce"), color: "var(--color-ec-body)" },
+        { name: __("Primary", "easycommerce"), color: "var(--color-ec-primary)" },
+        { name: __("Body Light", "easycommerce"), color: "var(--color-ec-secondary)" },
+        { name: __("Title", "easycommerce"), color: "#120350" },
     ];
 
     return (

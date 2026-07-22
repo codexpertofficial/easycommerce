@@ -30,8 +30,11 @@ const Edit = (props) => {
         fetchProducts();
     }, []);
 
-    const [activeTab, setActiveTab] = useState("Product Details");
-    const tabs = ["Product Details", "Review"];
+    const [activeTab, setActiveTab] = useState("details");
+    const tabs = [
+        { key: "details", label: __("Product Details", "easycommerce") },
+        { key: "review", label: __("Review", "easycommerce") },
+    ];
 
     const blockProps = useBlockProps();
 
@@ -45,28 +48,28 @@ const Edit = (props) => {
                             <button
                                 key={index}
                                 className={`py-2 font-inter font-normal text-base leading-[26px] focus:outline-none first:pl-0 last:pr-0 -mb-[1px] ${
-                                    activeTab === tab
+                                    activeTab === tab.key
                                         ? "border-b border-ec-primary text-ec-primary"
                                         : "text-ec-body hover:text-ec-primary"
                                 }`}
-                                onClick={() => setActiveTab(tab)}
+                                onClick={() => setActiveTab(tab.key)}
                             >
-                                {tab}
+                                {tab.label}
                             </button>
                         ))}
                     </div>
                     <div className="mt-8">
-                        {activeTab === "Product Details" && (
+                        {activeTab === "details" && (
                             <>{parse(productDetails)}</>
                         )}
-                        {activeTab === "Review" && <Review postId={postId} />}
+                        {activeTab === "review" && <Review postId={postId} />}
                     </div>
                 </div>
             </div>
         </>
     ) : (
         <div {...blockProps}>
-            <p>Post type is not product.</p>
+            <p>{__("Post type is not product.", "easycommerce")}</p>
         </div>
     );
 };

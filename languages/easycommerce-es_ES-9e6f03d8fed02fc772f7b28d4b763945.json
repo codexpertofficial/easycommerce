@@ -1,0 +1,24 @@
+{
+    "translation-revision-date": "YEAR-MO-DA HO:MI+ZONE",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "assets\/admin\/js\/notice.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "es_ES",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Installing..": [
+                "Instalando.."
+            ],
+            "Migration addon activated successfully!": [
+                "\u00a1Extensi\u00f3n de migraci\u00f3n activada correctamente!"
+            ],
+            "Failed to install migration addon.": [
+                "No se ha podido instalar la extensi\u00f3n de migraci\u00f3n."
+            ]
+        }
+    }
+}

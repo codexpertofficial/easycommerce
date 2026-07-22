@@ -10,7 +10,7 @@ use EasyCommerce\Helpers\Utility;
 </div>
 <div>
 	<div class="easycommerce-coupon-wrapper relative mb-4">
-		<input type="text" placeholder="Discount code" id="easycommerce-coupon-field" />
+		<input type="text" placeholder="<?php esc_attr_e( 'Discount code', 'easycommerce' ); ?>" id="easycommerce-coupon-field" />
 		<button type="button"
 			class="absolute top-[9px] right-[9px] rtl:right-auto rtl:left-[9px] py-1 md:py-[7px] px-5 border border-ec-border text-[#737791] focus:text-[#737791] rounded-[6px] focus:border-ec-border bg-[#F8F8F8] focus:bg-[#F8F8F8] text-base font-inter font-normal leading-[26px] shadow-none"
 			id="easycommerce-coupon-apply">

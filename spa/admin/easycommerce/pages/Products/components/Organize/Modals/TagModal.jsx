@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
+import { __ } from "@wordpress/i18n";
 import Title from "../../../../../../common/components/Title";
 import SubTitle from "../../../../../../common/components/SubTitle";
 import TextField from "../../../../../../common/components/inputs/TextField";
@@ -37,7 +38,7 @@ const TagModal = ({isOpen, onClose, onTagCreated}) => {
         };
 
         if (!payload.name.trim() || !payload.slug.trim()) {
-            toast.error('All fields are required!');
+            toast.error(__('All fields are required!', 'easycommerce'));
             return;
         }
 
@@ -56,17 +57,17 @@ const TagModal = ({isOpen, onClose, onTagCreated}) => {
             const data = await response.json();
 
             if (data.success) {
-                toast.success('Tag created successfully');
+                toast.success(__('Tag created successfully', 'easycommerce'));
                 setTagsData({ tags: [{ tag_name: '', tag_slug: '' }] });
                 if (onTagCreated) {
                     onTagCreated(data.data.tag);
                 }
                 onClose();
             } else {
-                toast.error(data.data.message || 'Operation failed');
+                toast.error(data.data.message || __('Operation failed', 'easycommerce'));
             }
         } catch (error) {
-            toast.error('Operation failed');
+            toast.error(__('Operation failed', 'easycommerce'));
         } finally {
             easycommerce_modal(false);
         }
@@ -86,26 +87,26 @@ const TagModal = ({isOpen, onClose, onTagCreated}) => {
                     </svg>
                 </button>
 				<div className="flex justify-between items-center border-b px-6 py-4">
-					<Title title={"Add New Tag"} />
+					<Title title={__("Add New Tag", "easycommerce")} />
 				</div>
 				<div className="p-6 flex flex-col gap-4 max-h-[75vh] overflow-visible">
 					<div className="flex flex-col gap-2">
 						<SubTitle
-							SubTitle="Name"
-							notice="It'll be used to filter products"
+							SubTitle={__("Name", "easycommerce")}
+							notice={__("It'll be used to filter products", "easycommerce")}
 						/>
 						<TextField
 							name="tag_name"
 							value={tagsData.tags[0].tag_name}
 							onChange={handleChange}
-							placeholder="Enter Name"
+							placeholder={__("Enter Name", "easycommerce")}
 							className="h-ec-input"
 						/>
 					</div>
 					<div className="flex flex-col gap-2">
 						<SubTitle
-							SubTitle="Slug"
-							notice="URL-friendly slug of the tag"
+							SubTitle={__("Slug", "easycommerce")}
+							notice={__("URL-friendly slug of the tag", "easycommerce")}
 						/>
 						<div className="h-ec-input rounded-lg font-inter text-[14px] leading-[20px] border border-ec-table-stock placeholder-ec-placeholder hover:border-ec-primary focus-within:border-ec-primary focus-within:outline-none focus-within:[box-shadow:0_0_0_4px_#F3F0FF] transition-colors duration-300 ease-in-out overflow-hidden flex">
 							<div className="h-ec-input flex items-center justify-center text-ec-light-black pl-4">
@@ -129,7 +130,7 @@ const TagModal = ({isOpen, onClose, onTagCreated}) => {
 					<div className="flex justify-end mt-6">
 						<Button
 							className="easycommerce-outline-button"
-							value="Create Tag"
+							value={__("Create Tag", "easycommerce")}
 							onClick={handleSubmit}
 						/>
 					</div>

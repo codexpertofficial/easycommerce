@@ -1,7 +1,9 @@
 <?php
 return array(
-    'customer_subject' => 'Welcome to ##shop_name## - You\'re All Set!',
-    'customer_body'    => '
+    /* translators: the ##...## tokens are merge placeholders substituted with real account data at send time - keep them verbatim. */
+    'customer_subject' => __( 'Welcome to ##shop_name## - You\'re All Set!', 'easycommerce' ),
+    /* translators: the ##...## tokens are merge placeholders substituted with real account data at send time - keep them verbatim. */
+    'customer_body'    => __( '
 Hi ##customer_name##,
 
 Welcome to ##shop_name##! We\'re so glad you\'re here. Your account is ready to go.
@@ -23,10 +25,12 @@ Thanks for joining us. We hope you find exactly what you\'re looking for!
 
 Warm regards,
 The ##shop_name## Team
-',
+', 'easycommerce' ),
 
-    'admin_subject'    => 'New Customer: ##customer_name## - ##shop_name##',
-    'admin_body'       => '
+    /* translators: the ##...## tokens are merge placeholders substituted with real account data at send time - keep them verbatim. */
+    'admin_subject'    => __( 'New Customer: ##customer_name## - ##shop_name##', 'easycommerce' ),
+    /* translators: the ##...## tokens are merge placeholders substituted with real account data at send time - keep them verbatim. */
+    'admin_body'       => __( '
 Hi there,
 
 A new customer just created an account at ##shop_name##.
@@ -41,5 +45,5 @@ You can view and manage their profile from the admin dashboard.
 
 Best regards,
 The ##shop_name## Team
-',
+', 'easycommerce' ),
 );

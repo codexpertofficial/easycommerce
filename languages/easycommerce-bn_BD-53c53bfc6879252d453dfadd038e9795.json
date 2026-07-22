@@ -1,0 +1,24 @@
+{
+    "translation-revision-date": "YEAR-MO-DA HO:MI+ZONE",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "blocks\/single-product\/add-to-cart\/edit.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "bn_BD",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Add to cart": [
+                "\u0995\u09be\u09b0\u09cd\u099f\u09c7 \u09af\u09cb\u0997 \u0995\u09b0\u09c1\u09a8"
+            ],
+            "Quantity": [
+                "\u09aa\u09b0\u09bf\u09ae\u09be\u09a3"
+            ],
+            "Post type is not product.": [
+                "\u09aa\u09cb\u09b8\u09cd\u099f \u099f\u09be\u0987\u09aa \u09aa\u09a3\u09cd\u09af \u09a8\u09af\u09bc\u0964"
+            ]
+        }
+    }
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import { __ } from "@wordpress/i18n";
 
 const bulk = `${EASYCOMMERCE.assets}admin/img/bulk.png`;
 
@@ -34,10 +35,10 @@ const BulkReminderPopup = ({
 
                 <div className="flex flex-col justify-center items-center mb-6">
                     <h3 className="font-inter font-medium text-xl text-ec-title mb-2">
-                        Are you sure you want to send reminder?
+                        {__("Are you sure you want to send reminder?", "easycommerce")}
                     </h3>
                     <p className="w-9/12 mx-auto text-center font-inter font-normal text-base text-ec-body">
-                        You're going to Remind <span className="font-semibold">All</span> selected?
+                        {__("You're going to Remind", "easycommerce")} <span className="font-semibold">{__("All", "easycommerce")}</span> {__("selected?", "easycommerce")}
                     </p>
                 </div>
 
@@ -47,7 +48,7 @@ const BulkReminderPopup = ({
                          border-ec-title rounded-lg py-[10px]"
                         onClick={onClose}
                     >
-                        Don't Send
+                        {__("Don't Send", "easycommerce")}
                     </button>
                     <button
                         className="w-[181px] h-[45px] font-inter font-normal text-base rounded-lg px-10 py-[10px] border
@@ -55,7 +56,7 @@ const BulkReminderPopup = ({
                         onClick={onConfirm}
                         type="button"
                     >
-                        Yes, Send
+                        {__("Yes, Send", "easycommerce")}
                     </button>
                 </div>
             </div>

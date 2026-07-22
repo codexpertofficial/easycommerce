@@ -1,3 +1,5 @@
+import { __ } from "@wordpress/i18n";
+
 export default function SearchBox({ assetsPath }) {
     //Icons
     const searchIcon = `${EASYCOMMERCE.assets}admin/img/icons/search.png`;
@@ -9,18 +11,18 @@ export default function SearchBox({ assetsPath }) {
                     <img
                         src={searchIcon}
                         className="w-4 h-4 absolute z-10 top-1/2 -translate-y-1/2 left-[15px]"
-                        alt="Search Icon"
+                        alt={__("Search Icon", "easycommerce")}
                     />
                     <input
                         type="text"
                         className="font-inter easycommerce-help-search-input p-r-[100px] w-full border-0 h-14 pr-8 pl-5 rounded-xl z-0 focus:outline-none"
-                        placeholder="Ask a question"
+                        placeholder={__("Ask a question", "easycommerce")}
                     />
                     <button
                         type="submit"
                         className="font-inter absolute right-[7px] top-[7px] rounded-lg text-white text-base leading-[26px] py-2 px-4 inline-block bg-ec-primary"
                     >
-                        Search
+                        {__("Search", "easycommerce")}
                     </button>
                 </form>
             </div>

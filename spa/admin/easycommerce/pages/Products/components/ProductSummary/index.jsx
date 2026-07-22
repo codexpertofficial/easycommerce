@@ -33,12 +33,12 @@ const ProductSummary = ({ productTitle, prevData }) => {
 
 			<div className="bg-white rounded-xl border-ec-table-stock border border-solid overflow-hidden">
 				<div className="py-[14px] px-6 flex items-center justify-between border-b border-ec-table-stock border-solid">
-					<PanelTitle title="Product Summary" notice="Write a compelling summary to highlight key product features." />
+					<PanelTitle title={__('Product Summary', 'easycommerce')} notice={__('Write a compelling summary to highlight key product features.', 'easycommerce')} />
 					<div className="panel-actions">
 						<div>
 							<button
 								data-tooltip-id={!productTitle ? 'ai-gallery' : ''}
-								data-tooltip-content="Add product title first!"
+								data-tooltip-content={__('Add product title first!', 'easycommerce')}
 								className={`ai-generate ${productTitle ? '' : 'grayscale opacity-50 cursor-not-allowed'}`}
 								type="button"
 								onClick={() => productTitle && setAiOpen(true)}
@@ -104,7 +104,7 @@ const ProductSummary = ({ productTitle, prevData }) => {
 					<div className="p-6 duration-300">
 						<TextArea
 							name={`product_summary`}
-							placeholder={`Briefly describe the product, its key benefit, and who it’s for. Keep it within 20–40 words.`}
+							placeholder={__('Briefly describe the product, its key benefit, and who it’s for. Keep it within 20–40 words.', 'easycommerce')}
 							value={summary?.replace(/<[^>]*>/g, '')}
 							onChange={(e) => setSummary(e.target.value)}
 						/>

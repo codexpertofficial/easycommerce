@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
+import { __ } from "@wordpress/i18n";
 
 import "react-datepicker/dist/react-datepicker.css";
 import DatepickerComponent from "../DatepickerComponent";
@@ -28,7 +29,7 @@ const CustomDate = ({ customRange, handleCustomRange }) => {
     return (
         <div className="mt-3 pt-3 border-t border-ec-border">
             <h4 className="font-inter font-medium text-sm text-center text-ec-body mb-2">
-                Custom Date
+                { __( 'Custom Date', 'easycommerce' ) }
             </h4>
             <div className="flex items-center gap-2 justify-end">
                 {/* <div>
@@ -68,7 +69,7 @@ const CustomDate = ({ customRange, handleCustomRange }) => {
                         }
                     }}
 
-                    placeholderText="Select custom range"
+                    placeholderText={ __( 'Select custom range', 'easycommerce' ) }
                     width="w-full"
                     minDate={new Date("1972-01-01")}
                 />

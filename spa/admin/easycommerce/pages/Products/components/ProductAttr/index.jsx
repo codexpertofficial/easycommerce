@@ -150,14 +150,14 @@ const ProductAttr = ({globalAttributes, fetchGlobalAttributes, productAttributes
                 <div class="bg-white rounded-xl border-ec-table-stock border border-solid">
                     <div class="py-[14px] px-6 flex items-center justify-between border-b border-ec-table-stock border-solid rounded-t-xl">
                         <PanelTitle
-                            title="Attributes"
+                            title={__('Attributes', 'easycommerce')}
                             notice={__('Add attributes to your product to help customers filter and search for products more easily.', 'easycommerce')}
                         />
                         <div className="panel-actions">
                             <div>
                                 <button
                                     data-tooltip-id={!productTitle ? 'ai-summary' : ''}
-                                    data-tooltip-content="Add product title first!"
+                                    data-tooltip-content={__('Add product title first!', 'easycommerce')}
                                     className={`ai-generate ${productTitle ? '' : 'grayscale opacity-50 cursor-not-allowed'}`}
                                     type="button"
                                     onClick={() => productTitle && setAiOpen(true)}
@@ -236,8 +236,8 @@ const ProductAttr = ({globalAttributes, fetchGlobalAttributes, productAttributes
                                 ) : (
                                     <span className='text-ec-body font-inter text-sm leading-[20px]'>
                                         {globalAttributes.length > 0 ?
-                                        __('No attributes are added yet. Click the "Add New" button below to add attributes to this product.', 'easycommerce')
-                                        : __('Add options like color or size. Click the "Manage Attributes" button below or "Generate with AI" above.', 'easycommerce')}
+                                        __('No attributes are added yet. Click the "Add Attribute" button below to add attributes to this product.', 'easycommerce')
+                                        : __('Add options like color or size. Click the "Add Attribute" button below or "Generate with AI" above.', 'easycommerce')}
                                     </span>
                                 )}
                             </div>

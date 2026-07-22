@@ -1,5 +1,6 @@
 import React from "react";
 import { applyFilters } from '@wordpress/hooks';
+import { __ } from "@wordpress/i18n";
 
 // icons
 const totalOrdersIcon = `${EASYCOMMERCE.assets}public/img/icons/total-orders.png`;
@@ -17,23 +18,23 @@ const Summery = ({ data }) => {
      */
     const defaultSummaryItems = [
         {
-            title: "Total Orders",
-            value: data?.count || "N/A",
+            title: __( "Total Orders", "easycommerce" ),
+            value: data?.count || __( "N/A", "easycommerce" ),
             icon: totalOrdersIcon,
         },
         {
-            title: "Total Spent",
-            value: data?.ltv || "N/A",
+            title: __( "Total Spent", "easycommerce" ),
+            value: data?.ltv || __( "N/A", "easycommerce" ),
             icon: totalSpentIcon,
         },
         {
-            title: "Average Orders",
-            value: data?.aov || "N/A",
+            title: __( "Average Orders", "easycommerce" ),
+            value: data?.aov || __( "N/A", "easycommerce" ),
             icon: avgOrderValueIcon,
         },
         {
-            title: "Customer since",
-            value: data?.since || "N/A",
+            title: __( "Customer since", "easycommerce" ),
+            value: data?.since || __( "N/A", "easycommerce" ),
             icon: joiningDateIcon,
         },
     ];
@@ -44,7 +45,7 @@ const Summery = ({ data }) => {
             className="easycommerce-dashboard-section col-span-1 rounded-[10px] flex flex-col gap-[18px]"
         >
             <h3 className="easycommerce-dashboard-section-title !text-lg sm:!text-2xl">
-                Summary
+                {__( "Summary", "easycommerce" )}
             </h3>
 
             <div className="easycommerce-dashboard-summery-list grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -55,7 +56,7 @@ const Summery = ({ data }) => {
                     >
                         <img
                             src={item.icon}
-                            alt="icon"
+                            alt={__( "icon", "easycommerce" )}
                             className="w-11 h-11 object-contain pointer-events-none shrink-0"
                         />
 

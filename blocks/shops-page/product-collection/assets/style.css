@@ -1,0 +1,26 @@
+.ec-product-collection__grid {
+    display: grid;
+    gap: 24px;
+}
+
+.ec-product-collection__item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.ec-product-collection__item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+.ec-product-collection__title {
+    margin: 0;
+    font-weight: 600;
+}
+
+.ec-product-collection__price {
+    margin: 0;
+}

@@ -1,7 +1,9 @@
 <?php
 return array(
-	'customer_subject' => 'We\'ve Got Your Order ###order_id## - ##shop_name##',
-	'customer_body'    => '
+	/* translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim. */
+	'customer_subject' => __( 'We\'ve Got Your Order ###order_id## - ##shop_name##', 'easycommerce' ),
+	/* translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim. */
+	'customer_body'    => __( '
 Hi ##customer_name##,
 
 Thanks for your order! We\'ve received it and it\'s currently awaiting payment confirmation. Once your payment clears, we\'ll get things moving right away.
@@ -17,10 +19,12 @@ Questions? We\'re always here - just reach out.
 
 Warm regards,
 The ##shop_name## Team
-',
+', 'easycommerce' ),
 
-	'admin_subject'    => 'New Pending Order ###order_id## - ##customer_name## - ##shop_name##',
-	'admin_body'       => '
+	/* translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim. */
+	'admin_subject'    => __( 'New Pending Order ###order_id## - ##customer_name## - ##shop_name##', 'easycommerce' ),
+	/* translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim. */
+	'admin_body'       => __( '
 Hi there,
 
 A new order ###order_id## from ##customer_name## is pending payment.
@@ -39,5 +43,5 @@ Please review if any action is needed on your end.
 
 Best regards,
 The ##shop_name## Team
-',
+', 'easycommerce' ),
 );

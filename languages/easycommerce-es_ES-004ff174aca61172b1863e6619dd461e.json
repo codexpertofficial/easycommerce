@@ -1,0 +1,195 @@
+{
+    "translation-revision-date": "YEAR-MO-DA HO:MI+ZONE",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "build\/shipping.bundle.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "es_ES",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Failed to update shipping plan.": [
+                "No se ha podido actualizar el plan de env\u00edo."
+            ],
+            "Shipping plan updated successfully.": [
+                "Plan de env\u00edo actualizado correctamente."
+            ],
+            "Country": [
+                "Pa\u00eds"
+            ],
+            "State": [
+                "Provincia"
+            ],
+            "City": [
+                "Ciudad"
+            ],
+            "Write here": [
+                "Escribe aqu\u00ed"
+            ],
+            "Select Country": [
+                "Selecciona el pa\u00eds"
+            ],
+            "Methods": [
+                "M\u00e9todos"
+            ],
+            "Cancel": [
+                "Cancelar"
+            ],
+            "Action": [
+                "Acci\u00f3n"
+            ],
+            "Name": [
+                "Nombre"
+            ],
+            "Select City": [
+                "Selecciona la ciudad"
+            ],
+            "Select State": [
+                "Selecciona el estado"
+            ],
+            "Status": [
+                "Estado"
+            ],
+            "Are you sure you want to delete?": [
+                "\u00bfSeguro que quieres eliminarlo?"
+            ],
+            "You're going to delete this, are you sure?": [
+                "Vas a eliminar esto, \u00bfseguro?"
+            ],
+            "No, Keep it": [
+                "No, conservarlo"
+            ],
+            "Yes, Delete": [
+                "S\u00ed, eliminar"
+            ],
+            "Delete Permanently": [
+                "Eliminar permanentemente"
+            ],
+            "Description": [
+                "Descripci\u00f3n"
+            ],
+            "Enabled": [
+                "Activado"
+            ],
+            "Disabled": [
+                "Desactivado"
+            ],
+            "No shipping plans configured": [
+                "No hay planes de env\u00edo configurados"
+            ],
+            "Set up shipping plans to define shipping rates by region. ": [
+                "Configura planes de env\u00edo para definir las tarifas de env\u00edo por regi\u00f3n. "
+            ],
+            "Read docs.": [
+                "Leer la documentaci\u00f3n."
+            ],
+            "+ Add Plan": [
+                "+ A\u00f1adir plan"
+            ],
+            "Min Price (%s)": [
+                "Precio m\u00edn. (%s)"
+            ],
+            "Max Price (%s)": [
+                "Precio m\u00e1x. (%s)"
+            ],
+            "Min Weight": [
+                "Peso m\u00edn."
+            ],
+            "Max Weight": [
+                "Peso m\u00e1x."
+            ],
+            "Min Quantity": [
+                "Cantidad m\u00edn."
+            ],
+            "Max Quantity": [
+                "Cantidad m\u00e1x."
+            ],
+            "Min": [
+                "M\u00edn."
+            ],
+            "Max": [
+                "M\u00e1x."
+            ],
+            "Shipping name here": [
+                "Nombre del env\u00edo aqu\u00ed"
+            ],
+            "Write description here": [
+                "Escribe la descripci\u00f3n aqu\u00ed"
+            ],
+            "Enable\/Disable": [
+                "Activar\/Desactivar"
+            ],
+            "Regions": [
+                "Regiones"
+            ],
+            "Zip Code": [
+                "C\u00f3digo postal"
+            ],
+            "Calculation Base": [
+                "Base de c\u00e1lculo"
+            ],
+            "Select Base": [
+                "Selecciona la base"
+            ],
+            "Cart Total": [
+                "Total del carrito"
+            ],
+            "Total Weight": [
+                "Peso total"
+            ],
+            "Item Count": [
+                "N\u00famero de art\u00edculos"
+            ],
+            "Taxable": [
+                "Sujeto a impuestos"
+            ],
+            "No tax rate configured for this country.": [
+                "No hay ning\u00fan tipo impositivo configurado para este pa\u00eds."
+            ],
+            "Method Name": [
+                "Nombre del m\u00e9todo"
+            ],
+            "Shipping Fee (%s)": [
+                "Gastos de env\u00edo (%s)"
+            ],
+            "Write name here": [
+                "Escribe el nombre aqu\u00ed"
+            ],
+            "Write min weight": [
+                "Escribe el peso m\u00ednimo"
+            ],
+            "Write max weight": [
+                "Escribe el peso m\u00e1ximo"
+            ],
+            "Write your fee": [
+                "Escribe tu comisi\u00f3n"
+            ],
+            "Calculation base is required.": [
+                "La base de c\u00e1lculo es obligatoria."
+            ],
+            "Shipping plan name is required.": [
+                "El nombre del plan de env\u00edo es obligatorio."
+            ],
+            "Update Shipping Plan": [
+                "Actualizar plan de env\u00edo"
+            ],
+            "Save Shipping Plan": [
+                "Guardar plan de env\u00edo"
+            ],
+            "Plan": [
+                "Plan"
+            ],
+            "Add Shipping Plan": [
+                "A\u00f1adir plan de env\u00edo"
+            ],
+            "Shipping Plans": [
+                "Planes de env\u00edo"
+            ],
+            "+ New Plan": [
+                "+ Nuevo plan"
+            ]
+        }
+    }
+}

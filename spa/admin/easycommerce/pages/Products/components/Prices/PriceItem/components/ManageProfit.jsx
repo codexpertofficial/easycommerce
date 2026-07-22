@@ -37,7 +37,7 @@ const ManageProfit = ({ id, setPriceItem, priceItem }) => {
 					htmlFor={`manage-profit-${id}`}
 					class="text-base font-inter font-normal ml-2 text-[#282828]"
 				>
-					Calculate profit margin
+					{__('Calculate profit margin', 'easycommerce')}
 				</label>
 			</div>
 

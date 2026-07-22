@@ -15,7 +15,7 @@
  * @var string $attributes['spacing'] Title letter spacing.
  */
 if( get_post_type( get_the_ID() ) !== 'product' ) {
-    echo "Post type is not product";
+    esc_html_e( 'Post type is not product', 'easycommerce' );
     return;
 }
 

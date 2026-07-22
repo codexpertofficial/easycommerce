@@ -1,4 +1,5 @@
 import React from "react";
+import { __ } from "@wordpress/i18n";
 
 const CleanAbandonedCartModal = ({
   isVisible,
@@ -15,7 +16,7 @@ const CleanAbandonedCartModal = ({
             <img
               className="rounded-t-[22px] w-full"
               src={abandonedBg}
-              alt="Abandoned Cart"
+              alt={__("Abandoned Cart", "easycommerce")}
             />
             <button
               onClick={closePopup}
@@ -29,10 +30,10 @@ const CleanAbandonedCartModal = ({
 
           <div className="flex flex-col justify-center items-center mt-4 mb-4 sm:mb-6 px-4">
             <h3 className="font-inter font-medium text-lg sm:text-xl text-ec-title mb-2 text-center">
-              Clean Abandoned Carts
+              {__("Clean Abandoned Carts", "easycommerce")}
             </h3>
             <p className="w-full sm:w-9/12 mx-auto text-center font-inter font-normal text-sm sm:text-base text-ec-body">
-              Choose whether to clean all abandoned carts or only invalid ones.
+              {__("Choose whether to clean all abandoned carts or only invalid ones.", "easycommerce")}
             </p>
           </div>
 
@@ -42,13 +43,13 @@ const CleanAbandonedCartModal = ({
               onClick={cleanAbandonedCarts}
               type="button"
             >
-              Clean All
+              {__("Clean All", "easycommerce")}
             </button>
             <button
               className="w-full sm:w-[181px] h-[45px] font-inter font-normal text-sm sm:text-base border bg-white text-ec-title border-ec-title rounded-lg py-[10px]"
               onClick={cleanInvalidAbandonedCarts}
             >
-              Clean Invalid
+              {__("Clean Invalid", "easycommerce")}
             </button>
           </div>
         </div>

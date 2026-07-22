@@ -1,20 +1,21 @@
 import React from "react";
+import { __ } from "@wordpress/i18n";
 
 const RegionsHeader = () => {
     return (
         <thead>
             <tr>
                 <th className="w-[22%] text-start text-ec-body pb-2 text-sm font-normal leading-4 font-inter pl-[7px]">
-                    Country
+                    { __( "Country", "easycommerce" ) }
                 </th>
                 <th className="w-[22%] text-start text-ec-body pb-2 text-sm font-normal leading-4 font-inter pl-[7px]">
-                    State
+                    { __( "State", "easycommerce" ) }
                 </th>
                 <th className="w-[22%] text-start text-ec-body pb-2 text-sm font-normal leading-4 font-inter pl-[7px]">
-                    City
+                    { __( "City", "easycommerce" ) }
                 </th>
                 <th className="w-[22%] text-start text-ec-body pb-2 text-sm font-normal leading-4 font-inter pl-[7px]">
-                    Rate (%)
+                    { __( "Rate (%)", "easycommerce" ) }
                 </th>
                 <th className="w-[22%]"></th>
             </tr>

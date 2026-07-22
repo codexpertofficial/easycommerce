@@ -98,9 +98,12 @@ const Payment = ({ formValues, setFormValues }) => {
 
     useEffect(() => {
         if (!formValues.payment_methods?.length) {
+            const defaults = active_payment_methods?.length
+                ? active_payment_methods
+                : ["cash-on-delivery"];
             setFormValues((prev) => ({
                 ...prev,
-                payment_methods: active_payment_methods || [],
+                payment_methods: defaults,
             }));
         }
     }, [active_payment_methods]);
@@ -153,7 +156,7 @@ const Payment = ({ formValues, setFormValues }) => {
                 <div className="flex flex-col w-full space-y-6">
                     <div className="flex flex-col space-y-2">
                         <label className="text-ec-body text-[16px] font-medium">
-                            Currency
+                            {__('Currency', 'easycommerce')}
                         </label>
                         <select
                             className="easycommerce-wizard-input w-full"
@@ -161,7 +164,7 @@ const Payment = ({ formValues, setFormValues }) => {
                             value={formValues.currency || ""}
                             onChange={handleChange("currency")}
                         >
-                            <option value="">Select Your Currency</option>
+                            <option value="">{__('Select Your Currency', 'easycommerce')}</option>
                             {Object.entries(allCurrencies)
                                 .sort(([, a], [, b]) => a.name.localeCompare(b.name))
                                 .map(([code, data]) => (
@@ -177,7 +180,7 @@ const Payment = ({ formValues, setFormValues }) => {
                     </div>
                     <div className="flex flex-col space-y-2">
                         <label className="text-ec-body text-[16px] font-medium">
-                            Currency Format
+                            {__('Currency Format', 'easycommerce')}
                         </label>
                         <select
                             className="easycommerce-wizard-input w-full"
@@ -185,7 +188,7 @@ const Payment = ({ formValues, setFormValues }) => {
                             value={formValues.format || ""}
                             onChange={handleChange("format")}
                         >
-                            <option value="">Select Your Currency Format</option>
+                            <option value="">{__('Select Your Currency Format', 'easycommerce')}</option>
                             {Object.entries(currenciesList).map(([key, val]) => (
                                 <option key={key} value={key}>
                                     {val}
@@ -198,7 +201,7 @@ const Payment = ({ formValues, setFormValues }) => {
                     </div>
                     <div className="flex flex-col">
                         <label className="text-ec-body text-[16px] font-medium">
-                            Payment Methods
+                            {__('Payment Methods', 'easycommerce')}
                         </label>
                         <div>
                             {PaymentMethods.map(({ name, label, icon }) => {

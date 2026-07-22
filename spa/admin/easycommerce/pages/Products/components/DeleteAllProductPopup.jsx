@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
+import { __, sprintf, _n } from "@wordpress/i18n";
 import { addToastData } from "../../../redux-store/slices/toastSlice";
 
 const deleteWarningIcon = `${EASYCOMMERCE.assets}admin/img/icons/delete-warning.png`;
@@ -48,9 +49,13 @@ const DeleteAllProductPopup = ({
                     dispatch(
                         addToastData({
                             type: "success",
-                            message: `Product${isBulk ? "s" : ""} ${
-                                isPermanent ? "deleted permanently" : "trashed"
-                            }`,
+                            message: isBulk
+                                ? (isPermanent
+                                    ? __("Products deleted permanently", "easycommerce")
+                                    : __("Products trashed", "easycommerce"))
+                                : (isPermanent
+                                    ? __("Product deleted permanently", "easycommerce")
+                                    : __("Product trashed", "easycommerce")),
                         })
                     );
 
@@ -78,19 +83,24 @@ const DeleteAllProductPopup = ({
             <div className="flex flex-col justify-center items-center bg-white rounded-xl px-7 pt-[50px] py-9">
                 <div className="flex flex-col justify-center items-center gap-[26px] mb-[50px]">
                     <div className="w-[86px] h-[86px] flex justify-center items-center rounded-full bg-[#FF3A521A]">
-                        <img src={deleteWarningIcon} alt="delete-warning" className="w-10 h-8" />
+                        <img src={deleteWarningIcon} alt={__("delete-warning", "easycommerce")} className="w-10 h-8" />
                     </div>
 
                     <div className="flex flex-col justify-center items-center gap-1">
                         <h3 className="font-inter font-medium text-2xl text-ec-body">
-                            {isBulk ? "Delete selected products" : "Delete this product"}
+                            {isBulk ? __("Delete selected products", "easycommerce") : __("Delete this product", "easycommerce")}
                         </h3>
                         <p className="w-9/12 mx-auto text-center font-inter font-normal text-base text-ec-placeholder">
-                            You're going to delete
+                            {__("You're going to delete", "easycommerce")}
                             {isBulk
-                                ? ` ${bulkProductIds.length} selected products`
-                                : ` the “Product”`}{" "}
-                            {forceDelete && " permanently"} — are you sure?
+                                ? " " +
+                                  sprintf(
+                                      // translators: %d: number of selected products.
+                                      _n("%d selected product", "%d selected products", bulkProductIds.length, "easycommerce"),
+                                      bulkProductIds.length
+                                  )
+                                : " " + __("the “Product”", "easycommerce")}{" "}
+                            {forceDelete && __(" permanently", "easycommerce")} {__("— are you sure?", "easycommerce")}
                         </p>
                     </div>
                 </div>
@@ -100,13 +110,13 @@ const DeleteAllProductPopup = ({
                         className="font-inter font-medium text-base border bg-ec-body text-white border-ec-body rounded-lg px-[50px] py-[10px]"
                         onClick={discardAction}
                     >
-                        No, Keep it
+                        {__("No, Keep it", "easycommerce")}
                     </button>
                     <button
                         className="font-inter font-medium text-base text-ec-body border border-ec-body rounded-lg px-[50px] py-[10px] hover:bg-[#FF3A52] hover:border-[#FF3A52] hover:text-white"
                         onClick={() => handleBulkDelete(forceDelete)}
                     >
-                        Yes, Delete!
+                        {__("Yes, Delete!", "easycommerce")}
                     </button>
                 </div>
 
@@ -116,7 +126,7 @@ const DeleteAllProductPopup = ({
                             className="cursor-pointer font-inter font-normal text-base text-ec-placeholder underline hover:text-[#FF3A52]"
                             onClick={() => handleBulkDelete(true)}
                         >
-                            Delete Permanently
+                            {__("Delete Permanently", "easycommerce")}
                         </p>
                     </div>
                 )}

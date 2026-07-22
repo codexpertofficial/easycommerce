@@ -20,6 +20,10 @@ class Option extends API {
 			$this->response_error( array( 'message' => __( 'Option key is required.', 'easycommerce' ) ) );
 		}
 
+		if ( strpos( $key, 'easycommerce' ) !== 0 ) {
+			$this->response_error( array( 'message' => __( 'Option key is not allowed.', 'easycommerce' ) ) );
+		}
+
 		$value = get_option( $key );
 
 		if ( empty( $value ) ) {
@@ -53,6 +57,10 @@ class Option extends API {
 			$this->response_error( __( 'Option key is required.', 'easycommerce' ) );
 		}
 
+		if ( strpos( $key, 'easycommerce' ) !== 0 ) {
+			$this->response_error( __( 'Option key is not allowed.', 'easycommerce' ) );
+		}
+
 		update_option( $key, $value );
 
 		/**
@@ -78,6 +86,10 @@ class Option extends API {
 
 		if ( empty( $key ) ) {
 			$this->response_error( __( 'Option key is required.', 'easycommerce' ) );
+		}
+
+		if ( strpos( $key, 'easycommerce' ) !== 0 ) {
+			$this->response_error( __( 'Option key is not allowed.', 'easycommerce' ) );
 		}
 
 		/**

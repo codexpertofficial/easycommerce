@@ -1,0 +1,34 @@
+{
+    "translation-revision-date": "YEAR-MO-DA HO:MI+ZONE",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "blocks\/single-product\/product-tab\/components\/review.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "bn_BD",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Reviews": [
+                "\u09b0\u09bf\u09ad\u09bf\u0989"
+            ],
+            "Showing %d review": [
+                "%d\u099f\u09bf \u09b0\u09bf\u09ad\u09bf\u0989 \u09a6\u09c7\u0996\u09be\u09a8\u09cb \u09b9\u099a\u09cd\u099b\u09c7",
+                "%d\u099f\u09bf \u09b0\u09bf\u09ad\u09bf\u0989 \u09a6\u09c7\u0996\u09be\u09a8\u09cb \u09b9\u099a\u09cd\u099b\u09c7"
+            ],
+            "Write a review": [
+                "\u098f\u0995\u099f\u09bf \u09b0\u09bf\u09ad\u09bf\u0989 \u09b2\u09bf\u0996\u09c1\u09a8"
+            ],
+            "Your email address will not be published. required fields are marked": [
+                "\u0986\u09aa\u09a8\u09be\u09b0 \u0987\u09ae\u09c7\u0987\u09b2 \u09a0\u09bf\u0995\u09be\u09a8\u09be \u09aa\u09cd\u09b0\u0995\u09be\u09b6 \u0995\u09b0\u09be \u09b9\u09ac\u09c7 \u09a8\u09be\u0964 \u0986\u09ac\u09b6\u09cd\u09af\u0995 \u0998\u09b0\u0997\u09c1\u09b2\u09cb \u099a\u09bf\u09b9\u09cd\u09a8\u09bf\u09a4 \u0995\u09b0\u09be \u0986\u099b\u09c7"
+            ],
+            "Write your review": [
+                "\u0986\u09aa\u09a8\u09be\u09b0 \u09b0\u09bf\u09ad\u09bf\u0989 \u09b2\u09bf\u0996\u09c1\u09a8"
+            ],
+            "Submit Now": [
+                "\u098f\u0996\u09a8\u0987 \u099c\u09ae\u09be \u09a6\u09bf\u09a8"
+            ]
+        }
+    }
+}

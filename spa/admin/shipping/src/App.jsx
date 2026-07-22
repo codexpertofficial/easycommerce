@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
 import { Bounce, toast, ToastContainer } from "react-toastify";
+import { __ } from "@wordpress/i18n";
 import "react-toastify/dist/ReactToastify.css";
 
 import EmptyShipping from "./components/EmptyShipping";
@@ -102,14 +103,14 @@ const App = () => {
         <>
             <div className="flex justify-start items-center gap-8">
                 <p className="text-ec-body font-medium font-inter lg:text-xl md:text-lg leading-8">
-                    {addNewShipping ? "Add Shipping Plan" : ""}
+                    {addNewShipping ? __( "Add Shipping Plan", "easycommerce" ) : ""}
                 </p>
             </div>
 
             {!addNewShipping && shippingPlans.length > 0 && (
             <div className="flex justify-start items-center gap-8 h-10 mb-6">
                 <p className="text-ec-body font-medium font-inter lg:text-xl md:text-lg leading-8">
-                    Shipping Plans
+                    { __( "Shipping Plans", "easycommerce" ) }
                 </p>
                 <button
                     onClick={() => setAddNewShipping(true)}
@@ -119,7 +120,7 @@ const App = () => {
                     focus:bg-ec-secondary lg:text-sm md:text-xs sm:text-sm transition-all 
                     ease-in-out duration-500"
                 >
-                    + New Plan
+                    { __( "+ New Plan", "easycommerce" ) }
                 </button>
             </div>
         )}

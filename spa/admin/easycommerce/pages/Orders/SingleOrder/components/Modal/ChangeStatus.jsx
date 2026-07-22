@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { __ } from "@wordpress/i18n";
 import { useDispatch } from "react-redux";
 import { addToastData } from "../../../../../redux-store/slices/toastSlice";
 
@@ -33,7 +34,7 @@ const ChangeStatus = ({ hideModal, order, updateOrder }) => {
             dispatch(
                 addToastData({
                     type: "error",
-                    message: "Please select a status",
+                    message: __("Please select a status", "easycommerce"),
                 })
             );
 
@@ -100,7 +101,7 @@ const ChangeStatus = ({ hideModal, order, updateOrder }) => {
                                 className="mx-auto  mb-5"
                             />
                             <h2 className="text-ec-body font-semibold text-2xl leading-8 font-inter">
-                                Change Order Status
+                                {__("Change Order Status", "easycommerce")}
                             </h2>
                         </div>
                         <div>
@@ -109,7 +110,7 @@ const ChangeStatus = ({ hideModal, order, updateOrder }) => {
                                     htmlFor="orderRefund"
                                     className="text-ec-body inline-block font-inter font-medium text-base leading-[26px] mb-2"
                                 >
-                                    Status*
+                                    {__("Status", "easycommerce")}*
                                 </label>
                                 <div className="relative flex items-center justify-center">
                                     <button
@@ -125,7 +126,7 @@ const ChangeStatus = ({ hideModal, order, updateOrder }) => {
                                                 : "",
                                         }}
                                     >
-                                        {label || "Select an Option"}
+                                        {label || __("Select an Option", "easycommerce")}
                                     </button>
                                     {isOpen && (
                                         <ul
@@ -154,7 +155,7 @@ const ChangeStatus = ({ hideModal, order, updateOrder }) => {
                                     )}
                                     <img
                                         src={arrowDown}
-                                        alt="Search Icon"
+                                        alt={__("Search Icon", "easycommerce")}
                                         className="easycommerce-select-icon absolute w-3 ml-0 right-3"
                                     />
                                 </div>
@@ -167,14 +168,14 @@ const ChangeStatus = ({ hideModal, order, updateOrder }) => {
 								ease-in-out duration-500"
                                 onClick={hideModal}
                             >
-                                Cancel
+                                {__("Cancel", "easycommerce")}
                             </button>
                             <button
                                 className="p-[10px] rounded-lg text-white border border-ec-primary font-inter font-medium text-base
                                 leading-[26px] w-[224px] bg-ec-primary hover:bg-ec-secondary transition-all ease-in-out duration-500"
                                 onClick={handleChangeStatus}
                             >
-                                Update Status
+                                {__("Update Status", "easycommerce")}
                             </button>
                         </div>
                     </div>

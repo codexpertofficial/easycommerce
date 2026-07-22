@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { __ } from "@wordpress/i18n";
 
 // Components
 import BillingAddress from "./Components/BillingAddress";
@@ -262,7 +263,7 @@ const Address = () => {
 	return (
 		<>
 			<h3 className="easycommerce-dashboard-section-title !text-lg sm:!text-2xl mb-6">
-				Address
+				{__( "Address", "easycommerce" )}
 			</h3>
 			{!isLoading ? (
 				<div className="grid gap-6">
@@ -287,8 +288,8 @@ const Address = () => {
 				</div>
 			) : (
 				<div className="grid gap-6">
-					<AddressSkeleton title="Billing" />
-					<AddressSkeleton title="Shipping" />
+					<AddressSkeleton title={__( "Billing", "easycommerce" )} />
+					<AddressSkeleton title={__( "Shipping", "easycommerce" )} />
 				</div>
 			)}
 		</>

@@ -17,8 +17,7 @@ const productPriceIcon = (
     </svg>
 );
 
-registerBlockType(metadata.name, {
+registerBlockType(metadata, {
     icon: productPriceIcon,
-    title: metadata.title,
     edit: Edit,
 });

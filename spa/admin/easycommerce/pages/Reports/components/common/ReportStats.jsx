@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import apiFetch from '@wordpress/api-fetch';
 import { addQueryArgs } from '@wordpress/url';
+import { __ } from '@wordpress/i18n';
 
 import CardsSkeleton from './CardsSkeleton';
 import Tooltip from './Tooltip';
@@ -136,7 +137,7 @@ const ReportStats = ({ endpoint, params = {}, skeletonCount = 6 }) => {
 															fill="#3C3C42"
 														/>
 													</svg>
-													Hide Digits
+													{__( 'Hide Digits', 'easycommerce' )}
 												</>
 											) : (
 												<>
@@ -152,7 +153,7 @@ const ReportStats = ({ endpoint, params = {}, skeletonCount = 6 }) => {
 															fill="#3C3C42"
 														/>
 													</svg>
-													Show Digits
+													{__( 'Show Digits', 'easycommerce' )}
 												</>
 											)}
 										</button>
@@ -228,7 +229,7 @@ const ReportStats = ({ endpoint, params = {}, skeletonCount = 6 }) => {
 										{data.comparison.value}
 									</span>
 									<span className="text-[#62748E] text-xs">
-										vs prev. period
+										{__( 'vs prev. period', 'easycommerce' )}
 									</span>
 								</div>
 							)}

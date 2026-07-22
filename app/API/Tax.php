@@ -1,6 +1,8 @@
 <?php
 namespace EasyCommerce\API;
 
+defined( 'ABSPATH' ) || exit;
+
 use EasyCommerce\Abstracts\API;
 use EasyCommerce\Models\Tax as Tax_Model;
 

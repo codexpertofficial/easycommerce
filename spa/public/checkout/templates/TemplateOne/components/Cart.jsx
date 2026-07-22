@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { applyFilters } from '@wordpress/hooks';
+import { __ } from '@wordpress/i18n';
 
 //Icons
 const deleteIcon = `${EASYCOMMERCE.assets}public/icons/delete-14-16.png`;
@@ -64,7 +65,7 @@ const Cart = () => {
                         className="w-[53px] h-[53px] mr-4"
                     />
                     <h3 className="font-inter leading-8 font-semibold text-xl mb-0">
-                        Your Orders
+                        {__( 'Your Orders', 'easycommerce' )}
                     </h3>
                 </div>
                  <div>

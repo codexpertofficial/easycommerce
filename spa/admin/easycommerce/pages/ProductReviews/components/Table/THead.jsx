@@ -1,13 +1,14 @@
 import React from "react";
+import { __ } from "@wordpress/i18n";
 
 const THead = ({ tableColumns, allChecked, toggleAll }) => {
     const columnHeaders = {
-        customer: "Customer",
-        product: "Product",
-        content: "Review Content",
-        rating: "Rating",
-        date: "Date",
-        status: "Status",
+        customer: __("Customer", "easycommerce"),
+        product: __("Product", "easycommerce"),
+        content: __("Review Content", "easycommerce"),
+        rating: __("Rating", "easycommerce"),
+        date: __("Date", "easycommerce"),
+        status: __("Status", "easycommerce"),
     };
 
     return (

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Bounce, toast } from "react-toastify";
+import { __ } from "@wordpress/i18n";
 import TextField from "../../inputs/TextField";
 
 const APICreateForm = ({ onClose, switchModalTab }) => {
@@ -31,7 +32,7 @@ const APICreateForm = ({ onClose, switchModalTab }) => {
         event.preventDefault();
 
         if (!name || !email) {
-            showToast("error", "Please fill all the fields");
+            showToast("error", __( 'Please fill all the fields', 'easycommerce' ));
             return;
         }
 
@@ -53,7 +54,7 @@ const APICreateForm = ({ onClose, switchModalTab }) => {
                     // Magic link is the primary path: close the popup and point the
                     // user to their inbox. Code entry stays available via "I have an
                     // API key" if they reopen the modal.
-                    showToast("success", "Check your email and click the link to connect AI.");
+                    showToast("success", __( 'Check your email and click the link to connect AI.', 'easycommerce' ));
 
                     onClose();
                 } else {
@@ -68,7 +69,7 @@ const APICreateForm = ({ onClose, switchModalTab }) => {
                 <button
                     className="absolute top-[-18px] right-[-23px] group w-6 h-6 rounded-full bg-white hover:bg-[#fa4109] transition-colors duration-200 flex items-center justify-center"
                     onClick={onClose}
-                    aria-label="Close"
+                    aria-label={ __( 'Close', 'easycommerce' ) }
                 >
                     <svg
                         width="16"
@@ -91,11 +92,11 @@ const APICreateForm = ({ onClose, switchModalTab }) => {
                     <div className="flex flex-col items-center gap-6">
                         <div className="flex flex-col items-center gap-3">
                             <h2 className="text-ec-title text-2xl font-inter font-medium">
-                                Connect EasyCommerce AI
+                                { __( 'Connect EasyCommerce AI', 'easycommerce' ) }
                             </h2>
 
                             <p className="w-[80%] mx-auto text-center text-ec-body font-inter font-normal text-base">
-                                Enter your name and email - we'll send a one-click link to connect AI, plus a backup key.
+                                { __( 'Enter your name and email - we\'ll send a one-click link to connect AI, plus a backup key.', 'easycommerce' ) }
                             </p>
                         </div>
 
@@ -109,7 +110,7 @@ const APICreateForm = ({ onClose, switchModalTab }) => {
                                         htmlFor="easycommerce-api-name-input"
                                         className="text-base leading-[26px] font-inter text-ec-body font-medium"
                                     >
-                                        Your Name
+                                        { __( 'Your Name', 'easycommerce' ) }
                                     </label>
                                     <div className="pt-2 flex justify-between items-center gap-2">
                                         <TextField
@@ -117,7 +118,7 @@ const APICreateForm = ({ onClose, switchModalTab }) => {
                                             name="name"
                                             value={name}
                                             onChange={(e) => setName(e.target.value)}
-                                            placeholder="Enter your Name"
+                                            placeholder={ __( 'Enter your Name', 'easycommerce' ) }
                                             id="easycommerce-api-name-input"
                                         />
                                     </div>
@@ -128,14 +129,14 @@ const APICreateForm = ({ onClose, switchModalTab }) => {
                                         htmlFor="easycommerce-api-email-input"
                                         className="text-base leading-[26px] font-inter text-ec-body font-medium"
                                     >
-                                        Your Email
+                                        { __( 'Your Email', 'easycommerce' ) }
                                     </label>
                                     <div className="pt-2 flex justify-between items-center gap-2">
                                         <TextField
                                             type="email"
                                             name="email"
                                             id="easycommerce-api-email-input"
-                                            placeholder="Enter your Email"
+                                            placeholder={ __( 'Enter your Email', 'easycommerce' ) }
                                             value={email}
                                             onChange={(e) =>
                                                 setEmail(e.target.value)
@@ -152,14 +153,14 @@ const APICreateForm = ({ onClose, switchModalTab }) => {
 									text-center text-base leading-[26px] transition-all ease-in-out duration-300"
                                     onClick={handleFormSubmit}
                                 >
-                                    Email My Link
+                                    { __( 'Email My Link', 'easycommerce' ) }
                                 </button>
                                 <div className="flex justify-center items-center gap-[2px]">
                                     <button
                                         className="font-inter text-ec-primary text-base leading-[26px] underline"
                                         onClick={switchModalTab}
                                     >
-                                        I already have a key
+                                        { __( 'I already have a key', 'easycommerce' ) }
                                     </button>
                                 </div>
                             </div>

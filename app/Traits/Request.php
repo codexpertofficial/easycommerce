@@ -19,13 +19,10 @@ defined( 'ABSPATH' ) || exit;
  *
  * Normalized response (always returned; won't call wp_send_json_*):
  *  [
- *    'success'     => (bool),            // true for 2xx responses
- *    'status_code' => (int),             // HTTP status code (0 on WP_Error)
- *    'data'        => (mixed|null),      // JSON-decoded data when response is JSON, otherwise raw body
- *    'raw'         => (string|null),     // raw response body
- *    'headers'     => (array),           // response headers
- *    'error'       => (string|null),     // error message on failure
- *    'response'    => (array|null),      // full wp_remote_* response (for debugging)
+ *    'success' => (bool),            // true for 2xx responses
+ *    'status'  => (int),             // HTTP status code (0 on WP_Error)
+ *    'content' => (mixed|null),      // JSON payload's `data` key when present, else the decoded JSON, else the raw body
+ *    'error'   => (string|null),     // error message on failure ("HTTP <code>", or the WP_Error message)
  *  ]
  *
  * Usage examples:

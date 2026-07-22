@@ -35,7 +35,9 @@ const Type = ({ priceItem, setPriceItem, id }) => {
                             htmlFor={`${type}-${id}`}
                             className="text-sm leading-[20px] font-normal font-inter text-[#3C3C42]"
                         >
-                            {__(`${type === 'physical' ? 'Physical Product' : 'Digital Product'}`, 'easycommerce')}
+                            {type === 'physical'
+                                ? __('Physical Product', 'easycommerce')
+                                : __('Digital Product', 'easycommerce')}
                         </label>
                     </div>
                 ))}

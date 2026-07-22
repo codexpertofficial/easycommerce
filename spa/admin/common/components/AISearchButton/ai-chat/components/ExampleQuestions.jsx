@@ -1,14 +1,15 @@
 // ExampleQuestions.jsx
 import React, { useState } from 'react';
+import { __ } from '@wordpress/i18n';
 
 const ExampleQuestions = ({ onSelect }) => {
   const examples = [
-      'What is today\'s total revenue?',
-      'How many orders were placed this week?',
-      'Which product is performing best?',
-      'What is my average order value this month?',
-      'How many new vs returning customers this week?',
-      'Which products are low in stock?',
+      __( 'What is today\'s total revenue?', 'easycommerce' ),
+      __( 'How many orders were placed this week?', 'easycommerce' ),
+      __( 'Which product is performing best?', 'easycommerce' ),
+      __( 'What is my average order value this month?', 'easycommerce' ),
+      __( 'How many new vs returning customers this week?', 'easycommerce' ),
+      __( 'Which products are low in stock?', 'easycommerce' ),
   ];
 
   const [activeIndex, setActiveIndex] = useState(null);
@@ -20,7 +21,7 @@ const ExampleQuestions = ({ onSelect }) => {
 
   return (
     <div className='pb-[80px] pt-[26px] px-[56px]'>
-      <h3 className="text-xl font-inter font-semibold text-ec-title pb-[14px]">Examples</h3>
+      <h3 className="text-xl font-inter font-semibold text-ec-title pb-[14px]">{ __( 'Examples', 'easycommerce' ) }</h3>
       <ol className="space-y-2">
         {examples.map((example, index) => (
           <li key={index}>

@@ -29,7 +29,6 @@ body.easycommerce .easycommerce-storefront {
 body.easycommerce .easycommerce-full-width-container {
 	max-width: var(--ec-storefront-width, 1200px);
 	width: 100%;
-	margin: 50px auto;
 	box-sizing: border-box;
 	position: relative;
 }

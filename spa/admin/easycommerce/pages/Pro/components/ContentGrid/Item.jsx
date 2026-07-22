@@ -1,4 +1,5 @@
 import React from 'react';
+import { __ } from '@wordpress/i18n';
 
 const Item = ({image, title, desc, comingSoon}) => {
 	return (
@@ -16,11 +17,11 @@ const Item = ({image, title, desc, comingSoon}) => {
 
             {comingSoon ? (
                 <span className="group flex items-center font-medium text-sm gap-2.5 px-4 py-1.5 rounded-full duration-300 text-[#F99D1D] bg-[#F99D1D1A] w-max">
-                    Coming Soon
+                    {__('Coming Soon', 'easycommerce')}
                 </span>
             ) : (
                 <a href='https://easycommerce.dev/pricing?utm_source=inplugin&utm_medium=button&utm_campaign=BFCM' target='_blank' className="!flex gap-[10px] items-center font-medium text-sm px-4 py-1.5 rounded-full duration-300 text-ec-primary bg-ec-primary/10 w-max hover:bg-ec-primary hover:text-white">
-                    Upgrade to PRO
+                    {__('Upgrade to PRO', 'easycommerce')}
                     <svg
                         width="14"
                         height="12"

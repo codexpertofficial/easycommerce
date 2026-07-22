@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { __ } from "@wordpress/i18n";
 
 const CustomerName = ({ showForm, fetchCustomerById }) => {
     const [showSuggestion, setShowSuggestion] = useState(false);
@@ -35,11 +36,11 @@ const CustomerName = ({ showForm, fetchCustomerById }) => {
     return (
         <div className="relative">
             <h5 className="text-ec-body font-inter font-medium text-base leading-8">
-                Customer name
+                {__("Customer name", "easycommerce")}
             </h5>
             <input
                 type="text"
-                placeholder="Customer Name"
+                placeholder={__("Customer Name", "easycommerce")}
                 onFocus={() => setShowSuggestion(true)}
                 onBlur={() => setTimeout(() => setShowSuggestion(false), 200)}
                 onChange={handleChange}
@@ -64,7 +65,7 @@ const CustomerName = ({ showForm, fetchCustomerById }) => {
                         onClick={showForm}
                         className="p-3 font-inter font-normal text-base leading-[26px] hover:bg-[#F8F8F8] rounded-[4px] cursor-pointer mb-0"
                     >
-                        Add New Customer
+                        {__("Add New Customer", "easycommerce")}
                     </li>
                 </ul>
             )}

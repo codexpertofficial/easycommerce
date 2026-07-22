@@ -194,7 +194,7 @@ foreach ( $products as $product ) :
 	$image_url     	     = ! empty( $product['thumbnail']['url'] ) ? $product['thumbnail']['url'] : null;
     $product_description = $modal_product->get_description();	
 	$unique_class        = 'easycommerce-title-' . esc_attr( $product['id'] );	
-    $show_stock_badge    = Utility::get_option( 'general', 'store', 'stock-badge' ) ?? true;
+    $show_stock_badge    = easycommerce_is_stock_badge_enabled();
     $is_out_of_stock     = ( $product['stock'] !== false && $product['stock'] !== null && $product['stock'] <= 0 );
 
 	?>

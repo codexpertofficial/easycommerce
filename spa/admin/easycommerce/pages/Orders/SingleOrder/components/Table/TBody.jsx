@@ -1,4 +1,5 @@
 import React from "react";
+import { __ } from "@wordpress/i18n";
 
 const dummyImageUrl = `${EASYCOMMERCE.assets}admin/img/icons/demo-image.png`;
 
@@ -95,7 +96,7 @@ const TBody = ({ order }) => {
                 <tr className="grid grid-cols-12 gap-0 p-0 border-b border-dashed border-ec-table-stock">
                     <td className="col-span-8 p-0 pt-4 pb-[10px] pl-4 text-left border-0">
                         <span className="font-inter font-normal text-base leading-[26px] text-ec-title">
-                            Price
+                            {__("Price", "easycommerce")}
                         </span>
                     </td>
                     <td className="col-span-2 p-0 pt-4 pb-[10px] border-0"></td>
@@ -110,7 +111,7 @@ const TBody = ({ order }) => {
                 <tr className="grid grid-cols-12 gap-0 p-0 border-b border-dashed border-ec-table-stock">
                     <td className="col-span-8 p-0 py-[10px] pl-4 text-left border-0">
                         <span className="font-inter font-normal text-base leading-[26px] text-ec-title">
-                            Discount
+                            {__("Discount", "easycommerce")}
                         </span>
                     </td>
                     <td className="col-span-2 p-0 py-[10px] border-0"></td>
@@ -125,7 +126,7 @@ const TBody = ({ order }) => {
                 <tr className="grid grid-cols-12 gap-0 p-0 border-b border-dashed border-ec-table-stock">
                     <td className="col-span-8 p-0 py-[10px] pl-4 text-left border-0">
                         <span className="font-inter font-normal text-base leading-[26px] text-ec-title">
-                            Shipping
+                            {__("Shipping", "easycommerce")}
                         </span>
                     </td>
                     <td className="col-span-2 p-0 py-[10px] border-0"></td>
@@ -141,7 +142,7 @@ const TBody = ({ order }) => {
                 <tr className="grid grid-cols-12 gap-0 p-0 border-b border-dashed border-ec-table-stock">
                     <td className="col-span-8 p-0 py-[10px] pl-4 text-left border-0">
                         <span className="font-inter font-normal text-base leading-[26px] text-ec-title">
-                            Product Tax
+                            {__("Product Tax", "easycommerce")}
                         </span>
                     </td>
                     <td className="col-span-2 p-0 py-[10px] border-0"></td>
@@ -157,7 +158,7 @@ const TBody = ({ order }) => {
                 <tr className="grid grid-cols-12 gap-0 p-0 border-b border-dashed border-ec-table-stock">
                     <td className="col-span-8 p-0 py-[10px] pl-4 text-left border-0">
                         <span className="font-inter font-normal text-base leading-[26px] text-ec-title">
-                            Shipping Tax
+                            {__("Shipping Tax", "easycommerce")}
                         </span>
                     </td>
                     <td className="col-span-2 p-0 py-[10px] border-0"></td>

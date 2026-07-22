@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Bounce, toast } from "react-toastify";
 import Cookies from "universal-cookie";
+import { __ } from "@wordpress/i18n";
 import TextField from "../../inputs/TextField";
 
 const APIVarification = ({
@@ -38,7 +39,7 @@ const APIVarification = ({
         const source = EASYCOMMERCE.home_url;
 
         if (!token || !email) {
-            showToast("error", "Please fill all the fields");
+            showToast("error", __( 'Please fill all the fields', 'easycommerce' ));
             return;
         }
 
@@ -82,7 +83,7 @@ const APIVarification = ({
                 <button
                     className="absolute top-[-18px] right-[-23px] group w-6 h-6 rounded-full bg-white hover:bg-[#fa4109] transition-colors duration-200 flex items-center justify-center"
                     onClick={onClose}
-                    aria-label="Close"
+                    aria-label={ __( 'Close', 'easycommerce' ) }
                     type="button"
                 >
                     <svg
@@ -106,10 +107,10 @@ const APIVarification = ({
                     <div className="flex flex-col items-center gap-[10px]">
                         <div className="flex flex-col items-center gap-3">
                             <h2 className="text-[#120350] text-2xl font-inter font-medium">
-                                Enter Your Connection Key
+                                { __( 'Enter Your Connection Key', 'easycommerce' ) }
                             </h2>
                             <p className="w-[80%] mx-auto text-center text-ec-body font-inter font-normal text-base">
-                                The link in your email connects AI automatically. To do it manually, paste the key we emailed below.
+                                { __( 'The link in your email connects AI automatically. To do it manually, paste the key we emailed below.', 'easycommerce' ) }
                             </p>
                         </div>
 
@@ -125,14 +126,14 @@ const APIVarification = ({
                                             htmlFor="easycommerce-api-email-input"
                                             className="text-base leading-[26px] font-inter text-ec-body font-medium"
                                         >
-                                            Your Email
+                                            { __( 'Your Email', 'easycommerce' ) }
                                         </label>
                                         <div className="pt-2 flex justify-between items-center gap-2 w-[452px]">
                                             <TextField
                                                 type="email"
                                                 name="email"
                                                 id="easycommerce-api-email-input"
-                                                placeholder="Enter your Email"
+                                                placeholder={ __( 'Enter your Email', 'easycommerce' ) }
                                                 className=""
                                                 value={email}
                                                 onChange={(e) => setEmail(e.target.value)}
@@ -146,7 +147,7 @@ const APIVarification = ({
                                             htmlFor="easycommerce-api-key-input"
                                             className="text-base leading-[26px] font-inter text-ec-body font-medium"
                                         >
-                                            Your Key
+                                            { __( 'Your Key', 'easycommerce' ) }
                                         </label>
                                         <div className="pt-2 flex justify-between items-center gap-2">
                                             <TextField
@@ -154,7 +155,7 @@ const APIVarification = ({
                                                 name="token"
                                                 id="easycommerce-api-key-input"
                                                 form="easycommerce-api-verify-form"
-                                                placeholder="Paste your key"
+                                                placeholder={ __( 'Paste your key', 'easycommerce' ) }
                                                 className="w-[452px]"
                                                 value={token}
                                                 onChange={(e) => setToken(e.target.value)}
@@ -172,7 +173,7 @@ const APIVarification = ({
                                         ease-in-out duration-300"
                                         onClick={handleFormSubmit}
                                     >
-                                        Connect AI
+                                        { __( 'Connect AI', 'easycommerce' ) }
                                     </button>
                                     <div className="flex justify-center items-center gap-[2px]">
                                         <button
@@ -180,7 +181,7 @@ const APIVarification = ({
                                             onClick={switchModalTab}
                                             type="button"
                                         >
-                                            I don't have a key
+                                            { __( 'I don\'t have a key', 'easycommerce' ) }
                                         </button>
                                     </div>
                                 </div>

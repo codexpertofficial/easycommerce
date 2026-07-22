@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { __ } from "@wordpress/i18n";
 import globalToast from "../../../../common/components/globalToast";
 
 const arrowDown = `${EASYCOMMERCE.assets}admin/img/icons/arrowDown.png`;
@@ -82,7 +83,7 @@ const ProductStatusDropdown = ({
             } else {
                 addToastData({
                     type: "error",
-                    message: data.data || "Failed to update status",
+                    message: data.data || __("Failed to update status", "easycommerce"),
                 });
             }
         });
@@ -126,7 +127,7 @@ const ProductStatusDropdown = ({
 
             <img
                 src={statusColors[selectedKey]?.icon || arrowDown}
-                alt="Dropdown Arrow"
+                alt={__("Dropdown Arrow", "easycommerce")}
                 className={`easycommerce-select-icon absolute w-3 right-3 transition-transform duration-300 ${isOpen ? "rotate-180" : "rotate-0"}`}
             />
         </div>

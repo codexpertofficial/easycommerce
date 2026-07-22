@@ -1,4 +1,6 @@
 jQuery(function ($) {
+    const { __ } = wp.i18n;
+
     $(document).ready(function () {
         // Loop through all attribute wrappers
         $('.easycommerce-attributes-wrapper').each(function () {
@@ -176,7 +178,7 @@ jQuery(function ($) {
 
                         if (stock_count == 0) {
                             $(".easycommerce-add-to-cart-button").prop("disabled", true);
-                            $(".easycommerce-stock-count").text("Out of stock").removeClass("text-emerald-500").addClass("text-red-500");
+                            $(".easycommerce-stock-count").text(__("Out of stock", 'easycommerce')).removeClass("text-emerald-500").addClass("text-red-500");
                             $(".easycommerce-stock-dot").removeClass("bg-emerald-500").addClass("bg-red-500");
                             $(".easycommerce-stock-label").hide();
                         } else {
@@ -208,7 +210,7 @@ jQuery(function ($) {
                 $(".easycommerce-qunatity-input").attr("data-stock-count", partialStock);
 
                 if (partialStock == 0) {
-                    $(".easycommerce-stock-count").text("Out of stock").removeClass("text-emerald-500").addClass("text-red-500");
+                    $(".easycommerce-stock-count").text(__("Out of stock", 'easycommerce')).removeClass("text-emerald-500").addClass("text-red-500");
                     $(".easycommerce-stock-dot").removeClass("bg-emerald-500").addClass("bg-red-500");
                     $(".easycommerce-stock-label").hide();
                 } else {

@@ -1,5 +1,6 @@
 import React from "react";
 import Skeleton from "react-loading-skeleton";
+import { __ } from "@wordpress/i18n";
 
 const ProfileSkeleton = () => {
     return (
@@ -7,7 +8,7 @@ const ProfileSkeleton = () => {
             <div className="flex justify-center flex-col align-center gap-4 pb-8 border-b border-b-ec-border">
                 <div className="h-12">
                     <h3 className="easycommerce-dashboard-section-title !text-lg sm:!text-2xl">
-                        Your profile
+                        {__( "Your profile", "easycommerce" )}
                     </h3>
                 </div>
 

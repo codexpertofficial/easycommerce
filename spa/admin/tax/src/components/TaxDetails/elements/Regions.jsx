@@ -1,4 +1,5 @@
 import React from "react";
+import { __ } from "@wordpress/i18n";
 
 // Components
 import RegionsHeader from "./RegionsHeader";
@@ -31,13 +32,13 @@ const Regions = ({
                                     <div className="h-ec-input">
                                         <Dropdown
                                             options={[
-                                                { label: "- Select -", value: "" },
+                                                { label: __( "- Select -", "easycommerce" ), value: "" },
                                                 ...taxCountries.map((country) => ({
                                                     label: country.label,
                                                     value: country.value,
                                                 })),
                                             ]}
-                                            placeholder="- Select -"
+                                            placeholder={__( "- Select -", "easycommerce" )}
                                             value={region.country || ""}
                                             onChange={(option) =>
                                                 handleRegionChange(index, "country", option.value)
@@ -51,7 +52,7 @@ const Regions = ({
                                     <div className="h-ec-input">
                                         <Dropdown
                                             options={[
-                                                { label: "- Select -", value: "" },
+                                                { label: __( "- Select -", "easycommerce" ), value: "" },
                                                 ...(Array.isArray(states[index])
                                                     ? states[index].map((state) => ({
                                                           label: state,
@@ -59,7 +60,7 @@ const Regions = ({
                                                       }))
                                                     : []),
                                             ]}
-                                            placeholder="- Select -"
+                                            placeholder={__( "- Select -", "easycommerce" )}
                                             value={region.state || ""}
                                             onChange={(option) =>
                                                 handleRegionChange(index, "state", option.value)
@@ -73,12 +74,12 @@ const Regions = ({
                                     <div className="h-ec-input">
                                         <Dropdown
                                         options={[
-                                            { label: "- Select -", value: "" },
+                                            { label: __( "- Select -", "easycommerce" ), value: "" },
                                             ...(Array.isArray(cities[index])
                                                 ? cities[index].map((city) => ({ label: city, value: city }))
                                                 : []),
                                         ]}
-                                        placeholder="- Select -"
+                                        placeholder={__( "- Select -", "easycommerce" )}
                                         value={region.city || ""}
                                         onChange={(option) => handleRegionChange(index, "city", option.value)}
                                         />

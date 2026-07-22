@@ -110,6 +110,40 @@ class API {
 			)
 		);
 
+		// Apply a ready-made store design (setup wizard Store Setup step).
+		$this->register_route(
+			'/connectivity/apply-design',
+			array(
+				'methods'             => WP_REST_Server::CREATABLE,
+				'callback'            => array( $connectivity, 'apply_design' ),
+				'args'                => array(
+					'design_id' => array(
+						'description' => __( 'The store design id to apply (or "skip").', 'easycommerce' ),
+						'required'    => true,
+						'type'        => 'string',
+					),
+				),
+				'permission_callback' => array( $this, 'is_admin' ),
+			)
+		);
+
+		// Set the static front page (confirm homepage overwrite from the wizard).
+		$this->register_route(
+			'/connectivity/set-front-page',
+			array(
+				'methods'             => WP_REST_Server::CREATABLE,
+				'callback'            => array( $connectivity, 'set_front_page' ),
+				'args'                => array(
+					'page_id' => array(
+						'description' => __( 'The page id to set as the static front page.', 'easycommerce' ),
+						'required'    => true,
+						'type'        => 'integer',
+					),
+				),
+				'permission_callback' => array( $this, 'is_admin' ),
+			)
+		);
+
 		// User Registration
 		$this->register_route(
 			'/connectivity/registration',
@@ -139,7 +173,7 @@ class API {
 						'type'        => 'string',
 					),
 				),
-				'permission' => array( $this, 'is_user' ),
+				'permission' => array( $this, 'is_nonce_verified' ),
 			)
 		);
 
@@ -156,7 +190,7 @@ class API {
 						'type'        => 'string',
 					),
 				),
-				'permission' => array( $this, 'is_user' ),
+				'permission' => array( $this, 'is_nonce_verified' ),
 			)
 		);
 
@@ -188,7 +222,7 @@ class API {
 						'type'        => 'string',
 					),
 				),
-				'permission' => array( $this, 'is_user' ),
+				'permission' => array( $this, 'is_nonce_verified' ),
 			)
 		);
 
@@ -532,17 +566,6 @@ class API {
 						},
 					),
 				),
-				'permission' => array( $this, 'is_manager' ),
-			)
-		);
-
-		// Dashboard abandoned cart
-		$this->register_route(
-			'/dashboard/abandoned',
-			array(
-				'methods'	 => WP_REST_Server::READABLE,
-				'callback'	 => array( $dashboard, 'get_pending_carts' ),
-				'args'		 => array(),
 				'permission' => array( $this, 'is_manager' ),
 			)
 		);
@@ -2306,7 +2329,7 @@ class API {
 						'type'		  => 'string',
 					),
 				),
-				'permission' => array( $this, 'is_user' ),
+				'permission' => array( $this, 'is_manager' ),
 			)
 		);
 
@@ -4793,6 +4816,26 @@ class API {
 			)
 		);
 
+		// Demo content status (how many demo products exist)
+		$this->register_route(
+			'/importer/demo',
+			array(
+				'methods'             => WP_REST_Server::READABLE,
+				'callback'            => array( $importer, 'demo_status' ),
+				'permission_callback' => array( $this, 'is_admin' ),
+			)
+		);
+
+		// Remove demo products, media and categories
+		$this->register_route(
+			'/importer/demo',
+			array(
+				'methods'             => WP_REST_Server::DELETABLE,
+				'callback'            => array( $importer, 'delete_demo' ),
+				'permission_callback' => array( $this, 'is_admin' ),
+			)
+		);
+
 		// Sideload an image from an external link
 		$this->register_route(
 			'/importer/sideload',
@@ -4895,7 +4938,7 @@ class API {
 						'enum'		  => array( 'asc', 'desc' ),
 					),
 				),
-				'permission' => array( $this, 'is_user' ),
+				'permission' => array( $this, 'is_manager' ),
 			)
 		);
 
@@ -4912,7 +4955,7 @@ class API {
 						'type'		  => 'integer',
 					),
 				),
-				'permission' => array( $this, 'is_admin' ),
+				'permission' => array( $this, 'is_manager' ),
 			)
 		);
 

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Chart } from "react-chartjs-2";
 import apiFetch from '@wordpress/api-fetch';
 import { addQueryArgs } from '@wordpress/url';
+import { __, sprintf } from '@wordpress/i18n';
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -84,11 +85,11 @@ const HeatmapChart = ({
                     setXLabels(derivedX);
                     setYLabels(derivedY);
                 } else {
-                    setError('Failed to load heatmap data.');
+                    setError( __( 'Failed to load heatmap data.', 'easycommerce' ) );
                 }
             } catch (err) {
                 console.error('Heatmap fetch error:', err);
-                setError('Error loading data.');
+                setError( __( 'Error loading data.', 'easycommerce' ) );
             } finally {
                 setIsLoading(false);
             }
@@ -186,7 +187,8 @@ const HeatmapChart = ({
                     },
                     label(ctx) {
                         const d = ctx.dataset.data[ctx.dataIndex];
-                        return ` Value: ${d.v.toLocaleString()}`;
+                        // translators: %s: formatted data point value.
+                        return sprintf( __( ' Value: %s', 'easycommerce' ), d.v.toLocaleString() );
                     },
                 },
             },

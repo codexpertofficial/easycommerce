@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { __ } from '@wordpress/i18n';
 
 // components
 import Container from '../components/common/Container';
@@ -11,19 +12,19 @@ import TopCustomers from '../components/customers/TopCustomers';
 
 const Customers = () => {
 	const [range, setRange] = useState({
-		label: 'Last 30 days',
+		label: __( 'Last 30 days', 'easycommerce' ),
 		value: 'last-30',
 	});
 
 	const [comparison, setComparison] = useState({
-		label: 'Prev. 30 days',
+		label: __( 'Prev. 30 days', 'easycommerce' ),
 		value: 'prev-30'
 	});
 
 	return (
 		<>
 			<Header
-				title="Customers"
+				title={__( 'Customers', 'easycommerce' )}
 				range={range}
 				setRange={setRange}
 				comparison={comparison}
@@ -37,7 +38,7 @@ const Customers = () => {
 			/>
 
 			<div className="my-6">
-				<Container title="Customers Over Time" >
+				<Container title={__( 'Customers Over Time', 'easycommerce' )} >
 					<LineChart 
 						endpoint="/easycommerce/v1/reports/customers/over-time" 
 						params={{ range: range.value, comparison: comparison.value }} 
@@ -46,13 +47,13 @@ const Customers = () => {
 			</div>
 			
 			<div className="my-6">
-				<Container title="Top Customers" >
+				<Container title={__( 'Top Customers', 'easycommerce' )} >
 					<TopCustomers range={range.value} />
 				</Container>
 			</div>
 			
 			<div className="my-6">
-				<Container title="Customers location" >
+				<Container title={__( 'Customers location', 'easycommerce' )} >
 					<GeoMap
 						endpoint="/easycommerce/v1/reports/customers/locations"
 						params={{ range: range.value }}
@@ -61,7 +62,7 @@ const Customers = () => {
 			</div>
 
 			<div className="my-6">
-				<Container title="Customer By Day Heatmap" >
+				<Container title={__( 'Customer By Day Heatmap', 'easycommerce' )} >
 					<Heatmap
 						endpoint="/easycommerce/v1/reports/customers/heatmap"
 						params={{ range: range.value }}

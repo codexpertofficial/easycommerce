@@ -139,8 +139,9 @@ $easycommerce_tables = array(
 		'options' => array(
 			'primary_key'  => 'id',
 			'indexes'      => array(
-				'index_product_id' => 'product_id',
-				'index_meta_key'   => 'meta_key',
+				'index_product_id'       => 'product_id',
+				'index_meta_key'         => 'meta_key',
+				'idx_product_meta_lookup' => 'product_id, meta_key(191)',
 			),
 			'foreign_keys' => array(
 				'fk_product_id' => array(
@@ -176,7 +177,8 @@ $easycommerce_tables = array(
 				'unique_sku' => 'sku',
 			),
 			'indexes'      => array(
-				'index_product_id' => 'product_id',
+				'index_product_id'    => 'product_id',
+				'idx_product_price_id' => 'product_id, price_id',
 			),
 			'foreign_keys' => array(
 				'fk_product_id' => array(
@@ -202,8 +204,9 @@ $easycommerce_tables = array(
 		'options' => array(
 			'primary_key'  => 'id',
 			'indexes'      => array(
-				'index_variation_id' => 'variation_id',
-				'index_meta_key'     => 'meta_key',
+				'index_variation_id'        => 'variation_id',
+				'index_meta_key'            => 'meta_key',
+				'idx_variation_meta_lookup' => 'variation_id, meta_key(191)',
 			),
 			'foreign_keys' => array(
 				'fk_variation_id' => array(
@@ -303,7 +306,8 @@ $easycommerce_tables = array(
 		'options' => array(
 			'primary_key'  => 'id',
 			'indexes'      => array(
-				'index_customer_id' => 'customer_id',
+				'index_customer_id'   => 'customer_id',
+				'idx_status_created'  => 'status, created_at',
 			),
 			'foreign_keys' => array(
 				'fk_customer_id' => array(
@@ -335,7 +339,10 @@ $easycommerce_tables = array(
 		'options' => array(
 			'primary_key'  => 'id',
 			'indexes'      => array(
-				'index_order_id' => 'order_id',
+				'index_order_id'      => 'order_id',
+				'index_customer_id'   => 'customer_id',
+				'index_status'        => 'status',
+				'index_created_at'    => 'created_at',
 			),
 			'foreign_keys' => array(
 				'fk_order_id' => array(
@@ -396,7 +403,8 @@ $easycommerce_tables = array(
 		'options' => array(
 			'primary_key'  => 'id',
 			'indexes'      => array(
-				'index_order_item_id' => 'order_item_id',
+				'index_order_item_id'        => 'order_item_id',
+				'idx_order_item_meta_lookup' => 'order_item_id, meta_key(191)',
 			),
 			'foreign_keys' => array(
 				'fk_order_item_id' => array(
@@ -422,8 +430,9 @@ $easycommerce_tables = array(
 		'options' => array(
 			'primary_key'  => 'id',
 			'indexes'      => array(
-				'index_order_id' => 'order_id',
-				'index_meta_key' => 'meta_key',
+				'index_order_id'       => 'order_id',
+				'index_meta_key'       => 'meta_key',
+				'idx_order_meta_lookup' => 'order_id, meta_key(191)',
 			),
 			'foreign_keys' => array(
 				'fk_order_id' => array(
@@ -461,6 +470,7 @@ $easycommerce_tables = array(
 				'index_hash'           => 'hash',
 				'index_status'         => 'status',
 				'index_customer_email' => 'customer_email',
+				'idx_status_updated'   => 'status, updated_at',
 			),
 			'engine'      => 'InnoDB',
 		),

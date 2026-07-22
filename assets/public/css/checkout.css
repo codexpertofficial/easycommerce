@@ -317,3 +317,43 @@ span.easycommerce-checkout-shipping-cost label {
 .easycommerce-checkout-shipping-same-as-address{
     display: none;
 }
+
+#easycommerce-coupon-field {
+    padding-left: 11px;
+}
+
+/* Coupon Apply / Remove Loading */
+#easycommerce-coupon-apply.easycommerce-is-loading {
+    position: relative;
+    pointer-events: none;
+    cursor: not-allowed;
+    color: transparent !important;
+}
+
+#easycommerce-coupon-apply.easycommerce-is-loading::after {
+    content: "";
+    position: absolute;
+    inset: 50% auto auto 50%;
+
+    width: 18px;
+    height: 18px;
+
+    transform: translate(-50%, -50%);
+
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #ffffff;
+    border-radius: 50%;
+
+    animation: easycommerce-spin 0.8s linear infinite;
+
+    z-index: 9999;
+}
+
+@keyframes easycommerce-spin {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}

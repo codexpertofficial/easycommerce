@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Bounce, toast } from "react-toastify";
 import Cookies from "universal-cookie";
+import { __, sprintf } from "@wordpress/i18n";
 import TextField from "../../inputs/TextField";
 import TextArea from "../../inputs/TextArea";
 
@@ -39,7 +40,7 @@ const LicenseVarification = ({
 
     const handleVerifyLicense = async () => {
         if (!email || !token) {
-            showToast("error", "Please fill all the fields");
+            showToast("error", __( 'Please fill all the fields', 'easycommerce' ));
             return;
         }
 
@@ -66,17 +67,17 @@ const LicenseVarification = ({
             easycommerce_modal(false);
 
             if (data.data.status) {
-                showToast("success", "License activated successfully");
+                showToast("success", __( 'License activated successfully', 'easycommerce' ));
                 onClose();
                 setTimeout(() => {
                     window.location.reload();
                 }, 1000);
             } else {
-                setErrMsg(data.data?.message || "License activation failed");
+                setErrMsg(data.data?.message || __( 'License activation failed', 'easycommerce' ));
             }
         } catch (error) {
             easycommerce_modal(false);
-            setErrMsg("Something went wrong. Please try again.");
+            setErrMsg(__( 'Something went wrong. Please try again.', 'easycommerce' ));
         }
     };
 
@@ -86,7 +87,7 @@ const LicenseVarification = ({
                 <button
                     className="absolute top-[-18px] right-[-23px] group w-6 h-6 rounded-full bg-white hover:bg-[#fa4109] transition-colors duration-200 flex items-center justify-center"
                     onClick={onClose}
-                    aria-label="Close"
+                    aria-label={ __( 'Close', 'easycommerce' ) }
                     type="button"
                 >
                     <svg
@@ -117,10 +118,15 @@ const LicenseVarification = ({
                     <div className="flex flex-col items-center gap-[10px]">
                         <div className="flex flex-col items-center gap-3">
                             <h2 className="text-[#120350] text-2xl font-inter font-medium">
-                                Activate {addon.name}
+                                {
+                                    // translators: %s: addon name.
+                                    sprintf( __( 'Activate %s', 'easycommerce' ), addon.name )
+                                }
                             </h2>
                             <p className="w-[75%] mx-auto text-center text-ec-body font-inter font-normal text-base">
-                                When you enter your license key, the addon will install and activate automatically. Find your key in your <a href="https://my.easycommerce.dev" target="_blank" className="text-ec-primary">account dashboard</a> or in the order confirmation email.
+                                { __( 'When you enter your license key, the addon will install and activate automatically. Find your key in your', 'easycommerce' ) }{' '}
+                                <a href="https://my.easycommerce.dev" target="_blank" className="text-ec-primary">{ __( 'account dashboard', 'easycommerce' ) }</a>{' '}
+                                { __( 'or in the order confirmation email.', 'easycommerce' ) }
                             </p>
                         </div>
 
@@ -136,14 +142,14 @@ const LicenseVarification = ({
                                             htmlFor="easycommerce-api-email-input"
                                             className="text-base leading-[26px] font-inter text-ec-body font-medium"
                                         >
-                                            Your Email
+                                            { __( 'Your Email', 'easycommerce' ) }
                                         </label>
                                         <div className="pt-2 flex justify-between items-center gap-2 w-[452px]">
                                             <TextField
                                                 type="email"
                                                 name="email"
                                                 id="easycommerce-api-email-input"
-                                                placeholder="Enter your Email"
+                                                placeholder={ __( 'Enter your Email', 'easycommerce' ) }
                                                 className=""
                                                 value={email}
                                                 onChange={(e) => setEmail(e.target.value)}
@@ -157,14 +163,14 @@ const LicenseVarification = ({
                                             htmlFor="easycommerce-license-key-input"
                                             className="text-base leading-[26px] font-inter text-ec-body font-medium"
                                         >
-                                            Your License Key
+                                            { __( 'Your License Key', 'easycommerce' ) }
                                         </label>
                                         <div className="pt-2 flex justify-between items-center gap-2">
                                             <TextArea 
                                                 name="token"
                                                 id="easycommerce-api-key-input"
                                                 form="easycommerce-license-verify-form"
-                                                placeholder="Enter License Key"
+                                                placeholder={ __( 'Enter License Key', 'easycommerce' ) }
                                                 className="w-[452px]"
                                                 rows="4" 
                                                 value={token}
@@ -183,7 +189,7 @@ const LicenseVarification = ({
                                         ease-in-out duration-300"
                                         onClick={handleVerifyLicense}
                                     >
-                                        Verify License
+                                        { __( 'Verify License', 'easycommerce' ) }
                                     </button>
 
                                 </div>

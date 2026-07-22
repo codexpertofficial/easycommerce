@@ -1,0 +1,33 @@
+{
+    "translation-revision-date": "YEAR-MO-DA HO:MI+ZONE",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "blocks\/single-product\/rating\/inspector.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "es_ES",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Settings": [
+                "Ajustes"
+            ],
+            "Show Rating": [
+                "Mostrar valoraci\u00f3n"
+            ],
+            "Show SKU": [
+                "Mostrar SKU"
+            ],
+            "Show Favourite": [
+                "Mostrar favoritos"
+            ],
+            "Styles": [
+                "Estilos"
+            ],
+            "Border": [
+                "Borde"
+            ]
+        }
+    }
+}

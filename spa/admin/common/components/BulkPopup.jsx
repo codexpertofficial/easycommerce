@@ -1,4 +1,6 @@
 import React from "react";
+import { __ } from "@wordpress/i18n";
+import { createInterpolateElement } from "@wordpress/element";
 
 const bulk = `${EASYCOMMERCE.assets}admin/img/bulk.png`;
 
@@ -34,10 +36,13 @@ const BulkPopup = ({
 
                 <div className="flex flex-col justify-center items-center mb-6">
                     <h3 className="font-inter font-medium text-xl text-ec-title mb-2">
-                        Are you sure you want to update?
+                        {__("Are you sure you want to update?", "easycommerce")}
                     </h3>
                     <p className="w-9/12 mx-auto text-center font-inter font-normal text-base text-ec-body">
-                        You're going to update <span className="font-semibold">All</span> are you sure?
+                        {createInterpolateElement(
+                            __("You're going to update <strong>All</strong> are you sure?", "easycommerce"),
+                            { strong: <span className="font-semibold" /> }
+                        )}
                     </p>
                 </div>
 
@@ -47,7 +52,7 @@ const BulkPopup = ({
                          border-ec-title rounded-lg py-[10px]"
                         onClick={onClose}
                     >
-                        No, Keep as it is
+                        {__("No, Keep as it is", "easycommerce")}
                     </button>
                     <button
                         className="w-[181px] h-[45px] font-inter font-normal text-base rounded-lg px-10 py-[10px] border
@@ -55,7 +60,7 @@ const BulkPopup = ({
                         onClick={onConfirm}
                         type="button"
                     >
-                        Yes, Update
+                        {__("Yes, Update", "easycommerce")}
                     </button>
                 </div>
             </div>

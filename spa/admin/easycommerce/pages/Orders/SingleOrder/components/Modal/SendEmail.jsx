@@ -10,7 +10,7 @@ const options = [];
 const emailEvents = EASYCOMMERCE.email_events;
 
 Object.keys(emailEvents).map((key) => {
-    options.push({ value: key, label: key.charAt(0).toUpperCase() + key.slice(1) });
+    options.push({ value: key, label: emailEvents[key] });
 });
 
 const SendEmail = ({ hideModal, order }) => {
@@ -36,7 +36,7 @@ const SendEmail = ({ hideModal, order }) => {
                 easycommerce_modal(false);
 
                 if (data.success) {
-                    toast.success("Email sent");
+                    toast.success(__("Email sent", "easycommerce"));
                 } else {
                     toast.error(data.data?.message);
                 }
@@ -60,7 +60,7 @@ const SendEmail = ({ hideModal, order }) => {
                         <div className="text-center">
                             <img src={SendEmailTop} className="mx-auto  mb-5" />
                             <h2 className="text-ec-body font-semibold text-2xl leading-8 font-inter">
-                                Resend Order Email
+                                {__("Resend Order Email", "easycommerce")}
                             </h2>
                         </div>
                         <div className="mb-4 flex flex-col">
@@ -88,14 +88,14 @@ const SendEmail = ({ hideModal, order }) => {
 								ease-in-out duration-500"
                                 onClick={hideModal}
                             >
-                                Cancel
+                                {__("Cancel", "easycommerce")}
                             </button>
                             <button
                                 onClick={handleSendEmail}
                                 className="p-[10px] rounded-lg text-white border border-ec-primary font-inter font-medium text-base
                                 leading-[26px] w-[224px] bg-ec-primary hover:bg-ec-secondary transition-all ease-in-out duration-500"
                             >
-                                Send
+                                {__("Send", "easycommerce")}
                             </button>
                         </div>
                     </div>

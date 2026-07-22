@@ -52,7 +52,7 @@ const Edit = (props) => {
         </>
     ) : (
         <div {...blockProps}>
-            <p>Post type is not product.</p>
+            <p>{__("Post type is not product.", "easycommerce")}</p>
         </div>
     );
 };

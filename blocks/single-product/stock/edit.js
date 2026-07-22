@@ -1,5 +1,6 @@
+import { __, _n, sprintf } from "@wordpress/i18n";
 import { useBlockProps } from "@wordpress/block-editor";
-import { useEffect, useState } from "@wordpress/element";
+import { createInterpolateElement, useEffect, useState } from "@wordpress/element";
 
 import "./index.css";
 import Inspector from "./inspector";
@@ -38,14 +39,28 @@ const Edit = (props) => {
             <div {...blockProps}>
                 {showStock && productStock > 0 && (
                     <span className="text-ec-body font-inter text-base leading-[26px]">
-                        Only <strong>{productStock}</strong> items left in stock
+                        {createInterpolateElement(
+                            sprintf(
+                                // translators: %d: number of items left in stock.
+                                _n(
+                                    "Only <strong>%d</strong> item left in stock",
+                                    "Only <strong>%d</strong> items left in stock",
+                                    productStock,
+                                    "easycommerce"
+                                ),
+                                productStock
+                            ),
+                            {
+                                strong: <strong />,
+                            }
+                        )}
                     </span>
                 )}
             </div>
         </>
     ) : (
         <div {...blockProps}>
-            <p>Post type is not product.</p>
+            <p>{__("Post type is not product.", "easycommerce")}</p>
         </div>
     );
 };

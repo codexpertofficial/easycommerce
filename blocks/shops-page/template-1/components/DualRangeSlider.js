@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { __ } from '@wordpress/i18n';
 
 const DualRangeSlider = ({ range, setRange, maxValue }) => {
     const sliderTrackRef = useRef(null);
@@ -102,7 +103,7 @@ const DualRangeSlider = ({ range, setRange, maxValue }) => {
             <div className="flex justify-between mt-4 gap-10">
                 <div className="flex flex-col">
                     <label className="text-[12px] mb-1 text-ec-placeholder">
-                        Min Price
+                        {__('Min Price', 'easycommerce')}
                     </label>
                     <div className="relative">
                         <input
@@ -118,7 +119,7 @@ const DualRangeSlider = ({ range, setRange, maxValue }) => {
 
                 <div className="flex flex-col">
                     <label className="text-[12px] mb-1 text-ec-placeholder">
-                        Max Price
+                        {__('Max Price', 'easycommerce')}
                     </label>
                     <div className="relative">
                         <input

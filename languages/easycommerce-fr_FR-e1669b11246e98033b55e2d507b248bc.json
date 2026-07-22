@@ -1,0 +1,30 @@
+{
+    "translation-revision-date": "YEAR-MO-DA HO:MI+ZONE",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "blocks\/single-product\/title\/inspector.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "fr_FR",
+                "plural-forms": "nplurals=2; plural=(n > 1);"
+            },
+            "Body": [
+                "Corps"
+            ],
+            "Styles": [
+                "Styles"
+            ],
+            "Primary": [
+                "Principal"
+            ],
+            "Body Light": [
+                "Corps clair"
+            ],
+            "Title": [
+                "Titre"
+            ]
+        }
+    }
+}

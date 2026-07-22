@@ -534,7 +534,8 @@ class Product extends API {
 					'object'    => 'review',
 					'action'    => 'create',
 					'object_id' => $comment_id,
-					'note'      => 'New review added for ' . $product->get_title(),
+					// translators: %s: product title.
+					'note'      => sprintf( __( 'New review added for %s', 'easycommerce' ), $product->get_title() ),
 				)
 			);
 

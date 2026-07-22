@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
+import { __ } from "@wordpress/i18n";
 import Title from "../../../../../../common/components/Title";
 import SubTitle from "../../../../../../common/components/SubTitle";
 import TextField from "../../../../../../common/components/inputs/TextField";
@@ -9,7 +10,7 @@ import Button from "../../../../../../common/components/inputs/Button";
 const BrandModal = ({isOpen, onClose, onBrandCreated}) => {
     const [flatBrands, setFlatBrands] = useState([]);
     const [brandsData, setBrandsData] = useState({ brands: [{ brand_name: '', brand_slug: '', parent: 0 }] });
-    const [selectParent, setSelectParent] = useState({ label: 'None', value: 0 });
+    const [selectParent, setSelectParent] = useState({ label: __('None', 'easycommerce'), value: 0 });
 
     const generateSlug = (text) => {
         return text
@@ -69,7 +70,7 @@ const BrandModal = ({isOpen, onClose, onBrandCreated}) => {
         };
 
         if (!payload.name.trim() || !payload.slug.trim()) {
-            toast.error('All fields are required!');
+            toast.error(__('All fields are required!', 'easycommerce'));
             return;
         }
 
@@ -88,19 +89,19 @@ const BrandModal = ({isOpen, onClose, onBrandCreated}) => {
             const data = await response.json();
 
             if (data.success) {
-                toast.success('Brand created successfully');
+                toast.success(__('Brand created successfully', 'easycommerce'));
                 setBrandsData({ brands: [{ brand_name: '', brand_slug: '', parent: 0 }] });
-                setSelectParent({ label: 'None', value: 0 });
+                setSelectParent({ label: __('None', 'easycommerce'), value: 0 });
                 if (onBrandCreated) {
                     onBrandCreated(data.data.brand);
                 }
                 onClose();
                 await fetchData();
             } else {
-                toast.error(data.data.message || 'Operation failed');
+                toast.error(data.data.message || __('Operation failed', 'easycommerce'));
             }
         } catch (error) {
-            toast.error('Operation failed');
+            toast.error(__('Operation failed', 'easycommerce'));
         } finally {
             easycommerce_modal(false);
         }
@@ -132,7 +133,7 @@ const BrandModal = ({isOpen, onClose, onBrandCreated}) => {
     if (!isOpen) return null;
 
     const selectedParentOptions = [
-        { label: 'None', value: 0 },
+        { label: __('None', 'easycommerce'), value: 0 },
         ...flatBrands.map(brand => ({ label: brand.name, value: brand.id }))
     ];
 
@@ -148,26 +149,26 @@ const BrandModal = ({isOpen, onClose, onBrandCreated}) => {
                     </svg>
                 </button>
 				<div className="flex justify-between items-center border-b px-6 py-4">
-					<Title title={"Add New Brand"} />
+					<Title title={__("Add New Brand", "easycommerce")} />
 				</div>
 				<div className="p-6 flex flex-col gap-4 max-h-[75vh] overflow-visible">
 					<div className="flex flex-col gap-2">
 						<SubTitle
-							SubTitle="Name"
-							notice="It'll be used to filter products"
+							SubTitle={__("Name", "easycommerce")}
+							notice={__("It'll be used to filter products", "easycommerce")}
 						/>
 						<TextField
 							name="brand_name"
 							value={brandsData.brands[0].brand_name}
 							onChange={handleChange}
-							placeholder="Enter Name"
+							placeholder={__("Enter Name", "easycommerce")}
 							className="h-ec-input"
 						/>
 					</div>
 					<div className="flex flex-col gap-2">
 						<SubTitle
-							SubTitle="Slug"
-							notice="URL-friendly slug of the brand"
+							SubTitle={__("Slug", "easycommerce")}
+							notice={__("URL-friendly slug of the brand", "easycommerce")}
 						/>
 						<div className="h-ec-input rounded-lg font-inter text-[14px] leading-[20px] border border-ec-table-stock placeholder-ec-placeholder hover:border-ec-primary focus-within:border-ec-primary focus-within:outline-none focus-within:[box-shadow:0_0_0_4px_#F3F0FF] transition-colors duration-300 ease-in-out overflow-hidden flex">
 							<div className="h-ec-input flex items-center justify-center text-ec-light-black pl-4">
@@ -190,13 +191,13 @@ const BrandModal = ({isOpen, onClose, onBrandCreated}) => {
 					</div>
 					<div className="flex flex-col gap-2">
 						<SubTitle
-							SubTitle="Parent"
-							notice="Select a parent brand if any"
+							SubTitle={__("Parent", "easycommerce")}
+							notice={__("Select a parent brand if any", "easycommerce")}
 						/>
 						<div className="w-full h-ec-input">
 							<Dropdown
 								options={selectedParentOptions}
-								placeholder="Select Parent"
+								placeholder={__("Select Parent", "easycommerce")}
 								onChange={handleParentChange}
 								value={selectParent.value}
 							/>
@@ -205,7 +206,7 @@ const BrandModal = ({isOpen, onClose, onBrandCreated}) => {
 					<div className="flex justify-end mt-6">
 						<Button
 							className="easycommerce-outline-button"
-							value="Create Brand"
+							value={__("Create Brand", "easycommerce")}
 							onClick={handleSubmit}
 						/>
 					</div>

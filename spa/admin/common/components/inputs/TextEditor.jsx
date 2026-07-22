@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { __ } from "@wordpress/i18n";
 
 function TextEditor({ content, onChange, handleMediaUpload }) {
     const editorRef = useRef(null);
@@ -20,7 +21,7 @@ function TextEditor({ content, onChange, handleMediaUpload }) {
             document_base_url: window.location.origin + "/",
             setup: (editor) => {
                 editor.addButton("add_custom_wp_media", {
-                    text: "Add Media",
+                    text: __( 'Add Media', 'easycommerce' ),
                     icon: "image",
                     onclick: () => handleMediaUpload(),
                 });

@@ -1,7 +1,9 @@
 <?php
 return array(
-	'customer_subject' => 'Your Order ###order_id## is On Hold - ##shop_name##',
-	'customer_body'    => '
+	/* translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim. */
+	'customer_subject' => __( 'Your Order ###order_id## is On Hold - ##shop_name##', 'easycommerce' ),
+	/* translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim. */
+	'customer_body'    => __( '
 Hi ##customer_name##,
 
 We wanted to give you a heads-up that your order ###order_id## is temporarily on hold. We\'re working to get it moving as soon as possible and will keep you updated.
@@ -17,10 +19,12 @@ If you have any questions or need things sorted quickly, please reach out - we\'
 
 Warm regards,
 The ##shop_name## Team
-',
+', 'easycommerce' ),
 
-	'admin_subject'    => 'Order ###order_id## On Hold - ##customer_name## - ##shop_name##',
-	'admin_body'       => '
+	/* translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim. */
+	'admin_subject'    => __( 'Order ###order_id## On Hold - ##customer_name## - ##shop_name##', 'easycommerce' ),
+	/* translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim. */
+	'admin_body'       => __( '
 Hi there,
 
 Order ###order_id## from ##customer_name## has been placed on hold.
@@ -37,5 +41,5 @@ Please review this order and take any necessary action.
 
 Best regards,
 The ##shop_name## Team
-',
+', 'easycommerce' ),
 );

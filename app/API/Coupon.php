@@ -95,7 +95,8 @@ class Coupon extends API {
 		/**
 		 * Logs the coupon creation event.
 		 */
-		do_action( 'easycommerce_log', array( 'object' => 'coupon', 'action' => 'create', 'object_id' => $coupon_id, 'note' => 'Coupon ' . $data['code'] . ' created' ) );
+		// translators: %s: coupon code.
+		do_action( 'easycommerce_log', array( 'object' => 'coupon', 'action' => 'create', 'object_id' => $coupon_id, 'note' => sprintf( __( 'Coupon %s created', 'easycommerce' ), $data['code'] ) ) );
 
 		if ( ! $coupon_id ) {
 			return $this->response_error( array( 'message' => __( 'Failed to create coupon.', 'easycommerce' ) ) );
@@ -268,7 +269,8 @@ class Coupon extends API {
 		/**
 		 * Logs the coupon deletion event.
 		 */
-		do_action( 'easycommerce_log', array( 'object' => 'coupon', 'action' => 'delete', 'object_id' => $id, 'note' => 'Coupon ' . $coupon->get_code() . ' deleted' ) );
+		// translators: %s: coupon code.
+		do_action( 'easycommerce_log', array( 'object' => 'coupon', 'action' => 'delete', 'object_id' => $id, 'note' => sprintf( __( 'Coupon %s deleted', 'easycommerce' ), $coupon->get_code() ) ) );
 
 		if ( ! $deleted ) {
 			return $this->response_error( array( 'message' => __( 'Failed to delete coupon.', 'easycommerce' ) ) );

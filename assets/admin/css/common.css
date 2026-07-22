@@ -28,13 +28,13 @@
     transition: box-shadow .1s linear;
 }
 
-#wp-admin-bar-top-secondary #wp-admin-bar-easycommerce-migration {
-	background: #7351fd;
+#wp-admin-bar-easycommerce-migration {
+	  background: #ff8d30 !important;
 }
 
 #wp-admin-bar-easycommerce-migration:hover a {
-	background: #7351fd !important;
-	color: #f0f0f1 !important;
+	background: #ff8d30 !important;
+	color: #fff !important;
 }
 
 #wp-admin-bar-top-secondary #wp-admin-bar-easycommerce-ai-credits {
@@ -148,21 +148,15 @@
 }
 
 .migration-popup-wrapper .container .description {
-  width: 100%;
   margin-left: auto;
   margin-right: auto;
+  padding: 0 1.5rem;
   text-align: center;
   font-family: "Inter", sans-serif;
   font-weight: 400;
   font-size: 1rem;
   line-height: 26px;
   color: #3C3C42;
-}
-
-@media (min-width: 640px) {
-  .migration-popup-wrapper .container .description {
-    width: 75%;
-  }
 }
 
 .migration-popup-wrapper .button-wrapper {

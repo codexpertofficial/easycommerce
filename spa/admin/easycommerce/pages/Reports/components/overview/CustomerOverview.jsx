@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import apiFetch from '@wordpress/api-fetch';
 import { addQueryArgs } from '@wordpress/url';
+import { __ } from '@wordpress/i18n';
 
 import TrendIndicator from '../common/TrendIndicator';
 import TableSkeleton from '../common/TableSkeleton';
@@ -85,18 +86,18 @@ const CustomerOverview = ({ endpoint, params = {} }) => {
 								transform: 'rotate(180deg)',
 							}}
 						>
-							Top Customers
+							{__( 'Top Customers', 'easycommerce' )}
 						</span>
 					</div>
 
 					<div className="flex-1 flex flex-col">
 						<div className="grid grid-cols-3 px-4 py-4 bg-[#F7F7F7]">
-							<span className="text-sm font-medium text-[#1B2538]">Name</span>
+							<span className="text-sm font-medium text-[#1B2538]">{__( 'Name', 'easycommerce' )}</span>
 							<span className="text-sm font-medium text-[#1B2538] text-center">
-								Orders
+								{__( 'Orders', 'easycommerce' )}
 							</span>
 							<span className="text-sm font-medium text-[#1B2538] text-right">
-								Purchased
+								{__( 'Purchased', 'easycommerce' )}
 							</span>
 						</div>
 

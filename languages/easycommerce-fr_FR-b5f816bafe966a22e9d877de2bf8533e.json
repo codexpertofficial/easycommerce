@@ -1,0 +1,34 @@
+{
+    "translation-revision-date": "YEAR-MO-DA HO:MI+ZONE",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "blocks\/single-product\/product-tab\/components\/review.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "fr_FR",
+                "plural-forms": "nplurals=2; plural=(n > 1);"
+            },
+            "Reviews": [
+                "Avis"
+            ],
+            "Showing %d review": [
+                "Affichage de %d avis",
+                "Affichage de %d avis"
+            ],
+            "Write a review": [
+                "R\u00e9diger un avis"
+            ],
+            "Your email address will not be published. required fields are marked": [
+                "Votre adresse e-mail ne sera pas publi\u00e9e. Les champs obligatoires sont indiqu\u00e9s"
+            ],
+            "Write your review": [
+                "R\u00e9digez votre avis"
+            ],
+            "Submit Now": [
+                "Envoyer"
+            ]
+        }
+    }
+}

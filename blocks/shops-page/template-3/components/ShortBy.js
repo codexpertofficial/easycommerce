@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { __, sprintf } from '@wordpress/i18n';
 
 
 const DropdownField = ({
@@ -58,7 +59,7 @@ const DropdownField = ({
             )}
             <img
                 src={arrowDown}
-                alt="Dropdown Icon"
+                alt={__('Dropdown Icon', 'easycommerce')}
                 className={`easycommerce-select-icon absolute w-3 ml-0 right-3 transition-transform duration-300 ${
                     isOpen ? 'rotate-180' : ''
                 }`}
@@ -71,14 +72,14 @@ const ShortBy = ({ viewType, setViewType, perPage = 9, totalProducts = 0, showPa
     const [sortOption, setSortOption] = useState('');
 
     const sortOptions = [
-        { value: 'low-to-high', label: 'Low to High' },
-        { value: 'high-to-low', label: 'High to Low' },
-        { value: 'newest', label: 'Newest' },
-        { value: 'oldest', label: 'Oldest' },
-        { value: 'best-selling', label: 'Best Selling' },
-        { value: 'lowest-selling', label: 'Lowest Selling' },
-        { value: 'top-rating', label: 'Top rating' },
-        { value: 'lowest-rating', label: 'Lowest rating' },
+        { value: 'low-to-high', label: __('Low to High', 'easycommerce') },
+        { value: 'high-to-low', label: __('High to Low', 'easycommerce') },
+        { value: 'newest', label: __('Newest', 'easycommerce') },
+        { value: 'oldest', label: __('Oldest', 'easycommerce') },
+        { value: 'best-selling', label: __('Best Selling', 'easycommerce') },
+        { value: 'lowest-selling', label: __('Lowest Selling', 'easycommerce') },
+        { value: 'top-rating', label: __('Top rating', 'easycommerce') },
+        { value: 'lowest-rating', label: __('Lowest rating', 'easycommerce') },
     ];
 
     const handleSortChange = (value) => {
@@ -87,7 +88,7 @@ const ShortBy = ({ viewType, setViewType, perPage = 9, totalProducts = 0, showPa
 
     const start = 1;
     const end = Math.min(perPage, totalProducts);
-    const showingText = `Showing ${start}-${end} of ${totalProducts} Results`;
+    const showingText = sprintf( __( 'Showing %1$d-%2$d of %3$d Results', 'easycommerce' ), start, end, totalProducts );
 
     const gridView = (
         <svg width="43" height="40" viewBox="0 0 43 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -117,11 +118,11 @@ const ShortBy = ({ viewType, setViewType, perPage = 9, totalProducts = 0, showPa
 
             <div className="flex items-center gap-4">
                 <span className="text-[#737791] font-inter text-base font-normal">
-                    Sort by
+                    {__('Sort by', 'easycommerce')}
                 </span>
                 <DropdownField
                     options={sortOptions}
-                    placeholder="Default Sorter"
+                    placeholder={__('Default Sorter', 'easycommerce')}
                     width="200px"
                     menuWidth="200px"
                     onChange={handleSortChange}

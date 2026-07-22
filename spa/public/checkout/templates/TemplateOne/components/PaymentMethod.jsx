@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Slot } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
 //Images and Icons
 const paymentMethodImage = `${EASYCOMMERCE.assets}public/img/checkout/payment-method.png`;
@@ -21,7 +22,7 @@ const PaymentMethod = () => {
                         className="w-[53px] h-[53px] mr-4"
                     />
                     <h3 className="easycommerce-billing-title font-inter leading-8 font-semibold text-xl mb-0">
-                        Payment Method
+                        {__( "Payment Method", "easycommerce" )}
                     </h3>
                 </div>
                 <div>
@@ -40,7 +41,7 @@ const PaymentMethod = () => {
                         />
                         <img src={debitCredit} alt="" />
                         <span className="block text-ec-body font-inter font-medium text-base leading-[26px]">
-                            Debit / Credit card
+                            {__( "Debit / Credit card", "easycommerce" )}
                         </span>
                     </label>
                     <label
@@ -55,7 +56,7 @@ const PaymentMethod = () => {
                         />
                         <img src={internetBanking} alt="" />
                         <span className="block text-ec-body font-inter font-medium text-base leading-[26px]">
-                            Internet banking
+                            {__( "Internet banking", "easycommerce" )}
                         </span>
                     </label>
                     <label
@@ -70,7 +71,7 @@ const PaymentMethod = () => {
                         />
                         <img src={googleAppleWallet} alt="" />
                         <span className="block text-ec-body font-inter font-medium text-base leading-[26px]">
-                            Google / Apple Wallet
+                            {__( "Google / Apple Wallet", "easycommerce" )}
                         </span>
                     </label>
 
@@ -84,7 +85,7 @@ const PaymentMethod = () => {
                                 className="font-inter text-black text-base font-normal block leading-[26px]
                              mb-2"
                             >
-                                Card Number
+                                {__( "Card Number", "easycommerce" )}
                             </span>
                             <input
                                 className="easycommerce-checkout_input w-full text-ec-body 
@@ -95,19 +96,19 @@ const PaymentMethod = () => {
                         </label>
                         <label htmlFor="" className="block mb-6">
                             <span className="font-inter text-black text-base font-normal block leading-[26px] mb-2">
-                                Name on Card
+                                {__( "Name on Card", "easycommerce" )}
                             </span>
                             <input
                                 className="easycommerce-checkout_input w-full text-ec-body 
                             placeholder:text-ec-placeholder font-inter text-base leading-[26px] py-[7px] px-[10px]"
                                 type="text"
-                                placeholder="Enter card holder name"
+                                placeholder={__( "Enter card holder name", "easycommerce" )}
                             />
                         </label>
                         <div className="flex items-center gap-3 mb-6">
                             <label htmlFor="">
                                 <span className="font-inter text-black text-base font-normal block leading-[26px] mb-2">
-                                    Expiration date (MM/YY)
+                                    {__( "Expiration date (MM/YY)", "easycommerce" )}
                                 </span>
                                 <input
                                     className="easycommerce-checkout_input w-full text-ec-body 
@@ -118,13 +119,13 @@ const PaymentMethod = () => {
                             </label>
                             <label htmlFor="">
                                 <span className="font-inter text-black text-base font-normal block leading-[26px] mb-2">
-                                    CVC
+                                    {__( "CVC", "easycommerce" )}
                                 </span>
                                 <input
                                     className="easycommerce-checkout_input w-full text-ec-body 
                             placeholder:text-ec-placeholder font-inter text-base leading-[26px] py-[7px] px-[10px]"
                                     type="text"
-                                    placeholder="CVC"
+                                    placeholder={__( "CVC", "easycommerce" )}
                                 />
                             </label>
                         </div>

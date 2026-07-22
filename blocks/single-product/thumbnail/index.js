@@ -17,8 +17,7 @@ const thumbnailIcon = (
     </svg>
 );
 
-registerBlockType(metadata.name, {
+registerBlockType(metadata, {
     icon: thumbnailIcon,
-    title: metadata.title,
     edit: Edit,
 });

@@ -1,6 +1,6 @@
 <?php
 if ( get_post_type( get_the_ID() ) !== 'product' ) {
-	echo 'Post type is not product';
+	esc_html_e( 'Post type is not product', 'easycommerce' );
 	return;
 }
 
@@ -50,7 +50,7 @@ foreach ( $prices as $price ) {
 
 	$attributes_data[] = array(
 		'id'          => $price['id'],
-		'price'       => $price['regular_price'],
+		'price'       => easycommerce_price( $price['regular_price'] ),
 		'sale_price'  => $price['price'],
 		'price_id'    => $price['price_id'],
 		'attributes'  => $dynamic_attributes,

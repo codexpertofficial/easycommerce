@@ -9,7 +9,7 @@ const General = ({ couponData, handleCouponData }) => {
     return (
         <div className="col-span-1 border border-ec-border rounded-xl bg-white">
             <h3 className="font-inter font-medium text-ec-title text-lg leading-8 capitalize border-b border-ec-border p-6">
-                General
+                { __( 'General', 'easycommerce' ) }
             </h3>
 
             <div className="flex flex-col gap-6 p-6 pb-8">
@@ -24,7 +24,7 @@ const General = ({ couponData, handleCouponData }) => {
                         id={"name"}
                         value={couponData.name}
                         onChange={(e) => handleCouponData("name", e.target.value)}
-                        placeholder="Coupon Name"
+                        placeholder={ __( 'Coupon Name', 'easycommerce' ) }
                     />
                 </div>
                 <div className="flex flex-col gap-[6px]">
@@ -38,7 +38,7 @@ const General = ({ couponData, handleCouponData }) => {
                         id={"code"}
                         value={couponData.code}
                         onChange={(e) => handleCouponData("code", e.target.value)}
-                        placeholder="Coupon Code"
+                        placeholder={ __( 'Coupon Code', 'easycommerce' ) }
                     />
                 </div>
             </div>

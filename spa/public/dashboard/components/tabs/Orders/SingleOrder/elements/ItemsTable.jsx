@@ -1,5 +1,6 @@
 import React from "react";
 import { Slot } from "@wordpress/components";
+import { __, sprintf } from "@wordpress/i18n";
 
 const dummyImageUrl = `${EASYCOMMERCE.assets}admin/img/icons/demo-image.png`;
 
@@ -9,13 +10,13 @@ const ItemsTable = ({ order }) => {
             <thead>
                 <tr className="easycommerce-dashboard-order-iteam-wrap grid grid-cols-12 gap-0">
                     <th className="col-span-8 font-inter font-semibold text-base md:text-xl text-left rtl:text-right leading-8 text-ec-body p-0 pl-4 pb-6 border-0 border-b border-ec-border">
-                        Items
+                        {__( "Items", "easycommerce" )}
                     </th>
                     <th className="col-span-2 font-inter font-semibold text-base md:text-xl text-right leading-8 text-ec-body p-0 pb-6 border-0 border-b border-ec-border">
-                        Quantity
+                        {__( "Quantity", "easycommerce" )}
                     </th>
                     <th className="col-span-2 font-inter font-semibold text-base md:text-xl text-right leading-8 text-ec-body p-0 pr-4 pb-6 border-0 border-b border-ec-border">
-                        Total
+                        {__( "Total", "easycommerce" )}
                     </th>
                 </tr>
             </thead>
@@ -42,7 +43,7 @@ const ItemsTable = ({ order }) => {
                                                     item?.product?.thumbnail?.url ||
                                                     dummyImageUrl
                                                 }
-                                                alt={item?.variation?.name || item?.product?.name || "Product Image"}
+                                                alt={item?.variation?.name || item?.product?.name || __( "Product Image", "easycommerce" )}
                                                 className="w-full h-full rounded-xl border border-ec-border object-cover bg-ec-accent pointer-events-none"
                                             />
                                         </span>
@@ -58,7 +59,7 @@ const ItemsTable = ({ order }) => {
                                                 { item.meta.is_free && (
                                                     <>
                                                         <del className="text-ec-placeholder mr-2">{item.rate}</del>
-                                                        Free Product
+                                                        {__( "Free Product", "easycommerce" )}
                                                     </>
                                                 )}
                                             </span>
@@ -75,7 +76,10 @@ const ItemsTable = ({ order }) => {
                                                 <svg className="w-4 h-4" data-slot="icon" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
                                                     <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
                                                 </svg>
-                                                Download {item.variation.downloads[0].filename}
+                                                {
+                                                    // translators: %s: downloadable file name.
+                                                    sprintf( __( "Download %s", "easycommerce" ), item.variation.downloads[0].filename )
+                                                }
                                             </a>
                                         )}
                                     </span>
@@ -127,7 +131,7 @@ const ItemsTable = ({ order }) => {
                     <tr className="grid grid-cols-12 gap-0 p-0">
                         <td className="col-span-8 p-0 pt-4 pb-[10px] pl-4 text-left rtl:text-right border-0">
                             <span className="font-inter font-medium text-base leading-[26px] text-ec-placeholder">
-                                Subtotal
+                                {__( "Subtotal", "easycommerce" )}
                             </span>
                         </td>
                         <td className="col-span-2 p-0 pt-4 pb-[10px] border-0"></td>
@@ -143,7 +147,7 @@ const ItemsTable = ({ order }) => {
                     <tr className="grid grid-cols-12 gap-0 p-0">
                         <td className="col-span-8 p-0 py-[10px] pl-4 text-left rtl:text-right border-0">
                             <span className="font-inter font-medium text-base leading-[26px] text-ec-placeholder">
-                                Discount
+                                {__( "Discount", "easycommerce" )}
                             </span>
                         </td>
                         <td className="col-span-2 p-0 py-[10px] border-0"></td>
@@ -159,7 +163,7 @@ const ItemsTable = ({ order }) => {
                     <tr className="grid grid-cols-12 gap-0 p-0">
                         <td className="col-span-8 p-0 py-[10px] pl-4 text-left rtl:text-right border-0">
                             <span className="font-inter font-medium text-base leading-[26px] text-ec-placeholder">
-                                Shipping
+                                {__( "Shipping", "easycommerce" )}
                             </span>
                         </td>
                         <td className="col-span-2 p-0 py-[10px] border-0"></td>
@@ -175,7 +179,7 @@ const ItemsTable = ({ order }) => {
                     <tr className="grid grid-cols-12 gap-0 p-0">
                         <td className="col-span-8 p-0 pt-[10px] pb-4 pl-4 text-left rtl:text-right border-0">
                             <span className="font-inter font-medium text-base leading-[26px] text-ec-placeholder">
-                                Product Tax
+                                {__( "Product Tax", "easycommerce" )}
                             </span>
                         </td>
                         <td className="col-span-2 p-0 py-[10px] border-0"></td>
@@ -191,7 +195,7 @@ const ItemsTable = ({ order }) => {
                     <tr className="grid grid-cols-12 gap-0 p-0">
                         <td className="col-span-8 p-0 py-[10px] pl-4 text-left border-0">
                             <span className="font-inter font-medium text-base leading-[26px] text-ec-placeholder">
-                                Shipping Tax
+                                {__( "Shipping Tax", "easycommerce" )}
                             </span>
                         </td>
                         <td className="col-span-2 p-0 py-[10px] border-0"></td>
@@ -208,7 +212,7 @@ const ItemsTable = ({ order }) => {
                 <tr className="grid grid-cols-12 gap-0 p-0">
                     <td className="col-span-8 p-0 pt-5 pl-4 text-left  border-0 border-t border-ec-border rtl:text-right">
                         <span className="font-inter font-bold text-base leading-[26px] text-ec-body">
-                            Total
+                            {__( "Total", "easycommerce" )}
                         </span>
                     </td>
                     <td className="col-span-2 p-0 pt-5 border-0 border-t border-ec-border"></td>

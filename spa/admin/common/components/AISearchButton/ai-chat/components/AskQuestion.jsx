@@ -1,4 +1,5 @@
 import React from 'react'
+import { __ } from '@wordpress/i18n';
 
 const AskQuestion = () => {
     const aiIcon = (
@@ -63,9 +64,9 @@ const AskQuestion = () => {
             {aiIcon}
 
             <div>
-                <h2 className='text-center text-[32px] text-ec-title font-medium my-2'>Store Copilot</h2>
+                <h2 className='text-center text-[32px] text-ec-title font-medium my-2'>{ __( 'Store Copilot', 'easycommerce' ) }</h2>
                 <p className='block text-center text-[18px] text-ec-light-black pb-[50px]'>
-                    Ask Store Copilot anything about your store - get insights, or manage products and orders right from chat.
+                    { __( 'Ask Store Copilot anything about your store - get insights, or manage products and orders right from chat.', 'easycommerce' ) }
                 </p>
             </div>
         </div>

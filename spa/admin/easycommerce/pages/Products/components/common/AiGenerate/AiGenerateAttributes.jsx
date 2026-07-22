@@ -261,7 +261,7 @@ const AiGenerateAttributes = ({ productTitle, setAiOpen, setAiContent }) => {
 								}
 							>
 								{isLoading ? (
-									<img src={loadingGifURL} alt="loading" className="h-8" />
+									<img src={loadingGifURL} alt={__('loading', 'easycommerce')} className="h-8" />
 								) : (
 									<>
 										{generateIcon}

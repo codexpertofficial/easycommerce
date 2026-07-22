@@ -1,4 +1,5 @@
 import React from "react";
+import { __ } from "@wordpress/i18n";
 import { Line } from "react-chartjs-2";
 import {
     Chart as ChartJS,
@@ -96,7 +97,7 @@ const SalesChart = ({ data, isLoading }) => {
                 </div>
             ) : (
                 <div className="w-full h-[350px] min-h-60 flex items-center justify-center text-gray-400">
-                    Loading...
+                    {__("Loading...", "easycommerce")}
                 </div>
             )}
         </>

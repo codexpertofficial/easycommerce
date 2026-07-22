@@ -27,7 +27,7 @@ const Stock = ({ id, priceItem, setPriceItem }) => {
 							class="flex gap-3 text-base font-inter mr-2 text-[#282828]"
 						>
 							{__('Stock Count', 'easycommerce')}
-							<Tooltip text="Number of items we have in stock. If you don't manage stock for this variation, simply leave it blank." />
+							<Tooltip text={__("Number of items we have in stock. If you don't manage stock for this variation, simply leave it blank.", 'easycommerce')} />
 						</label>
 					</div>
 					<div className="h-ec-input mt-3">
@@ -49,7 +49,7 @@ const Stock = ({ id, priceItem, setPriceItem }) => {
 					<div>
 						<label class="flex gap-3 text-base font-inter mr-2 text-ec-title">
 							{__('Low Stock Limit', 'easycommerce')}
-							<Tooltip text="When should we call it low stock?" />
+							<Tooltip text={__('When should we call it low stock?', 'easycommerce')} />
 						</label>
 					</div>
 					<div className="h-ec-input mt-3">

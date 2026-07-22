@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { __ } from '@wordpress/i18n';
 import Cookies from 'universal-cookie';
 
 // Modals
@@ -146,7 +147,7 @@ const CommonHeader = ({
 										className="text-sm leading-5 font-medium text-ec-placeholder hover:text-ec-primary"
 										href="?page=easycommerce-settings"
 									>
-										Settings
+										{__('Settings', 'easycommerce')}
 									</a>
 								</h3>
 							</>
@@ -182,7 +183,7 @@ const CommonHeader = ({
                                     href={`${EASYCOMMERCE.admin_url}?page=easycommerce`}
                                     className="flex items-center cursor-pointer p-2 font-inter font-medium text-sm leading-5 text-ec-primary focus:shadow-none focus:text-ec-primary"
                                 >
-                                    Get Pro
+                                    {__('Get Pro', 'easycommerce')}
                                 </a>
                             </div>
                             <span>|</span>
@@ -194,7 +195,7 @@ const CommonHeader = ({
                                     href="admin.php?page=easycommerce#/get-pro"
                                     className="flex items-center cursor-pointer p-2 font-inter font-medium text-sm leading-5 text-ec-primary focus:shadow-none focus:text-ec-primary"
                                 >
-                                    Activate License
+                                    {__('Activate License', 'easycommerce')}
                                 </a>
                             </div>
                             <span>|</span>
@@ -208,7 +209,7 @@ const CommonHeader = ({
 							target="_blank"
 							className="flex items-center cursor-pointer p-2 font-inter font-medium text-sm leading-5 ec-primary hover:text-ec-primary focus:shadow-none focus:text-ec-primary"
 						>
-							Support
+							{__('Support', 'easycommerce')}
 						</a>
 					</div>
 
@@ -246,7 +247,7 @@ const CommonHeader = ({
 										>
 											<img src={profileIcon} className="w-[14px] h-4" />
 											<span className="text-base leading-[26px] font-inter font-normal text-ec-body">
-												Profile
+												{__('Profile', 'easycommerce')}
 											</span>
 										</a>
 
@@ -257,7 +258,7 @@ const CommonHeader = ({
 										>
 											<img src={disconnectIcon} className="w-5 h-4" />
 											<span className="text-base leading-[26px] font-inter font-normal text-ec-body">
-												Disconnect
+												{__('Disconnect', 'easycommerce')}
 											</span>
 										</button>
 									</div>

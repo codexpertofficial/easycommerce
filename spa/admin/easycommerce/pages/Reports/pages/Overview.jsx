@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { __ } from '@wordpress/i18n';
 
 // components
 import Header from '../components/common/Header';
@@ -14,19 +15,19 @@ import ProductStats from '../components/overview/ProductStats';
 
 const Overview = () => {
 	const [range, setRange] = useState({
-		label: 'Last 30 days',
+		label: __( 'Last 30 days', 'easycommerce' ),
 		value: 'last-30',
 	});
 
 	const [comparison, setComparison] = useState({
-		label: 'Prev. 30 days',
+		label: __( 'Prev. 30 days', 'easycommerce' ),
 		value: 'prev-30',
 	});
 
 	return (
 		<>
 			<Header
-				title="Overview"
+				title={__( 'Overview', 'easycommerce' )}
 				range={range}
 				setRange={setRange}
 				comparison={comparison}
@@ -40,9 +41,9 @@ const Overview = () => {
 			/>
 
 			<div className="my-6">
-				<Container 
-					title="Sales vs. Refunds vs. Net Revenue" 
-					tooltip="Comparison of sales, refunds, and net revenue over time" 
+				<Container
+					title={__( 'Sales vs. Refunds vs. Net Revenue', 'easycommerce' )}
+					tooltip={__( 'Comparison of sales, refunds, and net revenue over time', 'easycommerce' )}
 					link="#/reports/revenues"
 				>
 					<LineChart
@@ -54,8 +55,8 @@ const Overview = () => {
 
 			<div className="my-6">
 				<div className="grid grid-cols-2 gap-6">
-					<Container 
-						title="Order vs. Refund Count" 
+					<Container
+						title={__( 'Order vs. Refund Count', 'easycommerce' )}
 						link="#/reports/orders"
 					>
 						<LineChart
@@ -65,15 +66,15 @@ const Overview = () => {
 						/>
 					</Container>
 
-					<Container title="Order Statuses">
+					<Container title={__( 'Order Statuses', 'easycommerce' )}>
 						<OrderChart range={range.value} />
 					</Container>
 
-					<Container title="Subscriptions">
+					<Container title={__( 'Subscriptions', 'easycommerce' )}>
 						<Subscriptions />
 					</Container>
 
-					<Container title="Order Type">
+					<Container title={__( 'Order Type', 'easycommerce' )}>
 						<LineChart
 							endpoint="/easycommerce/v1/reports/overview/order-type"
 							params={{ range: range.value, comparison: comparison.value }}
@@ -81,21 +82,21 @@ const Overview = () => {
 						/>
 					</Container>
 
-					<Container title="Top Selling Items" link="#/reports/products">
+					<Container title={__( 'Top Selling Items', 'easycommerce' )} link="#/reports/products">
 						<TopSellingProducts
 							range={range.value}
 							comparison={comparison.value}
 						/>
 					</Container>
 
-					<Container title="Product Stats">
+					<Container title={__( 'Product Stats', 'easycommerce' )}>
 						<ProductStats
 							endpoint="/easycommerce/v1/reports/overview/catalog-stats"
 							params={{ range: range.value }}
 						/>
 					</Container>
 
-					<Container title="New vs. Returning Customers" link="#/reports/customers">
+					<Container title={__( 'New vs. Returning Customers', 'easycommerce' )} link="#/reports/customers">
 						<LineChart
 							endpoint="/easycommerce/v1/reports/overview/customer-type"
 							params={{ range: range.value }}
@@ -103,7 +104,7 @@ const Overview = () => {
 						/>
 					</Container>
 
-					<Container title="Customer Overview">
+					<Container title={__( 'Customer Overview', 'easycommerce' )}>
 						<CustomerOverview
 							endpoint="/easycommerce/v1/reports/overview/customer-overview"
 							params={{ range: range.value }}

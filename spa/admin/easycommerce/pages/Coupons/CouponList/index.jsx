@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { applyFilters } from '@wordpress/hooks';
+import { __ } from "@wordpress/i18n";
 import "./style.css";
 import THead from "../components/Table/THead";
 import TBody from "../components/Table/TBody";
@@ -12,13 +13,18 @@ import TableFilter from "../../Transactions/components/TableFilter";
 const TAB_STORAGE_KEY = "easycommerce_coupon_active_tab";
 
 const tabOptions = [
-	{ key: "all", label: "All", countStyle: "bg-ec-allBg" },
-	{ key: "active", label: "Active", countStyle: "bg-ec-activeBg text-ec-activeText" },
-	{ key: "inactive", label: "Inactive", countStyle: "bg-ec-inactiveBg text-ec-inactiveText" },
+	{ key: "all", label: __( "All", "easycommerce" ), countStyle: "bg-ec-allBg" },
+	{ key: "active", label: __( "Active", "easycommerce" ), countStyle: "bg-ec-activeBg text-ec-activeText" },
+	{ key: "inactive", label: __( "Inactive", "easycommerce" ), countStyle: "bg-ec-inactiveBg text-ec-inactiveText" },
 ];
 
 const columnList = [
-    "name", "code", "type", "offer", "usage", "status"
+    { key: "name", label: __( "Name", "easycommerce" ) },
+    { key: "code", label: __( "Code", "easycommerce" ) },
+    { key: "type", label: __( "Type", "easycommerce" ) },
+    { key: "offer", label: __( "Offer", "easycommerce" ) },
+    { key: "usage", label: __( "Usage", "easycommerce" ) },
+    { key: "status", label: __( "Status", "easycommerce" ) },
 ];
 
 const CouponList = ({
@@ -175,7 +181,7 @@ const CouponList = ({
 			{isLoading ? (
 				<TableSkeleton numberOfRows={10} SkeletonHeight={30} />
 			) : filteredCoupons.length === 0 ? (
-				<NotFound title="No coupons found for this tab." />
+				<NotFound title={ __( "No coupons found for this tab.", "easycommerce" ) } />
 			) : (
 				<>
 					<div className="w-full overflow-x-auto h-full">

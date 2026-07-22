@@ -27,6 +27,7 @@ class Process {
 	 * Constructor to add all hooks.
 	 */
 	public function __construct() {
+		$this->action( 'easycommerce_prepare_background', array( $this, 'create_store_pages' ) );
 		$this->action( 'easycommerce_prepare_background', array( $this, 'download_geo_db' ) );
 		$this->action( 'easycommerce_install_addon', array( $this, 'handle_addon_installation' ) );
 		$this->action( 'easycommerce_process_import_batch', array( $this, 'process_import_batch' ), 10, 2 );
@@ -100,6 +101,16 @@ class Process {
 			}
 		}
 	}
+
+	/**
+	 * Cron callback: creates the core store pages in the background right after
+	 * install. Idempotent — reuses existing pages, so it is a no-op once the
+	 * pages exist (e.g. after the setup wizard already created them).
+	 */
+	public function create_store_pages() {
+		easycommerce_ensure_store_pages();
+	}
+
 	public function process_import_batch( $import_id, $offset ) {
 		$importer = new Importer();
 		$rows = get_option( 'easycommerce_importer_rows', array() );
@@ -147,14 +158,28 @@ class Process {
 		$file = EASYCOMMERCE_PLUGIN_DIR . 'samples/dummy-data/products.csv';
 		$importer = new Importer();
 
+		// Only seed demo products into an empty store — never pollute a store that
+		// already has products.
+		$existing = wp_count_posts( 'product' );
+		$product_total = 0;
+		if ( $existing ) {
+			foreach ( (array) $existing as $count ) {
+				$product_total += (int) $count;
+			}
+		}
+
+		if ( $product_total > 0 ) {
+			return $this->response_error( 'Store already has products; skipping demo import', 409 );
+		}
+
 		if ( ! file_exists( $file ) ) {
-			return $this->response_error( 'Demo CSV not found', 404 );
+			return $this->response_error( __( 'Demo CSV not found', 'easycommerce' ), 404 );
 		}
 
 		$handle = fopen( $file, 'r' );
 
 		if ( ! $handle ) {
-			return $this->response_error( 'Unable to open demo file', 500 );
+			return $this->response_error( __( 'Unable to open demo file', 'easycommerce' ), 500 );
 		}
 
 		$rows    = array();
@@ -182,7 +207,7 @@ class Process {
 
 		foreach ( $rows as $row ) {
 			try {
-				$product_id = $importer->create_product( $row );
+				$product_id = $importer->create_product( $row, true );
 				if ( $product_id ) {
 					$imported_count++;
 				} else {
@@ -201,41 +226,61 @@ class Process {
 			'imported'   => $imported_count,
 			'failed'     => $failed_count,
 			'errors'     => $errors,
-			'message' => sprintf( __( 'Successfully imported %d of %d demo products', 'easycommerce' ), $imported_count, count( $rows ) )
+			// translators: 1: number of products imported, 2: total number of demo products.
+			'message' => sprintf( __( 'Successfully imported %1$d of %2$d demo products', 'easycommerce' ), $imported_count, count( $rows ) )
 		) );
 	}
 
 	/**
-	 * Downloads the `locations.json` database file from the CDN
+	 * Downloads the `locations.json` database file from the CDN.
+	 *
+	 * Retries up to 5 times with exponential backoff (60 s, 120 s, 240 s, 480 s, 960 s).
+	 * Validates the HTTP response code and JSON structure before persisting.
 	 */
 	public function download_geo_db() {
+
+		$max_retries = 5;
+		$retry_count = (int) get_option( 'easycommerce_geo_db_retry_count', 0 );
+
+		if ( $retry_count >= $max_retries ) {
+			$this->unschedule( 'easycommerce_prepare_background' );
+			return;
+		}
 
 		$remote_url = 'https://cdn.easycommerce.dev/locations.json';
 		$upload_dir = wp_upload_dir();
 		$save_path  = $upload_dir['basedir'] . '/easycommerce/locations.json';
 
-		// Ensure the directory exists
 		if ( ! file_exists( $upload_dir['basedir'] . '/easycommerce' ) ) {
 			wp_mkdir_p( $upload_dir['basedir'] . '/easycommerce' );
 		}
 
-		// Download file
-		$response = wp_remote_get( $remote_url, array( 'timeout' => 600 ) );
+		$response = wp_remote_get( $remote_url, array( 'timeout' => 60 ) );
 
-		if ( is_wp_error( $response ) ) {
-
-			$this->schedule( 'easycommerce_prepare_background' );
+		if ( is_wp_error( $response ) || 200 !== (int) wp_remote_retrieve_response_code( $response ) ) {
+			$retry_count++;
+			update_option( 'easycommerce_geo_db_retry_count', $retry_count );
+			// Exponential backoff: 60, 120, 240, 480, 960 seconds.
+			$delay = (int) pow( 2, $retry_count - 1 ) * 60;
+			$this->schedule_at( time() + $delay, 'easycommerce_prepare_background' );
 			return;
 		}
 
-		$body = wp_remote_retrieve_body( $response );
+		$body   = wp_remote_retrieve_body( $response );
+		$parsed = json_decode( $body, true );
 
-		if ( ! empty( $body ) ) {
-			file_put_contents( $save_path, $body );
-			
-			update_option( 'easycommerce-locations_db_loaded', 1 );
-			$this->unschedule( 'easycommerce_prepare_background' );
+		if ( ! is_array( $parsed ) || empty( $parsed ) ) {
+			$retry_count++;
+			update_option( 'easycommerce_geo_db_retry_count', $retry_count );
+			$delay = (int) pow( 2, $retry_count - 1 ) * 60;
+			$this->schedule_at( time() + $delay, 'easycommerce_prepare_background' );
+			return;
 		}
+
+		file_put_contents( $save_path, $body );
+		update_option( 'easycommerce-locations_db_loaded', 1 );
+		delete_option( 'easycommerce_geo_db_retry_count' );
+		$this->unschedule( 'easycommerce_prepare_background' );
 	}
 
 	public function handle_addon_installation( $slug ) {

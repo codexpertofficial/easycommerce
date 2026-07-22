@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
-import { __ } from '@wordpress/i18n';
+import { __, sprintf } from '@wordpress/i18n';
 import Title from '../../../common/Title';
 
 import AttributeForm from '../../../../../Attributes/components/AttributeForm'
@@ -125,7 +125,7 @@ const AttributeModal = ({ globalAttributes, isOpen, onClose, onAttributeAdded, s
 				{mode === 'list' && (
 					<div>
 						<div className="flex justify-between items-center border-b px-6 py-4">
-							<Title title={'Attributes'} />
+							<Title title={__('Attributes', 'easycommerce')} />
 						</div>
 						<div className="p-6 flex flex-col gap-4 max-h-[75vh] overflow-y-auto">
 							<div className="border-b border-ec-table-stock">
@@ -147,7 +147,7 @@ const AttributeModal = ({ globalAttributes, isOpen, onClose, onAttributeAdded, s
 									onClick={handleAddNew}
 									className="border-b border-ec-primary text-ec-primary w-max py-1"
 								>
-									+ Add New Attribute
+									+ {__('Add New Attribute', 'easycommerce')}
 								</button>
 
 								{attributes.length > 0 && (
@@ -190,8 +190,9 @@ const AttributeModal = ({ globalAttributes, isOpen, onClose, onAttributeAdded, s
 							<Title
 								title={
 									mode === 'add'
-										? 'Add New Attribute'
-										: `Edit Attribute: ${editingAttribute?.name || ''}`
+										? __('Add New Attribute', 'easycommerce')
+										: // translators: %s: attribute name.
+										sprintf(__('Edit Attribute: %s', 'easycommerce'), editingAttribute?.name || '')
 								}
 							/>
 						</div>

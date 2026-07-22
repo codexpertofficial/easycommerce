@@ -1,4 +1,6 @@
 jQuery(function ($) {
+    const { __, sprintf } = wp.i18n;
+
     if (typeof Stripe === 'undefined' || !EASYCOMMERCE.stripe || !EASYCOMMERCE.stripe.publishable_key) {
         return;
     }
@@ -38,7 +40,7 @@ jQuery(function ($) {
             }
         } catch (error) {
             console.error('Error fetching cart data:', error);
-            showPaymentError('Failed to load cart data. Please refresh the page.');
+            showPaymentError(__('Failed to load cart data. Please refresh the page.', 'easycommerce'));
             return null;
         }
     }
@@ -80,7 +82,7 @@ jQuery(function ($) {
             return await response.json();
         } catch (error) {
             console.error('Error creating payment intent:', error);
-            showPaymentError("Failed to create payment. Please try again.");
+            showPaymentError(__("Failed to create payment. Please try again.", 'easycommerce'));
             return null;
         }
     }
@@ -146,7 +148,7 @@ jQuery(function ($) {
             if (event.error && event.error.message) {
                 $displayError.text(event.error.message).css("display", "flex");
             } else {
-                $displayError.text("Payment form failed to load. Please refresh.").css("display", "flex");
+                $displayError.text(__("Payment form failed to load. Please refresh.", 'easycommerce')).css("display", "flex");
             }
 
             $(".easycommerce-css-loader-wrapper").hide();
@@ -202,7 +204,7 @@ jQuery(function ($) {
         try {
             const freshCart = await fetchCartData();
             if (!freshCart) {
-                showPaymentError('Could not verify cart. Please refresh and try again.');
+                showPaymentError(__('Could not verify cart. Please refresh and try again.', 'easycommerce'));
                 isSubmitting = false;
                 return;
             }
@@ -223,7 +225,7 @@ jQuery(function ($) {
             const paymentIntentData = await createPaymentIntent();
 
             if (!paymentIntentData || !paymentIntentData.client_secret) {
-                showPaymentError("Failed to create payment. Please refresh the page and try again.");
+                showPaymentError(__("Failed to create payment. Please refresh the page and try again.", 'easycommerce'));
                 isSubmitting = false;
                 return;
             }
@@ -241,7 +243,7 @@ jQuery(function ($) {
             }
 
             if (intentMode === 'setup') {
-                showPaymentError("This payment handler is not available. Please refresh and try again.");
+                showPaymentError(__("This payment handler is not available. Please refresh and try again.", 'easycommerce'));
                 isSubmitting = false;
                 return;
             }
@@ -277,28 +279,29 @@ jQuery(function ($) {
                     $stripeForm.trigger("payment");
 
                 } else if (paymentIntent.status === 'requires_action') {
-                    showPaymentError("Additional verification required. Please complete the payment process.");
+                    showPaymentError(__("Additional verification required. Please complete the payment process.", 'easycommerce'));
                     isSubmitting = false;
 
                 } else if (paymentIntent.status === 'requires_payment_method') {
-                    showPaymentError("Payment failed. Please try a different payment method.");
+                    showPaymentError(__("Payment failed. Please try a different payment method.", 'easycommerce'));
                     isSubmitting = false;
 
                 } else if (paymentIntent.status === 'canceled') {
-                    showPaymentError("Payment was canceled. Please try again.");
+                    showPaymentError(__("Payment was canceled. Please try again.", 'easycommerce'));
                     isSubmitting = false;
 
                 } else {
-                    showPaymentError("Payment status: " + paymentIntent.status + ". Please contact support if this persists.");
+                    // translators: %s: Stripe payment intent status code.
+                    showPaymentError(sprintf(__("Payment status: %s. Please contact support if this persists.", 'easycommerce'), paymentIntent.status));
                     isSubmitting = false;
                 }
             } else {
-                showPaymentError("Payment could not be processed. Please try again.");
+                showPaymentError(__("Payment could not be processed. Please try again.", 'easycommerce'));
                 isSubmitting = false;
             }
         } catch (error) {
             console.error("Error processing payment:", error);
-            showPaymentError("An error occurred while processing your payment. Please try again.");
+            showPaymentError(__("An error occurred while processing your payment. Please try again.", 'easycommerce'));
             isSubmitting = false;
         }
     }
@@ -357,7 +360,7 @@ jQuery(function ($) {
         const setupIntentClientSecret = urlParams.get('setup_intent_client_secret');
 
         if (setupIntentId && setupIntentClientSecret) {
-            $('#easycommerce_stripe_payment_errors').text("Verifying payment...").css({
+            $('#easycommerce_stripe_payment_errors').text(__("Verifying payment...", 'easycommerce')).css({
                 display: "flex",
             });
 
@@ -382,20 +385,21 @@ jQuery(function ($) {
 
                         addHiddenInput('meta[stripePaymentStatus]', setupIntent.status);
 
-                        $('#easycommerce_stripe_payment_errors').text("Payment successful! Creating order...").css({
+                        $('#easycommerce_stripe_payment_errors').text(__("Payment successful! Creating order...", 'easycommerce')).css({
                             display: "flex",
                         });
 
                         $('#easycommerce-checkout').trigger('payment');
 
                     } else {
-                        showPaymentError("Payment method could not be saved. Status: " + setupIntent.status);
+                        // translators: %s: Stripe setup intent status code.
+                        showPaymentError(sprintf(__("Payment method could not be saved. Status: %s", 'easycommerce'), setupIntent.status));
                         window.history.replaceState({}, document.title, window.location.pathname);
                     }
                 })
                 .catch(function(error) {
                     console.error("Error retrieving setup intent:", error);
-                    showPaymentError("Failed to verify payment. Please contact support.");
+                    showPaymentError(__("Failed to verify payment. Please contact support.", 'easycommerce'));
                     window.history.replaceState({}, document.title, window.location.pathname);
                 });
 
@@ -406,7 +410,7 @@ jQuery(function ($) {
         const paymentIntentClientSecret = urlParams.get('payment_intent_client_secret');
 
         if (paymentIntentId && paymentIntentClientSecret) {
-            $('#easycommerce_stripe_payment_errors').text("Verifying payment...").css({
+            $('#easycommerce_stripe_payment_errors').text(__("Verifying payment...", 'easycommerce')).css({
                 display: "flex",
             });
             
@@ -440,32 +444,33 @@ jQuery(function ($) {
                             addHiddenInput('meta[stripePaymentMethod]', paymentIntent.payment_method_types[0]);
                         }
                         
-                        $('#easycommerce_stripe_payment_errors').text("Payment successful! Creating order...").css({
+                        $('#easycommerce_stripe_payment_errors').text(__("Payment successful! Creating order...", 'easycommerce')).css({
                             display: "flex",
                         });
                         
                         $('#easycommerce-checkout').trigger('payment');
                         
                     } else if (paymentIntent.status === 'requires_payment_method') {
-                        showPaymentError("Payment failed. Please try again with a different payment method.");
+                        showPaymentError(__("Payment failed. Please try again with a different payment method.", 'easycommerce'));
                         window.history.replaceState({}, document.title, window.location.pathname);
                         
                     } else if (paymentIntent.status === 'canceled') {
-                        showPaymentError("Payment was canceled. Please try again.");
+                        showPaymentError(__("Payment was canceled. Please try again.", 'easycommerce'));
                         window.history.replaceState({}, document.title, window.location.pathname);
                         
                     } else if (paymentIntent.status === 'requires_action') {
-                        showPaymentError("Additional action required. Please complete the payment process.");
+                        showPaymentError(__("Additional action required. Please complete the payment process.", 'easycommerce'));
                         window.history.replaceState({}, document.title, window.location.pathname);
                         
                     } else {
-                        showPaymentError("Payment could not be completed. Status: " + paymentIntent.status);
+                        // translators: %s: Stripe payment intent status code.
+                        showPaymentError(sprintf(__("Payment could not be completed. Status: %s", 'easycommerce'), paymentIntent.status));
                         window.history.replaceState({}, document.title, window.location.pathname);
                     }
                 })
                 .catch(function(error) {
                     console.error("Error retrieving payment intent:", error);
-                    showPaymentError("Failed to verify payment. Please contact support.");
+                    showPaymentError(__("Failed to verify payment. Please contact support.", 'easycommerce'));
                     window.history.replaceState({}, document.title, window.location.pathname);
                 });
         }

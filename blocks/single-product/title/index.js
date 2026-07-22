@@ -19,8 +19,7 @@ const titleIcon = (
     </svg>
 );
 
-registerBlockType(metadata.name, {
+registerBlockType(metadata, {
     icon: titleIcon,
-    title: metadata.title,
     edit: Edit,
 });

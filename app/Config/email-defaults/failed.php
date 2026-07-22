@@ -1,7 +1,9 @@
 <?php
 return array(
-	'customer_subject' => '##shop_name## – Payment Failed for Order ###order_id##',
-	'customer_body'    => '
+	/* translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim. */
+	'customer_subject' => __( '##shop_name## – Payment Failed for Order ###order_id##', 'easycommerce' ),
+	/* translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim. */
+	'customer_body'    => __( '
 Hi ##customer_name##,
 
 Unfortunately, we were unable to process the payment for your order ###order_id##. This may have happened due to one of the following reasons:
@@ -20,10 +22,12 @@ Total Amount: ##order_total##
 Your items are still saved. You can retry the payment or place a new order anytime at: ##checkout_page##
 
 Need help? Just reach out – we’re here to support you.
-',
+', 'easycommerce' ),
 
-	'admin_subject'    => '##shop_name## – Payment Failed for Order ###order_id##',
-	'admin_body'       => '
+	/* translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim. */
+	'admin_subject'    => __( '##shop_name## – Payment Failed for Order ###order_id##', 'easycommerce' ),
+	/* translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim. */
+	'admin_body'       => __( '
 Hello,
 
 Payment for order ###order_id## from ##customer_name## has failed. The failure may have occurred due to:
@@ -41,5 +45,5 @@ Total Amount: ##order_total##
 
 The customer may retry payment from: ##checkout_page##
 Please follow up if needed.
-',
+', 'easycommerce' ),
 );

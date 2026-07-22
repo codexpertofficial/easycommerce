@@ -148,7 +148,6 @@ class Product_Review {
 					'content' 		=> $comment->comment_content,
 					'rating' 		=> (int) get_comment_meta( $comment->comment_ID, 'rating', true ),
 					'name' 			=> $comment->comment_author,
-					'email' 		=> $comment->comment_author_email,
 					'status' 		=> $comment->comment_approved,
 					'created_at' 	=> $comment->comment_date,
 				);

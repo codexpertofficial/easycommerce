@@ -888,11 +888,16 @@ class Cart extends Model {
 	 */
 	public function update_qty( $product_id, $price_id = 0, $quantity = 1 ) {
 		$product_variation_model = new Product_Variation();
+		$variation               = false; 
 
 		if ( is_integer( $price_id ) ) {
 			$variation = $product_variation_model->get_by_price( $price_id, $product_id );
 		} elseif ( is_array( $price_id ) ) {
 			$variation = $product_variation_model->get_by_attributes( $price_id );
+		}
+
+		if ( ! $variation instanceof Product_Variation ) {
+			return;
 		}
 
 		$type = $variation->get_type();
@@ -902,7 +907,11 @@ class Cart extends Model {
 			$quantity = 1;
 		}
 
-		if ( isset( $this->cart['data']['items'][ $product_id ][ $price_id ] ) && $variation ) {
+		if ( $variation->manages_stock() && ! is_null( $stock = $variation->get_stock() ) && $quantity > $stock ) {
+			$quantity = $stock;
+		}
+
+		if ( isset( $this->cart['data']['items'][ $product_id ][ $price_id ] ) ) {
 
 			$price = $variation->get_price( false );
 

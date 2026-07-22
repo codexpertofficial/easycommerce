@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { __ } from "@wordpress/i18n";
 import { useDispatch } from "react-redux";
 
 // redux slice
@@ -120,7 +121,7 @@ const Items = ({ user_id, setCartItemsHash }) => {
             dispatch(
                 addToastData({
                     type: "error",
-                    message: "Select all attributes",
+                    message: __("Select all attributes", "easycommerce"),
                 })
             );
 
@@ -171,7 +172,7 @@ const Items = ({ user_id, setCartItemsHash }) => {
                     dispatch(
                         addToastData({
                             type: "error",
-                            message: "No Attributes found!",
+                            message: __("No Attributes found!", "easycommerce"),
                         })
                     );
                 }
@@ -205,7 +206,7 @@ const Items = ({ user_id, setCartItemsHash }) => {
             dispatch(
                 addToastData({
                     type: "error",
-                    message: "Please select a customer before adding to cart",
+                    message: __("Please select a customer before adding to cart", "easycommerce"),
                 })
             );
 
@@ -221,7 +222,7 @@ const Items = ({ user_id, setCartItemsHash }) => {
             dispatch(
                 addToastData({
                     type: "error",
-                    message: "Please select quantity for all products",
+                    message: __("Please select quantity for all products", "easycommerce"),
                 })
             );
 
@@ -257,7 +258,7 @@ const Items = ({ user_id, setCartItemsHash }) => {
                     dispatch(
                         addToastData({
                             type: "success",
-                            message: "Product added to cart",
+                            message: __("Product added to cart", "easycommerce"),
                         })
                     );
 
@@ -304,7 +305,7 @@ const Items = ({ user_id, setCartItemsHash }) => {
         <>
             <div className="w-full px-4 py-6 mb-6 border-b border-[#DBDBDB] flex flex-col justify-center">
                 <h3 className="text-ec-body font-inter font-semibold text-xl leading-8">
-                    Items
+                    {__("Items", "easycommerce")}
                 </h3>
             </div>
 
@@ -313,17 +314,17 @@ const Items = ({ user_id, setCartItemsHash }) => {
                     <div className="px-[18px] flex justify-between gap-[6px]">
                         <div className="w-[65%]">
                             <label className="text-ec-body block font-inter font-medium text-xs leading-5 mb-[6px]">
-                                Product name
+                                {__("Product name", "easycommerce")}
                             </label>
                         </div>
                         <div className="w-[10%]">
                             <label className="text-ec-body block font-inter font-medium text-xs leading-5 mb-[6px]">
-                                QTY
+                                {__("QTY", "easycommerce")}
                             </label>
                         </div>
                         <div className="w-[10%]">
                             <label className="text-ec-body block font-inter font-medium text-xs leading-5 mb-[6px]">
-                                Prices
+                                {__("Prices", "easycommerce")}
                             </label>
                         </div>
 
@@ -359,7 +360,7 @@ const Items = ({ user_id, setCartItemsHash }) => {
                                         }
                                         type="text"
                                         value={item.title}
-                                        placeholder="Product name here"
+                                        placeholder={__("Product name here", "easycommerce")}
                                         className="easycommerce-order-input w-full h-[42px] border border-ec-border rounded-sm 
                                         placeholder:text-sm font-inter text-sm text-ec-body"
                                     />
@@ -464,31 +465,31 @@ const Items = ({ user_id, setCartItemsHash }) => {
                                 <div className="w-[15%] h-[42px] flex justify-end items-center gap-2">
                                     <button
                                         className="w-8 h-8 flex items-center justify-center bg-[#F8F8F8] hover:bg-[#e1e1fd] rounded"
-                                        title="Add new item"
+                                        title={__("Add new item", "easycommerce")}
                                         onClick={() => addProduct(productIndex)}
                                     >
                                         <img
                                             src={addItemIcon}
-                                            alt="icon"
+                                            alt={__("icon", "easycommerce")}
                                             className="w-[14px] h-4 pointer-events-none"
                                         />
                                     </button>
                                     <button
                                         className="w-8 h-8 group flex items-center justify-center bg-[#F8F8F8] 
                                         hover:bg-[#FF3A520D] rounded"
-                                        title="Delete item"
+                                        title={__("Delete item", "easycommerce")}
                                         onClick={() =>
                                             removeProduct(productIndex)
                                         }
                                     >
                                         <img
                                             src={deleteItemIcon}
-                                            alt="icon"
+                                            alt={__("icon", "easycommerce")}
                                             className="w-[10px] h-[14px] pointer-events-none group-hover:hidden block"
                                         />
                                         <img
                                             src={deleteHoverItemIcon}
-                                            alt="icon"
+                                            alt={__("icon", "easycommerce")}
                                             className="w-[10px] h-[14px] pointer-events-none group-hover:block hidden"
                                         />
                                     </button>
@@ -508,7 +509,7 @@ const Items = ({ user_id, setCartItemsHash }) => {
                             type="button"
                             className="flex justify-center items-center gap-[8px] font-inter bg-white group border border-ec-primary py-[11px] px-4 rounded-lg text-ec-primary hover:text-white hover:bg-ec-primary focus:shadow-none focus:text-white focus:bg-ec-secondary lg:text-sm md:text-xs sm:text-sm transition-all ease-in-out duration-500"
                         >
-                            Add to Cart
+                            {__("Add to Cart", "easycommerce")}
                         </button>
                     )}
 
@@ -534,7 +535,7 @@ const Items = ({ user_id, setCartItemsHash }) => {
                                     d="M12 4.5v15m7.5-7.5h-15"
                                 ></path>
                             </svg>
-                            <span>Add Product</span>
+                            <span>{__("Add Product", "easycommerce")}</span>
                         </button>
                     )}
                 </div>

@@ -1,5 +1,6 @@
 import React from 'react'
 import StarRating from './Rating';
+import { __ } from '@wordpress/i18n';
 
 const GridView = ({products,
     attributes,
@@ -184,13 +185,13 @@ const GridView = ({products,
                                 onClick={() => handleAddToCart(product?.id || product?.ID)}
                                 className={cartButtonClass}
                             >
-                                Add To Cart
+                                {__('Add To Cart', 'easycommerce')}
                             </button>
                             {(addedToCart[product?.id || product?.ID]) && (
                                 <button 
                                     onClick={() => handleCheckout(product?.id || product?.ID)}
                                     className={checkoutButtonClass}>
-                                    Checkout
+                                    {__('Checkout', 'easycommerce')}
                                 </button>
                             )}
                         </div>

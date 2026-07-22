@@ -1,5 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { toast } from 'react-toastify';
+import { __ } from '@wordpress/i18n';
+import { createInterpolateElement } from '@wordpress/element';
 
 const ImportModal = ({ isOpen, onClose }) => {
     const [step, setStep] = useState('upload');
@@ -14,7 +16,7 @@ const ImportModal = ({ isOpen, onClose }) => {
         e.preventDefault();
         const file = fileInputRef.current.files[0];
         if (!file) {
-            toast.error('Please select a CSV file.');
+            toast.error(__( 'Please select a CSV file.', 'easycommerce' ));
             return;
         }
 
@@ -34,12 +36,12 @@ const ImportModal = ({ isOpen, onClose }) => {
             if (data.success) {
                 setHeaders(data.data.headers);
                 setStep('mapping');
-                toast.success('CSV uploaded successfully.');
+                toast.success(__( 'CSV uploaded successfully.', 'easycommerce' ));
             } else {
-                toast.error(data.data || 'Upload failed.');
+                toast.error(data.data || __( 'Upload failed.', 'easycommerce' ));
             }
         } catch (error) {
-            toast.error('Upload failed.');
+            toast.error(__( 'Upload failed.', 'easycommerce' ));
         }
         setIsLoading(false);
     };
@@ -60,12 +62,12 @@ const ImportModal = ({ isOpen, onClose }) => {
 
             if (data.success) {
                 setStep('done');
-                toast.success('Mapping saved.');
+                toast.success(__( 'Mapping saved.', 'easycommerce' ));
             } else {
-                toast.error(data.data || 'Mapping failed.');
+                toast.error(data.data || __( 'Mapping failed.', 'easycommerce' ));
             }
         } catch (error) {
-            toast.error('Mapping failed.');
+            toast.error(__( 'Mapping failed.', 'easycommerce' ));
         }
         setIsLoading(false);
     };
@@ -84,14 +86,14 @@ const ImportModal = ({ isOpen, onClose }) => {
             const data = await response.json();
 
             if (data.success) {
-                toast.success('Products imported successfully.');
+                toast.success(__( 'Products imported successfully.', 'easycommerce' ));
                 onClose();
                 window.location.reload(); // Refresh to show new products
             } else {
-                toast.error(data.data || 'Import failed.');
+                toast.error(data.data || __( 'Import failed.', 'easycommerce' ));
             }
         } catch (error) {
-            toast.error('Import failed.');
+            toast.error(__( 'Import failed.', 'easycommerce' ));
         }
         setIsLoading(false);
     };
@@ -114,27 +116,41 @@ const ImportModal = ({ isOpen, onClose }) => {
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
             <div className="bg-white rounded-lg p-6 w-full max-w-2xl max-h-[90vh] overflow-y-auto">
                 <div className="flex justify-between items-center mb-4">
-                    <h2 className="text-xl font-bold">Import Products</h2>
+                    <h2 className="text-xl font-bold">{ __( 'Import Products', 'easycommerce' ) }</h2>
                     <button onClick={handleClose} className="text-gray-500 hover:text-gray-700">&times;</button>
                 </div>
 
                 {/* Progress Bar */}
                 <ol className="ec-progress-steps mb-6">
-                    <li className={step === 'upload' || step === 'mapping' || step === 'done' ? 'active' : ''}>Upload CSV</li>
-                    <li className={step === 'mapping' || step === 'done' ? 'active' : ''}>Column Mapping</li>
-                    <li className={step === 'done' ? 'active' : ''}>Import</li>
+                    <li className={step === 'upload' || step === 'mapping' || step === 'done' ? 'active' : ''}>{ __( 'Upload CSV', 'easycommerce' ) }</li>
+                    <li className={step === 'mapping' || step === 'done' ? 'active' : ''}>{ __( 'Column Mapping', 'easycommerce' ) }</li>
+                    <li className={step === 'done' ? 'active' : ''}>{ __( 'Import', 'easycommerce' ) }</li>
                 </ol>
 
                 {step === 'upload' && (
                     <div className="ec_importer_upload">
                         <p className="mb-4">
-                            <strong><a href="https://cdn.easycommerce.dev/images/samples/products.csv" target="_blank" rel="noopener noreferrer">Click Here</a></strong> to download the <strong>Demo CSV</strong> file.<br />
-                            Add your data and upload it below to continue.
+                            {createInterpolateElement(
+                                __( '<a><b>Click Here</b></a> to download the <c>Demo CSV</c> file.', 'easycommerce' ),
+                                {
+                                    a: (
+                                        <a
+                                            href="https://cdn.easycommerce.dev/images/samples/products.csv"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        />
+                                    ),
+                                    b: <strong />,
+                                    c: <strong />,
+                                }
+                            )}
+                            <br />
+                            { __( 'Add your data and upload it below to continue.', 'easycommerce' ) }
                         </p>
                         <form onSubmit={handleFileUpload}>
                             <input type="file" ref={fileInputRef} accept=".csv" required className="mb-4" />
                             <button type="submit" disabled={isLoading} className="bg-blue-500 text-white px-4 py-2 rounded">
-                                {isLoading ? 'Uploading...' : 'Continue'}
+                                {isLoading ? __( 'Uploading...', 'easycommerce' ) : __( 'Continue', 'easycommerce' )}
                             </button>
                         </form>
                     </div>
@@ -145,8 +161,8 @@ const ImportModal = ({ isOpen, onClose }) => {
                         <table className="ec-importer-mapping-table w-full border-collapse">
                             <thead>
                                 <tr>
-                                    <th className="border p-2">Column Name</th>
-                                    <th className="border p-2">Map to Field</th>
+                                    <th className="border p-2">{ __( 'Column Name', 'easycommerce' ) }</th>
+                                    <th className="border p-2">{ __( 'Map to Field', 'easycommerce' ) }</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -155,7 +171,7 @@ const ImportModal = ({ isOpen, onClose }) => {
                                         <td className="border p-2">{name}</td>
                                         <td className="border p-2">
                                             <select name={`map_to[${index}]`} defaultValue={name.replace(/\s+/g, '_')}>
-                                                <option value="">Do not import</option>
+                                                <option value="">{ __( 'Do not import', 'easycommerce' ) }</option>
                                                 {Object.entries(fields).map(([key, label]) => (
                                                     <option key={key} value={key}>{label}</option>
                                                 ))}
@@ -166,17 +182,17 @@ const ImportModal = ({ isOpen, onClose }) => {
                             </tbody>
                         </table>
                         <button type="submit" disabled={isLoading} className="mt-4 bg-blue-500 text-white px-4 py-2 rounded">
-                            {isLoading ? 'Saving...' : 'Continue'}
+                            {isLoading ? __( 'Saving...', 'easycommerce' ) : __( 'Continue', 'easycommerce' )}
                         </button>
                     </form>
                 )}
 
                 {step === 'done' && (
                     <div className="ec_importer_done text-center">
-                        <h2>Products Mapped Successfully.</h2>
-                        <h3>Products are ready to import.</h3>
+                        <h2>{ __( 'Products Mapped Successfully.', 'easycommerce' ) }</h2>
+                        <h3>{ __( 'Products are ready to import.', 'easycommerce' ) }</h3>
                         <button onClick={handleImport} disabled={isLoading} className="mt-4 bg-green-500 text-white px-4 py-2 rounded">
-                            {isLoading ? 'Importing...' : 'Import Now'}
+                            {isLoading ? __( 'Importing...', 'easycommerce' ) : __( 'Import Now', 'easycommerce' )}
                         </button>
                     </div>
                 )}

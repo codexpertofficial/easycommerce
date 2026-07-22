@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
+import { __, sprintf } from "@wordpress/i18n";
 
 // redux slice
 import { resetProduct } from "../../redux-store/slices/newProduct";
@@ -15,6 +16,7 @@ import TableSkeleton from "../../../common/TableSkeleton";
 import ProductActionBar from "./components/ProductActionBar";
 import ImportModal from "./ImportModal";
 import ImportProgress from "./ImportProgress";
+import SampleProductsModal from "./components/SampleProductsModal";
 
 const noProduct = `${EASYCOMMERCE.assets}admin/img/nofound/no-products.png`;
 
@@ -48,7 +50,22 @@ const Products = ({ page }) => {
     const [filterLoader, setFilterLoader] = useState(false);
     const [showImportModal, setShowImportModal] = useState(false);
     const [isImporting, setIsImporting] = useState(false);
+    const [showSampleModal, setShowSampleModal] = useState(false);
+    const [demoCount, setDemoCount] = useState(0);
     const hasAnyProducts = Object.values(productStatusCounts).reduce((a, b) => a + b, 0) > 0;
+
+    const fetchDemoCount = () => {
+        fetch(`${EASYCOMMERCE.rest_base}/importer/demo`, {
+            headers: { "X-WP-Nonce": EASYCOMMERCE.nonce },
+        })
+            .then((res) => res.json())
+            .then((data) => setDemoCount(data?.data?.count ?? 0))
+            .catch(() => {});
+    };
+
+    useEffect(() => {
+        fetchDemoCount();
+    }, []);
 
     const handleSelectAllProducts = (checked) => {
         setProductIsBulkSelect(checked);
@@ -81,7 +98,7 @@ const Products = ({ page }) => {
     const productStatuses = EASYCOMMERCE.product_statuses;
     const tabOptions = [
         {
-            label: "All",
+            label: __("All", "easycommerce"),
             key: "all",
             bg: "bg-ec-allBg text-ec-allText",
         },
@@ -107,10 +124,10 @@ const Products = ({ page }) => {
 
 	const restoreProduct = (productId, productTitle) => {
 		console.table([productId, productTitle]);
-
+ 
 		const url = `${EASYCOMMERCE.rest_base}/products/${productId}`;
 		easycommerce_modal(true);
-
+ 
 		fetch(url, {
 			method: "POST",
 			headers: {
@@ -122,7 +139,7 @@ const Products = ({ page }) => {
 			.then((res) => res.json())
 			.then((data) => {
 				easycommerce_modal(false);
-
+ 
 				if (data.success) {
                     toast.success(data.data.message);
 					setProducts(
@@ -133,12 +150,16 @@ const Products = ({ page }) => {
 									status: "draft",
 								};
 							}
-
+ 
 							return product;
 						})
 					);
 					setForceDelete(false);
 				}
+			})
+			.catch(() => {
+				easycommerce_modal(false);
+				toast.error(__('Unable to restore the product. Please try again.', 'easycommerce'));
 			});
 	};
 
@@ -171,6 +192,9 @@ const Products = ({ page }) => {
 				if (data.success && Array.isArray(data.data?.categories)) {
 					setCategories(data.data.categories);
 				}
+			})
+			.catch(() => {
+				toast.error(__('Unable to load product categories. Please refresh and try again.', 'easycommerce'));
 			});
 	}, []);
 
@@ -189,6 +213,10 @@ const Products = ({ page }) => {
                 productSetStatusCounts(data.data.statuses_counts);
             }
             setisStatusLoaded(true);
+        })
+        .catch(() => {
+            setisStatusLoaded(true);
+            toast.error(__('Unable to load product status counts. Please refresh and try again.', 'easycommerce'));
         });
     };
     
@@ -233,6 +261,11 @@ const Products = ({ page }) => {
                 setTotalPage(1);
                 setProducts([]);
             }
+        })
+        .catch(() => {
+            setIsLoading(false);
+            setFilterLoader(false);
+            toast.error(__('Unable to load products. Please refresh and try again.', 'easycommerce'));
         });
     };
 
@@ -298,7 +331,7 @@ const Products = ({ page }) => {
                 easycommerce_modal(false);
 
                 if (data.success) {
-                    toast.success('Product trashed successfully!');
+                    toast.success(__('Product trashed successfully!', 'easycommerce'));
                     productSetStatusCounts((prev) => {
                         const updated = { ...prev };
                         if (productToDeleteStatus && updated[productToDeleteStatus] > 0) {
@@ -310,6 +343,10 @@ const Products = ({ page }) => {
                     setProductToDeleteStatus(null);
                     afterApiCallAction();
                 }
+            })
+            .catch(() => {
+                easycommerce_modal(false);
+                toast.error(__('Unable to trash the product. Please try again.', 'easycommerce'));
             });
     };
 
@@ -329,7 +366,7 @@ const Products = ({ page }) => {
                 easycommerce_modal(false);
 
                 if (data.success) {
-                    toast.success('Product deleted successfully!');
+                    toast.success(__('Product deleted successfully!', 'easycommerce'));
                     productSetStatusCounts((prev) => {
                         const updated = { ...prev };
                         if (productToDeleteStatus && updated[productToDeleteStatus] > 0) {
@@ -341,6 +378,10 @@ const Products = ({ page }) => {
                     setForceDelete(false);
                     afterInstatntDelete();
                 }
+            })
+            .catch(() => {
+                easycommerce_modal(false);
+                toast.error(__('Unable to delete the product. Please try again.', 'easycommerce'));
             });
     };
 
@@ -356,7 +397,7 @@ const Products = ({ page }) => {
 		<>
             <div className="flex items-start justify-start gap-4 mb-4">
                 <div className="product-panel-title">
-                    <h3>Products</h3>
+                    <h3>{__("Products", "easycommerce")}</h3>
                 </div>
                 <button
                     onClick={handleAddProduct}
@@ -378,13 +419,13 @@ const Products = ({ page }) => {
                             d="M12 4.5v15m7.5-7.5h-15"
                         ></path>
                     </svg>
-                     New Product
+                     {__("New Product", "easycommerce")}
                  </button>
                   <button
                       onClick={() => setShowImportModal(true)}
                       className="ml-auto mt-2 text-ec-primary underline text-base font-medium px-2 py-1 rounded"
                   >
-                      Import Products
+                      {__("Import Products", "easycommerce")}
                   </button>
              </div>
             <div className="w-full bg-white border border-solid border-ec-table-stock rounded-xl p-6 min-h-screen flex flex-col h-[94%]">
@@ -399,6 +440,7 @@ const Products = ({ page }) => {
                                 productSetStatusCounts={productSetStatusCounts}
                             />
                         ) : (
+                            <div className="flex flex-wrap items-center gap-4">
                             <div className="flex flex-wrap gap-4 border-b-2 border-[#F0EDFB]">
                                 {tabOptions.map((tab) => {
                                     const isActive = activeTab === tab.key;
@@ -429,6 +471,15 @@ const Products = ({ page }) => {
                                         </button>
                                     );
                                 })}
+                            </div>
+                            {demoCount > 0 && (
+                                <button
+                                    onClick={() => setShowSampleModal(true)}
+                                    className="flex h-[34px] justify-center items-center font-inter bg-white border border-[#FF3A52] px-3 py-1.5 rounded-lg text-[#FF3A52] text-sm hover:text-white hover:bg-[#FF3A52] transition-all ease-in-out duration-500"
+                                >
+                                    Delete Demo Products
+                                </button>
+                            )}
                             </div>
                         )}
                         <ProductTableFilter
@@ -496,24 +547,25 @@ const Products = ({ page }) => {
                             <>
                                 <NotFound
                                     ImageUrl={noProduct}
-                                    btnText="Add New Product"
+                                    btnText={__("Add New Product", "easycommerce")}
                                     title={
                                         activeTab !== 'all'
-                                            ? `No ${tabOptions.find(tab => tab.key === activeTab)?.label || activeTab} Products Found`
-                                            : `Your Store is Empty`
+                                            ? // translators: %s: product status label, e.g. Draft or Published.
+                                            sprintf(__("No %s Products Found", "easycommerce"), tabOptions.find(tab => tab.key === activeTab)?.label || activeTab)
+                                            : __("Your Store is Empty", "easycommerce")
                                     }
-                                    description={`Create a new product or generate samples to get started.`}
+                                    description={__("Create a new product or generate samples to get started.", "easycommerce")}
                                     isBtn={!hasAnyProducts}
                                     btnCallBack={handleAddProduct}
                                 >
                                     {!hasAnyProducts && (
                                         <>
-                                            <span className="text-ec-light-black text-center font-inter font-normal text-base leading-6 pt-[4px] px-2"> or </span>
+                                            <span className="text-ec-light-black text-center font-inter font-normal text-base leading-6 pt-[4px] px-2"> {__("or", "easycommerce")} </span>
                                             <button 
                                                 className="font-inter py-[8px] px-4 border border-ec-primary rounded-lg font-medium text-ec-primary text-base capitalize hover:bg-ec-primary hover:text-white transition-all ease-in-out duration-500"
-                                                onClick={() => setIsImporting(true)}
+                                                onClick={() => setShowSampleModal(true)}
                                             >
-                                                Generate Samples
+                                                {__("Generate Samples", "easycommerce")}
                                             </button>
                                         </>
                                     )}
@@ -522,12 +574,28 @@ const Products = ({ page }) => {
                          )}
 
                         {showImportModal && (
-                            <ImportModal 
-                                onClose={() => setShowImportModal(false)} 
+                            <ImportModal
+                                onClose={() => setShowImportModal(false)}
                                 onImportComplete={() => {
                                     setShowImportModal(false);
                                     fetchProducts();
                                     fetchProductsStatuses();
+                                }}
+                            />
+                        )}
+
+                        {showSampleModal && (
+                            <SampleProductsModal
+                                demoCount={demoCount}
+                                hideModal={() => setShowSampleModal(false)}
+                                onImport={() => {
+                                    setShowSampleModal(false);
+                                    setIsImporting(true);
+                                }}
+                                onDeleted={() => {
+                                    fetchProducts();
+                                    fetchProductsStatuses();
+                                    fetchDemoCount();
                                 }}
                             />
                         )}

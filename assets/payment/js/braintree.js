@@ -12,6 +12,8 @@ document.addEventListener("DOMContentLoaded", async function () {
 });
 
 async function initializeBraintreePayment() {
+    const { __ } = wp.i18n;
+
     if (braintreeInitializing) return;
 
     const authorizationToken = EASYCOMMERCE.braintree.tokenization_key;
@@ -19,7 +21,7 @@ async function initializeBraintreePayment() {
     const form = document.getElementById("easycommerce-checkout");
 
     if (!window.braintree || !authorizationToken) {
-        errorContainer.textContent = "Braintree.js failed to load or missing authorization token.";
+        errorContainer.textContent = __("Braintree.js failed to load or missing authorization token.", 'easycommerce');
         return;
     }
 
@@ -37,7 +39,7 @@ async function initializeBraintreePayment() {
         errorContainer.textContent = "";
     } catch (error) {
         braintreeInitializing = false;
-        errorContainer.textContent = "Error initializing Braintree.";
+        errorContainer.textContent = __("Error initializing Braintree.", 'easycommerce');
         return;
     }
 
@@ -56,6 +58,8 @@ async function initializeBraintreePayment() {
 }
 
 async function handleBraintreeSubmit(event) {
+    const { __ } = wp.i18n;
+
     event.preventDefault();
     const form = document.getElementById("easycommerce-checkout");
     const errorContainer = document.getElementById("easycommerce_braintree_payment_errors");
@@ -68,7 +72,7 @@ async function handleBraintreeSubmit(event) {
     try {
         const payload = await requestBraintreePaymentMethod(braintreeInstance);
         if (!payload.nonce) {
-            errorContainer.textContent = "Failed to get payment nonce.";
+            errorContainer.textContent = __("Failed to get payment nonce.", 'easycommerce');
             document.querySelector(".easycommerce-css-loader-wrapper").style.display = "none";
             document.querySelector(".easycommerce-checkout-main-btn").style.display = "flex";
             return;
@@ -79,7 +83,7 @@ async function handleBraintreeSubmit(event) {
         document.querySelector(".easycommerce-css-loader-wrapper").style.display = "none";
         document.querySelector(".easycommerce-checkout-main-btn").style.display = "flex";
         console.error("Error processing Braintree payment:", error);
-        errorContainer.textContent = "Error processing payment.";
+        errorContainer.textContent = __("Error processing payment.", 'easycommerce');
     }
 };
 

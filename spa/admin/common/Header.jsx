@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { __ } from '@wordpress/i18n';
 import Cookies from 'universal-cookie';
 
 //components
@@ -209,7 +210,7 @@ const Header = ({
 										href={`${EASYCOMMERCE.admin_url}?page=easycommerce#/get-pro`}
 										className="flex items-center cursor-pointer p-2 font-inter font-medium text-sm leading-5 text-ec-primary focus:shadow-none focus:text-ec-primary"
 									>
-										Get Pro
+										{__('Get Pro', 'easycommerce')}
 									</a>
 								</div>
 								<span>|</span>
@@ -221,12 +222,23 @@ const Header = ({
 										href="admin.php?page=easycommerce#/pro"
 										className="flex items-center cursor-pointer p-2 font-inter font-medium text-sm leading-5 text-ec-primary focus:shadow-none focus:text-ec-primary"
 									>
-										Activate License
+										{__('Activate License', 'easycommerce')}
 									</a>
 								</div>
 								<span>|</span>
 							</>
 						) : null}
+						<div>
+							<a
+								href={EASYCOMMERCE.community_url}
+								target="_blank"
+								rel="noopener noreferrer"
+								className="flex items-center cursor-pointer p-2 font-inter font-medium text-sm leading-5 ec-primary hover:text-ec-primary focus:shadow-none focus:text-ec-primary"
+							>
+								{__('Join Community', 'easycommerce')}
+							</a>
+						</div>
+						|
 						<Feedback />|
 						<div>
 							<a
@@ -234,7 +246,7 @@ const Header = ({
 								target="_blank"
 								className="flex items-center cursor-pointer p-2 font-inter font-medium text-sm leading-5 ec-primary hover:text-ec-primary focus:shadow-none focus:text-ec-primary"
 							>
-								Support
+								{__('Support', 'easycommerce')}
 							</a>
 						</div>
 						{!isLoading && (
@@ -271,7 +283,7 @@ const Header = ({
 											>
 												<img src={profileIcon} className="w-[14px] h-4" />
 												<span className="text-base leading-[26px] font-inter font-normal text-ec-body">
-													Profile
+													{__('Profile', 'easycommerce')}
 												</span>
 											</a>
 
@@ -282,7 +294,7 @@ const Header = ({
 											>
 												<img src={disconnectIcon} className="w-5 h-4" />
 												<span className="text-base leading-[26px] font-inter font-normal text-ec-body">
-													Disconnect
+													{__('Disconnect', 'easycommerce')}
 												</span>
 											</button>
 										</div>

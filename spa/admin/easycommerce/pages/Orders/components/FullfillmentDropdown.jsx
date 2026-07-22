@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { __ } from "@wordpress/i18n";
 import globalToast from "../../../../common/components/globalToast";
 const arrowDown = `${EASYCOMMERCE.assets}admin/img/icons/arrowDown.png`;
 const unfulfilledStatus = `${EASYCOMMERCE.assets}admin/img/icons/Complete.png`;
@@ -18,12 +19,12 @@ const FullfillmentDropdown = ({
 	onStatusChange,
 }) => {
 	const options = [
-		{ label: "Unfulfilled", value: "unfulfilled" },
-		{ label: "Fulfilled", value: "fulfilled" },
-		{ label: "Partially Fulfilled", value: "partially_fulfilled" },
-		{ label: "Shipped", value: "shipped" },
-		{ label: "Delivered", value: "delivered" },
-		{ label: "Returned", value: "returned" },
+		{ label: __("Unfulfilled", "easycommerce"), value: "unfulfilled" },
+		{ label: __("Fulfilled", "easycommerce"), value: "fulfilled" },
+		{ label: __("Partially Fulfilled", "easycommerce"), value: "partially_fulfilled" },
+		{ label: __("Shipped", "easycommerce"), value: "shipped" },
+		{ label: __("Delivered", "easycommerce"), value: "delivered" },
+		{ label: __("Returned", "easycommerce"), value: "returned" },
 	];
 
 	const statusColors = {
@@ -104,7 +105,7 @@ const FullfillmentDropdown = ({
 				} else {
 					addToastData({
 						type: "error",
-						message: data.data || "Failed to update status",
+						message: data.data || __("Failed to update status", "easycommerce"),
 					});
 				}
 			})
@@ -112,7 +113,7 @@ const FullfillmentDropdown = ({
 				easycommerce_modal(false);
 				addToastData({
 					type: "error",
-					message: "An error occurred while updating status",
+					message: __("An error occurred while updating status", "easycommerce"),
 				});
 			});
 	};

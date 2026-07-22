@@ -1,44 +1,45 @@
 import React from 'react';
+import { __, sprintf } from '@wordpress/i18n';
 
 const RefundsTable = ({ refunds }) => {
 	const tableColumns = [
 		{
-			name: 'ID',
+			name: __( 'ID', 'easycommerce' ),
 			key: 'id',
 			widthClass: 'w-[8%]',
 		},
 		{
-			name: 'Order ID',
+			name: __( 'Order ID', 'easycommerce' ),
 			key: 'order_id',
 			widthClass: 'w-[8%]',
 		},
 		{
-			name: 'Amount',
+			name: __( 'Amount', 'easycommerce' ),
 			key: 'amount',
 			widthClass: 'w-[8%]',
 		},
 		{
-			name: 'Customer',
+			name: __( 'Customer', 'easycommerce' ),
 			key: 'customer',
 			widthClass: 'w-[15%]',
 		},
 		{
-			name: 'Reason',
+			name: __( 'Reason', 'easycommerce' ),
 			key: 'reason',
 			widthClass: 'w-[15%]',
 		},
 		{
-			name: 'Status',
+			name: __( 'Status', 'easycommerce' ),
 			key: 'status',
 			widthClass: 'w-[8%]',
 		},
 		{
-			name: 'Transaction ID',
+			name: __( 'Transaction ID', 'easycommerce' ),
 			key: 'transaction_id',
 			widthClass: 'w-[15%]',
 		},
 		{
-			name: 'Date',
+			name: __( 'Date', 'easycommerce' ),
 			key: 'date',
 			widthClass: 'w-[10%]',
 		},
@@ -55,7 +56,7 @@ const RefundsTable = ({ refunds }) => {
 			? txnId.length > 10
 				? `...${txnId.slice(txnId.length - 10)}`
 				: txnId
-			: 'N/A';
+			: __( 'N/A', 'easycommerce' );
 	};
 
 	return (
@@ -104,7 +105,10 @@ const RefundsTable = ({ refunds }) => {
 									className={`py-4 pr-3 lg:pr-0 ${tableColumns.find((col) => col.key === 'order_id')?.widthClass}`}
 								>
 									<a href={`#/orders/${refund.order_id}`} className="font-inter text-sm text-ec-body hover:text-ec-primary duration-300">
-										Order #{refund.order_id}
+										{
+											// translators: %s: order ID.
+											sprintf( __( 'Order #%s', 'easycommerce' ), refund.order_id )
+										}
 									</a>
 								</td>
 							)}
@@ -129,7 +133,7 @@ const RefundsTable = ({ refunds }) => {
 									className={`py-4 pr-3 lg:pr-0 ${tableColumns.find((col) => col.key === 'reason')?.widthClass}`}
 								>
 									<span className="font-inter text-[14px] text-ec-body font-normal">
-										{EASYCOMMERCE.refund_reasons[refund.reason] || 'N/A'}
+										{EASYCOMMERCE.refund_reasons[refund.reason] || __( 'N/A', 'easycommerce' )}
 									</span>
 								</td>
 							)}
@@ -186,10 +190,10 @@ const RefundsTable = ({ refunds }) => {
 										return (
 											<div className="flex flex-col">
 												<p className="font-inter font-normal mb-1 lg:text-sm text-ec-body md:text-[14px]">
-													{date ? date : 'N/A'}
+													{date ? date : __( 'N/A', 'easycommerce' )}
 												</p>
 												<span className="text-ec-placeholder text-sm font-inter leading-4">
-													{time ? time : 'N/A'}
+													{time ? time : __( 'N/A', 'easycommerce' )}
 												</span>
 											</div>
 										);

@@ -1,4 +1,5 @@
 import React from "react";
+import { __ } from "@wordpress/i18n";
 import { useDispatch } from "react-redux";
 
 // redux slice
@@ -12,7 +13,7 @@ const Total = ({ order }) => {
             dispatch(
                 addToastData({
                     type: "error",
-                    message: "Please select a customer",
+                    message: __("Please select a customer", "easycommerce"),
                 })
             );
             return;
@@ -21,7 +22,7 @@ const Total = ({ order }) => {
         if (!order?.items) {
             dispatch(
                 addToastData({
-                    message: "Please add items to cart",
+                    message: __("Please add items to cart", "easycommerce"),
                     type: "error",
                 })
             );
@@ -46,7 +47,7 @@ const Total = ({ order }) => {
                     dispatch(
                         addToastData({
                             type: "success",
-                            message: "Order created successfully",
+                            message: __("Order created successfully", "easycommerce"),
                         })
                     );
 
@@ -55,7 +56,7 @@ const Total = ({ order }) => {
                     dispatch(
                         addToastData({
                             type: "error",
-                            message: "Failed to create order",
+                            message: __("Failed to create order", "easycommerce"),
                         })
                     );
                 }
@@ -66,7 +67,7 @@ const Total = ({ order }) => {
         <>
             <div className="w-full px-4 py-6 mb-6 border-b border-[#DBDBDB] flex flex-col justify-center">
                 <h3 className="text-ec-body font-inter font-semibold text-xl leading-8">
-                    Total
+                    {__("Total", "easycommerce")}
                 </h3>
             </div>
 
@@ -76,7 +77,7 @@ const Total = ({ order }) => {
                     border-ec-border border-dotted"
                 >
                     <label className="text-ec-body block text-sm font-normal leading-4 font-inter">
-                        Item Total
+                        {__("Item Total", "easycommerce")}
                     </label>
                     <span className="text-ec-body block font-inter font-medium text-sm leading-4">
                         $12.90
@@ -88,12 +89,12 @@ const Total = ({ order }) => {
                 >
                     <div className="flex flex-col xl:flex-row gap-3 items-start xl:items-center">
                         <label className="text-ec-body block text-sm font-normal leading-4 font-inter">
-                            Shipping
+                            {__("Shipping", "easycommerce")}
                         </label>
                         <select className="easycommerce-order-input easycommerce-order-select">
-                            <option value="flat discount">Flat discount</option>
+                            <option value="flat discount">{__("Flat discount", "easycommerce")}</option>
                             <option value="Another discount">
-                                Another discount
+                                {__("Another discount", "easycommerce")}
                             </option>
                         </select>
                     </div>
@@ -106,7 +107,7 @@ const Total = ({ order }) => {
                     border-ec-border border-dotted"
                 >
                     <label className="text-ec-body block text-sm font-normal leading-4 font-inter">
-                        Discount
+                        {__("Discount", "easycommerce")}
                     </label>
                     <span className="text-ec-body block font-inter font-medium text-sm leading-4">
                         <span className="mr-1">$</span>
@@ -123,19 +124,19 @@ const Total = ({ order }) => {
                 >
                     <div className="flex flex-col xl:flex-row gap-3 items-start xl:items-center">
                         <label className="text-ec-body text-sm font-normal leading-4 font-inter">
-                            Coupon
+                            {__("Coupon", "easycommerce")}
                         </label>
                         <div>
                             <input
                                 type="text"
                                 className="easycommerce-order-input w-[120px]"
-                                placeholder="Coupon code"
+                                placeholder={__("Coupon code", "easycommerce")}
                             />
                             <button
                                 type="button"
                                 className="py-2 px-[10px] text-ec-secondary bg-[#F8F8F8] font-inter font-normal text-sm leading-[26px]"
                             >
-                                Apply
+                                {__("Apply", "easycommerce")}
                             </button>
                         </div>
                     </div>
@@ -148,7 +149,7 @@ const Total = ({ order }) => {
                     border-ec-border border-dotted"
                 >
                     <label className="text-ec-body block text-sm font-normal leading-4 font-inter">
-                        Tax
+                        {__("Tax", "easycommerce")}
                     </label>
                     <span className="text-ec-body block font-inter font-medium text-sm leading-4">
                         $12.90
@@ -156,7 +157,7 @@ const Total = ({ order }) => {
                 </div>
                 <div className="py-5 px-3 flex items-center justify-between border-t-2 border-ec-border">
                     <label className="text-ec-body block text-base font-medium leading-4 font-inter">
-                        Total offer
+                        {__("Total offer", "easycommerce")}
                     </label>
                     <span className="text-ec-body block font-inter font-semibold text-base leading-4">
                         $4312.90
@@ -172,7 +173,7 @@ const Total = ({ order }) => {
                         duration-500"
                         onClick={() => (window.location.hash = `#/orders`)}
                     >
-                        Cancel Order
+                        {__("Cancel Order", "easycommerce")}
                     </button>
                     <button
                         type="button"
@@ -183,7 +184,7 @@ const Total = ({ order }) => {
                         duration-500"
                         onClick={createOrder}
                     >
-                        Create Order
+                        {__("Create Order", "easycommerce")}
                     </button>
                 </div>
             </div>

@@ -1,4 +1,6 @@
 jQuery(function ($) {
+	const { __ } = wp.i18n;
+
 	$("#easycommerce-reset-settings").on("click", function (e) {
 		e.preventDefault();
 		easycommerce_modal();
@@ -175,7 +177,10 @@ jQuery(function ($) {
 				return;
 			}
 
-			var placeholder = $el.data('placeholder') || 'Select ' + $el.data('geo');
+			// The raw geo key ('state' / 'city') stays untranslated - only the
+			// rendered placeholder is localized.
+			var geoKey      = $el.data('geo');
+			var placeholder = $el.data('placeholder') || ( 'city' === geoKey ? __( 'Select City', 'easycommerce' ) : __( 'Select State', 'easycommerce' ) );
 			$el.empty().append('<option value="">' + placeholder + '</option>');
 			$.each(items, function (i, val) {
 				$el.append('<option value="' + val + '">' + val + '</option>');
@@ -185,7 +190,7 @@ jQuery(function ($) {
 
 		function ecFetchCities(country, state, savedCity) {
 			if (!country || !state) {
-				ecResetGeo($geoCity, 'Select City');
+				ecResetGeo($geoCity, __( 'Select City', 'easycommerce' ));
 				return;
 			}
 			$.ajax({
@@ -201,8 +206,8 @@ jQuery(function ($) {
 
 		function ecFetchStates(country, savedState, savedCity) {
 			if (!country) {
-				ecResetGeo($geoState, 'Select State');
-				ecResetGeo($geoCity, 'Select City');
+				ecResetGeo($geoState, __( 'Select State', 'easycommerce' ));
+				ecResetGeo($geoCity, __( 'Select City', 'easycommerce' ));
 				return;
 			}
 			$.ajax({

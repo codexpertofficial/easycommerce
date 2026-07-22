@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { __, sprintf, _n } from '@wordpress/i18n';
 import ActionDropdown from '../../../../common/components/inputs/ActionDropdown';
 import DeletePopup from '../../../../common/components/DeletePopup';
 import { toast } from 'react-toastify';
@@ -44,13 +45,13 @@ const ActionBar = ({
 
     const handleBulkApply = () => {
         if (!currentType) {
-            toast.error('Please select a status to update.');
+            toast.error(__('Please select a status to update.', 'easycommerce'));
             return;
         }
 
         const statusValue = currentType === 'status' ? selectedOrderStatus?.value : selectedFulfillStatus?.value;
         if (!statusValue) {
-            toast.error('Please select a valid status.');
+            toast.error(__('Please select a valid status.', 'easycommerce'));
             return;
         }
 
@@ -84,7 +85,7 @@ const ActionBar = ({
                         return order;
                     }));
 
-                    toast.success('Status updated successfully');
+                    toast.success(__('Status updated successfully', 'easycommerce'));
                     fetchStatusCounts();
                     setSelectedOrders([]);
                     setSelectedOrderStatus(null);
@@ -92,12 +93,12 @@ const ActionBar = ({
                     setCurrentType(null);
                     easycommerce_modal(false);
                 } else {
-                    toast.error('Failed to update orders.');
+                    toast.error(__('Failed to update orders.', 'easycommerce'));
                     easycommerce_modal(false);
                 }
             })
             .catch(() => {
-                toast.error('An error occurred while updating statuses.');
+                toast.error(__('An error occurred while updating statuses.', 'easycommerce'));
                 easycommerce_modal(false);
             });
     };
@@ -122,7 +123,12 @@ const ActionBar = ({
 
             if (data.success) {
                 toast.success(
-                    `Order${orderIds.length > 1 ? 's' : ''} deleted permanently`
+                    _n(
+                        'Order deleted permanently',
+                        'Orders deleted permanently',
+                        orderIds.length,
+                        'easycommerce'
+                    )
                 );
 
                 setOrders?.(prev =>
@@ -135,7 +141,7 @@ const ActionBar = ({
         } catch (err) {
             console.error("Delete failed:", err);
             easycommerce_modal(false);
-            toast.error("Something went wrong while deleting.");
+            toast.error(__("Something went wrong while deleting.", 'easycommerce'));
         }
     };
 
@@ -144,7 +150,7 @@ const ActionBar = ({
             <div className="w-[140px]">
                 <ActionDropdown
                     options={orderStatuses}
-                    placeholder="Set Status"
+                    placeholder={__('Set Status', 'easycommerce')}
                     value={selectedOrderStatus}
                     onChange={handleOrderStatusChange}
                 />
@@ -153,7 +159,7 @@ const ActionBar = ({
             <div className="w-[165px]">
                 <ActionDropdown
                     options={fulfillStatuses}
-                    placeholder="Fulfill Status"
+                    placeholder={__('Fulfill Status', 'easycommerce')}
                     value={selectedFulfillStatus}
                     onChange={handleFulfillStatusChange}
                 />
@@ -173,7 +179,10 @@ const ActionBar = ({
                 <DeletePopup
                     onClose={() => setShowDeletePopup(false)}
                     onConfirm={handleBulkDelete}
-                    itemName={`${selectedOrders.length} order${selectedOrders.length > 1 ? 's' : ''}`}
+                    itemName={sprintf(
+                        _n('%d order', '%d orders', selectedOrders.length, 'easycommerce'),
+                        selectedOrders.length
+                    )}
                 />
             )}
 
@@ -181,7 +190,10 @@ const ActionBar = ({
                 <BulkPopup
                     onClose={() => setShowBulkPopup(false)}
                     onConfirm={handleBulkApply}
-                    itemName={`${selectedOrders.length} order${selectedOrders.length > 1 ? 's' : ''}`}
+                    itemName={sprintf(
+                        _n('%d order', '%d orders', selectedOrders.length, 'easycommerce'),
+                        selectedOrders.length
+                    )}
                 />
             )}
         </div>

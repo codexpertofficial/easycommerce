@@ -1,0 +1,33 @@
+{
+    "translation-revision-date": "YEAR-MO-DA HO:MI+ZONE",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "blocks\/single-product\/rating\/inspector.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "bn_BD",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Settings": [
+                "\u09b8\u09c7\u099f\u09bf\u0982\u09b8"
+            ],
+            "Show Rating": [
+                "\u09b0\u09c7\u099f\u09bf\u0982 \u09a6\u09c7\u0996\u09be\u09a8"
+            ],
+            "Show SKU": [
+                "SKU \u09a6\u09c7\u0996\u09be\u09a8"
+            ],
+            "Show Favourite": [
+                "\u09ab\u09c7\u09ad\u09be\u09b0\u09bf\u099f \u09a6\u09c7\u0996\u09be\u09a8"
+            ],
+            "Styles": [
+                "\u09b8\u09cd\u099f\u09be\u0987\u09b2"
+            ],
+            "Border": [
+                "\u09ac\u09b0\u09cd\u09a1\u09be\u09b0"
+            ]
+        }
+    }
+}

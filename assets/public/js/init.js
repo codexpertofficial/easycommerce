@@ -1,3 +1,5 @@
+const { __ } = wp.i18n;
+
 document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.custom-toast').forEach((button) => {
         button.addEventListener('click', function () {
@@ -23,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
             .then((data) => {
                 if (data.success) {
                     if (data.data.length === 0) {
-                        cartContent.innerHTML = `<p>${EASYCOMMERCE.i18n.cart.empty}</p>`;
+                        cartContent.innerHTML = `<p>${__('Your cart is empty.', 'easycommerce')}</p>`;
                         document.querySelector(
                             '.easycommerce-clear-cart'
                         ).style.display = 'none';
@@ -36,9 +38,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     thead.className = 'bg-gray-200';
                     thead.innerHTML = `
                     <tr>
-                        <th class="py-2 px-4 border-b font-semibold text-left">${EASYCOMMERCE.i18n.title}</th>
-                        <th class="py-2 px-4 border-b font-semibold text-left">${EASYCOMMERCE.i18n.quantity}</th>
-                        <th class="py-2 px-4 border-b font-semibold text-left">${EASYCOMMERCE.i18n.price}</th>
+                        <th class="py-2 px-4 border-b font-semibold text-left">${__('Product', 'easycommerce')}</th>
+                        <th class="py-2 px-4 border-b font-semibold text-left">${__('Quantity', 'easycommerce')}</th>
+                        <th class="py-2 px-4 border-b font-semibold text-left">${__('Price', 'easycommerce')}</th>
                     </tr>
                 `;
                     table.appendChild(thead);
@@ -112,11 +114,11 @@ document.addEventListener('DOMContentLoaded', function () {
                         });
                     }
                 } else {
-                    cartContent.innerHTML = `<p>${EASYCOMMERCE.i18n.cart.failed_to_load}</p>`;
+                    cartContent.innerHTML = `<p>${__('Failed to load cart.', 'easycommerce')}</p>`;
                 }
             })
             .catch((error) => {
-                cartContent.innerHTML = `<p>${EASYCOMMERCE.i18n.cart.error_loading}</p>`;
+                cartContent.innerHTML = `<p>${__('Error loading cart.', 'easycommerce')}</p>`;
             });
     }
 
@@ -186,7 +188,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         button.innerHTML = originalButtonHtml;
                         const message =
                             (data && data.data && (data.data.message || (typeof data.data === 'string' ? data.data : null))) ||
-                            'Failed to add to cart. Please try again.';
+                            __('Failed to add to cart. Please try again.', 'easycommerce');
                         if (typeof easycommerce_error_toast === 'function') {
                             easycommerce_error_toast(message);
                         }
@@ -198,7 +200,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     button.classList.remove('loading');
                     button.innerHTML = originalButtonHtml;
                     if (typeof easycommerce_error_toast === 'function') {
-                        easycommerce_error_toast('Failed to add to cart. Please try again.');
+                        easycommerce_error_toast(__('Failed to add to cart. Please try again.', 'easycommerce'));
                     }
                 });
         });
@@ -226,139 +228,3 @@ jQuery(function ($) {
     });
 });
 
-//User Registration
-jQuery(function ($) {
-    $('#easycommerce-registration-form').submit(function (e) {
-        e.preventDefault();
-
-        // Collect form data
-        var formData = {
-            username: $('#easycommerce-register-username').val(),
-            email: $('#easycommerce-register-email').val(),
-            password: $('#easycommerce-register-new-password').val(),
-            confirmPassword: $('#easycommerce-register-confirm-password').val(),
-        };
-
-        // Send AJAX request
-        $.ajax({
-            url: `${EASYCOMMERCE.rest_base}/connectivity/registration`,
-            type: 'POST',
-            data: formData,
-            headers: {
-                'X-WP-Nonce': EASYCOMMERCE.nonce,
-            },
-            success: function (res) {
-                if (res.success === true) {
-                    window.location.href = res.data.redirect_url;
-                } else {
-                    $('#easycommerce-registration-error-message')
-                        .show()
-                        .text(res.data.message);
-                }
-            },
-            error: function (xhr, status, error) {
-                $('#easycommerce-registration-error-message')
-                    .show()
-                    .text(error);
-            },
-        });
-    });
-
-    // Reset Password Form
-    $('#easycommerce-reset-form').on('submit', function (e) {
-        e.preventDefault();
-
-        $('#easycommerce-reset-error-message').hide();
-        
-        const submitButton = $(this).find('button[type="submit"]');
-        const originalText = submitButton.text();
-        submitButton.text('Sending...').prop('disabled', true);
-        const userLogin = $('#easycommerce-reset-email-username').val();
-
-        $.ajax({
-            url: `${EASYCOMMERCE.rest_base}/connectivity/reset-password`,
-            type: 'POST',
-            data: {
-                user_login: userLogin
-            },
-            headers: {
-                'X-WP-Nonce': EASYCOMMERCE.nonce,
-            },
-            success: function (response) {
-                if (response.success === true) {
-                    $('#easycommerce-reset-error-message').removeClass('text-red-600').addClass('text-green-600').show().text(response.data.message);
-                    $('#easycommerce-reset-email-username').val('');
-                } else {
-                    $('#easycommerce-reset-error-message')
-                        .removeClass('text-green-600')
-                        .addClass('text-red-600')
-                        .show()
-                        .text(response.data.message);
-                }
-            },
-            error: function (xhr, status, error) {
-                let errorMessage = 'An error occurred. Please try again.';
-                
-                if (xhr.responseJSON && xhr.responseJSON.data && xhr.responseJSON.data.message) {
-                    errorMessage = xhr.responseJSON.data.message;
-                }
-                
-                $('#easycommerce-reset-error-message')
-                    .removeClass('text-green-600')
-                    .addClass('text-red-600')
-                    .show()
-                    .text(errorMessage);
-            },
-            complete: function() {
-                submitButton.text(originalText).prop('disabled', false);
-            }
-        });
-    });
-
-    // Reset Password Confirmation
-    const resetPasswordForm = $("#easycommerce-reset-password-form");
-    if (resetPasswordForm.length === 0) return;
-
-    resetPasswordForm.on("submit", function (e) {
-        e.preventDefault();
-
-        const newPassword = $("#new-password").val();
-        const confirmPassword = $("#confirm-password").val();
-        const resetKey = $("#reset-key").val();
-        const resetLogin = $("#reset-login").val();
-        const errorMessage = $("#easycommerce-reset-password-error-message");
-        errorMessage.hide();
-        const submitButton = resetPasswordForm.find("button[type='submit']");
-        const originalText = submitButton.text();
-        submitButton.text("Resetting...").prop("disabled", true);
-
-        $.ajax({
-            url: `${EASYCOMMERCE.rest_base}/connectivity/reset-password-confirm`,
-            method: "POST",
-            contentType: "application/json",
-            data: JSON.stringify({
-                key: resetKey,
-                login: resetLogin,
-                password: newPassword,
-                confirm_password: confirmPassword,
-            }),
-            headers: {
-                "X-WP-Nonce": EASYCOMMERCE.nonce,
-            },
-            success: function (response) {
-                if (response.success === true) {
-                window.location.href = response.data.redirect_url;
-                } else {
-                errorMessage.text(response.data.message).show();
-                }
-            },
-            error: function () {
-                errorMessage.text("An error occurred. Please try again.").show();
-            },
-            complete: function () {
-                submitButton.text(originalText).prop("disabled", false);
-            },
-        });
-    });
-
-});

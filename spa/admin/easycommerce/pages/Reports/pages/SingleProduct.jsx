@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import apiFetch from '@wordpress/api-fetch';
 import { addQueryArgs } from '@wordpress/url';
+import { __ } from '@wordpress/i18n';
 
 // components
 import Container from '../components/common/Container';
@@ -14,12 +15,12 @@ import ProductInfo from '../components/singleProduct/ProductInfo';
 
 const SingleProduct = ({ productId, setBreadcrumbTitle }) => {
 	const [range, setRange] = useState({
-		label: 'Last 30 days',
+		label: __( 'Last 30 days', 'easycommerce' ),
 		value: 'last-30',
 	});
 
 	const [comparison, setComparison] = useState({
-		label: 'Prev. 30 days',
+		label: __( 'Prev. 30 days', 'easycommerce' ),
 		value: 'prev-30'
 	});
 
@@ -55,7 +56,7 @@ const SingleProduct = ({ productId, setBreadcrumbTitle }) => {
 	return (
 		<>
 			<Header
-				title={isLoading ? 'Loading...' : productData?.name}
+				title={isLoading ? __( 'Loading...', 'easycommerce' ) : productData?.name}
 				range={range}
 				setRange={setRange}
 				comparison={comparison}
@@ -70,14 +71,14 @@ const SingleProduct = ({ productId, setBreadcrumbTitle }) => {
 
 			<div className="my-6 flex gap-6">
 				<div className="w-[40%]">
-					<Container title="Basic Info">
+					<Container title={__( 'Basic Info', 'easycommerce' )}>
 						<ProductInfo
 							product={productData}
 					    />
 					</Container>
 				</div>
 				<div className="w-[60%]">
-					<Container title="Sales Over Time">
+					<Container title={__( 'Sales Over Time', 'easycommerce' )}>
 						<LineChart 
 							endpoint="/easycommerce/v1/reports/products/single-sales-over-time" 
 							params={{ product_id: productId, range: range.value }} 
@@ -87,7 +88,7 @@ const SingleProduct = ({ productId, setBreadcrumbTitle }) => {
 			</div>
 
 			<div className="my-6">
-				<Container title="Product Sale by Location">
+				<Container title={__( 'Product Sale by Location', 'easycommerce' )}>
 					<GeoMap
 						endpoint="/easycommerce/v1/reports/products/locations"
 						params={{ range: range.value, product_id: productId }}
@@ -96,7 +97,7 @@ const SingleProduct = ({ productId, setBreadcrumbTitle }) => {
 			</div>
 
 			<div className="my-6">
-				<Container title="Reviews">
+				<Container title={__( 'Reviews', 'easycommerce' )}>
 					<Reviews
 						endpoint="/easycommerce/v1/reports/products/single-reviews"
 						params={{ product_id: productId, range: range.value }}

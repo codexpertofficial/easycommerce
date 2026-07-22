@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { __ } from '@wordpress/i18n';
 
 const applyFilters = (hookName, ...params) => {
     if (
@@ -16,35 +17,35 @@ const CustomerAddress = ({ order }) => {
 
     const billingFields = [
         {
-            label: "Name",
+            label: __("Name", "easycommerce"),
             value: `${order?.meta?.billing?.first_name || ''} ${order?.meta?.billing?.last_name || ''}`.trim(),
         },
         {
-            label: "Email",
+            label: __("Email", "easycommerce"),
             value: order?.meta?.billing?.email,
         },
         {
-            label: "Phone Number",
+            label: __("Phone Number", "easycommerce"),
             value: order?.meta?.billing?.phone,
         },
         {
-            label: "Address Line 1",
+            label: __("Address Line 1", "easycommerce"),
             value: order?.meta?.billing?.address_1,
         },
         {
-            label: "Address Line 2",
+            label: __("Address Line 2", "easycommerce"),
             value: order?.meta?.billing?.address_2,
         },
         {
-            label: "City",
+            label: __("City", "easycommerce"),
             value: order?.meta?.billing?.city,
         },
         {
-            label: "State",
+            label: __("State", "easycommerce"),
             value: order?.meta?.billing?.state,
         },
         {
-            label: "Country",
+            label: __("Country", "easycommerce"),
             value: order?.meta?.billing?.country,
         },
     ];
@@ -58,35 +59,35 @@ const CustomerAddress = ({ order }) => {
 
     const shippingFields = [
         {
-            label: "Name",
+            label: __("Name", "easycommerce"),
             value: `${order?.meta?.shipping?.first_name || ''} ${order?.meta?.shipping?.last_name || ''}`.trim(),
         },
         {
-            label: "Email",
+            label: __("Email", "easycommerce"),
             value: order?.meta?.shipping?.email,
         },
         {
-            label: "Phone Number",
+            label: __("Phone Number", "easycommerce"),
             value: order?.meta?.shipping?.phone,
         },
         {
-            label: "Address Line 1",
+            label: __("Address Line 1", "easycommerce"),
             value: order?.meta?.shipping?.address_1,
         },
         {
-            label: "Address Line 2",
+            label: __("Address Line 2", "easycommerce"),
             value: order?.meta?.shipping?.address_2,
         },
         {
-            label: "City",
+            label: __("City", "easycommerce"),
             value: order?.meta?.shipping?.city,
         },
         {
-            label: "State",
+            label: __("State", "easycommerce"),
             value: order?.meta?.shipping?.state,
         },
         {
-            label: "Country",
+            label: __("Country", "easycommerce"),
             value: order?.meta?.shipping?.country,
         },
     ];
@@ -110,7 +111,7 @@ const CustomerAddress = ({ order }) => {
                         {field.label} :
                     </p>
                     <p className="pb-[3px] text-ec-body font-inter text-sm font-normal leading-[26px] text-right">
-                        {field.value || "N/A"}
+                        {field.value || __("N/A", "easycommerce")}
                     </p>
                 </div>
             ))}
@@ -121,7 +122,7 @@ const CustomerAddress = ({ order }) => {
         <div className="w-[550px] bg-white rounded-2xl">
             <div className="flex flex-col border-b border-ec-table-stock pt-4 px-6">
                 <h3 className="text-ec-title text-xl font-medium font-inter leading-8 pb-4">
-                   Address
+                   {__("Address", "easycommerce")}
                 </h3>
             </div>
             
@@ -137,7 +138,7 @@ const CustomerAddress = ({ order }) => {
                                         : ''
                                 }`}
                             >
-                                Billing Address
+                                {__("Billing Address", "easycommerce")}
                             </a>
                         </li>
 
@@ -151,7 +152,7 @@ const CustomerAddress = ({ order }) => {
                                             : ''
                                     }`}
                                 >
-                                    Shipping Address
+                                    {__("Shipping Address", "easycommerce")}
                                 </a>
                             </li>
                         )}

@@ -11,7 +11,7 @@ $product = new Product( get_the_ID() );
 $reviews = $product->get_reviews();
 
 if ( get_post_type( get_the_ID() ) !== 'product' ) {
-	echo 'Post type is not product';
+	esc_html_e( 'Post type is not product', 'easycommerce' );
 	return;
 }
 ?>
@@ -26,8 +26,8 @@ if ( get_post_type( get_the_ID() ) !== 'product' ) {
 					</h2>
 					<span class="text-ec-placeholder font-inter text-[12px] font-medium leading-5">
 					<?php
-					/* Translators: %d is the review count */
-					printf( esc_html__( ' Showing  reviews %d', 'easycommerce' ), count( $reviews ) );
+					/* translators: %d: number of reviews. */
+					printf( esc_html( _n( 'Showing %d review', 'Showing %d reviews', count( $reviews ), 'easycommerce' ) ), count( $reviews ) );
 					?>
 					</span>
 				</div>
@@ -128,11 +128,11 @@ if ( get_post_type( get_the_ID() ) !== 'product' ) {
 							</div>
 							<div class="star-rating">
 								<input type="hidden" id="easycommerce-star-rating-value" value="0">
-								<img class="star empty" src="<?php echo esc_attr( $empty_star ); ?>" data-value="1" alt="Star">
-								<img class="star empty" src="<?php echo esc_attr( $empty_star ); ?>" data-value="2" alt="Star">
-								<img class="star empty" src="<?php echo esc_attr( $empty_star ); ?>" data-value="3" alt="Star">
-								<img class="star empty" src="<?php echo esc_attr( $empty_star ); ?>" data-value="4" alt="Star">
-								<img class="star empty" src="<?php echo esc_attr( $empty_star ); ?>" data-value="5" alt="Star">
+								<img class="star empty" src="<?php echo esc_attr( $empty_star ); ?>" data-value="1" alt="<?php esc_attr_e( 'Star', 'easycommerce' ); ?>">
+								<img class="star empty" src="<?php echo esc_attr( $empty_star ); ?>" data-value="2" alt="<?php esc_attr_e( 'Star', 'easycommerce' ); ?>">
+								<img class="star empty" src="<?php echo esc_attr( $empty_star ); ?>" data-value="3" alt="<?php esc_attr_e( 'Star', 'easycommerce' ); ?>">
+								<img class="star empty" src="<?php echo esc_attr( $empty_star ); ?>" data-value="4" alt="<?php esc_attr_e( 'Star', 'easycommerce' ); ?>">
+								<img class="star empty" src="<?php echo esc_attr( $empty_star ); ?>" data-value="5" alt="<?php esc_attr_e( 'Star', 'easycommerce' ); ?>">
 							</div>
 						</div>
 					</div>
@@ -142,7 +142,7 @@ if ( get_post_type( get_the_ID() ) !== 'product' ) {
 							class="easycommerce-single-product-review-text w-full p-[15px] mb-5 rounded-md resize-none"
 							name=""
 							id=""
-							placeholder="Write your review"
+							placeholder="<?php esc_attr_e( 'Write your review', 'easycommerce' ); ?>"
 						></textarea>
 					</div>
 					<button
@@ -158,7 +158,7 @@ if ( get_post_type( get_the_ID() ) !== 'product' ) {
 				</form>
 				<?php
 		} else {
-			printf( '<p class="mt-5 text-ec-body">Please Login first to write a review</p>' );
+			printf( '<p class="mt-5 text-ec-body">%s</p>', esc_html__( 'Please Login first to write a review', 'easycommerce' ) );
 		}
 		?>
 	</div>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import {applyFilters} from "@wordpress/hooks";
+import { __ } from "@wordpress/i18n";
 import {Link} from "react-router-dom";
 import {twMerge} from "tailwind-merge";
 
@@ -19,7 +20,7 @@ const sidemenuList = [
         id: "dashboard",
         icon: dashboardDefaultIcon,
         activeIcon: dashboardActiveIcon,
-        title: "Dashboard",
+        title: __( "Dashboard", "easycommerce" ),
         subMenu: false,
         subMenuList: [],
     },
@@ -27,31 +28,31 @@ const sidemenuList = [
         id: "orders",
         icon: defaultOrdersIcon,
         activeIcon: activeOrdersIcon,
-        title: "Purchases",
+        title: __( "Purchases", "easycommerce" ),
         subMenu: true,
         subMenuList: [
-            { id: "orders", label: "Orders" },
-            { id: "transactions", label: "Transactions" },
-            { id: "downloads", label: "Downloads" },
+            { id: "orders", label: __( "Orders", "easycommerce" ) },
+            { id: "transactions", label: __( "Transactions", "easycommerce" ) },
+            { id: "downloads", label: __( "Downloads", "easycommerce" ) },
         ],
     },
     {
         id: "profile",
         icon: defaultSettingsIcon,
         activeIcon: activeSettingsIcon,
-        title: "Settings",
+        title: __( "Settings", "easycommerce" ),
         subMenu: true,
         subMenuList: [
-            { id: "profile", label: "Profile" },
-            { id: "address", label: "Address" },
-            { id: "password", label: "Password" },
+            { id: "profile", label: __( "Profile", "easycommerce" ) },
+            { id: "address", label: __( "Address", "easycommerce" ) },
+            { id: "password", label: __( "Password", "easycommerce" ) },
         ],
     },
     {
         id: "logout",
         icon: defaultLogoutIcon,
         activeIcon: defaultLogoutIcon,
-        title: "Logout",
+        title: __( "Logout", "easycommerce" ),
         subMenu: false,
         subMenuList: [],
     },
@@ -85,7 +86,7 @@ const Sidebar = ({ activeTab }) => {
             .then((data) => {
                 const photoUrl =
                     data.data?.customer?.photo || dashboardDefaultUuser;
-                const name = data.data?.customer?.name || "Unknown User";
+                const name = data.data?.customer?.name || __( "Unknown User", "easycommerce" );
                 setUserInfo({ image: photoUrl, name: name });
             })
             .catch((error) => {
@@ -98,7 +99,7 @@ const Sidebar = ({ activeTab }) => {
                 <div className="p-1 rounded-full inline-block mb-[6px] border border-ec-border bg-white">
                     <img
                         src={userInfo.image}
-                        alt="User Profile Image"
+                        alt={__( "User Profile Image", "easycommerce" )}
                         className="w-[104px] h-[104px] rounded-full object-cover"
                     />
                 </div>
@@ -176,7 +177,7 @@ const Sidebar = ({ activeTab }) => {
                                                     ? activeArrowDownIcon
                                                     : defaultArrowDownIcon
                                             }
-                                            alt="arrow"
+                                            alt={__( "arrow", "easycommerce" )}
                                             className={`w-[15px] h-2 transition-transform duration-200 ${
                                                 isActive ? "rotate-180" : ""
                                             }`}

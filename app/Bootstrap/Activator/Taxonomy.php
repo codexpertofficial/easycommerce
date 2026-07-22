@@ -5,18 +5,22 @@ defined( 'ABSPATH' ) || exit;
 
 class Taxonomy {
 
-	/**
-	 * Registers custom taxonomies for the plugin.
-	 *
-	 * @return void
-	 */
 	public function register() {
-		/**
-		 * Filters the labels for the product category taxonomy.
-		 *
-		 * @param array $category_labels The default labels.
-		 */
-		$category_labels = apply_filters(
+		if ( ! taxonomy_exists( 'product_cat' ) ) {
+			$this->registerProductCategory();
+		}
+
+		if ( ! taxonomy_exists( 'product_brand' ) ) {
+			$this->registerProductBrand();
+		}
+
+		if ( ! taxonomy_exists( 'product_tag' ) ) {
+			$this->registerProductTag();
+		}
+	}
+
+	private function registerProductCategory() {
+		$labels = apply_filters(
 			'easycommerce_product_category_labels',
 			array(
 				'name'              => _x( 'Categories', 'taxonomy general name', 'easycommerce' ),
@@ -33,16 +37,11 @@ class Taxonomy {
 			)
 		);
 
-		/**
-		 * Filters the arguments for the product category taxonomy.
-		 *
-		 * @param array $category_args The default arguments.
-		 */
-		$category_args = apply_filters(
+		$args = apply_filters(
 			'easycommerce_product_category_args',
 			array(
 				'hierarchical'      => true,
-				'labels'            => $category_labels,
+				'labels'            => $labels,
 				'show_ui'           => true,
 				'show_admin_column' => true,
 				'query_var'         => true,
@@ -51,24 +50,13 @@ class Taxonomy {
 			)
 		);
 
-		/**
-		 * Fires before registering the product category taxonomy.
-		 */
-		do_action( 'easycommerce_before_register_product_category', $category_args );
+		do_action( 'easycommerce_before_register_product_category', $args );
+		register_taxonomy( 'product_cat', apply_filters( 'easycommerce_product_cat_post_types', array( 'product' ) ), $args );
+		do_action( 'easycommerce_after_register_product_category', $args );
+	}
 
-		register_taxonomy( 'product_cat', apply_filters( 'easycommerce_product_cat_post_types', array( 'product' ) ), $category_args );
-
-		/**
-		 * Fires after registering the product category taxonomy.
-		 */
-		do_action( 'easycommerce_after_register_product_category', $category_args );
-
-		/**
-		 * Filters the labels for the product brand taxonomy.
-		 *
-		 * @param array $brand_labels The default labels.
-		 */
-		$brand_labels = apply_filters(
+	private function registerProductBrand() {
+		$labels = apply_filters(
 			'easycommerce_product_brand_labels',
 			array(
 				'name'              => _x( 'Brands', 'taxonomy general name', 'easycommerce' ),
@@ -85,16 +73,11 @@ class Taxonomy {
 			)
 		);
 
-		/**
-		 * Filters the arguments for the product brand taxonomy.
-		 *
-		 * @param array $brand_args The default arguments.
-		 */
-		$brand_args = apply_filters(
+		$args = apply_filters(
 			'easycommerce_product_brand_args',
 			array(
 				'hierarchical'      => true,
-				'labels'            => $brand_labels,
+				'labels'            => $labels,
 				'show_ui'           => true,
 				'show_admin_column' => true,
 				'query_var'         => true,
@@ -103,26 +86,13 @@ class Taxonomy {
 			)
 		);
 
-		/**
-		 * Fires before registering the product brand taxonomy.
-		 */
-		do_action( 'easycommerce_before_register_product_brand', $brand_args );
+		do_action( 'easycommerce_before_register_product_brand', $args );
+		register_taxonomy( 'product_brand', apply_filters( 'easycommerce_product_brand_post_types', array( 'product' ) ), $args );
+		do_action( 'easycommerce_after_register_product_brand', $args );
+	}
 
-		register_taxonomy( 'product_brand', apply_filters( 'easycommerce_product_brand_post_types', array( 'product' ) ), $brand_args );
-
-		/**
-		 * Fires after registering the product brand taxonomy.
-		 */
-		do_action( 'easycommerce_after_register_product_brand', $brand_args );
-
-
-		/**
-		 * Filters the labels for the product tag taxonomy.
-		 *
-		 * @param array $tag_labels The default labels.
-		 */
-
-		$tag_labels = apply_filters(
+	private function registerProductTag() {
+		$labels = apply_filters(
 			'easycommerce_product_tag_labels',
 			array(
 				'name'              => _x( 'Tags', 'taxonomy general name', 'easycommerce' ),
@@ -139,16 +109,11 @@ class Taxonomy {
 			)
 		);
 
-		/**
-		 * Filters the arguments for the product tag taxonomy.
-		 *
-		 * @param array $tag_args The default arguments.
-		 */
-		$tag_args = apply_filters(
+		$args = apply_filters(
 			'easycommerce_product_tag_args',
 			array(
 				'hierarchical'      => true,
-				'labels'            => $tag_labels,
+				'labels'            => $labels,
 				'show_ui'           => true,
 				'show_admin_column' => true,
 				'query_var'         => true,
@@ -157,16 +122,8 @@ class Taxonomy {
 			)
 		);
 
-		/**
-		 * Fires before registering the product tag taxonomy.
-		 */
-		do_action( 'easycommerce_before_register_product_tag', $tag_args );
-
-		register_taxonomy( 'product_tag', apply_filters( 'easycommerce_product_tag_post_types', array( 'product' ) ), $tag_args );
-
-		/**
-		 * Fires after registering the product tag taxonomy.
-		 */
-		do_action( 'easycommerce_after_register_product_tag', $tag_args );
+		do_action( 'easycommerce_before_register_product_tag', $args );
+		register_taxonomy( 'product_tag', apply_filters( 'easycommerce_product_tag_post_types', array( 'product' ) ), $args );
+		do_action( 'easycommerce_after_register_product_tag', $args );
 	}
 }

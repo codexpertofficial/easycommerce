@@ -1,4 +1,5 @@
 import React from "react";
+import { __ } from "@wordpress/i18n";
 
 const View = `${EASYCOMMERCE.assets}admin/img/icons/View.png`;
 
@@ -23,41 +24,41 @@ const getRandTxtBgColor = (customerName) => {
 
 const columnList = [
     {
-        title: "Name",
+        title: __("Name", "easycommerce"),
         name: "title",
         width: "20",
     },
     {
-        title: "Email",
+        title: __("Email", "easycommerce"),
         name: "email",
         width: "15",
     },
     {
-        title: "Customer Since",
+        title: __("Customer Since", "easycommerce"),
         name: "customer_since",
         width: "12",
     },
     {
-        title: "Total Orders",
+        title: __("Total Orders", "easycommerce"),
         name: "total_orders",
         width: "10",
     },
     {
-        title: "Lifetime Value",
+        title: __("Lifetime Value", "easycommerce"),
         name: "lifetime_value",
         width: "10",
     },
     {
-        title: "Avg. Order Value",
+        title: __("Avg. Order Value", "easycommerce"),
         name: "avg_order_value",
         width: "12",
     },
     {
-        title: "Last Order",
+        title: __("Last Order", "easycommerce"),
         name: "last_order",
         width: "10",
     },
- 
+
 ];
 
 const CustomerTable = ({
@@ -149,7 +150,7 @@ const CustomerTable = ({
                                                         
                                                         <div className="invisible group-hover:visible opacity-0 group-hover:opacity-100 duration-300 absolute bottom-0"> 
                                                             <div className="flex items-center gap-1.5 font-inter font-normal text-xs text-ec-light-black">
-                                                                <a className="hover:text-ec-primary duration-300 hover:cursor-pointer" href={`#/customers/${customer.id}`} >View</a>
+                                                                <a className="hover:text-ec-primary duration-300 hover:cursor-pointer" href={`#/customers/${customer.id}`} >{__("View", "easycommerce")}</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -191,7 +192,7 @@ const CustomerTable = ({
                                     )}
                                     {tableColumns.includes("last_order") && (
                                         <td className="font-inter font-normal text-ec-body text-sm lg:w-[10%] pl-5">
-                                            {customer.last_order ? customer.last_order : "N/A"}
+                                            {customer.last_order ? customer.last_order : __("N/A", "easycommerce")}
                                         </td>
                                     )}
                                 </tr>
@@ -202,7 +203,7 @@ const CustomerTable = ({
             {!isLoading && customers.length === 0 && (
                 <div className="p-5 mt-5 ">
                     <p className="text-center text-lg text-[#4a5568]">
-                        No customers found
+                        {__("No customers found", "easycommerce")}
                     </p>
                 </div>
             )}

@@ -5,6 +5,9 @@ defined( 'ABSPATH' ) || exit;
 
 use EasyCommerce\Models\Database;
 use EasyCommerce\Traits\Queue;
+use EasyCommerce\Helpers\Utility;
+use EasyCommerce\Bootstrap\Activator\Post_Type;
+use EasyCommerce\Bootstrap\Activator\Taxonomy;
 
 class Installer {
 	use Queue;
@@ -14,6 +17,10 @@ class Installer {
 	 * @return void
 	 */
 	public static function install() {
+
+		// Activation fires before the `init` hook that normally loads the text domain, so without
+		// this the store pages below would always be created with English titles.
+		load_plugin_textdomain( 'easycommerce', false, dirname( plugin_basename( EASYCOMMERCE_FILE ) ) . '/languages' );
 
 		$installer = new self();
 
@@ -27,13 +34,25 @@ class Installer {
 		add_action( 'easycommerce_migrate_cart_sessions_table', array( $installer, 'handle_cart_sessions_data_migration' ), 10, 4 );
 		add_action( 'easycommerce_migrate_orders_table', array( $installer, 'handle_orders_data_migration' ), 10, 4 );
 
+		$is_fresh_install = ! get_option( 'easycommerce_activated' );
+
 		if ( ! $installer->is_database_up_to_date() ) {
 			$installer->prepare();
 			$installer->set_cron();
 			$installer->create_tables();
 			$installer->update_existing_tables();
+			$installer->migrate_stripe_customer_meta();
 			$installer->update_db_version();
 		}
+
+		if ( $is_fresh_install ) {
+			$installer->setup_defaults();
+		}
+
+		// Register CPT and taxonomies so their rewrite rules are included in the flush.
+		( new Post_Type() )->register();
+		( new Taxonomy() )->register();
+		flush_rewrite_rules();
 
 		add_action( 'activated_plugin', array( $installer, 'setup_wizard_redirect' ) );
 
@@ -55,6 +74,75 @@ class Installer {
 	}
 
 	/**
+	 * Seeds sensible defaults on a fresh install so the store is usable
+	 * even when the setup wizard is skipped.
+	 *
+	 * Each value is only written if the slot is currently empty, so existing
+	 * data is never overwritten (e.g. on upgrades or re-activations).
+	 *
+	 * @return void
+	 */
+	private function setup_defaults() {
+
+		// Store name → WordPress site title.
+		if ( ! Utility::get_option( 'general', 'business', 'store_name' ) ) {
+			Utility::set_option( 'general', 'business', 'store_name', get_bloginfo( 'name' ) );
+		}
+
+		// Business email → WordPress admin email.
+		if ( ! Utility::get_option( 'general', 'business', 'business_email' ) ) {
+			Utility::set_option( 'general', 'business', 'business_email', get_option( 'admin_email' ) );
+		}
+
+		// Cash on Delivery → enable automatically when no payment method is configured.
+		if ( empty( Utility::get_option( 'payment', 'methods', 'active_methods', array() ) ) ) {
+			Utility::set_option( 'payment', 'methods', 'active_methods', array( 'cash-on-delivery' ) );
+		}
+
+		// Store pages → create each one if the setting is missing or the post was deleted.
+		$store         = get_option( 'easycommerce-general-store', array() );
+		$page_template = 'full-width-layout.php';
+
+		$pages = array(
+			'shop'      => array(
+				'title'   => __( 'Shop', 'easycommerce' ),
+				'content' => '<!-- wp:easycommerce/template-2 {"ProductPerPage":9,"columns":3} /-->',
+			),
+			'checkout'  => array(
+				'title'   => __( 'Checkout', 'easycommerce' ),
+				'content' => '<!-- wp:shortcode -->[easycommerce-checkout]<!-- /wp:shortcode -->',
+			),
+			'dashboard' => array(
+				'title'   => __( 'Dashboard', 'easycommerce' ),
+				'content' => '<!-- wp:shortcode -->[easycommerce-dashboard]<!-- /wp:shortcode -->',
+			),
+			'payment'   => array(
+				'title'   => __( 'Payment', 'easycommerce' ),
+				'content' => '<!-- wp:shortcode -->[easycommerce-payment]<!-- /wp:shortcode -->',
+			),
+		);
+
+		foreach ( $pages as $key => $page_data ) {
+			if ( ! empty( $store[ $key ] ) && get_post( $store[ $key ] ) ) {
+				continue;
+			}
+
+			$page_id = Utility::create_post( array(
+				'type'    => 'page',
+				'title'   => $page_data['title'],
+				'content' => $page_data['content'],
+			) );
+
+			if ( $page_id && ! is_wp_error( $page_id ) ) {
+				$store[ $key ] = $page_id;
+				update_post_meta( $page_id, '_wp_page_template', $page_template );
+			}
+		}
+
+		update_option( 'easycommerce-general-store', $store );
+	}
+
+	/**
 	 * Prepares the plugin settings and configurations.
 	 *
 	 * @return void
@@ -70,40 +158,8 @@ class Installer {
 			update_option( 'easycommerce_activated', time() );
 		}
 
-		/**
-		 * Set memory limit.
-		 *
-		 * @todo Use WP CLI for better handling.
-		 */
-		$memory_required = apply_filters( 'easycommerce_memory_limit', 512 ); // in MB
-
-		if ( defined( 'WP_MEMORY_LIMIT' ) && absint( WP_MEMORY_LIMIT ) < $memory_required ) {
-			$wp_config_path = ABSPATH . 'wp-config.php';
-
-			if ( file_exists( $wp_config_path ) && is_writable( $wp_config_path ) ) {
-				$config_content = file_get_contents( $wp_config_path );
-
-				// Check if WP_MEMORY_LIMIT is already defined
-				if ( strpos( $config_content, "define('WP_MEMORY_LIMIT'" ) !== false ) {
-
-					// Update existing WP_MEMORY_LIMIT
-					$config_content = preg_replace(
-						"/define\(\s*'WP_MEMORY_LIMIT'\s*,\s*'[^']+'\s*\);/",
-						"define('WP_MEMORY_LIMIT', '{$memory_required}M');",
-						$config_content
-					);
-				} else {
-					// Insert WP_MEMORY_LIMIT before "That's all, stop editing!"
-					$config_content = preg_replace(
-						"/(\/\* That's all, stop editing! Happy publishing. \*\/)/",
-						"define('WP_MEMORY_LIMIT', '{$memory_required}M');\n\n$1",
-						$config_content
-					);
-				}
-
-				file_put_contents( $wp_config_path, $config_content );
-			}
-		}
+		// Seed Cash on Delivery as an active payment method on fresh install
+		$this->seed_default_payment_methods();
 
 		/**
 		 * Schedule an event
@@ -114,6 +170,22 @@ class Installer {
 		 * Fires after preparing the plugin settings.
 		 */
 		do_action( 'easycommerce_after_prepare' );
+	}
+
+	/**
+	 * Seeds Cash on Delivery as an active payment method on fresh install.
+	 *
+	 * @return void
+	 */
+	protected function seed_default_payment_methods() {
+		if ( false !== get_option( 'easycommerce-payment-methods' ) ) {
+			return;
+		}
+
+		update_option(
+			'easycommerce-payment-methods',
+			array( 'active_methods' => array( 'cash-on-delivery' ) )
+		);
 	}
 
 	/**
@@ -309,22 +381,41 @@ class Installer {
 	public function handle_cart_sessions_data_migration( Database $db, string $table_full_name, array $columns, array $options ) {
 		global $wpdb;
 
-		if ( ! $wpdb->get_var( "SHOW TABLES LIKE '{$table_full_name}'" ) ) {
+		if ( ! $wpdb->get_var( $wpdb->prepare( 'SHOW TABLES LIKE %s', $wpdb->esc_like( $table_full_name ) ) ) ) {
 			return;
 		}
 
-		if ( empty( $columns['status'] ) ) {
+		// Only ever splice a hardcoded ENUM definition into ALTER TABLE; guard against a future filter injecting arbitrary SQL.
+		if ( empty( $columns['status'] ) || ! preg_match( '/^ENUM\s*\(/i', $columns['status'] ) ) {
 			return;
 		}
 
-		// Read the current column definition; skip if it already supports the value.
-		$row = $wpdb->get_row( "SHOW COLUMNS FROM `{$table_full_name}` LIKE 'status'" );
-
-		if ( $row && false !== stripos( $row->Type, 'payment_initiated' ) ) {
-			return;
+		$current = $wpdb->get_row( $wpdb->prepare( "SHOW COLUMNS FROM `{$table_full_name}` LIKE %s", 'status' ) );
+		if ( $current && false === strpos( (string) $current->Type, 'payment_initiated' ) ) {
+			$wpdb->query( "ALTER TABLE `{$table_full_name}` MODIFY COLUMN `status` " . $columns['status'] );
 		}
+	}
 
-		$wpdb->query( "ALTER TABLE `{$table_full_name}` MODIFY COLUMN `status` " . $columns['status'] );
+	/**
+	 * Migrates the Stripe customer id from the legacy `_stripe_customer_id` user-meta
+	 * key to the canonical `stripe_customer_id` so existing customers are reused after
+	 * the PaymentIntent helper was standardized onto the canonical key.
+	 *
+	 * @return void
+	 */
+	public function migrate_stripe_customer_meta() {
+		global $wpdb;
+
+		// Where both keys exist, keep the canonical one (written by the main gateway) and drop the legacy duplicate.
+		$wpdb->query(
+			"DELETE legacy FROM {$wpdb->usermeta} legacy
+			INNER JOIN {$wpdb->usermeta} canonical
+				ON canonical.user_id = legacy.user_id AND canonical.meta_key = 'stripe_customer_id'
+			WHERE legacy.meta_key = '_stripe_customer_id'"
+		);
+
+		// Rename the remaining legacy keys to the canonical key.
+		$wpdb->query( "UPDATE {$wpdb->usermeta} SET meta_key = 'stripe_customer_id' WHERE meta_key = '_stripe_customer_id'" );
 	}
 
 	/**
@@ -346,18 +437,18 @@ class Installer {
 	public function handle_orders_data_migration( Database $db, string $table_full_name, array $columns, array $options ) {
 		global $wpdb;
 
-		if ( ! $wpdb->get_var( "SHOW TABLES LIKE '{$table_full_name}'" ) ) {
+		if ( ! $wpdb->get_var( $wpdb->prepare( 'SHOW TABLES LIKE %s', $wpdb->esc_like( $table_full_name ) ) ) ) {
 			return;
 		}
 
-		if ( empty( $columns['status'] ) ) {
+		if ( empty( $columns['status'] ) || ! preg_match( '/^ENUM\s*\(/i', $columns['status'] ) ) {
 			return;
 		}
 
-		$row = $wpdb->get_row( "SHOW COLUMNS FROM `{$table_full_name}` LIKE 'status'" );
+		$row = $wpdb->get_row( $wpdb->prepare( "SHOW COLUMNS FROM `{$table_full_name}` LIKE %s", 'status' ) );
 
 		// Add the ENUM value if it is not already supported.
-		if ( ! $row || false === stripos( $row->Type, 'failed' ) ) {
+		if ( ! $row || false === strpos( (string) $row->Type, 'failed' ) ) {
 			$wpdb->query( "ALTER TABLE `{$table_full_name}` MODIFY COLUMN `status` " . $columns['status'] );
 		}
 

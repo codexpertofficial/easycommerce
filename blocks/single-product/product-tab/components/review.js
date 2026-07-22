@@ -1,3 +1,4 @@
+import { __, sprintf, _n } from "@wordpress/i18n";
 import { useState } from "react";
 import { useEffect } from "react";
 import StarRating from "../../rating/components/rating";
@@ -27,10 +28,19 @@ const Review = ({ postId }) => {
                     {data?.length > 0 && (
                         <>
                             <h2 className="font-inter text-xl font-semibold leading-8 text-ec-body !mb-1">
-                                Reviews
+                                {__("Reviews", "easycommerce")}
                             </h2>
                             <span className="text-ec-placeholder font-inter text-[12px] font-medium leading-5">
-                                Showing {data?.length} reviews
+                                {sprintf(
+                                    // translators: %d: number of reviews.
+                                    _n(
+                                        "Showing %d review",
+                                        "Showing %d reviews",
+                                        data?.length,
+                                        "easycommerce"
+                                    ),
+                                    data?.length
+                                )}
                             </span>
                         </>
                     )}
@@ -68,11 +78,13 @@ const Review = ({ postId }) => {
                 </div>
                 <div className="easycommerce-reviews-form border border-ec-border mt-11 rounded-xl p-6">
                     <h2 className="font-inter text-xl font-semibold leading-8 text-ec-body !mb-1">
-                        Write a review
+                        {__("Write a review", "easycommerce")}
                     </h2>
                     <p className="font-inter !text-[12px] font-normal leading-5 !text-ec-secondary ">
-                        Your email address will not be published. required
-                        fields are marked
+                        {__(
+                            "Your email address will not be published. required fields are marked",
+                            "easycommerce"
+                        )}
                         <span className="text-[#FF3A52] font-inter text-[12px]">
                             *
                         </span>
@@ -83,14 +95,14 @@ const Review = ({ postId }) => {
                                 className="w-full p-[15px] border border-ec-border mb-5 rounded-md resize-none focus:outline-none"
                                 name=""
                                 id=""
-                                placeholder="Write your review"
+                                placeholder={__("Write your review", "easycommerce")}
                             ></textarea>
                         </div>
                         <button
                             className="mt-6 py-[15px] px-[45px] bg-ec-primary rounded-md text-white font-medium font-inter leading-[26px] "
                             type="button"
                         >
-                            Submit Now
+                            {__("Submit Now", "easycommerce")}
                         </button>
                     </form>
                 </div>

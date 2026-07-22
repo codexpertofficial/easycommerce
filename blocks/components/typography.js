@@ -17,7 +17,7 @@ function TypographyControls({ attributes, setAttributes, attributeNames }) {
                 <>
                     <div className="easycommerce-typography-inner-wrapper">
                         <RangeControl
-                            label="Font Size"
+                            label={__("Font Size", "easycommerce")}
                             value={attributes[attributeNames[0]]}
                             onChange={(newVal) =>
                                 setAttributes({ [attributeNames[0]]: newVal })
@@ -29,18 +29,18 @@ function TypographyControls({ attributes, setAttributes, attributeNames }) {
                             label={__("Font Weight", "easycommerce")}
                             value={attributes[attributeNames[1]]}
                             options={[
-                                { label: "100 (Thin)", value: "100" },
-                                { label: "200 (Extra Light)", value: "200" },
-                                { label: "300 (Light)", value: "300" },
-                                { label: "400 (Normal)", value: "400" },
-                                { label: "500 (Medium)", value: "500" },
-                                { label: "600 (Semi Bold)", value: "600" },
-                                { label: "700 (Bold)", value: "700" },
-                                { label: "800 (Extra Bold)", value: "800" },
-                                { label: "900 (Black)", value: "900" },
-                                { label: "Default", value: "" },
-                                { label: "Normal", value: "normal" },
-                                { label: "Bold", value: "bold" },
+                                { label: __("100 (Thin)", "easycommerce"), value: "100" },
+                                { label: __("200 (Extra Light)", "easycommerce"), value: "200" },
+                                { label: __("300 (Light)", "easycommerce"), value: "300" },
+                                { label: __("400 (Normal)", "easycommerce"), value: "400" },
+                                { label: __("500 (Medium)", "easycommerce"), value: "500" },
+                                { label: __("600 (Semi Bold)", "easycommerce"), value: "600" },
+                                { label: __("700 (Bold)", "easycommerce"), value: "700" },
+                                { label: __("800 (Extra Bold)", "easycommerce"), value: "800" },
+                                { label: __("900 (Black)", "easycommerce"), value: "900" },
+                                { label: __("Default", "easycommerce"), value: "" },
+                                { label: __("Normal", "easycommerce"), value: "normal" },
+                                { label: __("Bold", "easycommerce"), value: "bold" },
                             ]}
                             onChange={(value) =>
                                 setAttributes({ [attributeNames[1]]: value })
@@ -50,11 +50,11 @@ function TypographyControls({ attributes, setAttributes, attributeNames }) {
                             label={__("Text Transform", "easycommerce")}
                             value={attributes[attributeNames[2]]}
                             options={[
-                                { label: "Default", value: "" },
-                                { label: "Uppercase", value: "uppercase" },
-                                { label: "Lowercase", value: "lowercase" },
-                                { label: "Capitalize", value: "capitalize" },
-                                { label: "Normal", value: "none" },
+                                { label: __("Default", "easycommerce"), value: "" },
+                                { label: __("Uppercase", "easycommerce"), value: "uppercase" },
+                                { label: __("Lowercase", "easycommerce"), value: "lowercase" },
+                                { label: __("Capitalize", "easycommerce"), value: "capitalize" },
+                                { label: __("Normal", "easycommerce"), value: "none" },
                             ]}
                             onChange={(value) =>
                                 setAttributes({ [attributeNames[2]]: value })
@@ -64,10 +64,10 @@ function TypographyControls({ attributes, setAttributes, attributeNames }) {
                             label={__("Text Style", "easycommerce")}
                             value={attributes[attributeNames[3]]}
                             options={[
-                                { label: "Default", value: "" },
-                                { label: "Normal", value: "normal" },
-                                { label: "Italic", value: "italic" },
-                                { label: "Oblique", value: "oblique" },
+                                { label: __("Default", "easycommerce"), value: "" },
+                                { label: __("Normal", "easycommerce"), value: "normal" },
+                                { label: __("Italic", "easycommerce"), value: "italic" },
+                                { label: __("Oblique", "easycommerce"), value: "oblique" },
                             ]}
                             onChange={(value) =>
                                 setAttributes({ [attributeNames[3]]: value })
@@ -77,11 +77,11 @@ function TypographyControls({ attributes, setAttributes, attributeNames }) {
                             label={__("Text Decoration", "easycommerce")}
                             value={attributes[attributeNames[4]]}
                             options={[
-                                { label: "None", value: "none" },
-                                { label: "Underline", value: "underline" },
-                                { label: "Overline", value: "overline" },
+                                { label: __("None", "easycommerce"), value: "none" },
+                                { label: __("Underline", "easycommerce"), value: "underline" },
+                                { label: __("Overline", "easycommerce"), value: "overline" },
                                 {
-                                    label: "Line Through",
+                                    label: __("Line Through", "easycommerce"),
                                     value: "line-through",
                                 },
                             ]}
@@ -90,7 +90,7 @@ function TypographyControls({ attributes, setAttributes, attributeNames }) {
                             }
                         />
                         <RangeControl
-                            label="Line Height"
+                            label={__("Line Height", "easycommerce")}
                             value={attributes[attributeNames[5]]}
                             onChange={(newVal) =>
                                 setAttributes({ [attributeNames[5]]: newVal })
@@ -99,7 +99,7 @@ function TypographyControls({ attributes, setAttributes, attributeNames }) {
                             max={100}
                         />
                         <RangeControl
-                            label="Word Spacing"
+                            label={__("Word Spacing", "easycommerce")}
                             value={attributes[attributeNames[6]]}
                             onChange={(newVal) =>
                                 setAttributes({ [attributeNames[6]]: newVal })

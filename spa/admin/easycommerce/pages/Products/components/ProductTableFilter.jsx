@@ -1,4 +1,5 @@
 import React from "react";
+import { __ } from "@wordpress/i18n";
 
 // components
 import DropdownField from "./DropdownField";
@@ -57,7 +58,7 @@ const ProductTableFilter = ({
                     className={`font-inter text-base leading-[26px] font-normal text-ec-secondary border-b border-[#737991]`}
                     onClick={resetFilter}
                 >
-                    Reset
+                    {__("Reset", "easycommerce")}
                 </button>
             )}
 
@@ -86,14 +87,14 @@ const ProductTableFilter = ({
                         name="search"
                         value={formState.search}
                         onChange={handleInputChange}
-                        placeholder="Search"
+                        placeholder={__("Search", "easycommerce")}
                         />
                 </div>
                 <div className="easycommerce-select-container relative flex items-center gap-3">
                     <DropdownField
                         currentValue={formState.category[0] || ""}
                         options={categoryOptions}
-                        placeholder="Category"
+                        placeholder={__("Category", "easycommerce")}
                         width="auto"
                         menuWidth="150px"
                         onChange={(value) =>
@@ -104,7 +105,7 @@ const ProductTableFilter = ({
                         <DropdownField
                             currentValue={formState.sortBy || ""}
                             options={sortByOptions}
-                            placeholder="Sort by"
+                            placeholder={__("Sort by", "easycommerce")}
                             width="120px"
                             menuWidth="160px"
                             onChange={(value) =>

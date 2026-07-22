@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import { __ } from '@wordpress/i18n';
+import { __, sprintf } from '@wordpress/i18n';
 // components;
 import Button from "../../../common/components/inputs/Button";
 import TextField from "../../../common/components/inputs/TextField";
@@ -70,7 +70,7 @@ const Tags = ({ page }) => {
             setTotalPage(data.data.pagination.total_pages);
 
         } catch (error) {
-            toast.error('Failed to fetch tags.');
+            toast.error(__('Failed to fetch tags.', 'easycommerce'));
         }finally {
             setIsLoading(false); 
         } 
@@ -124,7 +124,7 @@ const Tags = ({ page }) => {
         };
 
         if (!payload.name.trim() || !payload.slug.trim()) {
-            toast.error('All fields are required!');
+            toast.error(__('All fields are required!', 'easycommerce'));
             return;
         }
         const method = editingTag ? 'PUT' : 'POST';
@@ -147,17 +147,21 @@ const Tags = ({ page }) => {
             const data = await response.json();
 
             if (data.success) {
-                toast.success(`Tag ${editingTag ? 'updated' : 'created'} successfully`);
+                toast.success(
+                    editingTag
+                        ? __('Tag updated successfully', 'easycommerce')
+                        : __('Tag created successfully', 'easycommerce')
+                );
                 fetchData();
                 setTagsData({ tags: [{ tag_name: '', tag_slug: '' }] });
                 setEditingTag(null);
                 easycommerce_modal(false);
             } else {
-                toast.error(data.data.message || 'Operation failed');
+                toast.error(data.data.message || __('Operation failed', 'easycommerce'));
                 easycommerce_modal(false);
             }
         } catch (error) {
-            toast.error('Operation failed');
+            toast.error(__('Operation failed', 'easycommerce'));
         }
     };
 
@@ -197,13 +201,13 @@ const Tags = ({ page }) => {
                 );
                 fetchData();
                 setBulkDeleteIds([]);
-                toast.success('Selected tags deleted successfully!');
+                toast.success(__('Selected tags deleted successfully!', 'easycommerce'));
             } else {
-                toast.error('Failed to delete selected tags.');
+                toast.error(__('Failed to delete selected tags.', 'easycommerce'));
             }
         } catch (error) {
             console.error('Bulk delete failed', error);
-            toast.error('Bulk delete failed, please try again.');
+            toast.error(__('Bulk delete failed, please try again.', 'easycommerce'));
             easycommerce_modal(false);
         } finally {
             easycommerce_modal(false);
@@ -214,7 +218,7 @@ const Tags = ({ page }) => {
     return (
         <>
             <div className="product-panel-title mb-4">
-                <h3>Tags</h3>
+                <h3>{__('Tags', 'easycommerce')}</h3>
             </div>
             <div className="grid grid-cols-12 gap-6 items-start">
                 <div className="bg-white ec-db-lg:col-span-8 col-span-7 w-full self-start border border-solid border-ec-table-stock rounded-xl">
@@ -241,10 +245,10 @@ const Tags = ({ page }) => {
                                         d="M15.1501 6.92017H1.85394L2.90454 17.3333C2.99002 18.184 3.68756 18.822 4.53044 18.822H12.4701C13.3147 18.822 14.0105 18.184 14.096 17.3333L15.1466 6.92017H15.1501ZM15.8442 5.1667C15.8442 4.37763 15.2074 3.73094 14.4303 3.73094H2.57632C1.79927 3.73094 1.16243 4.37765 1.16243 5.1667V5.74221H15.8443L15.8442 5.1667ZM5.04676 2.55558V2.49134C5.04676 1.1198 6.14951 0 7.50016 0H9.50217C10.8528 0 11.9556 1.1198 11.9556 2.49134V2.55558H14.4287C15.8443 2.55558 17 3.72918 17 5.1667V6.33077C17 6.65542 16.7393 6.91931 16.4204 6.91931H16.3084L15.245 17.4522C15.098 18.9036 13.9038 19.9991 12.4678 19.9991L4.53225 20C3.09698 20 1.90182 18.9045 1.75498 17.4531L0.691554 6.92017H0.579571C0.25987 6.92017 0 6.65542 0 6.33164V5.16757C0 3.73005 1.15573 2.55645 2.57135 2.55645H5.04444L5.04676 2.55558ZM10.7972 2.55558V2.49134C10.7972 1.76912 10.2125 1.17536 9.50123 1.17536H7.49921C6.78799 1.17536 6.20328 1.76912 6.20328 2.49134V2.55558H10.7972ZM5.75952 14.8916C5.75952 15.2163 5.49879 15.4802 5.17995 15.4802C4.86025 15.4802 4.60038 15.2154 4.60038 14.8916V10.8005C4.60038 10.4759 4.8611 10.212 5.17995 10.212C5.49965 10.212 5.75952 10.4767 5.75952 10.8005V14.8916ZM11.2261 10.8005C11.2261 10.4759 11.4868 10.212 11.8057 10.212C12.1254 10.212 12.3852 10.4767 12.3852 10.8005V14.8916C12.3852 15.2163 12.1245 15.4802 11.8057 15.4802C11.486 15.4802 11.2261 15.2154 11.2261 14.8916V10.8005ZM9.07277 15.9421C9.07277 16.2667 8.81205 16.5306 8.4932 16.5306C8.1735 16.5306 7.91363 16.2659 7.91363 15.9421V9.7485C7.91363 9.42385 8.17435 9.15996 8.4932 9.15996C8.8129 9.15996 9.07277 9.42472 9.07277 9.7485V15.9421Z"
                                     />
                                 </svg>
-                                Delete Selected
+                                {__('Delete Selected', 'easycommerce')}
                             </button>
                         ) : (
-                            <Title title="Tags List" />
+                            <Title title={__('Tags List', 'easycommerce')} />
                         )}
                     </div>
 
@@ -270,23 +274,33 @@ const Tags = ({ page }) => {
                 {/* Form Section */}
                 <div className="bg-white ec-db-lg:col-span-4 col-span-5 w-full self-start border border-solid border-ec-table-stock rounded-xl">
                     <div className="flex items-center border-b pl-6 py-3.5 rtl:pr-6">
-                        <Title title={editingTag ? 'Edit Tag: ' + tagsData.tags[0].tag_name : "Add New Tag"} />
+                        <Title
+                            title={
+                                editingTag
+                                    ? sprintf(
+                                        // translators: %s: tag name.
+                                        __('Edit Tag: %s', 'easycommerce'),
+                                        tagsData.tags[0].tag_name
+                                    )
+                                    : __('Add New Tag', 'easycommerce')
+                            }
+                        />
                     </div>
 
                     <div className="p-6 flex flex-col gap-4">
                         <div className='flex flex-col gap-2'>
-                            <SubTitle SubTitle="Name" notice="It'll be used to filter products" />
-                            <TextField 
-                                name="tag_name" 
+                            <SubTitle SubTitle={__('Name', 'easycommerce')} notice={__("It'll be used to filter products", 'easycommerce')} />
+                            <TextField
+                                name="tag_name"
                                 value={tagsData.tags[0].tag_name}
-                                onChange={handleChange} 
-                                placeholder="Enter Name" 
+                                onChange={handleChange}
+                                placeholder={__('Enter Name', 'easycommerce')}
                                 className="h-ec-input" 
                             />
                         </div>
 
                         <div className="flex flex-col gap-2">
-                            <SubTitle SubTitle="Slug" notice="URL-friendly slug of the tag" />
+                            <SubTitle SubTitle={__('Slug', 'easycommerce')} notice={__('URL-friendly slug of the tag', 'easycommerce')} />
 
                             <div className="h-ec-input rounded-lg font-inter text-[14px] leading-[20px] border border-ec-table-stock placeholder-ec-placeholder hover:border-ec-primary focus-within:border-ec-primary focus-within:outline-none focus-within:[box-shadow:0_0_0_4px_#F3F0FF] transition-colors duration-300 ease-in-out overflow-hidden flex ">
                                 <div className="h-ec-input flex items-center justify-center text-ec-light-black pl-4">
@@ -313,15 +327,15 @@ const Tags = ({ page }) => {
                             {editingTag ? (
                                 <Button
                                     className="h-[37px] mt-[15px] easycommerce-underline-button"
-                                    value="Cancel"
-                                    onClick={handleCancel} 
+                                    value={__('Cancel', 'easycommerce')}
+                                    onClick={handleCancel}
                                 />
                             ) : (
-                                <div /> 
+                                <div />
                             )}
                             <Button
                                 className="easycommerce-outline-button"
-                                value={editingTag ? "Update Tag" : "Create Tag"}
+                                value={editingTag ? __('Update Tag', 'easycommerce') : __('Create Tag', 'easycommerce')}
                                 onClick={handleSubmit}
                             />
                         </div>

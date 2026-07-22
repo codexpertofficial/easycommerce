@@ -7,7 +7,7 @@
  * Author: EasyCommerce
  * Author URI: https://easycommerce.dev/
  * Description: AI-Powered Ecommerce To Sell Physical & Digital Products
- * Version: 1.45
+ * Version: 1.46
  * Requires at least: 6.0
  * Tested up to: 7.0
  * Requires PHP: 7.4
@@ -32,7 +32,7 @@ namespace EasyCommerce;
 defined( 'ABSPATH' ) || exit;
 
 define( 'EASYCOMMERCE_FILE', __FILE__ );
-define( 'EASYCOMMERCE_VERSION', '1.45' );
+define( 'EASYCOMMERCE_VERSION', '1.46' );
 define( 'EASYCOMMERCE_PLUGIN_DIR', plugin_dir_path( EASYCOMMERCE_FILE ) );
 define( 'EASYCOMMERCE_PLUGIN_URL', plugin_dir_url( EASYCOMMERCE_FILE ) );
 define( 'EASYCOMMERCE_ASSETS_URL', EASYCOMMERCE_PLUGIN_URL . 'assets/' );
@@ -79,6 +79,10 @@ function easycommerce_activate() {
  */
 add_action( 'init', __NAMESPACE__ . '\\easycommerce_initialize', -999 );
 function easycommerce_initialize() {
+	// Load PHP translations for the current locale. The React bundles wire their
+	// own JS translations via wp_set_script_translations() at enqueue time.
+	load_plugin_textdomain( 'easycommerce', false, dirname( plugin_basename( EASYCOMMERCE_FILE ) ) . '/languages' );
+
 	Bootstrap\Initializer::initialize();
 }
 

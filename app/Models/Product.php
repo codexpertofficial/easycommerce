@@ -18,6 +18,34 @@ class Product extends Model {
 	use Cleaner;
 
 	/**
+	 * Sort keys backed by a post meta value.
+	 *
+	 * @var array
+	 */
+	protected static $meta_sorts = array(
+		'top-rating'     => array(
+			'key'        => 'average_rating',
+			'order'      => 'DESC',
+			'nulls_last' => true,
+		),
+		'lowest-rating'  => array(
+			'key'        => 'average_rating',
+			'order'      => 'ASC',
+			'nulls_last' => true,
+		),
+		'best-selling'   => array(
+			'key'        => 'total_sale',
+			'order'      => 'DESC',
+			'nulls_last' => false,
+		),
+		'lowest-selling' => array(
+			'key'        => 'total_sale',
+			'order'      => 'ASC',
+			'nulls_last' => false,
+		),
+	);
+
+	/**
 	 * @var int Product ID
 	 */
 	protected $id;
@@ -650,6 +678,7 @@ class Product extends Model {
 					if ( $existing_variation ) {
 						return new \WP_Error(
 							'duplicate_sku',
+							/* translators: %s: the duplicate SKU value. */
 							sprintf( __( 'The SKU "%s" is already in use.', 'easycommerce' ), $variation_data['sku'] ),
 							array( 'status' => 400 )
 						);
@@ -1111,17 +1140,11 @@ class Product extends Model {
 				} else {
 					$post__in = array( 0 );
 				}
-			} elseif ( in_array( $filters['sort_by'], array( 'latest', 'oldest' ), true ) ) {
+			} elseif ( in_array( $filters['sort_by'], array( 'latest', 'newest', 'oldest' ), true ) ) {
 				$args['orderby'] = 'date';
-				$args['order']   = $filters['sort_by'] === 'latest' ? 'DESC' : 'ASC';
-			} elseif ( in_array( $filters['sort_by'], array( 'top-rating', 'lowest-rating' ), true ) ) {
-				$args['meta_key'] = 'average_rating';
-				$args['orderby']  = 'meta_value_num';
-				$args['order']    = $filters['sort_by'] === 'top-rating' ? 'DESC' : 'ASC';
-			} elseif ( in_array( $filters['sort_by'], array( 'best-selling', 'lowest-selling' ), true ) ) {
-				$args['meta_key'] = 'total_sale';
-				$args['orderby']  = 'meta_value_num';
-				$args['order']    = $filters['sort_by'] === 'best-selling' ? 'DESC' : 'ASC';
+				$args['order']   = $filters['sort_by'] === 'oldest' ? 'ASC' : 'DESC';
+			} elseif ( isset( self::$meta_sorts[ $filters['sort_by'] ] ) ) {
+				$args['easycommerce_meta_sort'] = self::$meta_sorts[ $filters['sort_by'] ];
 			}
 		}
 
@@ -1183,6 +1206,13 @@ class Product extends Model {
 			$args['post__in'] = $post__in;
 		}
 
+		// Registered only for the meta-backed sorts, and only around the queries below.
+		$meta_sorted = isset( $args['easycommerce_meta_sort'] );
+
+		if ( $meta_sorted ) {
+			add_filter( 'posts_clauses', array( __CLASS__, 'meta_sort_clauses' ), 10, 2 );
+		}
+
 		// Query to get the paginated products
 		$query = new \WP_Query( $args );
 
@@ -1196,6 +1226,10 @@ class Product extends Model {
 				)
 			)
 		) )->found_posts;
+
+		if ( $meta_sorted ) {
+			remove_filter( 'posts_clauses', array( __CLASS__, 'meta_sort_clauses' ), 10 );
+		}
 
 		$products = $query->posts;
 
@@ -1233,6 +1267,46 @@ class Product extends Model {
 			'total'    			=> $total_products,
 			'statuses_counts' 	=> $statuses_counts,
 		);
+	}
+
+	/**
+	 * Order a product query by a post meta value without excluding products that lack it.
+	 *
+	 * @param array     $clauses SQL clauses for the query.
+	 * @param \WP_Query $query   The query being run.
+	 * @return array
+	 */
+	public static function meta_sort_clauses( $clauses, $query ) {
+		global $wpdb;
+
+		$sort = $query->get( 'easycommerce_meta_sort' );
+
+		if ( empty( $sort['key'] ) ) {
+			return $clauses;
+		}
+
+		$order = ( isset( $sort['order'] ) && strtoupper( $sort['order'] ) === 'ASC' ) ? 'ASC' : 'DESC';
+
+		$clauses['join'] .= $wpdb->prepare(
+			" LEFT JOIN {$wpdb->postmeta} AS ec_sort_meta
+				ON ( {$wpdb->posts}.ID = ec_sort_meta.post_id AND ec_sort_meta.meta_key = %s )",
+			$sort['key']
+		);
+
+		$value   = empty( $sort['nulls_last'] )
+			? 'COALESCE( ec_sort_meta.meta_value + 0, 0 )'
+			: 'ec_sort_meta.meta_value + 0';
+		$orderby = empty( $sort['nulls_last'] )
+			? "{$value} {$order}"
+			: "( ec_sort_meta.meta_value IS NOT NULL ) DESC, {$value} {$order}";
+
+		$clauses['orderby'] = "{$orderby}, {$wpdb->posts}.ID DESC";
+
+		if ( false === strpos( $clauses['groupby'], "{$wpdb->posts}.ID" ) ) {
+			$clauses['groupby'] = "{$wpdb->posts}.ID";
+		}
+
+		return $clauses;
 	}
 
 	/**

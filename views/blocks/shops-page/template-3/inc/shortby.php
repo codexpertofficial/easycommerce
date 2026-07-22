@@ -72,7 +72,7 @@
             </div>
         </div>
         <div class="lg:flex items-center gap-2 sm:ml-4 ml-0 hidden">
-            <button id="gridViewBtn" class="easycommerce-shop-st-grid-btn hover:outline-none focus:outline-none" aria-label="Grid View">
+            <button id="gridViewBtn" class="easycommerce-shop-st-grid-btn hover:outline-none focus:outline-none" aria-label="<?php esc_attr_e( 'Grid View', 'easycommerce' ); ?>">
                 <svg width="43" height="40" viewBox="0 0 43 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect x="0.5" y="0.5" width="42" height="39" rx="3.5" fill="#272435"/>
                     <rect x="0.5" y="0.5" width="42" height="39" rx="3.5" stroke=""/>
@@ -80,7 +80,7 @@
                 </svg>
             </button>
 
-            <button id="listViewBtn" class="easycommerce-shop-st-list-btn hover:outline-none focus:outline-none" aria-label="List View">
+            <button id="listViewBtn" class="easycommerce-shop-st-list-btn hover:outline-none focus:outline-none" aria-label="<?php esc_attr_e( 'List View', 'easycommerce' ); ?>">
                 <svg width="43" height="40" viewBox="0 0 43 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect x="0.5" y="0.5" width="42" height="39" rx="3.5" fill="#EBEBEB"/>
                     <rect x="0.5" y="0.5" width="42" height="39" rx="3.5" stroke="#EBEBEB"/>

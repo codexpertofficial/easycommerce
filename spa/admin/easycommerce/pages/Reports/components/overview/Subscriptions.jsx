@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import apiFetch from '@wordpress/api-fetch';
+import { __ } from '@wordpress/i18n';
 
 // Locked placeholder shown when the Subscriptions addon is not active.
 const PLACEHOLDER = [
-	{ title: 'Current Subscriptions', icon: 'current-subscriptions', value: null },
-	{ title: 'Subscriptions ending this month', icon: 'subscription-ending', value: null },
-	{ title: 'MRR amount', icon: 'revenue-icon', value: null },
-	{ title: 'Projected MRR', icon: 'project-mrr', value: null },
+	{ title: __( 'Current Subscriptions', 'easycommerce' ), icon: 'current-subscriptions', value: null },
+	{ title: __( 'Subscriptions ending this month', 'easycommerce' ), icon: 'subscription-ending', value: null },
+	{ title: __( 'MRR amount', 'easycommerce' ), icon: 'revenue-icon', value: null },
+	{ title: __( 'Projected MRR', 'easycommerce' ), icon: 'project-mrr', value: null },
 ];
 
 const Subscriptions = () => {
@@ -63,7 +64,7 @@ const Subscriptions = () => {
 						<path fillRule="evenodd" clipRule="evenodd" d="M15.7965 0.195191C15.9215 0.32021 15.9917 0.489748 15.9917 0.666524C15.9917 0.8433 15.9215 1.01284 15.7965 1.13786L9.46314 7.47119C9.33812 7.59617 9.16858 7.66638 8.99181 7.66638C8.81503 7.66638 8.64549 7.59617 8.52048 7.47119L5.65847 4.60919L1.12981 9.13786C1.00407 9.2593 0.835672 9.32649 0.660874 9.32497C0.486076 9.32346 0.318868 9.25334 0.195262 9.12974C0.0716568 9.00613 0.00154415 8.83892 2.52017e-05 8.66413C-0.00149374 8.48933 0.0657025 8.32093 0.187141 8.19519L5.18714 3.19519C5.31216 3.07021 5.4817 3 5.65847 3C5.83525 3 6.00479 3.07021 6.12981 3.19519L8.99181 6.05719L14.8538 0.195191C14.9788 0.0702104 15.1484 0 15.3251 0C15.5019 0 15.6715 0.0702104 15.7965 0.195191Z" fill="white"/>
 						<path fillRule="evenodd" clipRule="evenodd" d="M10.6602 0.666667C10.6602 0.489856 10.7304 0.320287 10.8554 0.195262C10.9804 0.070238 11.15 0 11.3268 0H15.3268C15.5036 0 15.6732 0.070238 15.7982 0.195262C15.9233 0.320287 15.9935 0.489856 15.9935 0.666667V4.66667C15.9935 4.84348 15.9233 5.01305 15.7982 5.13807C15.6732 5.2631 15.5036 5.33333 15.3268 5.33333C15.15 5.33333 14.9804 5.2631 14.8554 5.13807C14.7304 5.01305 14.6602 4.84348 14.6602 4.66667V1.33333H11.3268C11.15 1.33333 10.9804 1.2631 10.8554 1.13807C10.7304 1.01305 10.6602 0.843478 10.6602 0.666667Z" fill="white"/>
 					</svg>
-					Sell Subscriptions
+					{__( 'Sell Subscriptions', 'easycommerce' )}
 				</a>
 			)}
 		</div>

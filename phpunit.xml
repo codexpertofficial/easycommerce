@@ -17,6 +17,9 @@
         <testsuite name="EasyCommerce Test Suite">
             <directory suffix=".php">./tests/php/src</directory>
         </testsuite>
+        <testsuite name="Reports">
+            <directory suffix=".php">./tests/php/src/API/Reports</directory>
+        </testsuite>
     </testsuites>
 
     <coverage>

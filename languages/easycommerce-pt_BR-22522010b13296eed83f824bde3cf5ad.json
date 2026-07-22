@@ -1,0 +1,33 @@
+{
+    "translation-revision-date": "YEAR-MO-DA HO:MI+ZONE",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "assets\/payment\/js\/paypal.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "pt_BR",
+                "plural-forms": "nplurals=2; plural=(n > 1);"
+            },
+            "Failed to load cart data. Please refresh the page.": [
+                "Falha ao carregar os dados do carrinho. Atualize a p\u00e1gina."
+            ],
+            "Purchase from EasyCommerce": [
+                "Compra na EasyCommerce"
+            ],
+            "Item": [
+                "Item"
+            ],
+            "Your cart has been updated. Please refresh the page and try again.": [
+                "Seu carrinho foi atualizado. Atualize a p\u00e1gina e tente novamente."
+            ],
+            "An unknown error occurred with PayPal": [
+                "Ocorreu um erro desconhecido com o PayPal"
+            ],
+            "PayPal Error: %s": [
+                "Erro do PayPal: %s"
+            ]
+        }
+    }
+}

@@ -1,0 +1,444 @@
+{
+    "translation-revision-date": "YEAR-MO-DA HO:MI+ZONE",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "build\/dashboard.bundle.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "pt_BR",
+                "plural-forms": "nplurals=2; plural=(n > 1);"
+            },
+            "Passwords do not match": [
+                "As senhas n\u00e3o coincidem"
+            ],
+            "Payment Method": [
+                "M\u00e9todo de Pagamento"
+            ],
+            "Order ID": [
+                "ID do Pedido"
+            ],
+            "Order Status": [
+                "Status do Pedido"
+            ],
+            "Orders": [
+                "Pedidos"
+            ],
+            "Pending": [
+                "Pendente"
+            ],
+            "Processing": [
+                "Processando"
+            ],
+            "Completed": [
+                "Conclu\u00eddo"
+            ],
+            "Refunded": [
+                "Reembolsado"
+            ],
+            "Cancelled": [
+                "Cancelado"
+            ],
+            "On Hold": [
+                "Em Espera"
+            ],
+            "Dashboard": [
+                "Painel"
+            ],
+            "First Name": [
+                "Nome"
+            ],
+            "Last Name": [
+                "Sobrenome"
+            ],
+            "Email": [
+                "E-mail"
+            ],
+            "Phone": [
+                "Telefone"
+            ],
+            "Enter your phone number": [
+                "Informe seu n\u00famero de telefone"
+            ],
+            "Address 1": [
+                "Endere\u00e7o 1"
+            ],
+            "Address 2": [
+                "Endere\u00e7o 2"
+            ],
+            "Country": [
+                "Pa\u00eds"
+            ],
+            "State": [
+                "Estado"
+            ],
+            "City": [
+                "Cidade"
+            ],
+            "Business Type": [
+                "Tipo de Neg\u00f3cio"
+            ],
+            "Address": [
+                "Endere\u00e7o"
+            ],
+            "Settings": [
+                "Configura\u00e7\u00f5es"
+            ],
+            "Shipping": [
+                "Entrega"
+            ],
+            "Cancel": [
+                "Cancelar"
+            ],
+            "Your Email": [
+                "Seu e-mail"
+            ],
+            "Action": [
+                "A\u00e7\u00e3o"
+            ],
+            "Transaction ID": [
+                "ID da transa\u00e7\u00e3o"
+            ],
+            "Transactions": [
+                "Transa\u00e7\u00f5es"
+            ],
+            "Product Image": [
+                "Imagem do produto"
+            ],
+            "Date": [
+                "Data"
+            ],
+            "Pay Now": [
+                "Pagar agora"
+            ],
+            "Subtotal": [
+                "Subtotal"
+            ],
+            "Discount": [
+                "Desconto"
+            ],
+            "Total": [
+                "Total"
+            ],
+            "Type": [
+                "Tipo"
+            ],
+            "Size": [
+                "Tamanho"
+            ],
+            "Billing Address": [
+                "Endere\u00e7o de cobran\u00e7a"
+            ],
+            "Shipping Address": [
+                "Endere\u00e7o de entrega"
+            ],
+            "Product Tax": [
+                "Imposto do produto"
+            ],
+            "Shipping Tax": [
+                "Imposto do frete"
+            ],
+            "Select City": [
+                "Selecionar cidade"
+            ],
+            "Select State": [
+                "Selecionar estado"
+            ],
+            "Quantity": [
+                "Quantidade"
+            ],
+            "Password": [
+                "Senha"
+            ],
+            "New password": [
+                "Nova senha"
+            ],
+            "Enter new password": [
+                "Informe a nova senha"
+            ],
+            "Confirm new password": [
+                "Confirmar a nova senha"
+            ],
+            "Select your country": [
+                "Selecione seu pa\u00eds"
+            ],
+            "Purchases": [
+                "Compras"
+            ],
+            "Downloads": [
+                "Downloads"
+            ],
+            "Profile": [
+                "Perfil"
+            ],
+            "Logout": [
+                "Sair"
+            ],
+            "Unknown User": [
+                "Usu\u00e1rio desconhecido"
+            ],
+            "User Profile Image": [
+                "Imagem de perfil do usu\u00e1rio"
+            ],
+            "arrow": [
+                "seta"
+            ],
+            "Total Orders": [
+                "Total de pedidos"
+            ],
+            "N\/A": [
+                "N\/D"
+            ],
+            "Total Spent": [
+                "Total gasto"
+            ],
+            "Average Orders": [
+                "M\u00e9dia de pedidos"
+            ],
+            "Customer since": [
+                "Cliente desde"
+            ],
+            "Summary": [
+                "Resumo"
+            ],
+            "icon": [
+                "\u00edcone"
+            ],
+            "View": [
+                "Ver"
+            ],
+            "Recent Orders": [
+                "Pedidos recentes"
+            ],
+            "View More": [
+                "Ver mais"
+            ],
+            "No orders yet": [
+                "Nenhum pedido ainda"
+            ],
+            "When you place an order it will show up here.": [
+                "Quando voc\u00ea fizer um pedido, ele aparecer\u00e1 aqui."
+            ],
+            "Amount": [
+                "Valor"
+            ],
+            "Status": [
+                "Status"
+            ],
+            "View order": [
+                "Ver pedido"
+            ],
+            "Back": [
+                "Voltar"
+            ],
+            "Next": [
+                "Pr\u00f3ximo"
+            ],
+            "No orders available": [
+                "Nenhum pedido dispon\u00edvel"
+            ],
+            "Orders you place will appear here.": [
+                "Os pedidos que voc\u00ea fizer aparecer\u00e3o aqui."
+            ],
+            "card-icon": [
+                "card-icon"
+            ],
+            "Click to copy": [
+                "Clique para copiar"
+            ],
+            "Copy": [
+                "Copiar"
+            ],
+            "Copied!": [
+                "Copiado!"
+            ],
+            "No transactions available": [
+                "Nenhuma transa\u00e7\u00e3o dispon\u00edvel"
+            ],
+            "Your payment history will appear here.": [
+                "Seu hist\u00f3rico de pagamentos aparecer\u00e1 aqui."
+            ],
+            "File Name": [
+                "Nome do arquivo"
+            ],
+            "%s icon": [
+                "\u00cdcone %s"
+            ],
+            "Download": [
+                "Download"
+            ],
+            "No downloads available": [
+                "Nenhum download dispon\u00edvel"
+            ],
+            "Files from your purchases will appear here.": [
+                "Os arquivos das suas compras aparecer\u00e3o aqui."
+            ],
+            "Select Image": [
+                "Selecionar imagem"
+            ],
+            "Use selected image": [
+                "Usar imagem selecionada"
+            ],
+            "user": [
+                "usu\u00e1rio"
+            ],
+            "camera": [
+                "c\u00e2mera"
+            ],
+            "Your profile": [
+                "Seu perfil"
+            ],
+            "Profile updated successfully": [
+                "Perfil atualizado com sucesso"
+            ],
+            "Profile update failed": [
+                "Falha ao atualizar o perfil"
+            ],
+            "Enter your first name": [
+                "Digite seu nome"
+            ],
+            "Enter your last name": [
+                "Digite seu sobrenome"
+            ],
+            "Enter your email": [
+                "Digite seu e-mail"
+            ],
+            "Phone Number": [
+                "Telefone"
+            ],
+            "Company Name": [
+                "Nome da empresa"
+            ],
+            "Enter your company name": [
+                "Digite o nome da sua empresa"
+            ],
+            "Tax ID": [
+                "Identifica\u00e7\u00e3o fiscal"
+            ],
+            "Enter your tax ID": [
+                "Digite sua identifica\u00e7\u00e3o fiscal"
+            ],
+            "Select your Business Type": [
+                "Selecione seu tipo de neg\u00f3cio"
+            ],
+            "Manufacturing": [
+                "Ind\u00fastria"
+            ],
+            "Finance and Insurance": [
+                "Finan\u00e7as e seguros"
+            ],
+            "Healthcare": [
+                "Sa\u00fade"
+            ],
+            "Real Estate": [
+                "Im\u00f3veis"
+            ],
+            "Update Profile": [
+                "Atualizar perfil"
+            ],
+            "Enter company name": [
+                "Digite o nome da empresa"
+            ],
+            "Address Line 1": [
+                "Endere\u00e7o linha 1"
+            ],
+            "Enter address": [
+                "Digite o endere\u00e7o"
+            ],
+            "Address Line 2": [
+                "Endere\u00e7o linha 2"
+            ],
+            "Apartment, suite, etc.": [
+                "Apartamento, sala, etc."
+            ],
+            "State\/Province": [
+                "Estado\/Prov\u00edncia"
+            ],
+            "ZIP\/Postal Code": [
+                "CEP\/C\u00f3digo postal"
+            ],
+            "Enter postal code": [
+                "Digite o c\u00f3digo postal"
+            ],
+            "Update Address": [
+                "Atualizar endere\u00e7o"
+            ],
+            "%s Address": [
+                "Endere\u00e7o de %s"
+            ],
+            "Billing": [
+                "Cobran\u00e7a"
+            ],
+            "Password must be at least 6 characters long": [
+                "A senha deve ter pelo menos 6 caracteres"
+            ],
+            "Password updated successfully": [
+                "Senha atualizada com sucesso"
+            ],
+            "Error updating password": [
+                "Erro ao atualizar a senha"
+            ],
+            "Set your password": [
+                "Defina sua senha"
+            ],
+            "Change your Password": [
+                "Altere sua senha"
+            ],
+            "Enter a new password below to change your password": [
+                "Digite uma nova senha abaixo para alterar sua senha"
+            ],
+            "Change Password": [
+                "Alterar senha"
+            ],
+            "Items": [
+                "Itens"
+            ],
+            "Free Product": [
+                "Produto gr\u00e1tis"
+            ],
+            "Download %s": [
+                "Download %s"
+            ],
+            "Order Date": [
+                "Data do pedido"
+            ],
+            "Fulfilment Status": [
+                "Status do processamento"
+            ],
+            "Order info": [
+                "Informa\u00e7\u00f5es do pedido"
+            ],
+            "No address provided.": [
+                "Nenhum endere\u00e7o fornecido."
+            ],
+            "Full Name": [
+                "Nome completo"
+            ],
+            "Company": [
+                "Empresa"
+            ],
+            "Order Notes": [
+                "Notas do pedido"
+            ],
+            "Loading notes...": [
+                "Carregando notas..."
+            ],
+            "No notes found for this order": [
+                "Nenhuma nota encontrada para este pedido"
+            ],
+            "Track here:": [
+                "Rastreie aqui:"
+            ],
+            "Back to orders": [
+                "Voltar aos pedidos"
+            ],
+            "Order #%s": [
+                "Pedido #%s"
+            ],
+            "No order data found": [
+                "Nenhum dado do pedido encontrado"
+            ]
+        }
+    }
+}

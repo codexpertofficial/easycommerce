@@ -47,6 +47,25 @@ function easycommerce_is_ai_feature_enabled( $feature ) {
 }
 
 /**
+ * Whether the stock availability badge is enabled in store settings.
+ *
+ * Reads the option array directly rather than Utility::get_option(), which
+ * treats a saved "off" value as empty. Defaults to enabled on a fresh install
+ * where the setting has not been saved yet.
+ *
+ * @return bool
+ */
+function easycommerce_is_stock_badge_enabled() {
+	$store = get_option( 'easycommerce-general-store' );
+
+	if ( ! is_array( $store ) || ! isset( $store['stock-badge'] ) ) {
+		return true;
+	}
+
+	return '0' !== (string) $store['stock-badge'];
+}
+
+/**
  * Returns the home URL of the WordPress site.
  *
  * @param string $path    Optional. Path relative to the home URL.
@@ -56,6 +75,18 @@ function easycommerce_is_ai_feature_enabled( $feature ) {
  */
 function easycommerce_home_url( $path = '', $blog_id = null ) {
 	return get_home_url( $blog_id, $path );
+}
+
+/**
+ * Returns the EasyCommerce community space URL.
+ *
+ * Single source for every community link in the admin (dashboard card, header,
+ * setup wizard, help page), surfaced to the SPA as `EASYCOMMERCE.community_url`.
+ *
+ * @return string Community URL.
+ */
+function easycommerce_community_url() {
+	return apply_filters( 'easycommerce_community_url', 'https://community.codexpert.io/c/space/easycommerce' );
 }
 
 function easycommerce_shop_page( $url = false ) {
@@ -138,6 +169,554 @@ function easycommerce_payment_page( $url = false ) {
 	return $page_id;
 }
 
+/**
+ * Ensure the core store pages (dashboard, shop, checkout, payment) exist.
+ *
+ * Idempotent: reuses any already-created pages stored in the
+ * `easycommerce-general-store` option and only creates the missing ones, so
+ * it is safe to run on install (via the background cron) and again from the
+ * setup wizard without producing duplicate pages.
+ *
+ * @param array $overrides Optional page overrides keyed by slug (page ID or 'create').
+ * @return array The resolved store option group.
+ */
+function easycommerce_ensure_store_pages( $overrides = array() ) {
+	$group = get_option( 'easycommerce-general-store', array() );
+
+	if ( ! is_array( $group ) ) {
+		$group = array();
+	}
+
+	// Apply caller-supplied overrides (e.g. from the setup wizard).
+	if ( is_array( $overrides ) ) {
+		foreach ( $overrides as $key => $value ) {
+			$group[ $key ] = $value;
+		}
+	}
+
+	$page_template = ! empty( $group['page-template'] ) ? $group['page-template'] : 'full-width-layout.php';
+
+	$pages = array(
+		'dashboard' => array(
+			'title'   => 'Dashboard',
+			'content' => '[easycommerce-dashboard]',
+		),
+		'shop'      => array(
+			'title'   => 'Shop',
+			'content' => '<!-- wp:easycommerce/template-2 {"ProductPerPage":9,"columns":3} /-->',
+		),
+		'checkout'  => array(
+			'title'   => 'Checkout',
+			'content' => '[easycommerce-checkout]',
+		),
+		'payment'   => array(
+			'title'   => 'Payment',
+			'content' => '[easycommerce-payment]',
+		),
+	);
+
+	foreach ( $pages as $slug => $page ) {
+		$current = $group[ $slug ] ?? '';
+
+		// Reuse an existing, valid page.
+		if ( ! empty( $current ) && 'create' !== $current && get_post( $current ) ) {
+			continue;
+		}
+
+		$page_id = Utility::create_post(
+			array(
+				'type'    => 'page',
+				'title'   => $page['title'],
+				'content' => $page['content'],
+			)
+		);
+
+		if ( $page_id ) {
+			update_post_meta( $page_id, '_wp_page_template', $page_template );
+			$group[ $slug ] = $page_id;
+		}
+	}
+
+	update_option( 'easycommerce-general-store', $group );
+
+	return $group;
+}
+
+/**
+ * Resolve a store-pattern image URL (hero backgrounds, promo/category art).
+ *
+ * Centralised + filterable so the image source can be switched between the CDN
+ * and a locally-bundled directory without touching pattern markup. Default is
+ * the CDN; filter `easycommerce_pattern_image_base` to point at bundled assets
+ * (e.g. EASYCOMMERCE_ASSETS_URL . 'public/img/patterns/').
+ *
+ * @param string $file Image filename (e.g. gadget-hero-1.jpg); see PATTERN-IMAGES.md.
+ * @return string Full image URL.
+ */
+function easycommerce_pattern_image( $file ) {
+	$base = apply_filters( 'easycommerce_pattern_image_base', 'https://cdn.easycommerce.dev/images/patterns/' );
+
+	return trailingslashit( $base ) . ltrim( $file, '/' );
+}
+
+/**
+ * Returns the ready-made store designs registry.
+ *
+ * @return array Design id => design definition (see app/Config/store-designs.php).
+ */
+function easycommerce_store_designs() {
+	global $easycommerce_store_designs;
+
+	return is_array( $easycommerce_store_designs ) ? $easycommerce_store_designs : array();
+}
+
+/**
+ * Returns a single store design definition, or null.
+ *
+ * @param string $design_id Design id, e.g. grocery|gadget|furniture.
+ * @return array|null
+ */
+function easycommerce_get_store_design( $design_id ) {
+	$designs = easycommerce_store_designs();
+
+	return isset( $designs[ $design_id ] ) ? $designs[ $design_id ] : null;
+}
+
+/**
+ * Expand nested `wp:pattern` references into their registered block markup.
+ *
+ * Page patterns are composed of section patterns via `wp:pattern` references.
+ * Expanding them into a page's content produces self-contained, individually
+ * editable markup (rather than opaque pattern-reference blocks).
+ *
+ * @param string $content Block markup that may contain wp:pattern references.
+ * @param int    $depth   Internal recursion guard.
+ * @return string Expanded block markup.
+ */
+function easycommerce_expand_pattern( $content, $depth = 0 ) {
+	if ( $depth > 5 || false === strpos( $content, 'wp:pattern' ) ) {
+		return $content;
+	}
+
+	if ( ! class_exists( 'WP_Block_Patterns_Registry' ) ) {
+		return $content;
+	}
+
+	$registry = WP_Block_Patterns_Registry::get_instance();
+
+	$expanded = preg_replace_callback(
+		'/<!--\s*wp:pattern\s+(\{.*?\})\s*\/-->/s',
+		function ( $matches ) use ( $registry, $depth ) {
+			$attrs = json_decode( $matches[1], true );
+			$slug  = isset( $attrs['slug'] ) ? $attrs['slug'] : '';
+
+			if ( '' === $slug || ! $registry->is_registered( $slug ) ) {
+				return $matches[0];
+			}
+
+			$pattern = $registry->get_registered( $slug );
+
+			return easycommerce_expand_pattern( $pattern['content'], $depth + 1 );
+		},
+		$content
+	);
+
+	return null === $expanded ? $content : $expanded;
+}
+
+/**
+ * Apply a ready-made store design.
+ *
+ * Creates (or idempotently updates) the design's home and shop pages from its
+ * page patterns, aligns the shop grid to the design's shop
+ * template, persists the applied design id and its colour/typography preset,
+ * and tags the created pages as design content so they can be removed cleanly.
+ *
+ * Does NOT set the static front page — that is handled at wizard completion
+ * (#3174), with an "ask before overwrite" prompt. Theme-aware preset rendering
+ * is handled in #3175; here we only persist the preset and fire an action.
+ *
+ * @param string $design_id Design id, e.g. grocery|gadget|furniture.
+ * @return array|false The updated `easycommerce-general-store` group, or false if unknown.
+ */
+function easycommerce_apply_store_design( $design_id ) {
+	$design = easycommerce_get_store_design( $design_id );
+
+	if ( ! $design ) {
+		return false;
+	}
+
+	$group = get_option( 'easycommerce-general-store', array() );
+	if ( ! is_array( $group ) ) {
+		$group = array();
+	}
+
+	$page_template = ! empty( $group['page-template'] ) ? $group['page-template'] : 'full-width-layout.php';
+	$shop_template = ! empty( $design['shop_template'] ) ? $design['shop_template'] : 'template-2';
+
+	$titles = array(
+		'home' => __( 'Home', 'easycommerce' ),
+		'shop' => __( 'Shop', 'easycommerce' ),
+	);
+
+	foreach ( $design['pages'] as $slug => $pattern_slug ) {
+		$content = easycommerce_expand_pattern(
+			'<!-- wp:pattern {"slug":"' . $pattern_slug . '"} /-->'
+		);
+
+		// Align the shop grid to this design's shop template (patterns ship template-2).
+		if ( 'shop' === $slug && 'template-2' !== $shop_template ) {
+			$content = str_replace(
+				'easycommerce/template-2',
+				'easycommerce/' . $shop_template,
+				$content
+			);
+		}
+
+		$current = $group[ $slug ] ?? '';
+
+		if ( ! empty( $current ) && 'create' !== $current && get_post( $current ) ) {
+			// Idempotent update — refresh content, never duplicate.
+			wp_update_post(
+				array(
+					'ID'           => $current,
+					'post_content' => $content,
+				)
+			);
+			$page_id = $current;
+		} else {
+			$page_id = Utility::create_post(
+				array(
+					'type'    => 'page',
+					'title'   => $titles[ $slug ] ?? ucfirst( $slug ),
+					'content' => $content,
+				)
+			);
+
+			if ( $page_id ) {
+				$group[ $slug ] = $page_id;
+			}
+		}
+
+		if ( $page_id ) {
+			update_post_meta( $page_id, '_wp_page_template', $page_template );
+			update_post_meta( $page_id, '_easycommerce_design_page', $design_id );
+		}
+	}
+
+	update_option( 'easycommerce-general-store', $group );
+	update_option( 'easycommerce_store_design', $design_id );
+	update_option( 'easycommerce_store_design_preset', $design['preset'] );
+
+	/**
+	 * Fires after a store design is applied.
+	 *
+	 * Theme compatibility (#3175) hooks this to render the colour/typography
+	 * preset via theme.json tokens (block themes) or scoped CSS (classic themes).
+	 *
+	 * @param string $design_id The applied design id.
+	 * @param array  $design    The design definition.
+	 * @param array  $group     The updated store pages group.
+	 */
+	do_action( 'easycommerce_store_design_applied', $design_id, $design, $group );
+
+	return $group;
+}
+
+/**
+ * Whether the active theme is a block (FSE) theme.
+ *
+ * @return bool
+ */
+function easycommerce_is_block_theme() {
+	return function_exists( 'wp_is_block_theme' ) && wp_is_block_theme();
+}
+
+/**
+ * Whether the active theme can render the store designs acceptably.
+ *
+ * Both block and classic themes are supported (block themes use theme.json
+ * tokens; classic themes use the scoped store-patterns.css fallback). This is a
+ * hook point so an add-on can flag a specific broken theme and let the wizard
+ * (#3174) show an honest notice instead of shipping something broken.
+ *
+ * @return bool
+ */
+function easycommerce_is_theme_supported() {
+	/**
+	 * Filter whether the active theme supports the store designs.
+	 *
+	 * @param bool   $supported  Default true.
+	 * @param string $stylesheet Active theme stylesheet slug.
+	 */
+	return (bool) apply_filters( 'easycommerce_theme_supported', true, get_stylesheet() );
+}
+
+/**
+ * Returns the colour/typography preset of the applied store design, or null.
+ *
+ * @return array|null
+ */
+function easycommerce_store_design_preset() {
+	$preset = get_option( 'easycommerce_store_design_preset' );
+
+	return is_array( $preset ) ? $preset : null;
+}
+
+/**
+ * Default design tokens, merged beneath a design's own `tokens`.
+ *
+ * Guarantees the CSS generator always has a complete token set — even for a
+ * custom design registered via the `easycommerce_store_designs` filter without
+ * a full `tokens` array. These defaults reproduce the neutral pre-token look
+ * (medium radius, subtle shadow, 8px rhythm) so custom designs render sanely.
+ *
+ * @return array
+ */
+function easycommerce_store_design_default_tokens() {
+	return array(
+		'radius'        => array( 'card' => '8px', 'button' => '6px', 'image' => '8px' ),
+		'shadow'        => array( 'card' => '0 1px 2px rgba(17,17,17,0.06)', 'hover' => '0 10px 28px -14px rgba(17,17,17,0.28)' ),
+		'card'          => array( 'fill' => '#FFFFFF', 'border' => '1px solid #ECECEC' ),
+		'space'         => array( 8, 16, 24, 32, 48, 64, 80, 96 ),
+		'section'       => array( 'rhythm' => 'gap', 'divider' => 'none', 'alt_bg' => 'transparent' ),
+		'button'        => array( 'radius' => '6px', 'transform' => 'none', 'tracking' => '0', 'weight' => '600', 'size' => '15px', 'pad' => '12px 24px', 'hover' => 'darken' ),
+		'heading'       => array( 'weight' => '700', 'tracking' => '0', 'transform' => 'none', 'h2' => '32px', 'line' => '1.2' ),
+		'product_title' => '',
+	);
+}
+
+/**
+ * Build the scoped CSS that renders the applied design's full token system onto
+ * the store patterns — a distinct design system per design, not a re-skin.
+ *
+ * Emits: an 8-step spacing scale (redefining the `--wp--preset--spacing--*`
+ * tokens the patterns consume, so rhythm changes with no pattern edits), radius
+ * and elevation custom properties, the button system, product-card treatment,
+ * section transitions and heading scale. Colours/fonts included.
+ *
+ * Scoped to `.ec-pattern` (every pattern's root) and `.ec-product-collection`
+ * (our grid block's wrapper) — both EasyCommerce-only, so the skin never leaks
+ * onto the native shop archive or the rest of the theme. Loads on both block
+ * and classic themes; the applied design is the single source of truth, so
+ * `.ec-pattern` scoping is sufficient (only one design is live per site).
+ *
+ * @param string $scope Optional selector prefix (e.g. `.editor-styles-wrapper `
+ *                      to mirror the design inside the block editor canvas).
+ * @return string CSS, or '' when no design is applied.
+ */
+function easycommerce_store_design_preset_css( $scope = '' ) {
+	// Prefer the live registry design (token tweaks apply without re-apply);
+	// fall back to the stored preset snapshot for older/custom applies.
+	$design_id = get_option( 'easycommerce_store_design' );
+	$design    = $design_id ? easycommerce_get_store_design( $design_id ) : null;
+	$preset    = ( $design && ! empty( $design['preset'] ) ) ? $design['preset'] : easycommerce_store_design_preset();
+
+	if ( empty( $preset ) ) {
+		return '';
+	}
+
+	$colors = isset( $preset['colors'] ) ? $preset['colors'] : array();
+	$fonts  = isset( $preset['typography'] ) ? $preset['typography'] : array();
+
+	// Shallow-merge the design's tokens over the defaults (one level per group).
+	// Associative groups (radius, button…) merge; numeric lists (space) and
+	// scalars replace wholesale — array_merge on a list would append, not
+	// overwrite, silently keeping the default scale.
+	$tokens = easycommerce_store_design_default_tokens();
+	if ( ! empty( $preset['tokens'] ) && is_array( $preset['tokens'] ) ) {
+		foreach ( $preset['tokens'] as $k => $v ) {
+			$is_assoc = is_array( $v ) && array_keys( $v ) !== range( 0, count( $v ) - 1 );
+
+			$tokens[ $k ] = ( $is_assoc && isset( $tokens[ $k ] ) && is_array( $tokens[ $k ] ) )
+				? array_merge( $tokens[ $k ], $v )
+				: $v;
+		}
+	}
+
+	// --- sanitizers -------------------------------------------------------
+	$color = function ( $value ) {
+		$value = is_string( $value ) ? trim( $value ) : '';
+		if ( 'transparent' === $value || 'none' === $value ) {
+			return $value;
+		}
+		return ( $value && sanitize_hex_color( $value ) ) ? $value : '';
+	};
+	$font = function ( $value ) {
+		$value = is_string( $value ) ? trim( $value ) : '';
+		return preg_replace( '/[^A-Za-z0-9 ,"\'\-]/', '', $value );
+	};
+	// Composite CSS values (shadow, border shorthand, padding): strip anything
+	// that could break out of a declaration. Note ! is stripped — the only
+	// !important in the output is emitted as a literal by this function.
+	$css_val = function ( $value ) {
+		return preg_replace( '/[^0-9a-zA-Z.,()#%\/\-\s]/', '', (string) $value );
+	};
+	// Strict single length/number/keyword token.
+	$len = function ( $value ) {
+		$value = preg_replace( '/[^0-9a-zA-Z.%\-]/', '', (string) $value );
+		return '' === $value ? '0' : $value;
+	};
+	$keyword = function ( $value, $allowed, $fallback ) {
+		return in_array( $value, $allowed, true ) ? $value : $fallback;
+	};
+
+	// --- resolved values --------------------------------------------------
+	$accent  = $color( $colors['accent'] ?? '' ) ?: '#7351FD';
+	$text    = $color( $colors['text'] ?? '' ) ?: '#1f1f29';
+	$surface = $color( $colors['surface'] ?? '' );
+	$border  = $color( $colors['border'] ?? '' );
+	$heading = $font( $fonts['heading'] ?? '' );
+	$body    = $font( $fonts['body'] ?? '' );
+
+	$r_card = $len( $tokens['radius']['card'] ?? '8px' );
+	$r_btn  = $len( $tokens['button']['radius'] ?? ( $tokens['radius']['button'] ?? '6px' ) );
+	$r_img  = $len( $tokens['radius']['image'] ?? '8px' );
+
+	$sh_card  = $css_val( $tokens['shadow']['card'] ?? 'none' ) ?: 'none';
+	$sh_hover = $css_val( $tokens['shadow']['hover'] ?? 'none' ) ?: 'none';
+
+	$card_fill   = $color( $tokens['card']['fill'] ?? '' ) ?: 'transparent';
+	$card_border = $css_val( $tokens['card']['border'] ?? 'none' ) ?: 'none';
+
+	$b_tr  = $keyword( $tokens['button']['transform'] ?? 'none', array( 'none', 'uppercase', 'lowercase', 'capitalize' ), 'none' );
+	$b_trk = $len( $tokens['button']['tracking'] ?? '0' );
+	$b_wt  = $len( $tokens['button']['weight'] ?? '600' );
+	$b_sz  = $len( $tokens['button']['size'] ?? '15px' );
+	$b_pad = $css_val( $tokens['button']['pad'] ?? '12px 24px' );
+	$b_hov = $keyword( $tokens['button']['hover'] ?? 'darken', array( 'darken', 'lift', 'invert' ), 'darken' );
+
+	$h_wt  = $len( $tokens['heading']['weight'] ?? '700' );
+	$h_trk = $len( $tokens['heading']['tracking'] ?? '0' );
+	$h_tr  = $keyword( $tokens['heading']['transform'] ?? 'none', array( 'none', 'uppercase', 'lowercase', 'capitalize' ), 'none' );
+	$h_h2  = $len( $tokens['heading']['h2'] ?? '32px' );
+	$h_ln  = $len( $tokens['heading']['line'] ?? '1.2' );
+
+	$sec_div = $css_val( $tokens['section']['divider'] ?? 'none' );
+	$sec_alt = $color( $tokens['section']['alt_bg'] ?? '' );
+
+	// --- selector prefixing + tiny rule helper ----------------------------
+	$p    = is_string( $scope ) ? $scope : '';
+	$rule = function ( $selectors, $decl ) use ( $p ) {
+		$parts = array_map(
+			function ( $s ) use ( $p ) {
+				return $p . trim( $s );
+			},
+			explode( ',', $selectors )
+		);
+		return implode( ',', $parts ) . '{' . $decl . '}';
+	};
+
+	// 1. Spacing rhythm — redefine the preset scale the patterns consume.
+	$keys  = array( 10, 20, 30, 40, 50, 60, 70, 80 );
+	$space = array_values( (array) ( $tokens['space'] ?? array() ) );
+	$scale = '';
+	foreach ( $keys as $i => $k ) {
+		$val    = isset( $space[ $i ] ) ? intval( $space[ $i ] ) : 0;
+		$scale .= '--wp--preset--spacing--' . $k . ':' . $val . 'px;';
+	}
+
+	// 2. Design custom properties + spacing scale on the pattern root.
+	$vars  = $scale;
+	$vars .= '--ec-accent:' . $accent . ';--ec-text:' . $text . ';';
+	if ( $surface ) {
+		$vars .= '--ec-surface:' . $surface . ';';
+	}
+	if ( $border ) {
+		$vars .= '--ec-border:' . $border . ';';
+	}
+	$vars .= '--ec-radius-card:' . $r_card . ';--ec-radius-btn:' . $r_btn . ';--ec-radius-img:' . $r_img . ';';
+	$vars .= '--ec-shadow-card:' . $sh_card . ';--ec-shadow-hover:' . $sh_hover . ';';
+	$vars .= '--ec-card-fill:' . $card_fill . ';--ec-card-border:' . $card_border . ';';
+	if ( $heading ) {
+		$vars .= '--ec-font-heading:' . $heading . ';';
+	}
+	if ( $body ) {
+		$vars .= '--ec-font-body:' . $body . ';';
+	}
+	$css = $rule( '.ec-pattern', $vars );
+
+	// 3. Base typography + colour (hero white text keeps its higher-specificity rule).
+	$css .= $rule( '.ec-pattern', 'color:var(--ec-text);' . ( $body ? 'font-family:var(--ec-font-body);' : '' ) );
+	if ( $heading ) {
+		$css .= $rule( '.ec-pattern h1,.ec-pattern h2,.ec-pattern h3,.ec-pattern h4', 'font-family:var(--ec-font-heading);' );
+	}
+	// Section titles adopt the design's heading scale; hero H1s keep their per-page inline size.
+	$css .= $rule(
+		'.ec-pattern h2.wp-block-heading',
+		'font-weight:' . $h_wt . ';letter-spacing:' . $h_trk . ';text-transform:' . $h_tr . ';line-height:' . $h_ln . ';font-size:' . $h_h2 . ';'
+	);
+
+	// 4. Button system — shape, fill, hover behaviour.
+	$btn_base  = 'border-radius:var(--ec-radius-btn);font-weight:' . $b_wt . ';font-size:' . $b_sz . ';text-transform:' . $b_tr . ';letter-spacing:' . $b_trk . ';padding:' . $b_pad . ';line-height:1.2;display:inline-block;transition:transform .18s ease,box-shadow .18s ease,background-color .18s ease,color .18s ease,filter .18s ease,opacity .18s ease;';
+	$css      .= $rule( '.ec-pattern .wp-block-button:not(.is-style-outline) .wp-block-button__link,.ec-pattern .wp-element-button', 'background-color:var(--ec-accent);border:1px solid var(--ec-accent);color:#fff;' . $btn_base );
+	$css      .= $rule( '.ec-pattern .is-style-outline .wp-block-button__link', 'background-color:transparent;border:1px solid var(--ec-accent);color:var(--ec-accent);' . $btn_base );
+	if ( 'lift' === $b_hov ) {
+		$css .= $rule( '.ec-pattern .wp-block-button__link:hover,.ec-pattern .wp-element-button:hover', 'transform:translateY(-2px);box-shadow:0 14px 26px -12px rgba(17,17,17,0.4);' );
+	} elseif ( 'invert' === $b_hov ) {
+		$css .= $rule( '.ec-pattern .is-style-outline .wp-block-button__link:hover', 'background-color:var(--ec-accent);color:#fff;' );
+		$css .= $rule( '.ec-pattern .wp-block-button:not(.is-style-outline) .wp-block-button__link:hover,.ec-pattern .wp-element-button:hover', 'opacity:0.82;' );
+	} else { // darken
+		$css .= $rule( '.ec-pattern .wp-block-button:not(.is-style-outline) .wp-block-button__link:hover,.ec-pattern .wp-element-button:hover', 'filter:brightness(0.9);' );
+		$css .= $rule( '.ec-pattern .is-style-outline .wp-block-button__link:hover', 'background-color:var(--ec-accent);color:#fff;' );
+	}
+	// Heroes: keep the CTA legible on the cover image regardless of design accent.
+	$css .= $rule( '.ec-pattern-hero .is-style-outline .wp-block-button__link', 'border-color:#fff;color:#fff;' );
+	$css .= $rule( '.ec-pattern-hero .is-style-outline .wp-block-button__link:hover', 'background-color:#fff;color:#111;' );
+
+	// 5. Images inside patterns adopt the design's corner language.
+	$css .= $rule( '.ec-pattern .wp-block-image img', 'border-radius:var(--ec-radius-img);' );
+
+	// 6. Product-collection cards — the shared card, re-skinned per design.
+	$css .= $rule( '.ec-product-collection .easycommerce-single-product', 'background:var(--ec-card-fill);border:var(--ec-card-border);border-radius:var(--ec-radius-card);box-shadow:var(--ec-shadow-card);overflow:hidden;transition:transform .2s ease,box-shadow .2s ease;' );
+	$css .= $rule( '.ec-product-collection .easycommerce-single-product:hover', 'box-shadow:var(--ec-shadow-hover);' . ( 'lift' === $b_hov ? 'transform:translateY(-4px);' : '' ) );
+	// A visible card surface (fill/border/shadow) needs inner gutters - the
+	// shared card markup only pads the top of its text block (`pt-4`), so
+	// title/price/CTA sit flush against the card edge. Surface-less cards
+	// keep text flush with the image edge on purpose (minimal's editorial look).
+	if ( 'transparent' !== $card_fill || 'none' !== $card_border || 'none' !== $sh_card ) {
+		$css .= $rule( '.ec-product-collection .easycommerce-single-product > div + div', 'padding-left:16px;padding-right:16px;padding-bottom:16px;' );
+	}
+	// Card CTAs (Add to cart / Choose) join the design's button system - left
+	// to their inspector defaults they break the skin at the conversion point.
+	// Shape/colour/case only; the card keeps its own padding and font size.
+	$css .= $rule(
+		'.ec-product-collection .easycommerce-add-to-cart-shop,.ec-product-collection .easycommerce-shop-choose-btn',
+		'background-color:var(--ec-accent);border:1px solid var(--ec-accent);color:#fff;border-radius:var(--ec-radius-btn);font-size:' . $b_sz . ';line-height:1.2;font-weight:' . $b_wt . ';text-transform:' . $b_tr . ';letter-spacing:' . $b_trk . ';width:auto;white-space:nowrap;transition:transform .18s ease,box-shadow .18s ease,filter .18s ease,opacity .18s ease;'
+	);
+	$card_btn_hover = 'lift' === $b_hov
+		? 'transform:translateY(-2px);box-shadow:0 10px 20px -10px rgba(17,17,17,0.4);'
+		: ( 'invert' === $b_hov ? 'opacity:0.82;' : 'filter:brightness(0.9);' );
+	$css           .= $rule(
+		'.ec-product-collection .easycommerce-add-to-cart-shop:hover,.ec-product-collection .easycommerce-shop-choose-btn:hover,.ec-product-collection .easycommerce-add-to-cart-shop:focus,.ec-product-collection .easycommerce-shop-choose-btn:focus',
+		'background-color:var(--ec-accent);color:#fff;' . $card_btn_hover
+	);
+	// Uniform square thumbnails so cards in a grid row line up (product images
+	// arrive at mixed aspect ratios — e.g. a tall digital-download placeholder).
+	$css .= $rule( '.ec-product-collection .easycommerce-thumbnail-img', 'aspect-ratio:1/1;object-fit:cover;width:100%;height:auto;' );
+	if ( ! empty( $tokens['product_title'] ) ) {
+		$tt   = $keyword( $tokens['product_title'], array( 'none', 'uppercase', 'lowercase', 'capitalize' ), 'none' );
+		$css .= $rule( '.ec-product-collection .easycommerce-product-title-shop', 'text-transform:' . $tt . ';letter-spacing:0.06em;font-size:13px;' );
+	}
+
+	// 7. Inline-radius overrides — two patterns hard-code radius/borders inline
+	//    (category covers, testimonial cards); only !important can win there.
+	$css .= $rule( '.ec-pattern-categories .wp-block-cover', 'border-radius:var(--ec-radius-card)!important;overflow:hidden;' );
+	$css .= $rule( '.ec-pattern-testimonials .wp-block-column>.wp-block-group', 'border-radius:var(--ec-radius-card)!important;border:var(--ec-card-border)!important;background:var(--ec-card-fill);box-shadow:var(--ec-shadow-card);' );
+
+	// 8. Section transitions — edge (dividers + tint) / gap (tint only) / rule
+	//    (thin hairline). Driven by the section rhythm tokens.
+	$sections = '.ec-pattern-categories,.ec-pattern-featured,.ec-pattern-best-sellers,.ec-pattern-new-arrivals,.ec-pattern-testimonials,.ec-pattern-trust,.ec-pattern-newsletter,.ec-pattern-faq';
+	if ( $sec_div && 'none' !== $sec_div ) {
+		$css .= $rule( $sections, 'border-top:' . $sec_div . ';' );
+	}
+	if ( $sec_alt && 'transparent' !== $sec_alt ) {
+		$css .= $rule( '.ec-pattern-best-sellers,.ec-pattern-trust,.ec-pattern-testimonials', 'background-color:' . $sec_alt . ';' );
+	}
+
+	return $css;
+}
+
 function send_reset_password_email( $user_data, $key ) {
     $user_login = $user_data->user_login;
     $user_email = $user_data->user_email;
@@ -152,10 +731,13 @@ function send_reset_password_email( $user_data, $key ) {
         easycommerce_reset_password_page( true )
     );
 
+    /* translators: %s: site name. */
     $subject = sprintf( __( '[%s] Password Reset', 'easycommerce' ), $site_name );
 
     $message  = __( 'Someone has requested a password reset for the following account:', 'easycommerce' ) . "\r\n\r\n";
+    /* translators: %s: site name. */
     $message .= sprintf( __( 'Site Name: %s', 'easycommerce' ), $site_name ) . "\r\n\r\n";
+    /* translators: %s: username of the account. */
     $message .= sprintf( __( 'Username: %s', 'easycommerce' ), $user_login ) . "\r\n\r\n";
     $message .= __( 'If this was a mistake, just ignore this email and nothing will happen.', 'easycommerce' ) . "\r\n\r\n";
     $message .= __( 'To reset your password, visit the following address:', 'easycommerce' ) . "\r\n\r\n";
@@ -880,7 +1462,8 @@ function easycommerce_render_sidebar() {
 
 	foreach ( $menus as $menu ) {
 
-		if ( $menu['title'] !== 'EasyCommerce' ) continue;
+		// Match on the slug: the title is translated, so comparing it empties the sidebar in other locales.
+		if ( 'easycommerce' !== $menu['slug'] ) continue;
 
 		$sidebar .= '<div class="py-2 px-4 w-[240px] bg-white items-center gap-4 h-full">';
 		$sidebar .= '<ul class="menu-title">';
@@ -1164,35 +1747,35 @@ function easycommerce_order_placeholders( $order_id ) {
 		'##order_id##'                     => $order_id,
 
 		// Customer basic details
-		'##customer_name##'                => $customer->get_name(),
-		'##customer_email##'               => $customer->get_email(),
-		'##customer_phone##'               => $customer->get_phone(),
+		'##customer_name##'                => esc_html( $customer->get_name() ),
+		'##customer_email##'               => esc_html( $customer->get_email() ),
+		'##customer_phone##'               => esc_html( $customer->get_phone() ),
 
 		// Billing details
-		'##billing_first_name##'           => $customer->get_first_name('billing'),
-		'##billing_last_name##'            => $customer->get_last_name('billing'),
-		'##billing_email##'                => $customer->get_email('billing'),
-		'##billing_phone##'                => $customer->get_phone('billing'),
-		'##billing_address_1##'            => $customer->get_address_1('billing'),
-		'##billing_address_2##'            => $customer->get_address_2('billing'),
-		'##billing_country##'              => $customer->get_country('billing'),
-		'##billing_state##'                => $customer->get_state('billing'),
-		'##billing_city##'                 => $customer->get_city('billing'),
-		'##billing_postcode##'             => $customer->get_postcode('billing'),
-		'##billing_address##'              => $customer->get_address('billing'),
+		'##billing_first_name##'           => esc_html( $customer->get_first_name('billing') ),
+		'##billing_last_name##'            => esc_html( $customer->get_last_name('billing') ),
+		'##billing_email##'                => esc_html( $customer->get_email('billing') ),
+		'##billing_phone##'                => esc_html( $customer->get_phone('billing') ),
+		'##billing_address_1##'            => esc_html( $customer->get_address_1('billing') ),
+		'##billing_address_2##'            => esc_html( $customer->get_address_2('billing') ),
+		'##billing_country##'              => esc_html( $customer->get_country('billing') ),
+		'##billing_state##'                => esc_html( $customer->get_state('billing') ),
+		'##billing_city##'                 => esc_html( $customer->get_city('billing') ),
+		'##billing_postcode##'             => esc_html( $customer->get_postcode('billing') ),
+		'##billing_address##'              => esc_html( $customer->get_address('billing') ),
 
 		// Shipping details
-		'##shipping_first_name##'          => $customer->get_first_name( 'shipping' ),
-		'##shipping_last_name##'           => $customer->get_last_name( 'shipping' ),
-		'##shipping_email##'               => $customer->get_email( 'shipping' ),
-		'##shipping_phone##'               => $customer->get_phone( 'shipping' ),
-		'##shipping_address_1##'           => $customer->get_address_1( 'shipping' ),
-		'##shipping_address_2##'           => $customer->get_address_2( 'shipping' ),
-		'##shipping_country##'             => $customer->get_country( 'shipping' ),
-		'##shipping_state##'               => $customer->get_state( 'shipping' ),
-		'##shipping_city##'                => $customer->get_city( 'shipping' ),
-		'##shipping_postcode##'            => $customer->get_postcode( 'shipping' ),
-		'##shipping_address##'             => $customer->get_address( 'shipping' ),
+		'##shipping_first_name##'          => esc_html( $customer->get_first_name( 'shipping' ) ),
+		'##shipping_last_name##'           => esc_html( $customer->get_last_name( 'shipping' ) ),
+		'##shipping_email##'               => esc_html( $customer->get_email( 'shipping' ) ),
+		'##shipping_phone##'               => esc_html( $customer->get_phone( 'shipping' ) ),
+		'##shipping_address_1##'           => esc_html( $customer->get_address_1( 'shipping' ) ),
+		'##shipping_address_2##'           => esc_html( $customer->get_address_2( 'shipping' ) ),
+		'##shipping_country##'             => esc_html( $customer->get_country( 'shipping' ) ),
+		'##shipping_state##'               => esc_html( $customer->get_state( 'shipping' ) ),
+		'##shipping_city##'                => esc_html( $customer->get_city( 'shipping' ) ),
+		'##shipping_postcode##'            => esc_html( $customer->get_postcode( 'shipping' ) ),
+		'##shipping_address##'             => esc_html( $customer->get_address( 'shipping' ) ),
 
 		// Customer order statistics
 		'##customer_total_spent##'         => $customer->get_total_spent(),
@@ -1254,33 +1837,33 @@ function easycommerce_cart_placeholders( $cart ) {
 	$placeholders = array(
 		// General cart details
 		'##hash##'               => $cart->get_hash(),
-		'##name##'               => $cart->get_customer_name(),
-		'##customer_name##'      => $cart->get_customer_name(),
-		'##email##'              => $cart->get_customer_email(),
+		'##name##'               => esc_html( $cart->get_customer_name() ),
+		'##customer_name##'      => esc_html( $cart->get_customer_name() ),
+		'##email##'              => esc_html( $cart->get_customer_email() ),
 		'##cart_link##'          => $cart->get_link(),
 		'##cart_total##'         => easycommerce_price( $cart->get_amount( 'total' ) ),
 		'##amount##'             => easycommerce_price( $cart->get_amount( 'total' ) ),
 		'##number_of_items##'    => $cart->get_item_count(),
-		'##order_status##'       => $cart->get_status(),
+		'##order_status##'       => esc_html( $cart->get_status() ),
 		'##random_coupon_code##' => (Utility::get_option( 'abandoned-cart', 'settings', 'random_coupon_discount_percentage', 0 ) > 0) ? easycommerce_generate_random_coupon_code() : '',
 
 		// Billing details
-		'##billing_phone##'      => $cart->get_phone(),
-		'##billing_address_1##'  => $cart->get_address_1(),
-		'##billing_address_2##'  => $cart->get_address_2(),
-		'##billing_country##'    => $cart->get_country(),
-		'##billing_state##'      => $cart->get_state(),
-		'##billing_city##'       => $cart->get_city(),
-		'##billing_postcode##'   => $cart->get_postcode(),
+		'##billing_phone##'      => esc_html( $cart->get_phone() ),
+		'##billing_address_1##'  => esc_html( $cart->get_address_1() ),
+		'##billing_address_2##'  => esc_html( $cart->get_address_2() ),
+		'##billing_country##'    => esc_html( $cart->get_country() ),
+		'##billing_state##'      => esc_html( $cart->get_state() ),
+		'##billing_city##'       => esc_html( $cart->get_city() ),
+		'##billing_postcode##'   => esc_html( $cart->get_postcode() ),
 
 		// Shipping details
-		'##shipping_phone##'     => $cart->get_phone( 'shipping' ),
-		'##shipping_address_1##' => $cart->get_address_1( 'shipping' ),
-		'##shipping_address_2##' => $cart->get_address_2( 'shipping' ),
-		'##shipping_country##'   => $cart->get_country( 'shipping' ),
-		'##shipping_state##'     => $cart->get_state( 'shipping' ),
-		'##shipping_city##'      => $cart->get_city( 'shipping' ),
-		'##shipping_postcode##'  => $cart->get_postcode( 'shipping' ),
+		'##shipping_phone##'     => esc_html( $cart->get_phone( 'shipping' ) ),
+		'##shipping_address_1##' => esc_html( $cart->get_address_1( 'shipping' ) ),
+		'##shipping_address_2##' => esc_html( $cart->get_address_2( 'shipping' ) ),
+		'##shipping_country##'   => esc_html( $cart->get_country( 'shipping' ) ),
+		'##shipping_state##'     => esc_html( $cart->get_state( 'shipping' ) ),
+		'##shipping_city##'      => esc_html( $cart->get_city( 'shipping' ) ),
+		'##shipping_postcode##'  => esc_html( $cart->get_postcode( 'shipping' ) ),
 
 		'##product_list##'       => $product_list,
 		'##product_table##'      => $product_table,
@@ -1760,7 +2343,6 @@ function easycommerce_get_conflicting_plugins() {
         'easycommerce-paypal/easycommerce-paypal.php',
         'easycommerce-square/easycommerce-square.php',
         'easycommerce-mollie/easycommerce-mollie.php',
-        'easycommerce-stripe/easycommerce-stripe.php',
         'easycommerce-braintree/easycommerce-braintree.php',
         'easycommerce-cash-on-delivery/easycommerce-cash-on-delivery.php',
         'easycommerce-csv-importer/easycommerce-csv-importer.php',
@@ -1770,6 +2352,7 @@ function easycommerce_get_conflicting_plugins() {
 function easycommerce_detect_external_plugins_for_migration() {
     $active_plugins = array(
         'woocommerce/woocommerce.php'	=> 'WooCommerce',
+        'easy-digital-downloads/easy-digital-downloads.php'	=> 'Easy Digital Downloads',
 	);
 
     $detected = null;
@@ -1782,6 +2365,23 @@ function easycommerce_detect_external_plugins_for_migration() {
     }
 
     return $detected;
+}
+
+function easycommerce_get_migratable_platforms() {
+	$active_plugins = array(
+		'woocommerce/woocommerce.php'                       => 'WooCommerce',
+		'easy-digital-downloads/easy-digital-downloads.php' => 'Easy Digital Downloads',
+	);
+
+	$detected = [];
+
+	foreach ( $active_plugins as $main_file => $name ) {
+		if ( is_plugin_active( $main_file ) ) {
+			$detected[] = $name;
+		}
+	}
+
+	return $detected;
 }
 
 function easycommerce_is_compatible_theme_active() {

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import DeletePopup from '../../../../common/components/DeletePopup';
 import { toast } from 'react-toastify';
+import { __ } from '@wordpress/i18n';
 import TableSkeleton from '../../../../common/TableSkeleton';
 
 
@@ -21,13 +22,13 @@ const Table = ({ categories, fetchData, onEdit , isLoading, bulkDeleteIds, setBu
             const data = await response.json();
 
             if (data.success) {
-                toast.success('Category deleted successfully');
+                toast.success(__( 'Category deleted successfully', 'easycommerce' ));
                 fetchData();
             } else {
-                toast.error(data.message || 'Failed to delete');
+                toast.error(data.message || __( 'Failed to delete', 'easycommerce' ));
             }
         } catch (error) {
-            toast.error('Failed to delete');
+            toast.error(__( 'Failed to delete', 'easycommerce' ));
         } finally {
             setShowModal(false);
             setCategoryIdToDelete(null);
@@ -58,11 +59,11 @@ const Table = ({ categories, fetchData, onEdit , isLoading, bulkDeleteIds, setBu
                                         }}
                                     />
                                 </th>
-                                <th className="w-[25%] font-normal rtl:text-right">Name</th>
-                                <th className="w-[25%] font-normal">Slug</th>
-                                <th className="w-[25%] font-normal">Parent</th>
+                                <th className="w-[25%] font-normal rtl:text-right">{ __( 'Name', 'easycommerce' ) }</th>
+                                <th className="w-[25%] font-normal">{ __( 'Slug', 'easycommerce' ) }</th>
+                                <th className="w-[25%] font-normal">{ __( 'Parent', 'easycommerce' ) }</th>
                                 <th className="w-[17%] text-center pr-5 font-normal rounded-r-md">
-                                    Action
+                                    { __( 'Action', 'easycommerce' ) }
                                 </th>
                             </tr>
                         </thead>
@@ -184,7 +185,7 @@ const Table = ({ categories, fetchData, onEdit , isLoading, bulkDeleteIds, setBu
                 
             ) : (
                 <span className='text-ec-body font-inter text-sm leading-[20px]'>
-                   No categories found.
+                   { __( 'No categories found.', 'easycommerce' ) }
                 </span>
             )}
           

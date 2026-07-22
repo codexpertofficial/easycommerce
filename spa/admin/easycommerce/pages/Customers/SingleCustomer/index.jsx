@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { __ } from "@wordpress/i18n";
 
 // Components
 import CustomerSaleSummery from "./components/CustomerSaleSummery";
@@ -170,7 +171,7 @@ const SingleCustomer = ({ id, page = 1, setBreadcrumbTitle }) => {
             <div className="product-panel-title mb-4">
                 {customer && (
                     <>
-                        <h3>{customer.name ? customer.name : "unknown"}</h3>
+                        <h3>{customer.name ? customer.name : __("unknown", "easycommerce")}</h3>
                     </>
                 )}
             </div>
@@ -183,7 +184,7 @@ const SingleCustomer = ({ id, page = 1, setBreadcrumbTitle }) => {
                             <div className="w-1/2 bg-white rounded-2xl">
                                 <div className="border-b border-ec-table-stock">
                                     <p className="text-ec-title font-medium font-inter lg:text-xl md:text-lg leading-8 p-4">
-                                        Orders Over Time
+                                        {__("Orders Over Time", "easycommerce")}
                                     </p>
                                 </div>
                                 <CustomerSaleSummery id={id} />
@@ -192,7 +193,7 @@ const SingleCustomer = ({ id, page = 1, setBreadcrumbTitle }) => {
                         <div className="bg-white max-w-full mt-6 pt-[17px] rounded-2xl">
                             <div className="border-b border-ec-table-stock">
                                 <p className="text-ec-title font-medium font-inter lg:text-xl md:text-lg leading-8 pb-4 px-6">
-                                    Orders
+                                    {__("Orders", "easycommerce")}
                                 </p>
                             </div>
                             {orders.length > 0 ? (
@@ -201,25 +202,25 @@ const SingleCustomer = ({ id, page = 1, setBreadcrumbTitle }) => {
                                         <thead>
                                             <tr className="bg-ec-modal">
                                                 <th className="font-inter font-normal text-sm text-ec-title text-left py-3 pl-5 rounded-l-lg ">
-                                                    <span>Order ID</span>
+                                                    <span>{__("Order ID", "easycommerce")}</span>
                                                 </th>
                                                 <th className="w-[14%] font-inter font-normal text-sm text-ec-title text-left py-3">
-                                                    Status
+                                                    {__("Status", "easycommerce")}
                                                 </th>
                                                 <th className="w-[15%] font-inter font-normal text-sm text-ec-title text-left py-3 pl-5">
-                                                    Fullfillment
+                                                    {__("Fullfillment", "easycommerce")}
                                                 </th>
                                                 <th className="w-[12%] font-inter font-normal text-center text-sm text-ec-title text-left py-3">
-                                                    Products
+                                                    {__("Products", "easycommerce")}
                                                 </th>
                                                 <th className="w-[11%] font-inter font-normal text-sm text-ec-title text-left py-3">
-                                                    Amount
+                                                    {__("Amount", "easycommerce")}
                                                 </th>
                                                 <th className="w-[22%] font-inter font-normal text-sm text-ec-title text-left py-3">
-                                                    Transactions ID
+                                                    {__("Transactions ID", "easycommerce")}
                                                 </th>
                                                 <th className="w-[12%] font-inter font-normal text-sm text-ec-title text-left py-3 rounded-r-lg">
-                                                    Date
+                                                    {__("Date", "easycommerce")}
                                                 </th>
                                             </tr>
                                         </thead>
@@ -246,7 +247,7 @@ const SingleCustomer = ({ id, page = 1, setBreadcrumbTitle }) => {
                                                                                     className="hover:text-ec-primary duration-300 hover:cursor-pointer"
                                                                                     href={`#/orders/${order.id}`}
                                                                                 >
-                                                                                    View
+                                                                                    {__("View", "easycommerce")}
                                                                                 </a>
                                                                             </div>
                                                                         </div>
@@ -298,7 +299,7 @@ const SingleCustomer = ({ id, page = 1, setBreadcrumbTitle }) => {
                                                                     if (transactions.length === 0) {
                                                                         return (
                                                                             <span className="text-left py-4 font-inter font-normal lg:w-[13%] text-sm text-ec-body">
-                                                                                N/A
+                                                                                {__("N/A", "easycommerce")}
                                                                             </span>
                                                                         );
                                                                     }
@@ -343,11 +344,11 @@ const SingleCustomer = ({ id, page = 1, setBreadcrumbTitle }) => {
                                                         </td>
                                                         <td>
                                                             <p className="text-ec-body font-inter font-normal text-sm mb-1">
-                                                                {order.created_at ? order.created_at : "N/A"}
+                                                                {order.created_at ? order.created_at : __("N/A", "easycommerce")}
                                                             </p>
                                                             <span>
                                                                 <p className="text-ec-light-black font-inter font-normal text-xs mb-1">
-                                                                    {order.created_time ? order.created_time : "N/A"}
+                                                                    {order.created_time ? order.created_time : __("N/A", "easycommerce")}
                                                                 </p>
                                                             </span>
                                                         </td>
@@ -362,7 +363,7 @@ const SingleCustomer = ({ id, page = 1, setBreadcrumbTitle }) => {
                                 </div>
                             ) : (
                                 <p className="text-ec-body font-inter font-normal text-sm p-4">
-                                    No order found for this customer
+                                    {__("No order found for this customer", "easycommerce")}
                                 </p>
                             )
                         }

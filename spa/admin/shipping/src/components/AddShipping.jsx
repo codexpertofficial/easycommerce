@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { createPortal } from 'react-dom';
+import { __, sprintf } from "@wordpress/i18n";
 
 // Components
 import ShippingSkeleton from "./ShippingSkeleton";
@@ -82,20 +83,20 @@ const AddShipping = ({ handleCancel, showToast, ShippingPlanId }) => {
 
 	const labelMap = {
 		price: {
-			min: `Min Price (${EASYCOMMERCE.currency_symbol || '$'})`,
-			max: `Max Price (${EASYCOMMERCE.currency_symbol || '$'})`,
+			min: sprintf( __( 'Min Price (%s)', 'easycommerce' ), EASYCOMMERCE.currency_symbol || '$' ),
+			max: sprintf( __( 'Max Price (%s)', 'easycommerce' ), EASYCOMMERCE.currency_symbol || '$' ),
 		},
 		weight: {
-			min: 'Min Weight',
-			max: 'Max Weight',
+			min: __( 'Min Weight', 'easycommerce' ),
+			max: __( 'Max Weight', 'easycommerce' ),
 		},
 		quantity: {
-			min: 'Min Quantity',
-			max: 'Max Quantity',
+			min: __( 'Min Quantity', 'easycommerce' ),
+			max: __( 'Max Quantity', 'easycommerce' ),
 		},
 		default: {
-			min: 'Min',
-			max: 'Max',
+			min: __( 'Min', 'easycommerce' ),
+			max: __( 'Max', 'easycommerce' ),
 		},
 	};
 
@@ -166,10 +167,10 @@ const AddShipping = ({ handleCancel, showToast, ShippingPlanId }) => {
 		};
 
 		if (!shippingData.name) {
-			showToast("error", "Shipping plan name is required.");
+			showToast("error", __( "Shipping plan name is required.", "easycommerce" ));
 			return;
 		} else if (!shippingData.calculation_base) {
-			showToast("error", "Calculation base is required.");
+			showToast("error", __( "Calculation base is required.", "easycommerce" ));
 			return;
 		}
 
@@ -286,10 +287,10 @@ const AddShipping = ({ handleCancel, showToast, ShippingPlanId }) => {
 			.then((data) => {
 				easycommerce_modal(false);
 				if (data.success) {
-					showToast("success", "Shipping plan updated successfully.");
+					showToast("success", __( "Shipping plan updated successfully.", "easycommerce" ));
 					handleCancel();
 				} else {
-					showToast("error", data.data?.message || "Failed to update shipping plan.");
+					showToast("error", data.data?.message || __( "Failed to update shipping plan.", "easycommerce" ));
 				}
 			});
 	};
@@ -437,7 +438,7 @@ const AddShipping = ({ handleCancel, showToast, ShippingPlanId }) => {
 							<label
 								className="text-ec-body font-inter font-normal text-base leading-4 w-[180px]"
 								htmlFor="easycommerce-shipping-name">
-								Name
+								{ __( "Name", "easycommerce" ) }
 							</label>
 							<div className="w-full">
 								<div className="flex">
@@ -452,7 +453,7 @@ const AddShipping = ({ handleCancel, showToast, ShippingPlanId }) => {
 										type="text"
 										className="h-ec-input p-3 rounded-lg font-inter text-[14px] leading-[20px] border border-ec-table-stock placeholder-ec-placeholder hover:border-ec-primary focus:border-ec-primary focus:outline-none 
     									focus:[box-shadow:0_0_0_4px_#F3F0FF] transition-colors duration-300 ease-in-out w-full disabled:cursor-not-allowed disabled:bg-ec-table-stock disabled:hover:border-ec-table-stock disabled:focus:border-ec-table-stock"
-										placeholder="Shipping name here"
+										placeholder={__( "Shipping name here", "easycommerce" )}
 									/>
 								</div>
 							</div>
@@ -461,7 +462,7 @@ const AddShipping = ({ handleCancel, showToast, ShippingPlanId }) => {
 							<label
 								className="text-ec-body font-inter font-normal text-base leading-4 w-[180px]"
 								htmlFor="easycommerce-shipping-description">
-								Description
+								{ __( "Description", "easycommerce" ) }
 							</label>
 							<div className="w-full">
 								<div className="flex">
@@ -476,7 +477,7 @@ const AddShipping = ({ handleCancel, showToast, ShippingPlanId }) => {
 										type="text"
 										className="h-ec-input p-3 rounded-lg font-inter text-[14px] leading-[20px] border border-ec-table-stock placeholder-ec-placeholder hover:border-ec-primary focus:border-ec-primary focus:outline-none 
     									focus:[box-shadow:0_0_0_4px_#F3F0FF] transition-colors duration-300 ease-in-out w-full disabled:cursor-not-allowed disabled:bg-ec-table-stock disabled:hover:border-ec-table-stock disabled:focus:border-ec-table-stock"
-										placeholder="Write description here"
+										placeholder={__( "Write description here", "easycommerce" )}
 									/>
 								</div>
 							</div>
@@ -485,7 +486,7 @@ const AddShipping = ({ handleCancel, showToast, ShippingPlanId }) => {
 							<label
 								className="text-ec-body font-inter font-normal text-base leading-4 w-[180px]"
 								htmlFor="easycommerce-shipping-description">
-								Enable/Disable
+								{ __( "Enable/Disable", "easycommerce" ) }
 							</label>
 							<div className="w-full">
 								<div className="flex">
@@ -509,7 +510,7 @@ const AddShipping = ({ handleCancel, showToast, ShippingPlanId }) => {
 							<label
 								className="text-ec-body font-inter font-normal text-base leading-4 w-[180px]"
 								htmlFor="easycommerce-shipping-name">
-								Regions
+								{ __( "Regions", "easycommerce" ) }
 							</label>
 							<div className="w-full flex gap-6">
 								<div className="w-full flex border border-ec-border py-4 px-[9px] rounded-lg">
@@ -517,16 +518,16 @@ const AddShipping = ({ handleCancel, showToast, ShippingPlanId }) => {
 										<thead>
 											<tr>
 												<th className="w-[22%] text-start text-ec-body text-sm font-normal font-inter pl-[7px]">
-													Country
+													{ __( "Country", "easycommerce" ) }
 												</th>
 												<th className="w-[22%] text-start text-ec-body text-sm font-normal leading-4 font-inter pl-[7px]">
-													State
+													{ __( "State", "easycommerce" ) }
 												</th>
 												<th className="w-[22%] text-start text-ec-body text-sm font-normal leading-4 font-inter pl-[7px]">
-													City
+													{ __( "City", "easycommerce" ) }
 												</th>
 												<th className="w-[22%] text-start text-ec-body text-sm font-normal leading-4 font-inter pl-[7px]">
-													Zip Code
+													{ __( "Zip Code", "easycommerce" ) }
 												</th>
 												<th className="w-[22%]"></th>
 											</tr>
@@ -539,10 +540,10 @@ const AddShipping = ({ handleCancel, showToast, ShippingPlanId }) => {
 															<div className="h-ec-input mb-[14px]">
 																<Dropdown
 																	options={[
-																		{ label: "Select Country", value: "" }, 
+																		{ label: __( "Select Country", "easycommerce" ), value: "" }, 
 																		...shippingCountries,
 																	]}
-																	placeholder="Select Country"
+																	placeholder={__( "Select Country", "easycommerce" )}
 																	value={region.country}
 																	onChange={(option) =>
 																		handleShippingRegionChange(option.value, index, "country")
@@ -554,13 +555,13 @@ const AddShipping = ({ handleCancel, showToast, ShippingPlanId }) => {
 															<div className="h-ec-input mb-[14px]">
 																<Dropdown
 																	options={[
-																		{ label: "Select State", value: "" }, 
+																		{ label: __( "Select State", "easycommerce" ), value: "" }, 
 																		...(states[index]?.map((state) => ({
 																		label: state,
 																		value: state,
 																		})) || [])
 																	]}
-																	placeholder="Select State"
+																	placeholder={__( "Select State", "easycommerce" )}
 																	value={region.state}
 																	onChange={(option) =>
 																		handleShippingRegionChange(option.value, index, "state")
@@ -572,13 +573,13 @@ const AddShipping = ({ handleCancel, showToast, ShippingPlanId }) => {
 															<div className="h-ec-input mb-[14px]">
 																<Dropdown
 																	options={[
-																		{ label: "Select City", value: "" },
+																		{ label: __( "Select City", "easycommerce" ), value: "" },
 																		...(cities[index]?.map((city) => ({
 																		label: city,
 																		value: city,
 																		})) || [])
 																	]}
-																	placeholder="Select City"
+																	placeholder={__( "Select City", "easycommerce" )}
 																	value={region.city || ""}
 																	onChange={(option) =>
 																		handleShippingRegionChange(option.value, index, "city")
@@ -598,7 +599,7 @@ const AddShipping = ({ handleCancel, showToast, ShippingPlanId }) => {
 																	setShippingRegionList(updatedRegions);
 																}}
 																value={region.zip}
-																placeholder="Write here"
+																placeholder={__( "Write here", "easycommerce" )}
 															/>
 														</td>
 														<td className="flex items-center justify-center">
@@ -649,18 +650,18 @@ const AddShipping = ({ handleCancel, showToast, ShippingPlanId }) => {
 							<label
 								className="text-ec-body font-inter font-normal text-base leading-4 w-[180px]"
 								htmlFor="easycommerce-shipping-calculcution-base">
-								Calculation Base
+								{ __( "Calculation Base", "easycommerce" ) }
 							</label>
 							<div className="w-full">
 								<div className="w-full h-ec-input">
 									<Dropdown
 										options={[
-											{ label: "Select Base", value: "" }, 
-											{ label: "Cart Total", value: "price" },
-											{ label: "Total Weight", value: "weight" },
-											{ label: "Item Count", value: "quantity" }
+											{ label: __( "Select Base", "easycommerce" ), value: "" }, 
+											{ label: __( "Cart Total", "easycommerce" ), value: "price" },
+											{ label: __( "Total Weight", "easycommerce" ), value: "weight" },
+											{ label: __( "Item Count", "easycommerce" ), value: "quantity" }
 										]}
-										placeholder="Select Base"
+										placeholder={__( "Select Base", "easycommerce" )}
 										value={shippingPlan.calculation_base || ""}
 										onChange={(option) =>
 											setShippingPlan({
@@ -676,7 +677,7 @@ const AddShipping = ({ handleCancel, showToast, ShippingPlanId }) => {
 							<label
 								className="text-ec-body font-inter font-normal text-base leading-4 w-[180px]"
 								htmlFor="easycommerce-shipping-description">
-								Taxable
+								{ __( "Taxable", "easycommerce" ) }
 							</label>
 							<div className="w-full">
 								<div className="flex items-center gap-3">
@@ -698,7 +699,7 @@ const AddShipping = ({ handleCancel, showToast, ShippingPlanId }) => {
 									</label>
 									{hasUntaxedCountry && (
 										<span className="text-sm text-red-500 font-inter">
-											No tax rate configured for this country.
+											{ __( "No tax rate configured for this country.", "easycommerce" ) }
 										</span>
 									)}
 								</div>
@@ -708,7 +709,7 @@ const AddShipping = ({ handleCancel, showToast, ShippingPlanId }) => {
 							<label
 								className="text-ec-body font-inter font-normal text-base leading-4 w-[180px]"
 								htmlFor="easycommerce-shipping-name">
-								Methods
+								{ __( "Methods", "easycommerce" ) }
 							</label>
 							<div className="w-full flex">
 								<div className="w-full border border-ec-border py-4 px-[9px] rounded-lg">
@@ -716,7 +717,7 @@ const AddShipping = ({ handleCancel, showToast, ShippingPlanId }) => {
 										<thead>
 											<tr>
 												<th className="w-[22%] text-start text-ec-body pb-1 text-sm font-normal leading-4 font-inter pl-[7px]">
-													Method Name
+													{ __( "Method Name", "easycommerce" ) }
 												</th>
 												<th className="w-[22%] text-start text-ec-body pb-1 text-sm font-normal leading-4 font-inter pl-[7px]">
 													{labelMap[shippingPlan.calculation_base]?.min || labelMap.default.min}
@@ -725,7 +726,7 @@ const AddShipping = ({ handleCancel, showToast, ShippingPlanId }) => {
 													{labelMap[shippingPlan.calculation_base]?.max || labelMap.default.max}
 												</th>
 												<th className="w-[22%] text-start text-ec-body pb-1 text-sm font-normal leading-4 font-inter pl-[7px]">
-													Shipping Fee ({EASYCOMMERCE.currency_symbol || '$'})
+													{sprintf( __( "Shipping Fee (%s)", "easycommerce" ), EASYCOMMERCE.currency_symbol || '$' )}
 												</th>
 												<th></th>
 											</tr>
@@ -746,7 +747,7 @@ const AddShipping = ({ handleCancel, showToast, ShippingPlanId }) => {
 																	)
 																}
 																value={method.name}
-																placeholder="Write name here"
+																placeholder={__( "Write name here", "easycommerce" )}
 															/>
 														</td>
 														<td className="px-[7px]">
@@ -764,7 +765,7 @@ const AddShipping = ({ handleCancel, showToast, ShippingPlanId }) => {
 																		)
 																	}
 																	value={method.min}
-																	placeholder="Write min weight"
+																	placeholder={__( "Write min weight", "easycommerce" )}
 																/>
 																{shippingPlan.calculation_base === "weight" && (
 																	<div className="relative" ref={(el) => (minDropdownRefs.current[index] = el)}>
@@ -841,7 +842,7 @@ const AddShipping = ({ handleCancel, showToast, ShippingPlanId }) => {
 																		)
 																	}
 																	value={method.max ?? ''}
-																	placeholder="Write max weight"
+																	placeholder={__( "Write max weight", "easycommerce" )}
 																/>
 																{shippingPlan.calculation_base === "weight" && (
 																	<div className="relative" ref={(el) => (maxDropdownRefs.current[index] = el)}>
@@ -917,7 +918,7 @@ const AddShipping = ({ handleCancel, showToast, ShippingPlanId }) => {
 																	)
 																}
 																value={method.cost}
-																placeholder="Write your fee"
+																placeholder={__( "Write your fee", "easycommerce" )}
 															/>
 														</td>
 														<td className="flex items-center justify-center">
@@ -968,7 +969,7 @@ const AddShipping = ({ handleCancel, showToast, ShippingPlanId }) => {
 								className="flex justify-center items-center font-inter border-b border-ec-body  text-ec-body focus:shadow-none focus:ec-body text-base"
 								data-option_key="easycommerce-general-pages"
 								onClick={handleCancel}>
-								Cancel
+								{ __( "Cancel", "easycommerce" ) }
 							</button>
 							<button
 								onClick={
@@ -982,8 +983,8 @@ const AddShipping = ({ handleCancel, showToast, ShippingPlanId }) => {
 								hover:bg-ec-primary focus:shadow-none focus:text-white focus:bg-ec-secondary 
 								lg:text-sm md:text-xs sm:text-sm transition-all ease-in-out duration-500 leading-[26px]">
 								{ShippingPlanId
-									? "Update Shipping Plan"
-									: "Save Shipping Plan"}
+									? __( "Update Shipping Plan", "easycommerce" )
+									: __( "Save Shipping Plan", "easycommerce" )}
 							</button>
 						</p>
 					</div>

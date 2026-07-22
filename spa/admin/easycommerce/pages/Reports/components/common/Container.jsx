@@ -1,4 +1,5 @@
 import React from 'react';
+import { __ } from '@wordpress/i18n';
 import Tooltip from './Tooltip';
 
 const Container = ({
@@ -37,7 +38,7 @@ const Container = ({
 								fill="#7F7F98"
 							/>
 						</svg>
-						Export
+						{__( 'Export', 'easycommerce' )}
 					</button>
 				)}
 

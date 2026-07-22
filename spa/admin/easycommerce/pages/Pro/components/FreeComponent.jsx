@@ -1,4 +1,5 @@
 import React from 'react';
+import { __ } from '@wordpress/i18n';
 
 // components
 import ContentGrid from './ContentGrid';
@@ -30,8 +31,8 @@ const FreeComponent = () => {
 		<div className="py-[32px]">
 			<div className="flex items-center justify-between">
 				<h1 className="capitalize text-5xl leading-[58px] font-medium text-ec-title">
-					Free is perfect for starters
-					<span className="block text-ec-primary">But growth needs Pro 🚀</span>
+					{__('Free is perfect for starters', 'easycommerce')}
+					<span className="block text-ec-primary">{__('But growth needs Pro 🚀', 'easycommerce')}</span>
 				</h1>
 
 				<div className="flex gap-4">
@@ -40,7 +41,7 @@ const FreeComponent = () => {
 						target="_blank"
 						className="group flex items-center gap-2.5 h-[60px] px-8 text-ec-title text-base font-medium rounded-lg border border-[#F99D1D] bg-[#F99D1D]"
 					>
-						{proIcon} Upgrade to PRO
+						{proIcon} {__('Upgrade to PRO', 'easycommerce')}
 					</a>
 				</div>
 			</div>
@@ -63,17 +64,17 @@ const FreeComponent = () => {
 				}}
 			>
 				<h1 className="text-white text-4xl font-medium text-center">
-					Ready to Upgrade?
+					{__('Ready to Upgrade?', 'easycommerce')}
 				</h1>
 				<p className="text-center text-[#E3E3E3] text-lg w-[580px] mx-auto mt-3">
-					Enhance your experience with powerful features to increase performance and flexibility.
+					{__('Enhance your experience with powerful features to increase performance and flexibility.', 'easycommerce')}
 				</p>
 				<a
 					href="https://easycommerce.dev/pricing?utm_source=inplugin&utm_medium=propage&utm_campaign=BFCM"
 					target="_blank"
 					className="group mt-8 flex items-center w-max gap-2.5 h-[60px] px-8 text-ec-title text-base font-medium rounded-lg border border-[#F99D1D] bg-[#F99D1D] mx-auto"
 				>
-					{proIcon} Upgrade Now
+					{proIcon} {__('Upgrade Now', 'easycommerce')}
 				</a>
 			</div>
 		</div>

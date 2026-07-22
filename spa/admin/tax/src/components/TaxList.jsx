@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { applyFilters } from '@wordpress/hooks';
+import { __ } from '@wordpress/i18n';
 import TaxSkeleton from "./TaxSkeleton";
 import NoFound from "./NoFound";
 import DeletePopup from '../../../common/components/DeletePopup';
@@ -101,7 +102,7 @@ const TaxList = ({ handleEdit, handleAddNew }) => {
                         <>
                              <div className="flex justify-start items-center gap-8 mb-6"> 
                                 <p className="text-ec-body font-medium font-inter lg:text-xl md:text-lg leading-8">
-                                    Tax Classes
+                                    { __( "Tax Classes", "easycommerce" ) }
                                 </p>
                                 <button
                                     type="button"
@@ -112,23 +113,23 @@ const TaxList = ({ handleEdit, handleAddNew }) => {
                                     focus:text-white focus:bg-ec-secondary lg:text-sm md:text-xs sm:text-sm 
                                     transition-all ease-in-out duration-500 font-inter font-medium text-base text-center leading-[26px]"
                                 >
-                                    Add Class
+                                    { __( "Add Class", "easycommerce" ) }
                                 </button>
                             </div>
                             <table className="w-full border-collapse overflow-hidden mt-10">
                                 <thead>
                                     <tr className="bg-ec-table-bg">
                                         <th className="w-[20%] font-inter font-normal text-base text-ec-body text-left py-5 pl-5 first:rounded-l-lg">
-                                            Class
+                                            { __( "Class", "easycommerce" ) }
                                         </th>
                                         <th className="w-[15%] font-inter font-normal text-base text-ec-body text-left py-5 pl-5">
-                                            Status
+                                            { __( "Status", "easycommerce" ) }
                                         </th>
                                         <th className="w-[45%] font-inter font-normal text-base text-ec-body text-left py-5 pl-5">
-                                            Regions
+                                            { __( "Regions", "easycommerce" ) }
                                         </th>
                                         <th className="w-[12%] font-inter font-medium text-base text-left py-6 rounded-e-lg border-r-0">
-                                            Actions
+                                            { __( "Actions", "easycommerce" ) }
                                         </th>
                                     </tr>
                                 </thead>
@@ -148,7 +149,7 @@ const TaxList = ({ handleEdit, handleAddNew }) => {
                                                             className={`w-3 h-3 rounded-full bg-[#00E91B]`}
                                                         ></span>
 
-                                                        <span>Active</span>
+                                                        <span>{ __( "Active", "easycommerce" ) }</span>
                                                     </span>
                                                 ) : (
                                                     <span className="flex justify-start items-center gap-3">
@@ -156,7 +157,7 @@ const TaxList = ({ handleEdit, handleAddNew }) => {
                                                             className={`w-3 h-3 rounded-full bg-[#B8D1BB]`}
                                                         ></span>
 
-                                                        <span>Inactive</span>
+                                                        <span>{ __( "Inactive", "easycommerce" ) }</span>
                                                     </span>
                                                 )}
                                             </td>

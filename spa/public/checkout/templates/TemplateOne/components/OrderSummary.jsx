@@ -1,5 +1,6 @@
 import React from "react";
 import { applyFilters } from '@wordpress/hooks';
+import { __ } from '@wordpress/i18n';
 
 //Images and Icons
 const OrderSummaryImage = `${EASYCOMMERCE.assets}public/img/checkout/order-summary.png`;
@@ -13,15 +14,15 @@ const OrderSummary = () => {
      */
     const defaultOrderSummaryItems = [
         {
-            label: "Subtotal",
+            label: __( "Subtotal", "easycommerce" ),
             price: "$334.00",
         },
         {
-            label: "Shipping Eastimate",
+            label: __( "Shipping Eastimate", "easycommerce" ),
             price: "$5.00",
         },
         {
-            label: "Tax Eastimate",
+            label: __( "Tax Eastimate", "easycommerce" ),
             price: "$25.00",
         },
     ];
@@ -52,14 +53,14 @@ const OrderSummary = () => {
                 </div>
                 <div>
                     <div className="easycommerce-coupon-wrapper relative mb-4">
-                        <input type="text" placeholder="Discount code" />
+                        <input type="text" placeholder={__( "Discount code", "easycommerce" )} />
                         <button
                             type="button"
                             className="absolute top-[9px] right-[9px] py-[7px] px-5 border border-ec-border 
                         rounded-[6px] bg-[#F8F8F8] text-base font-inter font-normal leading-[26px] shadow-none 
                         hover:bg-ec-secondary hover:border-ec-border hover:rounded-[6px] hover:text-white"
                         >
-                            Apply
+                            {__( "Apply", "easycommerce" )}
                         </button>
                     </div>
                     {orderSummaryItems.map((items, index) => (
@@ -74,7 +75,7 @@ const OrderSummary = () => {
                     ))}
                     <div className="flex items-center justify-between p-4 border-t border-ec-border">
                         <label className="text-ec-body font-inter font-bold text-base leading-[26px]">
-                            Order Total
+                            {__( "Order Total", "easycommerce" )}
                         </label>
                         <span className="mb-0 text-ec-body font-inter font-bold text-base leading-[26px]">
                             {orderTotal}

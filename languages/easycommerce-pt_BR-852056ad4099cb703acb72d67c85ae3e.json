@@ -1,0 +1,141 @@
+{
+    "translation-revision-date": "YEAR-MO-DA HO:MI+ZONE",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "build\/auth.bundle.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "pt_BR",
+                "plural-forms": "nplurals=2; plural=(n > 1);"
+            },
+            "Passwords do not match": [
+                "As senhas n\u00e3o coincidem"
+            ],
+            "Password has been reset successfully.": [
+                "A senha foi redefinida com sucesso."
+            ],
+            "Invalid email\/username or password.": [
+                "E-mail\/nome de usu\u00e1rio ou senha inv\u00e1lidos."
+            ],
+            "Terms of Service": [
+                "Termos de Servi\u00e7o"
+            ],
+            "Privacy Policy": [
+                "Pol\u00edtica de Privacidade"
+            ],
+            "Remember Me": [
+                "Lembrar de mim"
+            ],
+            "New Password": [
+                "Nova senha"
+            ],
+            "Confirm Password": [
+                "Confirmar senha"
+            ],
+            "An error occurred. Please try again.": [
+                "Ocorreu um erro. Tente novamente."
+            ],
+            "Sign In": [
+                "Entrar"
+            ],
+            "Welcome back! sign in and let the greenery spark your joy": [
+                "Bem-vindo de volta! entre e deixe o verde despertar sua alegria"
+            ],
+            "Email Address": [
+                "Endere\u00e7o de e-mail"
+            ],
+            "Password": [
+                "Senha"
+            ],
+            "Signing in...": [
+                "Entrando..."
+            ],
+            "Forgot Password?": [
+                "Esqueceu a senha?"
+            ],
+            "Don't have an account?": [
+                "N\u00e3o tem uma conta?"
+            ],
+            "Sign Up": [
+                "Cadastrar-se"
+            ],
+            "Registration Complete please login": [
+                "Cadastro conclu\u00eddo, fa\u00e7a login"
+            ],
+            "Registration failed. Please try again.": [
+                "Falha no cadastro. Tente novamente."
+            ],
+            "Registration": [
+                "Cadastro"
+            ],
+            "Welcome Back! Sign in and let the greenery spark your joy": [
+                "Bem-vindo de volta! Entre e deixe o verde despertar sua alegria"
+            ],
+            "Username": [
+                "Nome de usu\u00e1rio"
+            ],
+            "User Name": [
+                "Nome de usu\u00e1rio"
+            ],
+            "Enter your Email": [
+                "Informe seu e-mail"
+            ],
+            "New password": [
+                "Nova senha"
+            ],
+            "Enter new password": [
+                "Informe a nova senha"
+            ],
+            "Confirm password": [
+                "Confirmar senha"
+            ],
+            "Confirm new password": [
+                "Confirmar a nova senha"
+            ],
+            "Creating account...": [
+                "Criando conta..."
+            ],
+            "Sign up": [
+                "Cadastrar-se"
+            ],
+            "By creating an account, you agree to our": [
+                "Ao criar uma conta, voc\u00ea concorda com nossos"
+            ],
+            "and": [
+                "e"
+            ],
+            "Log in": [
+                "Entrar"
+            ],
+            "Check your email for the confirmation link.": [
+                "Verifique seu e-mail para encontrar o link de confirma\u00e7\u00e3o."
+            ],
+            "Reset your password": [
+                "Redefina sua senha"
+            ],
+            "Enter a valid e-mail to receive instruction on how to reset your password.": [
+                "Informe um e-mail v\u00e1lido para receber as instru\u00e7\u00f5es de como redefinir sua senha."
+            ],
+            "Email or username": [
+                "E-mail ou nome de usu\u00e1rio"
+            ],
+            "Sending...": [
+                "Enviando..."
+            ],
+            "Reset Password": [
+                "Redefinir senha"
+            ],
+            "Set New Password": [
+                "Definir nova senha"
+            ],
+            "Enter your new password below.": [
+                "Informe sua nova senha abaixo."
+            ],
+            "Resetting...": [
+                "Redefinindo..."
+            ]
+        }
+    }
+}

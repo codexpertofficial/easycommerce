@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import apiFetch from '@wordpress/api-fetch';
 import { addQueryArgs } from '@wordpress/url';
+import { __ } from '@wordpress/i18n';
 import TableSkeleton from "../../../../common/TableSkeleton";
 
 const LatestOrders = ({ range }) => {
@@ -70,16 +71,16 @@ const LatestOrders = ({ range }) => {
                 <TableSkeleton numberOfRows={5} SkeletonHeight={35} />
             ) : orders.length === 0 ? (
                 <div className=" text-sm text-ec-body px-[30px] pb-[30px]">
-                    No orders found.
+                    {__( 'No orders found.', 'easycommerce' )}
                 </div>
             ) : (
                 <>
                     <div>
                         <div className="flex items-center bg-ec-table-bg py-3 px-3 rounded-lg">
-                            <div className="w-[25%] text-sm font-medium text-ec-body capitalize">Order ID</div>
-                            <div className="w-[20%] text-sm font-medium text-ec-body capitalize text-center">Amount</div>
-                            <div className="w-[40%] text-sm font-medium text-ec-body capitalize text-center">Status</div>
-                            <div className="w-[15%] text-sm font-medium text-ec-body capitalize text-end">Action</div>
+                            <div className="w-[25%] text-sm font-medium text-ec-body capitalize">{__( 'Order ID', 'easycommerce' )}</div>
+                            <div className="w-[20%] text-sm font-medium text-ec-body capitalize text-center">{__( 'Amount', 'easycommerce' )}</div>
+                            <div className="w-[40%] text-sm font-medium text-ec-body capitalize text-center">{__( 'Status', 'easycommerce' )}</div>
+                            <div className="w-[15%] text-sm font-medium text-ec-body capitalize text-end">{__( 'Action', 'easycommerce' )}</div>
                         </div>
                         {orders.map((item, index) => (
                             <div key={index} className="flex items-center py-3 px-3 border-b border-[#F8F8F8] last:border-0">
@@ -107,7 +108,7 @@ const LatestOrders = ({ range }) => {
                                 </div>
                                 <div className="w-[15%] flex justify-end">
                                     <a href={`#/orders/${item.id}`} className="font-inter text-ec-primary hover:underline text-sm focus:text-ec-primary">
-                                        View
+                                        {__( 'View', 'easycommerce' )}
                                     </a>
                                 </div>
                             </div>

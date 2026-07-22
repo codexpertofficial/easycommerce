@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import apiFetch from '@wordpress/api-fetch';
 import { addQueryArgs } from '@wordpress/url';
+import { __ } from '@wordpress/i18n';
 
 import Table from '../common/Table';
 import TableSkeleton from '../common/TableSkeleton';
@@ -39,15 +40,15 @@ const TopSellingProducts = ({ range, comparison }) => {
 	if (productsData.length === 0) {
 		return (
 			<span className="text-base text-center block pt-6">
-				No data available for the selected range.
+				{__( 'No data available for the selected range.', 'easycommerce' )}
 			</span>
 		);
 	}
 
 	const columns = [
-		{ header: 'Rank', width: '15%', render: (item) => `#${item.rank}` },
+		{ header: __( 'Rank', 'easycommerce' ), width: '15%', render: (item) => `#${item.rank}` },
 		{
-			header: 'Image',
+			header: __( 'Image', 'easycommerce' ),
 			width: '20%',
 			render: (item) =>
 				item.thumbnail ? (
@@ -85,13 +86,13 @@ const TopSellingProducts = ({ range, comparison }) => {
 				),
 		},
 		{
-			header: 'Name',
+			header: __( 'Name', 'easycommerce' ),
 			width: '20%',
 			render: (item) => <span className="truncate">{item.name}</span>,
 		},
-		{ header: 'Units Sold', width: '25%', accessor: 'unit_sold' },
+		{ header: __( 'Units Sold', 'easycommerce' ), width: '25%', accessor: 'unit_sold' },
 		{
-			header: 'Revenue',
+			header: __( 'Revenue', 'easycommerce' ),
 			width: '20%',
 			render: (item) =>
 				EASYCOMMERCE.currency_symbol + Number(item.revenue).toFixed(2),
@@ -173,7 +174,7 @@ const TopSellingProducts = ({ range, comparison }) => {
 									{productsData[0].unit_sold}
 								</span>
 								<span className="text-base text-[#3C3C42] text-center block">
-									Units Sold
+									{__( 'Units Sold', 'easycommerce' )}
 								</span>
 							</div>
 
@@ -183,7 +184,7 @@ const TopSellingProducts = ({ range, comparison }) => {
 										Number(productsData[0].revenue).toFixed(2)}
 								</span>
 								<span className="text-base text-[#3C3C42] text-center block">
-									Revenue
+									{__( 'Revenue', 'easycommerce' )}
 								</span>
 							</div>
 						</div>

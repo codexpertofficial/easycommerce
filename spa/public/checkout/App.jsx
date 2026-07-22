@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
 import { SlotFillProvider } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 import Templates from "./templates";
 
 // import "./style.css";
@@ -27,7 +28,7 @@ const App = () => {
             {activeTemplate ? (
                 <Templates activeTemplate={activeTemplate} />
             ) : (
-                <p>Loading...</p>
+                <p>{__( "Loading...", "easycommerce" )}</p>
             )}
         </>
     );

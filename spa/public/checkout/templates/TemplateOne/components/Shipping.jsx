@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { __ } from "@wordpress/i18n";
 
 //Images and Icons
 const billingImage = `${EASYCOMMERCE.assets}public/img/checkout/billing.png`;
@@ -15,7 +16,7 @@ const Shipping = () => {
                             className="w-[53px] h-[53px] mr-4"
                         />
                         <h3 className="easycommerce-billing-title font-inter leading-8 font-semibold text-xl mb-0">
-                            Shipping Address
+                            {__( "Shipping Address", "easycommerce" )}
                         </h3>
                     </div>
 
@@ -32,7 +33,7 @@ const Shipping = () => {
                             checked={isChecked}
                         />
                         <span className="text-ec-body font-inter font-medium text-base leading-[26px] ml-2">
-                            Same as Billing
+                            {__( "Same as Billing", "easycommerce" )}
                         </span>
                     </label>
                 </div>
@@ -44,11 +45,11 @@ const Shipping = () => {
                                 className="text-ec-body font-inter font-medium 
                         text-base leading-[26px] mb-1 block"
                             >
-                                First Name
+                                {__( "First Name", "easycommerce" )}
                             </label>
                             <input
                                 type="text"
-                                placeholder="Your first name"
+                                placeholder={__( "Your first name", "easycommerce" )}
                                 className="easycommerce-checkout_input w-full text-ec-body 
                             placeholder:text-ec-placeholder font-inter text-base leading-[26px] py-[7px] px-[10px]"
                                 name="shippingFirstName"
@@ -60,11 +61,11 @@ const Shipping = () => {
                                 className="text-ec-body font-inter font-medium 
                         text-base leading-[26px] mb-1 block"
                             >
-                                Last Name
+                                {__( "Last Name", "easycommerce" )}
                             </label>
                             <input
                                 type="text"
-                                placeholder="Your last name"
+                                placeholder={__( "Your last name", "easycommerce" )}
                                 className="easycommerce-checkout_input w-full text-ec-body 
                             placeholder:text-ec-placeholder font-inter text-base leading-[26px] py-[7px] px-[10px]"
                                 name="shippingLastName"
@@ -78,11 +79,11 @@ const Shipping = () => {
                                 className="text-ec-body font-inter font-medium 
                         text-base leading-[26px] mb-1 block"
                             >
-                                Email
+                                {__( "Email", "easycommerce" )}
                             </label>
                             <input
                                 type="Email"
-                                placeholder="Your email"
+                                placeholder={__( "Your email", "easycommerce" )}
                                 className="easycommerce-checkout_input w-full text-ec-body 
                             placeholder:text-ec-placeholder font-inter text-base leading-[26px] py-[7px] px-[10px]"
                                 name="shippingEmail"
@@ -94,11 +95,11 @@ const Shipping = () => {
                                 className="text-ec-body font-inter font-medium 
                         text-base leading-[26px] mb-1 block"
                             >
-                                Phone
+                                {__( "Phone", "easycommerce" )}
                             </label>
                             <input
                                 type="text"
-                                placeholder="Enter your phone number"
+                                placeholder={__( "Enter your phone number", "easycommerce" )}
                                 className="easycommerce-checkout_input w-full text-ec-body 
                             placeholder:text-ec-placeholder font-inter text-base leading-[26px] py-[7px] px-[10px]"
                                 name="shippingPhone"
@@ -111,11 +112,11 @@ const Shipping = () => {
                             className="text-ec-body font-inter font-medium 
                         text-base leading-[26px] mb-1 block"
                         >
-                            Address line 1
+                            {__( "Address line 1", "easycommerce" )}
                         </label>
                         <input
                             type="text"
-                            placeholder="Your address"
+                            placeholder={__( "Your address", "easycommerce" )}
                             className="easycommerce-checkout_input w-full text-ec-body 
                             placeholder:text-ec-placeholder font-inter text-base leading-[26px] py-[7px] px-[10px]"
                             name="shippingAddress1"
@@ -127,11 +128,11 @@ const Shipping = () => {
                             className="text-ec-body font-inter font-medium 
                         text-base leading-[26px] mb-1 block"
                         >
-                            Address line 2
+                            {__( "Address line 2", "easycommerce" )}
                         </label>
                         <input
                             type="text"
-                            placeholder="Your address"
+                            placeholder={__( "Your address", "easycommerce" )}
                             className="easycommerce-checkout_input w-full text-ec-body 
                             placeholder:text-ec-placeholder font-inter text-base leading-[26px] py-[7px] px-[10px]"
                             name="shippingAddress2"
@@ -144,7 +145,7 @@ const Shipping = () => {
                                 className="text-ec-body font-inter font-medium 
                         text-base leading-[26px] mb-1 block"
                             >
-                                City
+                                {__( "City", "easycommerce" )}
                             </label>
                             <select
                                 className="easycommerce-checkout_input w-full text-ec-body 
@@ -152,7 +153,7 @@ const Shipping = () => {
                                 name="shippingCity"
                             >
                                 <option value="" disabled selected hidden>
-                                    Select your City
+                                    {__( "Select your City", "easycommerce" )}
                                 </option>
                                 <option value="dhaka">Savar</option>
                                 <option value="dhaka">Dhaka</option>
@@ -164,7 +165,7 @@ const Shipping = () => {
                                 className="text-ec-body font-inter font-medium 
                         text-base leading-[26px] mb-1 block"
                             >
-                                State
+                                {__( "State", "easycommerce" )}
                             </label>
                             <select
                                 className="easycommerce-checkout_input w-full text-ec-body 
@@ -172,7 +173,7 @@ const Shipping = () => {
                                 name="shippingState"
                             >
                                 <option value="" disabled selected hidden>
-                                    Select your State
+                                    {__( "Select your State", "easycommerce" )}
                                 </option>
                                 <option value="dhaka">Savar</option>
                                 <option value="dhaka">Dhaka</option>
@@ -187,7 +188,7 @@ const Shipping = () => {
                                 className="text-ec-body font-inter font-medium 
                         text-base leading-[26px] mb-1 block"
                             >
-                                Country
+                                {__( "Country", "easycommerce" )}
                             </label>
                             <select
                                 className="easycommerce-checkout_input w-full text-ec-body 
@@ -195,7 +196,7 @@ const Shipping = () => {
                                 name="shippingCountry"
                             >
                                 <option value="" disabled selected hidden>
-                                    Select your country
+                                    {__( "Select your country", "easycommerce" )}
                                 </option>
                                 <option value="dhaka">Savar</option>
                                 <option value="dhaka">Dhaka</option>
@@ -208,12 +209,12 @@ const Shipping = () => {
                                 className="text-ec-body font-inter font-medium 
                         text-base leading-[26px] mb-1 block"
                             >
-                                Postal Code
+                                {__( "Postal Code", "easycommerce" )}
                             </label>
                             <input
                                 type="text"
                                 name="shippingPostcode"
-                                placeholder="Write here"
+                                placeholder={__( "Write here", "easycommerce" )}
                                 className="easycommerce-checkout_input w-full text-ec-body 
                             placeholder:text-ec-placeholder font-inter text-base leading-[26px] py-[7px] px-[10px]"
                             />

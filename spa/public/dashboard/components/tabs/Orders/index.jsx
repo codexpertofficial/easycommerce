@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { __ } from '@wordpress/i18n';
 import TableSkeleton from '../../../../../admin/common/TableSkeleton';
 import Pagination from '../../../../../admin/common/components/Pagination';
 import StatusBadge from '../../common/StatusBadge';
@@ -56,7 +57,7 @@ const Orders = () => {
         <>
             <div className="easycommerce-dashboard-section pb-[55px] flex flex-col gap-4">
                 <h3 className="easycommerce-dashboard-section-title !text-lg sm:!text-2xl">
-                    Orders
+                    {__( 'Orders', 'easycommerce' )}
                 </h3>
                 <div className="w-full">
                     {!isLoading ? (
@@ -67,19 +68,19 @@ const Orders = () => {
                                         <thead className="easycommerce-dash-roth bg-ec-table-bg">
                                             <tr>
                                                 <th className="font-inter font-semibold text-xs uppercase tracking-wide text-left rtl:text-right text-ec-light-black py-3.5 px-5 border-0">
-                                                    Order ID
+                                                    {__( 'Order ID', 'easycommerce' )}
                                                 </th>
                                                 <th className="font-inter font-semibold text-xs uppercase tracking-wide text-left rtl:text-right text-ec-light-black py-3.5 px-5 border-0">
-                                                    Date
+                                                    {__( 'Date', 'easycommerce' )}
                                                 </th>
                                                 <th className="font-inter font-semibold text-xs uppercase tracking-wide text-left rtl:text-right text-ec-light-black py-3.5 px-5 border-0">
-                                                    Amount
+                                                    {__( 'Amount', 'easycommerce' )}
                                                 </th>
                                                 <th className="font-inter font-semibold text-xs uppercase tracking-wide text-left rtl:text-right text-ec-light-black py-3.5 px-5 border-0">
-                                                    Status
+                                                    {__( 'Status', 'easycommerce' )}
                                                 </th>
                                                 <th className="font-inter font-semibold text-xs uppercase tracking-wide text-right rtl:text-left text-ec-light-black py-3.5 px-5 border-0">
-                                                    Action
+                                                    {__( 'Action', 'easycommerce' )}
                                                 </th>
                                             </tr>
                                         </thead>
@@ -102,12 +103,12 @@ const Orders = () => {
                                                             <span className="font-medium">
                                                                 {order.created_at
                                                                     ? order.created_at
-                                                                    : 'N/A'}
+                                                                    : __( 'N/A', 'easycommerce' )}
                                                             </span>
                                                             <span className="text-xs leading-4 text-ec-placeholder">
                                                                 {order.created_time
                                                                     ? order.created_time
-                                                                    : 'N/A'}
+                                                                    : __( 'N/A', 'easycommerce' )}
                                                             </span>
                                                         </span>
                                                     </td>
@@ -119,7 +120,7 @@ const Orders = () => {
                                                         <StatusBadge status={order.status} />
                                                     </td>
                                                     <td className="font-inter text-sm text-right rtl:text-left py-4 px-5 border-0 border-b border-b-ec-border/70">
-                                                        <ViewButton href={`#orders/${order.id}`} title="View order" />
+                                                        <ViewButton href={`#orders/${order.id}`} title={__( 'View order', 'easycommerce' )} />
                                                     </td>
                                                 </tr>
                                             ))}
@@ -129,8 +130,8 @@ const Orders = () => {
                             ) : (
                                 <div className="w-full border border-ec-border rounded-2xl bg-white">
                                     <EmptyState
-                                        title="No orders available"
-                                        message="Orders you place will appear here."
+                                        title={__( 'No orders available', 'easycommerce' )}
+                                        message={__( 'Orders you place will appear here.', 'easycommerce' )}
                                     />
                                 </div>
                             )}

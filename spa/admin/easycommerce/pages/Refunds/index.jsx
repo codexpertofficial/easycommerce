@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { __ } from '@wordpress/i18n';
+import { toast } from 'react-toastify';
 
 // Components
 import RefundsTable from './components/RefundsTable';
@@ -35,6 +36,7 @@ const Refunds = ({ page }) => {
 			}
 		} catch (error) {
 			console.error('Error fetching refunds:', error);
+			toast.error(__('Unable to load refunds. Please refresh and try again.', 'easycommerce'));
 		} finally {
 			setIsLoading(false);
 		}
@@ -79,8 +81,8 @@ const Refunds = ({ page }) => {
 						) : (
 							<NotFound
 								ImageUrl={noRefund}
-								title={`No Refunds Found.`}
-								description={`Refunds will appear here once processed.`}
+								title={__('No Refunds Found.', 'easycommerce')}
+								description={__('Refunds will appear here once processed.', 'easycommerce')}
 								isBtn={false}
 							/>
 						)}

@@ -1,0 +1,99 @@
+{
+    "translation-revision-date": "YEAR-MO-DA HO:MI+ZONE",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "blocks\/components\/typography.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "es_ES",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Font Size": [
+                "Tama\u00f1o de fuente"
+            ],
+            "Font Weight": [
+                "Grosor de fuente"
+            ],
+            "100 (Thin)": [
+                "100 (Fina)"
+            ],
+            "200 (Extra Light)": [
+                "200 (Extrafina)"
+            ],
+            "300 (Light)": [
+                "300 (Ligera)"
+            ],
+            "400 (Normal)": [
+                "400 (Normal)"
+            ],
+            "500 (Medium)": [
+                "500 (Media)"
+            ],
+            "600 (Semi Bold)": [
+                "600 (Seminegrita)"
+            ],
+            "700 (Bold)": [
+                "700 (Negrita)"
+            ],
+            "800 (Extra Bold)": [
+                "800 (Extranegrita)"
+            ],
+            "900 (Black)": [
+                "900 (Negra)"
+            ],
+            "Default": [
+                "Por defecto"
+            ],
+            "Normal": [
+                "Normal"
+            ],
+            "Bold": [
+                "Negrita"
+            ],
+            "Text Transform": [
+                "Transformaci\u00f3n del texto"
+            ],
+            "Uppercase": [
+                "May\u00fasculas"
+            ],
+            "Lowercase": [
+                "Min\u00fasculas"
+            ],
+            "Capitalize": [
+                "Capitalizar"
+            ],
+            "Text Style": [
+                "Estilo del texto"
+            ],
+            "Italic": [
+                "Cursiva"
+            ],
+            "Oblique": [
+                "Oblicua"
+            ],
+            "Text Decoration": [
+                "Decoraci\u00f3n del texto"
+            ],
+            "None": [
+                "Ninguna"
+            ],
+            "Underline": [
+                "Subrayado"
+            ],
+            "Overline": [
+                "L\u00ednea superior"
+            ],
+            "Line Through": [
+                "Tachado"
+            ],
+            "Line Height": [
+                "Altura de l\u00ednea"
+            ],
+            "Word Spacing": [
+                "Espaciado entre palabras"
+            ]
+        }
+    }
+}

@@ -24,32 +24,161 @@ class Asset {
 		$this->action( 'enqueue_block_editor_assets', array( $this, 'enqueue_block_editor_assets' ) );
 		$this->action( 'wp_enqueue_scripts', array( $this, 'add_assets' ) );
 		$this->action( 'admin_enqueue_scripts', array( $this, 'add_assets' ) );
+		$this->action( 'wp_enqueue_scripts', array( $this, 'add_pattern_assets' ) );
+		$this->action( 'enqueue_block_editor_assets', array( $this, 'add_pattern_editor_styles' ) );
 	}
 
 	/**
-	 * Enqueue block editor assets.
+	 * Front-end assets for the store patterns (#3175 — theme compatibility).
+	 *
+	 * Block themes render the patterns from theme.json tokens as-is. Classic
+	 * themes additionally get store-patterns.css — a self-contained, `.ec-pattern`
+	 * scoped fallback for spacing, full-width alignment and colour presets. The
+	 * applied design's colour/typography preset is layered on both via inline CSS.
+	 *
+	 * Only loads on pages that actually contain a store pattern.
+	 */
+	public function add_pattern_assets() {
+		if ( is_admin() ) {
+			return;
+		}
+
+		$post        = get_post();
+		$has_pattern = $post instanceof \WP_Post && false !== strpos( $post->post_content, 'ec-pattern' );
+
+		/**
+		 * Filter whether to load the store-pattern assets on this request.
+		 *
+		 * Patterns placed in FSE template parts (not post content) won't be
+		 * detected by the default check — hook this to force-load them.
+		 *
+		 * @param bool          $has_pattern Whether a store pattern was detected.
+		 * @param \WP_Post|null  $post        Current post.
+		 */
+		$has_pattern = apply_filters( 'easycommerce_load_pattern_assets', $has_pattern, $post );
+
+		if ( ! $has_pattern ) {
+			return;
+		}
+
+		$handle = 'easycommerce-store-patterns';
+
+		if ( ! easycommerce_is_block_theme() ) {
+			wp_enqueue_style(
+				$handle,
+				EASYCOMMERCE_ASSETS_URL . 'public/css/store-patterns.css',
+				array(),
+				EASYCOMMERCE_VERSION
+			);
+		} else {
+			// Block themes need no fallback stylesheet, but we still want a handle
+			// to carry the inline preset CSS.
+			wp_register_style( $handle, false, array(), EASYCOMMERCE_VERSION );
+			wp_enqueue_style( $handle );
+		}
+
+		$preset_css = easycommerce_store_design_preset_css();
+		if ( '' !== $preset_css ) {
+			wp_add_inline_style( $handle, $preset_css );
+		}
+	}
+
+	/**
+	 * Mirror the applied design's token system inside the block editor canvas,
+	 * so editing a store page previews its real design (radius, elevation,
+	 * spacing rhythm, buttons) rather than the theme's bare block defaults.
+	 *
+	 * Scoped under `.editor-styles-wrapper` so it only styles the canvas, and
+	 * still only bites on `.ec-pattern` elements — inert unless a store pattern
+	 * is present. Card rules are frontend-only (the grid block renders a
+	 * placeholder in the editor), which is harmless.
+	 */
+	public function add_pattern_editor_styles() {
+		$css = easycommerce_store_design_preset_css( '.editor-styles-wrapper ' );
+		if ( '' === $css ) {
+			return;
+		}
+
+		$handle = 'easycommerce-store-patterns-editor';
+		wp_register_style( $handle, false, array(), EASYCOMMERCE_VERSION );
+		wp_enqueue_style( $handle );
+		wp_add_inline_style( $handle, $css );
+	}
+
+	/**
+	 * Register JS translations for an EasyCommerce React SPA bundle.
+	 *
+	 * Points at the plugin's own languages/ directory, where the shipped
+	 * easycommerce-{locale}-{md5}.json files live, so the bundle's __() strings
+	 * load translations instead of always rendering in English. Without the
+	 * explicit path WordPress only looks in the global WP languages directory.
+	 *
+	 * @param string $handle Registered/enqueued script handle.
+	 * @return void
+	 */
+	private function set_spa_translations( $handle ) {
+		wp_set_script_translations( $handle, 'easycommerce', EASYCOMMERCE_PLUGIN_DIR . 'languages' );
+	}
+
+	/**
+	 * Enqueue block assets.
+	 *
+	 * Editor: always load so EC blocks can be inserted/previewed in any post
+	 * type.  Front-end: skip the 1+ MB bundle on pages that have no EC blocks
+	 * (fixes a site-wide performance regression — see GitHub issue #3083).
 	 */
 	public function enqueue_block_assets() {
 
-		$dependencies = array( 'wp-blocks', 'wp-element', 'wp-hooks', 'jquery' );
-
 		if ( is_admin() ) {
-			$dependencies[] = 'wp-editor';
+			$this->enqueue_script(
+				'easycommerce_blocks',
+				EASYCOMMERCE_BUILD_URL . 'blocks.bundle.js',
+				array( 'wp-blocks', 'wp-element', 'wp-hooks', 'jquery', 'wp-editor', 'wp-i18n' )
+			);
+
+			$this->set_spa_translations( 'easycommerce_blocks' );
+
+			// Scope Tailwind to the product editor only — loading it on all
+			// post types resets the editor UI via preflight for unrelated content.
+			$screen = get_current_screen();
+			if ( $screen && 'product' === $screen->post_type ) {
+				$this->enqueue_script(
+					'easycommerce-tailwind-editor',
+					EASYCOMMERCE_BUILD_URL . 'tailwind.bundle.js',
+					array()
+				);
+			}
+			return;
+		}
+
+		// Front-end: skip unless the page actually contains an EC block.
+		global $post;
+		$has_ec_block = $post instanceof \WP_Post
+			&& false !== strpos( $post->post_content, 'wp:easycommerce/' );
+
+		/**
+		 * Force-load EC block assets on this front-end request.
+		 *
+		 * Use when EC blocks live in block-theme templates or template parts
+		 * where they are not visible to post_content inspection.
+		 *
+		 * @param bool $load Default false.
+		 */
+		if ( ! $has_ec_block ) {
+			$has_ec_block = (bool) apply_filters( 'easycommerce_load_block_assets', false );
+		}
+
+		if ( ! $has_ec_block ) {
+			return;
 		}
 
 		$this->enqueue_script(
 			'easycommerce_blocks',
 			EASYCOMMERCE_BUILD_URL . 'blocks.bundle.js',
-			$dependencies
+			array( 'wp-blocks', 'wp-element', 'wp-hooks', 'jquery', 'wp-i18n' )
 		);
 
-		if ( is_admin() ) {
-			$this->enqueue_script(
-				'easycommerce-tailwind-editor',
-				EASYCOMMERCE_BUILD_URL . 'tailwind.bundle.js',
-				array()
-			);
-		}
+		$this->set_spa_translations( 'easycommerce_blocks' );
 	}
 
 	/**
@@ -61,6 +190,8 @@ class Asset {
 			EASYCOMMERCE_BUILD_URL . 'editor.bundle.js',
 			array( 'wp-element', 'wp-data', 'wp-i18n', 'wp-api-fetch', 'wp-hooks', 'react', 'react-dom' )
 		);
+
+		$this->set_spa_translations( 'easycommerce_editor' );
 	}
 
 	/**
@@ -151,6 +282,7 @@ class Asset {
 			'admin_url'       => admin_url( 'admin.php' ),
 			'ajax_url'        => admin_url( 'admin-ajax.php' ),
 			'assets'          => EASYCOMMERCE_ASSETS_URL,
+			'community_url'   => easycommerce_community_url(),
 			'credits'         => easycommerce_get_ai_credits(),
 			'customer'        => array(
 				'address' => array(
@@ -205,8 +337,11 @@ class Asset {
 			$this->enqueue_script(
 				'easycommerce_notice',
 				EASYCOMMERCE_ASSETS_URL . 'admin/js/notice.js',
-				array( 'jquery' )
+				array( 'jquery', 'wp-i18n' )
 			);
+
+			$this->set_spa_translations( 'easycommerce_notice' );
+
 			$detected_migration_plugin = easycommerce_detect_external_plugins_for_migration() ?? '';
 			$notice_localized = array(
 				'ajax_url'					=> admin_url( 'admin-ajax.php' ),
@@ -229,7 +364,7 @@ class Asset {
 		 *
 		 * @since 0.1
 		 */
-		if ( is_admin() && ( strpos( $screen = str_replace( array( 'toplevel_page_', 'easycommerce_page_' ), array(), $current_screen->base ), 'easycommerce' ) !== false || 'post' === $current_screen->base ) ) {
+		if ( is_admin() && ( strpos( $screen = str_replace( array( 'toplevel_page_', 'easycommerce_page_' ), array(), $current_screen->base ), 'easycommerce' ) !== false || ( 'post' === $current_screen->base && 'product' === $current_screen->post_type ) ) ) {
 
 			$load_common_assets = true;
 
@@ -247,8 +382,10 @@ class Asset {
 			$this->enqueue_script(
 				'easycommerce_admin',
 				EASYCOMMERCE_ASSETS_URL . 'admin/js/init.js',
-				array( 'easycommerce' )
+				array( 'easycommerce', 'wp-i18n' )
 			);
+
+			$this->set_spa_translations( 'easycommerce_admin' );
 
 			$this->enqueue_style(
 				'easycommerce_admin',
@@ -295,10 +432,7 @@ class Asset {
 					array( 'wp-element', 'easycommerce', 'wp-hooks', 'wp-i18n', 'wp-components', 'wp-plugins', 'wp-api-fetch' )
 				);
 
-				wp_set_script_translations(
-					'easycommerce_main-menu',
-					'easycommerce',
-				);
+				$this->set_spa_translations( 'easycommerce_main-menu' );
 				
 			}
 
@@ -324,11 +458,17 @@ class Asset {
 					array( 'wp-element', 'easycommerce' )
 				);
 
+				$this->set_spa_translations( 'easycommerce_settings-react' );
+				$this->set_spa_translations( 'easycommerce_shipping-methods' );
+				$this->set_spa_translations( 'easycommerce_tax-classes' );
+
 				$this->enqueue_script(
 					'easycommerce_settings',
 					EASYCOMMERCE_ASSETS_URL . 'admin/js/settings.js',
-					array( 'jquery', 'easycommerce' )
+					array( 'jquery', 'easycommerce', 'wp-i18n' )
 				);
+
+				$this->set_spa_translations( 'easycommerce_settings' );
 
 				$this->enqueue_style(
 					'easycommerce_settings',
@@ -364,8 +504,10 @@ class Asset {
 				$this->enqueue_script(
 					'easycommerce_wizard-menu',
 					EASYCOMMERCE_BUILD_URL . 'wizard.bundle.js',
-					array( 'wp-element', 'easycommerce' )
+					array( 'wp-element', 'easycommerce', 'wp-i18n' )
 				);
+
+				$this->set_spa_translations( 'easycommerce_wizard-menu' );
 
 				$localized['pages']                   = Utility::get_posts( array( 'post_type' => 'page' ) );
 				$localized['currencies']              = easycommerce_currencies();
@@ -373,6 +515,10 @@ class Asset {
 				$localized['business_type']           = easycommerce_get_business_types();
 				$localized['api_connected']           = easycommerce_is_api_connected();
 				$localized['all_payment_methods']	  = easycommerce_get_all_payment_methods();
+
+				$localized['migration_addon_installed']	    = is_plugin_active( 'easycommerce-migration/easycommerce-migration.php' );
+				$localized['migratable_platform_installed'] = is_plugin_active( 'woocommerce/woocommerce.php' ) || is_plugin_active( 'easy-digital-downloads/easy-digital-downloads.php' );
+				$localized['migratable_platforms_installed'] = easycommerce_get_migratable_platforms();
 			}
 
 			if ( $screen == 'easycommerce-settings' ) {
@@ -468,8 +614,10 @@ class Asset {
 				$this->enqueue_script(
 					'easycommerce_public',
 					EASYCOMMERCE_ASSETS_URL . 'public/js/init.js',
-					array( 'easycommerce' )
+					array( 'easycommerce', 'wp-i18n' )
 				);
+
+				$this->set_spa_translations( 'easycommerce_public' );
 			}
 
 			if ( $checkout_page && is_page( $checkout_page ) ) {
@@ -485,8 +633,11 @@ class Asset {
 
 				$this->enqueue_script(
 					'easycommerce_checkout',
-					EASYCOMMERCE_ASSETS_URL . 'public/js/checkout.js'
+					EASYCOMMERCE_ASSETS_URL . 'public/js/checkout.js',
+					array( 'wp-i18n' )
 				);
+
+				$this->set_spa_translations( 'easycommerce_checkout' );
 
 				$localized['cart'] = ( new Cart() )->get( true );
 
@@ -501,8 +652,11 @@ class Asset {
 
 				$this->enqueue_script(
 					'easycommerce_checkout',
-					EASYCOMMERCE_ASSETS_URL . 'public/js/checkout.js'
+					EASYCOMMERCE_ASSETS_URL . 'public/js/checkout.js',
+					array( 'wp-i18n' )
 				);
+
+				$this->set_spa_translations( 'easycommerce_checkout' );
 
 				$this->enqueue_script(
 					'easycommerce_payment',
@@ -523,8 +677,10 @@ class Asset {
 				$this->enqueue_script(
 					'easycommerce_agent_chatbot',
 					EASYCOMMERCE_ASSETS_URL . 'public/js/agent-chatbot.js',
-					array( 'easycommerce' )
+					array( 'easycommerce', 'wp-i18n' )
 				);
+
+				$this->set_spa_translations( 'easycommerce_agent_chatbot' );
 
 				$agent_avatar_id  = Utility::get_option( 'ai', 'agentic-ai', 'agent_avatar', '' );
 				$agent_avatar_url = $agent_avatar_id ? wp_get_attachment_url( $agent_avatar_id ) : '';
@@ -543,6 +699,8 @@ class Asset {
 					EASYCOMMERCE_BUILD_URL . 'dashboard.bundle.js',
 					array( 'wp-element', 'easycommerce', 'wp-hooks', 'wp-dom-ready', 'wp-components', 'wp-plugins', )
 				);
+
+				$this->set_spa_translations( 'easycommerce_dashboard' );
 
 				wp_enqueue_media();
 
@@ -563,6 +721,40 @@ class Asset {
 				);
 
 				do_action( 'easycommerce_dashboard_enqueue_scripts' );
+			}
+
+			// React auth SPA (login / register / reset password). Rendered for
+			// logged-out visitors on the dashboard page or any page carrying an
+			// auth shortcode. See Front\Shortcode::auth_container().
+			if ( is_page() && ! is_user_logged_in() && $post instanceof \WP_Post && (
+				has_shortcode( $post->post_content, 'easycommerce-dashboard' ) ||
+				has_shortcode( $post->post_content, 'easycommerce-login' ) ||
+				has_shortcode( $post->post_content, 'easycommerce-register' ) ||
+				has_shortcode( $post->post_content, 'easycommerce-reset' )
+			) ) {
+				$this->enqueue_script(
+					'easycommerce_auth',
+					EASYCOMMERCE_BUILD_URL . 'auth.bundle.js',
+					array( 'wp-element', 'easycommerce', 'wp-hooks', 'wp-dom-ready' )
+				);
+
+				$this->set_spa_translations( 'easycommerce_auth' );
+
+				$dashboard_url = easycommerce_dashboard_page( true );
+				$register_url  = easycommerce_registration_page( true );
+				$reset_url     = easycommerce_reset_password_page( true );
+				$terms_url     = easycommerce_terms_of_service_page( true );
+				$privacy_url   = easycommerce_privacy_policy_page( true );
+
+				$localized['auth'] = array(
+					'dashboard_url' => $dashboard_url ? $dashboard_url : home_url(),
+					'register_url'  => $register_url ? $register_url : '',
+					'reset_url'     => $reset_url ? $reset_url : '',
+					'terms_url'     => $terms_url ? $terms_url : '',
+					'privacy_url'   => $privacy_url ? $privacy_url : '',
+				);
+
+				do_action( 'easycommerce_auth_enqueue_scripts' );
 			}
 
 			if ( ( is_singular( 'product' ) && ! has_block( '', $post ) ) || has_block( 'easycommerce/single-product-gallery', $post ) ) {
@@ -599,14 +791,18 @@ class Asset {
 				$this->enqueue_script(
 					'swatches',
 					EASYCOMMERCE_ASSETS_URL . 'public/js/swatches.js',
-					array( 'jquery', 'easycommerce' )
+					array( 'jquery', 'easycommerce', 'wp-i18n' )
 				);
+
+				$this->set_spa_translations( 'swatches' );
 
 				$this->enqueue_script(
 					'shop',
 					EASYCOMMERCE_ASSETS_URL . 'public/js/shop.js',
-					array( 'jquery', 'easycommerce' )
+					array( 'jquery', 'easycommerce', 'wp-i18n' )
 				);
+
+				$this->set_spa_translations( 'shop' );
 			}
 
 			/**

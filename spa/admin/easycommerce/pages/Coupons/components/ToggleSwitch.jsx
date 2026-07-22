@@ -1,5 +1,6 @@
 import { twMerge } from "tailwind-merge";
 import { motion } from "framer-motion";
+import { __ } from "@wordpress/i18n";
 
 const ToggleSwitch = ({ checked, handleChecked, id = 'checkbox' }) => {
     return (
@@ -23,7 +24,7 @@ const ToggleSwitch = ({ checked, handleChecked, id = 'checkbox' }) => {
                         "absolute left-3 text-white font-bold font-inter text-xs" // Adjusted font size and spacing
                     )}
                 >
-                    Active
+                    { __( "Active", "easycommerce" ) }
                 </motion.span>
 
                 <motion.span
@@ -37,7 +38,7 @@ const ToggleSwitch = ({ checked, handleChecked, id = 'checkbox' }) => {
                         "absolute right-3 text-white font-medium font-inter text-xs" // Adjusted font size and spacing
                     )}
                 >
-                    Inactive
+                    { __( "Inactive", "easycommerce" ) }
                 </motion.span>
 
                 <motion.div

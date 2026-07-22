@@ -1,4 +1,5 @@
 import React from "react";
+import { __ } from "@wordpress/i18n";
 
 const StarRating = ({ rating, attributes }) => {
     const fullStar =
@@ -21,7 +22,7 @@ const StarRating = ({ rating, attributes }) => {
                 <span key={index}>
                     <img
                         src={fullStar}
-                        alt="full star"
+                        alt={__("full star", "easycommerce")}
                         style={{
                             height: starSizeStyle,
                             width: starSizeStyle,
@@ -35,7 +36,7 @@ const StarRating = ({ rating, attributes }) => {
                 <span key={index}>
                     <img
                         src={halfStar}
-                        alt="half star"
+                        alt={__("half star", "easycommerce")}
                         style={{
                             height: starSizeStyle,
                             width: starSizeStyle,
@@ -49,7 +50,7 @@ const StarRating = ({ rating, attributes }) => {
                 <span key={index}>
                     <img
                         src={emptyStar}
-                        alt="empty star"
+                        alt={__("empty star", "easycommerce")}
                         style={{
                             height: starSizeStyle,
                             width: starSizeStyle,

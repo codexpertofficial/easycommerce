@@ -1,0 +1,356 @@
+{
+    "translation-revision-date": "YEAR-MO-DA HO:MI+ZONE",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "build\/blocks.bundle.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "es_ES",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Cart": [
+                "Carrito"
+            ],
+            "No products found.": [
+                "No se han encontrado productos."
+            ],
+            "Categories": [
+                "Categor\u00edas"
+            ],
+            "Brands": [
+                "Marcas"
+            ],
+            "Checkout": [
+                "Finalizar compra"
+            ],
+            "Settings": [
+                "Ajustes"
+            ],
+            "Body": [
+                "Cuerpo"
+            ],
+            "Low to High": [
+                "De menor a mayor"
+            ],
+            "High to Low": [
+                "De mayor a menor"
+            ],
+            "Newest": [
+                "M\u00e1s recientes"
+            ],
+            "Oldest": [
+                "M\u00e1s antiguos"
+            ],
+            "Best Selling": [
+                "M\u00e1s vendidos"
+            ],
+            "Lowest Selling": [
+                "Menos vendidos"
+            ],
+            "Top rating": [
+                "Mejor valoraci\u00f3n"
+            ],
+            "Lowest rating": [
+                "Peor valoraci\u00f3n"
+            ],
+            "Reviews": [
+                "Rese\u00f1as"
+            ],
+            "Min Price": [
+                "Precio m\u00ednimo"
+            ],
+            "Max Price": [
+                "Precio m\u00e1ximo"
+            ],
+            "Search Icon": [
+                "Icono de b\u00fasqueda"
+            ],
+            "Sort by": [
+                "Ordenar por"
+            ],
+            "Add to cart": [
+                "A\u00f1adir al carrito"
+            ],
+            "Color": [
+                "Color"
+            ],
+            "Product Description": [
+                "Descripci\u00f3n del producto"
+            ],
+            "Billing Address": [
+                "Direcci\u00f3n de facturaci\u00f3n"
+            ],
+            "Your Cart": [
+                "Tu carrito"
+            ],
+            "Showing %d review": [
+                "Mostrando %d rese\u00f1a",
+                "Mostrando %d rese\u00f1as"
+            ],
+            "Write a review": [
+                "Escribe una rese\u00f1a"
+            ],
+            "Your email address will not be published. required fields are marked": [
+                "Tu direcci\u00f3n de correo electr\u00f3nico no se publicar\u00e1. Los campos obligatorios est\u00e1n marcados"
+            ],
+            "Write your review": [
+                "Escribe tu rese\u00f1a"
+            ],
+            "Submit Now": [
+                "Enviar ahora"
+            ],
+            "Product Details": [
+                "Detalles del producto"
+            ],
+            "Review": [
+                "Rese\u00f1a"
+            ],
+            "Quantity": [
+                "Cantidad"
+            ],
+            "This is your billing address being edited.": [
+                "Esta es tu direcci\u00f3n de facturaci\u00f3n en edici\u00f3n."
+            ],
+            "This is your billing address as saved.": [
+                "Esta es tu direcci\u00f3n de facturaci\u00f3n tal como est\u00e1 guardada."
+            ],
+            "Clear cart": [
+                "Vaciar carrito"
+            ],
+            "This is your cart being edited.": [
+                "Este es tu carrito en edici\u00f3n."
+            ],
+            "Font Size": [
+                "Tama\u00f1o de fuente"
+            ],
+            "Font Weight": [
+                "Grosor de fuente"
+            ],
+            "100 (Thin)": [
+                "100 (Fina)"
+            ],
+            "200 (Extra Light)": [
+                "200 (Extrafina)"
+            ],
+            "300 (Light)": [
+                "300 (Ligera)"
+            ],
+            "400 (Normal)": [
+                "400 (Normal)"
+            ],
+            "500 (Medium)": [
+                "500 (Media)"
+            ],
+            "600 (Semi Bold)": [
+                "600 (Seminegrita)"
+            ],
+            "700 (Bold)": [
+                "700 (Negrita)"
+            ],
+            "800 (Extra Bold)": [
+                "800 (Extranegrita)"
+            ],
+            "900 (Black)": [
+                "900 (Negra)"
+            ],
+            "Default": [
+                "Por defecto"
+            ],
+            "Normal": [
+                "Normal"
+            ],
+            "Bold": [
+                "Negrita"
+            ],
+            "Text Transform": [
+                "Transformaci\u00f3n del texto"
+            ],
+            "Uppercase": [
+                "May\u00fasculas"
+            ],
+            "Lowercase": [
+                "Min\u00fasculas"
+            ],
+            "Capitalize": [
+                "Capitalizar"
+            ],
+            "Text Style": [
+                "Estilo del texto"
+            ],
+            "Italic": [
+                "Cursiva"
+            ],
+            "Oblique": [
+                "Oblicua"
+            ],
+            "Text Decoration": [
+                "Decoraci\u00f3n del texto"
+            ],
+            "None": [
+                "Ninguna"
+            ],
+            "Underline": [
+                "Subrayado"
+            ],
+            "Overline": [
+                "L\u00ednea superior"
+            ],
+            "Line Through": [
+                "Tachado"
+            ],
+            "Line Height": [
+                "Altura de l\u00ednea"
+            ],
+            "Word Spacing": [
+                "Espaciado entre palabras"
+            ],
+            "Price Range": [
+                "Rango de precios"
+            ],
+            " Search": [
+                " Buscar"
+            ],
+            "full star": [
+                "estrella completa"
+            ],
+            "half star": [
+                "media estrella"
+            ],
+            "empty star": [
+                "estrella vac\u00eda"
+            ],
+            "Product Settings": [
+                "Ajustes del producto"
+            ],
+            "Products Per Page": [
+                "Productos por p\u00e1gina"
+            ],
+            "Grid Settings": [
+                "Ajustes de la cuadr\u00edcula"
+            ],
+            "Show Filters": [
+                "Mostrar filtros"
+            ],
+            "Show Pagination": [
+                "Mostrar paginaci\u00f3n"
+            ],
+            "Number of Columns": [
+                "N\u00famero de columnas"
+            ],
+            "Product Title": [
+                "T\u00edtulo del producto"
+            ],
+            "Text Color": [
+                "Color del texto"
+            ],
+            "Hover Text Color": [
+                "Color del texto al pasar el rat\u00f3n"
+            ],
+            "Product Category": [
+                "Categor\u00eda del producto"
+            ],
+            "Product Rating": [
+                "Valoraci\u00f3n del producto"
+            ],
+            "Star Size": [
+                "Tama\u00f1o de las estrellas"
+            ],
+            "Product Price": [
+                "Precio del producto"
+            ],
+            "Regular Price": [
+                "Precio normal"
+            ],
+            "Sale Price": [
+                "Precio rebajado"
+            ],
+            "Cart Button": [
+                "Bot\u00f3n del carrito"
+            ],
+            "Hover": [
+                "Al pasar el rat\u00f3n"
+            ],
+            "Background Color": [
+                "Color de fondo"
+            ],
+            "Focus Text Color": [
+                "Color del texto al enfocar"
+            ],
+            "Focus Background Color": [
+                "Color de fondo al enfocar"
+            ],
+            "Text Color (Hover)": [
+                "Color del texto (al pasar el rat\u00f3n)"
+            ],
+            "Background Color (Hover)": [
+                "Color de fondo (al pasar el rat\u00f3n)"
+            ],
+            "Checkout Button": [
+                "Bot\u00f3n de finalizar compra"
+            ],
+            "Add To Cart": [
+                "A\u00f1adir al carrito"
+            ],
+            "Show Sort By": [
+                "Mostrar \u00abOrdenar por\u00bb"
+            ],
+            "Description Color": [
+                "Color de la descripci\u00f3n"
+            ],
+            "Hover Description Color": [
+                "Color de la descripci\u00f3n al pasar el rat\u00f3n"
+            ],
+            "Post type is not product.": [
+                "El tipo de contenido no es producto."
+            ],
+            "Number of Gallery Item": [
+                "N\u00famero de elementos de la galer\u00eda"
+            ],
+            "Show Tax included": [
+                "Mostrar impuestos incluidos"
+            ],
+            "SKU:": [
+                "SKU:"
+            ],
+            "Show Rating": [
+                "Mostrar valoraci\u00f3n"
+            ],
+            "Show SKU": [
+                "Mostrar SKU"
+            ],
+            "Show Favourite": [
+                "Mostrar favoritos"
+            ],
+            "Styles": [
+                "Estilos"
+            ],
+            "Border": [
+                "Borde"
+            ],
+            "Only <strong>%d<\/strong> item left in stock": [
+                "Solo queda <strong>%d<\/strong> art\u00edculo en existencias",
+                "Solo quedan <strong>%d<\/strong> art\u00edculos en existencias"
+            ],
+            "Primary": [
+                "Principal"
+            ],
+            "Body Light": [
+                "Cuerpo claro"
+            ],
+            "Title": [
+                "T\u00edtulo"
+            ],
+            "Dropdown Icon": [
+                "Icono desplegable"
+            ],
+            "Showing %1$d-%2$d of %3$d Results": [
+                "Mostrando %1$d-%2$d de %3$d resultados"
+            ],
+            "Default Sorter": [
+                "Ordenaci\u00f3n por defecto"
+            ]
+        }
+    }
+}

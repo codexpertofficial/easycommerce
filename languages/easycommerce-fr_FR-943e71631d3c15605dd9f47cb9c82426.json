@@ -1,0 +1,57 @@
+{
+    "translation-revision-date": "YEAR-MO-DA HO:MI+ZONE",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "blocks\/shops-page\/template-2\/components\/Filters.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "fr_FR",
+                "plural-forms": "nplurals=2; plural=(n > 1);"
+            },
+            "Categories": [
+                "Cat\u00e9gories"
+            ],
+            "Brands": [
+                "Marques"
+            ],
+            "Low to High": [
+                "Du plus bas au plus \u00e9lev\u00e9"
+            ],
+            "High to Low": [
+                "Du plus \u00e9lev\u00e9 au plus bas"
+            ],
+            "Newest": [
+                "Plus r\u00e9cents"
+            ],
+            "Oldest": [
+                "Plus anciens"
+            ],
+            "Best Selling": [
+                "Meilleures ventes"
+            ],
+            "Lowest Selling": [
+                "Ventes les plus faibles"
+            ],
+            "Top rating": [
+                "Meilleures notes"
+            ],
+            "Lowest rating": [
+                "Notes les plus basses"
+            ],
+            "Search Icon": [
+                "Ic\u00f4ne de recherche"
+            ],
+            "Sort by": [
+                "Trier par"
+            ],
+            "Price Range": [
+                "Fourchette de prix"
+            ],
+            " Search": [
+                " Rechercher"
+            ]
+        }
+    }
+}

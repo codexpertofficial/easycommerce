@@ -114,7 +114,8 @@ class Cart extends API {
 			'redirect' => get_permalink( easycommerce_cart_redirect() ),
 		);
 
-		do_action( 'easycommerce_log', array( 'object' => 'cart', 'action' => 'add', 'meta' => array( 'hash' => $cart->get_hash(), 'item' => $cart->get_items() ), 'note' => count( $products ) . ' item added to cart' ) );
+		// translators: %d: number of items added to the cart.
+		do_action( 'easycommerce_log', array( 'object' => 'cart', 'action' => 'add', 'meta' => array( 'hash' => $cart->get_hash(), 'item' => $cart->get_items() ), 'note' => sprintf( _n( '%d item added to cart', '%d items added to cart', count( $products ), 'easycommerce' ), count( $products ) ) ) );
 		/**
 		 * Filter the response data before sending.
 		 *
@@ -301,6 +302,7 @@ class Cart extends API {
 		// remove previous selected shipping method
 		$cart->cart['data']['shipping_method'] = null;
 		if ( ! is_null( $billing_address ) ) {
+			$billing_address                          = $this->sanitize_address( $billing_address );
 			$cart->cart['data']['address']['billing'] = $billing_address;
 			$cart->save();
 
@@ -313,6 +315,7 @@ class Cart extends API {
 		$methods = apply_filters( 'easycommerce_shipping_methods', array(), $cart, $shipping_address, $billing_address, $request );
 
 		if ( ! is_null( $shipping_address ) ) {
+			$shipping_address                          = $this->sanitize_address( $shipping_address );
 			$cart->cart['data']['address']['shipping'] = $shipping_address;
 
 			if ( is_user_logged_in() ) {
@@ -645,7 +648,7 @@ class Cart extends API {
 		/**
 		 * Logs the cart clear event.
 		 */
-		do_action( 'easycommerce_log', array( 'object' => 'cart', 'action' => 'clear', 'object_id' => $cart->get_hash(), 'note' => 'Cart cleared' ) );
+		do_action( 'easycommerce_log', array( 'object' => 'cart', 'action' => 'clear', 'object_id' => $cart->get_hash(), 'note' => __( 'Cart cleared', 'easycommerce' ) ) );
 
 		$response_data = array(
 			'message' => __( 'Cart cleared.', 'easycommerce' ),
@@ -705,5 +708,29 @@ class Cart extends API {
 		$response_data = apply_filters( 'easycommerce_remind_abandoned_response', $response_data, $hash, $request );
 
 		$this->response_success( $response_data );
+	}
+
+	private function sanitize_address( $address ) {
+		if ( ! is_array( $address ) ) {
+			return $address;
+		}
+
+		$text_fields = array( 'first_name', 'last_name', 'address_1', 'address_2', 'city', 'state', 'country', 'postcode' );
+
+		foreach ( $text_fields as $field ) {
+			if ( isset( $address[ $field ] ) ) {
+				$address[ $field ] = sanitize_text_field( $address[ $field ] );
+			}
+		}
+
+		if ( isset( $address['email'] ) ) {
+			$address['email'] = sanitize_email( $address['email'] );
+		}
+
+		if ( isset( $address['phone'] ) ) {
+			$address['phone'] = sanitize_text_field( $address['phone'] );
+		}
+
+		return $address;
 	}
 }

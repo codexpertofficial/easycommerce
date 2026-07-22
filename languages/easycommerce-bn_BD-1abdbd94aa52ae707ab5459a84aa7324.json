@@ -1,0 +1,57 @@
+{
+    "translation-revision-date": "YEAR-MO-DA HO:MI+ZONE",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "blocks\/shops-page\/template-1\/components\/Filters.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "bn_BD",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Categories": [
+                "\u0995\u09cd\u09af\u09be\u099f\u09be\u0997\u09b0\u09bf"
+            ],
+            "Brands": [
+                "\u09ac\u09cd\u09b0\u09cd\u09af\u09be\u09a8\u09cd\u09a1"
+            ],
+            "Low to High": [
+                "\u0995\u09ae \u09a5\u09c7\u0995\u09c7 \u09ac\u09c7\u09b6\u09bf"
+            ],
+            "High to Low": [
+                "\u09ac\u09c7\u09b6\u09bf \u09a5\u09c7\u0995\u09c7 \u0995\u09ae"
+            ],
+            "Newest": [
+                "\u09a8\u09a4\u09c1\u09a8\u09a4\u09ae"
+            ],
+            "Oldest": [
+                "\u09aa\u09c1\u09b0\u09be\u09a4\u09a8\u09a4\u09ae"
+            ],
+            "Best Selling": [
+                "\u09b8\u09b0\u09cd\u09ac\u09be\u09a7\u09bf\u0995 \u09ac\u09bf\u0995\u09cd\u09b0\u09bf\u09a4"
+            ],
+            "Lowest Selling": [
+                "\u09b8\u09b0\u09cd\u09ac\u09a8\u09bf\u09ae\u09cd\u09a8 \u09ac\u09bf\u0995\u09cd\u09b0\u09bf\u09a4"
+            ],
+            "Top rating": [
+                "\u09b8\u09b0\u09cd\u09ac\u09cb\u099a\u09cd\u099a \u09b0\u09c7\u099f\u09bf\u0982"
+            ],
+            "Lowest rating": [
+                "\u09b8\u09b0\u09cd\u09ac\u09a8\u09bf\u09ae\u09cd\u09a8 \u09b0\u09c7\u099f\u09bf\u0982"
+            ],
+            "Search Icon": [
+                "\u0985\u09a8\u09c1\u09b8\u09a8\u09cd\u09a7\u09be\u09a8 \u0986\u0987\u0995\u09a8"
+            ],
+            "Sort by": [
+                "\u09b8\u09be\u099c\u09be\u09a8"
+            ],
+            "Price Range": [
+                "\u09a6\u09be\u09ae\u09c7\u09b0 \u09aa\u09b0\u09bf\u09b8\u09b0"
+            ],
+            " Search": [
+                " \u0985\u09a8\u09c1\u09b8\u09a8\u09cd\u09a7\u09be\u09a8"
+            ]
+        }
+    }
+}

@@ -85,9 +85,9 @@ const NoticeItem = ({ notice, onDismiss }) => {
             {(notice.button && notice.url) && (
                 <a
                     href={notice.url}
-                    target={notice.target || "_blank"}
+                    target={notice.target || "_self"}
                     rel="noopener noreferrer"
-                    className={`${config.buttonBgColor} block ${config.buttonTextColor} text-center text-sm py-2 px-3 rounded-[10px] max-w-[148px] 2xl:max-h-[36px]`}
+                    className={`${config.buttonBgColor} block ${config.buttonTextColor} no-underline text-center text-sm py-2 px-3 rounded-[10px] 2xl:max-h-[36px]`}
                 >
                     {notice.button}
                 </a>

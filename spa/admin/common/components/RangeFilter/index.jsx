@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { __ } from "@wordpress/i18n";
 import CustomDate from "./CustomDate";
 
 // stat icons
@@ -88,7 +89,7 @@ const RangeFilter = ({
                             : "text-base"
                         }`}
                     >
-                        {filterLabel || "Select a range"}
+                        {filterLabel || __( 'Select a range', 'easycommerce' )}
                     </p>
                     <img src={downArrow} className="w-3 h-auto" />
                 </span>

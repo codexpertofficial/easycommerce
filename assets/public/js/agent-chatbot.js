@@ -1,13 +1,16 @@
 (function () {
     'use strict';
 
+    var __       = wp.i18n.__;
+    var sprintf  = wp.i18n.sprintf;
+
     var SESSION_KEY  = 'ec_agent_session_id';
     var HISTORY_KEY  = 'ec_agent_history';
     var panel, messages, input, sendBtn, bubble, typingEl;
     var sending = false;
 
     var cfg = (typeof EC_AGENT !== 'undefined') ? EC_AGENT : {};
-    var agentName    = cfg.name     || 'AI Shopping Assistant';
+    var agentName    = cfg.name     || __( 'AI Shopping Assistant', 'easycommerce' );
     var agentAvatar  = cfg.avatar   || '';
     var position     = cfg.position || 'right';
     var primaryColor = cfg.color    || '#7351FD';
@@ -155,7 +158,7 @@
         if (role === 'assistant') {
             var html = markdownToHtml(text);
             if (orderUrl) {
-                html += '<br><br><a href="' + escapeHtml(orderUrl) + '" target="_blank" rel="noopener noreferrer" class="ec-agent-order-btn">Complete your order →</a>';
+                html += '<br><br><a href="' + escapeHtml(orderUrl) + '" target="_blank" rel="noopener noreferrer" class="ec-agent-order-btn">' + escapeHtml( __( 'Complete your order →', 'easycommerce' ) ) + '</a>';
             }
             bub.innerHTML = html;
         } else {
@@ -252,7 +255,7 @@
                 setSending(false);
 
                 if (!data.session_id && !data.reply) {
-                    appendMessage('assistant', 'Sorry, something went wrong. Please try again.');
+                    appendMessage('assistant', __( 'Sorry, something went wrong. Please try again.', 'easycommerce' ));
                     return;
                 }
 
@@ -262,7 +265,7 @@
             .catch(function () {
                 hideTyping();
                 setSending(false);
-                appendMessage('assistant', 'Connection error. Please try again.');
+                appendMessage('assistant', __( 'Connection error. Please try again.', 'easycommerce' ));
             });
     }
 
@@ -304,7 +307,8 @@
         // Floating bubble
         bubble = document.createElement('button');
         bubble.id = 'ec-agent-bubble';
-        bubble.setAttribute('aria-label', 'Open ' + agentName);
+        // translators: %s: AI shopping agent name.
+        bubble.setAttribute('aria-label', sprintf( __( 'Open %s', 'easycommerce' ), agentName ));
         bubble.innerHTML =
             '<svg class="ec-agent-chat-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">' +
             '<path d="M12 2C6.477 2 2 6.253 2 11.5c0 2.304.87 4.41 2.304 6.032L3 21l3.758-1.22A10.12 10.12 0 0012 21c5.523 0 10-4.253 10-9.5S17.523 2 12 2z"/>' +
@@ -325,13 +329,13 @@
             '<div class="ec-agent-avatar">' + buildAvatarHtml(38) + '</div>' +
             '<div class="ec-agent-header-text">' +
             '<h3>' + escapeHtml(agentName) + '</h3>' +
-            '<p class="ec-agent-status"><span class="ec-agent-status-dot"></span>Online</p>' +
+            '<p class="ec-agent-status"><span class="ec-agent-status-dot"></span>' + escapeHtml( __( 'Online', 'easycommerce' ) ) + '</p>' +
             '</div>' +
             '<div class="ec-agent-header-actions">' +
-            '<button id="ec-agent-clear" title="New conversation">' +
+            '<button id="ec-agent-clear" title="' + escapeHtml( __( 'New conversation', 'easycommerce' ) ) + '">' +
             '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 12a8 8 0 018-8V2.5M20 12a8 8 0 01-8 8v1.5M14 2.5l-2-2-2 2M10 21.5l2 2 2-2" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg>' +
             '</button>' +
-            '<button id="ec-agent-minimize" title="Minimize">' +
+            '<button id="ec-agent-minimize" title="' + escapeHtml( __( 'Minimize', 'easycommerce' ) ) + '">' +
             '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg>' +
             '</button>' +
             '</div>';
@@ -344,13 +348,13 @@
 
         input = document.createElement('textarea');
         input.id = 'ec-agent-input';
-        input.placeholder = 'Ask about products, orders…';
+        input.placeholder = __( 'Ask about products, orders…', 'easycommerce' );
         input.rows = 1;
-        input.setAttribute('aria-label', 'Message');
+        input.setAttribute('aria-label', __( 'Message', 'easycommerce' ));
 
         sendBtn = document.createElement('button');
         sendBtn.id = 'ec-agent-send';
-        sendBtn.setAttribute('aria-label', 'Send');
+        sendBtn.setAttribute('aria-label', __( 'Send', 'easycommerce' ));
         sendBtn.innerHTML =
             '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">' +
             '<path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/>' +
@@ -371,7 +375,8 @@
             });
             scrollToBottom();
         } else {
-            appendMessage('assistant', 'Hi! 👋 I\'m ' + agentName + '. How can I help you today?');
+            // translators: %s: AI shopping agent name.
+            appendMessage('assistant', sprintf( __( 'Hi! 👋 I\'m %s. How can I help you today?', 'easycommerce' ), agentName ));
         }
 
         bubble.addEventListener('click', togglePanel);
@@ -381,7 +386,8 @@
         document.getElementById('ec-agent-clear').addEventListener('click', function () {
             clearSession();
             messages.innerHTML = '';
-            appendMessage('assistant', 'Hi! 👋 I\'m ' + agentName + '. How can I help you today?');
+            // translators: %s: AI shopping agent name.
+            appendMessage('assistant', sprintf( __( 'Hi! 👋 I\'m %s. How can I help you today?', 'easycommerce' ), agentName ));
         });
 
         sendBtn.addEventListener('click', sendMessage);

@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useEffect } from 'react';
-import { __ } from '@wordpress/i18n';
+import { __, sprintf } from '@wordpress/i18n';
 import { toast } from 'react-toastify';
 
 // Components
@@ -66,7 +66,7 @@ const AddProduct = () => {
 		const rawData = Object.fromEntries(formData.entries());
 
 		if (rawData.product_title === '') {
-			toast.error('Product title is required');
+			toast.error(__('Product title is required', 'easycommerce'));
 			easycommerce_modal(false);
 			return;
 		}
@@ -106,7 +106,7 @@ const AddProduct = () => {
 			try {
 				variationData = JSON.parse(variationData);
 			} catch (e) {
-				toast.error('Invalid Pricing Data');
+				toast.error(__('Invalid Pricing Data', 'easycommerce'));
 				easycommerce_modal(false);
 				return;
 			}
@@ -143,7 +143,10 @@ const AddProduct = () => {
 			});
 
 			if (isDuplicateName) {
-				toast.error(`Duplicate pricing plan found: ${variationData.name}`);
+				toast.error(
+					// translators: %s: pricing plan name.
+					sprintf(__('Duplicate pricing plan found: %s', 'easycommerce'), variationData.name)
+				);
 				easycommerce_modal(false);
 				return;
 			}
@@ -188,7 +191,8 @@ const AddProduct = () => {
 
 				if (attributesEqual(existing.attributes, variationData.attributes)) {
 					toast.error(
-						`Duplicate attributes found in ${variationData.name} and ${existing.name}`
+						// translators: 1: new variation name, 2: existing variation name.
+						sprintf(__('Duplicate attributes found in %1$s and %2$s', 'easycommerce'), variationData.name, existing.name)
 					);
 					easycommerce_modal(false);
 					return true; // stops .some and sets hasMatching to true
@@ -216,8 +220,8 @@ const AddProduct = () => {
 			.then((data) => {
 				easycommerce_modal(false);
 				if (data.success && data.data?.product?.id) {
-					status == 'publish' && toast.success('Product is live now!');
-					status == 'draft' && toast.success('Product saved as draft!');
+					status == 'publish' && toast.success(__('Product is live now!', 'easycommerce'));
+					status == 'draft' && toast.success(__('Product saved as draft!', 'easycommerce'));
 					if (data.data.product.slug) {
 						setProductSlug(data.data.product.slug);
 						setTimeout(() => {
@@ -238,7 +242,7 @@ const AddProduct = () => {
 			})
 			.catch((error) => {
 				easycommerce_modal(false);
-				toast.error('Product Creation Failed');
+				toast.error(__('Product Creation Failed', 'easycommerce'));
 				console.error('Error creating product:', error);
 			});
 	}, []);
@@ -268,7 +272,7 @@ const AddProduct = () => {
 						<div class="p-6 bg-white rounded-xl mb-6">
 							<TextField
 								name={`product_title`}
-								placeholder={`Add your product title here`}
+								placeholder={__('Add your product title here', 'easycommerce')}
 								value={productTitle}
 								onChange={(e) => setProductTitle(e.target.value)}
 								className="h-ec-input"

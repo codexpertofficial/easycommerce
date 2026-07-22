@@ -1,4 +1,5 @@
 import React from "react";
+import { __ } from "@wordpress/i18n";
 
 const BillingAddress = ({
 	data,
@@ -17,7 +18,7 @@ const BillingAddress = ({
 					<path strokeLinecap="round" strokeLinejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" />
 				</svg>
 				<h3 className="easycommerce-dashboard-address-title">
-					Billing Address
+					{__( "Billing Address", "easycommerce" )}
 				</h3>
 			</div>
 			<div className="easycommerce-dashboard-address-wrapper grid grid-cols-1 sm:grid-cols-2 gap-5 p-6">
@@ -25,14 +26,14 @@ const BillingAddress = ({
 					<label
 						htmlFor="billing_first_name"
 						className="font-inter font-medium text-base leading-[26px] text-ec-body">
-						First Name
+						{__( "First Name", "easycommerce" )}
 					</label>
 					<input
 						type="text"
 						name="first_name"
 						id="billing_first_name"
 						className="easycommerce-dashboard-input"
-						placeholder="Enter your first name"
+						placeholder={__( "Enter your first name", "easycommerce" )}
 						value={data.first_name || ""}
 						onChange={handleBillingDataChange}
 						required
@@ -42,14 +43,14 @@ const BillingAddress = ({
 					<label
 						htmlFor="billing_last_name"
 						className="font-inter font-medium text-base leading-[26px] text-ec-body">
-						Last Name
+						{__( "Last Name", "easycommerce" )}
 					</label>
 					<input
 						type="text"
 						name="last_name"
 						id="billing_last_name"
 						className="easycommerce-dashboard-input"
-						placeholder="Enter your last name"
+						placeholder={__( "Enter your last name", "easycommerce" )}
 						value={data.last_name}
 						onChange={handleBillingDataChange}
 						required
@@ -59,14 +60,14 @@ const BillingAddress = ({
 					<label
 						htmlFor="billing_email"
 						className="font-inter font-medium text-base leading-[26px] text-ec-body">
-						Email
+						{__( "Email", "easycommerce" )}
 					</label>
 					<input
 						type="email"
 						name="email"
 						id="billing_email"
 						className="easycommerce-dashboard-input"
-						placeholder="Enter your email"
+						placeholder={__( "Enter your email", "easycommerce" )}
 						value={data.email}
 						onChange={handleBillingDataChange}
 						required
@@ -76,14 +77,14 @@ const BillingAddress = ({
 					<label
 						htmlFor="billing_company"
 						className="font-inter font-medium text-base leading-[26px] text-ec-body">
-						Company Name
+						{__( "Company Name", "easycommerce" )}
 					</label>
 					<input
 						type="text"
 						name="company"
 						id="billing_company"
 						className="easycommerce-dashboard-input"
-						placeholder="Enter company name"
+						placeholder={__( "Enter company name", "easycommerce" )}
 						value={data.company}
 						onChange={handleBillingDataChange}
 					/>
@@ -92,14 +93,14 @@ const BillingAddress = ({
 					<label
 						htmlFor="billing_phone"
 						className="font-inter font-medium text-base leading-[26px] text-ec-body">
-						Phone Number
+						{__( "Phone Number", "easycommerce" )}
 					</label>
 					<input
 						type="tel"
 						name="phone"
 						id="billing_phone"
 						className="easycommerce-dashboard-input"
-						placeholder="Enter your phone number"
+						placeholder={__( "Enter your phone number", "easycommerce" )}
 						value={data.phone}
 						onChange={handleBillingDataChange}
 					/>
@@ -108,14 +109,14 @@ const BillingAddress = ({
 					<label
 						htmlFor="billing_address_1"
 						className="font-inter font-medium text-base leading-[26px] text-ec-body">
-						Address Line 1
+						{__( "Address Line 1", "easycommerce" )}
 					</label>
 					<input
 						type="text"
 						name="address_1"
 						id="billing_address_1 "
 						className="easycommerce-dashboard-input"
-						placeholder="Enter address"
+						placeholder={__( "Enter address", "easycommerce" )}
 						value={data.address_1}
 						onChange={handleBillingDataChange}
 					/>
@@ -124,14 +125,14 @@ const BillingAddress = ({
 					<label
 						htmlFor="billing_address_2"
 						className="font-inter font-medium text-base leading-[26px] text-ec-body">
-						Address Line 2
+						{__( "Address Line 2", "easycommerce" )}
 					</label>
 					<input
 						type="text"
 						name="address_2"
 						id="billing_address_2"
 						className="easycommerce-dashboard-input"
-						placeholder="Apartment, suite, etc."
+						placeholder={__( "Apartment, suite, etc.", "easycommerce" )}
 						value={data.address_2}
 						onChange={handleBillingDataChange}
 					/>
@@ -140,7 +141,7 @@ const BillingAddress = ({
 					<label
 						htmlFor="billing_country"
 						className="font-inter font-medium text-base leading-[26px] text-ec-body">
-						Country
+						{__( "Country", "easycommerce" )}
 					</label>
 					<select
 						name="country"
@@ -152,7 +153,7 @@ const BillingAddress = ({
 							fetchAndStoreStates(e.target.value, "billing");
 						}}
 						required>
-						<option value="">Select your country</option>
+						<option value="">{__( "Select your country", "easycommerce" )}</option>
 						{EASYCOMMERCE.shipping.countries &&
 							Object.entries(EASYCOMMERCE.shipping.countries).map(
 								([code, countryName]) => (
@@ -167,7 +168,7 @@ const BillingAddress = ({
 					<label
 						htmlFor="billing_state"
 						className="font-inter font-medium text-base leading-[26px] text-ec-body">
-						State/Province
+						{__( "State/Province", "easycommerce" )}
 					</label>
 					<select
 						name="state"
@@ -182,7 +183,7 @@ const BillingAddress = ({
 								"billing"
 							);
 						}}>
-						<option value="">Select State</option>
+						<option value="">{__( "Select State", "easycommerce" )}</option>
 						{billingStates.length > 0 &&
 							billingStates.map((state) => (
 								<option key={state} value={state}>
@@ -195,7 +196,7 @@ const BillingAddress = ({
 					<label
 						htmlFor="billing_city"
 						className="font-inter font-medium text-base leading-[26px] text-ec-body">
-						City
+						{__( "City", "easycommerce" )}
 					</label>
 					<select
 						name="city"
@@ -203,7 +204,7 @@ const BillingAddress = ({
 						className="easycommerce-dashboard-input-select"
 						onChange={handleBillingDataChange}
 						value={data.city}>
-						<option value="">Select City</option>
+						<option value="">{__( "Select City", "easycommerce" )}</option>
 						{billingCities.length > 0 &&
 							billingCities.map((city) => (
 								<option key={city} value={city}>
@@ -216,14 +217,14 @@ const BillingAddress = ({
 					<label
 						htmlFor="billing_postcode"
 						className="font-inter font-medium text-base leading-[26px] text-ec-body">
-						ZIP/Postal Code
+						{__( "ZIP/Postal Code", "easycommerce" )}
 					</label>
 					<input
 						type="text"
 						name="postcode"
 						id="billing_postcode"
 						className="easycommerce-dashboard-input"
-						placeholder="Enter postal code"
+						placeholder={__( "Enter postal code", "easycommerce" )}
 						value={data.postcode}
 						onChange={handleBillingDataChange}
 					/>
@@ -233,7 +234,7 @@ const BillingAddress = ({
 				<button
 					className="easycommerce-dashboard-form-btn save"
 					type="submit">
-					Update Address
+					{__( "Update Address", "easycommerce" )}
 				</button>
 			</div>
 			</div>

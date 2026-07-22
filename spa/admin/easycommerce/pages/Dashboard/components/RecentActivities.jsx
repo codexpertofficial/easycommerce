@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import apiFetch from '@wordpress/api-fetch';
 import TableSkeleton from "../../../../common/TableSkeleton";
 import { addQueryArgs } from '@wordpress/url';
+import { __ } from '@wordpress/i18n';
 const tabs = ['All', 'Orders', 'Refunds', 'Reviews', 'Others'];
 
 const RecentActivities = ({ range = 'last-30' }) => {
@@ -102,7 +103,7 @@ const RecentActivities = ({ range = 'last-30' }) => {
                     {isLoading ? (
                         <TableSkeleton numberOfRows={5} SkeletonHeight={35} />
                     ) : filtered.length === 0 ? (
-                        <p className="text-sm text-center text-[#7A7A99] py-4">No activities found.</p>
+                        <p className="text-sm text-center text-[#7A7A99] py-4">{__( 'No activities found.', 'easycommerce' )}</p>
                     ) : (
                         filtered.map((item, index) => (
                             <div key={index} className="flex gap-[10px] py-4 border-b border-[#F8F8F8] last:border-0">

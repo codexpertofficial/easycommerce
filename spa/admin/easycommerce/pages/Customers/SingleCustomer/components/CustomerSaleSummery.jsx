@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { __ } from "@wordpress/i18n";
 import SalesChart from "./SalesChart";
 
 const getCurrentMonthDates = () => {
@@ -69,12 +70,12 @@ const CustomerSaleSummery = ({ id }) => {
 
                 setSalesData([
                     {
-                        id: "Purchase Amount",
+                        id: __("Purchase Amount", "easycommerce"),
                         color: "#06D264",
                         data: sales,
                     },
                     {
-                        id: "Order Count",
+                        id: __("Order Count", "easycommerce"),
                         color: "#FF1074",
                         data: counts,
                     },

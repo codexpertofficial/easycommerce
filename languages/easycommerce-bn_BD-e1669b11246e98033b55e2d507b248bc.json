@@ -1,0 +1,30 @@
+{
+    "translation-revision-date": "YEAR-MO-DA HO:MI+ZONE",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "blocks\/single-product\/title\/inspector.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "bn_BD",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Body": [
+                "\u09ac\u09a1\u09bf"
+            ],
+            "Styles": [
+                "\u09b8\u09cd\u099f\u09be\u0987\u09b2"
+            ],
+            "Primary": [
+                "\u09aa\u09cd\u09b0\u09be\u0987\u09ae\u09be\u09b0\u09bf"
+            ],
+            "Body Light": [
+                "\u09ac\u09a1\u09bf \u09b2\u09be\u0987\u099f"
+            ],
+            "Title": [
+                "\u09b6\u09bf\u09b0\u09cb\u09a8\u09be\u09ae"
+            ]
+        }
+    }
+}

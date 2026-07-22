@@ -1,0 +1,167 @@
+{
+    "translation-revision-date": "YEAR-MO-DA HO:MI+ZONE",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "build\/editor.bundle.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "fr_FR",
+                "plural-forms": "nplurals=2; plural=(n > 1);"
+            },
+            "Pro": [
+                "Pro"
+            ],
+            "Smart Search": [
+                "Recherche intelligente"
+            ],
+            "Your Email": [
+                "Votre e-mail"
+            ],
+            "Connect AI": [
+                "Connecter l'AI"
+            ],
+            "Instruction": [
+                "Instruction"
+            ],
+            "AI Writer": [
+                "AI Writer"
+            ],
+            "Image Editor": [
+                "\u00c9diteur d'images"
+            ],
+            "Close": [
+                "Fermer"
+            ],
+            "Enter your Email": [
+                "Saisissez votre e-mail"
+            ],
+            "Uses %d credit.": [
+                "Utilise %d cr\u00e9dit.",
+                "Utilise %d cr\u00e9dits."
+            ],
+            "%d Credit": [
+                "%d cr\u00e9dit",
+                "%d cr\u00e9dits"
+            ],
+            "Remaining": [
+                "Restant"
+            ],
+            "No credits available": [
+                "Aucun cr\u00e9dit disponible"
+            ],
+            "Two AI Agents, One Free Key": [
+                "Deux agents AI, une seule cl\u00e9 gratuite"
+            ],
+            "Connect a free API key -": [
+                "Connectez une cl\u00e9 API gratuite -"
+            ],
+            "100 AI credits": [
+                "100 cr\u00e9dits AI"
+            ],
+            "free, more with": [
+                "gratuits, davantage avec"
+            ],
+            "Store Copilot - For You": [
+                "Store Copilot - pour vous"
+            ],
+            "Chat to run your store: ask about sales, create and edit products, and update orders - in plain English, with your approval.": [
+                "Discutez pour g\u00e9rer votre boutique : posez des questions sur les ventes, cr\u00e9ez et modifiez des produits, et mettez \u00e0 jour les commandes - en langage naturel, avec votre approbation."
+            ],
+            "Shopping Agent - For Your Shoppers": [
+                "Shopping Agent - pour vos acheteurs"
+            ],
+            "A 24\/7 storefront agent that helps customers find the right product, answers their questions, and places orders for them.": [
+                "Un agent de boutique disponible 24h\/24 et 7j\/7 qui aide les clients \u00e0 trouver le bon produit, r\u00e9pond \u00e0 leurs questions et passe des commandes \u00e0 leur place."
+            ],
+            "Plus": [
+                "Plus"
+            ],
+            "& more.": [
+                "et plus encore."
+            ],
+            "Each AI request transmits only the relevant records - the item you're working on, or a shopper's query and its products - to EasyCommerce's AI service. Your bulk customer and order data is never uploaded, sold, or used to train models.": [
+                "Chaque requ\u00eate AI ne transmet que les donn\u00e9es pertinentes - l'\u00e9l\u00e9ment sur lequel vous travaillez, ou la requ\u00eate d'un acheteur et les produits associ\u00e9s - au service AI d'EasyCommerce. L'ensemble de vos donn\u00e9es clients et commandes n'est jamais transf\u00e9r\u00e9, vendu ni utilis\u00e9 pour entra\u00eener des mod\u00e8les."
+            ],
+            "Learn more.": [
+                "En savoir plus."
+            ],
+            "I have an API key": [
+                "J'ai une cl\u00e9 API"
+            ],
+            "I want an API key": [
+                "Je veux une cl\u00e9 API"
+            ],
+            "Please fill all the fields": [
+                "Veuillez remplir tous les champs"
+            ],
+            "Enter Your Connection Key": [
+                "Saisissez votre cl\u00e9 de connexion"
+            ],
+            "The link in your email connects AI automatically. To do it manually, paste the key we emailed below.": [
+                "Le lien dans votre e-mail connecte l'AI automatiquement. Pour le faire manuellement, collez ci-dessous la cl\u00e9 que nous vous avons envoy\u00e9e par e-mail."
+            ],
+            "Your Key": [
+                "Votre cl\u00e9"
+            ],
+            "Paste your key": [
+                "Collez votre cl\u00e9"
+            ],
+            "I don't have a key": [
+                "Je n'ai pas de cl\u00e9"
+            ],
+            "Check your email and click the link to connect AI.": [
+                "Consultez votre e-mail et cliquez sur le lien pour connecter l'AI."
+            ],
+            "Connect EasyCommerce AI": [
+                "Connecter EasyCommerce AI"
+            ],
+            "Enter your name and email - we'll send a one-click link to connect AI, plus a backup key.": [
+                "Saisissez votre nom et votre e-mail - nous vous enverrons un lien en un clic pour connecter l'AI, ainsi qu'une cl\u00e9 de secours."
+            ],
+            "Your Name": [
+                "Votre nom"
+            ],
+            "Enter your Name": [
+                "Saisissez votre nom"
+            ],
+            "Email My Link": [
+                "M'envoyer le lien par e-mail"
+            ],
+            "I already have a key": [
+                "J'ai d\u00e9j\u00e0 une cl\u00e9"
+            ],
+            "Invalid response from AI service. Please try again.": [
+                "R\u00e9ponse non valide du service AI. Veuillez r\u00e9essayer."
+            ],
+            "You have used all your free credits.": [
+                "Vous avez utilis\u00e9 tous vos cr\u00e9dits gratuits."
+            ],
+            "Upgrade Now": [
+                "Mettre \u00e0 niveau maintenant"
+            ],
+            "AI Template Builder": [
+                "Constructeur de mod\u00e8les IA"
+            ],
+            "AI Assistant": [
+                "Assistant IA"
+            ],
+            "Failed to generate content. Please try again.": [
+                "\u00c9chec de la g\u00e9n\u00e9ration du contenu. Veuillez r\u00e9essayer."
+            ],
+            "Describe what you want to build": [
+                "D\u00e9crivez ce que vous souhaitez cr\u00e9er"
+            ],
+            "Example: Make it 2 columns with a big gallery section at left.": [
+                "Exemple : mettez-le sur 2 colonnes avec une grande galerie \u00e0 gauche."
+            ],
+            "Building...": [
+                "Cr\u00e9ation en cours..."
+            ],
+            "Build": [
+                "Cr\u00e9er"
+            ]
+        }
+    }
+}

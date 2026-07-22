@@ -24,14 +24,14 @@ class Importer extends API {
 	public function upload_csv( $request ) {
 		$files = $request->get_file_params();
 		if ( empty( $files['csv_file'] ) ) {
-			return $this->response_error( 'No file uploaded', 400 );
+			return $this->response_error( __( 'No file uploaded', 'easycommerce' ), 400 );
 		}
 
 		$file = $files['csv_file'];
 		$file_path = $file['tmp_name'];
 
 		if ( empty( $file_path ) || ! is_uploaded_file( $file_path ) ) {
-			return $this->response_error( 'Invalid file', 400 );
+			return $this->response_error( __( 'Invalid file', 'easycommerce' ), 400 );
 		}
 
 		// Process CSV
@@ -52,7 +52,7 @@ class Importer extends API {
 
 			update_option( 'easycommerce_importer_rows', $rows );
 		} else {
-			return $this->response_error( 'Failed to read CSV file', 400 );
+			return $this->response_error( __( 'Failed to read CSV file', 'easycommerce' ), 400 );
 		}
 
 		$headers = get_option( 'easycommerce_importer_headers', array() );
@@ -60,7 +60,7 @@ class Importer extends API {
 		$data = array(
 			'headers' => $headers,
 			'row_count' => count( $rows ),
-			'message' => 'CSV uploaded successfully'
+			'message' => __( 'CSV uploaded successfully', 'easycommerce' )
 		);
 
 		/**
@@ -78,14 +78,14 @@ class Importer extends API {
 	public function map_columns( $request ) {
 		$mapping = $request->get_param( 'mapping' );
 		if ( ! is_array( $mapping ) ) {
-			return $this->response_error( 'Invalid mapping data', 400 );
+			return $this->response_error( __( 'Invalid mapping data', 'easycommerce' ), 400 );
 		}
 
 		$sanitized_mapping = $this->sanitize( $mapping, 'array' );
 		update_option( 'easycommerce_importer_mapping', $sanitized_mapping );
 
 		$data = array(
-			'message' => 'Column mapping saved successfully'
+			'message' => __( 'Column mapping saved successfully', 'easycommerce' )
 		);
 
 		/**
@@ -163,7 +163,7 @@ class Importer extends API {
 		$all_imports = get_option( 'easycommerce_import_statuses', array() );
 
 		if ( ! isset( $all_imports[ $import_id ] ) ) {
-			return $this->response_error( 'Import session not found', 404 );
+			return $this->response_error( __( 'Import session not found', 'easycommerce' ), 404 );
 		}
 
 		$status = $all_imports[ $import_id ];
@@ -184,13 +184,40 @@ class Importer extends API {
 		), );
 	}
 
-	public function create_product( $row ) {
+	public function create_product( $row, $is_demo = false ) {
 		$product_headers = get_option( 'easycommerce_importer_headers', array() );
 		$product_mapping = get_option( 'easycommerce_importer_mapping', array() );
 
 		foreach ( $product_headers as $key => $value ) {
 			$header = str_replace( ' ', '_', $value );
 			$$header = isset( $row[ $key ] ) ? $this->sanitize( $row[ $key ] ) : '';
+		}
+
+		// Parse the downloads column into [{ name, media_id }] for digital products.
+		// Format: "Name|filename.ext" pairs, comma-separated. Files are bundled under
+		// samples/dummy-data/downloads/ and sideloaded from disk (demo content only).
+		$product_downloads = array();
+		if ( ! empty( $downloads ) ) {
+			foreach ( explode( ',', $downloads ) as $pair ) {
+				$pair = trim( $pair );
+				if ( '' === $pair ) {
+					continue;
+				}
+				$bits          = array_map( 'trim', explode( '|', $pair ) );
+				$download_name = $bits[0] ?? '';
+				$download_file = $bits[1] ?? '';
+				if ( '' === $download_file ) {
+					continue;
+				}
+				$media_id = $this->sideload_local_file( $download_file, 'downloads' );
+				if ( is_wp_error( $media_id ) ) {
+					continue;
+				}
+				$product_downloads[] = array(
+					'media_id' => $media_id,
+					'name'     => '' !== $download_name ? $download_name : $download_file,
+				);
+			}
 		}
 
 		// Process product-level attributes
@@ -218,8 +245,7 @@ class Importer extends API {
 			'attributes_values_value' => $this->sanitize( explode( ',', $variation_attribute_values_value ?? '' ), 'array' ),
 			'is_managed_stocks' => $this->sanitize( explode( ',', $managed_stocks ?? '' ), 'array' ),
 			'tax_classes' => $this->sanitize( explode( ',', $tax_classes ?? '' ), 'array' ),
-			'thumbnail_ids' => $this->get_img_ids( $thumbnail_urls ?? '' ),
-			'thumbnail_urls' => $this->sanitize( explode( ',', $thumbnail_urls ?? '' ), 'array' ),
+			'thumbnail_ids' => $this->get_img_ids( $thumbnail_urls ?? '', true ),
 			'width_values' => $this->sanitize( explode( ',', $width_values ?? '' ), 'array' ),
 			'width_units' => $this->sanitize( explode( ',', $width_units ?? '' ), 'array' ),
 			'height_values' => $this->sanitize( explode( ',', $height_values ?? '' ), 'array' ),
@@ -228,6 +254,7 @@ class Importer extends API {
 			'weight_units' => $this->sanitize( explode( ',', $weight_units ?? '' ), 'array' ),
 			'length_values' => $this->sanitize( explode( ',', $length_values ?? '' ), 'array' ),
 			'length_units' => $this->sanitize( explode( ',', $length_units ?? '' ), 'array' ),
+			'product_downloads' => $product_downloads,
 		);
 
 		$has_explicit_variations = ! empty( $variation_data['regular_prices'] ) && count( array_filter( $variation_data['regular_prices'] ) ) > 0;
@@ -312,6 +339,11 @@ class Importer extends API {
 		$product = new Product();
 		$id = $product->update( $args );
 
+		// Tag demo content so it can be found and cleanly removed later.
+		if ( $is_demo && $id ) {
+			$this->tag_demo_content( $id, $args, $variations );
+		}
+
 		/**
 		 * Fires after a product is imported.
 		 *
@@ -322,6 +354,196 @@ class Importer extends API {
 		do_action( 'easycommerce_product_imported', $id, $args );
 
 		return $id;
+	}
+
+	/**
+	 * Meta key that flags demo products, their categories and their media.
+	 */
+	const DEMO_META_KEY = '_easycommerce_demo';
+
+	/**
+	 * Flag an imported product, its media and its categories as demo content.
+	 *
+	 * Keyed removal (see remove_demo()) relies on every demo artefact carrying
+	 * this meta, so nothing bundled by the demo importer lingers after cleanup.
+	 *
+	 * @param int   $id         Product ID.
+	 * @param array $args       Product args passed to Product::update().
+	 * @param array $variations Built variation data (for variation thumbnails + downloads).
+	 */
+	private function tag_demo_content( $id, $args, $variations ) {
+		update_post_meta( $id, self::DEMO_META_KEY, 1 );
+
+		// Collect every attachment the product references.
+		$attachment_ids = array();
+
+		if ( ! empty( $args['thumbnail'] ) ) {
+			$attachment_ids = array_merge( $attachment_ids, (array) $args['thumbnail'] );
+		}
+
+		if ( ! empty( $args['meta']['gallery'] ) && is_array( $args['meta']['gallery'] ) ) {
+			foreach ( $args['meta']['gallery'] as $image ) {
+				if ( ! empty( $image['id'] ) ) {
+					$attachment_ids[] = $image['id'];
+				}
+			}
+		}
+
+		if ( is_array( $variations ) ) {
+			foreach ( $variations as $variation ) {
+				if ( ! empty( $variation['thumbnail']['id'] ) ) {
+					$attachment_ids[] = $variation['thumbnail']['id'];
+				}
+				if ( ! empty( $variation['downloads'] ) && is_array( $variation['downloads'] ) ) {
+					foreach ( $variation['downloads'] as $download ) {
+						if ( ! empty( $download['media_id'] ) ) {
+							$attachment_ids[] = $download['media_id'];
+						}
+					}
+				}
+			}
+		}
+
+		foreach ( array_unique( array_filter( array_map( 'intval', $attachment_ids ) ) ) as $attachment_id ) {
+			update_post_meta( $attachment_id, self::DEMO_META_KEY, 1 );
+		}
+
+		// Flag the product's categories so empty demo categories can be removed.
+		$terms = wp_get_object_terms( $id, 'product_cat', array( 'fields' => 'ids' ) );
+		if ( ! is_wp_error( $terms ) ) {
+			foreach ( $terms as $term_id ) {
+				update_term_meta( $term_id, self::DEMO_META_KEY, 1 );
+			}
+		}
+	}
+
+	/**
+	 * REST callback: how many demo products currently exist.
+	 *
+	 * Drives the Products-page UI (import vs. remove demo content).
+	 *
+	 * @param \WP_REST_Request $request Request object.
+	 * @return \WP_REST_Response
+	 */
+	public function demo_status( $request ) {
+		$ids = get_posts(
+			array(
+				'post_type'      => 'product',
+				'post_status'    => 'any',
+				'posts_per_page' => -1,
+				'fields'         => 'ids',
+				'meta_key'       => self::DEMO_META_KEY, // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key
+				'meta_value'     => 1, // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_value
+			)
+		);
+
+		return $this->response_success( array( 'count' => count( $ids ) ) );
+	}
+
+	/**
+	 * REST callback: remove all demo content.
+	 *
+	 * @param \WP_REST_Request $request Request object.
+	 * @return \WP_REST_Response
+	 */
+	public function delete_demo( $request ) {
+		$removed = $this->remove_demo();
+
+		return $this->response_success(
+			array(
+				'removed' => $removed,
+				'message' => sprintf(
+					/* translators: 1: products, 2: images, 3: categories removed. */
+					__( 'Removed %1$d demo products, %2$d images and %3$d categories.', 'easycommerce' ),
+					$removed['products'],
+					$removed['attachments'],
+					$removed['categories']
+				),
+			)
+		);
+	}
+
+	/**
+	 * Remove all demo content created by the demo importer.
+	 *
+	 * Deletes demo products (and their variations via Product::delete-equivalent
+	 * cascade), their sideloaded attachments, and any demo categories left empty —
+	 * all keyed off DEMO_META_KEY. Idempotent: safe to run repeatedly.
+	 *
+	 * @return array Counts of removed products, attachments and categories.
+	 */
+	public function remove_demo() {
+		$removed = array(
+			'products'    => 0,
+			'attachments' => 0,
+			'categories'  => 0,
+		);
+
+		// Attachments first (so featured/gallery deletions don't orphan files).
+		$attachment_ids = get_posts(
+			array(
+				'post_type'      => 'attachment',
+				'post_status'    => 'any',
+				'posts_per_page' => -1,
+				'fields'         => 'ids',
+				'meta_key'       => self::DEMO_META_KEY, // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key
+				'meta_value'     => 1, // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_value
+			)
+		);
+		foreach ( $attachment_ids as $attachment_id ) {
+			if ( wp_delete_attachment( $attachment_id, true ) ) {
+				$removed['attachments']++;
+			}
+		}
+
+		// Demo products.
+		$product_ids = get_posts(
+			array(
+				'post_type'      => 'product',
+				'post_status'    => 'any',
+				'posts_per_page' => -1,
+				'fields'         => 'ids',
+				'meta_key'       => self::DEMO_META_KEY, // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key
+				'meta_value'     => 1, // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_value
+			)
+		);
+		foreach ( $product_ids as $product_id ) {
+			if ( wp_delete_post( $product_id, true ) ) {
+				$removed['products']++;
+			}
+		}
+
+		// Demo categories that are now empty.
+		$term_ids = get_terms(
+			array(
+				'taxonomy'   => 'product_cat',
+				'hide_empty' => false,
+				'fields'     => 'ids',
+				'meta_key'   => self::DEMO_META_KEY, // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key
+				'meta_value' => 1, // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_value
+			)
+		);
+		if ( ! is_wp_error( $term_ids ) ) {
+			foreach ( $term_ids as $term_id ) {
+				$term = get_term( $term_id, 'product_cat' );
+				if ( $term && ! is_wp_error( $term ) && 0 === (int) $term->count ) {
+					wp_delete_term( $term_id, 'product_cat' );
+					$removed['categories']++;
+				}
+			}
+		}
+
+		/**
+		 * Fires after demo content is removed.
+		 *
+		 * Lets other features (e.g. design-created pages) clean up their own
+		 * demo artefacts. See #3174.
+		 *
+		 * @param array $removed Counts of removed products, attachments and categories.
+		 */
+		do_action( 'easycommerce_demo_content_removed', $removed );
+
+		return $removed;
 	}
 
 	/**
@@ -620,14 +842,30 @@ class Importer extends API {
 		return $combinations;
 	}
 
-	private function get_img_ids( $urls ) {
+	private function get_img_ids( $urls, $keep_alignment = false ) {
 		$thumb_urls = $this->sanitize( explode( ',', $urls ), 'array' );
 		$thumb_ids = array();
 		foreach ( $thumb_urls as $url ) {
 			$url = trim( $url );
-			if ( ! filter_var( $url, FILTER_VALIDATE_URL ) ) {
+			if ( '' === $url ) {
+				if ( $keep_alignment ) {
+					array_push( $thumb_ids, 0 );
+				}
 				continue;
 			}
+
+			// Bundled demo images are referenced by bare filename (no scheme), so
+			// they are sideloaded from disk instead of fetched over HTTP.
+			if ( ! filter_var( $url, FILTER_VALIDATE_URL ) ) {
+				$media_id = $this->sideload_local_file( $url, 'images' );
+				if ( ! is_wp_error( $media_id ) ) {
+					array_push( $thumb_ids, $media_id );
+				} elseif ( $keep_alignment ) {
+					array_push( $thumb_ids, 0 );
+				}
+				continue;
+			}
+
 			$media_id = $this->sideload_remote_image( $url );
 			if ( is_wp_error( $media_id ) ) {
 				error_log( sprintf(
@@ -636,12 +874,18 @@ class Importer extends API {
 					$media_id->get_error_code(),
 					$media_id->get_error_message()
 				) );
+				if ( $keep_alignment ) {
+					array_push( $thumb_ids, 0 );
+				}
 				continue;
 			}
 			array_push( $thumb_ids, $media_id );
 		}
 
-		if ( count( $thumb_ids ) === 1 ) {
+		// Positional callers (per-variation lists) need one entry per input and
+		// always an array; collapsing to a scalar or skipping failures would
+		// shift every later variation onto the wrong image.
+		if ( ! $keep_alignment && count( $thumb_ids ) === 1 ) {
 			return $thumb_ids[0];
 		}
 
@@ -649,23 +893,87 @@ class Importer extends API {
 	}
 
 	/**
+	 * Validate that a remote URL is safe to fetch (SSRF guard).
+	 *
+	 * Replaces WP's wp_http_validate_url() guard, which is IPv4-only on WP 7.0
+	 * (gethostbyname()) and rejects IPv6-only CDN hosts. This resolves both A and
+	 * AAAA records and rejects any URL that points at a private, reserved, loopback
+	 * or link-local address, while still allowing public IPv6 hosts.
+	 *
+	 * @param string $url Remote URL.
+	 * @return bool True when the URL is safe to request.
+	 */
+	private function is_safe_remote_url( $url ) {
+		$parts = wp_parse_url( $url );
+
+		if ( empty( $parts['scheme'] ) || ! in_array( strtolower( $parts['scheme'] ), array( 'http', 'https' ), true ) ) {
+			return false;
+		}
+
+		if ( empty( $parts['host'] ) ) {
+			return false;
+		}
+
+		$host = $parts['host'];
+		$ips  = array();
+
+		if ( filter_var( $host, FILTER_VALIDATE_IP ) ) {
+			$ips[] = $host;
+		} else {
+			$v4 = gethostbynamel( $host );
+			if ( is_array( $v4 ) ) {
+				$ips = array_merge( $ips, $v4 );
+			}
+
+			if ( function_exists( 'dns_get_record' ) ) {
+				$records = @dns_get_record( $host, DNS_AAAA ); // phpcs:ignore WordPress.PHP.NoSilencedErrors.Discouraged
+				if ( is_array( $records ) ) {
+					foreach ( $records as $record ) {
+						if ( ! empty( $record['ipv6'] ) ) {
+							$ips[] = $record['ipv6'];
+						}
+					}
+				}
+			}
+		}
+
+		if ( empty( $ips ) ) {
+			return false;
+		}
+
+		foreach ( $ips as $ip ) {
+			// Reject IPv4-mapped IPv6 (::ffff:x in any textual form) — it slips past the range filter but routes to the embedded IPv4.
+			$packed = @inet_pton( $ip ); // phpcs:ignore WordPress.PHP.NoSilencedErrors.Discouraged
+			if ( false !== $packed && 16 === strlen( $packed ) && "\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\xff\xff" === substr( $packed, 0, 12 ) ) {
+				return false;
+			}
+
+			if ( ! filter_var( $ip, FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE ) ) {
+				return false;
+			}
+		}
+
+		return true;
+	}
+
+	/**
 	 * Download a remote image and attach it to the media library.
 	 *
-	 * Uses an unsafe wp_remote_get() instead of media_sideload_image()/download_url()
-	 * on purpose: those route through wp_safe_remote_get(), which calls
-	 * wp_http_validate_url(). On WP 7.0 that helper does an IPv4-only gethostbyname()
-	 * and returns false when it can't resolve an A record — so CDN hosts that only
-	 * resolve over IPv6 (e.g. Cloudflare-fronted cdn.easycommerce.dev) get rejected
-	 * pre-flight with "A valid URL was not provided." on live/IPv6 servers, while
-	 * working on IPv4 localhost. The URLs handled here are plugin-controlled sample
-	 * assets and operator-supplied CSV image URLs, not arbitrary user input, so
-	 * bypassing the safe-URL SSRF guard is acceptable.
+	 * Uses wp_remote_get() rather than media_sideload_image()/download_url() because
+	 * WP's wp_http_validate_url() guard is IPv4-only on WP 7.0 and rejects IPv6-only
+	 * CDN hosts. SSRF protection is provided by is_safe_remote_url() instead, which
+	 * resolves both A and AAAA records and blocks private/reserved targets.
 	 *
 	 * @param string $url Remote image URL.
 	 * @return int|\WP_Error Attachment ID on success, WP_Error on failure.
 	 */
 	private function sideload_remote_image( $url ) {
-		$response = wp_remote_get( $url, array( 'timeout' => 30 ) );
+		if ( ! $this->is_safe_remote_url( $url ) ) {
+			return new \WP_Error( 'unsafe_url', sprintf( 'The image URL is not allowed: %s', $url ) );
+		}
+
+		// redirection => 0: do not follow redirects — a 30x to an internal host would bypass the pre-flight IP check.
+		$response = wp_remote_get( $url, array( 'timeout' => 30, 'redirection' => 0 ) );
 		if ( is_wp_error( $response ) ) {
 			return $response;
 		}
@@ -710,12 +1018,64 @@ class Importer extends API {
 	}
 
 	/**
+	 * Sideload a file bundled with the plugin's demo content into the media library.
+	 *
+	 * Used for the demo importer, which references bundled assets by bare filename
+	 * rather than a remote URL. No HTTP request is made, so there is no SSRF surface;
+	 * the filename is constrained to the requested demo sub-directory (basename only,
+	 * no path traversal).
+	 *
+	 * @param string $filename Bare filename (e.g. green-shoe.jpg).
+	 * @param string $subdir   Demo sub-directory under samples/dummy-data/ ('images' or 'downloads').
+	 * @return int|\WP_Error Attachment ID on success, WP_Error on failure.
+	 */
+	private function sideload_local_file( $filename, $subdir = 'images' ) {
+		$filename = wp_basename( trim( $filename ) );
+
+		if ( '' === $filename ) {
+			return new \WP_Error( 'empty_filename', 'No demo filename provided.' );
+		}
+
+		$subdir = in_array( $subdir, array( 'images', 'downloads' ), true ) ? $subdir : 'images';
+		$source = EASYCOMMERCE_PLUGIN_DIR . 'samples/dummy-data/' . $subdir . '/' . $filename;
+
+		if ( ! is_file( $source ) ) {
+			return new \WP_Error( 'demo_file_missing', 'Bundled demo file not found: ' . $filename );
+		}
+
+		$tmp = wp_tempnam( $filename );
+		if ( ! $tmp ) {
+			return new \WP_Error( 'no_tmp', 'Could not create temporary file.' );
+		}
+
+		if ( ! copy( $source, $tmp ) ) {
+			@unlink( $tmp ); // phpcs:ignore WordPress.PHP.NoSilencedErrors.Discouraged
+			return new \WP_Error( 'copy_failed', 'Could not copy bundled demo file: ' . $filename );
+		}
+
+		$file_array = array(
+			'name'     => $filename,
+			'tmp_name' => $tmp,
+		);
+
+		$media_id = media_handle_sideload( $file_array, 0, null, array( 'test_form' => false ) );
+		if ( is_wp_error( $media_id ) ) {
+			@unlink( $tmp ); // phpcs:ignore WordPress.PHP.NoSilencedErrors.Discouraged
+			return $media_id;
+		}
+
+		return (int) $media_id;
+	}
+
+	/**
 	 * Build explicit variation from CSV data with proper attribute structure
 	 */
 	private function build_variation( $variation_data, $key, $product_attributes ) {
 
-		$thumb_id   			= $variation_data['thumbnail_ids'][ $key ] ?? 0;
-		$thumb_url  			= $variation_data['thumbnail_urls'][ $key ] ?? '';
+		$thumb_id   			= (int) ( $variation_data['thumbnail_ids'][ $key ] ?? 0 );
+		// The attachment is the source of truth - the raw CSV cell is a bare
+		// filename for bundled demo images and must never reach the front end.
+		$thumb_url  			= $thumb_id ? (string) wp_get_attachment_url( $thumb_id ) : '';
 		$variation_attributes 	= array();
 		$variation_name 		= $variation_data['names'][ $key ] ?? '';
 		$variation_value_parts 	= array_map( 'trim', explode( '/', $variation_name ) );
@@ -776,6 +1136,22 @@ class Importer extends API {
 			}
 		}
 
+		$meta = array(
+			"null"            => "on",
+			"length"          => array( "value" => $variation_data['length_values'][ $key ] ?? null, "unit" => $variation_data['length_units'][ $key ] ?? null ),
+			"weight"          => array( "value" => $variation_data['weight_values'][ $key ] ?? null, "unit" => $variation_data['weight_units'][ $key ] ?? 'kg' ),
+			"height"          => array( "value" => $variation_data['height_values'][ $key ] ?? null, "unit" => $variation_data['height_units'][ $key ] ?? null ),
+			"width"           => array( "value" => $variation_data['width_values'][ $key ] ?? null,  "unit" => $variation_data['width_units'][ $key ] ?? null ),
+			"tax_class"       => $variation_data['tax_classes'][ $key ] ?? '',
+			"is_managed_stock" => ! empty( $variation_data['is_managed_stocks'][ $key ] ) ? "1" : ""
+		);
+
+		// Only persist a thumbnail when the image resolved - a stored id-0/raw
+		// value blocks Product_Variation::get_thumbnail()'s parent-product fallback.
+		if ( $thumb_id ) {
+			$meta['thumbnail'] = array( "id" => $thumb_id, "url" => $thumb_url );
+		}
+
 		return array(
 			"id"              => "",
 			"name"            => $variation_data['names'][ $key ] ?? '',
@@ -783,7 +1159,7 @@ class Importer extends API {
 			"type"            => $variation_data['types'][ $key ] ?? 'physical',
 			"thumbnail"       => array(
 				"id"  => $thumb_id,
-				"url" => $this->sanitize( $thumb_url )
+				"url" => $thumb_url
 			),
 			"status"          => $variation_data['statuses'][ $key ] ?? 'in_stock',
 			"stock_quantity"  => $variation_data['stock_quantities'][ $key ] ?? null,
@@ -793,17 +1169,9 @@ class Importer extends API {
 			"sale_price"      => $variation_data['sale_prices'][ $key ] ?? false,
 			"price"           => $variation_data['sale_prices'][ $key ] ?? $variation_data['regular_prices'][ $key ] ?? '0.00',
 			"attributes"      => $variation_attributes,
-			"downloads"       => array( "downloads" => array() ),
-			"meta"            => array(
-				"null"            => "on",
-				"length"          => array( "value" => $variation_data['length_values'][ $key ] ?? null, "unit" => $variation_data['length_units'][ $key ] ?? null ),
-				"weight"          => array( "value" => $variation_data['weight_values'][ $key ] ?? null, "unit" => $variation_data['weight_units'][ $key ] ?? 'kg' ),
-				"height"          => array( "value" => $variation_data['height_values'][ $key ] ?? null, "unit" => $variation_data['height_units'][ $key ] ?? null ),
-				"width"           => array( "value" => $variation_data['width_values'][ $key ] ?? null,  "unit" => $variation_data['width_units'][ $key ] ?? null ),
-				"thumbnail"       => array( "id" => $thumb_id, "url" => $this->sanitize( $thumb_url ) ),
-				"tax_class"       => $variation_data['tax_classes'][ $key ] ?? '',
-				"is_managed_stock" => ! empty( $variation_data['is_managed_stocks'][ $key ] ) ? "1" : ""
-			)
+			// Product-level downloads apply to the first variation (digital/simple products).
+			"downloads"       => ( 0 === $key && ! empty( $variation_data['product_downloads'] ) ) ? $variation_data['product_downloads'] : array(),
+			"meta"            => $meta
 		);
 	}
 

@@ -1,0 +1,99 @@
+{
+    "translation-revision-date": "YEAR-MO-DA HO:MI+ZONE",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "blocks\/shops-page\/template-1\/edit.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "es_ES",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "No products found.": [
+                "No se han encontrado productos."
+            ],
+            "Checkout": [
+                "Finalizar compra"
+            ],
+            "Color": [
+                "Color"
+            ],
+            "Normal": [
+                "Normal"
+            ],
+            "Product Settings": [
+                "Ajustes del producto"
+            ],
+            "Products Per Page": [
+                "Productos por p\u00e1gina"
+            ],
+            "Grid Settings": [
+                "Ajustes de la cuadr\u00edcula"
+            ],
+            "Show Filters": [
+                "Mostrar filtros"
+            ],
+            "Show Pagination": [
+                "Mostrar paginaci\u00f3n"
+            ],
+            "Number of Columns": [
+                "N\u00famero de columnas"
+            ],
+            "Product Title": [
+                "T\u00edtulo del producto"
+            ],
+            "Text Color": [
+                "Color del texto"
+            ],
+            "Hover Text Color": [
+                "Color del texto al pasar el rat\u00f3n"
+            ],
+            "Product Category": [
+                "Categor\u00eda del producto"
+            ],
+            "Product Rating": [
+                "Valoraci\u00f3n del producto"
+            ],
+            "Star Size": [
+                "Tama\u00f1o de las estrellas"
+            ],
+            "Product Price": [
+                "Precio del producto"
+            ],
+            "Regular Price": [
+                "Precio normal"
+            ],
+            "Sale Price": [
+                "Precio rebajado"
+            ],
+            "Cart Button": [
+                "Bot\u00f3n del carrito"
+            ],
+            "Hover": [
+                "Al pasar el rat\u00f3n"
+            ],
+            "Background Color": [
+                "Color de fondo"
+            ],
+            "Focus Text Color": [
+                "Color del texto al enfocar"
+            ],
+            "Focus Background Color": [
+                "Color de fondo al enfocar"
+            ],
+            "Text Color (Hover)": [
+                "Color del texto (al pasar el rat\u00f3n)"
+            ],
+            "Background Color (Hover)": [
+                "Color de fondo (al pasar el rat\u00f3n)"
+            ],
+            "Checkout Button": [
+                "Bot\u00f3n de finalizar compra"
+            ],
+            "Add To Cart": [
+                "A\u00f1adir al carrito"
+            ]
+        }
+    }
+}

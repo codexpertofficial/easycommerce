@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import { __ } from "@wordpress/i18n";
 const Filter = `${EASYCOMMERCE.assets}admin/img/icons/Filter.png`;
 
 const FilterField = ({
     options,
-    placeholder = "Filter...",
+    placeholder = __("Filter...", "easycommerce"),
     width = "",
     menuWidth = "",
     onChange,
@@ -23,7 +24,7 @@ const FilterField = ({
         <div className="relative flex items-center justify-center">
             <img
                 src={Filter}
-                alt="Filter Icon"
+                alt={__("Filter Icon", "easycommerce")}
                 className="easycommerce-select-icon absolute w-4 left-3 z-10 pointer-events-none"
             />
 

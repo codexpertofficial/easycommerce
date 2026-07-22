@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { useDrag, useDrop } from 'react-dnd';
+import { __ } from '@wordpress/i18n';
 
 const ItemType = 'ITEM';
 
@@ -54,7 +55,7 @@ const Item = ({ item, index, moveItem, fromList, children }) => {
             <button
                 ref={dragHandleRef}
                 className="p-1 bg-gray-200 rounded hover:bg-gray-300 cursor-move"
-                aria-label="Drag handle"
+                aria-label={ __( 'Drag handle', 'easycommerce' ) }
                 type="button"
             >
                 ☰

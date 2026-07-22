@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { __ } from '@wordpress/i18n';
 
 const Tags = ({ active, tags, selected, setSelected }) => {
 
@@ -54,7 +55,7 @@ const Tags = ({ active, tags, selected, setSelected }) => {
                         </div>
                     ))
                 ) : (
-                    <div className="text-gray-500 text-sm">No tags available</div>
+                    <div className="text-gray-500 text-sm">{__('No tags available', 'easycommerce')}</div>
                 )}
             </div>
             <input

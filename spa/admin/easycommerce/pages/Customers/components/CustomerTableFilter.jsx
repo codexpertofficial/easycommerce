@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { __ } from "@wordpress/i18n";
 import TextField from "../../../../common/components/inputs/TextField";
 
 const CustomerTableFilter = ({
@@ -29,7 +30,7 @@ const CustomerTableFilter = ({
                             className={`font-inter text-base leading-[26px] font-normal text-ec-secondary border-b border-[#737991]`}
                             onClick={resetFilter}
                         >
-                            Reset
+                            {__("Reset", "easycommerce")}
                         </button>
                     )}
 
@@ -45,7 +46,7 @@ const CustomerTableFilter = ({
                                 name="search"
                                 value={searchValue}
                                 onChange={(e) => setSearchValue(e.target.value)}
-                                placeholder="Search"
+                                placeholder={__("Search", "easycommerce")}
                                 className="h-ec-input"
                             />
                         </div>

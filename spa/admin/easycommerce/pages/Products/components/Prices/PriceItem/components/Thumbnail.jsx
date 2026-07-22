@@ -1,4 +1,5 @@
 import React from 'react';
+import { __ } from '@wordpress/i18n';
 
 const uploadIcon = (
 	<svg
@@ -40,8 +41,8 @@ const uploadIcon = (
 const Thumbnail = ({ priceItem, index, setPriceItem, width = '67px', height = '67px' }) => {
 	const openMediaLibrary = () => {
 		const frame = wp.media({
-			title: 'Select Image',
-			button: { text: 'Use selected image' },
+			title: __('Select Image', 'easycommerce'),
+			button: { text: __('Use selected image', 'easycommerce') },
 			multiple: false,
 		});
 

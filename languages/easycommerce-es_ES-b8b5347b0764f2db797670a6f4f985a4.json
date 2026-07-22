@@ -1,0 +1,21 @@
+{
+    "translation-revision-date": "YEAR-MO-DA HO:MI+ZONE",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "blocks\/shops-page\/template-1\/components\/DualRangeSlider.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "es_ES",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Min Price": [
+                "Precio m\u00ednimo"
+            ],
+            "Max Price": [
+                "Precio m\u00e1ximo"
+            ]
+        }
+    }
+}

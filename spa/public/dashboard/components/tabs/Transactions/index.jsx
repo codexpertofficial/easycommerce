@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { __ } from "@wordpress/i18n";
 import TableSkeleton from "../../../../../admin/common/TableSkeleton";
 import Pagination from "../../../../../admin/common/components/Pagination";
 import EmptyState from "../../common/EmptyState";
@@ -85,7 +86,7 @@ const Transactions = () => {
         <>
             <div className="easycommerce-dashboard-section pb-[55px] flex flex-col gap-4">
                 <h3 className="easycommerce-dashboard-section-title !text-lg sm:!text-2xl">
-                    Transactions
+                    {__( "Transactions", "easycommerce" )}
                 </h3>
                 <div className="w-full">
                     {!isLoading ? (
@@ -96,19 +97,19 @@ const Transactions = () => {
                                         <thead className="easycommerce-dash-roth bg-ec-table-bg">
                                             <tr>
                                                 <th className="font-inter font-semibold text-xs uppercase tracking-wide text-left rtl:text-right text-ec-light-black py-3.5 px-5 border-0">
-                                                    Order ID
+                                                    {__( "Order ID", "easycommerce" )}
                                                 </th>
                                                 <th className="font-inter font-semibold text-xs uppercase tracking-wide text-left rtl:text-right text-ec-light-black py-3.5 px-5 border-0">
-                                                    Amount
+                                                    {__( "Amount", "easycommerce" )}
                                                 </th>
                                                 <th className="font-inter font-semibold text-xs uppercase tracking-wide text-left rtl:text-right text-ec-light-black py-3.5 px-5 border-0">
-                                                    Transaction ID
+                                                    {__( "Transaction ID", "easycommerce" )}
                                                 </th>
                                                 <th className="font-inter font-semibold text-xs uppercase tracking-wide text-left rtl:text-right text-ec-light-black py-3.5 px-5 border-0">
-                                                    Type
+                                                    {__( "Type", "easycommerce" )}
                                                 </th>
                                                 <th className="font-inter font-semibold text-xs uppercase tracking-wide text-left rtl:text-right text-ec-light-black py-3.5 px-5 border-0">
-                                                    Date
+                                                    {__( "Date", "easycommerce" )}
                                                 </th>
                                             </tr>
                                         </thead>
@@ -125,7 +126,7 @@ const Transactions = () => {
                                                     };
 
                                                 const orderId =
-                                                    transaction.order_id || "N/A";
+                                                    transaction.order_id || __( "N/A", "easycommerce" );
                                                 const amount =
                                                     transaction.amount || "$0.00";
                                                 const transactionId =
@@ -159,7 +160,7 @@ const Transactions = () => {
                                                                 {paymentIcon ? (
                                                                     <img
                                                                         src={paymentIcon}
-                                                                        alt="card-icon"
+                                                                        alt={__( "card-icon", "easycommerce" )}
                                                                         className="w-[52px] h-[32px] pointer-events-none object-contain"
                                                                     />
                                                                 ) : (
@@ -175,7 +176,7 @@ const Transactions = () => {
                                                                         <p
                                                                             className="text-ec-body font-inter text-sm font-normal leading-[26px] cursor-pointer inline-flex items-center gap-1.5 hover:text-ec-primary transition-colors"
                                                                             onClick={() => handleCopy(transactionId, transaction.id)}
-                                                                            title="Click to copy"
+                                                                            title={__( "Click to copy", "easycommerce" )}
                                                                         >
                                                                             {transactionId.length > 15
                                                                                 ? `${transactionId.substring(0, 15)}...`
@@ -186,12 +187,12 @@ const Transactions = () => {
                                                                         </p>
                                                                         {hoveredTransactionId === transaction.id && copiedTransactionId !== transaction.id && (
                                                                             <span className="absolute text-xs text-ec-placeholder -top-4 left-2">
-                                                                                Copy
+                                                                                {__( "Copy", "easycommerce" )}
                                                                             </span>
                                                                         )}
                                                                         {copiedTransactionId === transaction.id && (
                                                                             <span className="absolute text-xs text-ec-green -top-4 left-2">
-                                                                                Copied!
+                                                                                {__( "Copied!", "easycommerce" )}
                                                                             </span>
                                                                         )}
                                                                     </div>
@@ -213,16 +214,16 @@ const Transactions = () => {
                                                                     transaction.type.slice(
                                                                         1
                                                                     )
-                                                                    : "Pending"}
+                                                                    : __( "Pending", "easycommerce" )}
                                                             </span>
                                                         </td>
                                                         <td className="font-inter text-sm text-left rtl:text-right text-ec-body py-4 px-5 border-0 border-b border-b-ec-border/70">
                                                             <span className="flex flex-col justify-start items-start">
                                                                 <span className="font-medium">
-                                                                    {transaction.created_at ? transaction.created_at : "N/A"}
+                                                                    {transaction.created_at ? transaction.created_at : __( "N/A", "easycommerce" )}
                                                                 </span>
                                                                 <span className="text-xs leading-4 text-ec-placeholder">
-                                                                    {transaction.created_time ? transaction.created_time : "N/A"}
+                                                                    {transaction.created_time ? transaction.created_time : __( "N/A", "easycommerce" )}
                                                                 </span>
                                                             </span>
                                                         </td>
@@ -235,8 +236,8 @@ const Transactions = () => {
                             ) : (
                                 <div className="w-full border border-ec-border rounded-2xl bg-white">
                                     <EmptyState
-                                        title="No transactions available"
-                                        message="Your payment history will appear here."
+                                        title={__( "No transactions available", "easycommerce" )}
+                                        message={__( "Your payment history will appear here.", "easycommerce" )}
                                     />
                                 </div>
                             )}

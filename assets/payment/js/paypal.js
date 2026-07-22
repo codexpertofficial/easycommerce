@@ -1,4 +1,6 @@
 jQuery(async function ($) {
+    const { __, sprintf } = wp.i18n;
+
     let cartData = null;
     let paypalButtonsInstance = null;
 
@@ -36,7 +38,7 @@ jQuery(async function ($) {
             }
         } catch (error) {
             console.error('Error fetching cart data:', error);
-            $('#easycommerce_paypal_payment_errors').text('Failed to load cart data. Please refresh the page.');
+            $('#easycommerce_paypal_payment_errors').text(__('Failed to load cart data. Please refresh the page.', 'easycommerce'));
         }
     }
 
@@ -128,9 +130,9 @@ jQuery(async function ($) {
                                 value: parseFloat(amountToCharge).toFixed(2),
                                 breakdown: breakdown,
                             },
-                            description: 'Purchase from EasyCommerce',
+                            description: __('Purchase from EasyCommerce', 'easycommerce'),
                             items: cartData.items.map(item => ({
-                                name: item.title || 'Item',
+                                name: item.title || __('Item', 'easycommerce'),
                                 unit_amount: {
                                     currency_code: EASYCOMMERCE.currency_code,
                                     value: item.is_free
@@ -158,7 +160,7 @@ jQuery(async function ($) {
 
                         if (Math.abs(currentTotal - expectedTotal) > 0.01) {
                             $('#easycommerce-checkout-order-error')
-                                .text('Your cart has been updated. Please refresh the page and try again.')
+                                .text(__('Your cart has been updated. Please refresh the page and try again.', 'easycommerce'))
                                 .slideDown(400, function () {
                                     this.scrollIntoView({ behavior: 'smooth', block: 'center' });
                                 });
@@ -176,9 +178,11 @@ jQuery(async function ($) {
 
             onError: function (err) {
                 console.error('PayPal payment error:', err);
-                const errorMessage = err && err.message ? err.message : 'An unknown error occurred with PayPal';
-                $('#easycommerce_paypal_payment_errors').text('PayPal Error: ' + errorMessage);
-                $('#easycommerce-checkout-order-error').text('PayPal Error: ' + errorMessage).slideDown(400, function () {
+                const errorMessage = err && err.message ? err.message : __('An unknown error occurred with PayPal', 'easycommerce');
+                // translators: %s: PayPal error message.
+                const displayMessage = sprintf(__('PayPal Error: %s', 'easycommerce'), errorMessage);
+                $('#easycommerce_paypal_payment_errors').text(displayMessage);
+                $('#easycommerce-checkout-order-error').text(displayMessage).slideDown(400, function () {
                     this.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 });
             },

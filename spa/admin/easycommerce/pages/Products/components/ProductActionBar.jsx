@@ -3,6 +3,7 @@ import ActionDropdown from '../../../../common/components/inputs/ActionDropdown'
 import DeletePopup from '../../../../common/components/DeletePopup';
 import BulkPopup from '../../../../common/components/BulkPopup';
 import { toast } from 'react-toastify';
+import { __, _n } from '@wordpress/i18n';
 
 const productStatusesRaw = EASYCOMMERCE.product_statuses;
 
@@ -48,7 +49,7 @@ const ProductActionBar = ({
 
     const handleBulkApply = () => {
         if (!selectedStatus?.value) {
-            toast.error('Please select a valid status.');
+            toast.error(__('Please select a valid status.', 'easycommerce'));
             return;
         }
 
@@ -88,18 +89,18 @@ const ProductActionBar = ({
                     );
                     
                     updateLocalStatusCounts(productsToUpdate, selectedStatus.value);
-                    toast.success('Status updated successfully');
+                    toast.success(__('Status updated successfully', 'easycommerce'));
                     fetchProductsStatuses();
                     
                     setSelectedProducts([]);
                     setSelectedStatus(null);
                 } else {
-                    toast.error('Failed to update products.');
+                    toast.error(__('Failed to update products.', 'easycommerce'));
                 }
                 easycommerce_modal(false);
             })
             .catch((error) => {
-                toast.error('An error occurred while updating statuses.');
+                toast.error(__('An error occurred while updating statuses.', 'easycommerce'));
                 easycommerce_modal(false);
             });
     };
@@ -134,16 +135,16 @@ const ProductActionBar = ({
 
             if (data.success) {
                 updateLocalStatusCounts(productsToUpdate, 'deleted');
-                toast.success(`Product${productIds.length > 1 ? 's' : ''} deleted`);
+                toast.success(_n('Product deleted', 'Products deleted', productIds.length, 'easycommerce'));
                 setProducts(prev => prev.filter(product => !productIds.includes(product.id)));
                 fetchProductsStatuses();
                 setSelectedProducts([]);
             } else {
-                toast.error('Delete failed.');
+                toast.error(__('Delete failed.', 'easycommerce'));
             }
         } catch (err) {
             console.error('Delete failed:', err);
-            toast.error('Something went wrong.');
+            toast.error(__('Something went wrong.', 'easycommerce'));
             easycommerce_modal(false);
         }
     };
@@ -153,7 +154,7 @@ const ProductActionBar = ({
             <div className="w-[160px]">
                 <ActionDropdown
                     options={productStatuses}
-                    placeholder="Set Status"
+                    placeholder={__("Set Status", "easycommerce")}
                     value={selectedStatus}
                     onChange={handleStatusChange}
                 />

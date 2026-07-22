@@ -1,0 +1,51 @@
+{
+    "translation-revision-date": "YEAR-MO-DA HO:MI+ZONE",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "assets\/public\/js\/agent-chatbot.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "de_DE",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Message": [
+                "Nachricht"
+            ],
+            "AI Shopping Assistant": [
+                "AI-Einkaufsassistent"
+            ],
+            "Complete your order \u2192": [
+                "Bestellung abschlie\u00dfen \u2192"
+            ],
+            "Sorry, something went wrong. Please try again.": [
+                "Leider ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut."
+            ],
+            "Connection error. Please try again.": [
+                "Verbindungsfehler. Bitte versuchen Sie es erneut."
+            ],
+            "Open %s": [
+                "%s \u00f6ffnen"
+            ],
+            "Online": [
+                "Online"
+            ],
+            "New conversation": [
+                "Neue Unterhaltung"
+            ],
+            "Minimize": [
+                "Minimieren"
+            ],
+            "Ask about products, orders\u2026": [
+                "Fragen Sie nach Produkten, Bestellungen\u2026"
+            ],
+            "Send": [
+                "Senden"
+            ],
+            "Hi! \ud83d\udc4b I'm %s. How can I help you today?": [
+                "Hallo! \ud83d\udc4b Ich bin %s. Wie kann ich Ihnen heute helfen?"
+            ]
+        }
+    }
+}

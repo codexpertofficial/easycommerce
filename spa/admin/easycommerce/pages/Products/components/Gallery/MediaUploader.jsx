@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { __ } from '@wordpress/i18n';
+import { __, sprintf } from '@wordpress/i18n';
 const loader = `${EASYCOMMERCE.assets}admin/img/loader.gif`;
 import './style.css';
 import AiEnhanceImage from '../common/AiGenerate/AiEnhanceImage';
@@ -8,20 +8,26 @@ const MediaUploader = ({ wpNonce, prevFiles, prevThumbnail, aiImage }) => {
 	const [isDragging, setIsDragging] = useState(false);
 	const [uploading, setUploading] = useState(false);
 	const [uploadedImages, setUploadedImages] = useState(prevFiles || []);
-	const [selectedThumbnail, setSelectedThumbnail] = useState(prevThumbnail?.id || null);
+	const [selectedThumbnail, setSelectedThumbnail] = useState(
+		prevThumbnail?.id || null,
+	);
 	const [uploadCount, setUploadCount] = useState({ current: 0, total: 0 });
 	const [enhanceOpen, setEnhanceOpen] = useState(null);
 
 	useEffect(() => {
 		if (!window.wp || !window.wp.media) {
 			console.error(
-				'wp.media is not available. Make sure you enqueue media scripts.'
+				'wp.media is not available. Make sure you enqueue media scripts.',
 			);
 		}
 	}, []);
 
 	useEffect(() => {
-		aiImage && setUploadedImages((prev) => [...prev, { ...aiImage, id: aiImage.attachment_id }]);
+		aiImage &&
+			setUploadedImages((prev) => [
+				...prev,
+				{ ...aiImage, id: aiImage.attachment_id },
+			]);
 	}, [aiImage]);
 
 	const handleDrop = async (e) => {
@@ -29,7 +35,7 @@ const MediaUploader = ({ wpNonce, prevFiles, prevThumbnail, aiImage }) => {
 		setIsDragging(false);
 
 		const files = Array.from(e.dataTransfer.files).filter((file) =>
-			file.type.startsWith('image/')
+			file.type.startsWith('image/'),
 		);
 
 		if (files.length === 0) return;
@@ -54,8 +60,11 @@ const MediaUploader = ({ wpNonce, prevFiles, prevThumbnail, aiImage }) => {
 
 				const result = await response.json();
 				if (response.ok) {
-					setUploadedImages((prev) => { 
-						const updated = [...prev, { id: result.id, url: result.source_url }]
+					setUploadedImages((prev) => {
+						const updated = [
+							...prev,
+							{ id: result.id, url: result.source_url },
+						];
 						if (!selectedThumbnail && updated.length > 0) {
 							setSelectedThumbnail(result.id);
 						}
@@ -87,8 +96,8 @@ const MediaUploader = ({ wpNonce, prevFiles, prevThumbnail, aiImage }) => {
 		if (!window.wp || !window.wp.media) return;
 
 		const mediaFrame = window.wp.media({
-			title: 'Select Images',
-			button: { text: 'Insert' },
+			title: __('Select Images', 'easycommerce'),
+			button: { text: __('Insert', 'easycommerce') },
 			multiple: true,
 			library: {
 				type: 'image',
@@ -115,7 +124,9 @@ const MediaUploader = ({ wpNonce, prevFiles, prevThumbnail, aiImage }) => {
 			selection.forEach((attachment) => {
 				const image = attachment.toJSON();
 				if (image.mime && image.mime.startsWith('image/')) {
-					const isDuplicate = uploadedImages.some((item) => item.id === image.id);
+					const isDuplicate = uploadedImages.some(
+						(item) => item.id === image.id,
+					);
 					if (!isDuplicate) {
 						newSelections.push({ id: image.id, url: image.url });
 					}
@@ -154,7 +165,12 @@ const MediaUploader = ({ wpNonce, prevFiles, prevThumbnail, aiImage }) => {
 	return (
 		<>
 			{uploadedImages.length > 0 && (
-				<div className="p-4 border border-ec-table-stock rounded-lg mb-4">
+				<div
+					onDrop={handleDrop}
+					onDragOver={handleDragOver}
+					onDragLeave={handleDragLeave}
+					className={"p-4 border rounded-lg mb-4" + (isDragging ? ' bg-[#7351fd2a] border-dashed border-ec-primary' : 'border-ec-table-stock')}
+				>
 					<div className="easycommerce-gallery-container grid grid-cols-2 gap-3">
 						{uploadedImages.map((item, i) => {
 							const isThumbnail = item.id === selectedThumbnail;
@@ -167,7 +183,10 @@ const MediaUploader = ({ wpNonce, prevFiles, prevThumbnail, aiImage }) => {
 									>
 										<img
 											src={item.url}
-											alt={`Uploaded ${i}`}
+											alt={
+												// translators: %d: image number in the gallery.
+												sprintf(__('Uploaded %d', 'easycommerce'), i)
+											}
 											className="w-full h-[122px] rounded-lg object-cover"
 										/>
 
@@ -178,7 +197,7 @@ const MediaUploader = ({ wpNonce, prevFiles, prevThumbnail, aiImage }) => {
 												onClick={(e) => {
 													e.stopPropagation();
 													setUploadedImages((prev) =>
-														prev.filter((_, index) => index !== i)
+														prev.filter((_, index) => index !== i),
 													);
 												}}
 												className="z-50 w-[19px] h-[19px] flex items-center justify-center rounded-full border border-ec-light-black duration-300 group-hover:border-ec-red absolute -top-2 -right-2 bg-white group-hover:bg-ec-red"
@@ -204,13 +223,13 @@ const MediaUploader = ({ wpNonce, prevFiles, prevThumbnail, aiImage }) => {
 												/>
 												{__('Set as thumbnail', 'easycommerce')}
 											</label>
-											
+
 											<button
-												onClick={(e) => { 
-													e.preventDefault(); 
+												onClick={(e) => {
+													e.preventDefault();
 													setEnhanceOpen(item.id);
 												}}
-												className='flex items-center gap-1.5'
+												className="flex items-center gap-1.5"
 											>
 												<svg
 													xmlns="http://www.w3.org/2000/svg"
@@ -244,11 +263,19 @@ const MediaUploader = ({ wpNonce, prevFiles, prevThumbnail, aiImage }) => {
 											setEnhanceOpen={setEnhanceOpen}
 											setEnhancedContent={(content) => {
 												setUploadedImages(() => {
-													const updatedImages = uploadedImages.filter(img => img.id !== item.id);
-													updatedImages.push({ id: content.attachment_id, url: content.url });
+													const updatedImages = uploadedImages.filter(
+														(img) => img.id !== item.id,
+													);
+													updatedImages.push({
+														id: content.attachment_id,
+														url: content.url,
+													});
 													return updatedImages;
 												});
-												if ((!selectedThumbnail && uploadedImages.length === 0) || selectedThumbnail === item.id) {
+												if (
+													(!selectedThumbnail && uploadedImages.length === 0) ||
+													selectedThumbnail === item.id
+												) {
 													setSelectedThumbnail(content.attachment_id);
 												}
 											}}
@@ -257,75 +284,137 @@ const MediaUploader = ({ wpNonce, prevFiles, prevThumbnail, aiImage }) => {
 								</>
 							);
 						})}
+
+						<div
+							className={
+								'h-[122px] border-2 border-dashed border-ec-primary rounded-xl flex flex-col items-center justify-center transition-colors bg-[#7351FD08] mt-2'
+							}
+						>
+							{uploading ? (
+								<>
+									<img
+										src={loader}
+										alt={__('Loading...', 'easycommerce')}
+										style={{ width: '25px', height: '25px' }}
+									/>
+									<p className="text-base text-ec-primary font-inter mt-4">
+										{__('Uploading...', 'easycommerce')} ({uploadCount.current}/
+										{uploadCount.total})
+									</p>
+								</>
+							) : (
+								<button
+									onClick={(e) => {
+										e.preventDefault();
+										handleClick();
+									}}
+									className="flex flex-col items-center justify-center"
+								>
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="37"
+										height="33"
+										viewBox="0 0 37 33"
+										fill="none"
+									>
+										<path
+											d="M22.4895 8.70408C24.1291 8.70408 25.4634 7.36984 25.4634 5.73022C25.4634 4.0906 24.1291 2.75635 22.4895 2.75635C20.8499 2.75635 19.5156 4.0906 19.5156 5.73022C19.5156 7.36984 20.8499 8.70408 22.4895 8.70408ZM22.4895 4.4557C23.1898 4.4557 23.764 5.02991 23.764 5.73022C23.764 6.43052 23.1898 7.00473 22.4895 7.00473C21.7892 7.00473 21.215 6.43052 21.215 5.73022C21.215 5.02991 21.7892 4.4557 22.4895 4.4557Z"
+											fill="#7351FD"
+										/>
+										<path
+											d="M28.1762 22.9362C28.0102 22.7703 27.7978 22.6807 27.5821 22.6641C27.5522 22.6591 27.5273 22.6558 27.4975 22.6558C27.4676 22.6558 27.4377 22.6558 27.4128 22.6641C27.1954 22.6856 26.983 22.7703 26.8187 22.9362L24.6016 25.1534C24.4141 25.3409 24.4141 25.6463 24.6016 25.8371C24.7891 26.0246 25.0945 26.0246 25.2853 25.8371L27.0179 24.1046V29.5463C27.0179 29.8135 27.2353 30.0309 27.5024 30.0309C27.7696 30.0309 27.987 29.8135 27.987 29.5463V24.1046L29.7195 25.8371C29.8125 25.93 29.9369 25.9765 30.0597 25.9765C30.1825 25.9765 30.3053 25.93 30.3999 25.8371C30.5875 25.6496 30.5875 25.3442 30.3999 25.1534L28.1828 22.9362H28.1762Z"
+											fill="#7351FD"
+										/>
+										<path
+											d="M27.4844 20.1802C24.0857 20.1802 21.3242 22.9416 21.3242 26.3403C21.3242 29.739 24.0857 32.5005 27.4844 32.5005C30.8831 32.5005 33.6445 29.739 33.6445 26.3403C33.6445 22.9416 30.8831 20.1802 27.4844 20.1802ZM27.4844 30.8011C25.0249 30.8011 23.0236 28.7998 23.0236 26.3403C23.0236 23.8809 25.0249 21.8795 27.4844 21.8795C29.9438 21.8795 31.9452 23.8809 31.9452 26.3403C31.9452 28.7998 29.9438 30.8011 27.4844 30.8011Z"
+											fill="#7351FD"
+										/>
+										<path
+											d="M34.6472 0.000127625H2.35951C1.42023 0.000127625 0.660156 0.760206 0.660156 1.69948V27.4404C0.660156 28.3797 1.42023 29.1398 2.35951 29.1398H19.5192C19.9872 29.1398 20.3688 28.7581 20.3688 28.2901C20.3688 27.8221 19.9871 27.4404 19.5192 27.4404H6.82031H6.77717H2.3597V21.3648L13.9314 12.5826L19.7645 17.4899L25.1646 13.892L34.6423 20.545V24.0582C34.6423 24.5262 35.024 24.9079 35.492 24.9079C35.96 24.9079 36.3417 24.5262 36.3417 24.0582V1.69935C36.3417 0.760078 35.5816 0 34.6423 0L34.6472 0.000127625ZM34.6423 11.3212V11.3511V18.462L25.1896 11.8307L19.8842 15.3688L13.9879 10.4101L2.35963 19.234V1.69966H34.6474V11.3214L34.6423 11.3212Z"
+											fill="#7351FD"
+										/>
+									</svg>
+
+									<p className="text-sm text-ec-body font-inter mt-2">
+										<span className="text-ec-primary">
+											{__('Click', 'easycommerce')}
+										</span>{' '}
+										{__('or Drag and drop', 'easycommerce')}
+									</p>
+								</button>
+							)}
+						</div>
 					</div>
 				</div>
 			)}
 
-			<div
-				onDrop={handleDrop}
-				onDragOver={handleDragOver}
-				onDragLeave={handleDragLeave}
-				className={
-					'h-[207px] border-2 border-dashed border-ec-primary rounded-xl flex flex-col items-center justify-center transition-colors' +
-					(isDragging ? ' bg-[#7351fd2a]' : ' bg-[#7351FD08]')
-				}
-			>
-				{uploading ? (
-					<>
-						<img
-							src={loader}
-							alt="Loading..."
-							style={{ width: '50px', height: '50px' }}
-						/>
-						<p className="text-base text-ec-primary font-inter mt-4">
-							{__('Uploading images...', 'easycommerce')} ({uploadCount.current}
-							/{uploadCount.total})
-						</p>
-					</>
-				) : (
-					<div className="flex flex-col items-center justify-center">
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="37"
-							height="33"
-							viewBox="0 0 37 33"
-							fill="none"
-						>
-							<path
-								d="M22.4895 8.70408C24.1291 8.70408 25.4634 7.36984 25.4634 5.73022C25.4634 4.0906 24.1291 2.75635 22.4895 2.75635C20.8499 2.75635 19.5156 4.0906 19.5156 5.73022C19.5156 7.36984 20.8499 8.70408 22.4895 8.70408ZM22.4895 4.4557C23.1898 4.4557 23.764 5.02991 23.764 5.73022C23.764 6.43052 23.1898 7.00473 22.4895 7.00473C21.7892 7.00473 21.215 6.43052 21.215 5.73022C21.215 5.02991 21.7892 4.4557 22.4895 4.4557Z"
-								fill="#7351FD"
+			{uploadedImages.length == 0 && (
+				<div
+					onDrop={handleDrop}
+					onDragOver={handleDragOver}
+					onDragLeave={handleDragLeave}
+					className={
+						'h-[207px] border-2 border-dashed border-ec-primary rounded-xl flex flex-col items-center justify-center transition-colors' +
+						(isDragging ? ' bg-[#7351fd2a]' : ' bg-[#7351FD08]')
+					}
+				>
+					{uploading ? (
+						<>
+							<img
+								src={loader}
+								alt={__('Loading...', 'easycommerce')}
+								style={{ width: '50px', height: '50px' }}
 							/>
-							<path
-								d="M28.1762 22.9362C28.0102 22.7703 27.7978 22.6807 27.5821 22.6641C27.5522 22.6591 27.5273 22.6558 27.4975 22.6558C27.4676 22.6558 27.4377 22.6558 27.4128 22.6641C27.1954 22.6856 26.983 22.7703 26.8187 22.9362L24.6016 25.1534C24.4141 25.3409 24.4141 25.6463 24.6016 25.8371C24.7891 26.0246 25.0945 26.0246 25.2853 25.8371L27.0179 24.1046V29.5463C27.0179 29.8135 27.2353 30.0309 27.5024 30.0309C27.7696 30.0309 27.987 29.8135 27.987 29.5463V24.1046L29.7195 25.8371C29.8125 25.93 29.9369 25.9765 30.0597 25.9765C30.1825 25.9765 30.3053 25.93 30.3999 25.8371C30.5875 25.6496 30.5875 25.3442 30.3999 25.1534L28.1828 22.9362H28.1762Z"
-								fill="#7351FD"
-							/>
-							<path
-								d="M27.4844 20.1802C24.0857 20.1802 21.3242 22.9416 21.3242 26.3403C21.3242 29.739 24.0857 32.5005 27.4844 32.5005C30.8831 32.5005 33.6445 29.739 33.6445 26.3403C33.6445 22.9416 30.8831 20.1802 27.4844 20.1802ZM27.4844 30.8011C25.0249 30.8011 23.0236 28.7998 23.0236 26.3403C23.0236 23.8809 25.0249 21.8795 27.4844 21.8795C29.9438 21.8795 31.9452 23.8809 31.9452 26.3403C31.9452 28.7998 29.9438 30.8011 27.4844 30.8011Z"
-								fill="#7351FD"
-							/>
-							<path
-								d="M34.6472 0.000127625H2.35951C1.42023 0.000127625 0.660156 0.760206 0.660156 1.69948V27.4404C0.660156 28.3797 1.42023 29.1398 2.35951 29.1398H19.5192C19.9872 29.1398 20.3688 28.7581 20.3688 28.2901C20.3688 27.8221 19.9871 27.4404 19.5192 27.4404H6.82031H6.77717H2.3597V21.3648L13.9314 12.5826L19.7645 17.4899L25.1646 13.892L34.6423 20.545V24.0582C34.6423 24.5262 35.024 24.9079 35.492 24.9079C35.96 24.9079 36.3417 24.5262 36.3417 24.0582V1.69935C36.3417 0.760078 35.5816 0 34.6423 0L34.6472 0.000127625ZM34.6423 11.3212V11.3511V18.462L25.1896 11.8307L19.8842 15.3688L13.9879 10.4101L2.35963 19.234V1.69966H34.6474V11.3214L34.6423 11.3212Z"
-								fill="#7351FD"
-							/>
-						</svg>
+							<p className="text-base text-ec-primary font-inter mt-4">
+								{__('Uploading images...', 'easycommerce')} (
+								{uploadCount.current}/{uploadCount.total})
+							</p>
+						</>
+					) : (
+						<div className="flex flex-col items-center justify-center">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="37"
+								height="33"
+								viewBox="0 0 37 33"
+								fill="none"
+							>
+								<path
+									d="M22.4895 8.70408C24.1291 8.70408 25.4634 7.36984 25.4634 5.73022C25.4634 4.0906 24.1291 2.75635 22.4895 2.75635C20.8499 2.75635 19.5156 4.0906 19.5156 5.73022C19.5156 7.36984 20.8499 8.70408 22.4895 8.70408ZM22.4895 4.4557C23.1898 4.4557 23.764 5.02991 23.764 5.73022C23.764 6.43052 23.1898 7.00473 22.4895 7.00473C21.7892 7.00473 21.215 6.43052 21.215 5.73022C21.215 5.02991 21.7892 4.4557 22.4895 4.4557Z"
+									fill="#7351FD"
+								/>
+								<path
+									d="M28.1762 22.9362C28.0102 22.7703 27.7978 22.6807 27.5821 22.6641C27.5522 22.6591 27.5273 22.6558 27.4975 22.6558C27.4676 22.6558 27.4377 22.6558 27.4128 22.6641C27.1954 22.6856 26.983 22.7703 26.8187 22.9362L24.6016 25.1534C24.4141 25.3409 24.4141 25.6463 24.6016 25.8371C24.7891 26.0246 25.0945 26.0246 25.2853 25.8371L27.0179 24.1046V29.5463C27.0179 29.8135 27.2353 30.0309 27.5024 30.0309C27.7696 30.0309 27.987 29.8135 27.987 29.5463V24.1046L29.7195 25.8371C29.8125 25.93 29.9369 25.9765 30.0597 25.9765C30.1825 25.9765 30.3053 25.93 30.3999 25.8371C30.5875 25.6496 30.5875 25.3442 30.3999 25.1534L28.1828 22.9362H28.1762Z"
+									fill="#7351FD"
+								/>
+								<path
+									d="M27.4844 20.1802C24.0857 20.1802 21.3242 22.9416 21.3242 26.3403C21.3242 29.739 24.0857 32.5005 27.4844 32.5005C30.8831 32.5005 33.6445 29.739 33.6445 26.3403C33.6445 22.9416 30.8831 20.1802 27.4844 20.1802ZM27.4844 30.8011C25.0249 30.8011 23.0236 28.7998 23.0236 26.3403C23.0236 23.8809 25.0249 21.8795 27.4844 21.8795C29.9438 21.8795 31.9452 23.8809 31.9452 26.3403C31.9452 28.7998 29.9438 30.8011 27.4844 30.8011Z"
+									fill="#7351FD"
+								/>
+								<path
+									d="M34.6472 0.000127625H2.35951C1.42023 0.000127625 0.660156 0.760206 0.660156 1.69948V27.4404C0.660156 28.3797 1.42023 29.1398 2.35951 29.1398H19.5192C19.9872 29.1398 20.3688 28.7581 20.3688 28.2901C20.3688 27.8221 19.9871 27.4404 19.5192 27.4404H6.82031H6.77717H2.3597V21.3648L13.9314 12.5826L19.7645 17.4899L25.1646 13.892L34.6423 20.545V24.0582C34.6423 24.5262 35.024 24.9079 35.492 24.9079C35.96 24.9079 36.3417 24.5262 36.3417 24.0582V1.69935C36.3417 0.760078 35.5816 0 34.6423 0L34.6472 0.000127625ZM34.6423 11.3212V11.3511V18.462L25.1896 11.8307L19.8842 15.3688L13.9879 10.4101L2.35963 19.234V1.69966H34.6474V11.3214L34.6423 11.3212Z"
+									fill="#7351FD"
+								/>
+							</svg>
 
-						<p className="text-sm text-ec-body font-inter mt-2">
-							<span className="text-ec-primary">
-								{__('Click to update', 'easycommerce')}
-							</span>{' '}
-							{__('or Drag and drop', 'easycommerce')}
-						</p>
+							<p className="text-sm text-ec-body font-inter mt-2">
+								<span className="text-ec-primary">
+									{__('Click to upload', 'easycommerce')}
+								</span>{' '}
+								{__('or Drag and drop', 'easycommerce')}
+							</p>
 
-						<button
-							type="button"
-							className="easycommerce-outline-button mt-3 h-[43px]"
-							onClick={handleClick}
-						>
-							{__('Upload Images', 'easycommerce')}
-						</button>
-					</div>
-				)}
-			</div>
+							<button
+								type="button"
+								className="easycommerce-outline-button mt-3 h-[43px]"
+								onClick={handleClick}
+							>
+								{__('Upload Images', 'easycommerce')}
+							</button>
+						</div>
+					)}
+				</div>
+			)}
 
 			<input
 				type="hidden"
@@ -333,13 +422,11 @@ const MediaUploader = ({ wpNonce, prevFiles, prevThumbnail, aiImage }) => {
 				value={JSON.stringify(uploadedImages)}
 			/>
 
-            <input
-                type="hidden"
-                name="product_thumbnail"
-                value={selectedThumbnail ? selectedThumbnail : null}
-            />
-
-			
+			<input
+				type="hidden"
+				name="product_thumbnail"
+				value={selectedThumbnail ? selectedThumbnail : null}
+			/>
 		</>
 	);
 };

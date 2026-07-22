@@ -2,6 +2,7 @@ import { registerBlockType } from '@wordpress/blocks';
 import { useBlockProps } from '@wordpress/block-editor';
 import { Slot } from '@wordpress/components';
 import { applyFilters } from '@wordpress/hooks';
+import { __ } from '@wordpress/i18n';
 
 const cartIcon = (
     <svg
@@ -32,7 +33,7 @@ const cartIcon = (
  * @param {Object} config The block configuration.
  */
 const blockConfig = applyFilters('easycommerce.blocks.cart.config', {
-    title: 'Cart',
+    title: __('Cart', 'easycommerce'),
     icon: cartIcon,
     category: 'easycommerce-checkout',
 });
@@ -44,12 +45,12 @@ registerBlockType('easycommerce/checkout--cart', {
         return (
             <div {...blockProps} className="">
                 <div className="flex justify-between items-center">
-                    <h3 className="mt-0 font-semibold">Your Cart</h3>
+                    <h3 className="mt-0 font-semibold">{__('Your Cart', 'easycommerce')}</h3>
                     <button className="easycommerce-clear-cart">
-                        {EASYCOMMERCE.i18n.cart.clear}
+                        {__('Clear cart', 'easycommerce')}
                     </button>
                 </div>
-                <p>This is your cart being edited.</p>
+                <p>{__('This is your cart being edited.', 'easycommerce')}</p>
                 <Slot name="easycommerce.blocks.cart.edit" props={{ blockProps }} />
             </div>
         );
@@ -59,9 +60,9 @@ registerBlockType('easycommerce/checkout--cart', {
         return (
             <div {...blockProps} className="">
                 <div className="flex justify-between items-center">
-                    <h3 className="mt-0 font-semibold">Your Cart</h3>
+                    <h3 className="mt-0 font-semibold">{__('Your Cart', 'easycommerce')}</h3>
                     <button className="easycommerce-clear-cart">
-                        {EASYCOMMERCE.i18n.cart.clear}
+                        {__('Clear cart', 'easycommerce')}
                     </button>
                 </div>
                 <div id="easycommerce-cart-content"></div>

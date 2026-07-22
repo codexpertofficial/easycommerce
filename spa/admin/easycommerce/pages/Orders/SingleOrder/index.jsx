@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { __ } from '@wordpress/i18n';
+import { __, sprintf } from '@wordpress/i18n';
 import { toast } from 'react-toastify';
 
 import "./style.css";
@@ -42,12 +42,12 @@ const SingleOrder = ({ id }) => {
                 setOrder(data.data);
                 setIsLoading(false);
             } else {
-                toast.error("Order doesn't exist");
+                toast.error(__("Order doesn't exist", 'easycommerce'));
                 window.location.hash = `#/orders`;
             }
         } catch (error) {
             easycommerce_modal(false);
-            toast.error('Failed to fetch order data');
+            toast.error(__('Failed to fetch order data', 'easycommerce'));
             console.error('Error fetching order data:', error);
         }
     }, [id]);
@@ -62,7 +62,7 @@ const SingleOrder = ({ id }) => {
             <>
                 <div className="product-panel-title flex font-inter items-center justify-between mb-4">
                     <div className="product-panel-title">
-                        <h3>Order {`#${order.id}`}</h3>
+                        <h3>{sprintf(__('Order #%s', 'easycommerce'), order.id)}</h3>
                     </div>
                     <div class="flex items-center justify-between gap-3 w-max">
                         <OrderActions order={order} setOrder={setOrder} />
@@ -90,7 +90,7 @@ const SingleOrder = ({ id }) => {
                             <div className="mt-6 bg-white rounded-2xl">
                                 <div className="flex flex-col border-b border--ec-table-stock pt-4 px-6">
                                     <h3 className="text-ec-title text-xl font-medium font-inter leading-8 pb-4">
-                                        Items
+                                        {__('Items', 'easycommerce')}
                                     </h3>
                                 </div>
                                 <div className="p-5">

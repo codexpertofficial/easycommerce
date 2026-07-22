@@ -12,16 +12,16 @@ const Welcome = ({ handleNext }) => {
      */
     const features = applyFilters('easycommerce.wizard.default.features', [
         {
-            label: __("Business Info", "easycommerce"),
-            description: __("Set up your store name, location, and contact details", "easycommerce")
+            label: __("Add Your Business", "easycommerce"),
+            description: __("Tell us your store name, location, and contact details.", "easycommerce")
         },
         {
-            label: __("Store Pages", "easycommerce"),
-            description: __("Create essential pages like Shop, Cart, and Checkout", "easycommerce")
+            label: __("Build Your Store", "easycommerce"),
+            description: __("Get your Shop, Cart, and Checkout pages ready in one click.", "easycommerce")
         },
         {
-            label: __("Payment Setup", "easycommerce"),
-            description: __("Connect payment gateways to start accepting orders", "easycommerce")
+            label: __("Get Paid", "easycommerce"),
+            description: __("Connect a payment gateway and start taking orders today.", "easycommerce")
         }
     ]);
 
@@ -33,12 +33,12 @@ const Welcome = ({ handleNext }) => {
             >
                 {/* Updated headline with outcome-focused messaging */}
                 <h2 className="text-ec-title text-[32px] leading-[42px] text-center font-semibold font-inter">
-                    {__("Welcome to EasyCommerce", "easycommerce")}
+                    {__("Let’s Set Up Your Store", "easycommerce")}
                 </h2>
 
                 {/* Benefit-driven subheading with quantifiable promise */}
                 <p className="text-ec-body text-base text-center font-normal mt-4 font-inter max-w-[650px] mx-auto">
-                    {__("Start selling in a few minutes with 3 easy steps:", "easycommerce")}
+                    {__("You’re minutes away from your first sale. Just 3 quick steps to go:", "easycommerce")}
                 </p>
 
                 {/* Benefit-driven subheading with quantifiable promise */}

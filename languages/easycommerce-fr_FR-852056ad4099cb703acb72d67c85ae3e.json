@@ -1,0 +1,141 @@
+{
+    "translation-revision-date": "YEAR-MO-DA HO:MI+ZONE",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "build\/auth.bundle.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "fr_FR",
+                "plural-forms": "nplurals=2; plural=(n > 1);"
+            },
+            "Passwords do not match": [
+                "Les mots de passe ne correspondent pas"
+            ],
+            "Password has been reset successfully.": [
+                "Le mot de passe a \u00e9t\u00e9 r\u00e9initialis\u00e9 avec succ\u00e8s."
+            ],
+            "Invalid email\/username or password.": [
+                "E-mail\/identifiant ou mot de passe invalide."
+            ],
+            "Terms of Service": [
+                "Conditions d'utilisation"
+            ],
+            "Privacy Policy": [
+                "Politique de confidentialit\u00e9"
+            ],
+            "Remember Me": [
+                "Se souvenir de moi"
+            ],
+            "New Password": [
+                "Nouveau mot de passe"
+            ],
+            "Confirm Password": [
+                "Confirmer le mot de passe"
+            ],
+            "An error occurred. Please try again.": [
+                "Une erreur est survenue. Veuillez r\u00e9essayer."
+            ],
+            "Sign In": [
+                "Se connecter"
+            ],
+            "Welcome back! sign in and let the greenery spark your joy": [
+                "Bon retour ! Connectez-vous et laissez la verdure \u00e9veiller votre joie"
+            ],
+            "Email Address": [
+                "Adresse e-mail"
+            ],
+            "Password": [
+                "Mot de passe"
+            ],
+            "Signing in...": [
+                "Connexion..."
+            ],
+            "Forgot Password?": [
+                "Mot de passe oubli\u00e9 ?"
+            ],
+            "Don't have an account?": [
+                "Vous n'avez pas de compte ?"
+            ],
+            "Sign Up": [
+                "S'inscrire"
+            ],
+            "Registration Complete please login": [
+                "Inscription termin\u00e9e, veuillez vous connecter"
+            ],
+            "Registration failed. Please try again.": [
+                "L'inscription a \u00e9chou\u00e9. Veuillez r\u00e9essayer."
+            ],
+            "Registration": [
+                "Inscription"
+            ],
+            "Welcome Back! Sign in and let the greenery spark your joy": [
+                "Bon retour ! Connectez-vous et laissez la verdure \u00e9veiller votre joie"
+            ],
+            "Username": [
+                "Identifiant"
+            ],
+            "User Name": [
+                "Nom d'utilisateur"
+            ],
+            "Enter your Email": [
+                "Saisissez votre e-mail"
+            ],
+            "New password": [
+                "Nouveau mot de passe"
+            ],
+            "Enter new password": [
+                "Saisissez le nouveau mot de passe"
+            ],
+            "Confirm password": [
+                "Confirmer le mot de passe"
+            ],
+            "Confirm new password": [
+                "Confirmer le nouveau mot de passe"
+            ],
+            "Creating account...": [
+                "Cr\u00e9ation du compte..."
+            ],
+            "Sign up": [
+                "S'inscrire"
+            ],
+            "By creating an account, you agree to our": [
+                "En cr\u00e9ant un compte, vous acceptez nos"
+            ],
+            "and": [
+                "et"
+            ],
+            "Log in": [
+                "Se connecter"
+            ],
+            "Check your email for the confirmation link.": [
+                "Consultez votre messagerie pour trouver le lien de confirmation."
+            ],
+            "Reset your password": [
+                "R\u00e9initialisez votre mot de passe"
+            ],
+            "Enter a valid e-mail to receive instruction on how to reset your password.": [
+                "Saisissez une adresse e-mail valide pour recevoir les instructions de r\u00e9initialisation de votre mot de passe."
+            ],
+            "Email or username": [
+                "E-mail ou identifiant"
+            ],
+            "Sending...": [
+                "Envoi..."
+            ],
+            "Reset Password": [
+                "R\u00e9initialiser le mot de passe"
+            ],
+            "Set New Password": [
+                "D\u00e9finir un nouveau mot de passe"
+            ],
+            "Enter your new password below.": [
+                "Saisissez votre nouveau mot de passe ci-dessous."
+            ],
+            "Resetting...": [
+                "R\u00e9initialisation..."
+            ]
+        }
+    }
+}

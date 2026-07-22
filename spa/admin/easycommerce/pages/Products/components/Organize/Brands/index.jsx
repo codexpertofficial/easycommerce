@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { __ } from '@wordpress/i18n';
 
 const Brands = ({ active, brands, selected, setSelected }) => {
 
@@ -77,7 +78,7 @@ const Brands = ({ active, brands, selected, setSelected }) => {
                 {safeBrands.length > 0 ? (
                     renderBrands(safeBrands)
                 ) : (
-                    <div className="text-gray-500 text-sm">No brands available</div>
+                    <div className="text-gray-500 text-sm">{__('No brands available', 'easycommerce')}</div>
                 )}
             </div>
             <input

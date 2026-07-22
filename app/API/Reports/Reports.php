@@ -199,10 +199,9 @@ class Reports extends API {
 		$labels = array();
 
 		if ( in_array( $range, array( 'this-week', 'last-week', 'last-month-week', 'last-year-week' ), true ) ) {
-			$start     = (int) get_option( 'start_of_week' );
-			$day_names = array( 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat' );
+			$start = (int) get_option( 'start_of_week' );
 			for ( $i = 0; $i < 7; $i++ ) {
-				$labels[] = $day_names[ ( $start + $i ) % 7 ];
+				$labels[] = wp_date( 'D', strtotime( 'Sunday +' . ( ( $start + $i ) % 7 ) . ' days' ) );
 			}
 		} elseif ( in_array( $range, array( 'last-7', 'prev-7', 'last-month-7', 'last-year-7' ), true ) ) {
 			if ( strpos( $range, ',' ) !== false ) {
@@ -213,28 +212,28 @@ class Reports extends API {
 					( new \DateTime( trim( $to ) ) )->modify( '+1 day' )
 				);
 				foreach ( $period as $date ) {
-					$labels[] = $date->format( 'd M' );
+					$labels[] = wp_date( 'd M', $date->getTimestamp() );
 				}
 			} else {
 				$days = 7;
 				if ( 'last-7' === $range ) {
 					for ( $i = $days - 1; $i >= 0; $i-- ) {
-						$labels[] = gmdate( 'D', strtotime( "-{$i} days" ) );
+						$labels[] = wp_date( 'D', strtotime( "-{$i} days" ) );
 					}
 				} elseif ( 'prev-7' === $range ) {
 					for ( $i = 13; $i >= 7; $i-- ) {
-						$labels[] = gmdate( 'D', strtotime( "-{$i} days" ) );
+						$labels[] = wp_date( 'D', strtotime( "-{$i} days" ) );
 					}
 				} elseif ( 'last-month-7' === $range ) {
 					$last_month = new \DateTime( 'first day of last month' );
 					$last_month->modify( '+23 days' );
 					for ( $i = 0; $i < $days; $i++ ) {
-						$labels[] = $last_month->format( 'd M' );
+						$labels[] = wp_date( 'd M', $last_month->getTimestamp() );
 						$last_month->modify( '+1 day' );
 					}
 				} elseif ( 'last-year-7' === $range ) {
 					for ( $i = 36; $i >= 30; $i-- ) {
-						$labels[] = gmdate( 'd M', strtotime( "-{$i} days" ) );
+						$labels[] = wp_date( 'd M', strtotime( "-{$i} days" ) );
 					}
 				}
 			}
@@ -266,7 +265,9 @@ class Reports extends API {
 				$labels[] = $this->ordinal( (int) $date->format( 'j' ) );
 			}
 		} elseif ( in_array( $range, array( 'this-year', 'last-year' ), true ) ) {
-			$labels = array( 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec' );
+			for ( $month = 1; $month <= 12; $month++ ) {
+				$labels[] = wp_date( 'M', mktime( 0, 0, 0, $month, 1 ) );
+			}
 		} elseif ( strpos( $range, ',' ) !== false ) {
 			list( $from, $to ) = explode( ',', $range );
 			$period            = new \DatePeriod(
@@ -278,9 +279,9 @@ class Reports extends API {
 				$labels[] = $date->format( 'd M' );
 			}
 		} elseif ( 'today' === $range ) {
-			$labels = array( gmdate( 'D' ) );
+			$labels = array( wp_date( 'D' ) );
 		} elseif ( 'yesterday' === $range ) {
-			$labels = array( gmdate( 'D', strtotime( '-1 day' ) ) );
+			$labels = array( wp_date( 'D', strtotime( '-1 day' ) ) );
 		} else {
 			$labels = array( '' );
 		}

@@ -123,7 +123,7 @@ const AiChat = ({
 			const response = await sendToAi(newMessage.text);
 			setPendingBotMessage({ text: response, sender: 'bot', type: 'normal' });
 		} catch (error) {
-			const errorMsg = error.message || 'Something went wrong';
+			const errorMsg = error.message || __( 'Something went wrong', 'easycommerce' );
 			setMessages((prev) => [
 				...prev,
 				{ text: errorMsg, sender: 'bot', type: 'error' }
@@ -147,7 +147,7 @@ const AiChat = ({
 			const data = await res.json().catch(() => null);
 
 			if (!res.ok) {
-				const errorMsg = data?.data?.message || data?.message || 'Network response was not okay';
+				const errorMsg = data?.data?.message || data?.message || __( 'Network response was not okay', 'easycommerce' );
 				throw new Error(errorMsg);
 			}
 
@@ -159,9 +159,9 @@ const AiChat = ({
 				EASYCOMMERCE.credits -= 2;
 			}
 
-			return marked.parse(data?.reply || 'No answer found');
+			return marked.parse(data?.reply || __( 'No answer found', 'easycommerce' ));
 		} catch (err) {
-			throw new Error(err.message || 'Something went wrong');
+			throw new Error(err.message || __( 'Something went wrong', 'easycommerce' ));
 		}
 	};
 
@@ -217,7 +217,7 @@ const AiChat = ({
 					<div>
 						<div className='bg-[linear-gradient(92deg,#A252FC_-15.48%,#7351FD_42.91%,#C02189_101.3%)] flex justify-center items-center gap-[6px] p-[7px]'>
 							{miniAiIcon}
-							<h4 className='text-white text-[18px]'>Store Copilot</h4>
+							<h4 className='text-white text-[18px]'>{ __( 'Store Copilot', 'easycommerce' ) }</h4>
 						</div>
 						<div ref={chatContainerRef} className="easycommerce-ask-ai-container flex flex-col overflow-y-auto max-h-[65vh] p-[24px] thin-scrollbar">
 							{messages.map((msg, index) => (
@@ -276,7 +276,7 @@ const AiChat = ({
 					<textarea
 						ref={inputRef}
 						rows={1}
-						placeholder="Ask a Question"
+						placeholder={ __( 'Ask a Question', 'easycommerce' ) }
 						className={`
 							border-0 outline-0 shadow-none p-0 grow bg-transparent resize-none
 							text-[14px] placeholder-[#7A7A99] max-h-[120px] leading-[1.5]
@@ -302,7 +302,7 @@ const AiChat = ({
 					<button
 						onClick={handleSend}
 						disabled={isBotTyping || !input.trim()}
-						aria-label="Send"
+						aria-label={ __( 'Send', 'easycommerce' ) }
 						className={`bg-transparent border-0 p-0 transition-colors duration-200
 							${input.trim() ? 'text-ec-primary' : 'text-black'}
 							disabled:opacity-30`}

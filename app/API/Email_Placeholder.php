@@ -152,13 +152,21 @@ class Email_Placeholder extends API {
 				'Cart'    => $this->get_cart_placeholders(),
 			];
 
+			// Display labels for the category keys above. The keys stay untranslated.
+			$category_labels = [
+				'General' => __( 'General', 'easycommerce' ),
+				'Order'   => __( 'Order', 'easycommerce' ),
+				'Cart'    => __( 'Cart', 'easycommerce' ),
+			];
+
 			// Organize response with categories.
 			foreach ( $categories as $category => $placeholders ) {
 				if ( ! empty( $placeholders ) ) {
 					// Add category header.
 					$response[] = [
 						'id'       => '',
-						'text'     => $this->escape( sprintf( '--- %s Placeholders ---', $category ) ),
+						// translators: %s: placeholder category name.
+						'text'     => $this->escape( sprintf( __( '--- %s Placeholders ---', 'easycommerce' ), $category_labels[ $category ] ?? $category ) ),
 						'disabled' => true,
 					];
 

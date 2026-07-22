@@ -26,8 +26,7 @@ const shopIcon = (
     </svg>
 );
 
-registerBlockType(metadata.name, {
+registerBlockType(metadata, {
     icon: shopIcon,
-    title: metadata.title,
     edit: Edit,
 });

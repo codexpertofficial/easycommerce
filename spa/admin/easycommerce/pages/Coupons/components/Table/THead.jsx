@@ -1,14 +1,15 @@
 import React from "react";
+import { __ } from "@wordpress/i18n";
 
 const THead = ({ columnList, allChecked, toggleAll }) => {
 	return (
 		<thead>
 			<tr className="h-auto">
 				{columnList.map((column) => {
-					if (column === "name") {
+					if (column.key === "name") {
 						return (
 							<th
-								key={column}
+								key={column.key}
 								className="p-3 pl-5 bg-ec-modal border-0 flex items-center rounded-l-lg [15%]"
 							>
 								<input
@@ -19,7 +20,7 @@ const THead = ({ columnList, allChecked, toggleAll }) => {
 								/>
 
 								<span className="ml-2 font-inter font-normal text-sm text-ec-title rtl:mr-2">
-									Name
+									{ __( "Name", "easycommerce" ) }
 								</span>
 
 							</th>
@@ -27,16 +28,16 @@ const THead = ({ columnList, allChecked, toggleAll }) => {
 					} else {
 						return (
 							<th
-								key={column}
+								key={column.key}
 								className={`${
-									column === "code" ? "w-[18%]" : "w-[15%]"
+									column.key === "code" ? "w-[18%]" : "w-[15%]"
 								} ${
-									column === "status" ? "rounded-r-lg" : ""
+									column.key === "status" ? "rounded-r-lg" : ""
 								}
 								text-left text-ec-title font-inter font-normal text-sm
 								 py-3 pl-5 bg-ec-modal border-0 rtl:text-right rtl:pr-5`}
 							>
-								{column.charAt(0).toUpperCase() + column.slice(1)}
+								{column.label}
 							</th>
 						);
 					}

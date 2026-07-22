@@ -1,3 +1,5 @@
+import { __ } from '@wordpress/i18n';
+
 const ImagePreviewAISkeleton = () => {
 	return (
 		<div className="border border-solid border-ec-table-stock rounded-lg flex flex-col items-center justify-center gap-3 h-full relative overflow-hidden bg-gray-50">
@@ -13,7 +15,7 @@ const ImagePreviewAISkeleton = () => {
 
 			{/* Text */}
 			<div className="relative z-10 text-center text-sm text-gray-500">
-				Generating image
+				{__('Generating image', 'easycommerce')}
 			</div>
 
 			<style jsx>{`

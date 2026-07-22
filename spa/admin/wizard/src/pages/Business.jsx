@@ -92,7 +92,7 @@ const Business = ({ formValues, setFormValues }) => {
                             type="text"
                             name="general-business-store_name"
                             className="easycommerce-wizard-input w-full"
-                            placeholder="Write your business name"
+                            placeholder={__('Write your business name', 'easycommerce')}
                             value={formValues.store_name}
                             onChange={(e) =>
                                 setFormValues((prev) => ({ ...prev, store_name: e.target.value }))
@@ -107,7 +107,7 @@ const Business = ({ formValues, setFormValues }) => {
                     {renderSelect(
                         "business_type",
                         "general-business-business_type",
-                        "Business Type",
+                        __( 'Business Type', 'easycommerce' ),
                         formValues.business_type,
                         businessTypes,
                         __( 'Pick the type that best describes your business. You can update it later if needed.', 'easycommerce' )
@@ -117,7 +117,7 @@ const Business = ({ formValues, setFormValues }) => {
                     {renderSelect(
                         "country",
                         "general-business-country",
-                        "Business Country",
+                        __( 'Business Country', 'easycommerce' ),
                         formValues.country,
                         countries,
                         __( 'Select the country where your business is located to configure taxes, currency, and shipping correctly.', 'easycommerce' )
@@ -126,14 +126,16 @@ const Business = ({ formValues, setFormValues }) => {
                     {/* Email */}
                     <div className="flex flex-col space-y-2">
                         <label htmlFor="email" className="text-ec-body text-[16px] font-medium">
-                            Store Email
+                            {__('Store Email', 'easycommerce')}
+                            <span className="text-[#B4322E] ml-1">*</span>
                         </label>
                         <input
                             id="email"
                             type="email"
+                            required
                             name="general-business-business_email"
                             className="easycommerce-wizard-input w-full"
-                            placeholder="Write your business email"
+                            placeholder={__('Write your business email', 'easycommerce')}
                             value={formValues.email}
                             onChange={(e) =>
                                 setFormValues((prev) => ({ ...prev, email: e.target.value }))

@@ -1,0 +1,99 @@
+{
+    "translation-revision-date": "YEAR-MO-DA HO:MI+ZONE",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "blocks\/components\/typography.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "de_DE",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Font Size": [
+                "Schriftgr\u00f6\u00dfe"
+            ],
+            "Font Weight": [
+                "Schriftst\u00e4rke"
+            ],
+            "100 (Thin)": [
+                "100 (D\u00fcnn)"
+            ],
+            "200 (Extra Light)": [
+                "200 (Extraleicht)"
+            ],
+            "300 (Light)": [
+                "300 (Leicht)"
+            ],
+            "400 (Normal)": [
+                "400 (Normal)"
+            ],
+            "500 (Medium)": [
+                "500 (Mittel)"
+            ],
+            "600 (Semi Bold)": [
+                "600 (Halbfett)"
+            ],
+            "700 (Bold)": [
+                "700 (Fett)"
+            ],
+            "800 (Extra Bold)": [
+                "800 (Extrafett)"
+            ],
+            "900 (Black)": [
+                "900 (Schwarz)"
+            ],
+            "Default": [
+                "Standard"
+            ],
+            "Normal": [
+                "Normal"
+            ],
+            "Bold": [
+                "Fett"
+            ],
+            "Text Transform": [
+                "Texttransformation"
+            ],
+            "Uppercase": [
+                "Gro\u00dfbuchstaben"
+            ],
+            "Lowercase": [
+                "Kleinbuchstaben"
+            ],
+            "Capitalize": [
+                "Wortanf\u00e4nge gro\u00df"
+            ],
+            "Text Style": [
+                "Textstil"
+            ],
+            "Italic": [
+                "Kursiv"
+            ],
+            "Oblique": [
+                "Schr\u00e4g"
+            ],
+            "Text Decoration": [
+                "Textdekoration"
+            ],
+            "None": [
+                "Keine"
+            ],
+            "Underline": [
+                "Unterstrichen"
+            ],
+            "Overline": [
+                "\u00dcberstrichen"
+            ],
+            "Line Through": [
+                "Durchgestrichen"
+            ],
+            "Line Height": [
+                "Zeilenh\u00f6he"
+            ],
+            "Word Spacing": [
+                "Wortabstand"
+            ]
+        }
+    }
+}

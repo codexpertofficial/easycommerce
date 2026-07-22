@@ -1,0 +1,72 @@
+{
+    "translation-revision-date": "YEAR-MO-DA HO:MI+ZONE",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "assets\/payment\/js\/stripe-payment.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "pt_BR",
+                "plural-forms": "nplurals=2; plural=(n > 1);"
+            },
+            "Failed to load cart data. Please refresh the page.": [
+                "Falha ao carregar os dados do carrinho. Atualize a p\u00e1gina."
+            ],
+            "Failed to create payment. Please try again.": [
+                "Falha ao criar o pagamento. Tente novamente."
+            ],
+            "Payment form failed to load. Please refresh.": [
+                "Falha ao carregar o formul\u00e1rio de pagamento. Atualize a p\u00e1gina."
+            ],
+            "Could not verify cart. Please refresh and try again.": [
+                "N\u00e3o foi poss\u00edvel verificar o carrinho. Atualize a p\u00e1gina e tente novamente."
+            ],
+            "Failed to create payment. Please refresh the page and try again.": [
+                "Falha ao criar o pagamento. Atualize a p\u00e1gina e tente novamente."
+            ],
+            "This payment handler is not available. Please refresh and try again.": [
+                "Este processador de pagamento n\u00e3o est\u00e1 dispon\u00edvel. Atualize a p\u00e1gina e tente novamente."
+            ],
+            "Additional verification required. Please complete the payment process.": [
+                "Verifica\u00e7\u00e3o adicional necess\u00e1ria. Conclua o processo de pagamento."
+            ],
+            "Payment failed. Please try a different payment method.": [
+                "O pagamento falhou. Tente uma forma de pagamento diferente."
+            ],
+            "Payment was canceled. Please try again.": [
+                "O pagamento foi cancelado. Tente novamente."
+            ],
+            "Payment status: %s. Please contact support if this persists.": [
+                "Status do pagamento: %s. Entre em contato com o suporte se isso persistir."
+            ],
+            "Payment could not be processed. Please try again.": [
+                "N\u00e3o foi poss\u00edvel processar o pagamento. Tente novamente."
+            ],
+            "An error occurred while processing your payment. Please try again.": [
+                "Ocorreu um erro ao processar seu pagamento. Tente novamente."
+            ],
+            "Verifying payment...": [
+                "Verificando pagamento..."
+            ],
+            "Payment successful! Creating order...": [
+                "Pagamento aprovado! Criando pedido..."
+            ],
+            "Payment method could not be saved. Status: %s": [
+                "N\u00e3o foi poss\u00edvel salvar a forma de pagamento. Status: %s"
+            ],
+            "Failed to verify payment. Please contact support.": [
+                "Falha ao verificar o pagamento. Entre em contato com o suporte."
+            ],
+            "Payment failed. Please try again with a different payment method.": [
+                "O pagamento falhou. Tente novamente com uma forma de pagamento diferente."
+            ],
+            "Additional action required. Please complete the payment process.": [
+                "A\u00e7\u00e3o adicional necess\u00e1ria. Conclua o processo de pagamento."
+            ],
+            "Payment could not be completed. Status: %s": [
+                "N\u00e3o foi poss\u00edvel concluir o pagamento. Status: %s"
+            ]
+        }
+    }
+}

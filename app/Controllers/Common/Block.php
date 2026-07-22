@@ -108,6 +108,59 @@ class Block {
 				'content'     => Utility::get_template( 'patterns/single-product/template-2.php' ),
 			)
 		);
+
+		$this->register_store_patterns();
+	}
+
+	/**
+	 * Register the store pattern library (section + page patterns).
+	 *
+	 * Each file under views/patterns/store/ defines a $pattern_meta array
+	 * (title/description/categories/keywords/blockTypes/viewportWidth) and
+	 * echoes its block markup. The markup is captured via output buffering,
+	 * so pattern copy can be translated inline.
+	 */
+	public function register_store_patterns() {
+		$dir = EASYCOMMERCE_PLUGIN_DIR . 'views/patterns/store/';
+
+		if ( ! is_dir( $dir ) ) {
+			return;
+		}
+
+		$files = glob( $dir . '*.php' );
+
+		if ( empty( $files ) ) {
+			return;
+		}
+
+		foreach ( $files as $file ) {
+			$pattern_meta = array();
+
+			ob_start();
+			include $file;
+			$content = ob_get_clean();
+
+			if ( '' === trim( $content ) ) {
+				continue;
+			}
+
+			$slug = isset( $pattern_meta['slug'] )
+				? $pattern_meta['slug']
+				: 'easycommerce/' . sanitize_title( basename( $file, '.php' ) );
+
+			$args = wp_parse_args(
+				$pattern_meta,
+				array(
+					'title'      => ucwords( str_replace( '-', ' ', basename( $file, '.php' ) ) ),
+					'categories' => array( 'easycommerce' ),
+				)
+			);
+
+			unset( $args['slug'] );
+			$args['content'] = $content;
+
+			register_block_pattern( $slug, $args );
+		}
 	}
 
 	/**

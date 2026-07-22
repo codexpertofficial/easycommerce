@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { __ } from '@wordpress/i18n';
+import { __, sprintf } from '@wordpress/i18n';
 import { toast } from "react-toastify";
 import Dropdown from '../../../../../../common/components/inputs/Dropdown';
 
@@ -26,7 +26,7 @@ const currencyIcon = (
 );
 
 const RefundModal = ({ hideModal, order, updateOrder }) => {
-    const [label, setLabel] = useState("Select an option");
+    const [label, setLabel] = useState("");
     const [reason, setReason] = useState("");
     const [refundAmount, setRefundAmount] = useState(null);
     const [refundTxnID, setRefundTxnID] = useState("");
@@ -37,22 +37,22 @@ const RefundModal = ({ hideModal, order, updateOrder }) => {
         e.preventDefault();
 
         if (!reason) {
-            toast.error(`Please select a reason before refunding`);
+            toast.error(__('Please select a reason before refunding', 'easycommerce'));
             return;
         }
 
         if (!refundAmount) {
-            toast.error(`Please enter an amount before refunding`);
+            toast.error(__('Please enter an amount before refunding', 'easycommerce'));
             return;
         } else if (parseFloat(refundAmount) <= 0) {
             toast.error(
-                `Please enter an amount greater than 0 before refunding`
+                __('Please enter an amount greater than 0 before refunding', 'easycommerce')
             );
             return;
         }
 
         if (!supportsRefund && refundTxnID.trim() === '') {
-            toast.error(`Please enter the Refund Transaction ID.`);
+            toast.error(__('Please enter the Refund Transaction ID.', 'easycommerce'));
             return;
         }
 
@@ -204,7 +204,13 @@ const RefundModal = ({ hideModal, order, updateOrder }) => {
                             {!supportsRefund && (
                                 <div className="mt-2 mb-8">
                                     <p className="text-ec-body font-inter font-normal text-sm leading-[22px] mb-3">
-                                        {__(`For ${EASYCOMMERCE.payment_methods[order.transactions?.payment_gateway ?? order.payment_method]?.title ?? order.payment_method}, refunds should be processed manually outside of the system. After succesful processing, enter the Refund Transaction ID`, 'easycommerce')}
+                                        {
+                                            // translators: %s: payment gateway name.
+                                            sprintf(
+                                                __( 'For %s, refunds should be processed manually outside of the system. After succesful processing, enter the Refund Transaction ID', 'easycommerce' ),
+                                                EASYCOMMERCE.payment_methods[order.transactions?.payment_gateway ?? order.payment_method]?.title ?? order.payment_method
+                                            )
+                                        }
                                     </p>
 
                                     <div className="h-ec-input rounded-lg font-inter text-[14px] leading-[20px] border border-ec-table-stock placeholder-ec-placeholder hover:border-ec-primary focus-within:border-ec-primary focus-within:outline-none focus-within:[box-shadow:0_0_0_4px_#F3F0FF] transition-colors duration-300 ease-in-out overflow-hidden flex ">
@@ -228,14 +234,14 @@ const RefundModal = ({ hideModal, order, updateOrder }) => {
 								ease-in-out duration-500"
                                 onClick={hideModal}
                             >
-                                Cancel
+                                {__("Cancel", "easycommerce")}
                             </button>
                             <button
                                 className="p-[10px] rounded-lg text-white border border-ec-primary font-inter font-medium text-base
                                 leading-[26px] w-[224px] bg-ec-primary hover:bg-ec-secondary transition-all ease-in-out duration-500"
                                 type="submit"
                             >
-                                Refund now
+                                {__("Refund now", "easycommerce")}
                             </button>
                         </div>
                     </form>

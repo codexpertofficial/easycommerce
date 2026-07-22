@@ -30,10 +30,10 @@ const ProductStatus = ({ prevStatus, onStatusChange }) => {
 				setStatus={setStatus}
 				value={statusMap[statusValue]}
 				onChange={(e) => {
-					setStatus(e.label);
+					// Use the raw option value, never the (translated) label.
+					const newStatusValue = e.value === 'publish' ? 'publish' : 'draft';
+					setStatus(newStatusValue === 'publish' ? 'live' : 'draft');
 					if (onStatusChange) {
-						const newStatusValue =
-							e.label.toLowerCase() === 'live' ? 'publish' : 'draft';
 						onStatusChange(newStatusValue);
 					}
 				}}

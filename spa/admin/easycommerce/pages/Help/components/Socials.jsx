@@ -1,3 +1,5 @@
+import { __ } from '@wordpress/i18n';
+
 export default function Socials({ assetsPath }) {
 	const socialIcon = (
 		<svg xmlns="http://www.w3.org/2000/svg" width="22" height="16" viewBox="0 0 22 16" fill="none">
@@ -37,9 +39,9 @@ export default function Socials({ assetsPath }) {
 
 	const socials = [
 		{
-			url: "https://www.facebook.com/groups/easycommerce.community",
+			url: EASYCOMMERCE.community_url,
 			icon: socialIcon,
-			alt: "Social",
+			alt: __('Community', 'easycommerce'),
 		},
 		{
 			url: "https://x.com/easycommercedev/",

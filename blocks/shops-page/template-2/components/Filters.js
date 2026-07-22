@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { __ } from '@wordpress/i18n';
 import RecursiveOptions from './RecursiveOptions';
 import DualRangeSlider from './DualRangeSlider';
 
@@ -13,14 +14,14 @@ const Filters = () => {
     const arrow = EASYCOMMERCE.assets + 'common/img/blocks/shop-page/arrow.png';
 
     const sortOptions = {
-        'low-to-high': 'Low to High',
-        'high-to-low': 'High to Low',
-        'newest': 'Newest',
-        'oldest': 'Oldest',
-        'best-selling': 'Best Selling',
-        'lowest-selling': 'Lowest Selling',
-        'top-rating': 'Top rating',
-        'lowest-rating': 'Lowest rating',
+        'low-to-high': __('Low to High', 'easycommerce'),
+        'high-to-low': __('High to Low', 'easycommerce'),
+        'newest': __('Newest', 'easycommerce'),
+        'oldest': __('Oldest', 'easycommerce'),
+        'best-selling': __('Best Selling', 'easycommerce'),
+        'lowest-selling': __('Lowest Selling', 'easycommerce'),
+        'top-rating': __('Top rating', 'easycommerce'),
+        'lowest-rating': __('Lowest rating', 'easycommerce'),
     };
 
     useEffect(() => {
@@ -66,13 +67,13 @@ const Filters = () => {
             <div className="easycommerce-drawer-product-search relative">
                 <img
                     src={`${EASYCOMMERCE.assets}common/img/blocks/shop-page/product-search.png`}
-                    alt="Search Icon"
+                    alt={__('Search Icon', 'easycommerce')}
                     className="absolute top-3 left-5"
                 />
                 <input
                     type="text"
                     className="easycommerce-product-search border border-ec-border pl-14 pr-2 py-1 w-full rounded-lg hover:border-ec-secondary focus:border-ec-primary"
-                    placeholder=" Search"
+                    placeholder={__(' Search', 'easycommerce')}
                 />
             </div>
             {/* Sorting Options */}
@@ -81,7 +82,7 @@ const Filters = () => {
                     className="easycommerce-filter-heading text-[16px] font-semibold cursor-pointer colorec-body w-full flex justify-between items-center"
                     onClick={() => toggleAccordion('sort')}
                 >
-                    Sort by
+                    {__('Sort by', 'easycommerce')}
                     <span
                         className={`transform transition-transform ${
                             isAccordionOpen.sort ? 'rotate-180' : ''
@@ -119,7 +120,7 @@ const Filters = () => {
                         className="easycommerce-filter-heading text-[16px] font-semibold cursor-pointer colorec-body w-full flex justify-between items-center"
                         onClick={() => toggleAccordion('categories')}
                     >
-                        Categories
+                        {__('Categories', 'easycommerce')}
                         <span
                             className={`transform transition-transform ${
                                 isAccordionOpen.categories ? 'rotate-180' : ''
@@ -153,7 +154,7 @@ const Filters = () => {
                     className="easycommerce-filter-heading text-[16px] font-semibold cursor-pointer colorec-body w-full flex justify-between items-center"
                     onClick={() => toggleAccordion('price')}
                 >
-                    Price Range
+                    {__('Price Range', 'easycommerce')}
                     <span
                         className={`transform transition-transform ${
                             isAccordionOpen.price ? 'rotate-180' : ''
@@ -231,7 +232,7 @@ const Filters = () => {
                         className="easycommerce-filter-heading text-[16px] font-semibold cursor-pointer colorec-body w-full flex justify-between items-center"
                         onClick={() => toggleAccordion('brands')}
                     >
-                        Brands
+                        {__('Brands', 'easycommerce')}
                         <span
                             className={`transform transition-transform ${
                                 isAccordionOpen.brands ? 'rotate-180' : ''

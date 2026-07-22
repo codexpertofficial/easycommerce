@@ -1,0 +1,33 @@
+{
+    "translation-revision-date": "YEAR-MO-DA HO:MI+ZONE",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "assets\/admin\/js\/email-placeholders.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "fr_FR",
+                "plural-forms": "nplurals=2; plural=(n > 1);"
+            },
+            "Insert Email Placeholder": [
+                "Ins\u00e9rer un marqueur d'e-mail"
+            ],
+            "Select a placeholder:": [
+                "S\u00e9lectionner un marqueur :"
+            ],
+            "Select a placeholder to automatically insert it into your email template. These will be replaced with actual values when emails are sent.": [
+                "S\u00e9lectionnez un marqueur pour l'ins\u00e9rer automatiquement dans votre mod\u00e8le d'e-mail. Il sera remplac\u00e9 par la valeur r\u00e9elle lors de l'envoi des e-mails."
+            ],
+            "Close": [
+                "Fermer"
+            ],
+            "Search for a placeholder...": [
+                "Rechercher un marqueur..."
+            ],
+            "Loading...": [
+                "Chargement..."
+            ]
+        }
+    }
+}

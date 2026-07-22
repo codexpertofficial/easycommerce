@@ -1,59 +1,60 @@
 import React, { useState, useEffect } from 'react';
+import { __ } from '@wordpress/i18n';
 import StatusDropdown from './StatusDropdown';
 import FullfillmentDropdown from './FullfillmentDropdown';
 import RefundModal from '../SingleOrder/components/Modal/RefundModal';
 
 const columnList = [
 	{
-		title: 'ID',
+		title: __('ID', 'easycommerce'),
 		name: 'id',
 		width: '10',
 	},
 	{
-		title: 'Customer',
+		title: __('Customer', 'easycommerce'),
 		name: 'customer',
 		width: '14',
 	},
 	{
-		title: 'Status',
+		title: __('Status', 'easycommerce'),
 		name: 'status',
 		width: '15',
 	},
 	{
-		title: 'Fulfillment',
+		title: __('Fulfillment', 'easycommerce'),
 		name: 'fulfillment',
 		width: '15',
 	},
 	{
-		title: 'Products',
+		title: __('Products', 'easycommerce'),
 		name: 'items',
 		width: '8',
 	},
 	{
-		title: 'Amount',
+		title: __('Amount', 'easycommerce'),
 		name: 'total',
 		width: '9',
 	},
 	{
-		title: 'Transactions ID',
+		title: __('Transactions ID', 'easycommerce'),
 		name: 'transactions',
 		width: '15',
 	},
 	{
-		title: 'Date & Time',
+		title: __('Date & Time', 'easycommerce'),
 		name: 'created_at',
 		width: '14',
 	},
 ];
 
 const statusOptions = [
-	{ label: 'Completed', value: 'completed' },
-	{ label: 'Cancelled', value: 'cancelled' },
-	{ label: 'Partially Refunded', value: 'partially_refunded' },
-	{ label: 'Refunded', value: 'refunded' },
-	{ label: 'Pending', value: 'pending' },
-	{ label: 'On hold', value: 'on_hold' },
-	{ label: 'Processing', value: 'processing' },
+	{ label: __('Completed', 'easycommerce'), value: 'completed' },
+	{ label: __('Cancelled', 'easycommerce'), value: 'cancelled' },
+	{ label: __('Partially Refunded', 'easycommerce'), value: 'partially_refunded' },
+	{ label: __('Refunded', 'easycommerce'), value: 'refunded' },
+	{ label: __('Pending', 'easycommerce'), value: 'pending' },
+	{ label: __('On hold', 'easycommerce'), value: 'on_hold' },
+	{ label: __('Processing', 'easycommerce'), value: 'processing' },
 ];
 
 const OrderTable = ({
@@ -101,7 +102,7 @@ const OrderTable = ({
 											/>
 
 											<span className="ml-2 font-inter font-normal text-sm text-ec-title">
-												ID
+												{__('ID', 'easycommerce')}
 											</span>
 										</th>
 									);
@@ -146,7 +147,7 @@ const OrderTable = ({
 															(window.location.hash = `#/orders/${order.id}`)
 														}
 													>
-														View
+														{__('View', 'easycommerce')}
 													</button>
 													<span className="text-[#bdbdbd]">|</span>
 													<button
@@ -157,7 +158,7 @@ const OrderTable = ({
 															setShowModal(true);
 														}}
 													>
-														Delete
+														{__('Delete', 'easycommerce')}
 													</button>
 												</div>
 											</div>
@@ -181,7 +182,7 @@ const OrderTable = ({
 												options={statusOptions}
 												orderId={order.id}
 												value={order?.status}
-												placeholder="Select status"
+												placeholder={__('Select status', 'easycommerce')}
 												width="auto"
 												menuWidth="150px"
 												prevStatus={order?.status}
@@ -224,7 +225,7 @@ const OrderTable = ({
 											<FullfillmentDropdown
 												orderId={order.id}
 												value={order?.fulfill_status}
-												placeholder="Select status"
+												placeholder={__('Select status', 'easycommerce')}
 												width="116px"
 												menuWidth="150px"
 												prevStatus={order?.fulfill_status}
@@ -266,7 +267,7 @@ const OrderTable = ({
 														]?.icon
 													}
 													className="pointer-events-none object-contain rounded h-[30px] min-w-[54px] p-[3px]"
-													alt="payment-icon"
+													alt={__('payment-icon', 'easycommerce')}
 													style={{ border: '1px solid #f0edfb' }}
 												/>
 											) : (
@@ -293,7 +294,7 @@ const OrderTable = ({
 											className="text-left py-4 font-inter pl-5 font-normal lg:w-[13%] lg:text-sm 
 										text-ec-body md:text-[14px]"
 										>
-											N/A
+											{__('N/A', 'easycommerce')}
 										</td>
 									))}
 
@@ -301,10 +302,10 @@ const OrderTable = ({
 									<td className="w-[14%] pl-5">
 										<div className="flex flex-col">
 											<p className="font-inter font-normal mb-1 lg:text-sm text-ec-body md:text-[14px]">
-												{order.created_at_formatted ? order.created_at_formatted : 'N/A'}
+												{order.created_at_formatted ? order.created_at_formatted : __('N/A', 'easycommerce')}
 											</p>
 											<span className="text-ec-placeholder text-sm font-inter leading-4">
-												{order.created_time ? order.created_time : 'N/A'}
+												{order.created_time ? order.created_time : __('N/A', 'easycommerce')}
 											</span>
 										</div>
 									</td>

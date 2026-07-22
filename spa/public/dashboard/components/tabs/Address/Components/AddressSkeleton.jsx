@@ -1,5 +1,6 @@
 import React from "react";
 import Skeleton from "react-loading-skeleton";
+import { __, sprintf } from "@wordpress/i18n";
 import "react-loading-skeleton/dist/skeleton.css";
 
 const AddressSkeleton = ({ title }) => {
@@ -7,7 +8,10 @@ const AddressSkeleton = ({ title }) => {
 		<div>
 			<div className="w-full h-[57px] flex items-center px-5 bg-[#F8F8F8] border border-ec-border rounded-tl-lg rounded-tr-lg">
 				<h3 className="easycommerce-dashboard-address-title">
-					{title} Address
+					{
+						// translators: %s: address type, e.g. Billing or Shipping.
+						sprintf( __( "%s Address", "easycommerce" ), title )
+					}
 				</h3>
 			</div>
 			<div className="easycommerce-dashboard-address-wrapper grid grid-cols-1 sm:grid-cols-2 gap-4 px-5 pt-6 pb-[30px] border border-ec-border border-t-0 rounded-bl-lg rounded-br-lg">

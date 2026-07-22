@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { toast, Bounce } from "react-toastify";
+import { __ } from "@wordpress/i18n";
 
 //Icon
 const crossIcon = `${EASYCOMMERCE.assets}admin/img/icons/cross.png`;
@@ -76,11 +77,10 @@ const Modal = ({ setShowModal }) => {
                     {!showMessage && (
                         <>
                             <h2 className="text-center font-inter text-2xl font-semibold mb-2 text-[#120350]">
-                                Your Voice Matters
+                                {__("Your Voice Matters", "easycommerce")}
                             </h2>
                             <p className="max-w-[344px] mx-auto text-center text-ec-placeholder font-inter text-base leading-[26px]">
-                                Help us make EasyCommerce the best it can be.
-                                Share your feedback and ideas with us!
+                                {__("Help us make EasyCommerce the best it can be. Share your feedback and ideas with us!", "easycommerce")}
                             </p>
                             <form
                                 className="easycommerce-modal-form w-full mt-5"
@@ -91,14 +91,14 @@ const Modal = ({ setShowModal }) => {
                                         className="block mb-2 font-inter text-base leading-[26px] text-ec-body"
                                         htmlFor="easycommerce-feedback-modal-name"
                                     >
-                                        Name
+                                        {__("Name", "easycommerce")}
                                     </label>
                                     <input
                                         type="text"
                                         name="name"
                                         id="easycommerce-feedback-modal-name"
                                         className="w-full text-base font-inter p-[11px] focus:outline-none"
-                                        placeholder="Enter your name"
+                                        placeholder={__("Enter your name", "easycommerce")}
                                         required
                                     />
                                 </p>
@@ -107,14 +107,14 @@ const Modal = ({ setShowModal }) => {
                                         className="block mb-2 font-inter text-base leading-[26px] text-ec-body"
                                         htmlFor="easycommerce-feedback-modal-email"
                                     >
-                                        Email
+                                        {__("Email", "easycommerce")}
                                     </label>
                                     <input
                                         type="email"
                                         name="email"
                                         id="easycommerce-feedback-modal-email"
                                         className="w-full text-base font-inter p-[11px] focus:outline-none"
-                                        placeholder="Enter your email"
+                                        placeholder={__("Enter your email", "easycommerce")}
                                         required
                                     />
                                 </p>
@@ -123,14 +123,14 @@ const Modal = ({ setShowModal }) => {
                                         className="block mb-2 font-inter text-base leading-[26px] text-ec-body"
                                         htmlFor="easycommerce-feedback-modal-subject"
                                     >
-                                        Subject
+                                        {__("Subject", "easycommerce")}
                                     </label>
                                     <input
                                         type="text"
                                         name="subject"
                                         id="easycommerce-feedback-modal-subject"
                                         className="w-full text-base font-inter p-[11px] focus:outline-none"
-                                        placeholder="Enter a subject"
+                                        placeholder={__("Enter a subject", "easycommerce")}
                                         required
                                     />
                                 </p>
@@ -139,12 +139,12 @@ const Modal = ({ setShowModal }) => {
                                         className="block mb-2 text-base leading-[26px] text-ec-body font-inter"
                                         htmlFor="easycommerce-feedback-modal-message"
                                     >
-                                        Message
+                                        {__("Message", "easycommerce")}
                                     </label>
                                     <textarea
                                         className="w-full font-inter h-[114px] p-[11px] focus:outline-none text-base"
                                         id="easycommerce-feedback-modal-message"
-                                        placeholder="Write your mesage"
+                                        placeholder={__("Write your mesage", "easycommerce")}
                                         name="message"
                                     ></textarea>
                                 </p>
@@ -154,7 +154,7 @@ const Modal = ({ setShowModal }) => {
                                         className="block w-full font-inter p-[10px] rounded-md text-base leading-[26px]
 										text-white font-medium bg-ec-primary"
                                     >
-                                        Send Message
+                                        {__("Send Message", "easycommerce")}
                                     </button>
                                 </p>
                             </form>
@@ -170,13 +170,13 @@ const Modal = ({ setShowModal }) => {
                                     alt="Modal"
                                 />
                                 <h4 className="text-center my-4 text-ec-body font-inter font-bold text-[26px] leading-10">
-                                    Thank you for you Feedback.
+                                    {__("Thank you for you Feedback.", "easycommerce")}
                                 </h4>
                                 <button
                                     onClick={removeModal}
                                     className="block w-1/3 font-inter p-[10px] mt-3 rounded-md text-base leading-[26px] text-white font-medium bg-ec-primary"
                                 >
-                                    Close
+                                    {__("Close", "easycommerce")}
                                 </button>
                             </div>
                         </>

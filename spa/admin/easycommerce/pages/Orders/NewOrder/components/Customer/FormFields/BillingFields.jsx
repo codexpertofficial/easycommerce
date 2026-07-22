@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { __ } from "@wordpress/i18n";
 
 const downArrow = `${EASYCOMMERCE.assets}admin/img/icons/arrowDown.png`;
 
@@ -19,7 +20,7 @@ const BillingFields = ({
         <div className="p-3">
             <div className="flex items-center justify-between cursor-pointer easycommerce-new-order-billing">
                 <label className="text-ec-body font-inter font-medium cursor-pointer text-base leading-[26px]">
-                    Billing address
+                    {__("Billing address", "easycommerce")}
                 </label>
                 <img src={downArrow} className="w-3 h-[7px]" />
             </div>
@@ -39,7 +40,7 @@ const BillingFields = ({
                             onChange={() => setSameAsShipping(!sameAsShipping)}
                         />
                         <span className="text-ec-body ml-3 font-inter font-normal text-base leading-[26px]">
-                            Same as Shipping
+                            {__("Same as Shipping", "easycommerce")}
                         </span>
                     </label>
                 </div>
@@ -48,12 +49,12 @@ const BillingFields = ({
                     className="block mb-4"
                 >
                     <span className="block mb-1 text-ec-body text-base font-inter leading-8">
-                        First Name
+                        {__("First Name", "easycommerce")}
                     </span>
                     <input
                         id="easycommerce-new-order-billing-first-name"
                         type="text"
-                        placeholder="Your first Name"
+                        placeholder={__("Your first Name", "easycommerce")}
                         name="billing-first_name"
                         value={billingData.billing_first_name}
                         onChange={(e) =>
@@ -62,7 +63,7 @@ const BillingFields = ({
                                 e.target.value
                             )
                         }
-                        className="easycommerce-order-input w-full h-[42px] border border-ec-border rounded-sm 
+                        className="easycommerce-order-input w-full h-[42px] border border-ec-border rounded-sm
                         placeholder:text-sm font-inter text-sm text-ec-body"
                     />
                 </label>
@@ -71,13 +72,13 @@ const BillingFields = ({
                     className="block mb-4"
                 >
                     <span className="block mb-1 text-ec-body text-base font-inter leading-8">
-                        Last Name
+                        {__("Last Name", "easycommerce")}
                     </span>
                     <input
                         id="easycommerce-new-order-billing-last-name"
                         type="text"
                         name="billing-last_name"
-                        placeholder="Your last Name"
+                        placeholder={__("Your last Name", "easycommerce")}
                         value={billingData.billing_last_name}
                         onChange={(e) =>
                             updateBillingData(
@@ -85,7 +86,7 @@ const BillingFields = ({
                                 e.target.value
                             )
                         }
-                        className="easycommerce-order-input w-full h-[42px] border border-ec-border rounded-sm 
+                        className="easycommerce-order-input w-full h-[42px] border border-ec-border rounded-sm
                         placeholder:text-sm font-inter text-sm text-ec-body"
                     />
                 </label>
@@ -94,18 +95,18 @@ const BillingFields = ({
                     className="block mb-4"
                 >
                     <span className="block mb-1 text-ec-body text-base font-inter leading-8">
-                        Email
+                        {__("Email", "easycommerce")}
                     </span>
                     <input
                         id="easycommerce-new-order-billing-email"
                         type="email"
                         name="billing-email"
-                        placeholder="Enter your email address"
+                        placeholder={__("Enter your email address", "easycommerce")}
                         value={billingData.billing_email}
                         onChange={(e) =>
                             updateBillingData("billing_email", e.target.value)
                         }
-                        className="easycommerce-order-input w-full h-[42px] border border-ec-border rounded-sm 
+                        className="easycommerce-order-input w-full h-[42px] border border-ec-border rounded-sm
                         placeholder:text-sm font-inter text-sm text-ec-body"
                     />
                 </label>
@@ -114,13 +115,13 @@ const BillingFields = ({
                     className="block mb-4"
                 >
                     <span className="block mb-1 text-ec-body text-base font-inter leading-8">
-                        Phone
+                        {__("Phone", "easycommerce")}
                     </span>
                     <input
                         id="easycommerce-new-order-billing-phone"
                         type="tel"
                         name="billing-phone"
-                        placeholder="Enter your phone number"
+                        placeholder={__("Enter your phone number", "easycommerce")}
                         value={billingData.billing_phone}
                         onChange={(e) =>
                             updateBillingData("billing_phone", e.target.value)
@@ -133,13 +134,13 @@ const BillingFields = ({
                     className="block mb-4"
                 >
                     <span className="block mb-1 text-ec-body text-base font-inter leading-8">
-                        Address line 1
+                        {__("Address line 1", "easycommerce")}
                     </span>
                     <input
                         id="easycommerce-new-order-billing-address-1"
                         type="text"
                         name="billing-address_1"
-                        placeholder="Your address"
+                        placeholder={__("Your address", "easycommerce")}
                         value={billingData.billing_address_1}
                         onChange={(e) =>
                             updateBillingData(
@@ -155,13 +156,13 @@ const BillingFields = ({
                     className="block mb-4"
                 >
                     <span className="block mb-1 text-ec-body text-base font-inter leading-8">
-                        Address line 2
+                        {__("Address line 2", "easycommerce")}
                     </span>
                     <input
                         id="easycommerce-new-order-billing-address-2"
                         type="text"
                         name="billing-address_2"
-                        placeholder="Your address"
+                        placeholder={__("Your address", "easycommerce")}
                         value={billingData.billing_address_2}
                         onChange={(e) =>
                             updateBillingData(
@@ -179,10 +180,10 @@ const BillingFields = ({
                             htmlFor="easycommerce-new-order-billing-country"
                             className="block mb-1 text-ec-body text-base font-inter leading-8"
                         >
-                            Country
+                            {__("Country", "easycommerce")}
                         </label>
                         <select
-                            className="easycommerce-order-input easycommerce-order-select w-full h-[42px] 
+                            className="easycommerce-order-input easycommerce-order-select w-full h-[42px]
                             text-base text-ec-body font-inter rounded-md"
                             id="easycommerce-new-order-billing-country"
                             name="billing-country"
@@ -194,7 +195,7 @@ const BillingFields = ({
                                 )
                             }
                         >
-                            <option value="">Select Country</option>
+                            <option value="">{__("Select Country", "easycommerce")}</option>
                             {EASYCOMMERCE.countries &&
                                 Object.entries(EASYCOMMERCE.countries).map(
                                     ([code, countryName]) => (
@@ -210,12 +211,12 @@ const BillingFields = ({
                             htmlFor="easycommerce-new-order-billing-city"
                             className="block mb-1 text-ec-body text-base font-inter leading-8"
                         >
-                            City
+                            {__("City", "easycommerce")}
                         </label>
                         <input
                             id="easycommerce-new-order-billing-city"
                             type="text"
-                            placeholder="City"
+                            placeholder={__("City", "easycommerce")}
                             name="billing-city"
                             value={billingData.billing_city}
                             onChange={(e) =>
@@ -224,7 +225,7 @@ const BillingFields = ({
                                     e.target.value
                                 )
                             }
-                            className="easycommerce-order-input w-full h-[42px] border border-ec-border 
+                            className="easycommerce-order-input w-full h-[42px] border border-ec-border
                             rounded-sm placeholder:text-sm font-inter text-sm text-ec-body"
                         />
                     </div>
@@ -235,12 +236,12 @@ const BillingFields = ({
                             htmlFor="easycommerce-new-order-billing-state"
                             className="block mb-1 text-ec-body text-base font-inter leading-8"
                         >
-                            State
+                            {__("State", "easycommerce")}
                         </label>
                         <input
                             id="easycommerce-new-order-billing-state"
                             type="text"
-                            placeholder="State"
+                            placeholder={__("State", "easycommerce")}
                             name="billing-state"
                             value={billingData.billing_state}
                             onChange={(e) =>
@@ -249,7 +250,7 @@ const BillingFields = ({
                                     e.target.value
                                 )
                             }
-                            className="easycommerce-order-input w-full h-[42px] border border-ec-border 
+                            className="easycommerce-order-input w-full h-[42px] border border-ec-border
                             rounded-sm placeholder:text-sm font-inter text-sm text-ec-body"
                         />
                     </div>
@@ -258,12 +259,12 @@ const BillingFields = ({
                             htmlFor="easycommerce-new-order-billing-postcode"
                             className="block mb-1 text-ec-body text-base font-inter leading-8"
                         >
-                            ZIP
+                            {__("ZIP", "easycommerce")}
                         </label>
                         <input
                             id="easycommerce-new-order-billing-postcode"
                             type="text"
-                            placeholder="Zip code"
+                            placeholder={__("Zip code", "easycommerce")}
                             name="billing-postcode"
                             value={billingData.billing_postcode}
                             onChange={(e) =>
@@ -272,7 +273,7 @@ const BillingFields = ({
                                     e.target.value
                                 )
                             }
-                            className="easycommerce-order-input w-full h-[42px] border border-ec-border 
+                            className="easycommerce-order-input w-full h-[42px] border border-ec-border
                             rounded-sm placeholder:text-sm font-inter text-sm text-ec-body"
                         />
                     </div>

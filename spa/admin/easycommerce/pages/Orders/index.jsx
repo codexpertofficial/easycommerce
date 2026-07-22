@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { __, sprintf } from '@wordpress/i18n';
 import { useDispatch } from 'react-redux';
 
 // css
@@ -15,6 +16,7 @@ import DeletePopup from '../../../common/components/DeletePopup';
 import ActionBar from './components/ActionBar';
 
 const noOrder = `${EASYCOMMERCE.assets}admin/img/nofound/no-orders.png`;
+
 
 const Orders = ({ page, productId }) => {
 	const [selectedOrders, setSelectedOrders] = useState([]);
@@ -125,7 +127,7 @@ const Orders = ({ page, productId }) => {
 
 	const fetchStatusCounts = () => {
 		let url = `${EASYCOMMERCE.rest_base}/orders?page=${page}&per_page=${postPerPage}`;
-
+ 
 		fetch(url, {
 			headers: {
 				'Content-Type': 'application/json',
@@ -138,13 +140,17 @@ const Orders = ({ page, productId }) => {
 					setStatusCounts(data.data.statuses_counts ?? {});
 				}
 				setIsStatusLoaded(true);
+			})
+			.catch(() => {
+				setIsStatusLoaded(true);
+				toast.error(__('Unable to load order status counts. Please refresh and try again.', 'easycommerce'));
 			});
 	};
 
 	// All order statuses
 	const tabOptions = [
 		{
-			label: 'All',
+			label: __('All', 'easycommerce'),
 			key: 'all',
 			bg: 'bg-ec-allBg text-ec-allText',
 		},
@@ -162,12 +168,13 @@ const Orders = ({ page, productId }) => {
 			: 0,
 		...statusCounts,
 	};
-	const tabLabel =
-		tabOptions.find((t) => t.key === activeTab)?.label.toLowerCase() ||
-		'orders';
+	// Keep the raw key for comparisons; the label is translated and must not drive logic.
+	const tabKey = tabOptions.find((t) => t.key === activeTab)?.key || 'all';
+	const tabLabel = tabOptions.find((t) => t.key === tabKey)?.label || '';
 
 	const fetchOrders = () => {
 		setIsLoading(true);
+
 		const searchValue = formState.searchquery.trim();
 		const fromDate = convertDateFormat(formState.dateForm);
 		const toDate = convertDateFormat(formState.dateTo);
@@ -205,7 +212,7 @@ const Orders = ({ page, productId }) => {
 			.then((res) => res.json())
 			.then((data) => {
 				setIsLoading(false);
-
+ 
 				if (data.success && Array.isArray(data.data?.orders)) {
 					setTotalPage(data.data.total_pages);
 					setOrders(data.data.orders);
@@ -213,6 +220,10 @@ const Orders = ({ page, productId }) => {
 					setTotalPage(1);
 					setOrders([]);
 				}
+			})
+			.catch(() => {
+				setIsLoading(false);
+				toast.error(__('Unable to load orders. Please refresh and try again.', 'easycommerce'));
 			});
 	};
 
@@ -230,8 +241,6 @@ const Orders = ({ page, productId }) => {
 		})
 			.then((res) => res.json())
 			.then((data) => {
-				easycommerce_modal(false);
-
 				if (data.success) {
 					setOrders((prev) =>
 						prev.filter((order) => order.id !== orderIdToDelete),
@@ -243,14 +252,19 @@ const Orders = ({ page, productId }) => {
 						}
 						return updated;
 					});
-					setShowModal(false);
-					setOrderIdToDelete(null);
-					setOrderToDeleteStatus(null);
 					toast.success(data.data.message);
+				} else {
+					toast.error(data.data?.message || 'Failed to delete the order.');
 				}
 			})
 			.catch(() => {
+				toast.error('Something went wrong. Please try again.');
+			})
+			.finally(() => {
 				easycommerce_modal(false);
+				setShowModal(false);
+				setOrderIdToDelete(null);
+				setOrderToDeleteStatus(null);
 			});
 	};
 
@@ -309,7 +323,7 @@ const Orders = ({ page, productId }) => {
 	return (
 		<>
 			<div className="product-panel-title mb-4">
-				<h3>Orders</h3>
+				<h3>{__('Orders', 'easycommerce')}</h3>
 			</div>
 			<div className="w-full bg-white border border-solid border-ec-table-stock rounded-xl p-6 min-h-screen flex flex-col">
 				{isStatusLoaded && (
@@ -432,23 +446,25 @@ const Orders = ({ page, productId }) => {
 											setOrderIdToDelete(null);
 										}}
 										onConfirm={singleDeleteOrder}
-										itemName={'Order #' + orderIdToDelete}
+										itemName={sprintf(__('Order #%s', 'easycommerce'), orderIdToDelete)}
 									/>
 								)}
 							</>
 						) : (
 							<NotFound
 								ImageUrl={noOrder}
-								title={`No ${
-									tabLabel !== 'all'
-										? `${tabOptions.find((tab) => tab.key === tabLabel)?.label || tabLabel} Orders`
-										: 'Orders'
-								} Found`}
-								description={`${
-									tabLabel === 'all'
-										? `You're yet to receive any orders in your store.`
-										: `No ${tabLabel} orders in your store.`
-								} Keep promoting \nyour store to bring in your first sale.`}
+								title={
+									tabKey !== 'all'
+										? // translators: %s: order status label (e.g. Pending).
+										  sprintf(__('No %s Orders Found', 'easycommerce'), tabLabel)
+										: __('No Orders Found', 'easycommerce')
+								}
+								description={
+									tabKey === 'all'
+										? __("You're yet to receive any orders in your store. Keep promoting \nyour store to bring in your first sale.", 'easycommerce')
+										: // translators: %s: order status label (e.g. Pending).
+										  sprintf(__('No %s orders in your store. Keep promoting \nyour store to bring in your first sale.', 'easycommerce'), tabLabel)
+								}
 								btnCallBack={() => {
 									window.location.hash = '#/transactions/';
 								}}

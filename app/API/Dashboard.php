@@ -5,6 +5,7 @@ namespace EasyCommerce\API;
 defined( 'ABSPATH' ) || exit;
 
 use EasyCommerce\Abstracts\API;
+use EasyCommerce\API\Reports\Reports;
 use EasyCommerce\Helpers\Utility;
 use EasyCommerce\Models\Cart;
 use EasyCommerce\Models\Order;
@@ -15,13 +16,19 @@ use EasyCommerce\Models\Order_Item;
 use EasyCommerce\Models\Database;
 use EasyCommerce\Models\Refund;
 use EasyCommerce\Models\Log;
+use EasyCommerce\Traits\Cache;
 use DateTime;
 use DateInterval;
 use DatePeriod;
+
 /**
  * Dashboard API
  */
 class Dashboard extends API {
+
+	use Cache;
+
+	const CACHE_DURATION_HOUR = 3600;
 
 	/**
 	 * The dashboard stats
@@ -36,6 +43,16 @@ class Dashboard extends API {
 
 		if ( ! $range && $from && $to ) {
 			$range = 'custom';
+		}
+
+		$cache_key = 'dashboard_stats_' . sanitize_key( $range ?? 'default' );
+		if ( 'custom' === $range && $from && $to ) {
+			$cache_key .= '_' . sanitize_key( $from ) . '_' . sanitize_key( $to );
+		}
+
+		$cached = $this->get_cache( $cache_key );
+		if ( false !== $cached ) {
+			$this->response_success( array( 'message' => __( 'Store stats', 'easycommerce' ), 'stats' => $cached ) );
 		}
 
 		$completed_sales     	   = $this->total_sales( $range, 'completed' );
@@ -63,7 +80,7 @@ class Dashboard extends API {
 			'product'   		=> $products,
 			'customers' 		=> count( array_unique( $customers ) ),
 			'total_products' 	=> $total_products,
-			'abandoned' 		=> $abandoned,			
+			'abandoned' 		=> $abandoned,
 		);
 
 		/**
@@ -77,6 +94,8 @@ class Dashboard extends API {
 		 * @param WP_REST_Request $request The request object.
 		 */
 		$stats = apply_filters( 'easycommerce_get_dashboard_stats', $stats, $range, $from, $to, $request );
+
+		$this->set_cache( $cache_key, $stats, self::CACHE_DURATION_HOUR );
 
 		$this->response_success(
 			array(
@@ -100,6 +119,12 @@ class Dashboard extends API {
 			$range = implode( ',', array( $from, $to ) );
 		}
 
+		$cache_key = 'dashboard_order_statuses_' . sanitize_key( $range );
+		$cached    = $this->get_cache( $cache_key );
+		if ( false !== $cached ) {
+			$this->response_success( array( 'message' => __( 'Store order statuses', 'easycommerce' ), 'orders' => $cached ) );
+		}
+
 		$statuses = array( 'pending', 'completed', 'failed', 'refunded', 'processing', 'on_hold', 'cancelled' );
 		$orders   = array();
 
@@ -116,6 +141,8 @@ class Dashboard extends API {
 		 * @param WP_REST_Request $request The request object.
 		 */
 		$orders = apply_filters( 'easycommerce_get_order_statuses', $orders, $range, $request );
+
+		$this->set_cache( $cache_key, $orders, self::CACHE_DURATION_HOUR );
 
 		$this->response_success(
 			array(
@@ -195,6 +222,13 @@ class Dashboard extends API {
 			$to    = $request->get_param( 'to' );
 			$range = implode( ',', array( $from, $to ) );
 		}
+
+		$cache_key = 'dashboard_sales_' . sanitize_key( $range );
+		$cached    = $this->get_cache( $cache_key );
+		if ( false !== $cached ) {
+			$this->response_success( array( 'message' => __( 'Store sales', 'easycommerce' ), 'sales' => $cached ) );
+		}
+
 		if ( in_array( $range, array( 'last-week' ) ) ) {
 			$start_of_week     = get_option( 'start_of_week' );
 			$current_day       = gmdate( 'w' );
@@ -318,11 +352,13 @@ class Dashboard extends API {
 
 		$sales = array(
 			array(
+				'key'   => 'sales_amount',
 				'id'    => __( 'Sales Amount', 'easycommerce' ),
 				'color' => '#7351FD',
 				'data'  => $amount_formatted,
 			),
 			array(
+				'key'   => 'sales_count',
 				'id'    => __( 'Sales Count', 'easycommerce' ),
 				'color' => '#19AA79',
 				'data'  => $count_formatted,
@@ -339,6 +375,8 @@ class Dashboard extends API {
 		 */
 		$sales = apply_filters( 'easycommerce_get_sales', $sales, $range, $request );
 
+		$this->set_cache( $cache_key, $sales, self::CACHE_DURATION_HOUR );
+
 		$this->response_success(
 			array(
 				'message' => __( 'Store sales', 'easycommerce' ),
@@ -353,9 +391,15 @@ class Dashboard extends API {
 	 * @param WP_REST_Request $request The request object.
 	 */
 	public function get_recent_orders( $request ) {
-		$range = $request->get_param( 'range' );
+		$range     = $request->get_param( 'range' );
+		$cache_key = 'dashboard_recent_orders_' . sanitize_key( $range ?? 'all' );
 
-		$args  = array( 'per_page' => 5 );
+		$cached = $this->get_cache( $cache_key );
+		if ( false !== $cached ) {
+			$this->response_success( array( 'message' => __( 'Recent orders', 'easycommerce' ), 'orders' => $cached ) );
+		}
+
+		$args = array( 'per_page' => 5 );
 
 		if ( ! empty( $range ) ) {
 			$date_range = Utility::get_date_range( $range );
@@ -368,9 +412,9 @@ class Dashboard extends API {
 		$orders = array_map(
 			function ( $order ) {
 				return array(
-					'id'      => $order['id'],
-					'total'   => easycommerce_price( $order['total'] ),
-					'status'  => $order['status'],
+					'id'         => $order['id'],
+					'total'      => easycommerce_price( $order['total'] ),
+					'status'     => $order['status'],
 					'created_at' => wp_date( 'd/m/Y', strtotime( $order['created_at'] ) ),
 				);
 			},
@@ -385,6 +429,8 @@ class Dashboard extends API {
 		 * @param WP_REST_Request $request The request object.
 		 */
 		$orders = apply_filters( 'easycommerce_get_recent_orders', $orders, $request );
+
+		$this->set_cache( $cache_key, $orders, self::CACHE_DURATION_HOUR, true );
 
 		$this->response_success(
 			array(
@@ -507,6 +553,12 @@ class Dashboard extends API {
 	 */
 	public function get_low_stock( $request ) {
 
+		$cache_key = 'dashboard_low_stock';
+		$cached    = $this->get_cache( $cache_key );
+		if ( false !== $cached ) {
+			$this->response_success( array( 'message' => __( 'Most lowest stock', 'easycommerce' ), 'stock' => $cached ) );
+		}
+
 		$product_query        = Product::list( array( 'status' => 'publish', 'is_shop' => false ), -1, 0, false );
 		$low_stock_variations = array();
 
@@ -594,6 +646,8 @@ class Dashboard extends API {
 		 */
 		$top_low_stock_variations = apply_filters( 'easycommerce_get_low_stock', $top_low_stock_variations, $request );
 
+		$this->set_cache( $cache_key, $top_low_stock_variations, self::CACHE_DURATION_HOUR, true );
+
 		$this->response_success(
 			array(
 				'message' => __( 'Most lowest stock', 'easycommerce' ),
@@ -609,7 +663,13 @@ class Dashboard extends API {
 	 * @return WP_REST_Response
 	 */
 	public function get_top_sellers( $request ) {
-		$range = $request->get_param( 'range' );
+		$range     = $request->get_param( 'range' );
+		$cache_key = 'dashboard_top_sellers_' . sanitize_key( $range ?? 'all' );
+
+		$cached = $this->get_cache( $cache_key );
+		if ( false !== $cached ) {
+			$this->response_success( array( 'message' => __( 'Top sellers', 'easycommerce' ), 'sellers' => $cached ) );
+		}
 
 		if ( ! empty( $range ) ) {
 			$date_range = Utility::get_date_range( $range );
@@ -661,6 +721,8 @@ class Dashboard extends API {
 		 * @param WP_REST_Request $request The request object.
 		 */
 		$sellers = apply_filters( 'easycommerce_get_top_sellers', $sellers, $request );
+
+		$this->set_cache( $cache_key, $sellers, self::CACHE_DURATION_HOUR, true );
 
 		$this->response_success(
 			array(
@@ -759,367 +821,6 @@ class Dashboard extends API {
 				'activities' => $activities,
 			)
 		);
-	}
-
-	/**
-	 * Reports
-	 *
-	 * @param WP_REST_Request $request The request object.
-	 */
-	public function reports( $request ) {
-
-		$range = $request->get_param( 'range' );
-		if ( ! $range ) {
-			$from  = $request->get_param( 'from' );
-			$to    = $request->get_param( 'to' );
-			$range = implode( ',', array( $from, $to ) );
-		}
-		if ( in_array( $range, array( 'last-week' ) ) ) {
-			$start_of_week = get_option( 'start_of_week' );
-			$x_values      = array();
-			$day_names     = array( 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat' );
-			for ( $i = 0; $i < 7; $i++ ) {
-				$day_index  = ( $start_of_week + $i ) % 7;
-				$x_values[] = $day_names[ $day_index ];
-			}
-		} elseif ( in_array( $range, array( 'this-week' ) ) ) {
-			$start_of_week = get_option( 'start_of_week' );
-			$x_values      = array();
-			$day_names     = array( 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat' );
-			for ( $i = 0; $i < 7; $i++ ) {
-				$day_index  = ( $start_of_week + $i ) % 7;
-				$x_values[] = $day_names[ $day_index ];
-			}
-		} elseif ( in_array( $range, array( 'last-7' ) ) ) {
-
-			$x_values = array();
-			for ( $i = 6; $i >= 0; $i-- ) {
-				$x_values[] = gmdate( 'D', strtotime( "-$i days" ) );
-			}
-		} elseif ( in_array( $range, array( 'this-month', 'last-month' ) ) ) {
-			$x_values = array();
-
-			if ( 'this-month' === $range ) {
-				$date = new DateTime();
-			} else {
-				$date = new DateTime( 'first day of last month' );
-			}
-
-			$days_in_month = (int) $date->format( 't' );
-
-			for ( $day = 1; $day <= $days_in_month; $day++ ) {
-				if ( $day % 10 == 1 && $day % 100 != 11 ) {
-					$suffix = 'st';
-				} elseif ( $day % 10 == 2 && $day % 100 != 12 ) {
-					$suffix = 'nd';
-				} elseif ( $day % 10 == 3 && $day % 100 != 13 ) {
-					$suffix = 'rd';
-				} else {
-					$suffix = 'th';
-				}
-
-				$x_values[] = $day . $suffix;
-			}
-		} elseif ( in_array( $range, array( 'last-30' ) ) ) {
-			$x_values   = array();
-			$end_date   = new DateTime();
-			$start_date = clone $end_date;
-			$start_date->modify( '-29 days' );
-
-			$interval   = new DateInterval( 'P1D' );
-			$date_range = new DatePeriod( $start_date, $interval, $end_date->modify( '+1 day' ) );
-
-			foreach ( $date_range as $date ) {
-				$day = (int) $date->format( 'j' );
-
-				if ( $day % 10 == 1 && $day % 100 != 11 ) {
-					$suffix = 'st';
-				} elseif ( $day % 10 == 2 && $day % 100 != 12 ) {
-					$suffix = 'nd';
-				} elseif ( $day % 10 == 3 && $day % 100 != 13 ) {
-					$suffix = 'rd';
-				} else {
-					$suffix = 'th';
-				}
-
-				$x_values[] = $day . $suffix;
-			}
-		} elseif ( in_array( $range, array( 'this-year', 'last-year' ) ) ) {
-			$x_values = array( 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec' );
-		} elseif ( strpos( $range, ',' ) !== false ) {
-			$range_dates  = explode( ',', $range );
-			$start        = new DateTime( $range_dates[0] );
-			$end          = new DateTime( $range_dates[1] );
-			$interval     = new DateInterval( 'P1D' );
-			$date_range   = new DatePeriod( $start, $interval, $end->modify( '+1 day' ) );
-			$x_values     = array();
-			foreach ( $date_range as $date ) {
-				$x_values[] = $date->format( 'd M' ); // Format as '01 Jan'.
-			}
-		} elseif ( in_array( $range, array( 'today' ) ) ) {
-			$x_values = array( gmdate( 'D' ) );
-		} elseif ( in_array( $range, array( 'yesterday' ) ) ) {
-			$x_values = array( gmdate( 'D', strtotime( '-1 day' ) ) );
-		} else {
-			$x_values = array( '' );
-		}
-
-		$sales_count_by_date      = $sales_amount_by_date = $refund_count_by_date =
-		$refund_amount_by_date    = $pending_count_by_date = $pending_amount_by_date =
-		$completed_count_by_date  = $completed_amount_by_date =
-		$cancelled_count_by_date  = $cancelled_amount_by_date =
-		$onhold_count_by_date     = $onhold_amount_by_date =
-		$processing_count_by_date = $processing_amount_by_date =
-		array_fill_keys( $x_values, 0 );
-
-		$total_sales       = $refund_count = $pending_count = $completed_count = $cancelled_count = $onhold_count = $processing_count = 0;
-		$product_id        = $request->get_param( 'product_id' );
-		$sales_amount      = $this->total_sales( $range, '', $product_id );
-		$orders            = $this->total_orders( $range, '', $product_id );
-		$refunds_amount    = $this->total_sales( $range, 'refunded', $product_id );
-		$pending_amount    = $this->total_sales( $range, 'pending', $product_id );
-		$completed_amount  = $this->total_sales( $range, 'completed', $product_id );
-		$cancelled_amount  = $this->total_sales( $range, 'cancelled', $product_id );
-		$onhold_amount     = $this->total_sales( $range, 'on_hold', $product_id );
-		$processing_amount = $this->total_sales( $range, 'processing', $product_id );
-
-		foreach ( $orders as $order ) {
-			$date_key = $this->get_date_key( strtotime( $order['created_at'] ), $range );
-			++$sales_count_by_date[ $date_key ];
-			$sales_amount_by_date[ $date_key ] += $order['total'];
-
-			if ( $order['status'] === 'refunded' ) {
-				++$refund_count_by_date[ $date_key ];
-				$refund_amount_by_date[ $date_key ] += $order['total'];
-				++$refund_count;
-			}
-
-			if ( $order['status'] === 'pending' ) {
-				++$pending_count_by_date[ $date_key ];
-				$pending_amount_by_date[ $date_key ] += $order['total'];
-				++$pending_count;
-			}
-
-			if ( $order['status'] === 'completed' ) {
-				++$completed_count_by_date[ $date_key ];
-				$completed_amount_by_date[ $date_key ] += $order['total'];
-				++$completed_count;
-			}
-
-			if ( $order['status'] === 'cancelled' ) {
-				++$cancelled_count_by_date[ $date_key ];
-				$cancelled_amount_by_date[ $date_key ] += $order['total'];
-				++$cancelled_count;
-			}
-
-			if ( $order['status'] === 'on_hold' ) {
-				++$onhold_count_by_date[ $date_key ];
-				$onhold_amount_by_date[ $date_key ] += $order['total'];
-				++$onhold_count;
-			}
-
-			if ( $order['status'] === 'processing' ) {
-				++$processing_count_by_date[ $date_key ];
-				$processing_amount_by_date[ $date_key ] += $order['total'];
-				++$processing_count;
-			}
-			++$total_sales;
-		}
-
-		$sales_count_by_date       = array_values( $sales_count_by_date );
-		$sales_amount_by_date      = array_values( $sales_amount_by_date );
-		$refund_count_by_date      = array_values( $refund_count_by_date );
-		$refund_amount_by_date     = array_values( $refund_amount_by_date );
-		$pending_count_by_date     = array_values( $pending_count_by_date );
-		$pending_amount_by_date    = array_values( $pending_amount_by_date );
-		$completed_count_by_date   = array_values( $completed_count_by_date );
-		$completed_amount_by_date  = array_values( $completed_amount_by_date );
-		$cancelled_count_by_date   = array_values( $cancelled_count_by_date );
-		$cancelled_amount_by_date  = array_values( $cancelled_amount_by_date );
-		$onhold_count_by_date      = array_values( $onhold_count_by_date );
-		$onhold_amount_by_date     = array_values( $onhold_amount_by_date );
-		$processing_count_by_date  = array_values( $processing_count_by_date );
-		$processing_amount_by_date = array_values( $processing_amount_by_date );
-
-		$data_groups = array(
-			'sales'      => array(
-				'count'        => $sales_count_by_date,
-				'amount'       => $sales_amount_by_date,
-				'count_total'  => $total_sales,
-				'amount_total' => $sales_amount,
-				'color_count'  => '#88CD44',
-				'color_amount' => '#7AAA49',
-				'label'        => 'Sales',
-			),
-			'refund'     => array(
-				'count'        => $refund_count_by_date,
-				'amount'       => $refund_amount_by_date,
-				'count_total'  => $refund_count,
-				'amount_total' => $refunds_amount,
-				'color_count'  => '#7A59FF',
-				'color_amount' => '#5433DA',
-				'label'        => 'Refund',
-			),
-			'completed'  => array(
-				'count'        => $completed_count_by_date,
-				'amount'       => $completed_amount_by_date,
-				'count_total'  => $completed_count,
-				'amount_total' => $completed_amount,
-				'color_count'  => '#19AA79',
-				'color_amount' => '#0A875D',
-				'label'        => 'Completed',
-			),
-			'pending'    => array(
-				'count'        => $pending_count_by_date,
-				'amount'       => $pending_amount_by_date,
-				'count_total'  => $pending_count,
-				'amount_total' => $pending_amount,
-				'color_count'  => '#FD7F51',
-				'color_amount' => '#D55D31',
-				'label'        => 'Pending',
-			),
-			'processing' => array(
-				'count'        => $processing_count_by_date,
-				'amount'       => $processing_amount_by_date,
-				'count_total'  => $processing_count,
-				'amount_total' => $processing_amount,
-				'color_count'  => '#B759FF',
-				'color_amount' => '#9427E8',
-				'label'        => 'Processing',
-			),
-			'onhold'     => array(
-				'count'        => $onhold_count_by_date,
-				'amount'       => $onhold_amount_by_date,
-				'count_total'  => $onhold_count,
-				'amount_total' => $onhold_amount,
-				'color_count'  => '#5283FF',
-				'color_amount' => '#2356D7',
-				'label'        => 'Onhold',
-			),
-			'cancelled'  => array(
-				'count'        => $cancelled_count_by_date,
-				'amount'       => $cancelled_amount_by_date,
-				'count_total'  => $cancelled_count,
-				'amount_total' => $cancelled_amount,
-				'color_count'  => '#FF598E',
-				'color_amount' => '#E24476',
-				'label'        => 'Cancelled',
-			),
-		);
-
-		/**
-		 * Profit Margin Amount Calculation
-		 */
-		$margin_amount_by_date 	= array_fill_keys( $x_values, 0 );
-		$margin_amount_total 	= 0;
-		$completed_orders 		= $this->total_orders( $range, 'completed', $product_id );
-
-		foreach ( $completed_orders as $order ) {
-			$order_obj      = new Order( $order['id'] );
-			$items          = $order_obj->get_items();
-			$date_key       = $this->get_date_key( strtotime( $order['created_at'] ), $range );
-			$total_discount = abs( $order_obj->get_discount_total() );
-
-			$total_original_price = 0;
-			foreach ( $items as $item ) {
-				$product_variation 		= new Product_Variation( $item->variation_id );
-				$price 					= $product_variation->get_price();
-				$total_original_price 	+= ( $price * $item->quantity );
-			}
-			
-			$order_profit = 0;
-			
-			foreach ( $items as $item ) {
-				$product_variation  = new Product_Variation( $item->variation_id );
-				$order_item_model   = new Order_Item();
-				$order_iteam        = $order_item_model->get_by_id( $item->id );
-				$cost               = $product_variation->get_meta('cost_per_item', true);
-
-				if ( empty( $cost ) || $order_iteam->subtotal == '0.00' ) {
-					continue;
-				}
-				$price 				= $product_variation->get_price();
-				$discounted_price 	= $price;
-				
-				if ( $total_discount > 0 && $total_original_price > 0 ) {
-					$item_original_total 	= $price * $item->quantity;
-					$item_discount 			= ( $total_discount * $item_original_total ) / $total_original_price;
-					$discount_per_unit 		= $item_discount / $item->quantity;
-					$discounted_price 		= max( 0, $price - $discount_per_unit );
-				}
-
-				$item_profit 	= ( $discounted_price - $cost ) * $item->quantity;
-				$order_profit 	+= $item_profit;
-			}
-			
-			$margin_amount_by_date[ $date_key ] += $order_profit;
-			$margin_amount_total += $order_profit;
-		}
-
-		$margin_amount_by_date = array_values( $margin_amount_by_date );
-
-		// Add margin data to the datasets
-		$data_groups['margin'] = array(
-			'count' 	   => array_fill( 0, count( $x_values ), 0 ),
-			'amount'       => $margin_amount_by_date,
-			'count_total'  => 0,
-			'amount_total' => $margin_amount_total,
-			'color_count'  => '#009D68',
-			'color_amount' => '#009D68',
-			'label'        => 'Margin',
-		);
-
-		$datasets = array();
-		foreach ( $data_groups as $key => $group ) {
-			if ( $key !== 'margin' ) {
-				$datasets[] = array(
-					'id'              => "{$key}-count",
-					/* Translators: %s is the group label */
-					'label'           => sprintf( __( '%s Count', 'easycommerce' ), $group['label'] ),
-					'data'            => $group['count'],
-					'total'           => $group['count_total'],
-					'yAxisID'         => 'y2',
-					'borderColor'     => $group['color_count'],
-					'backgroundColor' => $group['color_count'],
-					'tension'         => 0.4,
-					'fill'            => false,
-					'pointRadius'     => 5,
-					'pointStyle'      => 'circle',
-				);
-			}
-
-			$datasets[] = array(
-				'id'              => "{$key}-amount",
-				/* Translators: %s is the group label */
-				'label'           => sprintf( __( '%s Amount', 'easycommerce' ), $group['label'] ),
-				'data'            => $group['amount'],
-				'total'           => $group['amount_total'],
-				'yAxisID'         => 'y1',
-				'borderColor'     => $group['color_amount'],
-				'backgroundColor' => $group['color_amount'],
-				'tension'         => 0.4,
-				'fill'            => false,
-				'pointRadius'     => 5,
-				'pointStyle'      => 'circle',
-			);
-		}
-
-		$reports = array(
-			'labels'   => $x_values,
-			'datasets' => $datasets,
-		);
-
-		/**
-		 * Filters the reports data before sending the response.
-		 *
-		 * @since 1.9
-		 * @param array $reports The reports.
-		 * @param string $range The range.
-		 * @param WP_REST_Request $request The request object.
-		 */
-		$reports = apply_filters( 'easycommerce_get_reports', $reports, $range, $request );
-
-		$this->response_success( array( 'reports' => $reports ) );
 	}
 
 	/**
@@ -1296,6 +997,60 @@ class Dashboard extends API {
 
 	private function get_total_products() {
 		return (int) wp_count_posts( 'product' )->publish;
+	}
+
+	/**
+	 * Delete all cache entries for a given key prefix across every known range.
+	 *
+	 * Pass $with_ranges = false for range-independent keys (e.g. 'dashboard_low_stock').
+	 *
+	 * @param string $prefix      Cache key prefix, e.g. 'dashboard_stats'.
+	 * @param bool   $with_ranges Whether to iterate over all date ranges.
+	 */
+	private static function purge_cache( string $prefix, bool $with_ranges = true ) {
+		$instance = new self();
+
+		if ( ! $with_ranges ) {
+			$instance->delete_cache( $prefix );
+			return;
+		}
+
+		foreach ( array_merge( Reports::get_all_ranges(), array( 'all', 'default' ) ) as $range ) {
+			$instance->delete_cache( $prefix . '_' . sanitize_key( $range ) );
+		}
+	}
+
+	/**
+	 * Delete order-related dashboard caches.
+	 *
+	 * Call when order, refund, or customer data changes.
+	 */
+	public static function delete_orders_cache() {
+		self::purge_cache( 'dashboard_stats' );
+		self::purge_cache( 'dashboard_sales' );
+		self::purge_cache( 'dashboard_order_statuses' );
+		self::purge_cache( 'dashboard_recent_orders' );
+		self::purge_cache( 'dashboard_top_sellers' );
+		self::purge_cache( 'dashboard_low_stock', false );
+	}
+
+	/**
+	 * Delete product-related dashboard caches (stats, low stock, top sellers).
+	 *
+	 * Call when product or variation data changes.
+	 */
+	public static function delete_products_cache() {
+		self::purge_cache( 'dashboard_stats' );
+		self::purge_cache( 'dashboard_low_stock', false );
+		self::purge_cache( 'dashboard_top_sellers' );
+	}
+
+	/**
+	 * Delete all dashboard caches.
+	 */
+	public static function delete_dashboard_cache() {
+		self::delete_orders_cache();
+		self::delete_products_cache();
 	}
 
 	/**

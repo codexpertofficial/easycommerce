@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { __, sprintf } from "@wordpress/i18n";
 import { applyFilters } from '@wordpress/hooks';
 import "./style.css";
 import THead from "../components/Table/THead";
@@ -15,10 +16,10 @@ import { toast } from "react-toastify";
 const TAB_STORAGE_KEY = "easycommerce_abandoned_cart_active_tab";
 
 const tabOptions = [
-    { key: "all", label: "All", countStyle: "bg-ec-allBg" },
-    { key: "not_contracted", label: "Not Contacted", countStyle: "bg-ec-notContractedBg text-ec-notContractedText" },
-    { key: "contracted", label: "Contacted", countStyle: "bg-ec-contractedBg text-ec-contractedText" },
-    { key: "recovered", label: "Recovered", countStyle: "bg-ec-recoveredBg text-ec-recoveredText" },
+    { key: "all", label: __("All", "easycommerce"), countStyle: "bg-ec-allBg" },
+    { key: "not_contracted", label: __("Not Contacted", "easycommerce"), countStyle: "bg-ec-notContractedBg text-ec-notContractedText" },
+    { key: "contracted", label: __("Contacted", "easycommerce"), countStyle: "bg-ec-contractedBg text-ec-contractedText" },
+    { key: "recovered", label: __("Recovered", "easycommerce"), countStyle: "bg-ec-recoveredBg text-ec-recoveredText" },
 ];
 
 const AbandonedCartsList = ({
@@ -233,7 +234,7 @@ const AbandonedCartsList = ({
                                             onClick={openCleanModal}
                                             className="text-ec-primary font-medium text-base underline ml-2 mb-1.5"
                                         >
-                                        Clean
+                                        {__("Clean", "easycommerce")}
                                         </button>
                                     </div>
 
@@ -300,7 +301,11 @@ const AbandonedCartsList = ({
                         ) : (
                             <NotFound
                                 {...(activeTab !== 'all' && {
-                                    title: `No ${tabOptions.find(t => t.key === activeTab)?.label || ''} Carts Found`,
+                                    title: sprintf(
+                                        // translators: %s: cart status label (e.g. Contacted).
+                                        __("No %s Carts Found", "easycommerce"),
+                                        tabOptions.find(t => t.key === activeTab)?.label || ''
+                                    ),
                                 })}
                             />
                         )}

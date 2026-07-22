@@ -35,6 +35,12 @@ const App = () => {
     );
     const [skippedTabs, setSkippedTabs] = useState([]);
     const [importDemoChecked, setImportDemoChecked] = useState(false);
+    const [designs, setDesigns] = useState([]);
+    const [selectedDesign, setSelectedDesign] = useState("");
+    const [designResult, setDesignResult] = useState(null);
+    const [hasStaticFront, setHasStaticFront] = useState(false);
+    const [hasProducts, setHasProducts] = useState(false);
+    const [setAsHomepage, setSetAsHomepage] = useState(false);
 
     const showToast = (type, message) => {
         toast[type](message, {
@@ -85,6 +91,11 @@ const App = () => {
             .then((data) => {
                 if (data.success && data?.data?.data) {
                     const d = data.data.data;
+
+                    setDesigns(Array.isArray(d.designs) ? d.designs : []);
+                    setSelectedDesign(d.design || "");
+                    setHasStaticFront(!!d.has_static_front);
+                    setHasProducts(!!d.has_products);
 
                     setFormValues({
                         store_name: d.store_name || "",
@@ -165,6 +176,19 @@ const App = () => {
     const handleNext = async () => {
         const currentIndex = tabs.indexOf(activeTab);
 
+        // Store Email is required before leaving the Business step.
+        if (activeTab === "/business") {
+            const email = (formValues.email || "").trim();
+            if (!email) {
+                showToast("error", __("Store Email is required.", "easycommerce"));
+                return;
+            }
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                showToast("error", __("Please enter a valid Store Email.", "easycommerce"));
+                return;
+            }
+        }
+
         if (activeTab === "/store" && importDemoChecked) {
             try {
                 const res = await fetch(`${EASYCOMMERCE.rest_base}/importer/samples`, {
@@ -176,10 +200,30 @@ const App = () => {
                 });
 
             } catch (err) {
-                showToast("error", "Demo import failed. Please try again.");
+                showToast("error", __("Demo import failed. Please try again.", "easycommerce"));
             }
         }
-        
+
+        // Apply the chosen store design (no selection leaves current behaviour unchanged).
+        if (activeTab === "/store" && selectedDesign) {
+            try {
+                const res = await fetch(`${EASYCOMMERCE.rest_base}/connectivity/apply-design`, {
+                    method: "POST",
+                    headers: {
+                        "X-WP-Nonce": EASYCOMMERCE.nonce,
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({ design_id: selectedDesign, set_homepage: setAsHomepage }),
+                });
+                const data = await res.json();
+                if (data?.success && data?.data && !data.data.skipped) {
+                    setDesignResult(data.data);
+                }
+            } catch (err) {
+                showToast("error", "Applying the store design failed. Please try again.");
+            }
+        }
+
         if (currentIndex < tabs.length - 1) {
             const nextTab = tabs[currentIndex + 1];
             setActiveTab(nextTab);
@@ -313,10 +357,17 @@ const App = () => {
                                         <Business formValues={formValues} setFormValues={setFormValues} />
                                     </div>
                                     <div className={activeTab === "/store" ? "block" : "hidden"}>
-                                        <Store 
-                                            formValues={formValues} 
-                                            setFormValues={setFormValues} 
-                                            importDemoChecked={importDemoChecked} 
+                                        <Store
+                                            formValues={formValues}
+                                            setFormValues={setFormValues}
+                                            designs={designs}
+                                            selectedDesign={selectedDesign}
+                                            setSelectedDesign={setSelectedDesign}
+                                            hasStaticFront={hasStaticFront}
+                                            hasProducts={hasProducts}
+                                            setAsHomepage={setAsHomepage}
+                                            setSetAsHomepage={setSetAsHomepage}
+                                            importDemoChecked={importDemoChecked}
                                             setImportDemoChecked={setImportDemoChecked} />
                                     </div>
                                     <div className={activeTab === "/payment" ? "block" : "hidden"}>
@@ -363,7 +414,7 @@ const App = () => {
 
                 {activeTab === "/success" && (
                     <div className="w-full h-screen bg-ec-main-bg">
-                        <Success />
+                        <Success designResult={designResult} />
                     </div>
                 )}
             </div>

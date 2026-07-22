@@ -1,3 +1,4 @@
+import { __ } from "@wordpress/i18n";
 import { useBlockProps } from "@wordpress/block-editor";
 import { Slot } from '@wordpress/components';
 import Quantity from "./components/quantity";
@@ -13,7 +14,7 @@ const Edit = () => {
         <div {...blockProps}>
             <div className="easycommerce-add-to-cart-quantity-block mb-8">
                 <label className="block text-ec-body font-inter font-normal text-base leading-[26px] mb-4">
-                    Quantity
+                    {__("Quantity", "easycommerce")}
                 </label>
                 <div className="flex items-center gap-6">
                     <Quantity />
@@ -21,14 +22,14 @@ const Edit = () => {
             </div>
             <div>
                 <button className="w-full font-inter font-semibold text-base leading-[26px] bg-[#1203500D] p-3 rounded-md bg-ec-primary text-white transition-all">
-                    Add to cart
+                    {__("Add to cart", "easycommerce")}
                 </button>
             </div>
             <Slot name="easycommerce.blocks.add-to-cart.edit" props={{ postId, postType, blockProps }} />
         </div>
     ) : (
         <div {...blockProps}>
-            <p>Post type is not product.</p>
+            <p>{__("Post type is not product.", "easycommerce")}</p>
         </div>
     );
 };

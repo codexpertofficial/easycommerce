@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { __ } from '@wordpress/i18n';
 import { useDispatch } from 'react-redux';
 import { addToastData } from '../../redux-store/slices/toastSlice';
 import TableSkeleton from '../../../common/TableSkeleton';
@@ -6,13 +7,13 @@ import AbandonedCartsList from './AbandonedCartsList';
 import DeletePopup from '../../../common/components/DeletePopup';
 
 const columnList = [
-	'name',
-	'email',
-	'items',
-	'total',
-	'Last Activity',
-	'reminders',
-	'actions',
+	{ key: 'name', label: __( 'Name', 'easycommerce' ) },
+	{ key: 'email', label: __( 'Email', 'easycommerce' ) },
+	{ key: 'items', label: __( 'Items', 'easycommerce' ) },
+	{ key: 'total', label: __( 'Total', 'easycommerce' ) },
+	{ key: 'Last Activity', label: __( 'Last Activity', 'easycommerce' ) },
+	{ key: 'reminders', label: __( 'Reminders', 'easycommerce' ) },
+	{ key: 'actions', label: __( 'Actions', 'easycommerce' ) },
 ];
 
 const AbandonedCart = ({ page }) => {
@@ -53,7 +54,7 @@ const AbandonedCart = ({ page }) => {
 					dispatch(
 						addToastData({
 							type: 'success',
-							message: data.data?.message || 'Abandoned Cart Deleted',
+							message: data.data?.message || __( 'Abandoned Cart Deleted', 'easycommerce' ),
 						}),
 					);
 					setAbandonedCarts((prev) =>
@@ -61,6 +62,15 @@ const AbandonedCart = ({ page }) => {
 					);
 					setRefreshList((prev) => !prev);
 				}
+			})
+			.catch(() => {
+				easycommerce_modal(false);
+				dispatch(
+					addToastData({
+						type: 'error',
+						message: __( 'Unable to delete the abandoned cart. Please try again.', 'easycommerce' ),
+					}),
+				);
 			});
 	};
 
@@ -100,7 +110,7 @@ const AbandonedCart = ({ page }) => {
 	return (
 		<>
 			<div className="product-panel-title mb-4">
-				<h3>Abandoned Carts</h3>
+				<h3>{ __( 'Abandoned Carts', 'easycommerce' ) }</h3>
 			</div>
 			<div className="w-full bg-white border border-ec-table-stock rounded-xl p-6 h-full">
 				<AbandonedCartsList

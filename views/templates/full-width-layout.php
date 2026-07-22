@@ -15,9 +15,15 @@ echo Utility::get_template( 'templates/layout-header.php' );
 
 while ( have_posts() ) :
 	the_post();
-	?>
-	<h1 class="easycommerce-page-title"><?php the_title(); ?></h1>
-	<?php
+
+	// Starter-design pages ship their own hero heading; the page title would
+	// duplicate it right above the hero.
+	if ( ! get_post_meta( get_the_ID(), '_easycommerce_design_page', true ) ) :
+		?>
+		<h1 class="easycommerce-page-title"><?php the_title(); ?></h1>
+		<?php
+	endif;
+
 	the_content();
 endwhile;
 

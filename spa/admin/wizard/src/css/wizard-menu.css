@@ -48,7 +48,7 @@
 
 .easycommerce.toplevel_page_easycommerce-wizard .easycommerce-checkbox-input {
     border: 2px solid var(--color-ec-primary);
-    background-color: #7351fd20;
+    background-color: transparent;
     width: 24px;
     height: 24px;
     box-shadow: none !important;

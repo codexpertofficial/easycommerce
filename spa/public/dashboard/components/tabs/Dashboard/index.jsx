@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { __ } from "@wordpress/i18n";
 
 // Components
 import Summery from "./sections/Summery";
@@ -11,37 +12,37 @@ const Dashboard = () => {
     const orderStatusData = [
         {
             id: "completed",
-            label: "Completed",
+            label: __( "Completed", "easycommerce" ),
             value: 0,
             color: "#4DDFFF",
         },
         {
             id: "processing",
-            label: "Processing",
+            label: __( "Processing", "easycommerce" ),
             value: 0,
             color: "#F68D2B",
         },
         {
             id: "on_hold",
-            label: "On Hold",
+            label: __( "On Hold", "easycommerce" ),
             value: 0,
             color: "#FFB92C",
         },
         {
             id: "pending",
-            label: "Pending",
+            label: __( "Pending", "easycommerce" ),
             value: 0,
             color: "#C89DFE",
         },
         {
             id: "refunded",
-            label: "Refunded",
+            label: __( "Refunded", "easycommerce" ),
             value: 0,
             color: "#FFDA57",
         },
         {
             id: "cancelled",
-            label: "Cancelled",
+            label: __( "Cancelled", "easycommerce" ),
             value: 0,
             color: "#FF3A52",
         },

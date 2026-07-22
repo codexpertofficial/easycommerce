@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import apiFetch from '@wordpress/api-fetch';
 import { addQueryArgs } from '@wordpress/url';
+import { __ } from '@wordpress/i18n';
 
 import Variations from './Variations';
 
@@ -70,7 +71,7 @@ const ProductInfo = ({ product }) => {
 					<h4 className="text-xl font-medium text-ec-title mb-1.5">
 						{product?.name}
 					</h4>
-					<p className="text-sm text-[#6A7282]">SKU: {product?.sku}</p>
+					<p className="text-sm text-[#6A7282]">{__( 'SKU:', 'easycommerce' )} {product?.sku}</p>
 				</div>
 			</div>
 
@@ -79,17 +80,17 @@ const ProductInfo = ({ product }) => {
 			) : (
 				<div className="bg-[#F5F8FB] rounded-lg p-4 flex flex-col gap-4 mt-4">
 					<div className="flex items-center justify-between text-[#3C3C42] text-lg">
-						Stock
+						{__( 'Stock', 'easycommerce' )}
 						<span className='font-medium'>{product?.variations[0].stock || 0}</span>
 					</div>
-					
+
 					<div className="flex items-center justify-between text-[#3C3C42] text-lg">
-						Amount Sold
+						{__( 'Amount Sold', 'easycommerce' )}
 						<span className='font-medium'>{product?.variations[0].total_sales || 0}</span>
 					</div>
-					
+
 					<div className="flex items-center justify-between text-[#3C3C42] text-lg">
-						Item Sold
+						{__( 'Item Sold', 'easycommerce' )}
 						<span className='font-medium'>{product?.variations[0].items_sold || 0}</span>
 					</div>
 				</div>

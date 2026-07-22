@@ -1,0 +1,36 @@
+{
+    "translation-revision-date": "YEAR-MO-DA HO:MI+ZONE",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "assets\/public\/js\/checkout.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "fr_FR",
+                "plural-forms": "nplurals=2; plural=(n > 1);"
+            },
+            "Please enter a valid email address.": [
+                "Veuillez saisir une adresse e-mail valide."
+            ],
+            "Please enter a valid postcode.": [
+                "Veuillez saisir un code postal valide."
+            ],
+            "Only letters, spaces, hyphens, apostrophes, and periods are allowed.": [
+                "Seuls les lettres, espaces, traits d\u2019union, apostrophes et points sont autoris\u00e9s."
+            ],
+            "Please enter a valid phone number (6\u201320 characters).": [
+                "Veuillez saisir un num\u00e9ro de t\u00e9l\u00e9phone valide (6\u201320 caract\u00e8res)."
+            ],
+            "%s is required.": [
+                "%s est obligatoire."
+            ],
+            "Enter city": [
+                "Saisissez la ville"
+            ],
+            "An error occurred. Please try again.": [
+                "Une erreur est survenue. Veuillez r\u00e9essayer."
+            ]
+        }
+    }
+}

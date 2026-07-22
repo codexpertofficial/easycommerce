@@ -188,9 +188,26 @@ class Abandoned_Cart extends API {
      * @param WP_REST_Request $request The request object.
      */
     public function get_email_content( $request ) {
-        $hash    = $request->get_param( 'hash' );
-        $subject = Utility::get_option( 'abandoned-cart', 'settings', 'subject', '##shop_name##- Your Order Is Yet to Be Placed!' );
-        $body    = Utility::get_option( 'abandoned-cart', 'settings', 'body', "Hi ##name##,\nWe noticed you left some items in your cart at ##shop_name##. Your cart, worth ##cart_total##, is still waiting for you!\nHere's what you left behind:\n##product_list##\nDon't miss out—your items might sell out soon! Click below to return to your cart and complete your purchase.\nGo to Checkout 👉 ##cart_link##\nNeed help? Feel free to reach out. We're happy to assist!\nBest,\n##shop_name## Team" );
+        $hash = $request->get_param( 'hash' );
+
+        // These defaults mirror the `abandoned-cart > settings > subject|body` field
+        // defaults declared in app/Config/settings.php; keep both copies in sync.
+        /* translators: the ##...## tokens are merge placeholders substituted with real cart data at send time - keep them verbatim. */
+        $default_subject = __( '##shop_name##- Your Order Is Yet to Be Placed!', 'easycommerce' );
+
+        /* translators: the ##...## tokens are merge placeholders substituted with real cart data at send time - keep them verbatim. */
+        $default_body = __( 'Hi ##name##,
+We noticed you left some items in your cart at ##shop_name##. Your cart, worth ##cart_total##, is still waiting for you!
+Here’s what you left behind:
+##product_list##
+Don’t miss out—your items might sell out soon! Click below to return to your cart and complete your purchase.
+Go to Checkout 👉 ##cart_link## 
+Need help? Feel free to reach out. We’re happy to assist!
+Best,
+##shop_name## Team', 'easycommerce' );
+
+        $subject = Utility::get_option( 'abandoned-cart', 'settings', 'subject', $default_subject );
+        $body    = Utility::get_option( 'abandoned-cart', 'settings', 'body', $default_body );
 
         $cart         = new Cart( $hash );
         $placeholders = easycommerce_cart_placeholders( $cart );

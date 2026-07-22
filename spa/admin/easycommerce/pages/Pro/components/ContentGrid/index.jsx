@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { __ } from '@wordpress/i18n';
 
 import Item from './Item';
 import Modal from '../../../../../common/components/Header/Modal';
@@ -3215,44 +3216,44 @@ const ContentGrid = () => {
 	const contents = [
 		{
 			image: ImageTwo,
-			title: 'Manage Subscriptions',
-			desc: 'Offer recurring payments with automatic renewals to keep your revenue consistent and predictable.',
+			title: __('Manage Subscriptions', 'easycommerce'),
+			desc: __('Offer recurring payments with automatic renewals to keep your revenue consistent and predictable.', 'easycommerce'),
 			comingSoon: false,
 		},
 		{
 			image: ImageOne,
-			title: 'Sell Licensed Products',
-			desc: 'Automate license generation, activation, and renewals. It’s perfect for digital products and software sales.',
+			title: __('Sell Licensed Products', 'easycommerce'),
+			desc: __('Automate license generation, activation, and renewals. It’s perfect for digital products and software sales.', 'easycommerce'),
 			comingSoon: false,
 		},
 		{
 			image: ImageSix,
-			title: 'Sell on Facebook Messenger',
-			desc: 'Bring your AI shopping assistant to Messenger, so customers can discover products and place orders right in the chat.',
+			title: __('Sell on Facebook Messenger', 'easycommerce'),
+			desc: __('Bring your AI shopping assistant to Messenger, so customers can discover products and place orders right in the chat.', 'easycommerce'),
 			comingSoon: false,
 		},
 		{
 			image: ImageSeven,
-			title: 'Sell on WhatsApp',
-			desc: 'Let customers chat with your AI shopping assistant on WhatsApp, from product discovery to checkout in the app they use every day.',
+			title: __('Sell on WhatsApp', 'easycommerce'),
+			desc: __('Let customers chat with your AI shopping assistant on WhatsApp, from product discovery to checkout in the app they use every day.', 'easycommerce'),
 			comingSoon: true,
 		},
 		{
 			image: ImageThree,
-			title: 'Create Membership Plans',
-			desc: 'Build exclusive access areas, manage tiers, and reward loyal members with premium content.',
+			title: __('Create Membership Plans', 'easycommerce'),
+			desc: __('Build exclusive access areas, manage tiers, and reward loyal members with premium content.', 'easycommerce'),
 			comingSoon: true,
 		},
 		{
 			image: ImageFour,
-			title: 'Run an LMS',
-			desc: 'Sell online courses, manage lessons, and track student progress - all from your EasyCommerce dashboard.',
+			title: __('Run an LMS', 'easycommerce'),
+			desc: __('Sell online courses, manage lessons, and track student progress - all from your EasyCommerce dashboard.', 'easycommerce'),
 			comingSoon: true,
 		},
 		{
 			image: ImageFive,
-			title: 'Handle Bookings',
-			desc: 'Accept appointments, manage schedules, and let customers book services directly from your store.',
+			title: __('Handle Bookings', 'easycommerce'),
+			desc: __('Accept appointments, manage schedules, and let customers book services directly from your store.', 'easycommerce'),
 			comingSoon: true,
 		},
 	];
@@ -3285,11 +3286,10 @@ const ContentGrid = () => {
 			>
 				<div>
 					<h2 className="text-white text-4xl mb-8 font-bold">
-						Didn’t spot the feature you were hoping for?
+						{__('Didn’t spot the feature you were hoping for?', 'easycommerce')}
 					</h2>
 					<p className="text-white font-medium text-[16px]">
-						Drop us a message. Your suggestion could inspire our next
-						EasyCommerce feature, or who knows, it might be cooking already!
+						{__('Drop us a message. Your suggestion could inspire our next EasyCommerce feature, or who knows, it might be cooking already!', 'easycommerce')}
 					</p>
 				</div>
 
@@ -3297,7 +3297,7 @@ const ContentGrid = () => {
 					className="bg-white w-full text-center p-3 rounded-lg text-ec-title font-semibold text-base hover:bg-[#E3FF10] duration-300 block"
 					onClick={ () => setShowFeedback(true) }
 				>
-					Say Howdy!
+					{__('Say Howdy!', 'easycommerce')}
 				</button>
 			</div>
 

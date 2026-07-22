@@ -97,7 +97,7 @@ const Help = () => {
                         ) : (
                             <NotFound
                                 ImageUrl={noDataIcon}
-                                title="Something went wrong."
+                                title={__("Something went wrong.", "easycommerce")}
                             />
                         )}
                     </>

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { __ } from "@wordpress/i18n";
 import { useDispatch } from "react-redux";
 
 // redux slice
@@ -75,7 +76,7 @@ const Customer = ({ setCustomerId, setCustomerAddress }) => {
             dispatch(
                 addToastData({
                     type: "error",
-                    message: "Passwords do not match",
+                    message: __("Passwords do not match", "easycommerce"),
                 })
             );
 
@@ -105,14 +106,14 @@ const Customer = ({ setCustomerId, setCustomerAddress }) => {
                     dispatch(
                         addToastData({
                             type: "success",
-                            message: "Customer created successfully",
+                            message: __("Customer created successfully", "easycommerce"),
                         })
                     );
                 } else {
                     dispatch(
                         addToastData({
                             type: "error",
-                            message: "Failed to create customer",
+                            message: __("Failed to create customer", "easycommerce"),
                         })
                     );
                 }
@@ -124,9 +125,9 @@ const Customer = ({ setCustomerId, setCustomerAddress }) => {
 
         // Create the media frame.
         const frame = wp.media({
-            title: "Select a Image",
+            title: __("Select a Image", "easycommerce"),
             button: {
-                text: "Use selected image",
+                text: __("Use selected image", "easycommerce"),
             },
             multiple: false,
         });
@@ -171,7 +172,7 @@ const Customer = ({ setCustomerId, setCustomerAddress }) => {
         <div className="w-1/4 bg-white min-h-svh">
             <div className="w-full px-4 py-6 mb-6 border-b border-[#DBDBDB] flex flex-col justify-center">
                 <h3 className="text-ec-body font-inter font-semibold text-xl leading-8">
-                    Customer Details
+                    {__("Customer Details", "easycommerce")}
                 </h3>
             </div>
 
@@ -190,7 +191,7 @@ const Customer = ({ setCustomerId, setCustomerAddress }) => {
                     <form onSubmit={handleSubmit}>
                         <div className="py-4 px-3 rounded-md border border-ec-border">
                             <h4 className="text-ec-body font-inter font-semibold text-base leading-[26px] text-center mb-4">
-                                Add New Customer
+                                {__("Add New Customer", "easycommerce")}
                             </h4>
                             <div className="flex justify-center mb-4">
                                 <button
@@ -205,12 +206,12 @@ const Customer = ({ setCustomerId, setCustomerAddress }) => {
                                     <img
                                         src={customer.photo || placeholder}
                                         className={`w-full h-full rounded-full pointer-events-none`}
-                                        alt="image"
+                                        alt={__("image", "easycommerce")}
                                     />
                                     <span class="w-7 h-7 flex justify-center items-center  backdrop-blur-sm rounded-full absolute bottom-0 -right-1 border border-[#EEEEEE]">
                                         <img
                                             src={cameraIcon}
-                                            alt="camera"
+                                            alt={__("camera", "easycommerce")}
                                             class="w-[12px] h-[12px] pointer-events-none"
                                         />
                                     </span>
@@ -222,13 +223,13 @@ const Customer = ({ setCustomerId, setCustomerAddress }) => {
                                     className="block mb-4"
                                 >
                                     <span className="block mb-1 text-ec-body text-base font-inter leading-8">
-                                        First Name
+                                        {__("First Name", "easycommerce")}
                                     </span>
                                     <input
                                         id="easycommerce-new-order-first-name"
                                         type="text"
                                         name="first_name"
-                                        placeholder="Your first name"
+                                        placeholder={__("Your first name", "easycommerce")}
                                         value={customer.first_name}
                                         onChange={(e) =>
                                             setCustomer({
@@ -245,13 +246,13 @@ const Customer = ({ setCustomerId, setCustomerAddress }) => {
                                     className="block mb-4"
                                 >
                                     <span className="block mb-1 text-ec-body text-base font-inter leading-8">
-                                        Last Name
+                                        {__("Last Name", "easycommerce")}
                                     </span>
                                     <input
                                         id="easycommerce-new-order-last-name"
                                         type="text"
                                         name="last_name"
-                                        placeholder="Your last name"
+                                        placeholder={__("Your last name", "easycommerce")}
                                         value={customer.last_name}
                                         onChange={(e) =>
                                             setCustomer({
@@ -268,13 +269,13 @@ const Customer = ({ setCustomerId, setCustomerAddress }) => {
                                     className="block mb-4"
                                 >
                                     <span className="block mb-1 text-ec-body text-base font-inter leading-8">
-                                        Email
+                                        {__("Email", "easycommerce")}
                                     </span>
                                     <input
                                         id="easycommerce-new-order-email"
                                         type="email"
                                         name="email"
-                                        placeholder="Your Email"
+                                        placeholder={__("Your Email", "easycommerce")}
                                         autocomplete="off"
                                         value={customer.email}
                                         onChange={(e) =>
@@ -294,13 +295,13 @@ const Customer = ({ setCustomerId, setCustomerAddress }) => {
                                             className="block mb-4"
                                         >
                                             <span className="block mb-1 text-ec-body text-base font-inter leading-8">
-                                                Password
+                                                {__("Password", "easycommerce")}
                                             </span>
                                             <input
                                                 id="easycommerce-new-order-password"
                                                 type="password"
                                                 name="password"
-                                                placeholder="Write your password"
+                                                placeholder={__("Write your password", "easycommerce")}
                                                 autocomplete="off"
                                                 value={customer.password}
                                                 minLength={6}
@@ -326,13 +327,13 @@ const Customer = ({ setCustomerId, setCustomerAddress }) => {
                                             className="block mb-4"
                                         >
                                             <span className="block mb-1 text-ec-body text-base font-inter leading-8">
-                                                Password again
+                                                {__("Password again", "easycommerce")}
                                             </span>
                                             <input
                                                 id="easycommerce-new-order-password-again"
                                                 type="password"
                                                 name="password_again"
-                                                placeholder="Write your password again"
+                                                placeholder={__("Write your password again", "easycommerce")}
                                                 autocomplete="off"
                                                 minLength={6}
                                                 value={customer.password_again}
@@ -410,7 +411,7 @@ const Customer = ({ setCustomerId, setCustomerAddress }) => {
                                 className="float-right font-inter font-normal text-base leading-[26px] border border-ec-body rounded-lg
                                 my-4 py-2 px-[18px] text-ec-body hover:text-white hover:bg-ec-primary hover:border-ec-primary transition duration-300"
                             >
-                                Confirm
+                                {__("Confirm", "easycommerce")}
                             </button>
                         )}
                     </form>

@@ -19,8 +19,7 @@ const productTabIcon = (
     </svg>
 );
 
-registerBlockType(metadata.name, {
+registerBlockType(metadata, {
     icon: productTabIcon,
-    title: metadata.title,
     edit: Edit,
 });

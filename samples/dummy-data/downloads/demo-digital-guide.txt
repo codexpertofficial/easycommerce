@@ -1,0 +1,9 @@
+EasyCommerce — Demo Digital Product
+===================================
+
+Thank you for your (demo) purchase!
+
+This is a sample downloadable file bundled with the EasyCommerce demo
+content so you can see how digital / downloadable products work.
+
+Replace this with your real digital deliverable (PDF, ZIP, audio, etc.).

@@ -18,9 +18,9 @@ const ProductDesc = ({ productTitle, prevData }) => {
 
 	const handleMediaUpload = () => {
 		const frame = wp.media({
-			title: 'Select Image',
+			title: __('Select Image', 'easycommerce'),
 			button: {
-				text: 'Use selected image',
+				text: __('Use selected image', 'easycommerce'),
 			},
 			multiple: false, // Allow multiple image selection
 		});
@@ -70,7 +70,7 @@ const ProductDesc = ({ productTitle, prevData }) => {
 						<div>
 							<button
 								data-tooltip-id={!productTitle ? 'ai-gallery' : ''}
-								data-tooltip-content="Add product title first!"
+								data-tooltip-content={__('Add product title first!', 'easycommerce')}
 								className={`ai-generate ${
 									productTitle ? '' : 'grayscale opacity-50 cursor-not-allowed'
 								}`}

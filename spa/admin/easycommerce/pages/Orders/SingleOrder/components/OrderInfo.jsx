@@ -27,28 +27,28 @@ const applyFilters = (hookName, ...params) => {
 
 const fulfillStatusColors = {
     delivered: {
-        color: '#00CD55',
-        background: '#00CD550D',
+        color: '#555DFF',
+        background: '#555DFF1A',
     },
     fulfilled: {
-        color: '#00CD55',
-        background: '#00CD550D',
+        color: '#00A900',
+        background: '#00A9001A',
     },
     partially_fulfilled: {
-        color: '#00CD9D',
-        background: '#00CD9D0D',
+        color: '#FFB310',
+        background: '#FFB3101A',
     },
     returned: {
-        color: '#FF2D88',
-        background: '#FF2D880D',
+        color: '#FF001F',
+        background: '#FF001F1A',
     },
     shipped: {
-        color: '#4277FF',
-        background: '#4277FF0D',
+        color: '#1495FF',
+        background: '#1495FF1A',
     },
     unfulfilled: {
-        color: '#FF4B4E',
-        background: '#FF4B4E0D',
+        color: '#FF1F78',
+        background: '#FF1F781A',
     },
 };
 
@@ -61,14 +61,14 @@ const removeUnderscore = (status) => {
 };
 
 const statusOptions = [
-	{ label: "Completed", value: "completed" },
-	{ label: "Cancelled", value: "cancelled" },
-	{ label: "Partially Refunded", value: "partially_refunded" },
-    { label: "Refunded", value: "refunded" },
-	{ label: "Pending", value: "pending" },
-	{ label: "On hold", value: "on_hold" },
-	{ label: "Processing", value: "processing" },
-    { label: "Failed", value: "failed" },
+	{ label: __("Completed", "easycommerce"), value: "completed" },
+	{ label: __("Cancelled", "easycommerce"), value: "cancelled" },
+	{ label: __("Partially Refunded", "easycommerce"), value: "partially_refunded" },
+    { label: __("Refunded", "easycommerce"), value: "refunded" },
+	{ label: __("Pending", "easycommerce"), value: "pending" },
+	{ label: __("On hold", "easycommerce"), value: "on_hold" },
+	{ label: __("Processing", "easycommerce"), value: "processing" },
+    { label: __("Failed", "easycommerce"), value: "failed" },
 ];
 
 const OrderInfo = ({ order, selectModal, setStatusCounts, updateOrder }) => {
@@ -83,12 +83,12 @@ const OrderInfo = ({ order, selectModal, setStatusCounts, updateOrder }) => {
         [
             {
                 icon: orderDateIcon,
-                key: 'Order Date',
+                key: __('Order Date', 'easycommerce'),
                 value: (
                     <p className="text-ec-body font-inter font-normal text-sm leading-[26px]">
                         <span className="flex flex-col justify-start items-start">
                             <span>
-                                {order.created_at ? order.created_at : 'N/A'}
+                                {order.created_at ? order.created_at : __('N/A', 'easycommerce')}
                             </span>
                         </span>
                     </p>
@@ -98,7 +98,7 @@ const OrderInfo = ({ order, selectModal, setStatusCounts, updateOrder }) => {
             ? [
                   {
                       icon: orderDateIcon,
-                      key: 'Delivery Date',
+                      key: __('Delivery Date', 'easycommerce'),
                       value: (
                           <p className="text-ec-body font-inter font-normal text-sm leading-[26px]">
                               <span>{order.delivery_date}</span>
@@ -109,7 +109,7 @@ const OrderInfo = ({ order, selectModal, setStatusCounts, updateOrder }) => {
             : []),
             {
                 icon: orderTotalIcon,
-                key: 'Order Total',
+                key: __('Order Total', 'easycommerce'),
                 value: (
                     <p className="text-ec-body font-inter font-normal text-sm leading-[26px]">
                         {order.total}
@@ -121,7 +121,7 @@ const OrderInfo = ({ order, selectModal, setStatusCounts, updateOrder }) => {
                 ? [
                     {
                         icon: orderTotalIcon,
-                        key: 'Order Refund',
+                        key: __('Order Refund', 'easycommerce'),
                         value: (
                             <p className="text-ec-body font-inter font-normal text-sm leading-[26px]">
                                 {order.refunded_total}
@@ -132,14 +132,14 @@ const OrderInfo = ({ order, selectModal, setStatusCounts, updateOrder }) => {
             ),
             {
                 icon: orderStatusIcon,
-                key: 'Order Status',
+                key: __('Order Status', 'easycommerce'),
                 value: (
                     <div className="flex justify-end items-center gap-4">
                         <StatusDropdown
 							options={statusOptions}
 							orderId={order.id}
                             value={order.status} 
-							placeholder="Select status"
+							placeholder={__('Select status', 'easycommerce')}
 							width="116px"
 							menuWidth="150px"
 							prevStatus={order?.status}
@@ -171,14 +171,14 @@ const OrderInfo = ({ order, selectModal, setStatusCounts, updateOrder }) => {
             },
             {
                 icon: fulfillmentIcon,
-                key: 'Fulfillment Status',
+                key: __('Fulfillment Status', 'easycommerce'),
                 value: (
                     <div className="flex justify-end items-center gap-4">
                         
                         <FullfillmentDropdown
 							orderId={order.id}
 							value={order.fulfill_status}
-							placeholder="Select status"
+							placeholder={__('Select status', 'easycommerce')}
 							width="116px"
 							menuWidth="150px"
 							prevStatus={order?.fulfill_status}
@@ -203,14 +203,14 @@ const OrderInfo = ({ order, selectModal, setStatusCounts, updateOrder }) => {
             },
             {
                 icon: paymentMethodIcon,
-                key: 'Payment Method',
+                key: __('Payment Method', 'easycommerce'),
                 value: (
                     <p className="text-ec-body font-inter font-normal text-sm leading-[26px] flex items-center">
                         <div className="border border-ec-table-stock mr-2 rounded flex items-center gap-2">
                             {paymentIcon ? (
                                 <img
                                     src={paymentIcon}
-                                    alt={paymentMethod?.label || 'Payment Icon'}
+                                    alt={paymentMethod?.label || __('Payment Icon', 'easycommerce')}
                                     className="w-full h-10 object-contain p-1"
                                 />
                             ) : (
@@ -224,7 +224,7 @@ const OrderInfo = ({ order, selectModal, setStatusCounts, updateOrder }) => {
             },
             {
                 icon: transectionId,
-                key: order.transactions ? 'Payment URL' : 'Transaction ID',
+                key: order.transactions ? __('Transaction ID', 'easycommerce') : __('Payment URL', 'easycommerce'),
                 value: (
                     <p className="text-ec-body font-inter font-normal text-sm leading-[26px] flex items-center">
                         <div className="mr-2 p-2 flex items-center gap-2">
@@ -240,7 +240,7 @@ const OrderInfo = ({ order, selectModal, setStatusCounts, updateOrder }) => {
                                     {`${EASYCOMMERCE.payment_page_url}?order_id=${order.id}`}
                                 </a>
                             ) : (
-                                "N/A"
+                                __('N/A', 'easycommerce')
                             )}
                         </div>
                     </p>
@@ -255,7 +255,7 @@ const OrderInfo = ({ order, selectModal, setStatusCounts, updateOrder }) => {
         <div className="bg-white rounded-2xl">
             <div className="flex flex-col border-b border--ec-table-stock pt-4 px-6">
                 <h3 className="text-ec-title text-xl font-medium font-inter leading-8 pb-4">
-                   Overview
+                   {__('Overview', 'easycommerce')}
                 </h3>
             </div>
             <div className="p-6">

@@ -1,0 +1,266 @@
+{
+    "translation-revision-date": "YEAR-MO-DA HO:MI+ZONE",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "build\/settings.bundle.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "es_ES",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Something went wrong": [
+                "Algo ha salido mal"
+            ],
+            "Pro": [
+                "Pro"
+            ],
+            "General": [
+                "General"
+            ],
+            "Orders": [
+                "Pedidos"
+            ],
+            "Checkout": [
+                "Finalizar compra"
+            ],
+            "Payment": [
+                "Pago"
+            ],
+            "First Name": [
+                "Nombre"
+            ],
+            "Write here": [
+                "Escribe aqu\u00ed"
+            ],
+            "Emails": [
+                "Correos electr\u00f3nicos"
+            ],
+            "Settings": [
+                "Ajustes"
+            ],
+            "Shipping": [
+                "Env\u00edo"
+            ],
+            "Taxation": [
+                "Impuestos"
+            ],
+            "Cart Recovery": [
+                "Recuperaci\u00f3n del carrito"
+            ],
+            "Subject": [
+                "Asunto"
+            ],
+            "AI": [
+                "AI"
+            ],
+            "Smart Search": [
+                "B\u00fasqueda inteligente"
+            ],
+            "Cancel": [
+                "Cancelar"
+            ],
+            "Activate License": [
+                "Activar licencia"
+            ],
+            "Get Pro": [
+                "Consigue Pro"
+            ],
+            "Your Email": [
+                "Tu correo electr\u00f3nico"
+            ],
+            "Message": [
+                "Mensaje"
+            ],
+            "Connect AI": [
+                "Conectar AI"
+            ],
+            "AI Writer": [
+                "AI Writer"
+            ],
+            "Image Editor": [
+                "Editor de im\u00e1genes"
+            ],
+            "Store Copilot": [
+                "Store Copilot"
+            ],
+            "Close": [
+                "Cerrar"
+            ],
+            "Send": [
+                "Enviar"
+            ],
+            "Email Address": [
+                "Direcci\u00f3n de correo electr\u00f3nico"
+            ],
+            "Enter your Email": [
+                "Introduce tu correo electr\u00f3nico"
+            ],
+            "Profile": [
+                "Perfil"
+            ],
+            "Your Voice Matters": [
+                "Tu opini\u00f3n importa"
+            ],
+            "Help us make EasyCommerce the best it can be. Share your feedback and ideas with us!": [
+                "Ay\u00fadanos a que EasyCommerce sea lo mejor posible. \u00a1Comparte tus comentarios e ideas con nosotros!"
+            ],
+            "Enter first name": [
+                "Introduce el nombre"
+            ],
+            "Enter a valid email address": [
+                "Introduce una direcci\u00f3n de correo electr\u00f3nico v\u00e1lida"
+            ],
+            "Send Message": [
+                "Enviar mensaje"
+            ],
+            "Thank you for your feedback": [
+                "Gracias por tus comentarios"
+            ],
+            "We will use your feedback to build a better experience for everyone.": [
+                "Usaremos tus comentarios para crear una mejor experiencia para todos."
+            ],
+            "Feedback": [
+                "Comentarios"
+            ],
+            "Ask Store Copilot anything about your store - get insights, or manage products and orders right from chat.": [
+                "Pregunta a Store Copilot lo que quieras sobre tu tienda: obt\u00e9n informaci\u00f3n, o gestiona productos y pedidos directamente desde el chat."
+            ],
+            "What is today's total revenue?": [
+                "\u00bfCu\u00e1les son los ingresos totales de hoy?"
+            ],
+            "How many orders were placed this week?": [
+                "\u00bfCu\u00e1ntos pedidos se han realizado esta semana?"
+            ],
+            "Which product is performing best?": [
+                "\u00bfQu\u00e9 producto est\u00e1 funcionando mejor?"
+            ],
+            "What is my average order value this month?": [
+                "\u00bfCu\u00e1l es mi valor medio de pedido este mes?"
+            ],
+            "How many new vs returning customers this week?": [
+                "\u00bfCu\u00e1ntos clientes nuevos frente a recurrentes hay esta semana?"
+            ],
+            "Which products are low in stock?": [
+                "\u00bfQu\u00e9 productos tienen pocas existencias?"
+            ],
+            "Examples": [
+                "Ejemplos"
+            ],
+            "Uses %d credit.": [
+                "Usa %d cr\u00e9dito.",
+                "Usa %d cr\u00e9ditos."
+            ],
+            "%d Credit": [
+                "%d cr\u00e9dito",
+                "%d cr\u00e9ditos"
+            ],
+            "Remaining": [
+                "Restantes"
+            ],
+            "Network response was not okay": [
+                "La respuesta de la red no fue correcta"
+            ],
+            "No answer found": [
+                "No se ha encontrado ninguna respuesta"
+            ],
+            "Ask a Question": [
+                "Haz una pregunta"
+            ],
+            "No credits available": [
+                "No hay cr\u00e9ditos disponibles"
+            ],
+            "Two AI Agents, One Free Key": [
+                "Dos agentes AI, una clave gratuita"
+            ],
+            "Connect a free API key -": [
+                "Conecta una clave API gratuita -"
+            ],
+            "100 AI credits": [
+                "100 cr\u00e9ditos AI"
+            ],
+            "free, more with": [
+                "gratis, m\u00e1s con"
+            ],
+            "Store Copilot - For You": [
+                "Store Copilot - Para ti"
+            ],
+            "Chat to run your store: ask about sales, create and edit products, and update orders - in plain English, with your approval.": [
+                "Chatea para gestionar tu tienda: pregunta por las ventas, crea y edita productos y actualiza pedidos, en lenguaje natural y con tu aprobaci\u00f3n."
+            ],
+            "Shopping Agent - For Your Shoppers": [
+                "Shopping Agent - Para tus compradores"
+            ],
+            "A 24\/7 storefront agent that helps customers find the right product, answers their questions, and places orders for them.": [
+                "Un agente de tienda 24\/7 que ayuda a los clientes a encontrar el producto adecuado, responde a sus preguntas y realiza pedidos por ellos."
+            ],
+            "Plus": [
+                "Adem\u00e1s"
+            ],
+            "& more.": [
+                "y m\u00e1s."
+            ],
+            "Each AI request transmits only the relevant records - the item you're working on, or a shopper's query and its products - to EasyCommerce's AI service. Your bulk customer and order data is never uploaded, sold, or used to train models.": [
+                "Cada solicitud de AI transmite solo los registros relevantes \u2014el elemento en el que est\u00e1s trabajando, o la consulta de un comprador y sus productos\u2014 al servicio de AI de EasyCommerce. Tus datos masivos de clientes y pedidos nunca se suben, se venden ni se usan para entrenar modelos."
+            ],
+            "Learn more.": [
+                "Saber m\u00e1s."
+            ],
+            "I have an API key": [
+                "Tengo una clave API"
+            ],
+            "I want an API key": [
+                "Quiero una clave API"
+            ],
+            "Please fill all the fields": [
+                "Por favor, rellena todos los campos"
+            ],
+            "Enter Your Connection Key": [
+                "Introduce tu clave de conexi\u00f3n"
+            ],
+            "The link in your email connects AI automatically. To do it manually, paste the key we emailed below.": [
+                "El enlace de tu correo electr\u00f3nico conecta la AI autom\u00e1ticamente. Para hacerlo manualmente, pega abajo la clave que te hemos enviado por correo."
+            ],
+            "Your Key": [
+                "Tu clave"
+            ],
+            "Paste your key": [
+                "Pega tu clave"
+            ],
+            "I don't have a key": [
+                "No tengo una clave"
+            ],
+            "Check your email and click the link to connect AI.": [
+                "Revisa tu correo electr\u00f3nico y haz clic en el enlace para conectar la AI."
+            ],
+            "Connect EasyCommerce AI": [
+                "Conectar EasyCommerce AI"
+            ],
+            "Enter your name and email - we'll send a one-click link to connect AI, plus a backup key.": [
+                "Introduce tu nombre y correo electr\u00f3nico: te enviaremos un enlace de un solo clic para conectar la AI, adem\u00e1s de una clave de reserva."
+            ],
+            "Your Name": [
+                "Tu nombre"
+            ],
+            "Enter your Name": [
+                "Introduce tu nombre"
+            ],
+            "Email My Link": [
+                "Enviarme el enlace por correo"
+            ],
+            "I already have a key": [
+                "Ya tengo una clave"
+            ],
+            "Join Community": [
+                "\u00danete a la comunidad"
+            ],
+            "Support": [
+                "Soporte"
+            ],
+            "Disconnect": [
+                "Desconectar"
+            ]
+        }
+    }
+}

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import apiFetch from '@wordpress/api-fetch';
 import { addQueryArgs } from '@wordpress/url';
+import { __ } from '@wordpress/i18n';
 
 import Table from '../common/Table';
 import SeeReportLink from '../common/SeeReportLink';
@@ -31,12 +32,12 @@ const TopCustomers = ({ range }) => {
 
     const columns = [
         { header: '#', width: '5%', accessor: 'rank', render: (item) => `#${item.rank}` },
-        { header: 'Customer Name', width: '20%', accessor: 'customer_name', render: (item) => <span className="truncate">{item.customer_name}</span> },
-        { header: 'Email', width: '20%', accessor: 'customer_email', render: (item) => <span className="truncate">{item.customer_email}</span> },
-        { header: 'First Order', width: '15%', accessor: 'first_order_date' },
-        { header: 'Last Order', width: '15%', accessor: 'last_order_date' },
-        { header: 'Total Orders', width: '10%', accessor: 'total_orders' },
-        { header: 'Revenue Earned', width: '15%', accessor: 'revenue_earned' },
+        { header: __( 'Customer Name', 'easycommerce' ), width: '20%', accessor: 'customer_name', render: (item) => <span className="truncate">{item.customer_name}</span> },
+        { header: __( 'Email', 'easycommerce' ), width: '20%', accessor: 'customer_email', render: (item) => <span className="truncate">{item.customer_email}</span> },
+        { header: __( 'First Order', 'easycommerce' ), width: '15%', accessor: 'first_order_date' },
+        { header: __( 'Last Order', 'easycommerce' ), width: '15%', accessor: 'last_order_date' },
+        { header: __( 'Total Orders', 'easycommerce' ), width: '10%', accessor: 'total_orders' },
+        { header: __( 'Revenue Earned', 'easycommerce' ), width: '15%', accessor: 'revenue_earned' },
     ];
 
     return (

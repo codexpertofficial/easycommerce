@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { __ } from "@wordpress/i18n";
 
 // stat icons
 const downArrow = `${EASYCOMMERCE.assets}admin/img/icons/arrow-down.png`;
@@ -40,7 +41,7 @@ const OrderAction = ({ options, selectModal }) => {
                 {/* SELECT LABEL  */}
                 <span className="flex items-center justify-between">
                     <p className="text-white font-medium text-base font-inter leading-[26px]">
-                        Action
+                        {__("Action", "easycommerce")}
                     </p>
                     <img src={downArrow} className="w-3 h-auto" />
                 </span>

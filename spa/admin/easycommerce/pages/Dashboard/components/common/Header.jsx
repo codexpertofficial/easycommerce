@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { __ } from '@wordpress/i18n';
 
 const Header = ({ title, range, setRange }) => {
     const [activeDropdown, setActiveDropdown] = useState(null);
@@ -7,11 +8,11 @@ const Header = ({ title, range, setRange }) => {
     const [isScrolled, setIsScrolled] = useState(false);
 
     const rangeOptions = [
-        { label: 'Last 7 days', value: 'last-7' },
-        { label: 'Last 30 days', value: 'last-30' },
-        { label: 'This week', value: 'this-week' },
-        { label: 'This month', value: 'this-month' },
-        { label: 'This year', value: 'this-year' },
+        { label: __( 'Last 7 days', 'easycommerce' ), value: 'last-7' },
+        { label: __( 'Last 30 days', 'easycommerce' ), value: 'last-30' },
+        { label: __( 'This week', 'easycommerce' ), value: 'this-week' },
+        { label: __( 'This month', 'easycommerce' ), value: 'this-month' },
+        { label: __( 'This year', 'easycommerce' ), value: 'this-year' },
     ];
 
     useEffect(() => {

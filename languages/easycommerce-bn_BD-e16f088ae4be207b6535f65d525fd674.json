@@ -1,0 +1,24 @@
+{
+    "translation-revision-date": "YEAR-MO-DA HO:MI+ZONE",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "blocks\/shops-page\/template-3\/components\/Filters.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "bn_BD",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Categories": [
+                "\u0995\u09cd\u09af\u09be\u099f\u09be\u0997\u09b0\u09bf"
+            ],
+            "Brands": [
+                "\u09ac\u09cd\u09b0\u09cd\u09af\u09be\u09a8\u09cd\u09a1"
+            ],
+            "Price Range": [
+                "\u09a6\u09be\u09ae\u09c7\u09b0 \u09aa\u09b0\u09bf\u09b8\u09b0"
+            ]
+        }
+    }
+}

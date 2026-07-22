@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import { __ } from '@wordpress/i18n';
 import { toast } from "react-toastify";
 import DeletePopup from '../../../../../common/components/DeletePopup'
 
@@ -26,7 +27,7 @@ const ProductActions = ({data}) => {
                 easycommerce_modal(false);
 
                 if (data.success) {
-                    toast.success('Product trashed!');
+                    toast.success(__('Product trashed!', 'easycommerce'));
                     window.location.hash = `#/products`;
                 }
             });
@@ -47,7 +48,7 @@ const ProductActions = ({data}) => {
                 easycommerce_modal(false);
 
                 if (data.success) {
-                    toast.success('Product deleted permanently!');
+                    toast.success(__('Product deleted permanently!', 'easycommerce'));
                     window.location.hash = `#/products`;
                 }
             });
@@ -74,14 +75,14 @@ const ProductActions = ({data}) => {
             {isActionOpen && 
             <div className="border w-[120px] bg-white border-ec-border rounded-lg shadow-2xl p-2 font-inter flex flex-col absolute top-[48px]">
                 <a className={buttonClass + ' text-ec-body hover:bg-[#F8F8F8]'} href={`${EASYCOMMERCE.product_edit_base}=${data.id}`} target='_blank'>
-                    Builder
+                    {__('Builder', 'easycommerce')}
                 </a>
                 <button 
                     type='button' 
                     className={buttonClass + ' text-[#FF3A52] hover:bg-[#FF3A520D]'}
                     onClick={() => setIsDeletePopupOpen(true)}
                 >
-                    Delete
+                    {__('Delete', 'easycommerce')}
                 </button>
             </div>}
 

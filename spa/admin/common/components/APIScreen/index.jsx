@@ -1,4 +1,5 @@
 import React from 'react';
+import { __ } from '@wordpress/i18n';
 import './assets/style.css'
 
 const APIScreen = ({
@@ -14,7 +15,7 @@ const APIScreen = ({
 				<button
 					className="absolute top-[-18px] right-[-23px] group w-6 h-6 rounded-full bg-white hover:bg-[#fa4109] transition-colors duration-200 flex items-center justify-center"
 					onClick={onClose}
-					aria-label="Close"
+					aria-label={ __( 'Close', 'easycommerce' ) }
 				>
 					<svg
 						width="16"
@@ -43,11 +44,13 @@ const APIScreen = ({
 						<div className="flex flex-col items-center gap-3">
 							<div className="flex flex-col items-center gap-2">
 								<h2 className="text-ec-title text-[26px] leading-8 font-inter font-medium">
-									Two AI Agents, One Free Key
+									{ __( 'Two AI Agents, One Free Key', 'easycommerce' ) }
 								</h2>
 								<p className="text-[#7F7F98] font-inter text-[15px] text-center whitespace-nowrap">
-									Connect a free API key - <strong className="text-ec-title">100 AI credits</strong> free, more with{' '}
-									<a href="admin.php?page=easycommerce#/get-pro" onClick={onClose} className="text-ec-primary underline hover:underline">Pro</a>.
+									{ __( 'Connect a free API key -', 'easycommerce' ) }{' '}
+									<strong className="text-ec-title">{ __( '100 AI credits', 'easycommerce' ) }</strong>{' '}
+									{ __( 'free, more with', 'easycommerce' ) }{' '}
+									<a href="admin.php?page=easycommerce#/get-pro" onClick={onClose} className="text-ec-primary underline hover:underline">{ __( 'Pro', 'easycommerce' ) }</a>.
 								</p>
 							</div>
 
@@ -55,32 +58,32 @@ const APIScreen = ({
 								<div className="flex items-start gap-4 p-4 rounded-xl bg-[#F7F5FF] border border-[#ECE7FF] text-left">
 									<span className="shrink-0 w-11 h-11 rounded-xl bg-white flex items-center justify-center text-2xl shadow-sm">🧑‍💼</span>
 									<div>
-										<p className="text-ec-title font-semibold text-base leading-6">Store Copilot - For You</p>
-										<p className="text-ec-body text-[14px] leading-[22px] mt-1">Chat to run your store: ask about sales, create and edit products, and update orders - in plain English, with your approval.</p>
+										<p className="text-ec-title font-semibold text-base leading-6">{ __( 'Store Copilot - For You', 'easycommerce' ) }</p>
+										<p className="text-ec-body text-[14px] leading-[22px] mt-1">{ __( 'Chat to run your store: ask about sales, create and edit products, and update orders - in plain English, with your approval.', 'easycommerce' ) }</p>
 									</div>
 								</div>
 
 								<div className="flex items-start gap-4 p-4 rounded-xl bg-[#F7F5FF] border border-[#ECE7FF] text-left">
 									<span className="shrink-0 w-11 h-11 rounded-xl bg-white flex items-center justify-center text-2xl shadow-sm">🛍️</span>
 									<div>
-										<p className="text-ec-title font-semibold text-base leading-6">Shopping Agent - For Your Shoppers</p>
-										<p className="text-ec-body text-[14px] leading-[22px] mt-1">A 24/7 storefront agent that helps customers find the right product, answers their questions, and places orders for them.</p>
+										<p className="text-ec-title font-semibold text-base leading-6">{ __( 'Shopping Agent - For Your Shoppers', 'easycommerce' ) }</p>
+										<p className="text-ec-body text-[14px] leading-[22px] mt-1">{ __( 'A 24/7 storefront agent that helps customers find the right product, answers their questions, and places orders for them.', 'easycommerce' ) }</p>
 									</div>
 								</div>
 
 								<p className="text-center text-[15px] text-ec-body mt-1">
-									Plus <strong className="text-ec-title font-medium">AI Writer</strong>, <strong className="text-ec-title font-medium">Smart Search</strong>, <strong className="text-ec-title font-medium">Image Editor</strong> &amp; more.
+									{ __( 'Plus', 'easycommerce' ) } <strong className="text-ec-title font-medium">{ __( 'AI Writer', 'easycommerce' ) }</strong>, <strong className="text-ec-title font-medium">{ __( 'Smart Search', 'easycommerce' ) }</strong>, <strong className="text-ec-title font-medium">{ __( 'Image Editor', 'easycommerce' ) }</strong> { __( '& more.', 'easycommerce' ) }
 								</p>
 
 								<p className="text-left text-[13px] leading-[20px] text-[#8A8A8A] pt-4 border-t border-[#EFEFEF]">
-									Each AI request transmits only the relevant records - the item you're working on, or a shopper's query and its products - to EasyCommerce's AI service. Your bulk customer and order data is never uploaded, sold, or used to train models.{' '}
+									{ __( 'Each AI request transmits only the relevant records - the item you\'re working on, or a shopper\'s query and its products - to EasyCommerce\'s AI service. Your bulk customer and order data is never uploaded, sold, or used to train models.', 'easycommerce' ) }{' '}
 									<a
 										href="https://easycommerce.dev/docs/troubleshooting/use-of-api-key/"
 										className="text-ec-primary underline hover:underline"
 										target="_blank"
 										rel="noopener noreferrer"
 									>
-										Learn more.
+										{ __( 'Learn more.', 'easycommerce' ) }
 									</a>
 								</p>
 							</div>
@@ -93,7 +96,7 @@ const APIScreen = ({
                                 border-ec-primary transition-all ease-in-out duration-300"
 								onClick={switchVariationModalTab}
 							>
-								I have an API key
+								{ __( 'I have an API key', 'easycommerce' ) }
 							</button>
 							<button
 								className="w-full h-12 flex flrx-1 justify-center items-center font-medium font-inter text-base 
@@ -101,7 +104,7 @@ const APIScreen = ({
                                 ease-in-out duration-300"
 								onClick={switchCreateModalTab}
 							>
-								I want an API key
+								{ __( 'I want an API key', 'easycommerce' ) }
 							</button>
 						</div>
 					</div>

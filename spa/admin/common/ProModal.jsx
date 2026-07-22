@@ -53,6 +53,7 @@ const ProModal = ({ setShowPopup, addonName, addonDescription }) => {
 					</div>
 					<h2 className="mt-6 text-[#121216] text-2xl font-medium">
 						{ sprintf(
+						    // translators: %s: addon name.
 						    __('Unlock %s', 'easycommerce'),
 						    addonName
 						) }

@@ -1,7 +1,9 @@
 <?php
 return array(
-	'customer_subject' => 'Partial Refund Processed for Order ###order_id## - ##shop_name##',
-	'customer_body'    => '
+	/* translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim. */
+	'customer_subject' => __( 'Partial Refund Processed for Order ###order_id## - ##shop_name##', 'easycommerce' ),
+	/* translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim. */
+	'customer_body'    => __( '
 Hi ##customer_name##,
 
 We\'ve processed a partial refund for your order ###order_id##. The amount should appear in your account within a few business days, depending on your payment provider.
@@ -21,10 +23,12 @@ If you have any questions about this refund, please don\'t hesitate to reach out
 
 Warm regards,
 The ##shop_name## Team
-',
+', 'easycommerce' ),
 
-	'admin_subject'    => 'Partial Refund Issued - Order ###order_id## - ##customer_name## - ##shop_name##',
-	'admin_body'       => '
+	/* translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim. */
+	'admin_subject'    => __( 'Partial Refund Issued - Order ###order_id## - ##customer_name## - ##shop_name##', 'easycommerce' ),
+	/* translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim. */
+	'admin_body'       => __( '
 Hi there,
 
 A partial refund has been processed for order ###order_id## from ##customer_name##.
@@ -43,5 +47,5 @@ Phone: ##customer_phone##
 
 Best regards,
 The ##shop_name## Team
-',
+', 'easycommerce' ),
 );

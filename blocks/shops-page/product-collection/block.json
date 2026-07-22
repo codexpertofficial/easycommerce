@@ -1,0 +1,33 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "easycommerce/product-collection",
+    "version": "0.1.0",
+    "title": "Product Collection",
+    "category": "easycommerce-shop",
+    "description": "A configurable grid of products (featured, best sellers, new arrivals, or by category). Used inside EasyCommerce store patterns.",
+    "keywords": [ "products", "grid", "featured", "best sellers", "new arrivals" ],
+    "example": {},
+    "supports": {
+        "align": [ "wide", "full" ],
+        "color": {
+            "background": true,
+            "text": true
+        },
+        "spacing": {
+            "margin": true,
+            "padding": true
+        },
+        "anchor": true,
+        "html": false
+    },
+    "attributes": {
+        "source": { "type": "string", "default": "featured" },
+        "category": { "type": "string", "default": "" },
+        "count": { "type": "number", "default": 4 },
+        "columns": { "type": "number", "default": 4 }
+    },
+    "textdomain": "easycommerce",
+    "editorScript": "file:./index.js",
+    "style": "file:./assets/style.css"
+}

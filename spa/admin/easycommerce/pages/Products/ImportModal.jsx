@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { toast } from "react-toastify";
+import { __, sprintf, _n } from '@wordpress/i18n';
 
 const ImportModal = ({ onClose, onImportComplete }) => {
     const [step, setStep] = useState('upload');
@@ -18,7 +19,7 @@ const ImportModal = ({ onClose, onImportComplete }) => {
 
     const uploadCsv = async () => {
         if (!csvFile) {
-            toast.error('Please select a CSV file');
+            toast.error(__('Please select a CSV file', 'easycommerce'));
             return;
         }
 
@@ -43,9 +44,9 @@ const ImportModal = ({ onClose, onImportComplete }) => {
                 const defaultFields = getDefaultFields();
                 data.data.headers.forEach((header, index) => {
                     const headerLower = header.toLowerCase().replace(/[^a-z0-9]/g, '');
-                    for (const [key, label] of Object.entries(defaultFields)) {
-                        const labelLower = label.toLowerCase().replace(/[^a-z0-9]/g, '');
-                        if (headerLower === labelLower || headerLower.includes(labelLower) || labelLower.includes(headerLower)) {
+                    for (const key of Object.keys(defaultFields)) {
+                        const keyLower = key.toLowerCase().replace(/[^a-z0-9]/g, '');
+                        if (headerLower === keyLower || headerLower.includes(keyLower) || keyLower.includes(headerLower)) {
                             autoMapping[index] = key;
                             break;
                         }
@@ -53,12 +54,12 @@ const ImportModal = ({ onClose, onImportComplete }) => {
                 });
                 setMapping(autoMapping);
                 setStep('mapping');
-                toast.success('CSV uploaded successfully');
+                toast.success(__('CSV uploaded successfully', 'easycommerce'));
             } else {
-                toast.error(data.data || 'Failed to upload CSV');
+                toast.error(data.data || __('Failed to upload CSV', 'easycommerce'));
             }
         } catch (error) {
-            toast.error('Upload failed');
+            toast.error(__('Upload failed', 'easycommerce'));
         } finally {
             setIsLoading(false);
         }
@@ -87,12 +88,12 @@ const ImportModal = ({ onClose, onImportComplete }) => {
 
             if (data.success) {
                 setStep('import');
-                toast.success('Columns mapped successfully');
+                toast.success(__('Columns mapped successfully', 'easycommerce'));
             } else {
-                toast.error(data.data || 'Failed to map columns');
+                toast.error(data.data || __('Failed to map columns', 'easycommerce'));
             }
         } catch (error) {
-            toast.error('Mapping failed');
+            toast.error(__('Mapping failed', 'easycommerce'));
         } finally {
             setIsLoading(false);
         }
@@ -114,14 +115,14 @@ const ImportModal = ({ onClose, onImportComplete }) => {
 
             const startData = await startRes.json();
             if (!startData.success) {
-                toast.error(startData.data || 'Failed to start import');
+                toast.error(startData.data || __('Failed to start import', 'easycommerce'));
                 setIsLoading(false);
                 return;
             }
 
             const importId = startData.data.import_id;
             setImportId(importId);
-            toast.success('Import started in background...');
+            toast.success(__('Import started in background...', 'easycommerce'));
 
             const poll = async () => {
                 const res = await fetch(`${EASYCOMMERCE.rest_base}/importer/import`, {
@@ -140,9 +141,11 @@ const ImportModal = ({ onClose, onImportComplete }) => {
                     setProgress(s.progress || 0);
 
                     if (s.status === 'completed') {
-                        toast.success(`Import completed! ${s.imported} products imported`);
+                        // translators: %d: number of products imported.
+                        toast.success(sprintf(_n('Import completed! %d product imported', 'Import completed! %d products imported', s.imported, 'easycommerce'), s.imported));
                         if (s.errors?.length > 0) {
-                            toast.warn(`${s.errors.length} errors occurred`);
+                            // translators: %d: number of errors that occurred during import.
+                            toast.warn(sprintf(_n('%d error occurred', '%d errors occurred', s.errors.length, 'easycommerce'), s.errors.length));
                         }
                         setIsLoading(false);
                         onImportComplete();
@@ -155,7 +158,7 @@ const ImportModal = ({ onClose, onImportComplete }) => {
             poll();
 
         } catch (err) {
-            toast.error('Import failed to start');
+            toast.error(__('Import failed to start', 'easycommerce'));
             setIsLoading(false);
         }
     };
@@ -170,63 +173,63 @@ const ImportModal = ({ onClose, onImportComplete }) => {
 
     const getDefaultFields = () => {
         return {
-            'status': 'Status',
-            'title': 'Title',
-            'summary': 'Summary',
-            'description': 'Description',
-            'brands': 'Brands',
-            'tags': 'Tags',
-            'slug': 'Slug',
-            'thumbnail_url': 'Thumbnail Url',
-            'categories': 'Categories',
-            'attribute_names': 'Attribute Names',
-            'attribute_values_name': 'Attribute Values Name',
-            'attribute_values_value': 'Attribute Values Value',
-            'variation_names': 'Variation Names',
-            'variation_types': 'Variation Types',
-            'variation_status': 'Variation Status',
-            'regular_prices': 'Regular Prices',
-            'sale_prices': 'Sale Prices',
-            'skus': 'SKUs',
-            'stock_quantities': 'Stock Quantities',
-            'stock_limits': 'Stock Limits',
-            'variation_attribute_names': 'Variation Attribute Names',
-            'variation_attribute_values': 'Variation Attribute Values',
-            'managed_stocks': 'Managed Stocks',
-            'tax_classes': 'Tax Classes',
-            'thumbnail_urls': 'Thumbnail URLs',
-            'width_values': 'Width Values',
-            'width_units': 'Width Units',
-            'height_values': 'Height Values',
-            'height_units': 'Height Units',
-            'weight_values': 'Weight Values',
-            'weight_units': 'Weight Units',
-            'length_values': 'Length Values',
-            'length_units': 'Length Units',
-            'downloads': 'Downloads',
-            'meta_gallery_urls': 'Meta Gallery URLs',
-            'meta_gallery_titles': 'Meta Gallery Titles',
-            'meta_templates': 'Meta Templates',
-            'show_reviews': 'Show Reviews',
-            'review_text_mandatory': 'Review Text Mandatory',
-            'hide_from_shop': 'Hide From Shop',
-            'noindex': 'Noindex',
-            'published_date': 'Published Date',
+            'status': __('Status', 'easycommerce'),
+            'title': __('Title', 'easycommerce'),
+            'summary': __('Summary', 'easycommerce'),
+            'description': __('Description', 'easycommerce'),
+            'brands': __('Brands', 'easycommerce'),
+            'tags': __('Tags', 'easycommerce'),
+            'slug': __('Slug', 'easycommerce'),
+            'thumbnail_url': __('Thumbnail Url', 'easycommerce'),
+            'categories': __('Categories', 'easycommerce'),
+            'attribute_names': __('Attribute Names', 'easycommerce'),
+            'attribute_values_name': __('Attribute Values Name', 'easycommerce'),
+            'attribute_values_value': __('Attribute Values Value', 'easycommerce'),
+            'variation_names': __('Variation Names', 'easycommerce'),
+            'variation_types': __('Variation Types', 'easycommerce'),
+            'variation_status': __('Variation Status', 'easycommerce'),
+            'regular_prices': __('Regular Prices', 'easycommerce'),
+            'sale_prices': __('Sale Prices', 'easycommerce'),
+            'skus': __('SKUs', 'easycommerce'),
+            'stock_quantities': __('Stock Quantities', 'easycommerce'),
+            'stock_limits': __('Stock Limits', 'easycommerce'),
+            'variation_attribute_names': __('Variation Attribute Names', 'easycommerce'),
+            'variation_attribute_values': __('Variation Attribute Values', 'easycommerce'),
+            'managed_stocks': __('Managed Stocks', 'easycommerce'),
+            'tax_classes': __('Tax Classes', 'easycommerce'),
+            'thumbnail_urls': __('Thumbnail URLs', 'easycommerce'),
+            'width_values': __('Width Values', 'easycommerce'),
+            'width_units': __('Width Units', 'easycommerce'),
+            'height_values': __('Height Values', 'easycommerce'),
+            'height_units': __('Height Units', 'easycommerce'),
+            'weight_values': __('Weight Values', 'easycommerce'),
+            'weight_units': __('Weight Units', 'easycommerce'),
+            'length_values': __('Length Values', 'easycommerce'),
+            'length_units': __('Length Units', 'easycommerce'),
+            'downloads': __('Downloads', 'easycommerce'),
+            'meta_gallery_urls': __('Meta Gallery URLs', 'easycommerce'),
+            'meta_gallery_titles': __('Meta Gallery Titles', 'easycommerce'),
+            'meta_templates': __('Meta Templates', 'easycommerce'),
+            'show_reviews': __('Show Reviews', 'easycommerce'),
+            'review_text_mandatory': __('Review Text Mandatory', 'easycommerce'),
+            'hide_from_shop': __('Hide From Shop', 'easycommerce'),
+            'noindex': __('Noindex', 'easycommerce'),
+            'published_date': __('Published Date', 'easycommerce'),
         };
     };
 
     const renderUploadStep = () => (
         <div className="p-6">
-            <h3 className="text-xl font-semibold mb-4">Upload CSV File</h3>
+            <h3 className="text-xl font-semibold mb-4">{__('Upload CSV File', 'easycommerce')}</h3>
             <div className="mb-4">
                 <span className="text-sm text-gray-600 mb-2 block">
-                    Download the {" "}
+                    {__('Download the', 'easycommerce')} {" "}
                     <strong className="text-blue-600">
                         <a className="text-[#9B3FFF]" href={EASYCOMMERCE.sampleCsvUrl} target="_blank" rel="noopener noreferrer">
-                            Demo CSV {" "}
+                            {__('Demo CSV', 'easycommerce')} {" "}
                         </a>
-                    </strong> file. Add your data, upload it below, and click continue. To learn more, {" "}
-                    <a className="text-[#9B3FFF]" href="https://easycommerce.dev/docs/products/csv-importer" target="_blank" rel="noopener noreferrer"><strong>click here</strong></a>.
+                    </strong> {__('file. Add your data, upload it below, and click continue. To learn more,', 'easycommerce')} {" "}
+                    <a className="text-[#9B3FFF]" href="https://easycommerce.dev/docs/products/csv-importer" target="_blank" rel="noopener noreferrer"><strong>{__('click here', 'easycommerce')}</strong></a>.
                 </span>
             </div>
             <div className="mb-4">
@@ -242,14 +245,14 @@ const ImportModal = ({ onClose, onImportComplete }) => {
                     onClick={onClose}
                     className="px-4 py-2 bg-gray-300 text-gray-700 rounded"
                 >
-                    Cancel
+                    {__('Cancel', 'easycommerce')}
                 </button>
                 <button
                     onClick={uploadCsv}
                     disabled={isLoading || !csvFile}
                     className="px-4 py-2 bg-[#9C3EFE] text-white rounded hover:bg-blue-700 disabled:opacity-50"
                 >
-                    {isLoading ? 'Uploading...' : 'Continue'}
+                    {isLoading ? __('Uploading...', 'easycommerce') : __('Continue', 'easycommerce')}
                 </button>
             </div>
         </div>
@@ -257,13 +260,13 @@ const ImportModal = ({ onClose, onImportComplete }) => {
 
     const renderMappingStep = () => (
         <div className="p-6">
-            <h3 className="text-xl font-semibold mb-4">Column Mapping</h3>
+            <h3 className="text-xl font-semibold mb-4">{__('Column Mapping', 'easycommerce')}</h3>
             <div className="mb-4 max-h-96 overflow-y-auto">
                 <table className="w-full border-collapse border border-gray-300">
                     <thead>
                         <tr className="bg-gray-50">
-                            <th className="border border-gray-300 p-2 text-left">Column Name</th>
-                            <th className="border border-gray-300 p-2 text-left">Map to Field</th>
+                            <th className="border border-gray-300 p-2 text-left">{__('Column Name', 'easycommerce')}</th>
+                            <th className="border border-gray-300 p-2 text-left">{__('Map to Field', 'easycommerce')}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -276,7 +279,7 @@ const ImportModal = ({ onClose, onImportComplete }) => {
                                         onChange={(e) => handleMappingChange(index, e.target.value)}
                                         className="w-full p-1 border border-gray-300 rounded"
                                     >
-                                        <option value="">Do not import</option>
+                                        <option value="">{__('Do not import', 'easycommerce')}</option>
                                         {Object.entries(getDefaultFields()).map(([key, label]) => (
                                             <option key={key} value={key}>{label}</option>
                                         ))}
@@ -292,14 +295,14 @@ const ImportModal = ({ onClose, onImportComplete }) => {
                     onClick={() => setStep('upload')}
                     className="px-4 py-2 bg-gray-300 text-gray-700 rounded"
                 >
-                    Back
+                    {__('Back', 'easycommerce')}
                 </button>
                 <button
                     onClick={mapColumns}
                     disabled={isLoading}
                     className="px-4 py-2 bg-[#9B3FFF] text-white rounded hover:bg-blue-700 disabled:opacity-50"
                 >
-                    {isLoading ? 'Mapping...' : 'Continue'}
+                    {isLoading ? __('Mapping...', 'easycommerce') : __('Continue', 'easycommerce')}
                 </button>
             </div>
         </div>
@@ -307,11 +310,11 @@ const ImportModal = ({ onClose, onImportComplete }) => {
 
     const renderImportStep = () => (
         <div className="p-6">
-            <h3 className="text-xl font-semibold mb-4">Import Products</h3>
-            
+            <h3 className="text-xl font-semibold mb-4">{__('Import Products', 'easycommerce')}</h3>
+
             {!isLoading ? (
                 <div className="mb-4">
-                    <p className="text-gray-600">Products are ready to import. Click the button below to start importing.</p>
+                    <p className="text-gray-600">{__('Products are ready to import. Click the button below to start importing.', 'easycommerce')}</p>
                 </div>
             ) : (
                 <div className="mb-4">
@@ -322,16 +325,19 @@ const ImportModal = ({ onClose, onImportComplete }) => {
                         ></div>
                     </div>
                     <div className="flex justify-between items-center text-sm text-gray-600">
-                        <span>Importing... {progress.toFixed(1)}%</span>
+                        <span>{__('Importing...', 'easycommerce')} {progress.toFixed(1)}%</span>
                         {importStatus && (
                             <span>
-                                {importStatus.processed} of {importStatus.total} products
+                                {
+                                    // translators: 1: number of products processed, 2: total number of products.
+                                    sprintf(__('%1$d of %2$d products', 'easycommerce'), importStatus.processed, importStatus.total)
+                                }
                             </span>
                         )}
                     </div>
                     {importStatus && importStatus.errors.length > 0 && (
                         <div className="mt-2 text-sm text-red-600">
-                            {importStatus.errors.length} error(s) occurred
+                            {sprintf(_n('%d error occurred', '%d errors occurred', importStatus.errors.length, 'easycommerce'), importStatus.errors.length)}
                         </div>
                     )}
                 </div>
@@ -343,14 +349,14 @@ const ImportModal = ({ onClose, onImportComplete }) => {
                     disabled={isLoading}
                     className="px-4 py-2 bg-gray-300 text-gray-700 rounded disabled:opacity-50"
                 >
-                    Back
+                    {__('Back', 'easycommerce')}
                 </button>
                 <button
                     onClick={importProducts}
                     disabled={isLoading}
                     className="px-4 py-2 bg-[#9B3FFF] text-white rounded hover:bg-blue-700 disabled:opacity-50"
                 >
-                    {isLoading ? 'Importing...' : 'Import Now'}
+                    {isLoading ? __('Importing...', 'easycommerce') : __('Import Now', 'easycommerce')}
                 </button>
             </div>
         </div>
@@ -365,19 +371,19 @@ const ImportModal = ({ onClose, onImportComplete }) => {
                             <span className={`flex items-center justify-center w-8 h-8 rounded-full shrink-0 ${step === 'upload' || step === 'mapping' || step === 'import' ? 'bg-[#9B3FFF] text-white' : 'bg-gray-200'}`}>
                                 1
                             </span>
-                            <span className="ml-2">Upload CSV</span>
+                            <span className="ml-2">{__('Upload CSV', 'easycommerce')}</span>
                         </li>
                         <li className={`flex items-center ml-8 ${step === 'mapping' || step === 'import' ? 'text-[#000000]' : ''}`}>
                             <span className={`flex items-center justify-center w-8 h-8 rounded-full shrink-0 ${step === 'mapping' || step === 'import' ? 'bg-[#9B3FFF] text-white' : 'bg-gray-200'}`}>
                                 2
                             </span>
-                            <span className="ml-2">Column Mapping</span>
+                            <span className="ml-2">{__('Column Mapping', 'easycommerce')}</span>
                         </li>
                         <li className={`flex items-center ml-8 ${step === 'import' ? 'text-[#000000]' : ''}`}>
                             <span className={`flex items-center justify-center w-8 h-8 rounded-full shrink-0 ${step === 'import' ? 'bg-[#9B3FFF] text-white' : 'bg-gray-200'}`}>
                                 3
                             </span>
-                            <span className="ml-2">Import</span>
+                            <span className="ml-2">{__('Import', 'easycommerce')}</span>
                         </li>
                     </ol>
                 </div>

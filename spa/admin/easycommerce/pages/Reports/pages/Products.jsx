@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { __ } from '@wordpress/i18n';
 
 // components
 import Container from '../components/common/Container';
@@ -11,19 +12,19 @@ import LeastSold from '../components/products/LeastSold';
 
 const Products = () => {
 	const [range, setRange] = useState({
-		label: 'Last 30 days',
+		label: __( 'Last 30 days', 'easycommerce' ),
 		value: 'last-30',
 	});
 
 	const [comparison, setComparison] = useState({
-		label: 'Prev. 30 days',
+		label: __( 'Prev. 30 days', 'easycommerce' ),
 		value: 'prev-30'
 	});
 
 	return (
 		<>
 			<Header
-				title="Products"
+				title={__( 'Products', 'easycommerce' )}
 				range={range}
 				setRange={setRange}
 				comparison={comparison}
@@ -37,7 +38,7 @@ const Products = () => {
 			/>
 
 			<div className="my-6">
-				<Container title="Products Sold Over Time" >
+				<Container title={__( 'Products Sold Over Time', 'easycommerce' )} >
 					<LineChart 
 						endpoint="/easycommerce/v1/reports/products/sold-over-time" 
 						params={{ range: range.value, comparison: comparison.value }} 
@@ -46,13 +47,13 @@ const Products = () => {
 			</div>
 			
 			<div className="my-6">
-				<Container title=" Most sold products" >
+				<Container title={__( ' Most sold products', 'easycommerce' )} >
 					<TopSold range={range.value} />
 				</Container>
 			</div>
 			
 			<div className="my-6">
-				<Container title=" Least sold products" >
+				<Container title={__( ' Least sold products', 'easycommerce' )} >
 					<LeastSold range={range.value} />
 				</Container>
 			</div>

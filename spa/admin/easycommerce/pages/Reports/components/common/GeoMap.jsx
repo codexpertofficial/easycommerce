@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useCallback, useState, useMemo } from 'react';
 import apiFetch from '@wordpress/api-fetch';
 import { addQueryArgs } from '@wordpress/url';
+import { __, _n, sprintf } from '@wordpress/i18n';
 import L from 'leaflet';
 import * as topojson from 'topojson-client';
 import 'leaflet/dist/leaflet.css';
@@ -241,7 +242,11 @@ const GeoMap = ({ endpoint, params = {}, data: propData = {}, isLoading: propLoa
             const key   = getKey(feature);
             const count = orderData[key] || 0;
             const name  = countryData[key]?.name || feature.properties?.name || key;
-            const html  = `<strong>${name}</strong><br/>${count > 0 ? countryData[key]?.display || `${count} order${count !== 1 ? 's' : ''}` : 'No orders'}`;
+            const html  = `<strong>${name}</strong><br/>${count > 0
+                ? countryData[key]?.display ||
+                // translators: %d: number of orders placed in the country.
+                sprintf( _n( '%d order', '%d orders', count, 'easycommerce' ), count )
+                : __( 'No orders', 'easycommerce' )}`;
 
             layer.on({
                 mouseover(e) {
@@ -307,8 +312,8 @@ const GeoMap = ({ endpoint, params = {}, data: propData = {}, isLoading: propLoa
             const stateCode = state.state_code?.toUpperCase() || '';
             const key       = stateDataNameToCode[stateName] || stateDataNameToCode[stateCode] || stateNameToCode[stateName] || stateNameToCode[stateCode];
             const value = key ? stateData[key] : 0;
-            const displayText = (stateDisplay[key]) || (aggregate === 'sum' ? `${Number(value).toLocaleString()}` : `${value} order${value !== 1 ? 's' : ''}`);
-            const html  = `<strong>${state.name}</strong><br/>${value > 0 ? displayText : 'No orders'}`;
+            const displayText = (stateDisplay[key]) || (aggregate === 'sum' ? `${Number(value).toLocaleString()}` : sprintf( _n( '%d order', '%d orders', value, 'easycommerce' ), value ));
+            const html  = `<strong>${state.name}</strong><br/>${value > 0 ? displayText : __( 'No orders', 'easycommerce' )}`;
 
             const circle = L.circle(
                 [parseFloat(state.latitude), parseFloat(state.longitude)],
@@ -333,7 +338,7 @@ const GeoMap = ({ endpoint, params = {}, data: propData = {}, isLoading: propLoa
             </div>
 
             <div className="w-[40%]">
-                <h4 className='text-[#3C3C42] font-semibold text-base mb-6'>Top Locations</h4>
+                <h4 className='text-[#3C3C42] font-semibold text-base mb-6'>{__( 'Top Locations', 'easycommerce' )}</h4>
 
                 <div className="flex flex-col gap-3">
                     {topLocations.length > 0 ? topLocations.map((location, index) => (
@@ -353,7 +358,7 @@ const GeoMap = ({ endpoint, params = {}, data: propData = {}, isLoading: propLoa
                             <span className='text-[#0F172B] font-medium text-sm'>{location.display || Number(location.value).toLocaleString()}</span>
                         </div>
                     )) : (
-                        <div className="text-[#62748E] text-sm p-4">No location data available</div>
+                        <div className="text-[#62748E] text-sm p-4">{__( 'No location data available', 'easycommerce' )}</div>
                     )}
                 </div>
             </div>

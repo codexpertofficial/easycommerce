@@ -1,5 +1,7 @@
 import React from "react";
 
+import { __ } from "@wordpress/i18n";
+
 const noCouponsIcon = `${EASYCOMMERCE.assets}admin/img/coupon/no-coupon.png`;
 
 const NotFound = () => {
@@ -13,10 +15,10 @@ const NotFound = () => {
 
                 <div className="flex flex-col items-center gap-6">
                     <p className="font-inter font-medium text-2xl leading-8 text-ec-title">
-                        No coupons found 
+                        { __( "No coupons found", "easycommerce" ) }
                     </p>
                     <p className="font-inter text-base leading-[26px] text-ec-light-black w-[300px] text-center">
-                        All type of Coupons activities will appear here once they occur.
+                        { __( "All type of Coupons activities will appear here once they occur.", "easycommerce" ) }
                     </p>
                     <a
                         href="#/coupons/new"
@@ -25,7 +27,7 @@ const NotFound = () => {
                         hover:text-white focus:shadow-none focus:bg-ec-primary focus:text-white active:bg-ec-primary 
                         active:text-white active:shadow-none ease-in-out duration-500"
                     >
-                        Add Coupon
+                        { __( "Add Coupon", "easycommerce" ) }
                     </a>
                 </div>
             </div>

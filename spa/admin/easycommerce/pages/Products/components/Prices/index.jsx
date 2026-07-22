@@ -195,7 +195,7 @@ const Prices = ({ productTitle, productAttributes, prevData, globalAttributes })
 			<div class="bg-white rounded-xl border-ec-table-stock border border-solid">
 				<div class="py-[14px] px-6 flex items-center justify-between border-b border-ec-table-stock border-solid rounded-t-xl">
 					<PanelTitle
-						title="Pricing"
+						title={__('Pricing', 'easycommerce')}
 						notice={__(
 							'Set product type, price, sale price, stock count, and dimensions of the product.',
 							'easycommerce'
@@ -219,7 +219,7 @@ const Prices = ({ productTitle, productAttributes, prevData, globalAttributes })
 							<button
 								type="button"
 								data-tooltip-id="auto-generate-variant"
-								data-tooltip-content="Add attributes to enable variant generation"
+								data-tooltip-content={__('Add attributes to enable variant generation', 'easycommerce')}
 								class={
 									`text-ec-body py-2 px-0 font-inter text-sm w-max duration-300 focus:shadow-none border-0 border-b-[1px] border-solid rounded-none rounded-tr-xl` +
 									(productAttributes.length > 0 &&
@@ -251,9 +251,9 @@ const Prices = ({ productTitle, productAttributes, prevData, globalAttributes })
 							<span
 								className="text-ec-body/90 font-inter py-2 text-sm self-center border-b-[1px] border-solid border-[#3c3c42]/90 cursor-help"
 								data-tooltip-id="auto-generate-variant"
-								data-tooltip-content="Add attributes above to add multiple price options."
+								data-tooltip-content={__('Add attributes above to add multiple price options.', 'easycommerce')}
 							>
-								Need multiple prices?
+								{__('Need multiple prices?', 'easycommerce')}
 							</span>
 						)}
 

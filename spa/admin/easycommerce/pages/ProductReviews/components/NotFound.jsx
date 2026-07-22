@@ -1,4 +1,5 @@
 import React from "react";
+import { __ } from "@wordpress/i18n";
 
 const NotFound = ({ ImageUrl, title, description }) => {
     return (
@@ -7,7 +8,7 @@ const NotFound = ({ ImageUrl, title, description }) => {
                 <img
                     src={ImageUrl}
                     className="w-[200px] h-[200px] object-contain"
-                    alt="No data"
+                    alt={__("No data", "easycommerce")}
                 />
                 <div className="flex flex-col items-center gap-2">
                     <h3 className="font-inter text-xl font-semibold text-ec-title leading-6">

@@ -19,7 +19,7 @@ const loadingGifURL = EASYCOMMERCE.assets + 'admin/img/loading.gif';
 
 const AiEnhanceImage = ({ image, setEnhanceOpen, setEnhancedContent }) => {
 	const [input, setInput] = useState(
-		'Edit this image. Keep the product exactly as-is. Place it in a clean, modern lifestyle setting with soft natural lighting, shallow depth of field, and a professional commercial look.',
+		__('Edit this image. Keep the product exactly as-is. Place it in a clean, modern lifestyle setting with soft natural lighting, shallow depth of field, and a professional commercial look.', 'easycommerce'),
 	);
 	const [isLoading, setIsLoading] = useState(false);
 	const [isImporting, setIsImporting] = useState(false);
@@ -352,7 +352,7 @@ const AiEnhanceImage = ({ image, setEnhanceOpen, setEnhancedContent }) => {
 										}
 									>
 										{isLoading ? (
-											<img src={loadingGifURL} alt="loading" className="h-8" />
+											<img src={loadingGifURL} alt={__('loading', 'easycommerce')} className="h-8" />
 										) : (
 											<>
 												{generateIcon}

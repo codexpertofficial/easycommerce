@@ -176,7 +176,9 @@ class Refund extends API {
 			$do_refund = $payment_method->refund( $order_id, $reason, $amount );
 
 			if ( ! $do_refund ) {
-				return $this->response_error( [ 'message' => __( 'Failed to process refund through payment gateway.', 'easycommerce' ) ] );
+				$gateway_error = method_exists( $payment_method, 'get_error_message' ) ? $payment_method->get_error_message() : '';
+				$message       = $gateway_error ? $gateway_error : __( 'Failed to process refund through payment gateway.', 'easycommerce' );
+				return $this->response_error( [ 'message' => $message ] );
 			}
 
 			$refund_transaction_id = $payment_method->refund_transaction_id();
@@ -212,6 +214,7 @@ class Refund extends API {
 		$due_amount		= $order_total - $total_refunded;
 
 		if ( $amount > $due_amount ) {
+			/* translators: %s: remaining due amount of the order. */
 			return $this->response_error( [ 'message' => sprintf( __( 'Refund amount cannot exceed the due amount of %s.', 'easycommerce' ), $due_amount ) ] );
 		}
 

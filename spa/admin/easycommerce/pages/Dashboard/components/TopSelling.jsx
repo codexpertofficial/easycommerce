@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import apiFetch from '@wordpress/api-fetch';
 import { addQueryArgs } from '@wordpress/url';
+import { __ } from '@wordpress/i18n';
 import TableSkeleton from "../../../../common/TableSkeleton";
 
 const TopSelling = ({ range }) => {
@@ -39,14 +40,14 @@ const TopSelling = ({ range }) => {
                 <TableSkeleton numberOfRows={5} SkeletonHeight={35} />
             ) : !Array.isArray(topSeller) || topSeller.length === 0 ? (
                 <div className=" text-sm text-ec-body px-[30px] pb-[30px]">
-                    No top selling products found.
+                    {__( 'No top selling products found.', 'easycommerce' )}
                 </div>
             ) : (
                 <div>
                     <div className="flex items-center bg-ec-table-bg py-3 px-3 rounded-lg">
-                        <div className="w-[45%] text-sm font-medium text-ec-body capitalize">Product Name</div>
-                        <div className="w-[35%] text-sm font-medium text-ec-body capitalize text-center">Items Sold</div>
-                        <div className="w-[20%] text-sm font-medium text-ec-body capitalize text-center">Total Sales</div>
+                        <div className="w-[45%] text-sm font-medium text-ec-body capitalize">{__( 'Product Name', 'easycommerce' )}</div>
+                        <div className="w-[35%] text-sm font-medium text-ec-body capitalize text-center">{__( 'Items Sold', 'easycommerce' )}</div>
+                        <div className="w-[20%] text-sm font-medium text-ec-body capitalize text-center">{__( 'Total Sales', 'easycommerce' )}</div>
                     </div>
 
                     {topSeller.map((item, index) => (

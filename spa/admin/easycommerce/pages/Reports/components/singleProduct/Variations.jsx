@@ -1,20 +1,21 @@
 import React from 'react';
+import { __ } from '@wordpress/i18n';
 
 const Variations = ({ data }) => {
 	return data && (
         <div className="text-base text-[#1B2538] mt-4">
             <div className="bg-[#F7F7F7] rounded-lg flex items-center gap-4 px-4 py-3 mb-[2px]">
                 <div className="flex items-center justify-start w-[25%]">
-                    <h6 className="font-medium">Variation</h6>
+                    <h6 className="font-medium">{__( 'Variation', 'easycommerce' )}</h6>
                 </div>
                 <div className="flex items-center justify-center w-[25%]">
-                    <h6 className="font-medium">Stock</h6>
+                    <h6 className="font-medium">{__( 'Stock', 'easycommerce' )}</h6>
                 </div>
                 <div className="flex items-center justify-center w-[25%]">
-                    <h6 className="font-medium">Amount Sold</h6>
+                    <h6 className="font-medium">{__( 'Amount Sold', 'easycommerce' )}</h6>
                 </div>
                 <div className="flex items-center justify-center w-[25%]">
-                    <h6 className="font-medium">Item Sold</h6>
+                    <h6 className="font-medium">{__( 'Item Sold', 'easycommerce' )}</h6>
                 </div>
             </div>
 

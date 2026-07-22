@@ -1,4 +1,5 @@
 import React from 'react';
+import { __ } from '@wordpress/i18n';
 
 const Reviews = () => {
 	const reviews = [
@@ -33,7 +34,7 @@ const Reviews = () => {
 
 	return (
         <div className='pt-[120px] pb-[0px]'>
-            <h2 className='text-[#1A0180] text-4xl text-center mb-[60px] font-medium'>Trusted by Businesses Like Yours</h2>
+            <h2 className='text-[#1A0180] text-4xl text-center mb-[60px] font-medium'>{__('Trusted by Businesses Like Yours', 'easycommerce')}</h2>
 
             <div className="grid grid-cols-3 gap-8">
 				{reviews.map((review, index) => (

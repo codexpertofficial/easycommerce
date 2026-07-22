@@ -1,0 +1,72 @@
+{
+    "translation-revision-date": "YEAR-MO-DA HO:MI+ZONE",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "assets\/payment\/js\/stripe-payment.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "fr_FR",
+                "plural-forms": "nplurals=2; plural=(n > 1);"
+            },
+            "Failed to load cart data. Please refresh the page.": [
+                "Impossible de charger les donn\u00e9es du panier. Veuillez actualiser la page."
+            ],
+            "Failed to create payment. Please try again.": [
+                "\u00c9chec de la cr\u00e9ation du paiement. Veuillez r\u00e9essayer."
+            ],
+            "Payment form failed to load. Please refresh.": [
+                "Le formulaire de paiement n\u2019a pas pu \u00eatre charg\u00e9. Veuillez actualiser la page."
+            ],
+            "Could not verify cart. Please refresh and try again.": [
+                "Impossible de v\u00e9rifier le panier. Veuillez actualiser la page et r\u00e9essayer."
+            ],
+            "Failed to create payment. Please refresh the page and try again.": [
+                "\u00c9chec de la cr\u00e9ation du paiement. Veuillez actualiser la page et r\u00e9essayer."
+            ],
+            "This payment handler is not available. Please refresh and try again.": [
+                "Ce gestionnaire de paiement n\u2019est pas disponible. Veuillez actualiser la page et r\u00e9essayer."
+            ],
+            "Additional verification required. Please complete the payment process.": [
+                "Une v\u00e9rification suppl\u00e9mentaire est requise. Veuillez finaliser le processus de paiement."
+            ],
+            "Payment failed. Please try a different payment method.": [
+                "Le paiement a \u00e9chou\u00e9. Veuillez essayer un autre moyen de paiement."
+            ],
+            "Payment was canceled. Please try again.": [
+                "Le paiement a \u00e9t\u00e9 annul\u00e9. Veuillez r\u00e9essayer."
+            ],
+            "Payment status: %s. Please contact support if this persists.": [
+                "Statut du paiement : %s. Veuillez contacter le support si le probl\u00e8me persiste."
+            ],
+            "Payment could not be processed. Please try again.": [
+                "Le paiement n\u2019a pas pu \u00eatre trait\u00e9. Veuillez r\u00e9essayer."
+            ],
+            "An error occurred while processing your payment. Please try again.": [
+                "Une erreur s\u2019est produite lors du traitement de votre paiement. Veuillez r\u00e9essayer."
+            ],
+            "Verifying payment...": [
+                "V\u00e9rification du paiement..."
+            ],
+            "Payment successful! Creating order...": [
+                "Paiement r\u00e9ussi ! Cr\u00e9ation de la commande..."
+            ],
+            "Payment method could not be saved. Status: %s": [
+                "Le moyen de paiement n\u2019a pas pu \u00eatre enregistr\u00e9. Statut : %s"
+            ],
+            "Failed to verify payment. Please contact support.": [
+                "\u00c9chec de la v\u00e9rification du paiement. Veuillez contacter le support."
+            ],
+            "Payment failed. Please try again with a different payment method.": [
+                "Le paiement a \u00e9chou\u00e9. Veuillez r\u00e9essayer avec un autre moyen de paiement."
+            ],
+            "Additional action required. Please complete the payment process.": [
+                "Une action suppl\u00e9mentaire est requise. Veuillez finaliser le processus de paiement."
+            ],
+            "Payment could not be completed. Status: %s": [
+                "Le paiement n\u2019a pas pu \u00eatre finalis\u00e9. Statut : %s"
+            ]
+        }
+    }
+}

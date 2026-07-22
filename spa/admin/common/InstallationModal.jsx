@@ -1,5 +1,5 @@
 import React from 'react';
-import { __ } from '@wordpress/i18n';
+import { __, sprintf } from '@wordpress/i18n';
 import { toast } from 'react-toastify';
 
 const InstallationModal = ({ addon, setShowPopup }) => {
@@ -57,15 +57,15 @@ const InstallationModal = ({ addon, setShowPopup }) => {
 
 			const data = await res.json();
 			if (data.data.status) {
-				toast.success('Addon activated successfully.')
+				toast.success(__('Addon activated successfully.', 'easycommerce'))
 				setTimeout(() => {
 					window.location.reload();
 				}, 1500);
 			} else {
-				toast.error('Error activating addon.');
+				toast.error(__('Error activating addon.', 'easycommerce'));
 			}
 		} catch (error) {
-			toast.error('Error activating addon.');
+			toast.error(__('Error activating addon.', 'easycommerce'));
 			console.error('Error activating addon:', error);
 		} finally {
 			setLoading(false);
@@ -87,11 +87,16 @@ const InstallationModal = ({ addon, setShowPopup }) => {
 						{proImg}
 					</div>
 					<h2 className="mt-6 text-[#121216] text-2xl font-medium">
-						{__(`Install A New Addon?`, 'easycommerce')}
+						{__('Install A New Addon?', 'easycommerce')}
 					</h2>
 					<p className="text-[#3C3C42] text-base font-normal text-center px-3 py-2">
-						{__(
-							`This will install ${addon.name}. Are you sure to proceed?`
+						{sprintf(
+							// translators: %s: addon name.
+							__(
+								'This will install %s. Are you sure to proceed?',
+								'easycommerce'
+							),
+							addon.name
 						)}
 					</p>
 					<div className="mt-4 flex items-center w-full gap-2 justify-center">

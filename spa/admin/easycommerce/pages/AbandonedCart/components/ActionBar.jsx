@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { __, _n, sprintf } from '@wordpress/i18n';
 import DeletePopup from '../../../../common/components/DeletePopup';
 import { toast } from 'react-toastify';
 import BulkReminderPopup from './BulkReminderPopup';
@@ -25,7 +26,7 @@ const ActionBar = ({ selectedCarts = [], statusCounts, setRefreshList, setSelect
                 if (data.success) {
                     statusCounts();
                     setRefreshList(prev => !prev);
-                    toast.success('Reminders sent successfully');
+                    toast.success(__('Reminders sent successfully', 'easycommerce'));
                     setSelectedCarts([]);
                 }
                 easycommerce_modal(false);
@@ -49,7 +50,7 @@ const ActionBar = ({ selectedCarts = [], statusCounts, setRefreshList, setSelect
                     statusCounts();
                     setRefreshList(prev => !prev);
                     setSelectedCarts([]);
-                    toast.success('carts deleted successfully');
+                    toast.success(__('carts deleted successfully', 'easycommerce'));
                 }
                 easycommerce_modal(false);
             });
@@ -63,7 +64,7 @@ const ActionBar = ({ selectedCarts = [], statusCounts, setRefreshList, setSelect
                 className="relative h-ec-input group text-sm font-inter text-ec-primary font-medium border border-ec-primary py-2 
                 px-3 rounded-lg hover:bg-ec-primary hover:text-white transition duration-200 ease-in-out flex items-center gap-2"
             >
-                Remind All
+                {__('Remind All', 'easycommerce')}
                 <svg width="13" height="12" viewBox="0 0 13 12" fill="none" className="fill-current" xmlns="http://www.w3.org/2000/svg">
                     <path d="M11.6719 0.140625C11.9219 0.3125 12.0234 0.5625 11.9766 0.890625L10.4766 10.6172C10.4297 10.8516 10.3047 11.0312 10.1016 11.1562C10.0078 11.2031 9.88281 11.2344 9.72656 11.25C9.63281 11.25 9.53906 11.2344 9.44531 11.2031L6.60938 10.0078L4.61719 11.9531C4.57031 11.9844 4.52344 12 4.47656 12C4.42969 12 4.38281 11.9531 4.33594 11.8594L2.88281 8.4375L0.46875 7.42969C0.1875 7.28906 0.03125 7.07031 0 6.77344C0 6.49219 0.125 6.25781 0.375 6.07031L10.875 0.09375C11 0.03125 11.125 0 11.25 0C11.4062 0 11.5469 0.046875 11.6719 0.140625ZM0.75 6.75L2.90625 7.64062L9.65625 1.66406L0.75 6.75ZM4.71094 10.8281L5.92969 9.67969L5.10938 9.35156C5 9.30469 4.92969 9.21875 4.89844 9.09375C4.86719 8.98438 4.88281 8.88281 4.94531 8.78906L8.92969 3.32812L3.53906 8.08594L4.71094 10.8281ZM9.77344 10.3828L11.1328 1.54688L5.83594 8.83594L9.77344 10.3828Z"/>
                 </svg>
@@ -83,7 +84,11 @@ const ActionBar = ({ selectedCarts = [], statusCounts, setRefreshList, setSelect
                 <DeletePopup
                     onClose={() => setShowDeletePopup(false)}
                     onConfirm={handleBulkDelete}
-                    itemName={`${selectedCarts.length} cart${selectedCarts.length > 1 ? 's' : ''}`}
+                    itemName={sprintf(
+                        // translators: %d: number of carts.
+                        _n('%d cart', '%d carts', selectedCarts.length, 'easycommerce'),
+                        selectedCarts.length
+                    )}
                 />
             )}
 
@@ -91,7 +96,11 @@ const ActionBar = ({ selectedCarts = [], statusCounts, setRefreshList, setSelect
                 <BulkReminderPopup
                     onClose={() => setShowBulkPopup(false)}
                     onConfirm={handleBulkApply}
-                    itemName={`${selectedCarts.length} cart${selectedCarts.length > 1 ? 's' : ''}`}
+                    itemName={sprintf(
+                        // translators: %d: number of carts.
+                        _n('%d cart', '%d carts', selectedCarts.length, 'easycommerce'),
+                        selectedCarts.length
+                    )}
                 />
             )}
         </div>

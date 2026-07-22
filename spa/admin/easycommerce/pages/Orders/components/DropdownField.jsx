@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { __ } from "@wordpress/i18n";
 const arrowDown = `${EASYCOMMERCE.assets}admin/img/icons/arrowDown.png`;
 
 const DropdownField = ({
@@ -55,7 +56,7 @@ const DropdownField = ({
             )}
             <img
                 src={arrowDown}
-                alt="Search Icon"
+                alt={__("Search Icon", "easycommerce")}
                 className="easycommerce-select-icon absolute w-3 ml-0 right-3"
             />
         </div>

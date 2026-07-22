@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { __, sprintf } from "@wordpress/i18n";
 import { toast } from "react-toastify";
 
 const TBody = ({ reviews, tableColumns, selectedReviews, toggleReview, deleteReview }) => {
@@ -6,28 +7,28 @@ const TBody = ({ reviews, tableColumns, selectedReviews, toggleReview, deleteRev
     const [statusChanging, setStatusChanging] = useState({});
 
     const statusOptions = [
-        { value: '1', label: 'Approved' },
-        { value: '0', label: 'Not Approved' },
+        { value: '1', label: __('Approved', 'easycommerce') },
+        { value: '0', label: __('Not Approved', 'easycommerce') },
     ];
 
     const getStatusLabel = (status) => {
         switch (status) {
-            case '1': return 'Approved';
-            case '0': return 'Not Approved';
-            default: return 'Unknown';
+            case '1': return __('Approved', 'easycommerce');
+            case '0': return __('Not Approved', 'easycommerce');
+            default: return __('Unknown', 'easycommerce');
         }
     };
 
     const getStatusClass = (status) => {
         switch (status) {
-            case '1': return 'text-ec-completedText bg-[#E6F7EE]';
-            case '0': return 'text-ec-cancelledText bg-[#FFE6E6]';
+            case '1': return 'text-ec-completedText bg-ec-completedBg';
+            case '0': return 'text-ec-cancelledText bg-ec-cancelledBg';
             default: return 'text-gray-600 bg-gray-100';
         }
     };
 
     const truncateText = (text, maxLength = 50) => {
-        if (!text) return 'N/A';
+        if (!text) return __('N/A', 'easycommerce');
         return text.length > maxLength ? text.substring(0, maxLength) + '...' : text;
     };
 
@@ -48,7 +49,7 @@ const TBody = ({ reviews, tableColumns, selectedReviews, toggleReview, deleteRev
                                     <div className="relative w-full h-ec-input">
                                         <div className="absolute left-0 rtl:right-0 top-1/2 -translate-y-1/2 group-hover/transaction:top-4 duration-300">
                                             <div className="font-medium text-ec-body">
-                                                {review.customer_name || review.name || 'N/A'}
+                                                {review.customer_name || review.name || __('N/A', 'easycommerce')}
                                             </div>
                                         </div>
                                         <div className="invisible group-hover/transaction:visible opacity-0 
@@ -57,7 +58,7 @@ const TBody = ({ reviews, tableColumns, selectedReviews, toggleReview, deleteRev
                                             <div className="flex items-center gap-1.5 font-inter font-normal text-xs text-ec-light-black">
                                                 <button 
                                                     className="text-ec-red"
-                                                    onClick={() => deleteReview(review.id, review.customer_name || review.name || `Review #${review.id}`)}
+                                                    onClick={() => deleteReview(review.id, review.customer_name || review.name || sprintf(__('Review #%d', 'easycommerce'), review.id))}
                                                 >
                                                     Delete
                                                 </button>
@@ -78,9 +79,9 @@ const TBody = ({ reviews, tableColumns, selectedReviews, toggleReview, deleteRev
                                         <a
                                             href={`#/products/edit/${review.product_id}`}
                                             className="text-ec-primary hover:text-ec-secondary transition-colors"
-                                            title={review.product_name || 'View Product'}
+                                            title={review.product_name || __('View Product', 'easycommerce')}
                                         >
-                                            {truncateText(review.product_name, 30) || `Product #${review.product_id}`}
+                                            {truncateText(review.product_name, 30) || sprintf(__('Product #%d', 'easycommerce'), review.product_id)}
                                         </a>
                                     </div>
                                 </td>

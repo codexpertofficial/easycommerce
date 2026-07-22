@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import apiFetch from '@wordpress/api-fetch';
 import { addQueryArgs } from '@wordpress/url';
+import { __, _n, sprintf } from '@wordpress/i18n';
 
 import StarRating from '../common/StarRating';
 
@@ -66,7 +67,10 @@ const Reviews = ({ endpoint, params = {} }) => {
 						</div>
 
 						<span className="text-base text-[#6A7282]">
-							Total {reviewsData.rating_count} Reviews
+							{
+								// translators: %d: total number of reviews.
+								sprintf( _n( 'Total %d Review', 'Total %d Reviews', reviewsData.rating_count, 'easycommerce' ), reviewsData.rating_count )
+							}
 						</span>
 					</div>
 
@@ -74,7 +78,12 @@ const Reviews = ({ endpoint, params = {} }) => {
 						<div className="flex flex-col gap-4">
 							{[5, 4, 3, 2, 1].map((star) => (
 								<div key={star} className="h-5 flex items-center">
-									<span className="text-sm text-[#364153]">{star} Star</span>
+									<span className="text-sm text-[#364153]">
+										{
+											// translators: %d: star rating value (1-5).
+											sprintf( __( '%d Star', 'easycommerce' ), star )
+										}
+									</span>
 								</div>
 							))}
 						</div>
@@ -106,7 +115,10 @@ const Reviews = ({ endpoint, params = {} }) => {
 								return (
 									<div className="h-5 flex items-center" key={star}>
 										<span className="text-sm text-[#364153]">
-											{count} reviews
+											{
+												// translators: %d: number of reviews for this star rating.
+												sprintf( _n( '%d review', '%d reviews', count, 'easycommerce' ), count )
+											}
 										</span>
 									</div>
 								);
@@ -119,16 +131,16 @@ const Reviews = ({ endpoint, params = {} }) => {
 					<div className="text-base text-[#1B2538]">
 						<div className="bg-[#F7F7F7] rounded-lg flex items-center gap-4 px-4 py-3 mb-[2px]">
 							<div className="flex items-center justify-center w-[15%]">
-								<h6 className="font-medium">Date</h6>
+								<h6 className="font-medium">{__( 'Date', 'easycommerce' )}</h6>
 							</div>
 							<div className="flex items-center justify-center w-[25%]">
-								<h6 className="font-medium">Customer Name</h6>
+								<h6 className="font-medium">{__( 'Customer Name', 'easycommerce' )}</h6>
 							</div>
 							<div className="flex items-center justify-center w-[45%]">
-								<h6 className="font-medium">Reviews</h6>
+								<h6 className="font-medium">{__( 'Reviews', 'easycommerce' )}</h6>
 							</div>
 							<div className="flex items-center justify-center w-[15%]">
-								<h6 className="font-medium">Rating</h6>
+								<h6 className="font-medium">{__( 'Rating', 'easycommerce' )}</h6>
 							</div>
 						</div>
 
@@ -229,7 +241,7 @@ const Reviews = ({ endpoint, params = {} }) => {
 					</>
 				) : (
 					<div className='h-full flex items-center justify-center'>
-						<span className="text-[#6A7282] text-sm block text-center">No reviews yet</span>
+						<span className="text-[#6A7282] text-sm block text-center">{__( 'No reviews yet', 'easycommerce' )}</span>
 					</div>
 				)}
 			</div>

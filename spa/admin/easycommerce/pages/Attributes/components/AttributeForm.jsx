@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { toast } from "react-toastify";
+import { __, sprintf } from '@wordpress/i18n';
 import Button from "../../../../common/components/inputs/Button";
 import Dropdown from "../../../../common/components/inputs/Dropdown";
 import TextField from "../../../../common/components/inputs/TextField";
@@ -20,9 +21,9 @@ const AttributeForm = ({
     const [selectType, setSelectType] = useState('Text');
 
     const selectedTypeOptions = [
-        { value: "Text", label: "Text" },
-        { value: "Image", label: "Image" },
-        { value: "Color", label: "Color" },
+        { value: "Text", label: __( "Text", "easycommerce" ) },
+        { value: "Image", label: __( "Image", "easycommerce" ) },
+        { value: "Color", label: __( "Color", "easycommerce" ) },
     ];
 
     const addNewField = () => {
@@ -43,9 +44,9 @@ const AttributeForm = ({
 
     const openMediaUploader = (index) => {
         const mediaUploader = wp.media({
-            title: 'Select an Image',
+            title: __( 'Select an Image', 'easycommerce' ),
             button: {
-                text: 'Use this image'
+                text: __( 'Use this image', 'easycommerce' )
             },
             multiple: false
         });
@@ -127,12 +128,12 @@ const AttributeForm = ({
         const attr = attributesData.attributes[0];
 
         if (!attr.attribute_name.trim()) {
-            toast.error('Attribute name are required!');
+            toast.error(__( 'Attribute name are required!', 'easycommerce' ));
             return;
         }
 
         if (!attr.attribute_slug.trim()) {
-            toast.error('Attribute slug are required!');
+            toast.error(__( 'Attribute slug are required!', 'easycommerce' ));
             return;
         }
 
@@ -149,28 +150,40 @@ const AttributeForm = ({
         );
 
         if (nameExists) {
-            toast.error('Attribute name already exists!');
+            toast.error(__( 'Attribute name already exists!', 'easycommerce' ));
             return;
         }
         if (slugExists) {
-            toast.error('Attribute slug already exists!');
+            toast.error(__( 'Attribute slug already exists!', 'easycommerce' ));
             return;
         }
 
         for (let i = 0; i < field.length; i++) {
             const f = field[i];
             if (selectType === 'Text' && !f.label.trim()) {
-                toast.error(`Option ${i + 1} must have a label!`);
+                toast.error(sprintf(
+                    // translators: %d: option number.
+                    __( 'Option %d must have a label!', 'easycommerce' ),
+                    i + 1
+                ));
                 return;
             }
 
             if (selectType === 'Image' && (!f.label.trim() || !f.image)) {
-                toast.error(`Option ${i + 1} must have a label and image`);
+                toast.error(sprintf(
+                    // translators: %d: option number.
+                    __( 'Option %d must have a label and image', 'easycommerce' ),
+                    i + 1
+                ));
                 return;
             }
 
             if (selectType === 'Color' && (!f.label.trim() || !f.color)) {
-                toast.error(`Option ${i + 1} must have a label and color`);
+                toast.error(sprintf(
+                    // translators: %d: option number.
+                    __( 'Option %d must have a label and color', 'easycommerce' ),
+                    i + 1
+                ));
                 return;
             }
         }
@@ -216,7 +229,7 @@ const AttributeForm = ({
         );
 
         if (hasDuplicates) {
-            toast.error('Duplicate option labels are not allowed!');
+            toast.error(__( 'Duplicate option labels are not allowed!', 'easycommerce' ));
             return;
         }
 
@@ -250,10 +263,10 @@ const AttributeForm = ({
 
             if (result.success) {
                 if (isEditing) {
-                    toast.success('Attribute updated successfully!');
+                    toast.success(__( 'Attribute updated successfully!', 'easycommerce' ));
                     onAttributeUpdated && onAttributeUpdated();
                 } else {
-                    toast.success('Attribute created successfully!');
+                    toast.success(__( 'Attribute created successfully!', 'easycommerce' ));
                     onAttributeCreated && onAttributeCreated();
                 }
                 // Reset form
@@ -336,17 +349,17 @@ const AttributeForm = ({
         <>
             <div className={`flex flex-col gap-4 ${noPadding ? '' : 'p-6'}`}>
                 <div className='flex flex-col gap-2'>
-                    <SubTitle SubTitle="Name" notice="It'll show on the single product screen"/>
-                    <TextField 
+                    <SubTitle SubTitle={ __( "Name", "easycommerce" ) } notice={ __( "It'll show on the single product screen", "easycommerce" ) }/>
+                    <TextField
                         name={`attribute_name`}
                         value={attributesData.attributes[0].attribute_name}
-                        onChange={handleChange} 
-                        placeholder="Enter Name" 
+                        onChange={handleChange}
+                        placeholder={ __( "Enter Name", "easycommerce" ) }
                         className="h-ec-input"
                     />
                 </div>
                 <div className='flex flex-col gap-2'>
-                    <SubTitle SubTitle="Slug" notice="URL-friendly slug of the attribute"/>
+                    <SubTitle SubTitle={ __( "Slug", "easycommerce" ) } notice={ __( "URL-friendly slug of the attribute", "easycommerce" ) }/>
                     <div className="rounded-lg h-ec-input font-inter text-[14px] leading-[20px] border border-ec-table-stock
                       placeholder-ec-placeholder hover:border-ec-primary focus-within:border-ec-primary 
                         focus-within:outline-none focus-within:[box-shadow:0_0_0_4px_#F3F0FF] transition-colors
@@ -364,7 +377,7 @@ const AttributeForm = ({
                     </div>
                 </div>
                 <div className='flex flex-col gap-2'>
-                    <SubTitle SubTitle="Type" notice="How customers will see this on the single product screen"/>
+                    <SubTitle SubTitle={ __( "Type", "easycommerce" ) } notice={ __( "How customers will see this on the single product screen", "easycommerce" ) }/>
                     <div className="w-full h-ec-input">
                         <Dropdown
                             key={selectType}
@@ -376,7 +389,7 @@ const AttributeForm = ({
                     </div>
                 </div>
                 <div className='flex flex-col gap-2 mt-2'>
-                    <SubTitle SubTitle="Options" notice="Options of the attribute"/>
+                    <SubTitle SubTitle={ __( "Options", "easycommerce" ) } notice={ __( "Options of the attribute", "easycommerce" ) }/>
                     <div className="flex flex-col gap-3">
                         {
                         selectType === 'Text' &&  (
@@ -388,7 +401,7 @@ const AttributeForm = ({
                                                 value={option.label}
                                                 onChange={(e) => handleFieldChange(index, e.target.value)}
                                                 name="option"
-                                                placeholder="Write here"
+                                                placeholder={ __( "Write here", "easycommerce" ) }
                                                 className="h-ec-input"
                                             />
                                         </div>
@@ -420,7 +433,7 @@ const AttributeForm = ({
                                                     value={option.label}
                                                     onChange={(e) => handleFieldChange(index, e.target.value)}
                                                     name="option"
-                                                    placeholder="Write here"
+                                                    placeholder={ __( "Write here", "easycommerce" ) }
                                                     className="h-ec-input"
                                                 />
                                             </div>
@@ -428,7 +441,7 @@ const AttributeForm = ({
                                                 {option.image ? (
                                                     <img
                                                         src={option.image.url}
-                                                        alt={option.image.alt || 'Selected'}
+                                                        alt={option.image.alt || __( 'Selected', 'easycommerce' )}
                                                         className="w-[80%] h-[45px] rounded-[4px] object-cover"
                                                     />
                                                     ) : (
@@ -475,7 +488,7 @@ const AttributeForm = ({
                                                     value={option.label}
                                                     onChange={(e) => handleFieldChange(index, e.target.value)}
                                                     name="option"
-                                                    placeholder="Write here"
+                                                    placeholder={ __( "Write here", "easycommerce" ) }
                                                     className="h-ec-input"
                                                 />
                                             </div>
@@ -511,15 +524,15 @@ const AttributeForm = ({
                         {editingAttribute ? (
                             <Button
                                 className="h-[37px] mt-[15px] easycommerce-underline-button"
-                                value="Cancel"
-                                onClick={handleCancel} 
+                                value={ __( "Cancel", "easycommerce" ) }
+                                onClick={handleCancel}
                             />
                         ) : (
-                            <div /> 
+                            <div />
                         )}
                         <Button
                             className="easycommerce-outline-button"
-                            value={editingAttribute ? "Update Attribute" : "Create Attribute"}
+                            value={editingAttribute ? __( "Update Attribute", "easycommerce" ) : __( "Create Attribute", "easycommerce" )}
                             onClick={handleSubmit}
                         />
                     </div>

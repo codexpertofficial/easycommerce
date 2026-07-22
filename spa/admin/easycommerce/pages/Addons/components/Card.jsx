@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { __ } from '@wordpress/i18n';
 import { Bounce, toast } from 'react-toastify';
 import { applyFilters } from '@wordpress/hooks';
 import StarRating from './StarRating';
@@ -78,7 +79,7 @@ const Card = ({ addon }) => {
 			}
 		} catch (error) {
 			setLoading(false);
-			showToast('error', 'Something went wrong. Please try again.');
+			showToast('error', __('Something went wrong. Please try again.', 'easycommerce'));
 		}
 	};
 
@@ -94,7 +95,7 @@ const Card = ({ addon }) => {
 				</a>
 
 				{filteredAddon.is_free && <div className="px-4 py-1 text-xs font-normal text-black bg-[#FFC400] rounded absolute top-2 right-2">
-					Free
+					{__('Free', 'easycommerce')}
 				</div>}
 			</div>
 
@@ -116,14 +117,14 @@ const Card = ({ addon }) => {
 							target="_blank"
 							href={`admin.php?page=${filteredAddon.menu_slug}`}
 						>
-							Settings
+							{__('Settings', 'easycommerce')}
 						</a>
 						) : (
 						<StarRating rating={filteredAddon.rating} />
 					)}				
 
 					{loading ? (
-						<img className='h-7' src={`${EASYCOMMERCE.assets}admin/img/loader.gif`} alt="Loading..." />
+						<img className='h-7' src={`${EASYCOMMERCE.assets}admin/img/loader.gif`} alt={__('Loading...', 'easycommerce')} />
 					) : (
 						<button
 							className={`p-1 text-[10px] leading-3 text-white 
@@ -138,7 +139,7 @@ const Card = ({ addon }) => {
 						>
 							<div className="h-5 w-5 rounded-full bg-white"></div>
 
-							{active ? 'Enabled' : 'Disabled'}
+							{active ? __('Enabled', 'easycommerce') : __('Disabled', 'easycommerce')}
 						</button>
 					)}
 				</div>

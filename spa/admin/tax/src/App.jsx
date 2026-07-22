@@ -7,6 +7,7 @@ import './assets/css/tax.css';
 import TaxList from './components/TaxList';
 import TaxDetails from './components/TaxDetails';
 import Dropdown from '../../common/components/inputs/Dropdown';
+import { __, sprintf } from '@wordpress/i18n';
 
 const App = () => {
     const [addNew, setAddNew] = useState(false);
@@ -69,7 +70,8 @@ const App = () => {
 
             setCountryRates({
                 name: `${option.label}`,
-                description: `Tax rates for all areas of ${option.label}`,
+                // translators: %s: country name.
+                description: sprintf( __( 'Tax rates for all areas of %s', 'easycommerce' ), option.label ),
                 rates: rates,
             });
         })
@@ -89,12 +91,12 @@ const App = () => {
         <>
             <div className="flex items-center gap-8">
                 <p className="text-ec-body font-medium font-inter lg:text-xl md:text-lg leading-8 flex-grow whitespace-nowrap">
-                    {addNew ? 'Add Tax Class' : ''}
+                    {addNew ? __( 'Add Tax Class', 'easycommerce' ) : ''}
                 </p>
                 {addNew && showDropdown && (
                     <Dropdown
                         options={dropdownOptions}
-                        placeholder="Populate Tax Rates"
+                        placeholder={__( 'Populate Tax Rates', 'easycommerce' )}
                         value={selectedValue}
                         onChange={handleDropdownChange}
                         minWidthClass="min-w-[180px]"

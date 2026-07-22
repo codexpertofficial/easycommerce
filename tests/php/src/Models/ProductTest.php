@@ -904,4 +904,143 @@ class ProductTest extends EasyCommerceTestCase {
 			wp_delete_post( $id, true );
 		}
 	}
+
+	// ── Meta-backed sorting ───────────────────────────────────────────────────
+
+	/**
+	 * Returns [ sold_id, unsold_id ] — the sold product has 3 units of `total_sale`,
+	 * the other has no meta row at all (the state of every product on a fresh store).
+	 */
+	private function make_sales_fixture(): array {
+		$sold   = $this->factory->product->create( [ 'title' => 'Sold Product' ] );
+		$unsold = $this->factory->product->create( [ 'title' => 'Unsold Product' ] );
+
+		update_post_meta( $sold, 'total_sale', 3 );
+
+		return [ $sold, $unsold ];
+	}
+
+	private function list_ids( string $sort_by ): array {
+		$result = Product::list( [ 'status' => 'publish', 'sort_by' => $sort_by ], -1, 0, false );
+
+		return wp_list_pluck( $result['products'], 'ID' );
+	}
+
+	/**
+	 * A product that has never sold has no `total_sale` meta. It must still appear
+	 * under Best Selling, ranked below products that have sales.
+	 */
+	public function test_best_selling_includes_never_sold_products() {
+		list( $sold, $unsold ) = $this->make_sales_fixture();
+
+		$ids = $this->list_ids( 'best-selling' );
+
+		$this->assertContains( $unsold, $ids, 'Never-sold product was excluded from best-selling.' );
+		$this->assertContains( $sold, $ids );
+		$this->assertLessThan(
+			array_search( $unsold, $ids, true ),
+			array_search( $sold, $ids, true ),
+			'Sold product should rank above the never-sold one.'
+		);
+	}
+
+	/**
+	 * The count query must not inherit the exclusion either, or pagination reports
+	 * a smaller catalogue than it renders.
+	 */
+	public function test_best_selling_total_counts_never_sold_products() {
+		$this->make_sales_fixture();
+
+		$sorted   = Product::list( [ 'status' => 'publish', 'sort_by' => 'best-selling' ], -1, 0, false );
+		$unsorted = Product::list( [ 'status' => 'publish' ], -1, 0, false );
+
+		$this->assertSame( $unsorted['total'], $sorted['total'] );
+	}
+
+	/**
+	 * Never sold genuinely is zero sold, so unsold products lead under Lowest Selling.
+	 */
+	public function test_lowest_selling_ranks_never_sold_first() {
+		list( $sold, $unsold ) = $this->make_sales_fixture();
+
+		$ids = $this->list_ids( 'lowest-selling' );
+
+		$this->assertContains( $sold, $ids );
+		$this->assertLessThan(
+			array_search( $sold, $ids, true ),
+			array_search( $unsold, $ids, true ),
+			'Never-sold product should rank below the one with sales.'
+		);
+	}
+
+	public function test_top_rating_includes_unreviewed_products() {
+		$rated     = $this->factory->product->create( [ 'title' => 'Rated Product' ] );
+		$unreviewed = $this->factory->product->create( [ 'title' => 'Unreviewed Product' ] );
+
+		update_post_meta( $rated, 'average_rating', 4.5 );
+
+		$ids = $this->list_ids( 'top-rating' );
+
+		$this->assertContains( $unreviewed, $ids, 'Unreviewed product was excluded from top-rating.' );
+		$this->assertLessThan(
+			array_search( $unreviewed, $ids, true ),
+			array_search( $rated, $ids, true )
+		);
+	}
+
+	/**
+	 * An unreviewed product has an unknown rating, not a zero one — it must not
+	 * outrank a genuinely badly-rated product under Lowest Rating.
+	 */
+	public function test_lowest_rating_keeps_unreviewed_products_last() {
+		$one_star   = $this->factory->product->create( [ 'title' => 'One Star Product' ] );
+		$five_star  = $this->factory->product->create( [ 'title' => 'Five Star Product' ] );
+		$unreviewed = $this->factory->product->create( [ 'title' => 'Unreviewed Product' ] );
+
+		update_post_meta( $one_star, 'average_rating', 1 );
+		update_post_meta( $five_star, 'average_rating', 5 );
+
+		$ids = $this->list_ids( 'lowest-rating' );
+
+		$this->assertContains( $unreviewed, $ids );
+
+		$one_star_pos   = array_search( $one_star, $ids, true );
+		$five_star_pos  = array_search( $five_star, $ids, true );
+		$unreviewed_pos = array_search( $unreviewed, $ids, true );
+
+		$this->assertLessThan( $five_star_pos, $one_star_pos, '1-star should precede 5-star.' );
+		$this->assertLessThan( $unreviewed_pos, $five_star_pos, 'Unreviewed should sort after every rated product.' );
+	}
+
+	/**
+	 * The sort option list offers `newest`, so the model has to answer to it.
+	 */
+	public function test_newest_sort_orders_by_date_descending() {
+		$older = $this->factory->product->create( [ 'title' => 'Older Product' ] );
+		$newer = $this->factory->product->create( [ 'title' => 'Newer Product' ] );
+
+		wp_update_post( [ 'ID' => $older, 'post_date' => '2020-01-01 00:00:00' ] );
+		wp_update_post( [ 'ID' => $newer, 'post_date' => '2026-01-01 00:00:00' ] );
+
+		$ids = $this->list_ids( 'newest' );
+
+		$this->assertLessThan(
+			array_search( $older, $ids, true ),
+			array_search( $newer, $ids, true )
+		);
+	}
+
+	/**
+	 * The clauses filter must not leak into unrelated queries.
+	 */
+	public function test_meta_sort_does_not_affect_later_queries() {
+		$this->make_sales_fixture();
+
+		$this->list_ids( 'best-selling' );
+
+		$plain = new \WP_Query( [ 'post_type' => 'product', 'posts_per_page' => -1, 'fields' => 'ids' ] );
+
+		$this->assertNotEmpty( $plain->posts );
+		$this->assertFalse( has_filter( 'posts_clauses', [ Product::class, 'meta_sort_clauses' ] ) );
+	}
 }

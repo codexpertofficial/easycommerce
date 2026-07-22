@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { __ } from '@wordpress/i18n';
 
 import Header from './components/common/Header';
 import Container from './components/common/Container';
@@ -9,17 +10,18 @@ import TopSelling from "./components/TopSelling";
 import LowStocks from "./components/LowStocks";
 import AbandonedCarts from "./components/AbandonedCarts";
 import RecentActivities from "./components/RecentActivities";
+import JoinCommunity from "./components/JoinCommunity";
 
 const Dashboard = () => {
     const [range, setRange] = useState({
-        label: 'Last 30 days',
+        label: __( 'Last 30 days', 'easycommerce' ),
         value: 'last-30',
     });
 
     return (
         <>
             <Header
-                title="Dashboard"
+                title={__( 'Dashboard', 'easycommerce' )}
                 range={range}
                 setRange={setRange}
             />
@@ -29,12 +31,12 @@ const Dashboard = () => {
 
                     <div className="flex gap-6 ec-db-lg:flex-nowrap flex-wrap">
                         <div className="ec-db-lg:w-1/2 w-full">
-                            <Container title="Latest Orders" fillHeight button_url="admin.php?page=easycommerce#/orders">
+                            <Container title={__( 'Latest Orders', 'easycommerce' )} fillHeight button_url="admin.php?page=easycommerce#/orders">
                                 <LatestOrders range={range.value} />
                             </Container>
                         </div>
                         <div className="ec-db-lg:w-1/2 w-full">
-                            <Container title="Recent Sales" fillHeight>
+                            <Container title={__( 'Recent Sales', 'easycommerce' )} fillHeight>
                                 <RecentSales range={range.value} />
                             </Container>
                         </div>
@@ -42,12 +44,12 @@ const Dashboard = () => {
 
                     <div className="flex gap-6 ec-db-lg:flex-nowrap flex-wrap">
                         <div className="ec-db-lg:w-1/2 w-full">
-                            <Container title="Top Selling" fillHeight>
+                            <Container title={__( 'Top Selling', 'easycommerce' )} fillHeight>
                                 <TopSelling range={range.value} />
                             </Container>
                         </div>
                         <div className="ec-db-lg:w-1/2 w-full">
-                            <Container title="Low Stock" fillHeight>
+                            <Container title={__( 'Low Stock', 'easycommerce' )} fillHeight>
                                 <LowStocks />
                             </Container>
                         </div>
@@ -55,12 +57,13 @@ const Dashboard = () => {
                 </div>
 
                 <div className="flex flex-col gap-6 ec-db-lg:w-[30%] w-[40%]">
-                    <Container title="Abandoned Carts" button_url="admin.php?page=easycommerce#/abandoned-cart">
+                    <Container title={__( 'Abandoned Carts', 'easycommerce' )} button_url="admin.php?page=easycommerce#/abandoned-cart">
                         <AbandonedCarts range={range.value} />
                     </Container>
-                    <Container title="Recent Activities">
+                    <Container title={__( 'Recent Activities', 'easycommerce' )}>
                         <RecentActivities range={range.value} />
                     </Container>
+                    <JoinCommunity />
                 </div>
             </div>
         </>

@@ -1,6 +1,6 @@
 <?php
 if ( get_post_type( get_the_ID() ) !== 'product' ) {
-	echo 'Post type is not product';
+	esc_html_e( 'Post type is not product', 'easycommerce' );
 	return;
 }
 
@@ -31,7 +31,7 @@ if ( $product = new Product( get_the_ID() ) ) {
 			<div class="swiper-wrapper">
 				<?php foreach ( $unique_images as $data ) { ?>
 					<div class="swiper-slide" data-id='<?php echo esc_attr( json_encode( $data['parent_ids'] ) ); ?>'>
-						<img src="<?php echo esc_url( $data['image']['url'] ); ?>" alt="<?php echo esc_attr( $data['image']['alt'] ?? 'Product Image' ); ?>">
+						<img src="<?php echo esc_url( $data['image']['url'] ); ?>" alt="<?php echo esc_attr( $data['image']['alt'] ?? __( 'Product Image', 'easycommerce' ) ); ?>">
 					</div>
 				<?php } ?>
 			</div>
@@ -42,7 +42,7 @@ if ( $product = new Product( get_the_ID() ) ) {
 			<div class="swiper-wrapper">
 				<?php foreach ( $unique_images as $data ) { ?>
 					<div class="swiper-slide easycommerce-single-product-gallery-item" data-id='<?php echo esc_attr( json_encode( $data['parent_ids'] ) ); ?>'>
-						<img src="<?php echo esc_url( $data['image']['thumbnail'] ); ?>" alt="<?php echo esc_attr( $data['image']['alt'] ?? 'Product Image' ); ?>">
+						<img src="<?php echo esc_url( $data['image']['thumbnail'] ); ?>" alt="<?php echo esc_attr( $data['image']['alt'] ?? __( 'Product Image', 'easycommerce' ) ); ?>">
 					</div>
 				<?php } ?>
 			</div>
@@ -55,7 +55,7 @@ if ( $product = new Product( get_the_ID() ) ) {
 
 	if ( ! $has_gallery ) {
 		?>
-		<img src="<?php echo esc_url( EASYCOMMERCE_ASSETS_URL . 'public/img/product/single-product-placeholder.png' ); ?>" alt="Product Placeholder">
+		<img src="<?php echo esc_url( EASYCOMMERCE_ASSETS_URL . 'public/img/product/single-product-placeholder.png' ); ?>" alt="<?php esc_attr_e( 'Product Placeholder', 'easycommerce' ); ?>">
 		<?php
 	}
 }

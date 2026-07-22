@@ -367,6 +367,10 @@ class Order extends Model {
 
 					$is_free = $item['is_free'] ?? false;
 
+					if ( ! $is_free && $product_variation->manages_stock() && ! is_null( $current_stock = $product_variation->get_stock() ) && $item['quantity'] > $current_stock ) {
+						$item['quantity'] = $current_stock;
+					}
+
 					$item['product_id']   = $product_id;
 					$item['price_id']     = $price_id;
 					$item['variation_id'] = $product_variation->get_id();

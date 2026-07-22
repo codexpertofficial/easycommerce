@@ -77,7 +77,7 @@ class AI extends API {
 			/**
 			 * Logs the AI write copy event.
 			 */
-			do_action( 'easycommerce_log', array( 'object' => 'ai', 'action' => 'write', 'object_id' => null, 'meta' => $request->get_params(), 'note' => 'AI content writer' ) );
+			do_action( 'easycommerce_log', array( 'object' => 'ai', 'action' => 'write', 'object_id' => null, 'meta' => $request->get_params(), 'note' => __( 'AI content writer', 'easycommerce' ) ) );
 
 			$this->response_success( $data, 201 );
 		} else {
@@ -159,7 +159,7 @@ class AI extends API {
 			/**
 			 * Logs the AI generate attributes event.
 			 */
-			do_action( 'easycommerce_log', array( 'object' => 'ai', 'action' => 'get_attr', 'object_id' => null, 'meta' => $request->get_params(), 'note' => 'AI attribute generator' ) );
+			do_action( 'easycommerce_log', array( 'object' => 'ai', 'action' => 'get_attr', 'object_id' => null, 'meta' => $request->get_params(), 'note' => __( 'AI attribute generator', 'easycommerce' ) ) );
 
 			$this->response_success( $data, 201 );
 		} else {
@@ -212,7 +212,7 @@ class AI extends API {
 			/**
 			 * Logs the AI design template event.
 			 */
-			do_action( 'easycommerce_log', array( 'object' => 'ai', 'action' => 'build', 'object_id' => null, 'meta' => $request->get_params(), 'note' => 'AI product builder' ) );
+			do_action( 'easycommerce_log', array( 'object' => 'ai', 'action' => 'build', 'object_id' => null, 'meta' => $request->get_params(), 'note' => __( 'AI product builder', 'easycommerce' ) ) );
 
 			$this->response_success( $data, 201 );
 		} else {
@@ -265,7 +265,7 @@ class AI extends API {
 			/**
 			 * Logs the AI draw image event.
 			 */
-			do_action( 'easycommerce_log', array( 'object' => 'ai', 'action' => 'draw', 'object_id' => null, 'meta' => $request->get_params(), 'note' => 'AI image generator' ) );
+			do_action( 'easycommerce_log', array( 'object' => 'ai', 'action' => 'draw', 'object_id' => null, 'meta' => $request->get_params(), 'note' => __( 'AI image generator', 'easycommerce' ) ) );
 
 			$this->response_success( $data, 201 );
 		} else {
@@ -323,7 +323,7 @@ class AI extends API {
 			/**
 			 * Logs the AI edit image event.
 			 */
-			do_action( 'easycommerce_log', array( 'object' => 'ai', 'action' => 'enhance', 'object_id' => null, 'meta' => $request->get_params(), 'note' => 'AI image enhancer' ) );
+			do_action( 'easycommerce_log', array( 'object' => 'ai', 'action' => 'enhance', 'object_id' => null, 'meta' => $request->get_params(), 'note' => __( 'AI image enhancer', 'easycommerce' ) ) );
 
 			$this->response_success( $data, 201 );
 		} else {

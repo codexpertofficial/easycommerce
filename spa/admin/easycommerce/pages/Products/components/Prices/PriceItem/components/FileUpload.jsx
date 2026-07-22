@@ -176,8 +176,8 @@ const FileUpload = ({ wpNonce, setDownloads, prevFiles }) => {
 		if (!window.wp || !window.wp.media) return;
 
 		const mediaFrame = window.wp.media({
-			title: 'Select Images',
-			button: { text: 'Insert' },
+			title: __('Select Images', 'easycommerce'),
+			button: { text: __('Insert', 'easycommerce') },
 			multiple: true,
 		});
 
@@ -465,7 +465,7 @@ const FileUpload = ({ wpNonce, setDownloads, prevFiles }) => {
                     <>
                         <img
                             src={loader}
-                            alt="Loading..."
+                            alt={__('Loading...', 'easycommerce')}
                             style={{ width: '50px', height: '50px' }}
                         />
                         <p className="text-base text-ec-primary font-inter mt-4">

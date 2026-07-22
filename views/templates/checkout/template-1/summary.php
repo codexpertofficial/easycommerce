@@ -18,7 +18,7 @@
 </div>
 <div>
 	<div class="easycommerce-coupon-wrapper relative mb-4">
-		<input type="text" placeholder="Discount code" id="easycommerce-coupon-field" />
+		<input type="text" placeholder="<?php esc_attr_e( 'Discount code', 'easycommerce' ); ?>" id="easycommerce-coupon-field" />
 		<button type="button"
 			class="absolute top-[9px] right-[9px] rtl:right-auto rtl:left-[9px] py-1 md:py-[7px] px-5 border border-ec-border text-[#737791] focus:text-[#737791] rounded-[6px] focus:border-ec-border bg-[#F8F8F8] focus:bg-[#F8F8F8] text-base font-inter font-normal leading-[26px] shadow-none"
 			id="easycommerce-coupon-apply">
@@ -89,28 +89,33 @@
 						$shipping_method = is_array( $shipping_method ) ? $shipping_method : (array) $shipping_method;
 						$is_checked      = ( $selected_method === null && $index === 0 ) || ( $selected_method == $shipping_method['id'] ) ? 'checked' : '';
 
+						$method_label = sprintf(
+							// translators: 1: shipping method name, 2: formatted shipping cost.
+							esc_html__( '%1$s at %2$s', 'easycommerce' ),
+							esc_html( $shipping_method['name'] ),
+							esc_html( easycommerce_price( $shipping_method['cost'] ) )
+						);
+
 						// Show "Free" if shipping cost is zero
 						if ( $shipping_discount > 0 ) {
 							printf(
 								'<label class="font-inter font-normal text-[14px] text-[#737791]">
-								<input type="radio" name="shipping_method" value="%1$s" class="easycommerce-shipping-method" %4$s required />
-								<del>%2$s at %3$s</del> (%5$s)
+								<input type="radio" name="shipping_method" value="%1$s" class="easycommerce-shipping-method" %3$s required />
+								<del>%2$s</del> (%4$s)
 							</label><br />',
 								$shipping_method['id'],
-								$shipping_method['name'],
-								esc_html( easycommerce_price( $shipping_method['cost'] ) ),
+								$method_label,
 								esc_attr( $is_checked ),
 								esc_html__( 'Free Shipping', 'easycommerce' )
 							);
 						} else {
 							printf(
 								'<label class="font-inter font-normal text-[14px] text-[#737791]">
-								<input type="radio" name="shipping_method" value="%1$s" class="easycommerce-shipping-method" %4$s required />
-								%2$s at %3$s
+								<input type="radio" name="shipping_method" value="%1$s" class="easycommerce-shipping-method" %3$s required />
+								%2$s
 							</label><br />',
 								$shipping_method['id'],
-								$shipping_method['name'],
-								esc_html( easycommerce_price( $shipping_method['cost'] ) ),
+								$method_label,
 								esc_attr( $is_checked )
 							);
 						}

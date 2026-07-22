@@ -92,9 +92,9 @@ const CouponDetails = ({ id = null, setBreadcrumbTitle }) => {
     }
 
     const validateCoupon = (data) => {
-        if (!data.name) return { message: "Name is required" };
-        if (!data.code) return { message: "Code is required" };
-        if (!data.offer && data.type !== 'free_shipping') return { message: "offer is required" };
+        if (!data.name) return { message: __("Name is required", "easycommerce") };
+        if (!data.code) return { message: __("Code is required", "easycommerce") };
+        if (!data.offer && data.type !== 'free_shipping') return { message: __("offer is required", "easycommerce") };
 
         return true;
     };
@@ -238,7 +238,7 @@ const CouponDetails = ({ id = null, setBreadcrumbTitle }) => {
             <div className="flex justify-between items-center mb-4">
                 <div className="product-panel-title w-full">
                     <h3>
-                        {!id ? "Create" : "Edit"} Coupon
+                        {!id ? __("Create Coupon", "easycommerce") : __("Edit Coupon", "easycommerce")}
                     </h3>
                 </div>
 

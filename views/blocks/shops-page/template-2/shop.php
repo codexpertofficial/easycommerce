@@ -186,7 +186,7 @@ foreach ( $products as $product ) :
 	$thumb_id  		  = get_post_thumbnail_id( $product['id'] );
 	$image_src 		  = wp_get_attachment_image_src( $thumb_id, 'easycommerce-shop-thumbnail' );
 	$image_url 		  = $image_src ? $image_src[0] : null;
-	$show_stock_badge = Utility::get_option( 'general', 'store', 'stock-badge' ) ?? true;
+	$show_stock_badge = easycommerce_is_stock_badge_enabled();
 	$unique_class     = 'easycommerce-title-' . esc_attr( $product['id'] );	
 	$is_out_of_stock  = ( $product['stock'] !== false && $product['stock'] !== null && $product['stock'] <= 0 );
 
@@ -398,7 +398,7 @@ foreach ( $products as $product ) :
 								<a href="<?php echo esc_url( get_permalink( easycommerce_cart_redirect() ) ); ?>"
 								class="<?php echo esc_attr( $ec_checkout_btn_class ); ?> flex items-center gap-3 justify-center !no-underline w-full"
 								style="outline:none">
-									Checkout 
+									<?php esc_html_e( 'Checkout', 'easycommerce' ); ?>
 									<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
 										<path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
 									</svg>

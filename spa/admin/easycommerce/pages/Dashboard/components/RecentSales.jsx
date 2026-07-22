@@ -15,7 +15,8 @@ const RecentSales = ({ range }) => {
             if (data.success) {
                 const sales = data.data.sales.map((serie) => ({
                     ...serie,
-                    yAxisID: serie.id === "Sales Count" ? "y1" : "y", 
+                    // serie.id is the translated label; match on the stable key instead.
+                    yAxisID: serie.key === "sales_count" ? "y1" : "y",
                 }));
                 setSalesData(sales);
             }

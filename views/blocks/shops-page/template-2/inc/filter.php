@@ -45,13 +45,13 @@ if ( ! function_exists( 'display_attribute' ) ) {
 	<div class="easycommerce-drawer-product-search relative">
 		<img 
 			src="<?php echo esc_url( EASYCOMMERCE_ASSETS_URL . 'common/img/blocks/shop-page/product-search.png' ); ?>" 
-			alt="Search Icon" 
+			alt="<?php esc_attr_e( 'Search Icon', 'easycommerce' ); ?>"
 			class="absolute top-3 left-5"
 		/>
-		<input 
-			type="text" 
-			class="easycommerce-product-search border border-ec-border pl-14 pr-2 py-1 w-full rounded-lg hover:border-ec-secondary focus:border-ec-primary" 
-			placeholder=" Search"
+		<input
+			type="text"
+			class="easycommerce-product-search border border-ec-border pl-14 pr-2 py-1 w-full rounded-lg hover:border-ec-secondary focus:border-ec-primary"
+			placeholder="<?php esc_attr_e( 'Search', 'easycommerce' ); ?>"
 		>
 	</div>
 

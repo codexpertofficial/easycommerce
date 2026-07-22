@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Cookies from 'universal-cookie';
-import { __ } from '@wordpress/i18n';
+import { __, sprintf } from '@wordpress/i18n';
 import { toast } from 'react-toastify';
 import { twMerge } from 'tailwind-merge';
 
@@ -18,7 +18,8 @@ const loadingGifURL = EASYCOMMERCE.assets + 'admin/img/loading.gif';
 
 const AiGenerateImages = ({ productTitle, setAiOpen, setAiContent }) => {
 	const [input, setInput] = useState(
-	    `A professional product photo of ${productTitle} on a clean white background, studio lighting, sharp focus, high resolution, commercial photography style, no shadows, photorealistic.`
+	    // translators: %s: product title.
+	    sprintf(__('A professional product photo of %s on a clean white background, studio lighting, sharp focus, high resolution, commercial photography style, no shadows, photorealistic.', 'easycommerce'), productTitle)
 	);
 	const [isLoading, setIsLoading] = useState(false);
 	const [isImporting, setIsImporting] = useState(false);
@@ -338,7 +339,7 @@ const AiGenerateImages = ({ productTitle, setAiOpen, setAiContent }) => {
 									}
 								>
 									{isLoading ? (
-										<img src={loadingGifURL} alt="loading" className="h-8" />
+										<img src={loadingGifURL} alt={__('loading', 'easycommerce')} className="h-8" />
 									) : (
 										<>
 											{generateIcon}
