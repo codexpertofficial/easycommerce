@@ -1,0 +1,72 @@
+{
+    "translation-revision-date": "2026-07-23 00:00+0000",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "assets\/payment\/js\/stripe-payment.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "zh_CN",
+                "plural-forms": "nplurals=1; plural=0;"
+            },
+            "Failed to load cart data. Please refresh the page.": [
+                "\u52a0\u8f7d\u8d2d\u7269\u8f66\u6570\u636e\u5931\u8d25\u3002\u8bf7\u5237\u65b0\u9875\u9762\u3002"
+            ],
+            "Failed to create payment. Please try again.": [
+                "\u521b\u5efa\u652f\u4ed8\u5931\u8d25\u3002\u8bf7\u91cd\u8bd5\u3002"
+            ],
+            "Payment form failed to load. Please refresh.": [
+                "\u652f\u4ed8\u8868\u5355\u52a0\u8f7d\u5931\u8d25\u3002\u8bf7\u5237\u65b0\u3002"
+            ],
+            "Could not verify cart. Please refresh and try again.": [
+                "\u65e0\u6cd5\u9a8c\u8bc1\u8d2d\u7269\u8f66\u3002\u8bf7\u5237\u65b0\u540e\u91cd\u8bd5\u3002"
+            ],
+            "Failed to create payment. Please refresh the page and try again.": [
+                "\u521b\u5efa\u652f\u4ed8\u5931\u8d25\u3002\u8bf7\u5237\u65b0\u9875\u9762\u540e\u91cd\u8bd5\u3002"
+            ],
+            "This payment handler is not available. Please refresh and try again.": [
+                "\u6b64\u652f\u4ed8\u5904\u7406\u7a0b\u5e8f\u4e0d\u53ef\u7528\u3002\u8bf7\u5237\u65b0\u540e\u91cd\u8bd5\u3002"
+            ],
+            "Additional verification required. Please complete the payment process.": [
+                "\u9700\u8981\u989d\u5916\u9a8c\u8bc1\u3002\u8bf7\u5b8c\u6210\u652f\u4ed8\u6d41\u7a0b\u3002"
+            ],
+            "Payment failed. Please try a different payment method.": [
+                "\u652f\u4ed8\u5931\u8d25\u3002\u8bf7\u5c1d\u8bd5\u5176\u4ed6\u652f\u4ed8\u65b9\u5f0f\u3002"
+            ],
+            "Payment was canceled. Please try again.": [
+                "\u652f\u4ed8\u5df2\u53d6\u6d88\u3002\u8bf7\u91cd\u8bd5\u3002"
+            ],
+            "Payment status: %s. Please contact support if this persists.": [
+                "\u652f\u4ed8\u72b6\u6001\uff1a%s\u3002\u5982\u679c\u95ee\u9898\u6301\u7eed\u5b58\u5728\uff0c\u8bf7\u8054\u7cfb\u652f\u6301\u56e2\u961f\u3002"
+            ],
+            "Payment could not be processed. Please try again.": [
+                "\u65e0\u6cd5\u5904\u7406\u652f\u4ed8\u3002\u8bf7\u91cd\u8bd5\u3002"
+            ],
+            "An error occurred while processing your payment. Please try again.": [
+                "\u5904\u7406\u60a8\u7684\u652f\u4ed8\u65f6\u53d1\u751f\u9519\u8bef\u3002\u8bf7\u91cd\u8bd5\u3002"
+            ],
+            "Verifying payment...": [
+                "\u6b63\u5728\u9a8c\u8bc1\u652f\u4ed8\u2026\u2026"
+            ],
+            "Payment successful! Creating order...": [
+                "\u652f\u4ed8\u6210\u529f\uff01\u6b63\u5728\u521b\u5efa\u8ba2\u5355\u2026\u2026"
+            ],
+            "Payment method could not be saved. Status: %s": [
+                "\u65e0\u6cd5\u4fdd\u5b58\u652f\u4ed8\u65b9\u5f0f\u3002\u72b6\u6001\uff1a%s"
+            ],
+            "Failed to verify payment. Please contact support.": [
+                "\u9a8c\u8bc1\u652f\u4ed8\u5931\u8d25\u3002\u8bf7\u8054\u7cfb\u652f\u6301\u56e2\u961f\u3002"
+            ],
+            "Payment failed. Please try again with a different payment method.": [
+                "\u652f\u4ed8\u5931\u8d25\u3002\u8bf7\u4f7f\u7528\u5176\u4ed6\u652f\u4ed8\u65b9\u5f0f\u91cd\u8bd5\u3002"
+            ],
+            "Additional action required. Please complete the payment process.": [
+                "\u9700\u8981\u989d\u5916\u64cd\u4f5c\u3002\u8bf7\u5b8c\u6210\u652f\u4ed8\u6d41\u7a0b\u3002"
+            ],
+            "Payment could not be completed. Status: %s": [
+                "\u65e0\u6cd5\u5b8c\u6210\u652f\u4ed8\u3002\u72b6\u6001\uff1a%s"
+            ]
+        }
+    }
+}

@@ -1,0 +1,99 @@
+{
+    "translation-revision-date": "2026-07-23 12:00+0000",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "blocks\/shops-page\/template-2\/edit.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "it_IT",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "No products found.": [
+                "Nessun prodotto trovato."
+            ],
+            "Checkout": [
+                "Cassa"
+            ],
+            "Color": [
+                "Colore"
+            ],
+            "Normal": [
+                "Normale"
+            ],
+            "Product Settings": [
+                "Impostazioni del prodotto"
+            ],
+            "Products Per Page": [
+                "Prodotti per pagina"
+            ],
+            "Grid Settings": [
+                "Impostazioni della griglia"
+            ],
+            "Show Filters": [
+                "Mostra i filtri"
+            ],
+            "Show Pagination": [
+                "Mostra la paginazione"
+            ],
+            "Number of Columns": [
+                "Numero di colonne"
+            ],
+            "Product Title": [
+                "Titolo del prodotto"
+            ],
+            "Text Color": [
+                "Colore del testo"
+            ],
+            "Hover Text Color": [
+                "Colore del testo al passaggio del mouse"
+            ],
+            "Product Category": [
+                "Categoria del prodotto"
+            ],
+            "Product Rating": [
+                "Valutazione del prodotto"
+            ],
+            "Star Size": [
+                "Dimensione delle stelle"
+            ],
+            "Product Price": [
+                "Prezzo del prodotto"
+            ],
+            "Regular Price": [
+                "Prezzo normale"
+            ],
+            "Sale Price": [
+                "Prezzo scontato"
+            ],
+            "Cart Button": [
+                "Pulsante del carrello"
+            ],
+            "Hover": [
+                "Passaggio del mouse"
+            ],
+            "Background Color": [
+                "Colore di sfondo"
+            ],
+            "Focus Text Color": [
+                "Colore del testo in focus"
+            ],
+            "Focus Background Color": [
+                "Colore di sfondo in focus"
+            ],
+            "Text Color (Hover)": [
+                "Colore del testo (passaggio del mouse)"
+            ],
+            "Background Color (Hover)": [
+                "Colore di sfondo (passaggio del mouse)"
+            ],
+            "Checkout Button": [
+                "Pulsante della cassa"
+            ],
+            "Add To Cart": [
+                "Aggiungi al carrello"
+            ]
+        }
+    }
+}

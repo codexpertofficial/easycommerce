@@ -35,11 +35,14 @@ const Stock = ({ id, priceItem, setPriceItem }) => {
 							className="h-ec-input"
 							name={'stock-count-' + id}
 							placeholder={__('Enter Stock Count', 'easycommerce')}
-							value={priceItem.stock_quantity}
+							value={priceItem.stock_quantity ?? ''}
 							onChange={(e) =>
 								setPriceItem((prev) => ({
 									...prev,
-									stock_quantity: e.target.value,
+									stock_quantity:
+										e.target.value === ''
+											? null
+											: parseInt(e.target.value, 10),
 								}))
 							}
 						/>

@@ -503,6 +503,10 @@ class Product extends Model {
 		$has_numeric 	= false;
 
 		foreach ( $variations as $variation ) {
+			if ( $variation->get_type() === 'digital' ) {
+				continue;
+			}
+
 			$quantity = $variation->stock_quantity ?? null;
 
 			if ( is_numeric( $quantity ) ) {
@@ -765,7 +769,7 @@ class Product extends Model {
 				$variation->set_sku( substr( $variation_data['sku'], 0, 100 ) );
 				$variation->set_type( $variation_data['type'] ?? 'physical' );
 				$variation->set_price( $variation_data['regular_price'] );
-				$variation->set_sale_price( $variation_data['sale_price'] );
+				$variation->set_sale_price( $variation_data['sale_price'] == '' ? null : (float) $variation_data['sale_price'] );
 				$variation->set_stock_quantity( $variation_data['stock_quantity'] );
 				$variation->set_status( $variation_data['status'] );
 				$variation->set_price_id( $price_id );
@@ -1508,5 +1512,229 @@ class Product extends Model {
 		}
 
 		return $products;
+	}
+
+
+	protected static $badge_definitions = array(
+		'sale'        => array(
+			'label' => 'Sale',
+			'color' => '#EF4444',
+			'text'  => '#FFFFFF',
+		),
+		'new'         => array(
+			'label' => 'New Arrival',
+			'color' => '#22C55E',
+			'text'  => '#FFFFFF',
+		),
+		'best_seller' => array(
+			'label' => 'Best Seller',
+			'color' => '#F59E0B',
+			'text'  => '#FFFFFF',
+		),
+		'featured'    => array(
+			'label' => 'Featured',
+			'color' => '#3B82F6',
+			'text'  => '#FFFFFF',
+		),
+	);
+
+	// Precedence, highest first. "out_of_stock" is derived from stock, not a
+	// manual/meta badge, so it's handled separately in get_badges().
+	protected static $badge_precedence = array( 'sale', 'best_seller', 'new', 'featured' );
+
+	
+
+	// -----------------------------------------------------------------------
+	// 2) Badge methods
+	// -----------------------------------------------------------------------
+
+	/**
+	 * Get the active badges for this product, ordered by display precedence
+	 * (Sale > Best Seller > New > Featured > Out of Stock).
+	 *
+	 * Each entry: array( 'type' => string, 'label' => string, 'color' => string, 'text_color' => string, 'position' => string )
+	 *
+	 * @return array
+	 */
+	public function get_badges() {
+		$badges = array();
+
+		// Out of stock is reported here too so callers don't need a second lookup;
+		// the storefront renderer treats it as an override, per spec.
+		$stock = $this->get_stock();
+		$is_out_of_stock = ( $stock !== null && $stock <= 0 );
+
+		// Sale — auto-computed from price. A manual `_badge_sale` meta override
+		// is also honored (e.g. a promo the merchant wants to force even if
+		// prices don't strictly reflect it).
+		$forced_sale = $this->get_meta( '_badge_sale' );
+		if ( $forced_sale === '1' || $forced_sale === true || $this->has_active_sale_price() ) {
+			$badges[] = $this->build_badge( 'sale' );
+		}
+
+		// Best seller — manual toggle.
+		if ( $this->get_meta( '_badge_best_seller' ) ) {
+			$badges[] = $this->build_badge( 'best_seller' );
+		}
+
+		// New arrival — manual toggle that auto-expires after 30 days.
+		if ( $this->has_active_new_badge() ) {
+			$badges[] = $this->build_badge( 'new' );
+		}
+
+		// Featured — manual toggle.
+		if ( $this->get_meta( '_badge_featured' ) ) {
+			$badges[] = $this->build_badge( 'featured' );
+		}
+
+		if ( $is_out_of_stock ) {
+			$badges[] = array(
+				'type'       => 'out_of_stock',
+				'label'      => __( 'Out of Stock', 'easycommerce' ),
+				'color'      => '#374151', // gray-700
+				'text_color' => '#FFFFFF',
+				'position'   => 'top-center',
+			);
+		}
+
+		// Sort by declared precedence; out_of_stock always renders last in the
+		// array but the storefront renderer treats it as an override.
+		$order = array_flip( array_merge( self::$badge_precedence, array( 'out_of_stock' ) ) );
+		usort(
+			$badges,
+			function ( $a, $b ) use ( $order ) {
+				return ( $order[ $a['type'] ] ?? 999 ) <=> ( $order[ $b['type'] ] ?? 999 );
+			}
+		);
+
+		return $badges;
+	}
+
+	/**
+	 * Build a badge array from the static definitions.
+	 *
+	 * @param string $type One of self::$badge_definitions keys.
+	 * @return array
+	 */
+	protected function build_badge( $type ) {
+		$definition = self::$badge_definitions[ $type ] ?? array();
+
+		return array(
+			'type'       => $type,
+			'label'      => $definition['label'] ?? ucfirst( $type ),
+			'color'      => $definition['color'] ?? '#6B7280',
+			'text_color' => $definition['text'] ?? '#FFFFFF',
+			'position'   => 'top-left',
+		);
+	}
+
+	/**
+	 * Whether the product currently has a genuine sale (sale_price < regular_price)
+	 * on at least one variation.
+	 *
+	 * @return bool
+	 */
+	public function has_active_sale_price() {
+		foreach ( $this->get_prices( false ) as $price ) {
+			$regular = $price['regular_price'];
+			$sale    = $price['sale_price'];
+
+			if (
+				is_numeric( $regular )
+				&& is_numeric( $sale )
+				&& (float) $sale > 0
+				&& (float) $sale < (float) $regular
+			) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	/**
+	 * Whether the manually-set "New" badge is still within its 30-day window.
+	 *
+	 * @return bool
+	 */
+	public function has_active_new_badge() {
+		if ( ! $this->get_meta( '_badge_new' ) ) {
+			return false;
+		}
+
+		$set_at = $this->get_meta( '_badge_new_set_at' );
+
+		if ( empty( $set_at ) ) {
+			// Backfill: treat as just-set so it doesn't immediately vanish for
+			// pre-existing toggles saved before this field existed.
+			$this->update_meta( '_badge_new_set_at', current_time( 'mysql' ) );
+			return true;
+		}
+
+		$expires = strtotime( $set_at ) + ( 30 * DAY_IN_SECONDS );
+
+		if ( time() > $expires ) {
+			// Auto-clear expired badge so subsequent reads/writes stay consistent.
+			$this->update_meta( '_badge_new', false );
+			$this->delete_meta( '_badge_new_set_at' );
+			return false;
+		}
+
+		return true;
+	}
+
+	/**
+	 * Set (or clear) a manual badge on this product.
+	 *
+	 * Supported $badge_type values: 'new', 'best_seller', 'featured', 'sale'.
+	 *
+	 * @param string $badge_type
+	 * @param bool   $value
+	 * @return bool
+	 */
+	public function set_badge( $badge_type, $value ) {
+		switch ( $badge_type ) {
+			case 'new':
+				$enabled = (bool) $value;
+				$this->update_meta( '_badge_new', $enabled );
+
+				if ( $enabled ) {
+					$this->update_meta( '_badge_new_set_at', current_time( 'mysql' ) );
+				} else {
+					$this->delete_meta( '_badge_new_set_at' );
+				}
+
+				return true;
+
+			case 'best_seller':
+				return (bool) $this->update_meta( '_badge_best_seller', (bool) $value );
+
+			case 'featured':
+				return (bool) $this->update_meta( '_badge_featured', (bool) $value );
+
+			case 'sale':
+				// Manual override; auto_set_sale_badge() handles the computed case.
+				return (bool) $this->update_meta( '_badge_sale', (bool) $value );
+
+			default:
+				return false;
+		}
+	}
+
+	/**
+	 * Recompute the auto sale badge from current variation prices. Call this
+	 * whenever a variation's regular_price/sale_price changes (e.g. from
+	 * Product::update() after variations are saved).
+	 *
+	 * @return bool Whether the product is currently on sale.
+	 */
+	public function auto_set_sale_badge() {
+		$on_sale = $this->has_active_sale_price();
+
+		// Only meaningful as a cache; get_badges() recomputes has_active_sale_price()
+		// directly, so this is mainly useful for list views / bulk queries that
+		// want to filter by "_badge_sale" meta without loading every variation.
+		$this->update_meta( '_badge_sale', $on_sale );
+
+		return $on_sale;
 	}
 }

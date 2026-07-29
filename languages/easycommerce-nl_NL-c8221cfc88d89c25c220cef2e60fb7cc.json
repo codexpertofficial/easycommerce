@@ -1,0 +1,150 @@
+{
+    "translation-revision-date": "2026-07-23 00:00+0000",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "build\/wizard.bundle.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "nl_NL",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Business Info": [
+                "Bedrijfsinformatie"
+            ],
+            "Store Pages": [
+                "Winkelpagina's"
+            ],
+            "Business Type": [
+                "Bedrijfstype"
+            ],
+            "Currency": [
+                "Valuta"
+            ],
+            "Payment Methods": [
+                "Betaalmethoden"
+            ],
+            "Previous": [
+                "Vorige"
+            ],
+            "Next": [
+                "Volgende"
+            ],
+            "Business Setup": [
+                "Bedrijfsconfiguratie"
+            ],
+            "Fill in your business details so your store functions seamlessly and is ready for customers. You can adjust these settings anytime.": [
+                "Vul je bedrijfsgegevens in zodat je winkel naadloos functioneert en klaar is voor klanten. Je kunt deze instellingen op elk moment aanpassen."
+            ],
+            "Store Name": [
+                "Winkelnaam"
+            ],
+            "Write your business name": [
+                "Schrijf je bedrijfsnaam"
+            ],
+            "Provide the name your store will use in your storefront and communications.": [
+                "Geef de naam op die je winkel gebruikt in je storefront en communicatie."
+            ],
+            "Pick the type that best describes your business. You can update it later if needed.": [
+                "Kies het type dat je bedrijf het best beschrijft. Je kunt dit later indien nodig aanpassen."
+            ],
+            "Business Country": [
+                "Bedrijfsland"
+            ],
+            "Select the country where your business is located to configure taxes, currency, and shipping correctly.": [
+                "Selecteer het land waar je bedrijf is gevestigd om belastingen, valuta en verzending correct te configureren."
+            ],
+            "Store Email": [
+                "Winkel-e-mailadres"
+            ],
+            "Write your business email": [
+                "Schrijf je zakelijke e-mailadres"
+            ],
+            "Enter the email address your store will use for notifications and customer communications.": [
+                "Voer het e-mailadres in dat je winkel gebruikt voor meldingen en communicatie met klanten."
+            ],
+            "Store Setup": [
+                "Winkelconfiguratie"
+            ],
+            "Your store needs a Shop page, Checkout page, Customer Dashboard, and Payment page to work properly. We\u2019ll create them for you automatically \u2014 you can change them anytime from the settings page.": [
+                "Je winkel heeft een winkelpagina, afrekenpagina, klantdashboard en betaalpagina nodig om goed te werken. We maken ze automatisch voor je aan \u2014 je kunt ze op elk moment wijzigen via de instellingenpagina."
+            ],
+            "Demo Products": [
+                "Demoproducten"
+            ],
+            "Import demo products to preview your storefront and test features. Remove them anytime.": [
+                "Importeer demoproducten om je storefront te bekijken en functies te testen. Verwijder ze op elk moment."
+            ],
+            "Payment Setup": [
+                "Betaalconfiguratie"
+            ],
+            "Fill in your payment information so your store is ready to accept payments safely and efficiently. You can change this anytime.": [
+                "Vul je betaalgegevens in zodat je winkel klaar is om veilig en effici\u00ebnt betalingen te accepteren. Je kunt dit op elk moment wijzigen."
+            ],
+            "Select Your Currency": [
+                "Selecteer je valuta"
+            ],
+            "Select the currency your store will use for all prices and transactions.": [
+                "Selecteer de valuta die je winkel gebruikt voor alle prijzen en transacties."
+            ],
+            "Currency Format": [
+                "Valutanotatie"
+            ],
+            "Select Your Currency Format": [
+                "Selecteer je valutanotatie"
+            ],
+            "Select the format you want for displaying prices in your store.": [
+                "Selecteer de notatie die je wilt gebruiken om prijzen in je winkel weer te geven."
+            ],
+            "Congratulations, you're all set!": [
+                "Gefeliciteerd, je bent helemaal klaar!"
+            ],
+            "You've successfully set up EasyCommerce on your website. Start by adding your first product, explore the": [
+                "Je hebt EasyCommerce succesvol ingesteld op je website. Begin met het toevoegen van je eerste product, verken de"
+            ],
+            "documentation": [
+                "documentatie"
+            ],
+            ", or": [
+                ", of"
+            ],
+            "join the EasyCommerce Community": [
+                "word lid van de EasyCommerce Community"
+            ],
+            "to ask questions and connect with other store owners.": [
+                "om vragen te stellen en in contact te komen met andere winkeliers."
+            ],
+            "Store Dashboard": [
+                "Winkeldashboard"
+            ],
+            "Add A Product": [
+                "Een product toevoegen"
+            ],
+            "Set up your store name, location, and contact details": [
+                "Stel je winkelnaam, locatie en contactgegevens in"
+            ],
+            "Create essential pages like Shop, Cart, and Checkout": [
+                "Maak essenti\u00eble pagina's aan zoals Winkel, Winkelwagen en Afrekenen"
+            ],
+            "Connect payment gateways to start accepting orders": [
+                "Verbind betaalgateways om bestellingen te gaan accepteren"
+            ],
+            "Welcome to EasyCommerce": [
+                "Welkom bij EasyCommerce"
+            ],
+            "Start selling in a few minutes with 3 easy steps:": [
+                "Begin binnen enkele minuten met verkopen in 3 eenvoudige stappen:"
+            ],
+            "Get Started Now": [
+                "Begin nu"
+            ],
+            "Demo import failed. Please try again.": [
+                "Demo-import mislukt. Probeer het opnieuw."
+            ],
+            "Skip": [
+                "Overslaan"
+            ]
+        }
+    }
+}

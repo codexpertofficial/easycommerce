@@ -5,6 +5,7 @@ defined( 'ABSPATH' ) || exit;
 
 use EasyCommerce\Abstracts\API;
 use EasyCommerce\Models\Log as Log_Model;
+use EasyCommerce\Models\Order;
 use EasyCommerce\Helpers\Utility;
 
 class Log extends API {
@@ -28,6 +29,19 @@ class Log extends API {
 		$per_page   = $request->get_param( 'per_page' ) ?: 10;
 		$sort       = $request->get_param( 'sort' ) ?: 'desc';
 		$filters    = array();
+
+		if ( ! current_user_can( 'administrator' ) && ! current_user_can( 'manager' ) ) {
+			$order = new Order( (int) $object_id );
+
+			if ( ! $order->exists() || (int) $order->get_customer_id() !== get_current_user_id() ) {
+				$this->response_error( __( 'You are not allowed to view these logs.', 'easycommerce' ), 403 );
+			}
+
+			$object    = 'order';
+			$is_public = 1;
+			$user_id   = null;
+			$from_date = $order->get_created_at();
+		}
 
 		if ( ! in_array( strtolower( $sort ), array( 'asc', 'desc' ) ) ) {
 			$sort = 'desc';

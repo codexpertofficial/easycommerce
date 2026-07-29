@@ -1,0 +1,141 @@
+{
+    "translation-revision-date": "2026-07-23 00:00+0000",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "build\/auth.bundle.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "ru_RU",
+                "plural-forms": "nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);"
+            },
+            "Passwords do not match": [
+                "\u041f\u0430\u0440\u043e\u043b\u0438 \u043d\u0435 \u0441\u043e\u0432\u043f\u0430\u0434\u0430\u044e\u0442"
+            ],
+            "Password has been reset successfully.": [
+                "\u041f\u0430\u0440\u043e\u043b\u044c \u0443\u0441\u043f\u0435\u0448\u043d\u043e \u0441\u0431\u0440\u043e\u0448\u0435\u043d."
+            ],
+            "Invalid email\/username or password.": [
+                "\u041d\u0435\u0432\u0435\u0440\u043d\u044b\u0439 \u0430\u0434\u0440\u0435\u0441 \u044d\u043b. \u043f\u043e\u0447\u0442\u044b\/\u0438\u043c\u044f \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f \u0438\u043b\u0438 \u043f\u0430\u0440\u043e\u043b\u044c."
+            ],
+            "Terms of Service": [
+                "\u0423\u0441\u043b\u043e\u0432\u0438\u044f \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u044f"
+            ],
+            "Privacy Policy": [
+                "\u041f\u043e\u043b\u0438\u0442\u0438\u043a\u0430 \u043a\u043e\u043d\u0444\u0438\u0434\u0435\u043d\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u0438"
+            ],
+            "Remember Me": [
+                "\u0417\u0430\u043f\u043e\u043c\u043d\u0438\u0442\u044c \u043c\u0435\u043d\u044f"
+            ],
+            "New Password": [
+                "\u041d\u043e\u0432\u044b\u0439 \u043f\u0430\u0440\u043e\u043b\u044c"
+            ],
+            "Confirm Password": [
+                "\u041f\u043e\u0434\u0442\u0432\u0435\u0440\u0434\u0438\u0442\u0435 \u043f\u0430\u0440\u043e\u043b\u044c"
+            ],
+            "An error occurred. Please try again.": [
+                "\u041f\u0440\u043e\u0438\u0437\u043e\u0448\u043b\u0430 \u043e\u0448\u0438\u0431\u043a\u0430. \u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u043f\u043e\u043f\u0440\u043e\u0431\u0443\u0439\u0442\u0435 \u0441\u043d\u043e\u0432\u0430."
+            ],
+            "Sign In": [
+                "\u0412\u0445\u043e\u0434"
+            ],
+            "Welcome back! sign in and let the greenery spark your joy": [
+                "\u0421 \u0432\u043e\u0437\u0432\u0440\u0430\u0449\u0435\u043d\u0438\u0435\u043c! \u0412\u043e\u0439\u0434\u0438\u0442\u0435, \u0438 \u043f\u0443\u0441\u0442\u044c \u0437\u0435\u043b\u0435\u043d\u044c \u043f\u043e\u0434\u0430\u0440\u0438\u0442 \u0432\u0430\u043c \u0440\u0430\u0434\u043e\u0441\u0442\u044c"
+            ],
+            "Email Address": [
+                "\u0410\u0434\u0440\u0435\u0441 \u044d\u043b. \u043f\u043e\u0447\u0442\u044b"
+            ],
+            "Password": [
+                "\u041f\u0430\u0440\u043e\u043b\u044c"
+            ],
+            "Signing in...": [
+                "\u0412\u0445\u043e\u0434..."
+            ],
+            "Forgot Password?": [
+                "\u0417\u0430\u0431\u044b\u043b\u0438 \u043f\u0430\u0440\u043e\u043b\u044c?"
+            ],
+            "Don't have an account?": [
+                "\u041d\u0435\u0442 \u0430\u043a\u043a\u0430\u0443\u043d\u0442\u0430?"
+            ],
+            "Sign Up": [
+                "\u0420\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044f"
+            ],
+            "Registration Complete please login": [
+                "\u0420\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044f \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043d\u0430, \u043f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0432\u043e\u0439\u0434\u0438\u0442\u0435"
+            ],
+            "Registration failed. Please try again.": [
+                "\u041d\u0435 \u0443\u0434\u0430\u043b\u043e\u0441\u044c \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u0442\u044c\u0441\u044f. \u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u043f\u043e\u043f\u0440\u043e\u0431\u0443\u0439\u0442\u0435 \u0441\u043d\u043e\u0432\u0430."
+            ],
+            "Registration": [
+                "\u0420\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044f"
+            ],
+            "Welcome Back! Sign in and let the greenery spark your joy": [
+                "\u0421 \u0432\u043e\u0437\u0432\u0440\u0430\u0449\u0435\u043d\u0438\u0435\u043c! \u0412\u043e\u0439\u0434\u0438\u0442\u0435, \u0438 \u043f\u0443\u0441\u0442\u044c \u0437\u0435\u043b\u0435\u043d\u044c \u043f\u043e\u0434\u0430\u0440\u0438\u0442 \u0432\u0430\u043c \u0440\u0430\u0434\u043e\u0441\u0442\u044c"
+            ],
+            "Username": [
+                "\u0418\u043c\u044f \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f"
+            ],
+            "User Name": [
+                "\u0418\u043c\u044f \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f"
+            ],
+            "Enter your Email": [
+                "\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0432\u0430\u0448 \u0430\u0434\u0440\u0435\u0441 \u044d\u043b. \u043f\u043e\u0447\u0442\u044b"
+            ],
+            "New password": [
+                "\u041d\u043e\u0432\u044b\u0439 \u043f\u0430\u0440\u043e\u043b\u044c"
+            ],
+            "Enter new password": [
+                "\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043d\u043e\u0432\u044b\u0439 \u043f\u0430\u0440\u043e\u043b\u044c"
+            ],
+            "Confirm password": [
+                "\u041f\u043e\u0434\u0442\u0432\u0435\u0440\u0434\u0438\u0442\u0435 \u043f\u0430\u0440\u043e\u043b\u044c"
+            ],
+            "Confirm new password": [
+                "\u041f\u043e\u0434\u0442\u0432\u0435\u0440\u0434\u0438\u0442\u0435 \u043d\u043e\u0432\u044b\u0439 \u043f\u0430\u0440\u043e\u043b\u044c"
+            ],
+            "Creating account...": [
+                "\u0421\u043e\u0437\u0434\u0430\u043d\u0438\u0435 \u0430\u043a\u043a\u0430\u0443\u043d\u0442\u0430..."
+            ],
+            "Sign up": [
+                "\u0417\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u0442\u044c\u0441\u044f"
+            ],
+            "By creating an account, you agree to our": [
+                "\u0421\u043e\u0437\u0434\u0430\u0432\u0430\u044f \u0430\u043a\u043a\u0430\u0443\u043d\u0442, \u0432\u044b \u0441\u043e\u0433\u043b\u0430\u0448\u0430\u0435\u0442\u0435\u0441\u044c \u0441 \u043d\u0430\u0448\u0438\u043c\u0438"
+            ],
+            "and": [
+                "\u0438"
+            ],
+            "Log in": [
+                "\u0412\u043e\u0439\u0442\u0438"
+            ],
+            "Check your email for the confirmation link.": [
+                "\u041f\u0440\u043e\u0432\u0435\u0440\u044c\u0442\u0435 \u043f\u043e\u0447\u0442\u0443 \u2014 \u0442\u0430\u043c \u0441\u0441\u044b\u043b\u043a\u0430 \u0434\u043b\u044f \u043f\u043e\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043d\u0438\u044f."
+            ],
+            "Reset your password": [
+                "\u0421\u0431\u0440\u043e\u0441\u044c\u0442\u0435 \u0432\u0430\u0448 \u043f\u0430\u0440\u043e\u043b\u044c"
+            ],
+            "Enter a valid e-mail to receive instruction on how to reset your password.": [
+                "\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043a\u043e\u0440\u0440\u0435\u043a\u0442\u043d\u044b\u0439 \u0430\u0434\u0440\u0435\u0441 \u044d\u043b. \u043f\u043e\u0447\u0442\u044b, \u0447\u0442\u043e\u0431\u044b \u043f\u043e\u043b\u0443\u0447\u0438\u0442\u044c \u0438\u043d\u0441\u0442\u0440\u0443\u043a\u0446\u0438\u044e \u043f\u043e \u0441\u0431\u0440\u043e\u0441\u0443 \u043f\u0430\u0440\u043e\u043b\u044f."
+            ],
+            "Email or username": [
+                "\u042d\u043b. \u043f\u043e\u0447\u0442\u0430 \u0438\u043b\u0438 \u0438\u043c\u044f \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f"
+            ],
+            "Sending...": [
+                "\u041e\u0442\u043f\u0440\u0430\u0432\u043a\u0430..."
+            ],
+            "Reset Password": [
+                "\u0421\u0431\u0440\u043e\u0441\u0438\u0442\u044c \u043f\u0430\u0440\u043e\u043b\u044c"
+            ],
+            "Set New Password": [
+                "\u0417\u0430\u0434\u0430\u0442\u044c \u043d\u043e\u0432\u044b\u0439 \u043f\u0430\u0440\u043e\u043b\u044c"
+            ],
+            "Enter your new password below.": [
+                "\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043d\u043e\u0432\u044b\u0439 \u043f\u0430\u0440\u043e\u043b\u044c \u043d\u0438\u0436\u0435."
+            ],
+            "Resetting...": [
+                "\u0421\u0431\u0440\u043e\u0441..."
+            ]
+        }
+    }
+}

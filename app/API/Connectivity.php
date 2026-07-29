@@ -68,6 +68,16 @@ class Connectivity extends API {
 			update_option( '_easycommerce-no_tracking', 1 );
 		}
 
+		// Mirror the data-sharing consent into a standalone option. It is submitted
+		// as part of the general-business group, but that whole group is replaced
+		// wholesale on every settings save (Option::update()) and share_data is not
+		// a registered settings field — so an opt-out would silently disappear the
+		// next time the owner edited anything under General > Business, and consent
+		// would revert to enabled. A standalone option cannot be clobbered that way.
+		if ( isset( $data['general-business-share_data'] ) ) {
+			update_option( 'easycommerce_share_data', (int) $data['general-business-share_data'] );
+		}
+
 		if ( isset( $data['payment-methods-active_methods'] ) && is_array( $data['payment-methods-active_methods'] ) ) {
 			$active_methods  = $data['payment-methods-active_methods'];
 			$payment_methods = easycommerce_get_all_payment_methods();
@@ -773,27 +783,35 @@ class Connectivity extends API {
 	public function feedback( $request ) {
 
 		$deactivated = (int) $request->get_param( 'deactivated' );
+		$event       = easycommerce_telemetry_event( $request->get_param( 'event' ), $deactivated, $request->get_param( 'subject' ) );
+
+		// The wizard fires this on every transition into the Success step, so a
+		// back-then-forward navigation submits twice. That is deliberately not
+		// deduped: the hub upserts the CRM contact, and a setup_wizard event never
+		// opens a GitHub issue, so a repeat submission just refreshes the snapshot.
 
 		// Bump the lifetime deactivation counter before building the snapshot so
 		// it reflects the current deactivation (repeat vs first-time churner).
-		if ( $deactivated ) {
+		if ( 'deactivation' === $event ) {
 			update_option( 'easycommerce_deactivation_count', (int) get_option( 'easycommerce_deactivation_count', 0 ) + 1 );
 		}
 
 		$args = array(
 			'body' => array(
+				'event'		=> $event,
 				'email'		=> $request->get_param( 'email' ),
 				'name'		=> $request->get_param( 'name' ),
-				'home'		=> $request->get_param( 'home' ),
+				// Default server-side: the feedback and integration-request modals
+				// post their bare form fields and carry no home field, so leaving
+				// this to the caller loses the site URL on every modal submission.
+				'home'		=> $request->get_param( 'home' ) ? $request->get_param( 'home' ) : home_url(),
 				'subject'	=> $request->get_param( 'subject' ),
 				'message'	=> $request->get_param( 'message' ),
 				'deactivated' => $deactivated,
-				'activated' => get_option( 'easycommerce_activated' ),
-				'plugins'	=> get_option( 'active_plugins' ),
-				'theme'		=> get_option( 'template' ),
-				'onboarding' => easycommerce_onboarding_snapshot(),
 			),
 		);
+
+		$args['body'] = array_merge( $args['body'], $this->diagnostics() );
 
 		/**
 		 * Fires before sending feedback.
@@ -804,7 +822,7 @@ class Connectivity extends API {
 		 */
 		do_action( 'easycommerce_before_send_feedback', $args, $request );
 
-		$response = wp_remote_post( easycommerce_dev_store( '/wp-json/easycommerce/v1/hub/feedback' ), $args );
+		$response = wp_remote_post( easycommerce_dev_store( '/wp-json/easycommerce/v1/hub/telemetry' ), $args );
 		$body     = json_decode( wp_remote_retrieve_body( $response ) );
 
 		if ( isset( $body->data ) ) {
@@ -814,17 +832,51 @@ class Connectivity extends API {
 		$this->response_success( array( 'message' => __( 'Something went wrong', 'easycommerce' ) ) );
 	}
 
+	/**
+	 * The site diagnostics attached to every telemetry event.
+	 *
+	 * Every event carries the same payload — wizard completion, deactivation,
+	 * feedback and integration request alike — so a CRM contact reads the same
+	 * whichever way the store owner arrived.
+	 *
+	 * Rides along only with consent: what the store owner typed is their own
+	 * submission and always goes, the passive site snapshot (active plugin list,
+	 * theme, install age, engagement counts) does not.
+	 *
+	 * @since 1.45
+	 * @return array Empty when sharing is declined.
+	 */
+	private function diagnostics() {
+		if ( ! easycommerce_can_share_data() ) {
+			return array();
+		}
+
+		return array(
+			'activated'  => get_option( 'easycommerce_activated' ),
+			'plugins'    => get_option( 'active_plugins' ),
+			'theme'      => get_option( 'template' ),
+			'onboarding' => easycommerce_onboarding_snapshot(),
+		);
+	}
+
 	public function requests( $request ) {
 
 		$args = array(
 			'body' => array(
+				'event'   => 'integration_request',
 				'email'   => $request->get_param( 'email' ),
 				'name'    => $request->get_param( 'name' ),
-				'home'    => $request->get_param( 'home' ),
+				// Defaulted server-side — the modal carries no home field.
+				'home'    => $request->get_param( 'home' ) ? $request->get_param( 'home' ) : home_url(),
 				'subject' => $request->get_param( 'subject' ),
 				'message' => $request->get_param( 'message' ),
 			),
 		);
+
+		// Integration requests carry the same diagnostics as every other event —
+		// knowing the site's plugins, theme and PHP version is the whole point of
+		// an integration request.
+		$args['body'] = array_merge( $args['body'], $this->diagnostics() );
 
 		/**
 		 * Fires before sending request.
@@ -835,7 +887,7 @@ class Connectivity extends API {
 		 */
 		do_action( 'easycommerce_before_send_request', $args, $request );
 
-		$response = wp_remote_post( easycommerce_dev_store( '/wp-json/easycommerce/v1/hub/requests' ), $args );
+		$response = wp_remote_post( easycommerce_dev_store( '/wp-json/easycommerce/v1/hub/telemetry' ), $args );
 		$body     = json_decode( wp_remote_retrieve_body( $response ) );
 
 		if ( isset( $body->data ) ) {

@@ -13,7 +13,7 @@ use WP_UnitTest_Factory_For_Thing;
  *     'order_id'   => $order_id,
  *     'amount'     => 25.00,
  *     'status'     => 'approved',
- *     'created_at' => '2099-01-15 11:00:00',   // optional: override auto timestamp
+ *     'created_at' => '2035-01-15 11:00:00',   // optional: override auto timestamp
  * ]);
  */
 class RefundFactory extends WP_UnitTest_Factory_For_Thing {

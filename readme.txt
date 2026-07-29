@@ -5,7 +5,7 @@ Donate link: https://easycommerce.dev
 Tags: ecommerce, online store, ai ecommerce, store builder, digital downloads
 Requires at least: 6.0
 Tested up to: 7.0
-Stable tag: 1.46
+Stable tag: 1.47
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -515,6 +515,37 @@ Free community support via WordPress.org forums and the [Facebook Community](htt
 
 == Changelog ==
 
+= 1.47 - 2026-07-29 =
+
+**✨ New**
+
+- [add] Product badges - assign New Arrival, Best Seller, Featured, or Sale badges to any product; they render on every shop template and on the single product page, Sale is detected automatically from the sale price, and New Arrival expires on its own after 30 days
+- [add] Five new translations - Italian, Dutch, Russian, Japanese, and Simplified Chinese - bringing the bundled languages to ten, covering both the admin and the storefront
+- [add] Reset Logs button on the AI Usage settings page to clear stored AI usage history
+
+**💳 Payments & Checkout**
+
+- [fix] Stripe now offers only the payment methods your account can actually charge in the checkout currency - Klarna and other local methods no longer appear where Stripe would reject them
+- [fix] Stripe webhooks are now handled exactly once, so a replayed or retried notification can no longer complete or charge the same order twice
+
+**🐛 Fixes**
+
+- [fix] A blank Stock Count now correctly means "stock not managed" - untracked products no longer show as Out of Stock, clearing the field no longer fails to save, and digital variable products can be added to the cart again
+- [fix] Digital products no longer display an Out of Stock badge
+- [fix] Order Notes on the customer dashboard no longer fail with a permission error; add-to-cart is no longer logged twice, and notes from deleted orders no longer appear on new ones
+- [fix] Admin notices no longer appear on the storefront, and only one notice is shown at a time
+- [fix] Variations without a sale price are now priced at their regular price instead of 0.00
+- [fix] Customer billing and shipping addresses are returned correctly by the API instead of as an empty value
+- [fix] Your usage-data sharing choice is now saved reliably and no longer resets when other settings are saved
+- [imp] A failed addon installation now links directly to the manual installation page
+- [imp] Business Type is now required in the setup wizard, with clearer validation
+
+**🧹 Internal**
+
+- [refactor] Feedback, integration requests, the setup wizard, and the deactivation survey now report through a single telemetry endpoint
+- [test] Fixed 35 failing tests by root-causing each one, which also uncovered several of the pricing and API bugs fixed above
+- [docs] Added a CHANGELOG.md kept in sync with this file
+
 = 1.46 - 2026-07-22 =
 
 **🔒 Security**
@@ -671,78 +702,6 @@ Free community support via WordPress.org forums and the [Facebook Community](htt
 - [add] Added a Subscriptions Overview card to the dashboard reports
 - [fix] Fixed an order amount mismatch when the cart changes during checkout
 - [fix] Shipping method ID is now validated before being stored in the cart
-
-= 1.40 - 2026-06-16 =
-
-**🤖 NEW: Agentic AI - Your 24/7 AI Sales & Management Team**
-
-The headline feature of 1.40. EasyCommerce now ships autonomous AI agents that sell on your storefront and manage your store from the admin - a first for WordPress ecommerce.
-
-- **Shopping Agent** - conversational storefront chatbot that searches your catalog, checks stock, applies coupons, places orders, and delivers payment links, all in one chat
-- **Store Copilot** - natural-language admin assistant; renders responses as HTML and supports multi-line input via Shift+Enter
-- Added AI usage log to track credit consumption
-
-**🔒 Security**
-
-- Fixed Stripe webhook signature verification bypass
-- Added authentication to the Stripe webhook and payment-intent REST endpoints
-- PayPal order amount now re-verified after payment to block tampered totals
-- Fixed authentication bypass on all Tax REST endpoints
-- Fixed path traversal in the CSV tax-rate loader; country parameter now validated before building the file path
-
-**💳 Payments**
-
-- Added Stripe SetupIntent support for subscription checkouts (fixes a double-charge on the first order)
-- Fixed Stripe card element render failures and auto-render on cart change
-- Fixed checkout not listing the correct Stripe payment methods (e.g. US bank methods showing as "N/A")
-- Fixed saved payment method not displaying at checkout
-- Fixed inverted Braintree refund status check and partial-refund/void handling
-- Fixed undefined variables crashing PayPal refunds
-
-**🧾 Tax**
-
-- Fixed tax being calculated on the pre-discount price
-
-**🚀 Onboarding & Setup**
-
-- Removed the AI step from the setup wizard; replaced token copy-paste with a magic link
-- Added progress indicator while locations.json downloads on fresh install
-
-**🎨 Storefront & Theme Compatibility**
-
-- Improved storefront rendering on modern themes via automatic CSS isolation and width fixes
-- Fixed frontend container layout issue
-
-**📊 Dashboard & Reports**
-
-- Redesigned the dashboard with a cleaner, modern layout
-- Fixed incorrect number formatting in revenue display
-- Fixed dashboard order status chart and layout issues
-
-**🛒 Products & Abandoned Cart**
-
-- Fixed demo product importer not importing product images
-- Show product names and cart total in the abandoned cart list
-- Fixed abandoned cart reminder not sending on the Remind button
-
-**🧩 Addons**
-
-- Fixed Klaviyo and PDF Invoice addons incorrectly shown as Pro
-- Fixed addons installing under a wrong/temporary directory
-- Fixed prompt to install the bundled Stripe plugin when using subscriptions
-
-**🐛 Bug Fixes & UI**
-
-- Search now triggers on Enter key across all screens
-- Switched the admin menu to monochrome icons
-- Fixed state and city dropdowns not working
-- Fixed coupon status dropdown not appearing
-- Fixed wrong date placeholder in search fields
-- Fixed last order date not displaying in order details
-- Fixed sort dropdown label overflowing its button
-- Fixed the WordPress admin sidebar not highlighting the EasyCommerce Dashboard
-- Fixed a broken placeholder page link in email settings
-- Fixed documentation page not loading
 
 == Upgrade Notice ==
 

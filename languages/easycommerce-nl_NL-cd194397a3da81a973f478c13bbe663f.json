@@ -1,0 +1,266 @@
+{
+    "translation-revision-date": "2026-07-23 00:00+0000",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "build\/settings.bundle.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "nl_NL",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Something went wrong": [
+                "Er is iets misgegaan"
+            ],
+            "Pro": [
+                "Pro"
+            ],
+            "General": [
+                "Algemeen"
+            ],
+            "Orders": [
+                "Bestellingen"
+            ],
+            "Checkout": [
+                "Afrekenen"
+            ],
+            "Payment": [
+                "Betaling"
+            ],
+            "First Name": [
+                "Voornaam"
+            ],
+            "Write here": [
+                "Schrijf hier"
+            ],
+            "Emails": [
+                "E-mails"
+            ],
+            "Settings": [
+                "Instellingen"
+            ],
+            "Shipping": [
+                "Verzending"
+            ],
+            "Taxation": [
+                "Belasting"
+            ],
+            "Cart Recovery": [
+                "Winkelwagenherstel"
+            ],
+            "Subject": [
+                "Onderwerp"
+            ],
+            "AI": [
+                "AI"
+            ],
+            "Smart Search": [
+                "Slim zoeken"
+            ],
+            "Cancel": [
+                "Annuleren"
+            ],
+            "Activate License": [
+                "Licentie activeren"
+            ],
+            "Get Pro": [
+                "Word Pro"
+            ],
+            "Your Email": [
+                "Je e-mailadres"
+            ],
+            "Message": [
+                "Bericht"
+            ],
+            "Connect AI": [
+                "AI verbinden"
+            ],
+            "AI Writer": [
+                "AI Writer"
+            ],
+            "Image Editor": [
+                "Afbeeldingsbewerker"
+            ],
+            "Store Copilot": [
+                "Store Copilot"
+            ],
+            "Close": [
+                "Sluiten"
+            ],
+            "Send": [
+                "Verzenden"
+            ],
+            "Email Address": [
+                "E-mailadres"
+            ],
+            "Enter your Email": [
+                "Voer je e-mailadres in"
+            ],
+            "Profile": [
+                "Profiel"
+            ],
+            "Your Voice Matters": [
+                "Jouw mening telt"
+            ],
+            "Help us make EasyCommerce the best it can be. Share your feedback and ideas with us!": [
+                "Help ons EasyCommerce zo goed mogelijk te maken. Deel je feedback en idee\u00ebn met ons!"
+            ],
+            "Enter first name": [
+                "Voer voornaam in"
+            ],
+            "Enter a valid email address": [
+                "Voer een geldig e-mailadres in"
+            ],
+            "Send Message": [
+                "Bericht verzenden"
+            ],
+            "Thank you for your feedback": [
+                "Bedankt voor je feedback"
+            ],
+            "We will use your feedback to build a better experience for everyone.": [
+                "We gebruiken je feedback om een betere ervaring voor iedereen te bouwen."
+            ],
+            "Feedback": [
+                "Feedback"
+            ],
+            "Ask Store Copilot anything about your store - get insights, or manage products and orders right from chat.": [
+                "Vraag Store Copilot alles over je winkel - krijg inzichten of beheer producten en bestellingen rechtstreeks vanuit de chat."
+            ],
+            "What is today's total revenue?": [
+                "Wat is de totale omzet van vandaag?"
+            ],
+            "How many orders were placed this week?": [
+                "Hoeveel bestellingen zijn er deze week geplaatst?"
+            ],
+            "Which product is performing best?": [
+                "Welk product presteert het best?"
+            ],
+            "What is my average order value this month?": [
+                "Wat is mijn gemiddelde bestelwaarde deze maand?"
+            ],
+            "How many new vs returning customers this week?": [
+                "Hoeveel nieuwe versus terugkerende klanten deze week?"
+            ],
+            "Which products are low in stock?": [
+                "Welke producten hebben een lage voorraad?"
+            ],
+            "Examples": [
+                "Voorbeelden"
+            ],
+            "Uses %d credit.": [
+                "Gebruikt %d credit.",
+                "Gebruikt %d credits."
+            ],
+            "%d Credit": [
+                "%d credit",
+                "%d credits"
+            ],
+            "Remaining": [
+                "Resterend"
+            ],
+            "Network response was not okay": [
+                "Netwerkantwoord was niet in orde"
+            ],
+            "No answer found": [
+                "Geen antwoord gevonden"
+            ],
+            "Ask a Question": [
+                "Stel een vraag"
+            ],
+            "No credits available": [
+                "Geen credits beschikbaar"
+            ],
+            "Two AI Agents, One Free Key": [
+                "Twee AI-agents, \u00e9\u00e9n gratis sleutel"
+            ],
+            "Connect a free API key -": [
+                "Verbind een gratis API-sleutel -"
+            ],
+            "100 AI credits": [
+                "100 AI-credits"
+            ],
+            "free, more with": [
+                "gratis, meer met"
+            ],
+            "Store Copilot - For You": [
+                "Store Copilot - voor jou"
+            ],
+            "Chat to run your store: ask about sales, create and edit products, and update orders - in plain English, with your approval.": [
+                "Chat om je winkel te runnen: vraag naar verkopen, maak en bewerk producten en werk bestellingen bij - in gewone taal, met jouw goedkeuring."
+            ],
+            "Shopping Agent - For Your Shoppers": [
+                "Winkelagent - voor je klanten"
+            ],
+            "A 24\/7 storefront agent that helps customers find the right product, answers their questions, and places orders for them.": [
+                "Een 24\/7-winkelagent die klanten helpt het juiste product te vinden, hun vragen beantwoordt en bestellingen voor hen plaatst."
+            ],
+            "Plus": [
+                "Plus"
+            ],
+            "& more.": [
+                "& meer."
+            ],
+            "Each AI request transmits only the relevant records - the item you're working on, or a shopper's query and its products - to EasyCommerce's AI service. Your bulk customer and order data is never uploaded, sold, or used to train models.": [
+                "Elke AI-aanvraag verstuurt alleen de relevante gegevens - het item waaraan je werkt, of de vraag van een klant en de bijbehorende producten - naar de AI-service van EasyCommerce. Je volledige klant- en bestelgegevens worden nooit ge\u00fcpload, verkocht of gebruikt om modellen te trainen."
+            ],
+            "Learn more.": [
+                "Meer info."
+            ],
+            "I have an API key": [
+                "Ik heb een API-sleutel"
+            ],
+            "I want an API key": [
+                "Ik wil een API-sleutel"
+            ],
+            "Please fill all the fields": [
+                "Vul alle velden in"
+            ],
+            "Enter Your Connection Key": [
+                "Voer je verbindingssleutel in"
+            ],
+            "The link in your email connects AI automatically. To do it manually, paste the key we emailed below.": [
+                "De link in je e-mail verbindt AI automatisch. Om dit handmatig te doen, plak je hieronder de sleutel die we je hebben gemaild."
+            ],
+            "Your Key": [
+                "Je sleutel"
+            ],
+            "Paste your key": [
+                "Plak je sleutel"
+            ],
+            "I don't have a key": [
+                "Ik heb geen sleutel"
+            ],
+            "Check your email and click the link to connect AI.": [
+                "Controleer je e-mail en klik op de link om AI te verbinden."
+            ],
+            "Connect EasyCommerce AI": [
+                "EasyCommerce AI verbinden"
+            ],
+            "Enter your name and email - we'll send a one-click link to connect AI, plus a backup key.": [
+                "Voer je naam en e-mailadres in - we sturen je een link om AI met \u00e9\u00e9n klik te verbinden, plus een reservesleutel."
+            ],
+            "Your Name": [
+                "Je naam"
+            ],
+            "Enter your Name": [
+                "Voer je naam in"
+            ],
+            "Email My Link": [
+                "Mail mij mijn link"
+            ],
+            "I already have a key": [
+                "Ik heb al een sleutel"
+            ],
+            "Join Community": [
+                "Word lid van de community"
+            ],
+            "Support": [
+                "Ondersteuning"
+            ],
+            "Disconnect": [
+                "Loskoppelen"
+            ]
+        }
+    }
+}

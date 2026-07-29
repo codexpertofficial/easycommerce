@@ -1,0 +1,117 @@
+{
+    "translation-revision-date": "2026-07-23 00:00+0000",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "build\/tax.bundle.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "zh_CN",
+                "plural-forms": "nplurals=1; plural=0;"
+            },
+            "Country": [
+                "\u56fd\u5bb6\/\u5730\u533a"
+            ],
+            "State": [
+                "\u5dde\/\u7701"
+            ],
+            "City": [
+                "\u57ce\u5e02"
+            ],
+            "Cancel": [
+                "\u53d6\u6d88"
+            ],
+            "Tax class name": [
+                "\u7a0e\u79cd\u540d\u79f0"
+            ],
+            "Name": [
+                "\u540d\u79f0"
+            ],
+            "Status": [
+                "\u72b6\u6001"
+            ],
+            "Are you sure you want to delete?": [
+                "\u60a8\u786e\u5b9a\u8981\u5220\u9664\u5417\uff1f"
+            ],
+            "You're going to delete this, are you sure?": [
+                "\u60a8\u5373\u5c06\u5220\u9664\u6b64\u9879\uff0c\u786e\u5b9a\u5417\uff1f"
+            ],
+            "No, Keep it": [
+                "\u4e0d\uff0c\u4fdd\u7559"
+            ],
+            "Yes, Delete": [
+                "\u662f\uff0c\u5220\u9664"
+            ],
+            "Delete Permanently": [
+                "\u6c38\u4e45\u5220\u9664"
+            ],
+            "Description": [
+                "\u63cf\u8ff0"
+            ],
+            "Tax Classes": [
+                "\u7a0e\u79cd"
+            ],
+            "Active": [
+                "\u542f\u7528"
+            ],
+            "Inactive": [
+                "\u505c\u7528"
+            ],
+            "Actions": [
+                "\u64cd\u4f5c"
+            ],
+            "Read docs.": [
+                "\u9605\u8bfb\u6587\u6863\u3002"
+            ],
+            "Write description here": [
+                "\u5728\u6b64\u586b\u5199\u63cf\u8ff0"
+            ],
+            "Enable\/Disable": [
+                "\u542f\u7528\/\u7981\u7528"
+            ],
+            "Regions": [
+                "\u533a\u57df"
+            ],
+            "No tax classes configured": [
+                "\u5c1a\u672a\u914d\u7f6e\u7a0e\u79cd"
+            ],
+            "Set up tax classes to apply the correct tax amounts to products. ": [
+                "\u8bbe\u7f6e\u7a0e\u79cd\uff0c\u4e3a\u5546\u54c1\u5e94\u7528\u6b63\u786e\u7684\u7a0e\u989d\u3002 "
+            ],
+            "+ Add Class": [
+                "+ \u6dfb\u52a0\u7a0e\u79cd"
+            ],
+            "Add Class": [
+                "\u6dfb\u52a0\u7a0e\u79cd"
+            ],
+            "Class": [
+                "\u7a0e\u79cd"
+            ],
+            "Rate (%)": [
+                "\u7a0e\u7387\uff08%\uff09"
+            ],
+            "- Select -": [
+                "- \u9009\u62e9 -"
+            ],
+            "Update Taxation": [
+                "\u66f4\u65b0\u7a0e\u52a1"
+            ],
+            "Create Taxation": [
+                "\u521b\u5efa\u7a0e\u52a1"
+            ],
+            "Rates": [
+                "\u7a0e\u7387"
+            ],
+            "Add Tax Class": [
+                "\u6dfb\u52a0\u7a0e\u79cd"
+            ],
+            "Populate Tax Rates": [
+                "\u586b\u5145\u7a0e\u7387"
+            ],
+            "Tax rates for all areas of %s": [
+                "%s \u6240\u6709\u5730\u533a\u7684\u7a0e\u7387"
+            ]
+        }
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "translation-revision-date": "2026-07-23 00:00+0000",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "assets\/payment\/js\/braintree.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "nl_NL",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Braintree.js failed to load or missing authorization token.": [
+                "Braintree.js kon niet worden geladen of het autorisatietoken ontbreekt."
+            ],
+            "Error initializing Braintree.": [
+                "Fout bij het initialiseren van Braintree."
+            ],
+            "Failed to get payment nonce.": [
+                "Kon betalings-nonce niet ophalen."
+            ],
+            "Error processing payment.": [
+                "Fout bij het verwerken van de betaling."
+            ]
+        }
+    }
+}

@@ -158,6 +158,15 @@ function easycommerce_stripe_get_api_client() {
 /**
  * Filter payment methods based on currency compatibility.
  *
+ * Used by the SetupIntent (recurring) path and by client-side localisation. The
+ * non-recurring PaymentIntent path no longer calls this — it relies on Stripe's
+ * automatic payment methods to filter by account country, currency and amount,
+ * which is authoritative and self-updating (e.g. Klarna's currency support that
+ * varies by Stripe account country).
+ *
+ * @link https://docs.stripe.com/payments/payment-methods/dynamic-payment-methods
+ * @link https://docs.stripe.com/payments/klarna Klarna currency by account country.
+ *
  * @param array  $payment_methods List of payment method types.
  * @param string $currency        Currency code (lowercase).
  *
@@ -200,7 +209,7 @@ function easycommerce_stripe_filter_payment_methods_by_currency( $payment_method
 		// Buy now, pay later
 		'affirm'            => array( 'usd', 'cad' ),
 		'afterpay_clearpay' => array( 'aud', 'cad', 'nzd', 'gbp', 'usd' ),
-		'klarna'            => array( 'usd' ), // @using euro causing issues
+		'klarna'            => array( 'aud', 'cad', 'chf', 'czk', 'dkk', 'eur', 'gbp', 'nok', 'nzd', 'pln', 'ron', 'sek', 'usd' ),
 		'zip'               => array( 'aud', 'usd' ),
 		'scalapay'          => array( 'eur', 'gbp' ),
 		'sunbit'            => array( 'usd' ),
@@ -279,11 +288,19 @@ function easycommerce_stripe_payment_method_minimums() {
 			'gbp' => 100,
 		),
 		'klarna'            => array(
-			'usd' => 100,
-			'eur' => 100,
-			'gbp' => 100,
-			'aud' => 100,
-			'cad' => 100,
+			'aud' => 1000,  // AUD 10 — Pay in 4 minimum
+			'cad' => 100,   // CAD 1
+			'chf' => 100,   // CHF 1
+			'czk' => 2500,  // CZK 25 — Pay in 3/4 minimum
+			'dkk' => 100,   // DKK 1
+			'eur' => 100,   // EUR 1
+			'gbp' => 100,   // GBP 1
+			'nok' => 1000,  // NOK 10
+			'nzd' => 1000,  // NZD 10 — Pay in 4 minimum
+			'pln' => 500,   // PLN 5
+			'ron' => 500,   // RON 5
+			'sek' => 100,   // SEK 1
+			'usd' => 500,   // USD 5 — US/CA accounts only
 		),
 		'zip'               => array(
 			'usd' => 3500,

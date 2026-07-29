@@ -41,14 +41,16 @@ const Business = ({ formValues, setFormValues }) => {
     const handleChange = (field) => (e) =>
         setFormValues({ ...formValues, [field]: e.target.value });
 
-    const renderSelect = (id, name, label, value, options, description) => (
+    const renderSelect = (id, name, label, value, options, description, required = false) => (
         <div className="flex flex-col space-y-2">
             <label htmlFor={id} className="text-ec-body text-[16px] font-medium">
                 {label}
+                {required && <span className="text-[#B4322E] ml-1">*</span>}
             </label>
             <select
                 id={id}
                 name={name}
+                required={required}
                 className="easycommerce-wizard-input w-full"
                 value={value}
                 onChange={handleChange(id)}
@@ -110,7 +112,8 @@ const Business = ({ formValues, setFormValues }) => {
                         __( 'Business Type', 'easycommerce' ),
                         formValues.business_type,
                         businessTypes,
-                        __( 'Pick the type that best describes your business. You can update it later if needed.', 'easycommerce' )
+                        __( 'Pick the type that best describes your business. You can update it later if needed.', 'easycommerce' ),
+                        true
                     )}
 
                     {/* Business Address */}
@@ -145,6 +148,39 @@ const Business = ({ formValues, setFormValues }) => {
                             {__('Enter the email address your store will use for notifications and customer communications.', 'easycommerce')}
                         </p>
                     </div>
+
+                    {/* Usage data sharing consent.
+                        An unchecked checkbox is omitted from FormData entirely, and the
+                        wizard save replaces the whole general-business option group — so
+                        without this hidden companion field the opt-out would vanish on
+                        save and the box would come back checked on the next load. */}
+                    <input type="hidden" name="general-business-share_data" value="0" />
+                    <label htmlFor="share_data" className="flex items-start gap-3 cursor-pointer">
+                        <input
+                            id="share_data"
+                            type="checkbox"
+                            name="general-business-share_data"
+                            value="1"
+                            checked={!!formValues.share_data}
+                            onChange={(e) =>
+                                setFormValues((prev) => ({ ...prev, share_data: e.target.checked }))
+                            }
+                            className="mt-1 flex-shrink-0"
+                        />
+                        <span className="text-[#828282] text-[14px]">
+                            {__('Share basic usage data to help improve EasyCommerce. No sensitive or customer data is collected.', 'easycommerce')}
+                            {' '}
+                            <a
+                                href="https://easycommerce.dev/docs/pre-sales/telemetry/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={(e) => e.stopPropagation()}
+                                className="text-[#828282] underline"
+                            >
+                                {__('See more.', 'easycommerce')}
+                            </a>
+                        </span>
+                    </label>
                 </div>
             </div>
         </div>

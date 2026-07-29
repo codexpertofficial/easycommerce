@@ -23,8 +23,8 @@ class ReportsBaseTest extends EasyCommerceTestCase {
 	private array $refund_ids = [];
 	private int $product_id;
 
-	private const RANGE      = '2099-01-01,2099-01-31';
-	private const ORDER_DATE = '2099-01-15 10:00:00';
+	private const RANGE      = '2035-01-01,2035-01-31';
+	private const ORDER_DATE = '2035-01-15 10:00:00';
 
 	public function set_up(): void {
 		parent::set_up();
@@ -81,7 +81,7 @@ class ReportsBaseTest extends EasyCommerceTestCase {
 	public function test_get_refund_stats_excludes_refunds_outside_date_range(): void {
 		$order_id  = $this->seed_order_with_items( 100.00, 2 );
 		$refund_id = $this->add_refund( $order_id, 40.00 );
-		// Push refund outside the 2099-01 window.
+		// Push refund outside the 2035-01 window.
 		( new Database( 'refunds' ) )->update_row( $refund_id, [ 'created_at' => '2098-06-01 10:00:00' ] );
 
 		$stats = $this->call_get_refund_stats( self::RANGE, $this->product_id );

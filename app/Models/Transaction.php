@@ -115,7 +115,11 @@ class Transaction extends Model {
 			$order->set_status( $order_status );
 		}
 
-		return $this->db->insert_row( $data );
+		// insert_row() returns null on failure; normalise to the documented
+		// false-on-failure contract so a strict === false check reads correctly.
+		$result = $this->db->insert_row( $data );
+
+		return null === $result ? false : $result;
 	}
 
 	/**

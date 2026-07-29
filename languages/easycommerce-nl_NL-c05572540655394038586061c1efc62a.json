@@ -1,0 +1,72 @@
+{
+    "translation-revision-date": "2026-07-23 00:00+0000",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "assets\/payment\/js\/stripe-payment.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "nl_NL",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Failed to load cart data. Please refresh the page.": [
+                "Kon winkelwagengegevens niet laden. Vernieuw de pagina."
+            ],
+            "Failed to create payment. Please try again.": [
+                "Kon betaling niet aanmaken. Probeer het opnieuw."
+            ],
+            "Payment form failed to load. Please refresh.": [
+                "Betaalformulier kon niet worden geladen. Vernieuw de pagina."
+            ],
+            "Could not verify cart. Please refresh and try again.": [
+                "Kon winkelwagen niet verifi\u00ebren. Vernieuw de pagina en probeer het opnieuw."
+            ],
+            "Failed to create payment. Please refresh the page and try again.": [
+                "Kon betaling niet aanmaken. Vernieuw de pagina en probeer het opnieuw."
+            ],
+            "This payment handler is not available. Please refresh and try again.": [
+                "Deze betalingsverwerker is niet beschikbaar. Vernieuw de pagina en probeer het opnieuw."
+            ],
+            "Additional verification required. Please complete the payment process.": [
+                "Aanvullende verificatie vereist. Voltooi het betaalproces."
+            ],
+            "Payment failed. Please try a different payment method.": [
+                "Betaling mislukt. Probeer een andere betaalmethode."
+            ],
+            "Payment was canceled. Please try again.": [
+                "Betaling is geannuleerd. Probeer het opnieuw."
+            ],
+            "Payment status: %s. Please contact support if this persists.": [
+                "Betaalstatus: %s. Neem contact op met support als dit blijft optreden."
+            ],
+            "Payment could not be processed. Please try again.": [
+                "Betaling kon niet worden verwerkt. Probeer het opnieuw."
+            ],
+            "An error occurred while processing your payment. Please try again.": [
+                "Er is een fout opgetreden bij het verwerken van je betaling. Probeer het opnieuw."
+            ],
+            "Verifying payment...": [
+                "Betaling verifi\u00ebren..."
+            ],
+            "Payment successful! Creating order...": [
+                "Betaling geslaagd! Bestelling wordt aangemaakt..."
+            ],
+            "Payment method could not be saved. Status: %s": [
+                "Betaalmethode kon niet worden opgeslagen. Status: %s"
+            ],
+            "Failed to verify payment. Please contact support.": [
+                "Kon betaling niet verifi\u00ebren. Neem contact op met support."
+            ],
+            "Payment failed. Please try again with a different payment method.": [
+                "Betaling mislukt. Probeer het opnieuw met een andere betaalmethode."
+            ],
+            "Additional action required. Please complete the payment process.": [
+                "Aanvullende actie vereist. Voltooi het betaalproces."
+            ],
+            "Payment could not be completed. Status: %s": [
+                "Betaling kon niet worden voltooid. Status: %s"
+            ]
+        }
+    }
+}

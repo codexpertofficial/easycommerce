@@ -1,0 +1,138 @@
+{
+    "translation-revision-date": "2026-07-23 00:00+0000",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "build\/checkout.bundle.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "zh_CN",
+                "plural-forms": "nplurals=1; plural=0;"
+            },
+            "Payment Method": [
+                "\u652f\u4ed8\u65b9\u5f0f"
+            ],
+            "First Name": [
+                "\u540d\u5b57"
+            ],
+            "Your first name": [
+                "\u60a8\u7684\u540d\u5b57"
+            ],
+            "Last Name": [
+                "\u59d3\u6c0f"
+            ],
+            "Your last name": [
+                "\u60a8\u7684\u59d3\u6c0f"
+            ],
+            "Email": [
+                "\u7535\u5b50\u90ae\u7bb1"
+            ],
+            "Your email": [
+                "\u60a8\u7684\u7535\u5b50\u90ae\u7bb1"
+            ],
+            "Phone": [
+                "\u7535\u8bdd"
+            ],
+            "Enter your phone number": [
+                "\u8bf7\u8f93\u5165\u60a8\u7684\u7535\u8bdd\u53f7\u7801"
+            ],
+            "Country": [
+                "\u56fd\u5bb6\/\u5730\u533a"
+            ],
+            "State": [
+                "\u5dde\/\u7701"
+            ],
+            "City": [
+                "\u57ce\u5e02"
+            ],
+            "Write here": [
+                "\u5728\u6b64\u586b\u5199"
+            ],
+            "Card Number": [
+                "\u5361\u53f7"
+            ],
+            "CVC": [
+                "CVC"
+            ],
+            "Confirm Order": [
+                "\u786e\u8ba4\u8ba2\u5355"
+            ],
+            "Subtotal": [
+                "\u5c0f\u8ba1"
+            ],
+            "Billing Address": [
+                "\u8d26\u5355\u5730\u5740"
+            ],
+            "Shipping Address": [
+                "\u914d\u9001\u5730\u5740"
+            ],
+            "Same as Billing": [
+                "\u4e0e\u8d26\u5355\u5730\u5740\u76f8\u540c"
+            ],
+            "Discount code": [
+                "\u6298\u6263\u7801"
+            ],
+            "Apply": [
+                "\u5e94\u7528"
+            ],
+            "Order Total": [
+                "\u8ba2\u5355\u603b\u989d"
+            ],
+            "Loading...": [
+                "\u52a0\u8f7d\u4e2d\u2026\u2026"
+            ],
+            "Address line 1": [
+                "\u5730\u5740\u7b2c 1 \u884c"
+            ],
+            "Your address": [
+                "\u60a8\u7684\u5730\u5740"
+            ],
+            "Address line 2": [
+                "\u5730\u5740\u7b2c 2 \u884c"
+            ],
+            "Select your City": [
+                "\u9009\u62e9\u60a8\u7684\u57ce\u5e02"
+            ],
+            "Select your State": [
+                "\u9009\u62e9\u60a8\u7684\u5dde\/\u7701"
+            ],
+            "Select your country": [
+                "\u9009\u62e9\u60a8\u7684\u56fd\u5bb6\/\u5730\u533a"
+            ],
+            "Postal Code": [
+                "\u90ae\u653f\u7f16\u7801"
+            ],
+            "Your Orders": [
+                "\u60a8\u7684\u8ba2\u5355"
+            ],
+            "Shipping Eastimate": [
+                "\u9884\u4f30\u8fd0\u8d39"
+            ],
+            "Tax Eastimate": [
+                "\u9884\u4f30\u7a0e\u8d39"
+            ],
+            "Debit \/ Credit card": [
+                "\u501f\u8bb0\u5361\/\u4fe1\u7528\u5361"
+            ],
+            "Internet banking": [
+                "\u7f51\u4e0a\u94f6\u884c"
+            ],
+            "Google \/ Apple Wallet": [
+                "Google \/ Apple \u94b1\u5305"
+            ],
+            "Name on Card": [
+                "\u5361\u4e0a\u59d3\u540d"
+            ],
+            "Enter card holder name": [
+                "\u8bf7\u8f93\u5165\u6301\u5361\u4eba\u59d3\u540d"
+            ],
+            "Expiration date (MM\/YY)": [
+                "\u6709\u6548\u671f\uff08MM\/YY\uff09"
+            ],
+            "Learn more Taxes and Shipping information": [
+                "\u4e86\u89e3\u66f4\u591a\u7a0e\u8d39\u548c\u914d\u9001\u4fe1\u606f"
+            ]
+        }
+    }
+}

@@ -13,6 +13,10 @@ const DeletePopup = ({
     isProduct = false,
     deleteImage = deleteIcon,
     forceDelete = false,
+    title = __("Are you sure you want to delete?", "easycommerce"),
+    description = __("You're going to delete this, are you sure?", "easycommerce"),
+    confirmLabel = __("Yes, Delete", "easycommerce"),
+    cancelLabel = __("No, Keep it", "easycommerce"),
 }) => {
     return (
         <div className="fixed top-0 left-0 w-screen h-screen flex items-center justify-center bg-[#00000082] backdrop-blur-sm z-[999999]">
@@ -39,10 +43,10 @@ const DeletePopup = ({
 
                 <div className="flex flex-col justify-center items-center mb-6">
                     <h3 className="font-inter font-medium text-xl text-ec-title mb-2">
-                        {__("Are you sure you want to delete?", "easycommerce")}
+                        {title}
                     </h3>
                     <p className="w-9/12 mx-auto text-center font-inter font-normal text-base text-ec-body">
-                        {__("You're going to delete this, are you sure?", "easycommerce")}
+                        {description}
                     </p>
                 </div>
 
@@ -51,14 +55,14 @@ const DeletePopup = ({
                         className="w-[181px] h-[45px] font-inter font-normal text-base border bg-white text-ec-title border-ec-title rounded-lg px-10 py-[10px]"
                         onClick={onClose}
                     >
-                        {__("No, Keep it", "easycommerce")}
+                        {cancelLabel}
                     </button>
                     <button
                         className="w-[181px] h-[45px] font-inter font-normal text-base rounded-lg px-10 py-[10px] border bg-ec-red border-ec-red hover:bg-[#FF3A52CC] hover:border-[#FF3A52CC] text-white transition"
                         onClick={forceDelete ? onPermanentDelete : onConfirm}
                         type="button"
                     >
-                        {__("Yes, Delete", "easycommerce")}
+                        {confirmLabel}
                     </button>
                 </div>
 

@@ -1,0 +1,444 @@
+{
+    "translation-revision-date": "2026-07-23 00:00+0000",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "build\/dashboard.bundle.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "zh_CN",
+                "plural-forms": "nplurals=1; plural=0;"
+            },
+            "Passwords do not match": [
+                "\u4e24\u6b21\u8f93\u5165\u7684\u5bc6\u7801\u4e0d\u4e00\u81f4"
+            ],
+            "Payment Method": [
+                "\u652f\u4ed8\u65b9\u5f0f"
+            ],
+            "Order ID": [
+                "\u8ba2\u5355 ID"
+            ],
+            "Order Status": [
+                "\u8ba2\u5355\u72b6\u6001"
+            ],
+            "Orders": [
+                "\u8ba2\u5355"
+            ],
+            "Pending": [
+                "\u5f85\u5904\u7406"
+            ],
+            "Processing": [
+                "\u5904\u7406\u4e2d"
+            ],
+            "Completed": [
+                "\u5df2\u5b8c\u6210"
+            ],
+            "Refunded": [
+                "\u5df2\u9000\u6b3e"
+            ],
+            "Cancelled": [
+                "\u5df2\u53d6\u6d88"
+            ],
+            "On Hold": [
+                "\u6682\u6302"
+            ],
+            "Dashboard": [
+                "\u4eea\u8868\u76d8"
+            ],
+            "First Name": [
+                "\u540d\u5b57"
+            ],
+            "Last Name": [
+                "\u59d3\u6c0f"
+            ],
+            "Email": [
+                "\u7535\u5b50\u90ae\u7bb1"
+            ],
+            "Phone": [
+                "\u7535\u8bdd"
+            ],
+            "Enter your phone number": [
+                "\u8bf7\u8f93\u5165\u60a8\u7684\u7535\u8bdd\u53f7\u7801"
+            ],
+            "Address 1": [
+                "\u5730\u5740 1"
+            ],
+            "Address 2": [
+                "\u5730\u5740 2"
+            ],
+            "Country": [
+                "\u56fd\u5bb6\/\u5730\u533a"
+            ],
+            "State": [
+                "\u5dde\/\u7701"
+            ],
+            "City": [
+                "\u57ce\u5e02"
+            ],
+            "Business Type": [
+                "\u5546\u5bb6\u7c7b\u578b"
+            ],
+            "Address": [
+                "\u5730\u5740"
+            ],
+            "Settings": [
+                "\u8bbe\u7f6e"
+            ],
+            "Shipping": [
+                "\u914d\u9001"
+            ],
+            "Cancel": [
+                "\u53d6\u6d88"
+            ],
+            "Your Email": [
+                "\u60a8\u7684\u7535\u5b50\u90ae\u7bb1"
+            ],
+            "Action": [
+                "\u64cd\u4f5c"
+            ],
+            "Transaction ID": [
+                "\u4ea4\u6613 ID"
+            ],
+            "Transactions": [
+                "\u4ea4\u6613"
+            ],
+            "Product Image": [
+                "\u5546\u54c1\u56fe\u7247"
+            ],
+            "Date": [
+                "\u65e5\u671f"
+            ],
+            "Pay Now": [
+                "\u7acb\u5373\u652f\u4ed8"
+            ],
+            "Subtotal": [
+                "\u5c0f\u8ba1"
+            ],
+            "Discount": [
+                "\u6298\u6263"
+            ],
+            "Total": [
+                "\u5408\u8ba1"
+            ],
+            "Type": [
+                "\u7c7b\u578b"
+            ],
+            "Size": [
+                "\u5c3a\u5bf8"
+            ],
+            "Billing Address": [
+                "\u8d26\u5355\u5730\u5740"
+            ],
+            "Shipping Address": [
+                "\u914d\u9001\u5730\u5740"
+            ],
+            "Product Tax": [
+                "\u5546\u54c1\u7a0e"
+            ],
+            "Shipping Tax": [
+                "\u914d\u9001\u7a0e"
+            ],
+            "Select City": [
+                "\u9009\u62e9\u57ce\u5e02"
+            ],
+            "Select State": [
+                "\u9009\u62e9\u5dde\/\u7701"
+            ],
+            "Quantity": [
+                "\u6570\u91cf"
+            ],
+            "Password": [
+                "\u5bc6\u7801"
+            ],
+            "New password": [
+                "\u65b0\u5bc6\u7801"
+            ],
+            "Enter new password": [
+                "\u8bf7\u8f93\u5165\u65b0\u5bc6\u7801"
+            ],
+            "Confirm new password": [
+                "\u786e\u8ba4\u65b0\u5bc6\u7801"
+            ],
+            "Select your country": [
+                "\u9009\u62e9\u60a8\u7684\u56fd\u5bb6\/\u5730\u533a"
+            ],
+            "Purchases": [
+                "\u8d2d\u4e70\u8bb0\u5f55"
+            ],
+            "Downloads": [
+                "\u4e0b\u8f7d"
+            ],
+            "Profile": [
+                "\u4e2a\u4eba\u8d44\u6599"
+            ],
+            "Logout": [
+                "\u9000\u51fa\u767b\u5f55"
+            ],
+            "Unknown User": [
+                "\u672a\u77e5\u7528\u6237"
+            ],
+            "User Profile Image": [
+                "\u7528\u6237\u5934\u50cf"
+            ],
+            "arrow": [
+                "\u7bad\u5934"
+            ],
+            "Total Orders": [
+                "\u8ba2\u5355\u603b\u6570"
+            ],
+            "N\/A": [
+                "\u4e0d\u9002\u7528"
+            ],
+            "Total Spent": [
+                "\u6d88\u8d39\u603b\u989d"
+            ],
+            "Average Orders": [
+                "\u5e73\u5747\u8ba2\u5355"
+            ],
+            "Customer since": [
+                "\u6210\u4e3a\u5ba2\u6237\u65f6\u95f4"
+            ],
+            "Summary": [
+                "\u6458\u8981"
+            ],
+            "icon": [
+                "\u56fe\u6807"
+            ],
+            "View": [
+                "\u67e5\u770b"
+            ],
+            "Recent Orders": [
+                "\u6700\u8fd1\u8ba2\u5355"
+            ],
+            "View More": [
+                "\u67e5\u770b\u66f4\u591a"
+            ],
+            "No orders yet": [
+                "\u6682\u65e0\u8ba2\u5355"
+            ],
+            "When you place an order it will show up here.": [
+                "\u5f53\u60a8\u4e0b\u5355\u540e\uff0c\u8ba2\u5355\u5c06\u663e\u793a\u5728\u6b64\u5904\u3002"
+            ],
+            "Amount": [
+                "\u91d1\u989d"
+            ],
+            "Status": [
+                "\u72b6\u6001"
+            ],
+            "View order": [
+                "\u67e5\u770b\u8ba2\u5355"
+            ],
+            "Back": [
+                "\u4e0a\u4e00\u9875"
+            ],
+            "Next": [
+                "\u4e0b\u4e00\u9875"
+            ],
+            "No orders available": [
+                "\u6682\u65e0\u53ef\u7528\u8ba2\u5355"
+            ],
+            "Orders you place will appear here.": [
+                "\u60a8\u4e0b\u7684\u8ba2\u5355\u5c06\u663e\u793a\u5728\u6b64\u5904\u3002"
+            ],
+            "card-icon": [
+                "\u5361\u7247\u56fe\u6807"
+            ],
+            "Click to copy": [
+                "\u70b9\u51fb\u590d\u5236"
+            ],
+            "Copy": [
+                "\u590d\u5236"
+            ],
+            "Copied!": [
+                "\u5df2\u590d\u5236\uff01"
+            ],
+            "No transactions available": [
+                "\u6682\u65e0\u53ef\u7528\u4ea4\u6613"
+            ],
+            "Your payment history will appear here.": [
+                "\u60a8\u7684\u652f\u4ed8\u8bb0\u5f55\u5c06\u663e\u793a\u5728\u6b64\u5904\u3002"
+            ],
+            "File Name": [
+                "\u6587\u4ef6\u540d"
+            ],
+            "%s icon": [
+                "%s \u56fe\u6807"
+            ],
+            "Download": [
+                "\u4e0b\u8f7d"
+            ],
+            "No downloads available": [
+                "\u6682\u65e0\u53ef\u7528\u4e0b\u8f7d"
+            ],
+            "Files from your purchases will appear here.": [
+                "\u60a8\u8d2d\u4e70\u7684\u6587\u4ef6\u5c06\u663e\u793a\u5728\u6b64\u5904\u3002"
+            ],
+            "Select Image": [
+                "\u9009\u62e9\u56fe\u7247"
+            ],
+            "Use selected image": [
+                "\u4f7f\u7528\u6240\u9009\u56fe\u7247"
+            ],
+            "user": [
+                "\u7528\u6237"
+            ],
+            "camera": [
+                "\u76f8\u673a"
+            ],
+            "Your profile": [
+                "\u60a8\u7684\u4e2a\u4eba\u8d44\u6599"
+            ],
+            "Profile updated successfully": [
+                "\u4e2a\u4eba\u8d44\u6599\u66f4\u65b0\u6210\u529f"
+            ],
+            "Profile update failed": [
+                "\u4e2a\u4eba\u8d44\u6599\u66f4\u65b0\u5931\u8d25"
+            ],
+            "Enter your first name": [
+                "\u8bf7\u8f93\u5165\u60a8\u7684\u540d\u5b57"
+            ],
+            "Enter your last name": [
+                "\u8bf7\u8f93\u5165\u60a8\u7684\u59d3\u6c0f"
+            ],
+            "Enter your email": [
+                "\u8bf7\u8f93\u5165\u60a8\u7684\u7535\u5b50\u90ae\u7bb1"
+            ],
+            "Phone Number": [
+                "\u7535\u8bdd\u53f7\u7801"
+            ],
+            "Company Name": [
+                "\u516c\u53f8\u540d\u79f0"
+            ],
+            "Enter your company name": [
+                "\u8bf7\u8f93\u5165\u60a8\u7684\u516c\u53f8\u540d\u79f0"
+            ],
+            "Tax ID": [
+                "\u7a0e\u53f7"
+            ],
+            "Enter your tax ID": [
+                "\u8bf7\u8f93\u5165\u60a8\u7684\u7a0e\u53f7"
+            ],
+            "Select your Business Type": [
+                "\u9009\u62e9\u60a8\u7684\u5546\u5bb6\u7c7b\u578b"
+            ],
+            "Manufacturing": [
+                "\u5236\u9020\u4e1a"
+            ],
+            "Finance and Insurance": [
+                "\u91d1\u878d\u4e0e\u4fdd\u9669"
+            ],
+            "Healthcare": [
+                "\u533b\u7597\u4fdd\u5065"
+            ],
+            "Real Estate": [
+                "\u623f\u5730\u4ea7"
+            ],
+            "Update Profile": [
+                "\u66f4\u65b0\u4e2a\u4eba\u8d44\u6599"
+            ],
+            "Enter company name": [
+                "\u8bf7\u8f93\u5165\u516c\u53f8\u540d\u79f0"
+            ],
+            "Address Line 1": [
+                "\u5730\u5740\u7b2c 1 \u884c"
+            ],
+            "Enter address": [
+                "\u8bf7\u8f93\u5165\u5730\u5740"
+            ],
+            "Address Line 2": [
+                "\u5730\u5740\u7b2c 2 \u884c"
+            ],
+            "Apartment, suite, etc.": [
+                "\u516c\u5bd3\u3001\u5957\u623f\u7b49"
+            ],
+            "State\/Province": [
+                "\u5dde\/\u7701"
+            ],
+            "ZIP\/Postal Code": [
+                "\u90ae\u653f\u7f16\u7801"
+            ],
+            "Enter postal code": [
+                "\u8bf7\u8f93\u5165\u90ae\u653f\u7f16\u7801"
+            ],
+            "Update Address": [
+                "\u66f4\u65b0\u5730\u5740"
+            ],
+            "%s Address": [
+                "%s \u5730\u5740"
+            ],
+            "Billing": [
+                "\u8d26\u5355"
+            ],
+            "Password must be at least 6 characters long": [
+                "\u5bc6\u7801\u957f\u5ea6\u81f3\u5c11\u4e3a 6 \u4e2a\u5b57\u7b26"
+            ],
+            "Password updated successfully": [
+                "\u5bc6\u7801\u66f4\u65b0\u6210\u529f"
+            ],
+            "Error updating password": [
+                "\u66f4\u65b0\u5bc6\u7801\u65f6\u51fa\u9519"
+            ],
+            "Set your password": [
+                "\u8bbe\u7f6e\u60a8\u7684\u5bc6\u7801"
+            ],
+            "Change your Password": [
+                "\u66f4\u6539\u60a8\u7684\u5bc6\u7801"
+            ],
+            "Enter a new password below to change your password": [
+                "\u8bf7\u5728\u4e0b\u65b9\u8f93\u5165\u65b0\u5bc6\u7801\u4ee5\u66f4\u6539\u60a8\u7684\u5bc6\u7801"
+            ],
+            "Change Password": [
+                "\u66f4\u6539\u5bc6\u7801"
+            ],
+            "Items": [
+                "\u5546\u54c1"
+            ],
+            "Free Product": [
+                "\u514d\u8d39\u5546\u54c1"
+            ],
+            "Download %s": [
+                "\u4e0b\u8f7d %s"
+            ],
+            "Order Date": [
+                "\u4e0b\u5355\u65e5\u671f"
+            ],
+            "Fulfilment Status": [
+                "\u5c65\u7ea6\u72b6\u6001"
+            ],
+            "Order info": [
+                "\u8ba2\u5355\u4fe1\u606f"
+            ],
+            "No address provided.": [
+                "\u672a\u63d0\u4f9b\u5730\u5740\u3002"
+            ],
+            "Full Name": [
+                "\u5168\u540d"
+            ],
+            "Company": [
+                "\u516c\u53f8"
+            ],
+            "Order Notes": [
+                "\u8ba2\u5355\u5907\u6ce8"
+            ],
+            "Loading notes...": [
+                "\u6b63\u5728\u52a0\u8f7d\u5907\u6ce8\u2026\u2026"
+            ],
+            "No notes found for this order": [
+                "\u672a\u627e\u5230\u6b64\u8ba2\u5355\u7684\u5907\u6ce8"
+            ],
+            "Track here:": [
+                "\u5728\u6b64\u8ffd\u8e2a\uff1a"
+            ],
+            "Back to orders": [
+                "\u8fd4\u56de\u8ba2\u5355"
+            ],
+            "Order #%s": [
+                "\u8ba2\u5355 #%s"
+            ],
+            "No order data found": [
+                "\u672a\u627e\u5230\u8ba2\u5355\u6570\u636e"
+            ]
+        }
+    }
+}

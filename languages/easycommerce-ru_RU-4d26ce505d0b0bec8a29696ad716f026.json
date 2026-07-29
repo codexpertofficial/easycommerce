@@ -1,0 +1,33 @@
+{
+    "translation-revision-date": "2026-07-23 00:00+0000",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "assets\/admin\/js\/email-placeholders.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "ru_RU",
+                "plural-forms": "nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);"
+            },
+            "Insert Email Placeholder": [
+                "\u0412\u0441\u0442\u0430\u0432\u0438\u0442\u044c \u0437\u0430\u043f\u043e\u043b\u043d\u0438\u0442\u0435\u043b\u044c \u043f\u0438\u0441\u044c\u043c\u0430"
+            ],
+            "Select a placeholder:": [
+                "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0437\u0430\u043f\u043e\u043b\u043d\u0438\u0442\u0435\u043b\u044c:"
+            ],
+            "Select a placeholder to automatically insert it into your email template. These will be replaced with actual values when emails are sent.": [
+                "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0437\u0430\u043f\u043e\u043b\u043d\u0438\u0442\u0435\u043b\u044c, \u0447\u0442\u043e\u0431\u044b \u0430\u0432\u0442\u043e\u043c\u0430\u0442\u0438\u0447\u0435\u0441\u043a\u0438 \u0432\u0441\u0442\u0430\u0432\u0438\u0442\u044c \u0435\u0433\u043e \u0432 \u0448\u0430\u0431\u043b\u043e\u043d \u043f\u0438\u0441\u044c\u043c\u0430. \u041f\u0440\u0438 \u043e\u0442\u043f\u0440\u0430\u0432\u043a\u0435 \u043f\u0438\u0441\u0435\u043c \u043e\u043d\u0438 \u0431\u0443\u0434\u0443\u0442 \u0437\u0430\u043c\u0435\u043d\u0435\u043d\u044b \u0440\u0435\u0430\u043b\u044c\u043d\u044b\u043c\u0438 \u0437\u043d\u0430\u0447\u0435\u043d\u0438\u044f\u043c\u0438."
+            ],
+            "Close": [
+                "\u0417\u0430\u043a\u0440\u044b\u0442\u044c"
+            ],
+            "Search for a placeholder...": [
+                "\u041f\u043e\u0438\u0441\u043a \u0437\u0430\u043f\u043e\u043b\u043d\u0438\u0442\u0435\u043b\u044f..."
+            ],
+            "Loading...": [
+                "\u0417\u0430\u0433\u0440\u0443\u0437\u043a\u0430..."
+            ]
+        }
+    }
+}

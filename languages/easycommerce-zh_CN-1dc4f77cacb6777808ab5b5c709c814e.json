@@ -1,0 +1,165 @@
+{
+    "translation-revision-date": "2026-07-23 00:00+0000",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "build\/editor.bundle.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "zh_CN",
+                "plural-forms": "nplurals=1; plural=0;"
+            },
+            "Pro": [
+                "\u4e13\u4e1a\u7248"
+            ],
+            "Smart Search": [
+                "\u667a\u80fd\u641c\u7d22"
+            ],
+            "Your Email": [
+                "\u60a8\u7684\u7535\u5b50\u90ae\u7bb1"
+            ],
+            "Connect AI": [
+                "\u8fde\u63a5 AI"
+            ],
+            "Instruction": [
+                "\u8bf4\u660e"
+            ],
+            "AI Writer": [
+                "AI \u64b0\u5199\u52a9\u624b"
+            ],
+            "Image Editor": [
+                "\u56fe\u50cf\u7f16\u8f91\u5668"
+            ],
+            "Close": [
+                "\u5173\u95ed"
+            ],
+            "Enter your Email": [
+                "\u8bf7\u8f93\u5165\u60a8\u7684\u7535\u5b50\u90ae\u7bb1"
+            ],
+            "Uses %d credit.": [
+                "\u6d88\u8017 %d \u4e2a\u989d\u5ea6\u3002"
+            ],
+            "%d Credit": [
+                "%d \u4e2a\u989d\u5ea6"
+            ],
+            "Remaining": [
+                "\u5269\u4f59"
+            ],
+            "No credits available": [
+                "\u6ca1\u6709\u53ef\u7528\u989d\u5ea6"
+            ],
+            "Two AI Agents, One Free Key": [
+                "\u4e24\u4e2a AI \u667a\u80fd\u4f53\uff0c\u4e00\u4e2a\u514d\u8d39\u5bc6\u94a5"
+            ],
+            "Connect a free API key -": [
+                "\u8fde\u63a5\u4e00\u4e2a\u514d\u8d39\u7684 API \u5bc6\u94a5 -"
+            ],
+            "100 AI credits": [
+                "100 \u4e2a AI \u989d\u5ea6"
+            ],
+            "free, more with": [
+                "\u514d\u8d39\uff0c\u66f4\u591a\u8bf7\u5347\u7ea7"
+            ],
+            "Store Copilot - For You": [
+                "\u5e97\u94fa\u526f\u9a7e\u9a76 - \u4e3a\u60a8\u670d\u52a1"
+            ],
+            "Chat to run your store: ask about sales, create and edit products, and update orders - in plain English, with your approval.": [
+                "\u901a\u8fc7\u804a\u5929\u7ba1\u7406\u60a8\u7684\u5e97\u94fa\uff1a\u67e5\u8be2\u9500\u552e\u60c5\u51b5\u3001\u521b\u5efa\u548c\u7f16\u8f91\u5546\u54c1\u3001\u66f4\u65b0\u8ba2\u5355\u2014\u2014\u7528\u65e5\u5e38\u8bed\u8a00\u5373\u53ef\u5b8c\u6210\uff0c\u4e14\u9700\u7ecf\u60a8\u786e\u8ba4\u3002"
+            ],
+            "Shopping Agent - For Your Shoppers": [
+                "\u8d2d\u7269\u667a\u80fd\u4f53 - \u4e3a\u60a8\u7684\u987e\u5ba2\u670d\u52a1"
+            ],
+            "A 24\/7 storefront agent that helps customers find the right product, answers their questions, and places orders for them.": [
+                "\u5168\u5929\u5019\u7684\u5e97\u94fa\u667a\u80fd\u4f53\uff0c\u5e2e\u52a9\u5ba2\u6237\u627e\u5230\u5408\u9002\u7684\u5546\u54c1\u3001\u89e3\u7b54\u4ed6\u4eec\u7684\u7591\u95ee\uff0c\u5e76\u4e3a\u4ed6\u4eec\u4e0b\u5355\u3002"
+            ],
+            "Plus": [
+                "\u53e6\u5916"
+            ],
+            "& more.": [
+                "\u7b49\u66f4\u591a\u529f\u80fd\u3002"
+            ],
+            "Each AI request transmits only the relevant records - the item you're working on, or a shopper's query and its products - to EasyCommerce's AI service. Your bulk customer and order data is never uploaded, sold, or used to train models.": [
+                "\u6bcf\u6b21 AI \u8bf7\u6c42\u4ec5\u5c06\u76f8\u5173\u8bb0\u5f55\u2014\u2014\u60a8\u6b63\u5728\u5904\u7406\u7684\u5546\u54c1\uff0c\u6216\u987e\u5ba2\u7684\u67e5\u8be2\u53ca\u5176\u76f8\u5173\u5546\u54c1\u2014\u2014\u4f20\u8f93\u81f3 EasyCommerce \u7684 AI \u670d\u52a1\u3002\u60a8\u7684\u6279\u91cf\u5ba2\u6237\u548c\u8ba2\u5355\u6570\u636e\u7edd\u4e0d\u4f1a\u88ab\u4e0a\u4f20\u3001\u51fa\u552e\u6216\u7528\u4e8e\u8bad\u7ec3\u6a21\u578b\u3002"
+            ],
+            "Learn more.": [
+                "\u4e86\u89e3\u66f4\u591a\u3002"
+            ],
+            "I have an API key": [
+                "\u6211\u5df2\u6709 API \u5bc6\u94a5"
+            ],
+            "I want an API key": [
+                "\u6211\u60f3\u8981\u4e00\u4e2a API \u5bc6\u94a5"
+            ],
+            "Please fill all the fields": [
+                "\u8bf7\u586b\u5199\u6240\u6709\u5b57\u6bb5"
+            ],
+            "Enter Your Connection Key": [
+                "\u8f93\u5165\u60a8\u7684\u8fde\u63a5\u5bc6\u94a5"
+            ],
+            "The link in your email connects AI automatically. To do it manually, paste the key we emailed below.": [
+                "\u90ae\u4ef6\u4e2d\u7684\u94fe\u63a5\u4f1a\u81ea\u52a8\u8fde\u63a5 AI\u3002\u82e5\u8981\u624b\u52a8\u8fde\u63a5\uff0c\u8bf7\u5c06\u6211\u4eec\u53d1\u9001\u5230\u90ae\u7bb1\u7684\u5bc6\u94a5\u7c98\u8d34\u5230\u4e0b\u65b9\u3002"
+            ],
+            "Your Key": [
+                "\u60a8\u7684\u5bc6\u94a5"
+            ],
+            "Paste your key": [
+                "\u7c98\u8d34\u60a8\u7684\u5bc6\u94a5"
+            ],
+            "I don't have a key": [
+                "\u6211\u6ca1\u6709\u5bc6\u94a5"
+            ],
+            "Check your email and click the link to connect AI.": [
+                "\u8bf7\u67e5\u770b\u60a8\u7684\u7535\u5b50\u90ae\u7bb1\u5e76\u70b9\u51fb\u94fe\u63a5\u4ee5\u8fde\u63a5 AI\u3002"
+            ],
+            "Connect EasyCommerce AI": [
+                "\u8fde\u63a5 EasyCommerce AI"
+            ],
+            "Enter your name and email - we'll send a one-click link to connect AI, plus a backup key.": [
+                "\u8bf7\u8f93\u5165\u60a8\u7684\u59d3\u540d\u548c\u7535\u5b50\u90ae\u7bb1\u2014\u2014\u6211\u4eec\u5c06\u53d1\u9001\u4e00\u4e2a\u4e00\u952e\u8fde\u63a5 AI \u7684\u94fe\u63a5\uff0c\u4ee5\u53ca\u4e00\u4e2a\u5907\u7528\u5bc6\u94a5\u3002"
+            ],
+            "Your Name": [
+                "\u60a8\u7684\u59d3\u540d"
+            ],
+            "Enter your Name": [
+                "\u8bf7\u8f93\u5165\u60a8\u7684\u59d3\u540d"
+            ],
+            "Email My Link": [
+                "\u5c06\u94fe\u63a5\u53d1\u9001\u5230\u6211\u7684\u90ae\u7bb1"
+            ],
+            "I already have a key": [
+                "\u6211\u5df2\u6709\u5bc6\u94a5"
+            ],
+            "Invalid response from AI service. Please try again.": [
+                "AI \u670d\u52a1\u8fd4\u56de\u7684\u54cd\u5e94\u65e0\u6548\u3002\u8bf7\u91cd\u8bd5\u3002"
+            ],
+            "You have used all your free credits.": [
+                "\u60a8\u5df2\u7528\u5b8c\u6240\u6709\u514d\u8d39\u989d\u5ea6\u3002"
+            ],
+            "Upgrade Now": [
+                "\u7acb\u5373\u5347\u7ea7"
+            ],
+            "AI Template Builder": [
+                "AI \u6a21\u677f\u6784\u5efa\u5668"
+            ],
+            "AI Assistant": [
+                "AI \u52a9\u624b"
+            ],
+            "Failed to generate content. Please try again.": [
+                "\u751f\u6210\u5185\u5bb9\u5931\u8d25\u3002\u8bf7\u91cd\u8bd5\u3002"
+            ],
+            "Describe what you want to build": [
+                "\u63cf\u8ff0\u60a8\u60f3\u8981\u6784\u5efa\u7684\u5185\u5bb9"
+            ],
+            "Example: Make it 2 columns with a big gallery section at left.": [
+                "\u793a\u4f8b\uff1a\u5c06\u5176\u8bbe\u4e3a\u4e24\u5217\uff0c\u5de6\u4fa7\u914d\u4e00\u4e2a\u5927\u7684\u56fe\u5e93\u533a\u57df\u3002"
+            ],
+            "Building...": [
+                "\u6784\u5efa\u4e2d\u2026\u2026"
+            ],
+            "Build": [
+                "\u6784\u5efa"
+            ]
+        }
+    }
+}

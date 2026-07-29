@@ -13,7 +13,7 @@ use WP_UnitTest_Factory_For_Thing;
  *     'customer_id' => 1,
  *     'total'       => 100.00,
  *     'status'      => 'completed',
- *     'created_at'  => '2099-01-15 10:00:00',   // optional: override auto timestamp
+ *     'created_at'  => '2035-01-15 10:00:00',   // optional: override auto timestamp
  *     'items'       => [                          // optional: line items to add
  *         [ 'product_id' => 5, 'price_id' => 1, 'quantity' => 2, 'price' => 50.00 ],
  *     ],

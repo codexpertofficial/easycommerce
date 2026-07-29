@@ -1,0 +1,167 @@
+{
+    "translation-revision-date": "2026-07-23 12:00+0000",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "build\/editor.bundle.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "it_IT",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Pro": [
+                "Pro"
+            ],
+            "Smart Search": [
+                "Ricerca intelligente"
+            ],
+            "Your Email": [
+                "La tua email"
+            ],
+            "Connect AI": [
+                "Collega l'AI"
+            ],
+            "Instruction": [
+                "Istruzioni"
+            ],
+            "AI Writer": [
+                "AI Writer"
+            ],
+            "Image Editor": [
+                "Editor di immagini"
+            ],
+            "Close": [
+                "Chiudi"
+            ],
+            "Enter your Email": [
+                "Inserisci la tua email"
+            ],
+            "Uses %d credit.": [
+                "Usa %d credito.",
+                "Usa %d crediti."
+            ],
+            "%d Credit": [
+                "%d credito",
+                "%d crediti"
+            ],
+            "Remaining": [
+                "Rimanenti"
+            ],
+            "No credits available": [
+                "Nessun credito disponibile"
+            ],
+            "Two AI Agents, One Free Key": [
+                "Due agenti AI, una chiave gratuita"
+            ],
+            "Connect a free API key -": [
+                "Connetti una chiave API gratuita -"
+            ],
+            "100 AI credits": [
+                "100 crediti AI"
+            ],
+            "free, more with": [
+                "gratis, di pi\u00f9 con"
+            ],
+            "Store Copilot - For You": [
+                "Store Copilot - Per te"
+            ],
+            "Chat to run your store: ask about sales, create and edit products, and update orders - in plain English, with your approval.": [
+                "Chatta per gestire il tuo negozio: chiedi informazioni sulle vendite, crea e modifica prodotti e aggiorna gli ordini - in linguaggio naturale, con la tua approvazione."
+            ],
+            "Shopping Agent - For Your Shoppers": [
+                "Agente di acquisto - Per i tuoi acquirenti"
+            ],
+            "A 24\/7 storefront agent that helps customers find the right product, answers their questions, and places orders for them.": [
+                "Un agente attivo 24 ore su 24, 7 giorni su 7 sulla vetrina che aiuta i clienti a trovare il prodotto giusto, risponde alle loro domande ed effettua ordini per loro."
+            ],
+            "Plus": [
+                "In pi\u00f9"
+            ],
+            "& more.": [
+                "e altro ancora."
+            ],
+            "Each AI request transmits only the relevant records - the item you're working on, or a shopper's query and its products - to EasyCommerce's AI service. Your bulk customer and order data is never uploaded, sold, or used to train models.": [
+                "Ogni richiesta AI trasmette solo i record pertinenti - l'elemento su cui stai lavorando o la query di un acquirente e i relativi prodotti - al servizio AI di EasyCommerce. I tuoi dati aggregati di clienti e ordini non vengono mai caricati, venduti o utilizzati per addestrare modelli."
+            ],
+            "Learn more.": [
+                "Scopri di pi\u00f9."
+            ],
+            "I have an API key": [
+                "Ho una chiave API"
+            ],
+            "I want an API key": [
+                "Voglio una chiave API"
+            ],
+            "Please fill all the fields": [
+                "Compila tutti i campi"
+            ],
+            "Enter Your Connection Key": [
+                "Inserisci la tua chiave di connessione"
+            ],
+            "The link in your email connects AI automatically. To do it manually, paste the key we emailed below.": [
+                "Il link nella tua email collega automaticamente l'AI. Per farlo manualmente, incolla qui sotto la chiave che ti abbiamo inviato via email."
+            ],
+            "Your Key": [
+                "La tua chiave"
+            ],
+            "Paste your key": [
+                "Incolla la tua chiave"
+            ],
+            "I don't have a key": [
+                "Non ho una chiave"
+            ],
+            "Check your email and click the link to connect AI.": [
+                "Controlla la tua email e clicca sul link per collegare l'AI."
+            ],
+            "Connect EasyCommerce AI": [
+                "Collega l'AI di EasyCommerce"
+            ],
+            "Enter your name and email - we'll send a one-click link to connect AI, plus a backup key.": [
+                "Inserisci il tuo nome e la tua email - ti invieremo un link con un solo clic per collegare l'AI, oltre a una chiave di backup."
+            ],
+            "Your Name": [
+                "Il tuo nome"
+            ],
+            "Enter your Name": [
+                "Inserisci il tuo nome"
+            ],
+            "Email My Link": [
+                "Inviami il link via email"
+            ],
+            "I already have a key": [
+                "Ho gi\u00e0 una chiave"
+            ],
+            "Invalid response from AI service. Please try again.": [
+                "Risposta non valida dal servizio AI. Riprova."
+            ],
+            "You have used all your free credits.": [
+                "Hai esaurito tutti i tuoi crediti gratuiti."
+            ],
+            "Upgrade Now": [
+                "Effettua l'upgrade ora"
+            ],
+            "AI Template Builder": [
+                "Costruttore di template AI"
+            ],
+            "AI Assistant": [
+                "Assistente AI"
+            ],
+            "Failed to generate content. Please try again.": [
+                "Generazione del contenuto non riuscita. Riprova."
+            ],
+            "Describe what you want to build": [
+                "Descrivi cosa vuoi creare"
+            ],
+            "Example: Make it 2 columns with a big gallery section at left.": [
+                "Esempio: rendilo a 2 colonne con una grande sezione galleria a sinistra."
+            ],
+            "Building...": [
+                "Creazione in corso..."
+            ],
+            "Build": [
+                "Crea"
+            ]
+        }
+    }
+}

@@ -51,7 +51,7 @@
             </h5>
 
             <div id="filters" class="accordion-content accordion-shortby-content hidden">
-                <div class="w-[220px] bg-white p-6 flex flex-col gap-5 easycommerce-filters-accordion-shortby border border-ec-border rounded-xl z-10 absolute mt-3 ml-0 right-0">
+                <div class="w-[220px] bg-white p-6 flex flex-col gap-5 easycommerce-filters-accordion-shortby border border-ec-border rounded-xl z-[9999] absolute mt-3 ml-0 right-0">
                     <?php
                     $sort_options = easycommerce_product_sort_options();
                     foreach ( $sort_options as $key => $option ) {

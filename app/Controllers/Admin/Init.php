@@ -39,6 +39,7 @@ class Init {
         $this->action( 'wp_ajax_query-themes', array( $this, 'intercept_theme_query' ), 1 );
         $this->action( 'admin_init', array( $this, 'handle_cart_sessions_migration' ) );
         $this->action( 'admin_init', array( $this, 'connect_via_magic_link' ) );
+        $this->action( 'wp_ajax_ec_ai_reset_logs', array( $this, 'reset_ai_logs' ) ); 
     }
 
     /**
@@ -486,5 +487,31 @@ class Init {
         if ( ! in_array( 'total', $existing_columns, true ) && isset( $columns['total'] ) ) {
             $wpdb->query( "ALTER TABLE `{$table_full_name}` ADD COLUMN `total` " . $columns['total'] );
         }
+    }
+
+
+    /**
+     * Truncates the local ec_ai_logs table (Settings > AI > Usage > Reset Logs).
+     *
+     * This only clears the per-action usage history rows; it has no effect on
+     * the hub's authoritative monthly credit ledger (easycommerce_ai_status()).
+     *
+     * @return void
+     */
+    public function reset_ai_logs() {
+        if ( ! current_user_can( 'manage_options' ) ) {
+            wp_send_json_error( array( 'message' => __( 'Permission denied.', 'easycommerce' ) ), 403 );
+        }
+
+        check_ajax_referer( 'ec_ai_reset_logs', 'nonce' );
+
+        global $wpdb;
+        $table = $wpdb->prefix . 'ec_ai_logs';
+
+        if ( $wpdb->get_var( $wpdb->prepare( 'SHOW TABLES LIKE %s', $table ) ) === $table ) {
+            $wpdb->query( "TRUNCATE TABLE `{$table}`" );
+        }
+
+        wp_send_json_success();
     }
 }

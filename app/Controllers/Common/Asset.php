@@ -445,6 +445,16 @@ class Asset {
 					EASYCOMMERCE_VERSION,
 					true 
 				);
+
+				if ( isset( $_GET['menu'], $_GET['submenu'] ) && 'ai' === $_GET['menu'] && 'usage' === $_GET['submenu'] ) {
+					$this->enqueue_script(
+						'easycommerce_ai-usage-reset',
+						EASYCOMMERCE_BUILD_URL . 'ai-usage-reset.bundle.js',
+						array( 'wp-element', 'easycommerce' ),
+						EASYCOMMERCE_VERSION,
+						true
+					);
+				}
     
 				$this->enqueue_script(
 					'easycommerce_shipping-methods',

@@ -1,0 +1,2888 @@
+{
+    "translation-revision-date": "2026-07-23 12:00+0000",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "build\/easycommerce.bundle.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "it_IT",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Something went wrong": [
+                "Qualcosa \u00e8 andato storto"
+            ],
+            "Free": [
+                "Gratuito"
+            ],
+            "Pro": [
+                "Pro"
+            ],
+            "AI Image Generator": [
+                "Generatore di immagini AI"
+            ],
+            "Password must be at least 6 characters long.": [
+                "La password deve contenere almeno 6 caratteri."
+            ],
+            "Passwords do not match.": [
+                "Le password non corrispondono."
+            ],
+            "Payment Method": [
+                "Metodo di pagamento"
+            ],
+            "Reminder email sent successfully.": [
+                "Email di promemoria inviata con successo."
+            ],
+            "Failed to send reminder email.": [
+                "Invio dell'email di promemoria non riuscito."
+            ],
+            "Private Note": [
+                "Nota privata"
+            ],
+            "Order ID": [
+                "ID ordine"
+            ],
+            "Customer Name": [
+                "Nome del cliente"
+            ],
+            "Order Status": [
+                "Stato dell'ordine"
+            ],
+            "General": [
+                "Generale"
+            ],
+            "CSV uploaded successfully": [
+                "CSV caricato con successo"
+            ],
+            "No orders found.": [
+                "Nessun ordine trovato."
+            ],
+            "Please enter a valid email address.": [
+                "Inserisci un indirizzo email valido."
+            ],
+            "Orders": [
+                "Ordini"
+            ],
+            "Refunds": [
+                "Rimborsi"
+            ],
+            "Order Count": [
+                "Numero di ordini"
+            ],
+            "Customers": [
+                "Clienti"
+            ],
+            "Low Stock": [
+                "Scorte in esaurimento"
+            ],
+            "Stock": [
+                "Scorte"
+            ],
+            "Pending": [
+                "In attesa"
+            ],
+            "Processing": [
+                "In elaborazione"
+            ],
+            "Completed": [
+                "Completato"
+            ],
+            "Refunded": [
+                "Rimborsato"
+            ],
+            "Partially Refunded": [
+                "Parzialmente rimborsato"
+            ],
+            "Cancelled": [
+                "Annullato"
+            ],
+            "Revenue": [
+                "Ricavo"
+            ],
+            "Add New Product": [
+                "Aggiungi nuovo prodotto"
+            ],
+            "New Product": [
+                "Nuovo prodotto"
+            ],
+            "View Product": [
+                "Visualizza prodotto"
+            ],
+            "Products": [
+                "Prodotti"
+            ],
+            "Update Category": [
+                "Aggiorna categoria"
+            ],
+            "Add New Category": [
+                "Aggiungi nuova categoria"
+            ],
+            "Categories": [
+                "Categorie"
+            ],
+            "Update Brand": [
+                "Aggiorna marca"
+            ],
+            "Add New Brand": [
+                "Aggiungi nuova marca"
+            ],
+            "Brands": [
+                "Marche"
+            ],
+            "Update Tag": [
+                "Aggiorna tag"
+            ],
+            "Add New Tag": [
+                "Aggiungi nuovo tag"
+            ],
+            "Tags": [
+                "Tag"
+            ],
+            "Customer": [
+                "Cliente"
+            ],
+            "Dashboard": [
+                "Bacheca"
+            ],
+            "Payment": [
+                "Pagamento"
+            ],
+            "First Name": [
+                "Nome"
+            ],
+            "Last Name": [
+                "Cognome"
+            ],
+            "Email": [
+                "Email"
+            ],
+            "Country": [
+                "Paese"
+            ],
+            "State": [
+                "Stato"
+            ],
+            "City": [
+                "Citt\u00e0"
+            ],
+            "Write here": [
+                "Scrivi qui"
+            ],
+            "Address": [
+                "Indirizzo"
+            ],
+            "Visibility": [
+                "Visibilit\u00e0"
+            ],
+            "Live": [
+                "Live"
+            ],
+            "Pricing": [
+                "Prezzi"
+            ],
+            "Unfulfilled": [
+                "Non evaso"
+            ],
+            "Fulfilled": [
+                "Evaso"
+            ],
+            "Partially Fulfilled": [
+                "Parzialmente evaso"
+            ],
+            "Shipped": [
+                "Spedito"
+            ],
+            "Delivered": [
+                "Consegnato"
+            ],
+            "Settings": [
+                "Impostazioni"
+            ],
+            "Shipping": [
+                "Spedizione"
+            ],
+            "Subject": [
+                "Oggetto"
+            ],
+            "Smart Search": [
+                "Ricerca intelligente"
+            ],
+            "Usage": [
+                "Utilizzo"
+            ],
+            "EasyCommerce": [
+                "EasyCommerce"
+            ],
+            "Cancel": [
+                "Annulla"
+            ],
+            "Activate License": [
+                "Attiva licenza"
+            ],
+            "Get Pro": [
+                "Passa a Pro"
+            ],
+            "Your Email": [
+                "La tua email"
+            ],
+            "Message": [
+                "Messaggio"
+            ],
+            "Action": [
+                "Azione"
+            ],
+            "Transaction ID": [
+                "ID transazione"
+            ],
+            "Abandoned Cart": [
+                "Carrello abbandonato"
+            ],
+            "Transactions": [
+                "Transazioni"
+            ],
+            "Coupons": [
+                "Coupon"
+            ],
+            "Reports": [
+                "Report"
+            ],
+            "Addons": [
+                "Addon"
+            ],
+            "Help & Support": [
+                "Aiuto e supporto"
+            ],
+            "Connect AI": [
+                "Collega l'AI"
+            ],
+            "Instruction": [
+                "Istruzioni"
+            ],
+            "Template 1": [
+                "Template 1"
+            ],
+            "Template 2": [
+                "Template 2"
+            ],
+            "Duplicate": [
+                "Duplicato"
+            ],
+            "Failed": [
+                "Non riuscito"
+            ],
+            "Draft": [
+                "Bozza"
+            ],
+            "Trash": [
+                "Cestino"
+            ],
+            "Returned": [
+                "Reso"
+            ],
+            "Add Product": [
+                "Aggiungi prodotto"
+            ],
+            "Attributes": [
+                "Attributi"
+            ],
+            "Abandoned Carts": [
+                "Carrelli abbandonati"
+            ],
+            "Reviews": [
+                "Recensioni"
+            ],
+            "Overview": [
+                "Panoramica"
+            ],
+            "Revenues": [
+                "Ricavi"
+            ],
+            "Price": [
+                "Prezzo"
+            ],
+            "Sort by": [
+                "Ordina per"
+            ],
+            "Search": [
+                "Cerca"
+            ],
+            "AI Writer": [
+                "AI Writer"
+            ],
+            "Image Editor": [
+                "Editor di immagini"
+            ],
+            "Store Copilot": [
+                "Store Copilot"
+            ],
+            "Date": [
+                "Data"
+            ],
+            "Discount": [
+                "Sconto"
+            ],
+            "Total": [
+                "Totale"
+            ],
+            "Organize": [
+                "Organizza"
+            ],
+            "Name": [
+                "Nome"
+            ],
+            "Slug": [
+                "Slug"
+            ],
+            "Type": [
+                "Tipo"
+            ],
+            "Image": [
+                "Immagine"
+            ],
+            "Color": [
+                "Colore"
+            ],
+            "Text": [
+                "Testo"
+            ],
+            "Enter Price": [
+                "Inserisci il prezzo"
+            ],
+            "SKU": [
+                "SKU"
+            ],
+            "Auto Generate Variants": [
+                "Genera automaticamente le varianti"
+            ],
+            "Product Description": [
+                "Descrizione del prodotto"
+            ],
+            "Billing Address": [
+                "Indirizzo di fatturazione"
+            ],
+            "Shipping Address": [
+                "Indirizzo di spedizione"
+            ],
+            "Free Shipping": [
+                "Spedizione gratuita"
+            ],
+            "Product Tax": [
+                "Imposta sul prodotto"
+            ],
+            "Shipping Tax": [
+                "Imposta sulla spedizione"
+            ],
+            "Order Total": [
+                "Totale dell'ordine"
+            ],
+            "Out of stock": [
+                "Esaurito"
+            ],
+            "Review": [
+                "Recensione"
+            ],
+            "Close": [
+                "Chiudi"
+            ],
+            "Loading...": [
+                "Caricamento..."
+            ],
+            "Send": [
+                "Invia"
+            ],
+            "An error occurred. Please try again.": [
+                "Si \u00e8 verificato un errore. Riprova."
+            ],
+            "Product": [
+                "Prodotto"
+            ],
+            "Quantity": [
+                "Quantit\u00e0"
+            ],
+            "None": [
+                "Nessuna"
+            ],
+            "Regular Price": [
+                "Prezzo normale"
+            ],
+            "Sale Price": [
+                "Prezzo scontato"
+            ],
+            "SKU:": [
+                "SKU:"
+            ],
+            "Title": [
+                "Titolo"
+            ],
+            "Email Address": [
+                "Indirizzo email"
+            ],
+            "Enter your Email": [
+                "Inserisci la tua email"
+            ],
+            "Enter new password": [
+                "Inserisci la nuova password"
+            ],
+            "Sending...": [
+                "Invio in corso..."
+            ],
+            "Downloads": [
+                "Download"
+            ],
+            "Profile": [
+                "Profilo"
+            ],
+            "Total Orders": [
+                "Ordini totali"
+            ],
+            "N\/A": [
+                "N\/D"
+            ],
+            "Customer since": [
+                "Cliente dal"
+            ],
+            "Summary": [
+                "Riepilogo"
+            ],
+            "View": [
+                "Visualizza"
+            ],
+            "Amount": [
+                "Importo"
+            ],
+            "Status": [
+                "Stato"
+            ],
+            "Back": [
+                "Indietro"
+            ],
+            "Next": [
+                "Successivo"
+            ],
+            "Select Image": [
+                "Seleziona immagine"
+            ],
+            "Use selected image": [
+                "Usa l'immagine selezionata"
+            ],
+            "Phone Number": [
+                "Numero di telefono"
+            ],
+            "Address Line 1": [
+                "Indirizzo riga 1"
+            ],
+            "Address Line 2": [
+                "Indirizzo riga 2"
+            ],
+            "Items": [
+                "Articoli"
+            ],
+            "Order Date": [
+                "Data dell'ordine"
+            ],
+            "Order Notes": [
+                "Note dell'ordine"
+            ],
+            "Loading notes...": [
+                "Caricamento delle note..."
+            ],
+            "No notes found for this order": [
+                "Nessuna nota trovata per questo ordine"
+            ],
+            "Track here:": [
+                "Traccia qui:"
+            ],
+            "Order #%s": [
+                "Ordine #%s"
+            ],
+            "Your Voice Matters": [
+                "La tua opinione conta"
+            ],
+            "Help us make EasyCommerce the best it can be. Share your feedback and ideas with us!": [
+                "Aiutaci a rendere EasyCommerce il migliore possibile. Condividi con noi i tuoi feedback e le tue idee!"
+            ],
+            "Enter first name": [
+                "Inserisci il nome"
+            ],
+            "Enter a valid email address": [
+                "Inserisci un indirizzo email valido"
+            ],
+            "Send Message": [
+                "Invia messaggio"
+            ],
+            "Thank you for your feedback": [
+                "Grazie per il tuo feedback"
+            ],
+            "We will use your feedback to build a better experience for everyone.": [
+                "Useremo il tuo feedback per creare un'esperienza migliore per tutti."
+            ],
+            "Feedback": [
+                "Feedback"
+            ],
+            "Ask Store Copilot anything about your store - get insights, or manage products and orders right from chat.": [
+                "Chiedi a Store Copilot qualsiasi cosa sul tuo negozio - ottieni approfondimenti o gestisci prodotti e ordini direttamente dalla chat."
+            ],
+            "What is today's total revenue?": [
+                "Qual \u00e8 il ricavo totale di oggi?"
+            ],
+            "How many orders were placed this week?": [
+                "Quanti ordini sono stati effettuati questa settimana?"
+            ],
+            "Which product is performing best?": [
+                "Quale prodotto sta andando meglio?"
+            ],
+            "What is my average order value this month?": [
+                "Qual \u00e8 il mio valore medio degli ordini questo mese?"
+            ],
+            "How many new vs returning customers this week?": [
+                "Quanti clienti nuovi rispetto a quelli di ritorno questa settimana?"
+            ],
+            "Which products are low in stock?": [
+                "Quali prodotti hanno scorte in esaurimento?"
+            ],
+            "Examples": [
+                "Esempi"
+            ],
+            "Uses %d credit.": [
+                "Usa %d credito.",
+                "Usa %d crediti."
+            ],
+            "%d Credit": [
+                "%d credito",
+                "%d crediti"
+            ],
+            "Remaining": [
+                "Rimanenti"
+            ],
+            "Network response was not okay": [
+                "La risposta della rete non \u00e8 andata a buon fine"
+            ],
+            "No answer found": [
+                "Nessuna risposta trovata"
+            ],
+            "Ask a Question": [
+                "Fai una domanda"
+            ],
+            "No credits available": [
+                "Nessun credito disponibile"
+            ],
+            "Two AI Agents, One Free Key": [
+                "Due agenti AI, una chiave gratuita"
+            ],
+            "Connect a free API key -": [
+                "Connetti una chiave API gratuita -"
+            ],
+            "100 AI credits": [
+                "100 crediti AI"
+            ],
+            "free, more with": [
+                "gratis, di pi\u00f9 con"
+            ],
+            "Store Copilot - For You": [
+                "Store Copilot - Per te"
+            ],
+            "Chat to run your store: ask about sales, create and edit products, and update orders - in plain English, with your approval.": [
+                "Chatta per gestire il tuo negozio: chiedi informazioni sulle vendite, crea e modifica prodotti e aggiorna gli ordini - in linguaggio naturale, con la tua approvazione."
+            ],
+            "Shopping Agent - For Your Shoppers": [
+                "Agente di acquisto - Per i tuoi acquirenti"
+            ],
+            "A 24\/7 storefront agent that helps customers find the right product, answers their questions, and places orders for them.": [
+                "Un agente attivo 24 ore su 24, 7 giorni su 7 sulla vetrina che aiuta i clienti a trovare il prodotto giusto, risponde alle loro domande ed effettua ordini per loro."
+            ],
+            "Plus": [
+                "In pi\u00f9"
+            ],
+            "& more.": [
+                "e altro ancora."
+            ],
+            "Each AI request transmits only the relevant records - the item you're working on, or a shopper's query and its products - to EasyCommerce's AI service. Your bulk customer and order data is never uploaded, sold, or used to train models.": [
+                "Ogni richiesta AI trasmette solo i record pertinenti - l'elemento su cui stai lavorando o la query di un acquirente e i relativi prodotti - al servizio AI di EasyCommerce. I tuoi dati aggregati di clienti e ordini non vengono mai caricati, venduti o utilizzati per addestrare modelli."
+            ],
+            "Learn more.": [
+                "Scopri di pi\u00f9."
+            ],
+            "I have an API key": [
+                "Ho una chiave API"
+            ],
+            "I want an API key": [
+                "Voglio una chiave API"
+            ],
+            "Please fill all the fields": [
+                "Compila tutti i campi"
+            ],
+            "Enter Your Connection Key": [
+                "Inserisci la tua chiave di connessione"
+            ],
+            "The link in your email connects AI automatically. To do it manually, paste the key we emailed below.": [
+                "Il link nella tua email collega automaticamente l'AI. Per farlo manualmente, incolla qui sotto la chiave che ti abbiamo inviato via email."
+            ],
+            "Your Key": [
+                "La tua chiave"
+            ],
+            "Paste your key": [
+                "Incolla la tua chiave"
+            ],
+            "I don't have a key": [
+                "Non ho una chiave"
+            ],
+            "Check your email and click the link to connect AI.": [
+                "Controlla la tua email e clicca sul link per collegare l'AI."
+            ],
+            "Connect EasyCommerce AI": [
+                "Collega l'AI di EasyCommerce"
+            ],
+            "Enter your name and email - we'll send a one-click link to connect AI, plus a backup key.": [
+                "Inserisci il tuo nome e la tua email - ti invieremo un link con un solo clic per collegare l'AI, oltre a una chiave di backup."
+            ],
+            "Your Name": [
+                "Il tuo nome"
+            ],
+            "Enter your Name": [
+                "Inserisci il tuo nome"
+            ],
+            "Email My Link": [
+                "Inviami il link via email"
+            ],
+            "I already have a key": [
+                "Ho gi\u00e0 una chiave"
+            ],
+            "Join Community": [
+                "Unisciti alla community"
+            ],
+            "Support": [
+                "Supporto"
+            ],
+            "Disconnect": [
+                "Disconnetti"
+            ],
+            "Dismiss this notice": [
+                "Ignora questo avviso"
+            ],
+            "Last 7 days": [
+                "Ultimi 7 giorni"
+            ],
+            "Last 30 days": [
+                "Ultimi 30 giorni"
+            ],
+            "This week": [
+                "Questa settimana"
+            ],
+            "This month": [
+                "Questo mese"
+            ],
+            "This year": [
+                "Quest'anno"
+            ],
+            "View all": [
+                "Visualizza tutto"
+            ],
+            "Show Digits": [
+                "Mostra le cifre"
+            ],
+            "Hide Digits": [
+                "Nascondi le cifre"
+            ],
+            "Previous %s": [
+                "%s precedente"
+            ],
+            "Product Name": [
+                "Nome del prodotto"
+            ],
+            "Items Sold": [
+                "Articoli venduti"
+            ],
+            "Total Sales": [
+                "Vendite totali"
+            ],
+            "No top selling products found.": [
+                "Nessun prodotto pi\u00f9 venduto trovato."
+            ],
+            "No low stock products found.": [
+                "Nessun prodotto con scorte in esaurimento trovato."
+            ],
+            "Abandoned Cart Details": [
+                "Dettagli del carrello abbandonato"
+            ],
+            "Last Activity": [
+                "Ultima attivit\u00e0"
+            ],
+            "%ds ago": [
+                "%ds fa"
+            ],
+            "%dm ago": [
+                "%dm fa"
+            ],
+            "%dh ago": [
+                "%dh fa"
+            ],
+            "%dd ago": [
+                "%dg fa"
+            ],
+            "Total Products": [
+                "Prodotti totali"
+            ],
+            "Reminder": [
+                "Promemoria"
+            ],
+            "Cart Summary": [
+                "Riepilogo del carrello"
+            ],
+            "Subject Line": [
+                "Oggetto"
+            ],
+            "Complete your purchase - Items waiting in your cart!": [
+                "Completa il tuo acquisto - Ci sono articoli in attesa nel tuo carrello!"
+            ],
+            "Email Message": [
+                "Messaggio email"
+            ],
+            "Abandoned cart deleted successfully": [
+                "Carrello abbandonato eliminato con successo"
+            ],
+            "Failed to delete abandoned cart. Please try again.": [
+                "Eliminazione del carrello abbandonato non riuscita. Riprova."
+            ],
+            "Deleting...": [
+                "Eliminazione in corso..."
+            ],
+            "Delete": [
+                "Elimina"
+            ],
+            "Something went wrong. Please try again.": [
+                "Qualcosa \u00e8 andato storto. Riprova."
+            ],
+            "Send Email": [
+                "Invia email"
+            ],
+            "Cart Items": [
+                "Articoli del carrello"
+            ],
+            "Variant": [
+                "Variante"
+            ],
+            "Loading cart items...": [
+                "Caricamento degli articoli del carrello..."
+            ],
+            "No items found.": [
+                "Nessun articolo trovato."
+            ],
+            "No abandoned carts found.": [
+                "Nessun carrello abbandonato trovato."
+            ],
+            "No activities found.": [
+                "Nessuna attivit\u00e0 trovata."
+            ],
+            "Join the community and post your issue to get a faster response.": [
+                "Unisciti alla community e pubblica il tuo problema per ottenere una risposta pi\u00f9 rapida."
+            ],
+            "Latest Orders": [
+                "Ultimi ordini"
+            ],
+            "Recent Sales": [
+                "Vendite recenti"
+            ],
+            "Top Selling": [
+                "Pi\u00f9 venduti"
+            ],
+            "Recent Activities": [
+                "Attivit\u00e0 recenti"
+            ],
+            "Failed to update status": [
+                "Aggiornamento dello stato non riuscito"
+            ],
+            "Dropdown Arrow": [
+                "Freccia a discesa"
+            ],
+            "Category": [
+                "Categoria"
+            ],
+            "Total Sale": [
+                "Vendita totale"
+            ],
+            "Restore": [
+                "Ripristina"
+            ],
+            "Edit": [
+                "Modifica"
+            ],
+            "Builder": [
+                "Costruttore"
+            ],
+            "Select status": [
+                "Seleziona lo stato"
+            ],
+            "Reset": [
+                "Reimposta"
+            ],
+            "Are you sure you want to delete?": [
+                "Sei sicuro di voler eliminare?"
+            ],
+            "You're going to delete this, are you sure?": [
+                "Stai per eliminarlo, sei sicuro?"
+            ],
+            "No, Keep it": [
+                "No, mantienilo"
+            ],
+            "Yes, Delete": [
+                "S\u00ec, elimina"
+            ],
+            "Delete Permanently": [
+                "Elimina definitivamente"
+            ],
+            "Are you sure you want to update?": [
+                "Sei sicuro di voler aggiornare?"
+            ],
+            "You're going to update <strong>All<\/strong> are you sure?": [
+                "Stai per aggiornare <strong>Tutto<\/strong>, sei sicuro?"
+            ],
+            "No, Keep as it is": [
+                "No, lascia com'\u00e8"
+            ],
+            "Yes, Update": [
+                "S\u00ec, aggiorna"
+            ],
+            "Product deleted": [
+                "Prodotto eliminato",
+                "Prodotti eliminati"
+            ],
+            "Delete failed.": [
+                "Eliminazione non riuscita."
+            ],
+            "Something went wrong.": [
+                "Qualcosa \u00e8 andato storto."
+            ],
+            "Set Status": [
+                "Imposta lo stato"
+            ],
+            "Status updated successfully": [
+                "Stato aggiornato con successo"
+            ],
+            "Failed to update products.": [
+                "Aggiornamento dei prodotti non riuscito."
+            ],
+            "An error occurred while updating statuses.": [
+                "Si \u00e8 verificato un errore durante l'aggiornamento degli stati."
+            ],
+            "Please select a valid status.": [
+                "Seleziona uno stato valido."
+            ],
+            "Please select a CSV file": [
+                "Seleziona un file CSV"
+            ],
+            "Failed to upload CSV": [
+                "Caricamento del CSV non riuscito"
+            ],
+            "Upload failed": [
+                "Caricamento non riuscito"
+            ],
+            "Columns mapped successfully": [
+                "Colonne mappate con successo"
+            ],
+            "Failed to map columns": [
+                "Mappatura delle colonne non riuscita"
+            ],
+            "Mapping failed": [
+                "Mappatura non riuscita"
+            ],
+            "Failed to start import": [
+                "Avvio dell'importazione non riuscito"
+            ],
+            "Import started in background...": [
+                "Importazione avviata in background..."
+            ],
+            "Import completed! %d product imported": [
+                "Importazione completata! %d prodotto importato",
+                "Importazione completata! %d prodotti importati"
+            ],
+            "%d error occurred": [
+                "Si \u00e8 verificato %d errore",
+                "Si sono verificati %d errori"
+            ],
+            "Import failed to start": [
+                "Avvio dell'importazione non riuscito"
+            ],
+            "Description": [
+                "Descrizione"
+            ],
+            "Thumbnail Url": [
+                "URL della miniatura"
+            ],
+            "Attribute Names": [
+                "Nomi degli attributi"
+            ],
+            "Attribute Values Name": [
+                "Nome dei valori degli attributi"
+            ],
+            "Attribute Values Value": [
+                "Valore dei valori degli attributi"
+            ],
+            "Variation Names": [
+                "Nomi delle variazioni"
+            ],
+            "Variation Types": [
+                "Tipi di variazione"
+            ],
+            "Variation Status": [
+                "Stato della variazione"
+            ],
+            "Regular Prices": [
+                "Prezzi normali"
+            ],
+            "Sale Prices": [
+                "Prezzi scontati"
+            ],
+            "SKUs": [
+                "SKU"
+            ],
+            "Stock Quantities": [
+                "Quantit\u00e0 in magazzino"
+            ],
+            "Stock Limits": [
+                "Limiti di scorta"
+            ],
+            "Variation Attribute Names": [
+                "Nomi degli attributi delle variazioni"
+            ],
+            "Variation Attribute Values": [
+                "Valori degli attributi delle variazioni"
+            ],
+            "Managed Stocks": [
+                "Scorte gestite"
+            ],
+            "Tax Classes": [
+                "Classi fiscali"
+            ],
+            "Thumbnail URLs": [
+                "URL delle miniature"
+            ],
+            "Width Values": [
+                "Valori della larghezza"
+            ],
+            "Width Units": [
+                "Unit\u00e0 della larghezza"
+            ],
+            "Height Values": [
+                "Valori dell'altezza"
+            ],
+            "Height Units": [
+                "Unit\u00e0 dell'altezza"
+            ],
+            "Weight Values": [
+                "Valori del peso"
+            ],
+            "Weight Units": [
+                "Unit\u00e0 del peso"
+            ],
+            "Length Values": [
+                "Valori della lunghezza"
+            ],
+            "Length Units": [
+                "Unit\u00e0 della lunghezza"
+            ],
+            "Meta Gallery URLs": [
+                "URL della galleria meta"
+            ],
+            "Meta Gallery Titles": [
+                "Titoli della galleria meta"
+            ],
+            "Meta Templates": [
+                "Template meta"
+            ],
+            "Show Reviews": [
+                "Mostra recensioni"
+            ],
+            "Review Text Mandatory": [
+                "Testo della recensione obbligatorio"
+            ],
+            "Hide From Shop": [
+                "Nascondi dal negozio"
+            ],
+            "Noindex": [
+                "Noindex"
+            ],
+            "Published Date": [
+                "Data di pubblicazione"
+            ],
+            "Upload CSV": [
+                "Carica CSV"
+            ],
+            "Column Mapping": [
+                "Mappatura delle colonne"
+            ],
+            "Import": [
+                "Importa"
+            ],
+            "Upload CSV File": [
+                "Carica file CSV"
+            ],
+            "Download the": [
+                "Scarica il"
+            ],
+            "Demo CSV": [
+                "CSV demo"
+            ],
+            "file. Add your data, upload it below, and click continue. To learn more,": [
+                "file. Aggiungi i tuoi dati, caricalo qui sotto e clicca su continua. Per saperne di pi\u00f9,"
+            ],
+            "click here": [
+                "clicca qui"
+            ],
+            "Uploading...": [
+                "Caricamento in corso..."
+            ],
+            "Continue": [
+                "Continua"
+            ],
+            "Column Name": [
+                "Nome della colonna"
+            ],
+            "Map to Field": [
+                "Mappa al campo"
+            ],
+            "Do not import": [
+                "Non importare"
+            ],
+            "Mapping...": [
+                "Mappatura in corso..."
+            ],
+            "Import Products": [
+                "Importa prodotti"
+            ],
+            "Importing...": [
+                "Importazione in corso..."
+            ],
+            "%1$d of %2$d products": [
+                "%1$d di %2$d prodotti"
+            ],
+            "Products are ready to import. Click the button below to start importing.": [
+                "I prodotti sono pronti per l'importazione. Clicca sul pulsante qui sotto per avviare l'importazione."
+            ],
+            "Import Now": [
+                "Importa ora"
+            ],
+            "Demo products imported!": [
+                "Prodotti demo importati!"
+            ],
+            "Failed to import": [
+                "Importazione non riuscita"
+            ],
+            "Failed to import demo products": [
+                "Importazione dei prodotti demo non riuscita"
+            ],
+            "Importing Sample Products": [
+                "Importazione dei prodotti di esempio"
+            ],
+            "We are generating some sample products into your store. You can refresh the page to see the progress..": [
+                "Stiamo generando alcuni prodotti di esempio nel tuo negozio. Puoi aggiornare la pagina per vedere l'avanzamento.."
+            ],
+            "All": [
+                "Tutti"
+            ],
+            "Product trashed successfully!": [
+                "Prodotto spostato nel cestino con successo!"
+            ],
+            "Product deleted successfully!": [
+                "Prodotto eliminato con successo!"
+            ],
+            "No %s Products Found": [
+                "Nessun prodotto %s trovato"
+            ],
+            "Your Store is Empty": [
+                "Il tuo negozio \u00e8 vuoto"
+            ],
+            "Create a new product or generate samples to get started.": [
+                "Crea un nuovo prodotto o genera esempi per iniziare."
+            ],
+            "or": [
+                "oppure"
+            ],
+            "Generate Samples": [
+                "Genera esempi"
+            ],
+            "Write a short, compelling product sumamry with key features and benefits.": [
+                "Scrivi un riepilogo del prodotto breve e accattivante con le caratteristiche e i vantaggi principali."
+            ],
+            "Write a detailed, persuasive product description covering features, benefits, use cases, and why it's a great choice. Mention features in ordered list if any.": [
+                "Scrivi una descrizione del prodotto dettagliata e persuasiva che copra caratteristiche, vantaggi, casi d'uso e perch\u00e9 \u00e8 un'ottima scelta. Menziona le caratteristiche in un elenco ordinato, se presenti."
+            ],
+            "Invalid response from AI service. Please try again.": [
+                "Risposta non valida dal servizio AI. Riprova."
+            ],
+            "AI Copywriter": [
+                "AI Copywriter"
+            ],
+            "AI-powered copy writer to write your product description and summary": [
+                "Copywriter basato su AI per scrivere la descrizione e il riepilogo del tuo prodotto"
+            ],
+            "You have used all your free credits.": [
+                "Hai esaurito tutti i tuoi crediti gratuiti."
+            ],
+            "Upgrade Now": [
+                "Effettua l'upgrade ora"
+            ],
+            "Please type your instructions here": [
+                "Digita qui le tue istruzioni"
+            ],
+            "loading": [
+                "caricamento"
+            ],
+            "Generate": [
+                "Genera"
+            ],
+            "Product Summary": [
+                "Riepilogo del prodotto"
+            ],
+            "Write a compelling summary to highlight key product features.": [
+                "Scrivi un riepilogo accattivante per evidenziare le caratteristiche principali del prodotto."
+            ],
+            "Add product title first!": [
+                "Aggiungi prima il titolo del prodotto!"
+            ],
+            "Generate with AI": [
+                "Genera con l'AI"
+            ],
+            "Briefly describe the product, its key benefit, and who it\u2019s for. Keep it within 20\u201340 words.": [
+                "Descrivi brevemente il prodotto, il suo vantaggio principale e a chi \u00e8 destinato. Mantienilo entro 20\u201340 parole."
+            ],
+            "Selected": [
+                "Selezionato"
+            ],
+            "Select Options": [
+                "Seleziona le opzioni"
+            ],
+            "Loading attribute...": [
+                "Caricamento dell'attributo..."
+            ],
+            "Attribute name are required!": [
+                "Il nome dell'attributo \u00e8 obbligatorio!"
+            ],
+            "Attribute slug are required!": [
+                "Lo slug dell'attributo \u00e8 obbligatorio!"
+            ],
+            "Attribute name already exists!": [
+                "Il nome dell'attributo esiste gi\u00e0!"
+            ],
+            "Attribute slug already exists!": [
+                "Lo slug dell'attributo esiste gi\u00e0!"
+            ],
+            "Option %d must have a label!": [
+                "L'opzione %d deve avere un'etichetta!"
+            ],
+            "Option %d must have a label and image": [
+                "L'opzione %d deve avere un'etichetta e un'immagine"
+            ],
+            "Option %d must have a label and color": [
+                "L'opzione %d deve avere un'etichetta e un colore"
+            ],
+            "Duplicate option labels are not allowed!": [
+                "Le etichette di opzione duplicate non sono consentite!"
+            ],
+            "Attribute updated successfully!": [
+                "Attributo aggiornato con successo!"
+            ],
+            "Attribute created successfully!": [
+                "Attributo creato con successo!"
+            ],
+            "It'll show on the single product screen": [
+                "Verr\u00e0 mostrato nella schermata del singolo prodotto"
+            ],
+            "Enter Name": [
+                "Inserisci il nome"
+            ],
+            "URL-friendly slug of the attribute": [
+                "Slug adatto agli URL dell'attributo"
+            ],
+            "How customers will see this on the single product screen": [
+                "Come i clienti lo vedranno nella schermata del singolo prodotto"
+            ],
+            "Options": [
+                "Opzioni"
+            ],
+            "Options of the attribute": [
+                "Opzioni dell'attributo"
+            ],
+            "Select an Image": [
+                "Seleziona un'immagine"
+            ],
+            "Use this image": [
+                "Usa questa immagine"
+            ],
+            "Update Attribute": [
+                "Aggiorna attributo"
+            ],
+            "Create Attribute": [
+                "Crea attributo"
+            ],
+            "Attribute deleted successfully!": [
+                "Attributo eliminato con successo!"
+            ],
+            "Failed to delete attribute.": [
+                "Eliminazione dell'attributo non riuscita."
+            ],
+            "Delete failed, please try again.": [
+                "Eliminazione non riuscita, riprova."
+            ],
+            "No attributes found.": [
+                "Nessun attributo trovato."
+            ],
+            "Add New Attribute": [
+                "Aggiungi nuovo attributo"
+            ],
+            "Add to Product": [
+                "Aggiungi al prodotto"
+            ],
+            "Edit Attribute: %s": [
+                "Modifica attributo: %s"
+            ],
+            "AI Attributes Generator": [
+                "Generatore di attributi AI"
+            ],
+            "AI-powered attribute generator to create product attributes": [
+                "Generatore di attributi basato su AI per creare gli attributi dei prodotti"
+            ],
+            "Number of Attributes to Generate": [
+                "Numero di attributi da generare"
+            ],
+            "Number of Values Per Attribute": [
+                "Numero di valori per attributo"
+            ],
+            "Attributes generated successfully!": [
+                "Attributi generati con successo!"
+            ],
+            "Failed to generate attributes": [
+                "Generazione degli attributi non riuscita"
+            ],
+            "Add attributes to your product to help customers filter and search for products more easily.": [
+                "Aggiungi attributi al tuo prodotto per aiutare i clienti a filtrare e cercare i prodotti pi\u00f9 facilmente."
+            ],
+            "Generating...": [
+                "Generazione in corso..."
+            ],
+            "Fetching generated attributes...": [
+                "Recupero degli attributi generati..."
+            ],
+            "No attributes are added yet. Click the \"Add New\" button below to add attributes to this product.": [
+                "Nessun attributo ancora aggiunto. Clicca sul pulsante \"Aggiungi nuovo\" qui sotto per aggiungere attributi a questo prodotto."
+            ],
+            "Add options like color or size. Click the \"Manage Attributes\" button below or \"Generate with AI\" above.": [
+                "Aggiungi opzioni come colore o taglia. Clicca sul pulsante \"Gestisci attributi\" qui sotto oppure su \"Genera con l'AI\" qui sopra."
+            ],
+            "Add Attribute": [
+                "Aggiungi attributo"
+            ],
+            "Write variation name": [
+                "Scrivi il nome della variazione"
+            ],
+            "Expand": [
+                "Espandi"
+            ],
+            "Product Type": [
+                "Tipo di prodotto"
+            ],
+            "Physical Product": [
+                "Prodotto fisico"
+            ],
+            "Digital Product": [
+                "Prodotto digitale"
+            ],
+            "Select %s": [
+                "Seleziona %s"
+            ],
+            "If there is no sale going on for this variation, simply leave it blank.": [
+                "Se non \u00e8 in corso alcuna promozione per questa variazione, lascia semplicemente il campo vuoto."
+            ],
+            "Sale price should be less than regular price.": [
+                "Il prezzo scontato deve essere inferiore al prezzo normale."
+            ],
+            "Calculate profit margin": [
+                "Calcola il margine di profitto"
+            ],
+            "Cost of Goods": [
+                "Costo dei beni"
+            ],
+            "Enter Cost": [
+                "Inserisci il costo"
+            ],
+            "Profit": [
+                "Profitto"
+            ],
+            "Yet to calculate": [
+                "Ancora da calcolare"
+            ],
+            "Margin": [
+                "Margine"
+            ],
+            "Inventory": [
+                "Inventario"
+            ],
+            "Stock Count": [
+                "Conteggio delle scorte"
+            ],
+            "Number of items we have in stock. If you don't manage stock for this variation, simply leave it blank.": [
+                "Numero di articoli che abbiamo in magazzino. Se non gestisci le scorte per questa variazione, lascia semplicemente il campo vuoto."
+            ],
+            "Enter Stock Count": [
+                "Inserisci il conteggio delle scorte"
+            ],
+            "Low Stock Limit": [
+                "Limite di scorte in esaurimento"
+            ],
+            "When should we call it low stock?": [
+                "Quando dobbiamo considerarle scorte in esaurimento?"
+            ],
+            "Stock Limit": [
+                "Limite di scorta"
+            ],
+            "Package Dimension": [
+                "Dimensioni del pacco"
+            ],
+            "Height": [
+                "Altezza"
+            ],
+            "Set Height": [
+                "Imposta l'altezza"
+            ],
+            "Width": [
+                "Larghezza"
+            ],
+            "Set Width": [
+                "Imposta la larghezza"
+            ],
+            "Length": [
+                "Lunghezza"
+            ],
+            "Set Length": [
+                "Imposta la lunghezza"
+            ],
+            "Weight": [
+                "Peso"
+            ],
+            "Set Weight": [
+                "Imposta il peso"
+            ],
+            "Select Images": [
+                "Seleziona le immagini"
+            ],
+            "Insert": [
+                "Inserisci"
+            ],
+            "Files": [
+                "File"
+            ],
+            "File title": [
+                "Titolo del file"
+            ],
+            "Add More Files": [
+                "Aggiungi altri file"
+            ],
+            "Uploading files...": [
+                "Caricamento dei file..."
+            ],
+            "Click to update": [
+                "Clicca per aggiornare"
+            ],
+            "or Drag and drop": [
+                "oppure trascina e rilascia"
+            ],
+            "Upload Files": [
+                "Carica file"
+            ],
+            "Unlock %s": [
+                "Sblocca %s"
+            ],
+            "See Pro Plans": [
+                "Scopri i piani Pro"
+            ],
+            "Addon activated successfully.": [
+                "Addon attivato con successo."
+            ],
+            "Error activating addon.": [
+                "Errore durante l'attivazione dell'addon."
+            ],
+            "Install A New Addon?": [
+                "Installare un nuovo addon?"
+            ],
+            "This will install %s. Are you sure to proceed?": [
+                "Questo installer\u00e0 %s. Sei sicuro di voler procedere?"
+            ],
+            "Install & Activate": [
+                "Installa e attiva"
+            ],
+            "Variation Name": [
+                "Nome della variazione"
+            ],
+            "Choose attributes that apply to this pricing option": [
+                "Scegli gli attributi che si applicano a questa opzione di prezzo"
+            ],
+            "Subscription Manager": [
+                "Gestore degli abbonamenti"
+            ],
+            "Add recurring billing to your store with the EasyCommerce Subscription Addon.": [
+                "Aggiungi la fatturazione ricorrente al tuo negozio con l'addon Abbonamenti di EasyCommerce."
+            ],
+            "Enable Subscription": [
+                "Attiva abbonamento"
+            ],
+            "Turn on subscriptions to sell products with recurring payments.": [
+                "Attiva gli abbonamenti per vendere prodotti con pagamenti ricorrenti."
+            ],
+            "License Manager": [
+                "Gestore delle licenze"
+            ],
+            "Configure your ecommerce store with licensing capability and sell digital products and manage their licenses.": [
+                "Configura il tuo negozio ecommerce con la funzionalit\u00e0 di licenza, vendi prodotti digitali e gestisci le relative licenze."
+            ],
+            "Generate License": [
+                "Genera licenza"
+            ],
+            "Turn on licensing to sell products that require license keys.": [
+                "Attiva le licenze per vendere prodotti che richiedono chiavi di licenza."
+            ],
+            "Are you sure you want to replace?": [
+                "Sei sicuro di voler sostituire?"
+            ],
+            "Auto generating variants will replace all existing variants for": [
+                "La generazione automatica delle varianti sostituir\u00e0 tutte le varianti esistenti per"
+            ],
+            "No, Keep": [
+                "No, mantieni"
+            ],
+            "Yes, Replace": [
+                "S\u00ec, sostituisci"
+            ],
+            "Set product type, price, sale price, stock count, and dimensions of the product.": [
+                "Imposta il tipo di prodotto, il prezzo, il prezzo scontato, il conteggio delle scorte e le dimensioni del prodotto."
+            ],
+            "Add attributes to enable variant generation": [
+                "Aggiungi attributi per attivare la generazione delle varianti"
+            ],
+            "Add attributes above to add multiple price options.": [
+                "Aggiungi attributi qui sopra per inserire pi\u00f9 opzioni di prezzo."
+            ],
+            "Need multiple prices?": [
+                "Hai bisogno di pi\u00f9 prezzi?"
+            ],
+            "No prices added yet": [
+                "Nessun prezzo ancora aggiunto"
+            ],
+            "Add New Price": [
+                "Aggiungi nuovo prezzo"
+            ],
+            "Add Media": [
+                "Aggiungi media"
+            ],
+            "Provide an in-depth product description of 600\u2013900 words, outlining key features, benefits, and usage instructions.": [
+                "Fornisci una descrizione dettagliata del prodotto di 600\u2013900 parole, illustrando le caratteristiche principali, i vantaggi e le istruzioni d'uso."
+            ],
+            "Generating image": [
+                "Generazione dell'immagine"
+            ],
+            "Edit this image. Keep the product exactly as-is. Place it in a clean, modern lifestyle setting with soft natural lighting, shallow depth of field, and a professional commercial look.": [
+                "Modifica questa immagine. Mantieni il prodotto esattamente com'\u00e8. Collocalo in un ambiente lifestyle pulito e moderno con illuminazione naturale soffusa, profondit\u00e0 di campo ridotta e un aspetto commerciale professionale."
+            ],
+            "1024x1024 Pixels": [
+                "1024x1024 pixel"
+            ],
+            "1792x1024 Pixels": [
+                "1792x1024 pixel"
+            ],
+            "1024x1792 Pixels": [
+                "1024x1792 pixel"
+            ],
+            "Standard": [
+                "Standard"
+            ],
+            "HD": [
+                "HD"
+            ],
+            "No enhanced image to choose from.": [
+                "Nessuna immagine migliorata tra cui scegliere."
+            ],
+            "Failed to choose image. Please try again.": [
+                "Selezione dell'immagine non riuscita. Riprova."
+            ],
+            "AI Image Enhancer": [
+                "Miglioratore di immagini AI"
+            ],
+            "Enhance your image with AI": [
+                "Migliora la tua immagine con l'AI"
+            ],
+            "Original Image": [
+                "Immagine originale"
+            ],
+            "Image Size": [
+                "Dimensione dell'immagine"
+            ],
+            "Quality": [
+                "Qualit\u00e0"
+            ],
+            "Enhance Image": [
+                "Migliora immagine"
+            ],
+            "Use This Image": [
+                "Usa questa immagine"
+            ],
+            "Image Preview.": [
+                "Anteprima dell'immagine."
+            ],
+            "Uploaded %d": [
+                "Caricato %d"
+            ],
+            "Set as thumbnail": [
+                "Imposta come miniatura"
+            ],
+            "Enhance With AI": [
+                "Migliora con l'AI"
+            ],
+            "Uploading images...": [
+                "Caricamento delle immagini..."
+            ],
+            "Upload Images": [
+                "Carica immagini"
+            ],
+            "A professional product photo of %s on a clean white background, studio lighting, sharp focus, high resolution, commercial photography style, no shadows, photorealistic.": [
+                "Una foto professionale del prodotto %s su uno sfondo bianco pulito, illuminazione da studio, messa a fuoco nitida, alta risoluzione, stile di fotografia commerciale, senza ombre, fotorealistica."
+            ],
+            "No generated image to choose from.": [
+                "Nessuna immagine generata tra cui scegliere."
+            ],
+            "Describe what you want to see in the image": [
+                "Descrivi cosa vuoi vedere nell'immagine"
+            ],
+            "Generated image will appear here once created.": [
+                "L'immagine generata comparir\u00e0 qui una volta creata."
+            ],
+            "Product Gallery": [
+                "Galleria del prodotto"
+            ],
+            "Upload images to showcase your product visually.": [
+                "Carica immagini per mostrare visivamente il tuo prodotto."
+            ],
+            "For best appearance, use images larger than": [
+                "Per un aspetto ottimale, usa immagini pi\u00f9 grandi di"
+            ],
+            "pixels.": [
+                "pixel."
+            ],
+            "All fields are required!": [
+                "Tutti i campi sono obbligatori!"
+            ],
+            "Category created successfully": [
+                "Categoria creata con successo"
+            ],
+            "Operation failed": [
+                "Operazione non riuscita"
+            ],
+            "It'll be used to filter products": [
+                "Verr\u00e0 utilizzata per filtrare i prodotti"
+            ],
+            "URL-friendly slug of the category": [
+                "Slug adatto agli URL della categoria"
+            ],
+            "Parent": [
+                "Principale"
+            ],
+            "Select a parent category if any": [
+                "Seleziona una categoria principale, se presente"
+            ],
+            "Select Parent": [
+                "Seleziona la categoria principale"
+            ],
+            "Create Category": [
+                "Crea categoria"
+            ],
+            "Tag created successfully": [
+                "Tag creato con successo"
+            ],
+            "URL-friendly slug of the tag": [
+                "Slug adatto agli URL del tag"
+            ],
+            "Create Tag": [
+                "Crea tag"
+            ],
+            "Brand created successfully": [
+                "Marca creata con successo"
+            ],
+            "URL-friendly slug of the brand": [
+                "Slug adatto agli URL della marca"
+            ],
+            "Select a parent brand if any": [
+                "Seleziona una marca principale, se presente"
+            ],
+            "Create Brand": [
+                "Crea marca"
+            ],
+            "No categories available": [
+                "Nessuna categoria disponibile"
+            ],
+            "No tags available": [
+                "Nessun tag disponibile"
+            ],
+            "No brands available": [
+                "Nessuna marca disponibile"
+            ],
+            "Failed to fetch categories.": [
+                "Recupero delle categorie non riuscito."
+            ],
+            "Failed to fetch tags.": [
+                "Recupero dei tag non riuscito."
+            ],
+            "Failed to fetch brands.": [
+                "Recupero delle marche non riuscito."
+            ],
+            "Organize your product with Categories, Tags, and Brands for better sorting.": [
+                "Organizza il tuo prodotto con categorie, tag e marche per una migliore classificazione."
+            ],
+            "Manage Categories": [
+                "Gestisci categorie"
+            ],
+            "Manage Tags": [
+                "Gestisci tag"
+            ],
+            "Manage Brands": [
+                "Gestisci marche"
+            ],
+            "Product View": [
+                "Vista del prodotto"
+            ],
+            "Choose a template to customize how your product page is displayed to customers.": [
+                "Scegli un template per personalizzare come la tua pagina prodotto viene mostrata ai clienti."
+            ],
+            "Select Template": [
+                "Seleziona il template"
+            ],
+            "Select a template": [
+                "Seleziona un template"
+            ],
+            "Configure general product settings like visibility, URL slug, and reviews.": [
+                "Configura le impostazioni generali del prodotto come visibilit\u00e0, slug dell'URL e recensioni."
+            ],
+            "URL:": [
+                "URL:"
+            ],
+            "Hide from Shop": [
+                "Nascondi dal negozio"
+            ],
+            "Hide from Search Engines": [
+                "Nascondi dai motori di ricerca"
+            ],
+            "Enable Review": [
+                "Attiva recensioni"
+            ],
+            "Product title is required": [
+                "Il titolo del prodotto \u00e8 obbligatorio"
+            ],
+            "Invalid Pricing Data": [
+                "Dati di prezzo non validi"
+            ],
+            "Duplicate pricing plan found: %s": [
+                "Piano tariffario duplicato trovato: %s"
+            ],
+            "Duplicate attributes found in %1$s and %2$s": [
+                "Attributi duplicati trovati in %1$s e %2$s"
+            ],
+            "Product is live now!": [
+                "Il prodotto \u00e8 ora pubblicato!"
+            ],
+            "Product saved as draft!": [
+                "Prodotto salvato come bozza!"
+            ],
+            "Product Creation Failed": [
+                "Creazione del prodotto non riuscita"
+            ],
+            "Save as Draft": [
+                "Salva come bozza"
+            ],
+            "Save as Live": [
+                "Salva come pubblicato"
+            ],
+            "Add your product title here": [
+                "Aggiungi qui il titolo del tuo prodotto"
+            ],
+            "Product trashed!": [
+                "Prodotto spostato nel cestino!"
+            ],
+            "Product deleted permanently!": [
+                "Prodotto eliminato definitivamente!"
+            ],
+            "Product doesn't exist": [
+                "Il prodotto non esiste"
+            ],
+            "Failed to fetch product data": [
+                "Recupero dei dati del prodotto non riuscito"
+            ],
+            "Product updated successfully": [
+                "Prodotto aggiornato con successo"
+            ],
+            "Product update failed": [
+                "Aggiornamento del prodotto non riuscito"
+            ],
+            "Edit: ": [
+                "Modifica: "
+            ],
+            "Preview": [
+                "Anteprima"
+            ],
+            "Loading product data...": [
+                "Caricamento dei dati del prodotto..."
+            ],
+            "Selected attributes deleted successfully!": [
+                "Attributi selezionati eliminati con successo!"
+            ],
+            "Failed to delete selected attributes.": [
+                "Eliminazione degli attributi selezionati non riuscita."
+            ],
+            "Bulk delete failed, please try again.": [
+                "Eliminazione in blocco non riuscita, riprova."
+            ],
+            "Delete Selected": [
+                "Elimina selezionati"
+            ],
+            "Attributes List": [
+                "Elenco degli attributi"
+            ],
+            "Category deleted successfully": [
+                "Categoria eliminata con successo"
+            ],
+            "Failed to delete": [
+                "Eliminazione non riuscita"
+            ],
+            "No categories found.": [
+                "Nessuna categoria trovata."
+            ],
+            "Category updated successfully": [
+                "Categoria aggiornata con successo"
+            ],
+            "Selected categories deleted successfully!": [
+                "Categorie selezionate eliminate con successo!"
+            ],
+            "Failed to delete selected categories.": [
+                "Eliminazione delle categorie selezionate non riuscita."
+            ],
+            "Categories List": [
+                "Elenco delle categorie"
+            ],
+            "Edit Category: %s": [
+                "Modifica categoria: %s"
+            ],
+            "Tag deleted successfully": [
+                "Tag eliminato con successo"
+            ],
+            "No tags found.": [
+                "Nessun tag trovato."
+            ],
+            "Tag updated successfully": [
+                "Tag aggiornato con successo"
+            ],
+            "Selected tags deleted successfully!": [
+                "Tag selezionati eliminati con successo!"
+            ],
+            "Failed to delete selected tags.": [
+                "Eliminazione dei tag selezionati non riuscita."
+            ],
+            "Tags List": [
+                "Elenco dei tag"
+            ],
+            "Edit Tag: %s": [
+                "Modifica tag: %s"
+            ],
+            "Brand deleted successfully": [
+                "Marca eliminata con successo"
+            ],
+            "No brands found.": [
+                "Nessuna marca trovata."
+            ],
+            "Brand updated successfully": [
+                "Marca aggiornata con successo"
+            ],
+            "Selected brands deleted successfully!": [
+                "Marche selezionate eliminate con successo!"
+            ],
+            "Failed to delete selected brands.": [
+                "Eliminazione delle marche selezionate non riuscita."
+            ],
+            "Brands List": [
+                "Elenco delle marche"
+            ],
+            "Edit Brand: %s": [
+                "Modifica marca: %s"
+            ],
+            "An error occurred while updating status": [
+                "Si \u00e8 verificato un errore durante l'aggiornamento dello stato"
+            ],
+            "Please enter an amount greater than 0 before refunding": [
+                "Inserisci un importo maggiore di 0 prima di rimborsare"
+            ],
+            "Failed to process refund. Please try again.": [
+                "Elaborazione del rimborso non riuscita. Riprova."
+            ],
+            "Please enter the Refund Transaction ID.": [
+                "Inserisci l'ID della transazione di rimborso."
+            ],
+            "Please enter an amount before refunding": [
+                "Inserisci un importo prima di rimborsare"
+            ],
+            "Please select a reason before refunding": [
+                "Seleziona un motivo prima di rimborsare"
+            ],
+            "Refund Payment": [
+                "Rimborsa pagamento"
+            ],
+            "Refundable": [
+                "Rimborsabile"
+            ],
+            "Refund Amount": [
+                "Importo del rimborso"
+            ],
+            "Enter amount": [
+                "Inserisci l'importo"
+            ],
+            "Refund Reason": [
+                "Motivo del rimborso"
+            ],
+            "Select Refund Reason": [
+                "Seleziona il motivo del rimborso"
+            ],
+            "For %s, refunds should be processed manually outside of the system. After succesful processing, enter the Refund Transaction ID": [
+                "Per %s, i rimborsi devono essere elaborati manualmente al di fuori del sistema. Dopo l'elaborazione riuscita, inserisci l'ID della transazione di rimborso"
+            ],
+            "Enter Refund Transaction ID": [
+                "Inserisci l'ID della transazione di rimborso"
+            ],
+            "Refund now": [
+                "Rimborsa ora"
+            ],
+            "ID": [
+                "ID"
+            ],
+            "Fulfillment": [
+                "Evasione"
+            ],
+            "Transactions ID": [
+                "ID transazione"
+            ],
+            "Date & Time": [
+                "Data e ora"
+            ],
+            "On hold": [
+                "In sospeso"
+            ],
+            "payment-icon": [
+                "icona pagamento"
+            ],
+            "Select date range": [
+                "Seleziona l'intervallo di date"
+            ],
+            "Calendar": [
+                "Calendario"
+            ],
+            "eg. 12 Sep - 28 Oct 2025": [
+                "es. 12 set - 28 ott 2025"
+            ],
+            "Order deleted permanently": [
+                "Ordine eliminato definitivamente",
+                "Ordini eliminati definitivamente"
+            ],
+            "Something went wrong while deleting.": [
+                "Qualcosa \u00e8 andato storto durante l'eliminazione."
+            ],
+            "Fulfill Status": [
+                "Stato di evasione"
+            ],
+            "%d order": [
+                "%d ordine",
+                "%d ordini"
+            ],
+            "Failed to update orders.": [
+                "Aggiornamento degli ordini non riuscito."
+            ],
+            "Please select a status to update.": [
+                "Seleziona uno stato da aggiornare."
+            ],
+            "No %s Orders Found": [
+                "Nessun ordine %s trovato"
+            ],
+            "No Orders Found": [
+                "Nessun ordine trovato"
+            ],
+            "You're yet to receive any orders in your store. Keep promoting \nyour store to bring in your first sale.": [
+                "Non hai ancora ricevuto alcun ordine nel tuo negozio. Continua a promuovere \nil tuo negozio per ottenere la tua prima vendita."
+            ],
+            "No %s orders in your store. Keep promoting \nyour store to bring in your first sale.": [
+                "Nessun ordine %s nel tuo negozio. Continua a promuovere \nil tuo negozio per ottenere la tua prima vendita."
+            ],
+            "Resend Order Email": [
+                "Reinvia email dell'ordine"
+            ],
+            "Email Event": [
+                "Evento email"
+            ],
+            "Select an event": [
+                "Seleziona un evento"
+            ],
+            "Email sent": [
+                "Email inviata"
+            ],
+            "Refund": [
+                "Rimborso"
+            ],
+            "Order Deleted!": [
+                "Ordine eliminato!"
+            ],
+            "Delivery Date": [
+                "Data di consegna"
+            ],
+            "Order Refund": [
+                "Rimborso dell'ordine"
+            ],
+            "Fulfillment Status": [
+                "Stato di evasione"
+            ],
+            "Payment Icon": [
+                "Icona di pagamento"
+            ],
+            "Payment URL": [
+                "URL di pagamento"
+            ],
+            "date": [
+                "data"
+            ],
+            "Avg. Order Value": [
+                "Valore medio dell'ordine"
+            ],
+            "Last Order": [
+                "Ultimo ordine"
+            ],
+            "Reason": [
+                "Motivo"
+            ],
+            "Refunded By": [
+                "Rimborsato da"
+            ],
+            "Add Note": [
+                "Aggiungi nota"
+            ],
+            "Required": [
+                "Obbligatorio"
+            ],
+            "Write your note here": [
+                "Scrivi qui la tua nota"
+            ],
+            "Note To Customer": [
+                "Nota al cliente"
+            ],
+            "Unable to save note. The database may need to be updated. Please contact your administrator.": [
+                "Impossibile salvare la nota. Il database potrebbe dover essere aggiornato. Contatta il tuo amministratore."
+            ],
+            "Delete Note": [
+                "Elimina nota"
+            ],
+            "Are you sure you want to delete this note? This action cannot be undone.": [
+                "Sei sicuro di voler eliminare questa nota? Questa azione non pu\u00f2 essere annullata."
+            ],
+            "Unable to delete note. Please try again or contact your administrator.": [
+                "Impossibile eliminare la nota. Riprova o contatta il tuo amministratore."
+            ],
+            "Order doesn't exist": [
+                "L'ordine non esiste"
+            ],
+            "Failed to fetch order data": [
+                "Recupero dei dati dell'ordine non riuscito"
+            ],
+            "Unknown": [
+                "Sconosciuto"
+            ],
+            "eg. %1$s - %2$s %3$s": [
+                "es. %1$s - %2$s %3$s"
+            ],
+            "Adjustment": [
+                "Rettifica"
+            ],
+            "No %s Transactions Found": [
+                "Nessuna transazione %s trovata"
+            ],
+            "No Transactions Found.": [
+                "Nessuna transazione trovata."
+            ],
+            "All type of payment activities will appear here once they occur": [
+                "Tutti i tipi di attivit\u00e0 di pagamento compariranno qui una volta che si verificano"
+            ],
+            "Add New Customer": [
+                "Aggiungi nuovo cliente"
+            ],
+            "Select a Image": [
+                "Seleziona un'immagine"
+            ],
+            "Enter last name": [
+                "Inserisci il cognome"
+            ],
+            "Enter Password": [
+                "Inserisci la password"
+            ],
+            "Re-enter Password": [
+                "Reinserisci la password"
+            ],
+            "Re-ender password to confirm": [
+                "Reinserisci la password per confermare"
+            ],
+            "Submit": [
+                "Invia"
+            ],
+            "Customer Since": [
+                "Cliente dal"
+            ],
+            "Lifetime Value": [
+                "Valore nel tempo"
+            ],
+            "No customers found": [
+                "Nessun cliente trovato"
+            ],
+            "Recurring": [
+                "Ricorrente"
+            ],
+            "One-time": [
+                "Una tantum"
+            ],
+            "No %s Customers Found": [
+                "Nessun cliente %s trovato"
+            ],
+            "No Customers Found": [
+                "Nessun cliente trovato"
+            ],
+            "You're yet to receive any customers in your store.": [
+                "Non hai ancora ricevuto alcun cliente nel tuo negozio."
+            ],
+            "No %s customers in your store.": [
+                "Nessun cliente %s nel tuo negozio."
+            ],
+            "Keep promoting \nyour store to bring in your first customer.": [
+                "Continua a promuovere \nil tuo negozio per ottenere il tuo primo cliente."
+            ],
+            "Add Customer": [
+                "Aggiungi cliente"
+            ],
+            "Purchase Amount": [
+                "Importo dell'acquisto"
+            ],
+            "Customer Details": [
+                "Dettagli del cliente"
+            ],
+            "unknown": [
+                "sconosciuto"
+            ],
+            "Orders Over Time": [
+                "Ordini nel tempo"
+            ],
+            "Fullfillment": [
+                "Evasione"
+            ],
+            "No order found for this customer": [
+                "Nessun ordine trovato per questo cliente"
+            ],
+            "Active": [
+                "Attivo"
+            ],
+            "Inactive": [
+                "Inattivo"
+            ],
+            "Coupon status updated": [
+                "Stato del coupon aggiornato"
+            ],
+            "Failed to update coupon status": [
+                "Aggiornamento dello stato del coupon non riuscito"
+            ],
+            "Something went wrong while updating coupon status": [
+                "Qualcosa \u00e8 andato storto durante l'aggiornamento dello stato del coupon"
+            ],
+            "No coupons found": [
+                "Nessun coupon trovato"
+            ],
+            "All type of Coupons activities will appear here once they occur.": [
+                "Tutti i tipi di attivit\u00e0 dei coupon compariranno qui una volta che si verificano."
+            ],
+            "Add Coupon": [
+                "Aggiungi coupon"
+            ],
+            "Coupons deleted successfully": [
+                "Coupon eliminati con successo"
+            ],
+            "%d coupon": [
+                "%d coupon",
+                "%d coupon"
+            ],
+            "Code": [
+                "Codice"
+            ],
+            "Offer": [
+                "Offerta"
+            ],
+            "No coupons found for this tab.": [
+                "Nessun coupon trovato per questa scheda."
+            ],
+            "Create Coupon": [
+                "Crea coupon"
+            ],
+            "Coupon Deleted": [
+                "Coupon eliminato"
+            ],
+            "Coupon Name": [
+                "Nome del coupon"
+            ],
+            "Coupon Code": [
+                "Codice coupon"
+            ],
+            "Offers": [
+                "Offerte"
+            ],
+            "Discount Type": [
+                "Tipo di sconto"
+            ],
+            "Percentage Discount": [
+                "Sconto percentuale"
+            ],
+            "Fixed Cart Discount": [
+                "Sconto fisso sul carrello"
+            ],
+            "Free Products": [
+                "Prodotti gratuiti"
+            ],
+            "Offer Amount": [
+                "Importo dell'offerta"
+            ],
+            "Select products to give for free": [
+                "Seleziona i prodotti da regalare"
+            ],
+            "Search for products": [
+                "Cerca prodotti"
+            ],
+            "Conditions": [
+                "Condizioni"
+            ],
+            "Discount applies to specific products?": [
+                "Lo sconto si applica a prodotti specifici?"
+            ],
+            "Minimum Spend": [
+                "Spesa minima"
+            ],
+            "Maximum Spend": [
+                "Spesa massima"
+            ],
+            "Start Date": [
+                "Data di inizio"
+            ],
+            "calendar": [
+                "calendario"
+            ],
+            "End Date": [
+                "Data di fine"
+            ],
+            "Edit Coupon": [
+                "Modifica coupon"
+            ],
+            "offer is required": [
+                "l'offerta \u00e8 obbligatoria"
+            ],
+            "Code is required": [
+                "Il codice \u00e8 obbligatorio"
+            ],
+            "Name is required": [
+                "Il nome \u00e8 obbligatorio"
+            ],
+            "Save as Inactive": [
+                "Salva come inattivo"
+            ],
+            "Save as Active": [
+                "Salva come attivo"
+            ],
+            "(No Name)": [
+                "(Senza nome)"
+            ],
+            "+%d more": [
+                "+%d in pi\u00f9"
+            ],
+            "Remind": [
+                "Ricorda"
+            ],
+            "No Abandoned Carts found": [
+                "Nessun carrello abbandonato trovato"
+            ],
+            "All Abandoned Carts will appear here once they occur.": [
+                "Tutti i carrelli abbandonati compariranno qui una volta che si verificano."
+            ],
+            "Are you sure you want to send reminder?": [
+                "Sei sicuro di voler inviare il promemoria?"
+            ],
+            "You're going to Remind": [
+                "Stai per inviare un promemoria a"
+            ],
+            "selected?": [
+                "selezionati?"
+            ],
+            "Don't Send": [
+                "Non inviare"
+            ],
+            "Yes, Send": [
+                "S\u00ec, invia"
+            ],
+            "Remind All": [
+                "Ricorda a tutti"
+            ],
+            "carts deleted successfully": [
+                "carrelli eliminati con successo"
+            ],
+            "%d cart": [
+                "%d carrello",
+                "%d carrelli"
+            ],
+            "Reminders sent successfully": [
+                "Promemoria inviati con successo"
+            ],
+            "Clean Abandoned Carts": [
+                "Pulisci i carrelli abbandonati"
+            ],
+            "Choose whether to clean all abandoned carts or only invalid ones.": [
+                "Scegli se pulire tutti i carrelli abbandonati o solo quelli non validi."
+            ],
+            "Clean All": [
+                "Pulisci tutti"
+            ],
+            "Clean Invalid": [
+                "Pulisci non validi"
+            ],
+            "Not Contacted": [
+                "Non contattato"
+            ],
+            "Contacted": [
+                "Contattato"
+            ],
+            "Recovered": [
+                "Recuperato"
+            ],
+            "Clean": [
+                "Pulisci"
+            ],
+            "No %s Carts Found": [
+                "Nessun carrello %s trovato"
+            ],
+            "Reminders": [
+                "Promemoria"
+            ],
+            "Actions": [
+                "Azioni"
+            ],
+            "Abandoned Cart Deleted": [
+                "Carrello abbandonato eliminato"
+            ],
+            "Approved": [
+                "Approvato"
+            ],
+            "Not Approved": [
+                "Non approvato"
+            ],
+            "Review #%d": [
+                "Recensione #%d"
+            ],
+            "Product #%d": [
+                "Prodotto #%d"
+            ],
+            "Review Content": [
+                "Contenuto della recensione"
+            ],
+            "Rating": [
+                "Valutazione"
+            ],
+            "Search by customer name or content": [
+                "Cerca per nome del cliente o contenuto"
+            ],
+            "Product Reviews": [
+                "Recensioni dei prodotti"
+            ],
+            "No Reviews Yet for Your Search": [
+                "Ancora nessuna recensione per la tua ricerca"
+            ],
+            "No Reviews Yet": [
+                "Ancora nessuna recensione"
+            ],
+            "No reviews match your search criteria. Try a different search.": [
+                "Nessuna recensione corrisponde ai tuoi criteri di ricerca. Prova una ricerca diversa."
+            ],
+            "All customer reviews and feedback will appear here once they\u2019re submitted.": [
+                "Tutte le recensioni e i feedback dei clienti compariranno qui una volta inviati."
+            ],
+            "Review deleted successfully": [
+                "Recensione eliminata con successo"
+            ],
+            "Failed to delete review": [
+                "Eliminazione della recensione non riuscita"
+            ],
+            "An error occurred while deleting the review": [
+                "Si \u00e8 verificato un errore durante l'eliminazione della recensione"
+            ],
+            "Community": [
+                "Community"
+            ],
+            "Documentation": [
+                "Documentazione"
+            ],
+            "Detailed step-by-step guides on how to use and get the best out of EasyCommerce.": [
+                "Guide dettagliate passo passo su come usare EasyCommerce e sfruttarlo al meglio."
+            ],
+            "Enabled": [
+                "Attivato"
+            ],
+            "Disabled": [
+                "Disattivato"
+            ],
+            "EasyCommerce Addons": [
+                "Addon di EasyCommerce"
+            ],
+            "Use EasyCommerce addons to extend and customize the functionality of your online store.": [
+                "Usa gli addon di EasyCommerce per estendere e personalizzare le funzionalit\u00e0 del tuo negozio online."
+            ],
+            "No Addons Found": [
+                "Nessun addon trovato"
+            ],
+            "Coming Soon": [
+                "Disponibile a breve"
+            ],
+            "Upgrade to PRO": [
+                "Passa a PRO"
+            ],
+            "Manage Subscriptions": [
+                "Gestisci abbonamenti"
+            ],
+            "Offer recurring payments with automatic renewals to keep your revenue consistent and predictable.": [
+                "Offri pagamenti ricorrenti con rinnovi automatici per mantenere i tuoi ricavi costanti e prevedibili."
+            ],
+            "Sell Licensed Products": [
+                "Vendi prodotti con licenza"
+            ],
+            "Automate license generation, activation, and renewals. It\u2019s perfect for digital products and software sales.": [
+                "Automatizza la generazione, l'attivazione e i rinnovi delle licenze. \u00c8 perfetto per la vendita di prodotti digitali e software."
+            ],
+            "Sell on Facebook Messenger": [
+                "Vendi su Facebook Messenger"
+            ],
+            "Bring your AI shopping assistant to Messenger, so customers can discover products and place orders right in the chat.": [
+                "Porta il tuo assistente agli acquisti AI su Messenger, cos\u00ec i clienti possono scoprire prodotti ed effettuare ordini direttamente nella chat."
+            ],
+            "Sell on WhatsApp": [
+                "Vendi su WhatsApp"
+            ],
+            "Let customers chat with your AI shopping assistant on WhatsApp, from product discovery to checkout in the app they use every day.": [
+                "Consenti ai clienti di chattare con il tuo assistente agli acquisti AI su WhatsApp, dalla scoperta dei prodotti alla cassa, nell'app che usano ogni giorno."
+            ],
+            "Create Membership Plans": [
+                "Crea piani di abbonamento"
+            ],
+            "Build exclusive access areas, manage tiers, and reward loyal members with premium content.": [
+                "Crea aree ad accesso esclusivo, gestisci i livelli e premia i membri fedeli con contenuti premium."
+            ],
+            "Run an LMS": [
+                "Gestisci un LMS"
+            ],
+            "Sell online courses, manage lessons, and track student progress - all from your EasyCommerce dashboard.": [
+                "Vendi corsi online, gestisci le lezioni e monitora i progressi degli studenti - tutto dalla tua bacheca di EasyCommerce."
+            ],
+            "Handle Bookings": [
+                "Gestisci prenotazioni"
+            ],
+            "Accept appointments, manage schedules, and let customers book services directly from your store.": [
+                "Accetta appuntamenti, gestisci gli orari e consenti ai clienti di prenotare servizi direttamente dal tuo negozio."
+            ],
+            "Didn\u2019t spot the feature you were hoping for?": [
+                "Non hai trovato la funzionalit\u00e0 che speravi?"
+            ],
+            "Drop us a message. Your suggestion could inspire our next EasyCommerce feature, or who knows, it might be cooking already!": [
+                "Inviaci un messaggio. Il tuo suggerimento potrebbe ispirare la prossima funzionalit\u00e0 di EasyCommerce o, chiss\u00e0, potrebbe gi\u00e0 essere in fase di sviluppo!"
+            ],
+            "Say Howdy!": [
+                "Salutaci!"
+            ],
+            "AI-Powered Smart Features": [
+                "Funzionalit\u00e0 intelligenti basate su AI"
+            ],
+            "Free AI Credits": [
+                "Crediti AI gratuiti"
+            ],
+            "Drag & Drop Builder Integrations (Gutenberg, WP Bakery)": [
+                "Integrazioni con costruttori drag & drop (Gutenberg, WP Bakery)"
+            ],
+            "Product, Order & Customer Management": [
+                "Gestione di prodotti, ordini e clienti"
+            ],
+            "Bring Your Own Key (OpenAI\/DeepSeek\/Claude)": [
+                "Porta la tua chiave (OpenAI\/DeepSeek\/Claude)"
+            ],
+            "Shipping & Advanced Taxation": [
+                "Spedizione e tassazione avanzata"
+            ],
+            "Coupon Management": [
+                "Gestione dei coupon"
+            ],
+            "Personalized Emails": [
+                "Email personalizzate"
+            ],
+            "Abandoned Cart Recovery": [
+                "Recupero dei carrelli abbandonati"
+            ],
+            "Automated Abandoned Cart Emails": [
+                "Email automatiche per i carrelli abbandonati"
+            ],
+            "Single Product Templates": [
+                "Template per il singolo prodotto"
+            ],
+            "Checkout Templates": [
+                "Template per la cassa"
+            ],
+            "Popular Payment Gateways (Stripe, PayPal, Mollie, etc)": [
+                "Gateway di pagamento popolari (Stripe, PayPal, Mollie, ecc.)"
+            ],
+            "Subscriptions Management": [
+                "Gestione degli abbonamenti"
+            ],
+            "License Management": [
+                "Gestione delle licenze"
+            ],
+            "Facebook Messenger Integration (AI Shopping Assistant)": [
+                "Integrazione con Facebook Messenger (assistente agli acquisti AI)"
+            ],
+            "WhatsApp Integration (AI Shopping Assistant)": [
+                "Integrazione con WhatsApp (assistente agli acquisti AI)"
+            ],
+            "Marketing & Automation Integrations": [
+                "Integrazioni di marketing e automazione"
+            ],
+            "Membership Management": [
+                "Gestione delle iscrizioni"
+            ],
+            "Multivendor Marketplace": [
+                "Marketplace multivenditore"
+            ],
+            "Learning Management System": [
+                "Learning Management System"
+            ],
+            "Migration Tool": [
+                "Strumento di migrazione"
+            ],
+            "Bookings": [
+                "Prenotazioni"
+            ],
+            "The Best of Both Worlds": [
+                "Il meglio di entrambi i mondi"
+            ],
+            "EasyCommerce Free + Pro": [
+                "EasyCommerce Free + Pro"
+            ],
+            "Features": [
+                "Funzionalit\u00e0"
+            ],
+            "(upcoming)": [
+                "(in arrivo)"
+            ],
+            "Your Current Plan": [
+                "Il tuo piano attuale"
+            ],
+            "Trusted by Businesses Like Yours": [
+                "Scelto da aziende come la tua"
+            ],
+            "What is EasyCommerce Pro?": [
+                "Cos'\u00e8 EasyCommerce Pro?"
+            ],
+            "EasyCommerce Pro is the premium addon that unlocks advanced features and capabilities within the EasyCommerce plugin. It serves as the key to accessing pro-level addons and enhancements that take your ecommerce store to the next level.": [
+                "EasyCommerce Pro \u00e8 l'addon premium che sblocca funzionalit\u00e0 e capacit\u00e0 avanzate all'interno del plugin EasyCommerce. \u00c8 la chiave per accedere ad addon e miglioramenti di livello pro che portano il tuo negozio ecommerce a un livello superiore."
+            ],
+            "Is there a free trial?": [
+                "Esiste una prova gratuita?"
+            ],
+            "While we do not offer a traditional free trial for EasyCommerce Pro, we stand behind our product with a generous 30-day refund policy. This allows you to purchase and try Pro features risk-free, and if it doesn't meet your needs, you can request a full refund within 30 days.": [
+                "Pur non offrendo una prova gratuita tradizionale per EasyCommerce Pro, garantiamo il nostro prodotto con una generosa politica di rimborso di 30 giorni. Questo ti consente di acquistare e provare le funzionalit\u00e0 Pro senza rischi e, se non soddisfa le tue esigenze, puoi richiedere un rimborso completo entro 30 giorni."
+            ],
+            "What does EasyCommerce Pro enable?": [
+                "Cosa abilita EasyCommerce Pro?"
+            ],
+            "EasyCommerce Pro enables access to premium addons such as \"License Manager\" for managing digital product licenses and \"Subscriptions\" for handling recurring payments. These addons provide powerful tools to expand your store's functionality and revenue streams.": [
+                "EasyCommerce Pro consente l'accesso ad addon premium come \"Gestore delle licenze\" per gestire le licenze dei prodotti digitali e \"Abbonamenti\" per gestire i pagamenti ricorrenti. Questi addon offrono potenti strumenti per espandere le funzionalit\u00e0 e le fonti di ricavo del tuo negozio."
+            ],
+            "Can customers shop through Messenger or WhatsApp?": [
+                "I clienti possono acquistare tramite Messenger o WhatsApp?"
+            ],
+            "Yes. The Messenger Integration addon connects your Facebook Page to the EasyCommerce AI shopping assistant, so customers can discover products, check stock, and place orders without leaving the chat. WhatsApp integration is coming soon and will work the same way.": [
+                "S\u00ec. L'addon di integrazione con Messenger collega la tua pagina Facebook all'assistente agli acquisti AI di EasyCommerce, cos\u00ec i clienti possono scoprire prodotti, verificare la disponibilit\u00e0 ed effettuare ordini senza uscire dalla chat. L'integrazione con WhatsApp sar\u00e0 disponibile a breve e funzioner\u00e0 allo stesso modo."
+            ],
+            "Are future pro addons included?": [
+                "Gli addon pro futuri sono inclusi?"
+            ],
+            "Yes, all future pro addons will be included automatically with your EasyCommerce Pro subscription. As we release new premium features and addons, you'll have immediate access without any additional purchases.": [
+                "S\u00ec, tutti i futuri addon pro saranno inclusi automaticamente con il tuo abbonamento EasyCommerce Pro. Man mano che rilasciamo nuove funzionalit\u00e0 e addon premium, avrai accesso immediato senza alcun acquisto aggiuntivo."
+            ],
+            "What payment methods are supported?": [
+                "Quali metodi di pagamento sono supportati?"
+            ],
+            "EasyCommerce Pro supports a wide range of payment methods through Stripe integration, including all major credit and debit cards, as well as popular options like LINK for instant payments and Klarna for buy now, pay later services. This ensures your customers have flexible and secure payment choices.": [
+                "EasyCommerce Pro supporta un'ampia gamma di metodi di pagamento tramite l'integrazione con Stripe, incluse tutte le principali carte di credito e debito, oltre a opzioni popolari come LINK per i pagamenti istantanei e Klarna per i servizi compra ora, paga dopo. Questo garantisce ai tuoi clienti scelte di pagamento flessibili e sicure."
+            ],
+            "What support do you offer?": [
+                "Quale supporto offrite?"
+            ],
+            "We provide top-class support through multiple channels including support tickets for detailed inquiries, email for direct communication, and phone support for urgent issues. Our expert team is dedicated to helping you succeed with EasyCommerce.": [
+                "Offriamo un supporto di prim'ordine attraverso pi\u00f9 canali, inclusi ticket di supporto per richieste dettagliate, email per la comunicazione diretta e supporto telefonico per questioni urgenti. Il nostro team di esperti \u00e8 dedicato ad aiutarti ad avere successo con EasyCommerce."
+            ],
+            "Do you offer migration from other platforms?": [
+                "Offrite la migrazione da altre piattaforme?"
+            ],
+            "Yes, we offer free migration services to help you seamlessly move your store from other ecommerce platforms to EasyCommerce. Our team will assist with transferring your products, customers, and order data at no extra cost.": [
+                "S\u00ec, offriamo servizi di migrazione gratuiti per aiutarti a spostare senza problemi il tuo negozio da altre piattaforme ecommerce a EasyCommerce. Il nostro team ti assister\u00e0 nel trasferimento dei dati di prodotti, clienti e ordini senza costi aggiuntivi."
+            ],
+            "Where can I get additional help?": [
+                "Dove posso ottenere ulteriore aiuto?"
+            ],
+            "For additional help and resources, please visit our comprehensive support center at": [
+                "Per ulteriore aiuto e risorse, visita il nostro completo centro di supporto all'indirizzo"
+            ],
+            ", where you can find documentation, tutorials, and contact our support team.": [
+                ", dove puoi trovare documentazione, tutorial e contattare il nostro team di supporto."
+            ],
+            "Frequently Asked": [
+                "Domande"
+            ],
+            "Questions": [
+                "frequenti"
+            ],
+            "Free is perfect for starters": [
+                "Free \u00e8 perfetto per iniziare"
+            ],
+            "But growth needs Pro \ud83d\ude80": [
+                "Ma la crescita richiede Pro \ud83d\ude80"
+            ],
+            "Ready to Upgrade?": [
+                "Pronto per l'upgrade?"
+            ],
+            "Enhance your experience with powerful features to increase performance and flexibility.": [
+                "Migliora la tua esperienza con potenti funzionalit\u00e0 per aumentare prestazioni e flessibilit\u00e0."
+            ],
+            "Please enter both email and license key.": [
+                "Inserisci sia l'email sia la chiave di licenza."
+            ],
+            "Invalid email or license key. Please try again.": [
+                "Email o chiave di licenza non valide. Riprova."
+            ],
+            "An error occurred while verifying the license. Please try again.": [
+                "Si \u00e8 verificato un errore durante la verifica della licenza. Riprova."
+            ],
+            "Enter your email and license key to unlock premium features": [
+                "Inserisci la tua email e la chiave di licenza per sbloccare le funzionalit\u00e0 premium"
+            ],
+            "Enter Your Email": [
+                "Inserisci la tua email"
+            ],
+            "License Key": [
+                "Chiave di licenza"
+            ],
+            "Enter your License Key": [
+                "Inserisci la tua chiave di licenza"
+            ],
+            "Verify License": [
+                "Verifica licenza"
+            ],
+            "Email:": [
+                "Email:"
+            ],
+            "License Key:": [
+                "Chiave di licenza:"
+            ],
+            "Expiry Date:": [
+                "Data di scadenza:"
+            ],
+            "Failed to fetch license information.": [
+                "Recupero delle informazioni sulla licenza non riuscito."
+            ],
+            "Failed to deactivate license. Please try again.": [
+                "Disattivazione della licenza non riuscita. Riprova."
+            ],
+            "An error occurred while deactivating the license. Please try again.": [
+                "Si \u00e8 verificato un errore durante la disattivazione della licenza. Riprova."
+            ],
+            "Your active license details": [
+                "I dettagli della tua licenza attiva"
+            ],
+            "Deactivate": [
+                "Disattiva"
+            ],
+            "Are you sure?": [
+                "Sei sicuro?"
+            ],
+            "Deactivating the license will remove all associated benefits and features from your account.": [
+                "La disattivazione della licenza rimuover\u00e0 dal tuo account tutti i vantaggi e le funzionalit\u00e0 associati."
+            ],
+            "No, Return": [
+                "No, torna indietro"
+            ],
+            "Addon deactivated.": [
+                "Addon disattivato."
+            ],
+            "Error deactivating addon.": [
+                "Errore durante la disattivazione dell'addon."
+            ],
+            "Welcome to": [
+                "Benvenuto in"
+            ],
+            "Manage all your premium features from a single dashboard.": [
+                "Gestisci tutte le tue funzionalit\u00e0 premium da un'unica bacheca."
+            ],
+            "Pro Features in Use": [
+                "Funzionalit\u00e0 Pro in uso"
+            ],
+            "You need to activate your license to use this feature.": [
+                "Devi attivare la tua licenza per usare questa funzionalit\u00e0."
+            ],
+            "No Refunds Found.": [
+                "Nessun rimborso trovato."
+            ],
+            "Refunds will appear here once processed.": [
+                "I rimborsi compariranno qui una volta elaborati."
+            ],
+            "Prev. 30 days": [
+                "30 giorni prec."
+            ],
+            "30 days last year": [
+                "30 giorni dell'anno scorso"
+            ],
+            "Prev. 7 days": [
+                "7 giorni prec."
+            ],
+            "7 days last month": [
+                "7 giorni del mese scorso"
+            ],
+            "7 days last year": [
+                "7 giorni dell'anno scorso"
+            ],
+            "Last week": [
+                "Settimana scorsa"
+            ],
+            "Same week last month": [
+                "Stessa settimana del mese scorso"
+            ],
+            "Same week last year": [
+                "Stessa settimana dell'anno scorso"
+            ],
+            "Last month": [
+                "Mese scorso"
+            ],
+            "Same month last year": [
+                "Stesso mese dell'anno scorso"
+            ],
+            "Last year": [
+                "Anno scorso"
+            ],
+            "vs.": [
+                "vs."
+            ],
+            "Export": [
+                "Esporta"
+            ],
+            "vs prev. period": [
+                "vs periodo prec."
+            ],
+            "Current Subscriptions": [
+                "Abbonamenti attuali"
+            ],
+            "Subscriptions ending this month": [
+                "Abbonamenti in scadenza questo mese"
+            ],
+            "MRR amount": [
+                "Importo MRR"
+            ],
+            "Projected MRR": [
+                "MRR previsto"
+            ],
+            "Sell Subscriptions": [
+                "Vendi abbonamenti"
+            ],
+            "No data available for the selected range.": [
+                "Nessun dato disponibile per l'intervallo selezionato."
+            ],
+            "Rank": [
+                "Posizione"
+            ],
+            "Units Sold": [
+                "Unit\u00e0 vendute"
+            ],
+            "Top Customers": [
+                "Migliori clienti"
+            ],
+            "Purchased": [
+                "Acquistato"
+            ],
+            "Sales vs. Refunds vs. Net Revenue": [
+                "Vendite vs. Rimborsi vs. Ricavo netto"
+            ],
+            "Comparison of sales, refunds, and net revenue over time": [
+                "Confronto di vendite, rimborsi e ricavo netto nel tempo"
+            ],
+            "Order vs. Refund Count": [
+                "Numero di ordini vs. rimborsi"
+            ],
+            "Order Statuses": [
+                "Stati degli ordini"
+            ],
+            "Subscriptions": [
+                "Abbonamenti"
+            ],
+            "Order Type": [
+                "Tipo di ordine"
+            ],
+            "Top Selling Items": [
+                "Articoli pi\u00f9 venduti"
+            ],
+            "Product Stats": [
+                "Statistiche del prodotto"
+            ],
+            "New vs. Returning Customers": [
+                "Clienti nuovi vs. di ritorno"
+            ],
+            "Customer Overview": [
+                "Panoramica dei clienti"
+            ],
+            "No data available": [
+                "Nessun dato disponibile"
+            ],
+            "Failed to load heatmap data.": [
+                "Caricamento dei dati della mappa di calore non riuscito."
+            ],
+            "Error loading data.": [
+                "Errore durante il caricamento dei dati."
+            ],
+            " Value: %s": [
+                " Valore: %s"
+            ],
+            "No orders": [
+                "Nessun ordine"
+            ],
+            "Top Locations": [
+                "Localit\u00e0 principali"
+            ],
+            "No location data available": [
+                "Nessun dato sulle localit\u00e0 disponibile"
+            ],
+            "Average Order Per Customer": [
+                "Ordine medio per cliente"
+            ],
+            "People Ordered once": [
+                "Persone che hanno ordinato una volta"
+            ],
+            "People Ordered twice": [
+                "Persone che hanno ordinato due volte"
+            ],
+            "People Ordered three times": [
+                "Persone che hanno ordinato tre volte"
+            ],
+            "Order vs. Customers": [
+                "Ordini vs. clienti"
+            ],
+            "Order Status Breakdown": [
+                "Ripartizione degli stati degli ordini"
+            ],
+            "Fulfillment Status Breakdown": [
+                "Ripartizione degli stati di evasione"
+            ],
+            "Orders by Location": [
+                "Ordini per localit\u00e0"
+            ],
+            "Daily Orders Heatmap": [
+                "Mappa di calore degli ordini giornalieri"
+            ],
+            "First Order": [
+                "Primo ordine"
+            ],
+            "Revenue Earned": [
+                "Ricavo generato"
+            ],
+            "Revenue Over Time": [
+                "Ricavo nel tempo"
+            ],
+            "Top Customers by Revenue": [
+                "Migliori clienti per ricavo"
+            ],
+            "In Stock (Unit)": [
+                "Disponibile (unit\u00e0)"
+            ],
+            "See Report": [
+                "Vedi il report"
+            ],
+            "Products Sold Over Time": [
+                "Prodotti venduti nel tempo"
+            ],
+            " Most sold products": [
+                " Prodotti pi\u00f9 venduti"
+            ],
+            " Least sold products": [
+                " Prodotti meno venduti"
+            ],
+            "Total %d Review": [
+                "Totale %d recensione",
+                "Totale %d recensioni"
+            ],
+            "%d Star": [
+                "%d stelle"
+            ],
+            "%d review": [
+                "%d recensione",
+                "%d recensioni"
+            ],
+            "No reviews yet": [
+                "Ancora nessuna recensione"
+            ],
+            "Variation": [
+                "Variazione"
+            ],
+            "Amount Sold": [
+                "Importo venduto"
+            ],
+            "Item Sold": [
+                "Articoli venduti"
+            ],
+            "Basic Info": [
+                "Informazioni di base"
+            ],
+            "Sales Over Time": [
+                "Vendite nel tempo"
+            ],
+            "Product Sale by Location": [
+                "Vendite del prodotto per localit\u00e0"
+            ],
+            "Order Placed": [
+                "Ordine effettuato"
+            ],
+            "Product Purchased": [
+                "Prodotto acquistato"
+            ],
+            "Total Purchase": [
+                "Acquisto totale"
+            ],
+            " See Report": [
+                " Vedi il report"
+            ],
+            "Customers Over Time": [
+                "Clienti nel tempo"
+            ],
+            "Customers location": [
+                "Localit\u00e0 dei clienti"
+            ],
+            "Customer By Day Heatmap": [
+                "Mappa di calore dei clienti per giorno"
+            ],
+            "AI connected successfully": [
+                "AI connessa con successo"
+            ],
+            "AI connection failed. Please try again.": [
+                "Connessione AI non riuscita. Riprova."
+            ],
+            "New Order": [
+                "Nuovo ordine"
+            ]
+        }
+    }
+}

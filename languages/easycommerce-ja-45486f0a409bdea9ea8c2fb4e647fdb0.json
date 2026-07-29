@@ -1,0 +1,51 @@
+{
+    "translation-revision-date": "2026-07-23 12:00+0000",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "assets\/public\/js\/agent-chatbot.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "ja",
+                "plural-forms": "nplurals=1; plural=0;"
+            },
+            "Message": [
+                "\u30e1\u30c3\u30bb\u30fc\u30b8"
+            ],
+            "AI Shopping Assistant": [
+                "AI\u30b7\u30e7\u30c3\u30d4\u30f3\u30b0\u30a2\u30b7\u30b9\u30bf\u30f3\u30c8"
+            ],
+            "Complete your order \u2192": [
+                "\u6ce8\u6587\u3092\u5b8c\u4e86\u3059\u308b \u2192"
+            ],
+            "Sorry, something went wrong. Please try again.": [
+                "\u7533\u3057\u8a33\u3054\u3056\u3044\u307e\u305b\u3093\u3002\u554f\u984c\u304c\u767a\u751f\u3057\u307e\u3057\u305f\u3002\u3082\u3046\u4e00\u5ea6\u304a\u8a66\u3057\u304f\u3060\u3055\u3044\u3002"
+            ],
+            "Connection error. Please try again.": [
+                "\u63a5\u7d9a\u30a8\u30e9\u30fc\u304c\u767a\u751f\u3057\u307e\u3057\u305f\u3002\u3082\u3046\u4e00\u5ea6\u304a\u8a66\u3057\u304f\u3060\u3055\u3044\u3002"
+            ],
+            "Open %s": [
+                "%s\u3092\u958b\u304f"
+            ],
+            "Online": [
+                "\u30aa\u30f3\u30e9\u30a4\u30f3"
+            ],
+            "New conversation": [
+                "\u65b0\u3057\u3044\u4f1a\u8a71"
+            ],
+            "Minimize": [
+                "\u6700\u5c0f\u5316"
+            ],
+            "Ask about products, orders\u2026": [
+                "\u5546\u54c1\u3084\u6ce8\u6587\u306b\u3064\u3044\u3066\u8cea\u554f\u2026"
+            ],
+            "Send": [
+                "\u9001\u4fe1"
+            ],
+            "Hi! \ud83d\udc4b I'm %s. How can I help you today?": [
+                "\u3053\u3093\u306b\u3061\u306f\uff01\ud83d\udc4b %s\u3067\u3059\u3002\u672c\u65e5\u306f\u3069\u306e\u3088\u3046\u306a\u3054\u7528\u4ef6\u3067\u3057\u3087\u3046\u304b\uff1f"
+            ]
+        }
+    }
+}

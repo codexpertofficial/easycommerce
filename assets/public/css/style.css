@@ -154,7 +154,7 @@
 .accordion-content.open {
 	max-height: 380px;
 	opacity: 1;
-	z-index: 9;
+	z-index: 9999;
 }
 .easycommerce-categories-scrolling {
 	overflow-y: scroll;

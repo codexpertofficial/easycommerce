@@ -33,7 +33,7 @@ class Attribute extends Model {
 
 		$existing_attribute = $this->get_by_slug( $slug );
 		if ( $existing_attribute ) {
-			return $existing_attribute->id;
+			return (int) $existing_attribute->id;
 		}
 
 		$data = array(

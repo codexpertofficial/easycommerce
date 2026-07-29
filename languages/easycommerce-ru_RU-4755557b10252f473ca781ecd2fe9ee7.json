@@ -1,0 +1,33 @@
+{
+    "translation-revision-date": "2026-07-23 00:00+0000",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "blocks\/single-product\/rating\/inspector.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "ru_RU",
+                "plural-forms": "nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);"
+            },
+            "Settings": [
+                "\u041d\u0430\u0441\u0442\u0440\u043e\u0439\u043a\u0438"
+            ],
+            "Show Rating": [
+                "\u041f\u043e\u043a\u0430\u0437\u044b\u0432\u0430\u0442\u044c \u0440\u0435\u0439\u0442\u0438\u043d\u0433"
+            ],
+            "Show SKU": [
+                "\u041f\u043e\u043a\u0430\u0437\u044b\u0432\u0430\u0442\u044c \u0430\u0440\u0442\u0438\u043a\u0443\u043b"
+            ],
+            "Show Favourite": [
+                "\u041f\u043e\u043a\u0430\u0437\u044b\u0432\u0430\u0442\u044c \u00ab\u0418\u0437\u0431\u0440\u0430\u043d\u043d\u043e\u0435\u00bb"
+            ],
+            "Styles": [
+                "\u0421\u0442\u0438\u043b\u0438"
+            ],
+            "Border": [
+                "\u0413\u0440\u0430\u043d\u0438\u0446\u0430"
+            ]
+        }
+    }
+}

@@ -89,6 +89,7 @@ class Product extends API {
 					'sales'                => $product->get_sales(),
 					'attributes'           => $product->get_attributes(),
 					'is_variable'          => $product->is_variable(),
+					'badges' => $product->get_badges(),
 
 				);
 
@@ -162,6 +163,7 @@ class Product extends API {
 			'rating'      => $product->get_rating(),
 			'categories'  => $product->get_categories(),
 			'tags'        => $product->get_tags(),
+			'badges'      => $product->get_badges(),
 			'brands'      => $product->get_brands(),
 			'sales'       => $product->get_sales(),
 			'stock'       => $product->get_stock(),

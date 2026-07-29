@@ -17,6 +17,7 @@ module.exports = (env, argv) => {
             blocks: path.resolve(__dirname, "blocks/index.js"),
             tailwind: path.resolve(__dirname, "assets/common/css/tailwind.css"),
             editor: path.resolve(__dirname, "spa/admin/editor/index.js"),
+            "ai-usage-reset": path.resolve(__dirname, "spa/admin/ai-usage/reset-logs.jsx"),
         },
         output: {
             filename: "[name].bundle.js",

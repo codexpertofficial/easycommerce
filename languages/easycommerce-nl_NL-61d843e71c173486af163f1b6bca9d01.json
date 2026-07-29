@@ -1,0 +1,117 @@
+{
+    "translation-revision-date": "2026-07-23 00:00+0000",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "build\/tax.bundle.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "nl_NL",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Country": [
+                "Land"
+            ],
+            "State": [
+                "Staat"
+            ],
+            "City": [
+                "Plaats"
+            ],
+            "Cancel": [
+                "Annuleren"
+            ],
+            "Tax class name": [
+                "Naam belastingklasse"
+            ],
+            "Name": [
+                "Naam"
+            ],
+            "Status": [
+                "Status"
+            ],
+            "Are you sure you want to delete?": [
+                "Weet je zeker dat je wilt verwijderen?"
+            ],
+            "You're going to delete this, are you sure?": [
+                "Je gaat dit verwijderen, weet je het zeker?"
+            ],
+            "No, Keep it": [
+                "Nee, behouden"
+            ],
+            "Yes, Delete": [
+                "Ja, verwijderen"
+            ],
+            "Delete Permanently": [
+                "Permanent verwijderen"
+            ],
+            "Description": [
+                "Beschrijving"
+            ],
+            "Tax Classes": [
+                "Belastingklassen"
+            ],
+            "Active": [
+                "Actief"
+            ],
+            "Inactive": [
+                "Inactief"
+            ],
+            "Actions": [
+                "Acties"
+            ],
+            "Read docs.": [
+                "Lees de documentatie."
+            ],
+            "Write description here": [
+                "Schrijf hier de beschrijving"
+            ],
+            "Enable\/Disable": [
+                "In-\/uitschakelen"
+            ],
+            "Regions": [
+                "Regio's"
+            ],
+            "No tax classes configured": [
+                "Geen belastingklassen geconfigureerd"
+            ],
+            "Set up tax classes to apply the correct tax amounts to products. ": [
+                "Stel belastingklassen in om de juiste belastingbedragen op producten toe te passen. "
+            ],
+            "+ Add Class": [
+                "+ Klasse toevoegen"
+            ],
+            "Add Class": [
+                "Klasse toevoegen"
+            ],
+            "Class": [
+                "Klasse"
+            ],
+            "Rate (%)": [
+                "Tarief (%)"
+            ],
+            "- Select -": [
+                "- Selecteer -"
+            ],
+            "Update Taxation": [
+                "Belasting bijwerken"
+            ],
+            "Create Taxation": [
+                "Belasting aanmaken"
+            ],
+            "Rates": [
+                "Tarieven"
+            ],
+            "Add Tax Class": [
+                "Belastingklasse toevoegen"
+            ],
+            "Populate Tax Rates": [
+                "Belastingtarieven invullen"
+            ],
+            "Tax rates for all areas of %s": [
+                "Belastingtarieven voor alle gebieden van %s"
+            ]
+        }
+    }
+}

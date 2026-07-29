@@ -285,7 +285,8 @@ class FunctionsTest extends EasyCommerceTestCase {
 	 * Test easycommerce_is_account_page function.
 	 */
 	public function test_easycommerce_is_account_page() {
-		$result = easycommerce_is_account_page();
+		// The account-page check was renamed to easycommerce_is_dashboard().
+		$result = easycommerce_is_dashboard();
 		$this->assertIsBool( $result );
 	}
 

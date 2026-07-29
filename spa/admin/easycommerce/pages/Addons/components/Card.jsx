@@ -5,6 +5,8 @@ import { applyFilters } from '@wordpress/hooks';
 import StarRating from './StarRating';
 import ProModal from '../../../../common/ProModal';
 
+const MANUAL_ADDONS_URL = 'https://easycommerce.dev/addons';
+
 const Card = ({ addon }) => {
 	/**
 	 * Filters the addon data for the card display.
@@ -79,7 +81,13 @@ const Card = ({ addon }) => {
 			}
 		} catch (error) {
 			setLoading(false);
-			showToast('error', __('Something went wrong. Please try again.', 'easycommerce'));
+			showToast(
+				'error',
+				__(
+					`Addon not installed. <a href="${MANUAL_ADDONS_URL}" target="_blank" rel="noopener noreferrer" style="color:#fff;text-decoration:underline;">Install it manually</a>.`,
+					'easycommerce'
+				)
+			);
 		}
 	};
 

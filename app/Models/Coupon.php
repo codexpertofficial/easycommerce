@@ -60,7 +60,7 @@ class Coupon extends Model {
 	}
 
 	protected function initialize_coupon( $coupon ) {
-		$this->id            = $coupon->id;
+		$this->id            = (int) $coupon->id;
 		$this->name          = $coupon->name;
 		$this->code          = $coupon->code;
 		$this->type          = $coupon->type;

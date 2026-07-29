@@ -159,6 +159,7 @@ $formatted_products = array_map(
 			'brands'               => $product->get_brands(),
 			'sales'                => $product->get_sales(),
 			'attributes'           => $product->get_attributes(),
+			'badges'               => $product->get_badges(),
 			'is_variable'          => $product->is_variable(),
 		);
 	},

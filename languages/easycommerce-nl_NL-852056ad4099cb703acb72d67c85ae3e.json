@@ -1,0 +1,141 @@
+{
+    "translation-revision-date": "2026-07-23 00:00+0000",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "build\/auth.bundle.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "nl_NL",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Passwords do not match": [
+                "Wachtwoorden komen niet overeen"
+            ],
+            "Password has been reset successfully.": [
+                "Wachtwoord is succesvol opnieuw ingesteld."
+            ],
+            "Invalid email\/username or password.": [
+                "Ongeldig e-mailadres\/gebruikersnaam of wachtwoord."
+            ],
+            "Terms of Service": [
+                "Servicevoorwaarden"
+            ],
+            "Privacy Policy": [
+                "Privacybeleid"
+            ],
+            "Remember Me": [
+                "Onthoud mij"
+            ],
+            "New Password": [
+                "Nieuw wachtwoord"
+            ],
+            "Confirm Password": [
+                "Bevestig wachtwoord"
+            ],
+            "An error occurred. Please try again.": [
+                "Er is een fout opgetreden. Probeer het opnieuw."
+            ],
+            "Sign In": [
+                "Inloggen"
+            ],
+            "Welcome back! sign in and let the greenery spark your joy": [
+                "Welkom terug! Log in en laat het groen je vreugde ontsteken"
+            ],
+            "Email Address": [
+                "E-mailadres"
+            ],
+            "Password": [
+                "Wachtwoord"
+            ],
+            "Signing in...": [
+                "Inloggen..."
+            ],
+            "Forgot Password?": [
+                "Wachtwoord vergeten?"
+            ],
+            "Don't have an account?": [
+                "Heb je nog geen account?"
+            ],
+            "Sign Up": [
+                "Registreren"
+            ],
+            "Registration Complete please login": [
+                "Registratie voltooid, log in"
+            ],
+            "Registration failed. Please try again.": [
+                "Registratie mislukt. Probeer het opnieuw."
+            ],
+            "Registration": [
+                "Registratie"
+            ],
+            "Welcome Back! Sign in and let the greenery spark your joy": [
+                "Welkom terug! Log in en laat het groen je vreugde ontsteken"
+            ],
+            "Username": [
+                "Gebruikersnaam"
+            ],
+            "User Name": [
+                "Gebruikersnaam"
+            ],
+            "Enter your Email": [
+                "Voer je e-mailadres in"
+            ],
+            "New password": [
+                "Nieuw wachtwoord"
+            ],
+            "Enter new password": [
+                "Voer nieuw wachtwoord in"
+            ],
+            "Confirm password": [
+                "Bevestig wachtwoord"
+            ],
+            "Confirm new password": [
+                "Bevestig nieuw wachtwoord"
+            ],
+            "Creating account...": [
+                "Account aanmaken..."
+            ],
+            "Sign up": [
+                "Registreren"
+            ],
+            "By creating an account, you agree to our": [
+                "Door een account aan te maken ga je akkoord met onze"
+            ],
+            "and": [
+                "en"
+            ],
+            "Log in": [
+                "Inloggen"
+            ],
+            "Check your email for the confirmation link.": [
+                "Controleer je e-mail voor de bevestigingslink."
+            ],
+            "Reset your password": [
+                "Stel je wachtwoord opnieuw in"
+            ],
+            "Enter a valid e-mail to receive instruction on how to reset your password.": [
+                "Voer een geldig e-mailadres in om instructies te ontvangen over hoe je je wachtwoord opnieuw kunt instellen."
+            ],
+            "Email or username": [
+                "E-mailadres of gebruikersnaam"
+            ],
+            "Sending...": [
+                "Verzenden..."
+            ],
+            "Reset Password": [
+                "Wachtwoord opnieuw instellen"
+            ],
+            "Set New Password": [
+                "Nieuw wachtwoord instellen"
+            ],
+            "Enter your new password below.": [
+                "Voer hieronder je nieuwe wachtwoord in."
+            ],
+            "Resetting...": [
+                "Opnieuw instellen..."
+            ]
+        }
+    }
+}

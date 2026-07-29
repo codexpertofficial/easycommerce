@@ -1,0 +1,33 @@
+{
+    "translation-revision-date": "2026-07-23 00:00+0000",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "assets\/admin\/js\/email-placeholders.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "zh_CN",
+                "plural-forms": "nplurals=1; plural=0;"
+            },
+            "Insert Email Placeholder": [
+                "\u63d2\u5165\u90ae\u4ef6\u5360\u4f4d\u7b26"
+            ],
+            "Select a placeholder:": [
+                "\u9009\u62e9\u4e00\u4e2a\u5360\u4f4d\u7b26\uff1a"
+            ],
+            "Select a placeholder to automatically insert it into your email template. These will be replaced with actual values when emails are sent.": [
+                "\u9009\u62e9\u4e00\u4e2a\u5360\u4f4d\u7b26\u5373\u53ef\u81ea\u52a8\u5c06\u5176\u63d2\u5165\u5230\u60a8\u7684\u90ae\u4ef6\u6a21\u677f\u4e2d\u3002\u53d1\u9001\u90ae\u4ef6\u65f6\uff0c\u8fd9\u4e9b\u5360\u4f4d\u7b26\u5c06\u88ab\u66ff\u6362\u4e3a\u5b9e\u9645\u503c\u3002"
+            ],
+            "Close": [
+                "\u5173\u95ed"
+            ],
+            "Search for a placeholder...": [
+                "\u641c\u7d22\u5360\u4f4d\u7b26\u2026\u2026"
+            ],
+            "Loading...": [
+                "\u52a0\u8f7d\u4e2d\u2026\u2026"
+            ]
+        }
+    }
+}

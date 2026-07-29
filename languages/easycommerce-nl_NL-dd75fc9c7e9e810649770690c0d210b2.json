@@ -1,0 +1,36 @@
+{
+    "translation-revision-date": "2026-07-23 00:00+0000",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "assets\/public\/js\/init.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "nl_NL",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Price": [
+                "Prijs"
+            ],
+            "Your cart is empty.": [
+                "Je winkelwagen is leeg."
+            ],
+            "Product": [
+                "Product"
+            ],
+            "Quantity": [
+                "Aantal"
+            ],
+            "Failed to load cart.": [
+                "Kon winkelwagen niet laden."
+            ],
+            "Error loading cart.": [
+                "Fout bij het laden van de winkelwagen."
+            ],
+            "Failed to add to cart. Please try again.": [
+                "Kon niet toevoegen aan winkelwagen. Probeer het opnieuw."
+            ]
+        }
+    }
+}

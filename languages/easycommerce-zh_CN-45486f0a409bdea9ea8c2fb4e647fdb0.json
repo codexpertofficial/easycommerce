@@ -1,0 +1,51 @@
+{
+    "translation-revision-date": "2026-07-23 00:00+0000",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "assets\/public\/js\/agent-chatbot.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "zh_CN",
+                "plural-forms": "nplurals=1; plural=0;"
+            },
+            "Message": [
+                "\u6d88\u606f"
+            ],
+            "AI Shopping Assistant": [
+                "AI \u8d2d\u7269\u52a9\u624b"
+            ],
+            "Complete your order \u2192": [
+                "\u5b8c\u6210\u60a8\u7684\u8ba2\u5355 \u2192"
+            ],
+            "Sorry, something went wrong. Please try again.": [
+                "\u62b1\u6b49\uff0c\u51fa\u9519\u4e86\u3002\u8bf7\u91cd\u8bd5\u3002"
+            ],
+            "Connection error. Please try again.": [
+                "\u8fde\u63a5\u9519\u8bef\u3002\u8bf7\u91cd\u8bd5\u3002"
+            ],
+            "Open %s": [
+                "\u6253\u5f00 %s"
+            ],
+            "Online": [
+                "\u5728\u7ebf"
+            ],
+            "New conversation": [
+                "\u65b0\u5bf9\u8bdd"
+            ],
+            "Minimize": [
+                "\u6700\u5c0f\u5316"
+            ],
+            "Ask about products, orders\u2026": [
+                "\u54a8\u8be2\u5546\u54c1\u3001\u8ba2\u5355\u2026\u2026"
+            ],
+            "Send": [
+                "\u53d1\u9001"
+            ],
+            "Hi! \ud83d\udc4b I'm %s. How can I help you today?": [
+                "\u60a8\u597d\uff01\ud83d\udc4b \u6211\u662f %s\u3002\u4eca\u5929\u6709\u4ec0\u4e48\u53ef\u4ee5\u5e2e\u60a8\uff1f"
+            ]
+        }
+    }
+}

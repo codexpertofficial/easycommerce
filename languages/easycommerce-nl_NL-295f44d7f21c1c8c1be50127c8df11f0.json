@@ -1,0 +1,356 @@
+{
+    "translation-revision-date": "2026-07-23 00:00+0000",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "build\/blocks.bundle.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "nl_NL",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Cart": [
+                "Winkelwagen"
+            ],
+            "No products found.": [
+                "Geen producten gevonden."
+            ],
+            "Categories": [
+                "Categorie\u00ebn"
+            ],
+            "Brands": [
+                "Merken"
+            ],
+            "Checkout": [
+                "Afrekenen"
+            ],
+            "Settings": [
+                "Instellingen"
+            ],
+            "Body": [
+                "Tekst"
+            ],
+            "Low to High": [
+                "Laag naar hoog"
+            ],
+            "High to Low": [
+                "Hoog naar laag"
+            ],
+            "Newest": [
+                "Nieuwste"
+            ],
+            "Oldest": [
+                "Oudste"
+            ],
+            "Best Selling": [
+                "Best verkocht"
+            ],
+            "Lowest Selling": [
+                "Minst verkocht"
+            ],
+            "Top rating": [
+                "Hoogste beoordeling"
+            ],
+            "Lowest rating": [
+                "Laagste beoordeling"
+            ],
+            "Reviews": [
+                "Beoordelingen"
+            ],
+            "Min Price": [
+                "Min. prijs"
+            ],
+            "Max Price": [
+                "Max. prijs"
+            ],
+            "Search Icon": [
+                "Zoekpictogram"
+            ],
+            "Sort by": [
+                "Sorteren op"
+            ],
+            "Add to cart": [
+                "Toevoegen aan winkelwagen"
+            ],
+            "Color": [
+                "Kleur"
+            ],
+            "Product Description": [
+                "Productbeschrijving"
+            ],
+            "Billing Address": [
+                "Factuuradres"
+            ],
+            "Your Cart": [
+                "Je winkelwagen"
+            ],
+            "Showing %d review": [
+                "%d beoordeling wordt getoond",
+                "%d beoordelingen worden getoond"
+            ],
+            "Write a review": [
+                "Schrijf een beoordeling"
+            ],
+            "Your email address will not be published. required fields are marked": [
+                "Je e-mailadres wordt niet gepubliceerd. Verplichte velden zijn gemarkeerd"
+            ],
+            "Write your review": [
+                "Schrijf je beoordeling"
+            ],
+            "Submit Now": [
+                "Nu verzenden"
+            ],
+            "Product Details": [
+                "Productdetails"
+            ],
+            "Review": [
+                "Beoordeling"
+            ],
+            "Quantity": [
+                "Aantal"
+            ],
+            "This is your billing address being edited.": [
+                "Dit is je factuuradres dat wordt bewerkt."
+            ],
+            "This is your billing address as saved.": [
+                "Dit is je opgeslagen factuuradres."
+            ],
+            "Clear cart": [
+                "Winkelwagen legen"
+            ],
+            "This is your cart being edited.": [
+                "Dit is je winkelwagen die wordt bewerkt."
+            ],
+            "Font Size": [
+                "Lettergrootte"
+            ],
+            "Font Weight": [
+                "Letterdikte"
+            ],
+            "100 (Thin)": [
+                "100 (dun)"
+            ],
+            "200 (Extra Light)": [
+                "200 (extra licht)"
+            ],
+            "300 (Light)": [
+                "300 (licht)"
+            ],
+            "400 (Normal)": [
+                "400 (normaal)"
+            ],
+            "500 (Medium)": [
+                "500 (medium)"
+            ],
+            "600 (Semi Bold)": [
+                "600 (semivet)"
+            ],
+            "700 (Bold)": [
+                "700 (vet)"
+            ],
+            "800 (Extra Bold)": [
+                "800 (extra vet)"
+            ],
+            "900 (Black)": [
+                "900 (zwart)"
+            ],
+            "Default": [
+                "Standaard"
+            ],
+            "Normal": [
+                "Normaal"
+            ],
+            "Bold": [
+                "Vet"
+            ],
+            "Text Transform": [
+                "Teksttransformatie"
+            ],
+            "Uppercase": [
+                "Hoofdletters"
+            ],
+            "Lowercase": [
+                "Kleine letters"
+            ],
+            "Capitalize": [
+                "Beginhoofdletters"
+            ],
+            "Text Style": [
+                "Tekststijl"
+            ],
+            "Italic": [
+                "Cursief"
+            ],
+            "Oblique": [
+                "Schuin"
+            ],
+            "Text Decoration": [
+                "Tekstdecoratie"
+            ],
+            "None": [
+                "Geen"
+            ],
+            "Underline": [
+                "Onderstreept"
+            ],
+            "Overline": [
+                "Bovenstreept"
+            ],
+            "Line Through": [
+                "Doorgestreept"
+            ],
+            "Line Height": [
+                "Regelhoogte"
+            ],
+            "Word Spacing": [
+                "Woordspati\u00ebring"
+            ],
+            "Price Range": [
+                "Prijsklasse"
+            ],
+            " Search": [
+                " Zoeken"
+            ],
+            "full star": [
+                "volle ster"
+            ],
+            "half star": [
+                "halve ster"
+            ],
+            "empty star": [
+                "lege ster"
+            ],
+            "Product Settings": [
+                "Productinstellingen"
+            ],
+            "Products Per Page": [
+                "Producten per pagina"
+            ],
+            "Grid Settings": [
+                "Rasterinstellingen"
+            ],
+            "Show Filters": [
+                "Filters tonen"
+            ],
+            "Show Pagination": [
+                "Paginering tonen"
+            ],
+            "Number of Columns": [
+                "Aantal kolommen"
+            ],
+            "Product Title": [
+                "Producttitel"
+            ],
+            "Text Color": [
+                "Tekstkleur"
+            ],
+            "Hover Text Color": [
+                "Tekstkleur bij hover"
+            ],
+            "Product Category": [
+                "Productcategorie"
+            ],
+            "Product Rating": [
+                "Productbeoordeling"
+            ],
+            "Star Size": [
+                "Stergrootte"
+            ],
+            "Product Price": [
+                "Productprijs"
+            ],
+            "Regular Price": [
+                "Normale prijs"
+            ],
+            "Sale Price": [
+                "Aanbiedingsprijs"
+            ],
+            "Cart Button": [
+                "Winkelwagenknop"
+            ],
+            "Hover": [
+                "Hover"
+            ],
+            "Background Color": [
+                "Achtergrondkleur"
+            ],
+            "Focus Text Color": [
+                "Tekstkleur bij focus"
+            ],
+            "Focus Background Color": [
+                "Achtergrondkleur bij focus"
+            ],
+            "Text Color (Hover)": [
+                "Tekstkleur (hover)"
+            ],
+            "Background Color (Hover)": [
+                "Achtergrondkleur (hover)"
+            ],
+            "Checkout Button": [
+                "Afrekenknop"
+            ],
+            "Add To Cart": [
+                "Toevoegen aan winkelwagen"
+            ],
+            "Show Sort By": [
+                "Sorteren op tonen"
+            ],
+            "Description Color": [
+                "Beschrijvingskleur"
+            ],
+            "Hover Description Color": [
+                "Beschrijvingskleur bij hover"
+            ],
+            "Post type is not product.": [
+                "Berichttype is geen product."
+            ],
+            "Number of Gallery Item": [
+                "Aantal galerij-items"
+            ],
+            "Show Tax included": [
+                "'Incl. belasting' tonen"
+            ],
+            "SKU:": [
+                "SKU:"
+            ],
+            "Show Rating": [
+                "Beoordeling tonen"
+            ],
+            "Show SKU": [
+                "SKU tonen"
+            ],
+            "Show Favourite": [
+                "Favoriet tonen"
+            ],
+            "Styles": [
+                "Stijlen"
+            ],
+            "Border": [
+                "Rand"
+            ],
+            "Only <strong>%d<\/strong> item left in stock": [
+                "Nog maar <strong>%d<\/strong> artikel op voorraad",
+                "Nog maar <strong>%d<\/strong> artikelen op voorraad"
+            ],
+            "Primary": [
+                "Primair"
+            ],
+            "Body Light": [
+                "Body licht"
+            ],
+            "Title": [
+                "Titel"
+            ],
+            "Dropdown Icon": [
+                "Vervolgkeuzepictogram"
+            ],
+            "Showing %1$d-%2$d of %3$d Results": [
+                "%1$d-%2$d van %3$d resultaten worden getoond"
+            ],
+            "Default Sorter": [
+                "Standaardsortering"
+            ]
+        }
+    }
+}

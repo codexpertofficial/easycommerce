@@ -464,6 +464,11 @@ add_action(
 					$vars['stripe']['enabled_payment_methods'] = $enabled_payment_methods;
 					$vars['stripe']['payment_method_minimums'] = easycommerce_stripe_payment_method_minimums();
 					$vars['stripe']['payment_method_maximums'] = easycommerce_stripe_payment_method_maximums();
+
+					// The non-recurring Payment Element resolves its eligible methods
+					// from this configuration (+ Stripe's currency/amount/country rules)
+					// rather than the static list above.
+					$vars['stripe']['payment_method_configuration'] = $this->payment_methods_helper->get_default_pmc_id();
 				}
 
 				return $vars;

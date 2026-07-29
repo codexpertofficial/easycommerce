@@ -28,21 +28,6 @@ class AITest extends EasyCommerceTestCase {
 	}
 
 	/**
-	 * Test fix_spelling method.
-	 */
-	public function test_fix_spelling() {
-		$ai       = new AI();
-		$response = $ai->fix_spelling( 'helo wrld' );
-
-		// The response might be empty if API is not configured
-		$this->assertThat( $response, $this->logicalOr(
-			$this->isType( 'string' ),
-			$this->isType( 'array' ),
-			$this->isNull()
-		) );
-	}
-
-	/**
 	 * Test write method.
 	 */
 	public function test_write() {

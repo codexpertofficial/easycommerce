@@ -1,0 +1,33 @@
+{
+    "translation-revision-date": "2026-07-23 00:00+0000",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "assets\/admin\/js\/email-placeholders.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "nl_NL",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Insert Email Placeholder": [
+                "E-mailplaceholder invoegen"
+            ],
+            "Select a placeholder:": [
+                "Selecteer een placeholder:"
+            ],
+            "Select a placeholder to automatically insert it into your email template. These will be replaced with actual values when emails are sent.": [
+                "Selecteer een placeholder om deze automatisch in je e-mailsjabloon in te voegen. Deze worden bij het verzenden van e-mails vervangen door de werkelijke waarden."
+            ],
+            "Close": [
+                "Sluiten"
+            ],
+            "Search for a placeholder...": [
+                "Zoek naar een placeholder..."
+            ],
+            "Loading...": [
+                "Laden..."
+            ]
+        }
+    }
+}

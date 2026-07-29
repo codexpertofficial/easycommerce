@@ -235,7 +235,7 @@ const Header = ({
 								rel="noopener noreferrer"
 								className="flex items-center cursor-pointer p-2 font-inter font-medium text-sm leading-5 ec-primary hover:text-ec-primary focus:shadow-none focus:text-ec-primary"
 							>
-								{__('Join Community', 'easycommerce')}
+								{__('Community', 'easycommerce')}
 							</a>
 						</div>
 						|

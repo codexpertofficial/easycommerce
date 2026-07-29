@@ -25,6 +25,7 @@ jQuery(function ($) {
         // validates from $_REQUEST just like the X-WP-Nonce header.
         if (navigator.sendBeacon) {
             const payload = new FormData();
+            payload.append("event", "deactivation");
             payload.append("name", EASYCOMMERCE_SURVEY.user?.name ?? "");
             payload.append("email", EASYCOMMERCE_SURVEY.user?.email ?? "");
             payload.append("home", EASYCOMMERCE_SURVEY.home);
@@ -47,6 +48,7 @@ jQuery(function ($) {
             type: "POST",
             dataType: "JSON",
             data: {
+                event: "deactivation",
                 name: EASYCOMMERCE_SURVEY.user?.name,
                 email: EASYCOMMERCE_SURVEY.user?.email,
                 home: EASYCOMMERCE_SURVEY.home,

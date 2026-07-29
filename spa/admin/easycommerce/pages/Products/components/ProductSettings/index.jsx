@@ -3,6 +3,25 @@ import { motion } from 'framer-motion';
 import { __ } from '@wordpress/i18n';
 
 import PanelTitle from '../common/PanelTitle';
+import MultiSelect from  '../../components/common/MultiSelect';
+
+const BADGE_OPTIONS = [
+    {
+        id: 'new',
+        name: __('New Arrival', 'easycommerce'),
+        color: '#22C55E',
+    },
+    {
+        id: 'best_seller',
+        name: __('Best Seller', 'easycommerce'),
+        color: '#F59E0B',
+    },
+    {
+        id: 'featured',
+        name: __('Featured', 'easycommerce'),
+        color: '#3B82F6',
+    },
+];
 
 const ProductSettings = ({ productTitle, productSlug, prevData }) => {
 	const [isOpen, setIsOpen] = useState(true);
@@ -11,6 +30,13 @@ const ProductSettings = ({ productTitle, productSlug, prevData }) => {
 	const [noindex, setNoindex] = useState(prevData?.noindex || false);
 	const [showReview, setShowReview] = useState(prevData?.show_review ?? true);
 	const [reviewTextMandatory, setReviewTextMandatory] = useState(prevData?.review_text_mandatory || false);
+
+	// Badges: array of selected type strings, e.g. ['new', 'featured']
+	const initialBadges = BADGE_OPTIONS.filter(
+		badge => prevData?.[`_badge_${badge.id}`]
+	);
+
+	const [selectedBadges, setSelectedBadges] = useState(initialBadges);
 
 	useEffect(() => {
 		if (productTitle && !productSlug) {
@@ -93,6 +119,40 @@ const ProductSettings = ({ productTitle, productSlug, prevData }) => {
 							<p className="text-sm text-ec-body mt-4 mb-2">{__('URL:', 'easycommerce')}</p>
 							<p className="text-sm text-ec-body break-all focus:shadow-none focus:outline-none">{EASYCOMMERCE.home_url}/products/<strong>{slug}</strong></p>
 
+						</div>
+
+						<div>
+							<h4 className="text-ec-title font-inter font-medium text-xl lg:text-base mb-4 lg:mb-2">
+								{__('Badges', 'easycommerce')}
+							</h4>
+ 
+								<MultiSelect
+									options={BADGE_OPTIONS}
+									selectedValues={selectedBadges}
+									placeholder={__('Select badges...', 'easycommerce')}
+									showOptionColor={true}
+									handleSelect={(badge) => {
+										setSelectedBadges(prev => [...prev, badge]);
+									}}
+									handleRemove={(index) => {
+										setSelectedBadges(prev =>
+											prev.filter((_, i) => i !== index)
+										);
+									}}
+								/>
+
+								{BADGE_OPTIONS.map((badge) => (
+									<input
+										key={badge.id}
+										type="hidden"
+										name={`_badge_${badge.id}`}
+										value={
+											selectedBadges.some(item => item.id === badge.id)
+												? '1'
+												: '0'
+										}
+									/>
+								))}
 						</div>
 
 						<div>

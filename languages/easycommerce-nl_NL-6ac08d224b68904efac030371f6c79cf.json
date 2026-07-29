@@ -1,0 +1,444 @@
+{
+    "translation-revision-date": "2026-07-23 00:00+0000",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "build\/dashboard.bundle.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "nl_NL",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Passwords do not match": [
+                "Wachtwoorden komen niet overeen"
+            ],
+            "Payment Method": [
+                "Betaalmethode"
+            ],
+            "Order ID": [
+                "Bestel-ID"
+            ],
+            "Order Status": [
+                "Bestelstatus"
+            ],
+            "Orders": [
+                "Bestellingen"
+            ],
+            "Pending": [
+                "In afwachting"
+            ],
+            "Processing": [
+                "In behandeling"
+            ],
+            "Completed": [
+                "Voltooid"
+            ],
+            "Refunded": [
+                "Terugbetaald"
+            ],
+            "Cancelled": [
+                "Geannuleerd"
+            ],
+            "On Hold": [
+                "In de wacht"
+            ],
+            "Dashboard": [
+                "Dashboard"
+            ],
+            "First Name": [
+                "Voornaam"
+            ],
+            "Last Name": [
+                "Achternaam"
+            ],
+            "Email": [
+                "E-mail"
+            ],
+            "Phone": [
+                "Telefoon"
+            ],
+            "Enter your phone number": [
+                "Voer je telefoonnummer in"
+            ],
+            "Address 1": [
+                "Adres 1"
+            ],
+            "Address 2": [
+                "Adres 2"
+            ],
+            "Country": [
+                "Land"
+            ],
+            "State": [
+                "Staat"
+            ],
+            "City": [
+                "Plaats"
+            ],
+            "Business Type": [
+                "Bedrijfstype"
+            ],
+            "Address": [
+                "Adres"
+            ],
+            "Settings": [
+                "Instellingen"
+            ],
+            "Shipping": [
+                "Verzending"
+            ],
+            "Cancel": [
+                "Annuleren"
+            ],
+            "Your Email": [
+                "Je e-mailadres"
+            ],
+            "Action": [
+                "Actie"
+            ],
+            "Transaction ID": [
+                "Transactie-ID"
+            ],
+            "Transactions": [
+                "Transacties"
+            ],
+            "Product Image": [
+                "Productafbeelding"
+            ],
+            "Date": [
+                "Datum"
+            ],
+            "Pay Now": [
+                "Nu betalen"
+            ],
+            "Subtotal": [
+                "Subtotaal"
+            ],
+            "Discount": [
+                "Korting"
+            ],
+            "Total": [
+                "Totaal"
+            ],
+            "Type": [
+                "Type"
+            ],
+            "Size": [
+                "Maat"
+            ],
+            "Billing Address": [
+                "Factuuradres"
+            ],
+            "Shipping Address": [
+                "Verzendadres"
+            ],
+            "Product Tax": [
+                "Productbelasting"
+            ],
+            "Shipping Tax": [
+                "Verzendbelasting"
+            ],
+            "Select City": [
+                "Selecteer plaats"
+            ],
+            "Select State": [
+                "Selecteer staat"
+            ],
+            "Quantity": [
+                "Aantal"
+            ],
+            "Password": [
+                "Wachtwoord"
+            ],
+            "New password": [
+                "Nieuw wachtwoord"
+            ],
+            "Enter new password": [
+                "Voer nieuw wachtwoord in"
+            ],
+            "Confirm new password": [
+                "Bevestig nieuw wachtwoord"
+            ],
+            "Select your country": [
+                "Selecteer je land"
+            ],
+            "Purchases": [
+                "Aankopen"
+            ],
+            "Downloads": [
+                "Downloads"
+            ],
+            "Profile": [
+                "Profiel"
+            ],
+            "Logout": [
+                "Uitloggen"
+            ],
+            "Unknown User": [
+                "Onbekende gebruiker"
+            ],
+            "User Profile Image": [
+                "Profielafbeelding gebruiker"
+            ],
+            "arrow": [
+                "pijl"
+            ],
+            "Total Orders": [
+                "Totaal aantal bestellingen"
+            ],
+            "N\/A": [
+                "N.v.t."
+            ],
+            "Total Spent": [
+                "Totaal besteed"
+            ],
+            "Average Orders": [
+                "Gemiddeld aantal bestellingen"
+            ],
+            "Customer since": [
+                "Klant sinds"
+            ],
+            "Summary": [
+                "Samenvatting"
+            ],
+            "icon": [
+                "pictogram"
+            ],
+            "View": [
+                "Bekijken"
+            ],
+            "Recent Orders": [
+                "Recente bestellingen"
+            ],
+            "View More": [
+                "Meer bekijken"
+            ],
+            "No orders yet": [
+                "Nog geen bestellingen"
+            ],
+            "When you place an order it will show up here.": [
+                "Wanneer je een bestelling plaatst, verschijnt deze hier."
+            ],
+            "Amount": [
+                "Bedrag"
+            ],
+            "Status": [
+                "Status"
+            ],
+            "View order": [
+                "Bestelling bekijken"
+            ],
+            "Back": [
+                "Terug"
+            ],
+            "Next": [
+                "Volgende"
+            ],
+            "No orders available": [
+                "Geen bestellingen beschikbaar"
+            ],
+            "Orders you place will appear here.": [
+                "Bestellingen die je plaatst, verschijnen hier."
+            ],
+            "card-icon": [
+                "kaartpictogram"
+            ],
+            "Click to copy": [
+                "Klik om te kopi\u00ebren"
+            ],
+            "Copy": [
+                "Kopi\u00ebren"
+            ],
+            "Copied!": [
+                "Gekopieerd!"
+            ],
+            "No transactions available": [
+                "Geen transacties beschikbaar"
+            ],
+            "Your payment history will appear here.": [
+                "Je betaalgeschiedenis verschijnt hier."
+            ],
+            "File Name": [
+                "Bestandsnaam"
+            ],
+            "%s icon": [
+                "%s-pictogram"
+            ],
+            "Download": [
+                "Downloaden"
+            ],
+            "No downloads available": [
+                "Geen downloads beschikbaar"
+            ],
+            "Files from your purchases will appear here.": [
+                "Bestanden van je aankopen verschijnen hier."
+            ],
+            "Select Image": [
+                "Selecteer afbeelding"
+            ],
+            "Use selected image": [
+                "Geselecteerde afbeelding gebruiken"
+            ],
+            "user": [
+                "gebruiker"
+            ],
+            "camera": [
+                "camera"
+            ],
+            "Your profile": [
+                "Je profiel"
+            ],
+            "Profile updated successfully": [
+                "Profiel succesvol bijgewerkt"
+            ],
+            "Profile update failed": [
+                "Bijwerken van profiel mislukt"
+            ],
+            "Enter your first name": [
+                "Voer je voornaam in"
+            ],
+            "Enter your last name": [
+                "Voer je achternaam in"
+            ],
+            "Enter your email": [
+                "Voer je e-mailadres in"
+            ],
+            "Phone Number": [
+                "Telefoonnummer"
+            ],
+            "Company Name": [
+                "Bedrijfsnaam"
+            ],
+            "Enter your company name": [
+                "Voer je bedrijfsnaam in"
+            ],
+            "Tax ID": [
+                "Btw-nummer"
+            ],
+            "Enter your tax ID": [
+                "Voer je btw-nummer in"
+            ],
+            "Select your Business Type": [
+                "Selecteer je bedrijfstype"
+            ],
+            "Manufacturing": [
+                "Productie"
+            ],
+            "Finance and Insurance": [
+                "Financi\u00ebn en verzekeringen"
+            ],
+            "Healthcare": [
+                "Gezondheidszorg"
+            ],
+            "Real Estate": [
+                "Vastgoed"
+            ],
+            "Update Profile": [
+                "Profiel bijwerken"
+            ],
+            "Enter company name": [
+                "Voer bedrijfsnaam in"
+            ],
+            "Address Line 1": [
+                "Adresregel 1"
+            ],
+            "Enter address": [
+                "Voer adres in"
+            ],
+            "Address Line 2": [
+                "Adresregel 2"
+            ],
+            "Apartment, suite, etc.": [
+                "Appartement, suite, enz."
+            ],
+            "State\/Province": [
+                "Staat\/provincie"
+            ],
+            "ZIP\/Postal Code": [
+                "Postcode"
+            ],
+            "Enter postal code": [
+                "Voer postcode in"
+            ],
+            "Update Address": [
+                "Adres bijwerken"
+            ],
+            "%s Address": [
+                "%s-adres"
+            ],
+            "Billing": [
+                "Facturering"
+            ],
+            "Password must be at least 6 characters long": [
+                "Wachtwoord moet minstens 6 tekens lang zijn"
+            ],
+            "Password updated successfully": [
+                "Wachtwoord succesvol bijgewerkt"
+            ],
+            "Error updating password": [
+                "Fout bij het bijwerken van het wachtwoord"
+            ],
+            "Set your password": [
+                "Stel je wachtwoord in"
+            ],
+            "Change your Password": [
+                "Wijzig je wachtwoord"
+            ],
+            "Enter a new password below to change your password": [
+                "Voer hieronder een nieuw wachtwoord in om je wachtwoord te wijzigen"
+            ],
+            "Change Password": [
+                "Wachtwoord wijzigen"
+            ],
+            "Items": [
+                "Artikelen"
+            ],
+            "Free Product": [
+                "Gratis product"
+            ],
+            "Download %s": [
+                "%s downloaden"
+            ],
+            "Order Date": [
+                "Besteldatum"
+            ],
+            "Fulfilment Status": [
+                "Fulfilment-status"
+            ],
+            "Order info": [
+                "Bestelinformatie"
+            ],
+            "No address provided.": [
+                "Geen adres opgegeven."
+            ],
+            "Full Name": [
+                "Volledige naam"
+            ],
+            "Company": [
+                "Bedrijf"
+            ],
+            "Order Notes": [
+                "Bestelnotities"
+            ],
+            "Loading notes...": [
+                "Notities laden..."
+            ],
+            "No notes found for this order": [
+                "Geen notities gevonden voor deze bestelling"
+            ],
+            "Track here:": [
+                "Volg hier:"
+            ],
+            "Back to orders": [
+                "Terug naar bestellingen"
+            ],
+            "Order #%s": [
+                "Bestelling #%s"
+            ],
+            "No order data found": [
+                "Geen bestelgegevens gevonden"
+            ]
+        }
+    }
+}

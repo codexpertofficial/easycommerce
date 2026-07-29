@@ -1,0 +1,264 @@
+{
+    "translation-revision-date": "2026-07-23 00:00+0000",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "build\/settings.bundle.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "zh_CN",
+                "plural-forms": "nplurals=1; plural=0;"
+            },
+            "Something went wrong": [
+                "\u51fa\u9519\u4e86"
+            ],
+            "Pro": [
+                "\u4e13\u4e1a\u7248"
+            ],
+            "General": [
+                "\u5e38\u89c4"
+            ],
+            "Orders": [
+                "\u8ba2\u5355"
+            ],
+            "Checkout": [
+                "\u7ed3\u8d26"
+            ],
+            "Payment": [
+                "\u652f\u4ed8"
+            ],
+            "First Name": [
+                "\u540d\u5b57"
+            ],
+            "Write here": [
+                "\u5728\u6b64\u586b\u5199"
+            ],
+            "Emails": [
+                "\u90ae\u4ef6"
+            ],
+            "Settings": [
+                "\u8bbe\u7f6e"
+            ],
+            "Shipping": [
+                "\u914d\u9001"
+            ],
+            "Taxation": [
+                "\u7a0e\u52a1"
+            ],
+            "Cart Recovery": [
+                "\u8d2d\u7269\u8f66\u6062\u590d"
+            ],
+            "Subject": [
+                "\u4e3b\u9898"
+            ],
+            "AI": [
+                "AI"
+            ],
+            "Smart Search": [
+                "\u667a\u80fd\u641c\u7d22"
+            ],
+            "Cancel": [
+                "\u53d6\u6d88"
+            ],
+            "Activate License": [
+                "\u6fc0\u6d3b\u8bb8\u53ef\u8bc1"
+            ],
+            "Get Pro": [
+                "\u83b7\u53d6\u4e13\u4e1a\u7248"
+            ],
+            "Your Email": [
+                "\u60a8\u7684\u7535\u5b50\u90ae\u7bb1"
+            ],
+            "Message": [
+                "\u6d88\u606f"
+            ],
+            "Connect AI": [
+                "\u8fde\u63a5 AI"
+            ],
+            "AI Writer": [
+                "AI \u64b0\u5199\u52a9\u624b"
+            ],
+            "Image Editor": [
+                "\u56fe\u50cf\u7f16\u8f91\u5668"
+            ],
+            "Store Copilot": [
+                "\u5e97\u94fa\u526f\u9a7e\u9a76"
+            ],
+            "Close": [
+                "\u5173\u95ed"
+            ],
+            "Send": [
+                "\u53d1\u9001"
+            ],
+            "Email Address": [
+                "\u7535\u5b50\u90ae\u7bb1\u5730\u5740"
+            ],
+            "Enter your Email": [
+                "\u8bf7\u8f93\u5165\u60a8\u7684\u7535\u5b50\u90ae\u7bb1"
+            ],
+            "Profile": [
+                "\u4e2a\u4eba\u8d44\u6599"
+            ],
+            "Your Voice Matters": [
+                "\u60a8\u7684\u58f0\u97f3\u5f88\u91cd\u8981"
+            ],
+            "Help us make EasyCommerce the best it can be. Share your feedback and ideas with us!": [
+                "\u5e2e\u52a9\u6211\u4eec\u628a EasyCommerce \u6253\u9020\u5f97\u5c3d\u5584\u5c3d\u7f8e\u3002\u8bf7\u4e0e\u6211\u4eec\u5206\u4eab\u60a8\u7684\u53cd\u9988\u548c\u60f3\u6cd5\uff01"
+            ],
+            "Enter first name": [
+                "\u8bf7\u8f93\u5165\u540d\u5b57"
+            ],
+            "Enter a valid email address": [
+                "\u8bf7\u8f93\u5165\u6709\u6548\u7684\u7535\u5b50\u90ae\u7bb1\u5730\u5740"
+            ],
+            "Send Message": [
+                "\u53d1\u9001\u6d88\u606f"
+            ],
+            "Thank you for your feedback": [
+                "\u611f\u8c22\u60a8\u7684\u53cd\u9988"
+            ],
+            "We will use your feedback to build a better experience for everyone.": [
+                "\u6211\u4eec\u5c06\u6839\u636e\u60a8\u7684\u53cd\u9988\uff0c\u4e3a\u6bcf\u4f4d\u7528\u6237\u6253\u9020\u66f4\u597d\u7684\u4f53\u9a8c\u3002"
+            ],
+            "Feedback": [
+                "\u53cd\u9988"
+            ],
+            "Ask Store Copilot anything about your store - get insights, or manage products and orders right from chat.": [
+                "\u5411\u5e97\u94fa\u526f\u9a7e\u9a76\u54a8\u8be2\u6709\u5173\u5e97\u94fa\u7684\u4efb\u4f55\u95ee\u9898\u2014\u2014\u83b7\u53d6\u6d1e\u5bdf\uff0c\u6216\u76f4\u63a5\u5728\u804a\u5929\u4e2d\u7ba1\u7406\u5546\u54c1\u548c\u8ba2\u5355\u3002"
+            ],
+            "What is today's total revenue?": [
+                "\u4eca\u5929\u7684\u603b\u6536\u5165\u662f\u591a\u5c11\uff1f"
+            ],
+            "How many orders were placed this week?": [
+                "\u672c\u5468\u5171\u4e0b\u4e86\u591a\u5c11\u8ba2\u5355\uff1f"
+            ],
+            "Which product is performing best?": [
+                "\u54ea\u6b3e\u5546\u54c1\u8868\u73b0\u6700\u597d\uff1f"
+            ],
+            "What is my average order value this month?": [
+                "\u6211\u672c\u6708\u7684\u5e73\u5747\u8ba2\u5355\u91d1\u989d\u662f\u591a\u5c11\uff1f"
+            ],
+            "How many new vs returning customers this week?": [
+                "\u672c\u5468\u65b0\u5ba2\u6237\u4e0e\u56de\u5934\u5ba2\u5404\u6709\u591a\u5c11\uff1f"
+            ],
+            "Which products are low in stock?": [
+                "\u54ea\u4e9b\u5546\u54c1\u5e93\u5b58\u4e0d\u8db3\uff1f"
+            ],
+            "Examples": [
+                "\u793a\u4f8b"
+            ],
+            "Uses %d credit.": [
+                "\u6d88\u8017 %d \u4e2a\u989d\u5ea6\u3002"
+            ],
+            "%d Credit": [
+                "%d \u4e2a\u989d\u5ea6"
+            ],
+            "Remaining": [
+                "\u5269\u4f59"
+            ],
+            "Network response was not okay": [
+                "\u7f51\u7edc\u54cd\u5e94\u5f02\u5e38"
+            ],
+            "No answer found": [
+                "\u672a\u627e\u5230\u7b54\u6848"
+            ],
+            "Ask a Question": [
+                "\u63d0\u95ee"
+            ],
+            "No credits available": [
+                "\u6ca1\u6709\u53ef\u7528\u989d\u5ea6"
+            ],
+            "Two AI Agents, One Free Key": [
+                "\u4e24\u4e2a AI \u667a\u80fd\u4f53\uff0c\u4e00\u4e2a\u514d\u8d39\u5bc6\u94a5"
+            ],
+            "Connect a free API key -": [
+                "\u8fde\u63a5\u4e00\u4e2a\u514d\u8d39\u7684 API \u5bc6\u94a5 -"
+            ],
+            "100 AI credits": [
+                "100 \u4e2a AI \u989d\u5ea6"
+            ],
+            "free, more with": [
+                "\u514d\u8d39\uff0c\u66f4\u591a\u8bf7\u5347\u7ea7"
+            ],
+            "Store Copilot - For You": [
+                "\u5e97\u94fa\u526f\u9a7e\u9a76 - \u4e3a\u60a8\u670d\u52a1"
+            ],
+            "Chat to run your store: ask about sales, create and edit products, and update orders - in plain English, with your approval.": [
+                "\u901a\u8fc7\u804a\u5929\u7ba1\u7406\u60a8\u7684\u5e97\u94fa\uff1a\u67e5\u8be2\u9500\u552e\u60c5\u51b5\u3001\u521b\u5efa\u548c\u7f16\u8f91\u5546\u54c1\u3001\u66f4\u65b0\u8ba2\u5355\u2014\u2014\u7528\u65e5\u5e38\u8bed\u8a00\u5373\u53ef\u5b8c\u6210\uff0c\u4e14\u9700\u7ecf\u60a8\u786e\u8ba4\u3002"
+            ],
+            "Shopping Agent - For Your Shoppers": [
+                "\u8d2d\u7269\u667a\u80fd\u4f53 - \u4e3a\u60a8\u7684\u987e\u5ba2\u670d\u52a1"
+            ],
+            "A 24\/7 storefront agent that helps customers find the right product, answers their questions, and places orders for them.": [
+                "\u5168\u5929\u5019\u7684\u5e97\u94fa\u667a\u80fd\u4f53\uff0c\u5e2e\u52a9\u5ba2\u6237\u627e\u5230\u5408\u9002\u7684\u5546\u54c1\u3001\u89e3\u7b54\u4ed6\u4eec\u7684\u7591\u95ee\uff0c\u5e76\u4e3a\u4ed6\u4eec\u4e0b\u5355\u3002"
+            ],
+            "Plus": [
+                "\u53e6\u5916"
+            ],
+            "& more.": [
+                "\u7b49\u66f4\u591a\u529f\u80fd\u3002"
+            ],
+            "Each AI request transmits only the relevant records - the item you're working on, or a shopper's query and its products - to EasyCommerce's AI service. Your bulk customer and order data is never uploaded, sold, or used to train models.": [
+                "\u6bcf\u6b21 AI \u8bf7\u6c42\u4ec5\u5c06\u76f8\u5173\u8bb0\u5f55\u2014\u2014\u60a8\u6b63\u5728\u5904\u7406\u7684\u5546\u54c1\uff0c\u6216\u987e\u5ba2\u7684\u67e5\u8be2\u53ca\u5176\u76f8\u5173\u5546\u54c1\u2014\u2014\u4f20\u8f93\u81f3 EasyCommerce \u7684 AI \u670d\u52a1\u3002\u60a8\u7684\u6279\u91cf\u5ba2\u6237\u548c\u8ba2\u5355\u6570\u636e\u7edd\u4e0d\u4f1a\u88ab\u4e0a\u4f20\u3001\u51fa\u552e\u6216\u7528\u4e8e\u8bad\u7ec3\u6a21\u578b\u3002"
+            ],
+            "Learn more.": [
+                "\u4e86\u89e3\u66f4\u591a\u3002"
+            ],
+            "I have an API key": [
+                "\u6211\u5df2\u6709 API \u5bc6\u94a5"
+            ],
+            "I want an API key": [
+                "\u6211\u60f3\u8981\u4e00\u4e2a API \u5bc6\u94a5"
+            ],
+            "Please fill all the fields": [
+                "\u8bf7\u586b\u5199\u6240\u6709\u5b57\u6bb5"
+            ],
+            "Enter Your Connection Key": [
+                "\u8f93\u5165\u60a8\u7684\u8fde\u63a5\u5bc6\u94a5"
+            ],
+            "The link in your email connects AI automatically. To do it manually, paste the key we emailed below.": [
+                "\u90ae\u4ef6\u4e2d\u7684\u94fe\u63a5\u4f1a\u81ea\u52a8\u8fde\u63a5 AI\u3002\u82e5\u8981\u624b\u52a8\u8fde\u63a5\uff0c\u8bf7\u5c06\u6211\u4eec\u53d1\u9001\u5230\u90ae\u7bb1\u7684\u5bc6\u94a5\u7c98\u8d34\u5230\u4e0b\u65b9\u3002"
+            ],
+            "Your Key": [
+                "\u60a8\u7684\u5bc6\u94a5"
+            ],
+            "Paste your key": [
+                "\u7c98\u8d34\u60a8\u7684\u5bc6\u94a5"
+            ],
+            "I don't have a key": [
+                "\u6211\u6ca1\u6709\u5bc6\u94a5"
+            ],
+            "Check your email and click the link to connect AI.": [
+                "\u8bf7\u67e5\u770b\u60a8\u7684\u7535\u5b50\u90ae\u7bb1\u5e76\u70b9\u51fb\u94fe\u63a5\u4ee5\u8fde\u63a5 AI\u3002"
+            ],
+            "Connect EasyCommerce AI": [
+                "\u8fde\u63a5 EasyCommerce AI"
+            ],
+            "Enter your name and email - we'll send a one-click link to connect AI, plus a backup key.": [
+                "\u8bf7\u8f93\u5165\u60a8\u7684\u59d3\u540d\u548c\u7535\u5b50\u90ae\u7bb1\u2014\u2014\u6211\u4eec\u5c06\u53d1\u9001\u4e00\u4e2a\u4e00\u952e\u8fde\u63a5 AI \u7684\u94fe\u63a5\uff0c\u4ee5\u53ca\u4e00\u4e2a\u5907\u7528\u5bc6\u94a5\u3002"
+            ],
+            "Your Name": [
+                "\u60a8\u7684\u59d3\u540d"
+            ],
+            "Enter your Name": [
+                "\u8bf7\u8f93\u5165\u60a8\u7684\u59d3\u540d"
+            ],
+            "Email My Link": [
+                "\u5c06\u94fe\u63a5\u53d1\u9001\u5230\u6211\u7684\u90ae\u7bb1"
+            ],
+            "I already have a key": [
+                "\u6211\u5df2\u6709\u5bc6\u94a5"
+            ],
+            "Join Community": [
+                "\u52a0\u5165\u793e\u533a"
+            ],
+            "Support": [
+                "\u652f\u6301"
+            ],
+            "Disconnect": [
+                "\u65ad\u5f00\u8fde\u63a5"
+            ]
+        }
+    }
+}

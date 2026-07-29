@@ -288,16 +288,18 @@ class DatabaseTest extends EasyCommerceTestCase {
 	 * @covers Database::get_rows
 	 */
 	public function test_get_rows_with_conditions() {
-		$this->insert_minimal_order( 'on-hold', 40.00 );
+		// orders.status is an ENUM whose valid value is 'on_hold' (underscore);
+		// 'on-hold' is coerced to '' by MySQL, so use the real enum value.
+		$this->insert_minimal_order( 'on_hold', 40.00 );
 		$this->insert_minimal_order( 'completed', 40.00 );
 
-		$results = $this->db->get_rows( array( array( 'status' => 'on-hold' ) ) );
+		$results = $this->db->get_rows( array( array( 'status' => 'on_hold' ) ) );
 
 		$this->assertIsArray( $results );
 		$this->assertGreaterThanOrEqual( 1, count( $results ) );
 
 		foreach ( $results as $result ) {
-			$this->assertEquals( 'on-hold', $result->status );
+			$this->assertEquals( 'on_hold', $result->status );
 		}
 	}
 

@@ -1,0 +1,2888 @@
+{
+    "translation-revision-date": "2026-07-23 00:00+0000",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "build\/easycommerce.bundle.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "nl_NL",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Something went wrong": [
+                "Er is iets misgegaan"
+            ],
+            "Free": [
+                "Gratis"
+            ],
+            "Pro": [
+                "Pro"
+            ],
+            "AI Image Generator": [
+                "AI-afbeeldingsgenerator"
+            ],
+            "Password must be at least 6 characters long.": [
+                "Wachtwoord moet minstens 6 tekens lang zijn."
+            ],
+            "Passwords do not match.": [
+                "Wachtwoorden komen niet overeen."
+            ],
+            "Payment Method": [
+                "Betaalmethode"
+            ],
+            "Reminder email sent successfully.": [
+                "Herinneringsmail succesvol verzonden."
+            ],
+            "Failed to send reminder email.": [
+                "Kon herinneringsmail niet verzenden."
+            ],
+            "Private Note": [
+                "Priv\u00e9notitie"
+            ],
+            "Order ID": [
+                "Bestel-ID"
+            ],
+            "Customer Name": [
+                "Klantnaam"
+            ],
+            "Order Status": [
+                "Bestelstatus"
+            ],
+            "General": [
+                "Algemeen"
+            ],
+            "CSV uploaded successfully": [
+                "CSV succesvol ge\u00fcpload"
+            ],
+            "No orders found.": [
+                "Geen bestellingen gevonden."
+            ],
+            "Please enter a valid email address.": [
+                "Voer een geldig e-mailadres in."
+            ],
+            "Orders": [
+                "Bestellingen"
+            ],
+            "Refunds": [
+                "Terugbetalingen"
+            ],
+            "Order Count": [
+                "Aantal bestellingen"
+            ],
+            "Customers": [
+                "Klanten"
+            ],
+            "Low Stock": [
+                "Lage voorraad"
+            ],
+            "Stock": [
+                "Voorraad"
+            ],
+            "Pending": [
+                "In afwachting"
+            ],
+            "Processing": [
+                "In behandeling"
+            ],
+            "Completed": [
+                "Voltooid"
+            ],
+            "Refunded": [
+                "Terugbetaald"
+            ],
+            "Partially Refunded": [
+                "Gedeeltelijk terugbetaald"
+            ],
+            "Cancelled": [
+                "Geannuleerd"
+            ],
+            "Revenue": [
+                "Omzet"
+            ],
+            "Add New Product": [
+                "Nieuw product toevoegen"
+            ],
+            "New Product": [
+                "Nieuw product"
+            ],
+            "View Product": [
+                "Product bekijken"
+            ],
+            "Products": [
+                "Producten"
+            ],
+            "Update Category": [
+                "Categorie bijwerken"
+            ],
+            "Add New Category": [
+                "Nieuwe categorie toevoegen"
+            ],
+            "Categories": [
+                "Categorie\u00ebn"
+            ],
+            "Update Brand": [
+                "Merk bijwerken"
+            ],
+            "Add New Brand": [
+                "Nieuw merk toevoegen"
+            ],
+            "Brands": [
+                "Merken"
+            ],
+            "Update Tag": [
+                "Tag bijwerken"
+            ],
+            "Add New Tag": [
+                "Nieuwe tag toevoegen"
+            ],
+            "Tags": [
+                "Tags"
+            ],
+            "Customer": [
+                "Klant"
+            ],
+            "Dashboard": [
+                "Dashboard"
+            ],
+            "Payment": [
+                "Betaling"
+            ],
+            "First Name": [
+                "Voornaam"
+            ],
+            "Last Name": [
+                "Achternaam"
+            ],
+            "Email": [
+                "E-mail"
+            ],
+            "Country": [
+                "Land"
+            ],
+            "State": [
+                "Staat"
+            ],
+            "City": [
+                "Plaats"
+            ],
+            "Write here": [
+                "Schrijf hier"
+            ],
+            "Address": [
+                "Adres"
+            ],
+            "Visibility": [
+                "Zichtbaarheid"
+            ],
+            "Live": [
+                "Live"
+            ],
+            "Pricing": [
+                "Prijzen"
+            ],
+            "Unfulfilled": [
+                "Niet uitgevoerd"
+            ],
+            "Fulfilled": [
+                "Uitgevoerd"
+            ],
+            "Partially Fulfilled": [
+                "Gedeeltelijk uitgevoerd"
+            ],
+            "Shipped": [
+                "Verzonden"
+            ],
+            "Delivered": [
+                "Bezorgd"
+            ],
+            "Settings": [
+                "Instellingen"
+            ],
+            "Shipping": [
+                "Verzending"
+            ],
+            "Subject": [
+                "Onderwerp"
+            ],
+            "Smart Search": [
+                "Slim zoeken"
+            ],
+            "Usage": [
+                "Gebruik"
+            ],
+            "EasyCommerce": [
+                "EasyCommerce"
+            ],
+            "Cancel": [
+                "Annuleren"
+            ],
+            "Activate License": [
+                "Licentie activeren"
+            ],
+            "Get Pro": [
+                "Word Pro"
+            ],
+            "Your Email": [
+                "Je e-mailadres"
+            ],
+            "Message": [
+                "Bericht"
+            ],
+            "Action": [
+                "Actie"
+            ],
+            "Transaction ID": [
+                "Transactie-ID"
+            ],
+            "Abandoned Cart": [
+                "Verlaten winkelwagen"
+            ],
+            "Transactions": [
+                "Transacties"
+            ],
+            "Coupons": [
+                "Coupons"
+            ],
+            "Reports": [
+                "Rapporten"
+            ],
+            "Addons": [
+                "Add-ons"
+            ],
+            "Help & Support": [
+                "Hulp & ondersteuning"
+            ],
+            "Connect AI": [
+                "AI verbinden"
+            ],
+            "Instruction": [
+                "Instructie"
+            ],
+            "Template 1": [
+                "Sjabloon 1"
+            ],
+            "Template 2": [
+                "Sjabloon 2"
+            ],
+            "Duplicate": [
+                "Duplicaat"
+            ],
+            "Failed": [
+                "Mislukt"
+            ],
+            "Draft": [
+                "Concept"
+            ],
+            "Trash": [
+                "Prullenbak"
+            ],
+            "Returned": [
+                "Geretourneerd"
+            ],
+            "Add Product": [
+                "Product toevoegen"
+            ],
+            "Attributes": [
+                "Attributen"
+            ],
+            "Abandoned Carts": [
+                "Verlaten winkelwagens"
+            ],
+            "Reviews": [
+                "Beoordelingen"
+            ],
+            "Overview": [
+                "Overzicht"
+            ],
+            "Revenues": [
+                "Omzet"
+            ],
+            "Price": [
+                "Prijs"
+            ],
+            "Sort by": [
+                "Sorteren op"
+            ],
+            "Search": [
+                "Zoeken"
+            ],
+            "AI Writer": [
+                "AI Writer"
+            ],
+            "Image Editor": [
+                "Afbeeldingsbewerker"
+            ],
+            "Store Copilot": [
+                "Store Copilot"
+            ],
+            "Date": [
+                "Datum"
+            ],
+            "Discount": [
+                "Korting"
+            ],
+            "Total": [
+                "Totaal"
+            ],
+            "Organize": [
+                "Ordenen"
+            ],
+            "Name": [
+                "Naam"
+            ],
+            "Slug": [
+                "Slug"
+            ],
+            "Type": [
+                "Type"
+            ],
+            "Image": [
+                "Afbeelding"
+            ],
+            "Color": [
+                "Kleur"
+            ],
+            "Text": [
+                "Tekst"
+            ],
+            "Enter Price": [
+                "Voer prijs in"
+            ],
+            "SKU": [
+                "SKU"
+            ],
+            "Auto Generate Variants": [
+                "Varianten automatisch genereren"
+            ],
+            "Product Description": [
+                "Productbeschrijving"
+            ],
+            "Billing Address": [
+                "Factuuradres"
+            ],
+            "Shipping Address": [
+                "Verzendadres"
+            ],
+            "Free Shipping": [
+                "Gratis verzending"
+            ],
+            "Product Tax": [
+                "Productbelasting"
+            ],
+            "Shipping Tax": [
+                "Verzendbelasting"
+            ],
+            "Order Total": [
+                "Besteltotaal"
+            ],
+            "Out of stock": [
+                "Niet op voorraad"
+            ],
+            "Review": [
+                "Beoordeling"
+            ],
+            "Close": [
+                "Sluiten"
+            ],
+            "Loading...": [
+                "Laden..."
+            ],
+            "Send": [
+                "Verzenden"
+            ],
+            "An error occurred. Please try again.": [
+                "Er is een fout opgetreden. Probeer het opnieuw."
+            ],
+            "Product": [
+                "Product"
+            ],
+            "Quantity": [
+                "Aantal"
+            ],
+            "None": [
+                "Geen"
+            ],
+            "Regular Price": [
+                "Normale prijs"
+            ],
+            "Sale Price": [
+                "Aanbiedingsprijs"
+            ],
+            "SKU:": [
+                "SKU:"
+            ],
+            "Title": [
+                "Titel"
+            ],
+            "Email Address": [
+                "E-mailadres"
+            ],
+            "Enter your Email": [
+                "Voer je e-mailadres in"
+            ],
+            "Enter new password": [
+                "Voer nieuw wachtwoord in"
+            ],
+            "Sending...": [
+                "Verzenden..."
+            ],
+            "Downloads": [
+                "Downloads"
+            ],
+            "Profile": [
+                "Profiel"
+            ],
+            "Total Orders": [
+                "Totaal aantal bestellingen"
+            ],
+            "N\/A": [
+                "N.v.t."
+            ],
+            "Customer since": [
+                "Klant sinds"
+            ],
+            "Summary": [
+                "Samenvatting"
+            ],
+            "View": [
+                "Bekijken"
+            ],
+            "Amount": [
+                "Bedrag"
+            ],
+            "Status": [
+                "Status"
+            ],
+            "Back": [
+                "Terug"
+            ],
+            "Next": [
+                "Volgende"
+            ],
+            "Select Image": [
+                "Selecteer afbeelding"
+            ],
+            "Use selected image": [
+                "Geselecteerde afbeelding gebruiken"
+            ],
+            "Phone Number": [
+                "Telefoonnummer"
+            ],
+            "Address Line 1": [
+                "Adresregel 1"
+            ],
+            "Address Line 2": [
+                "Adresregel 2"
+            ],
+            "Items": [
+                "Artikelen"
+            ],
+            "Order Date": [
+                "Besteldatum"
+            ],
+            "Order Notes": [
+                "Bestelnotities"
+            ],
+            "Loading notes...": [
+                "Notities laden..."
+            ],
+            "No notes found for this order": [
+                "Geen notities gevonden voor deze bestelling"
+            ],
+            "Track here:": [
+                "Volg hier:"
+            ],
+            "Order #%s": [
+                "Bestelling #%s"
+            ],
+            "Your Voice Matters": [
+                "Jouw mening telt"
+            ],
+            "Help us make EasyCommerce the best it can be. Share your feedback and ideas with us!": [
+                "Help ons EasyCommerce zo goed mogelijk te maken. Deel je feedback en idee\u00ebn met ons!"
+            ],
+            "Enter first name": [
+                "Voer voornaam in"
+            ],
+            "Enter a valid email address": [
+                "Voer een geldig e-mailadres in"
+            ],
+            "Send Message": [
+                "Bericht verzenden"
+            ],
+            "Thank you for your feedback": [
+                "Bedankt voor je feedback"
+            ],
+            "We will use your feedback to build a better experience for everyone.": [
+                "We gebruiken je feedback om een betere ervaring voor iedereen te bouwen."
+            ],
+            "Feedback": [
+                "Feedback"
+            ],
+            "Ask Store Copilot anything about your store - get insights, or manage products and orders right from chat.": [
+                "Vraag Store Copilot alles over je winkel - krijg inzichten of beheer producten en bestellingen rechtstreeks vanuit de chat."
+            ],
+            "What is today's total revenue?": [
+                "Wat is de totale omzet van vandaag?"
+            ],
+            "How many orders were placed this week?": [
+                "Hoeveel bestellingen zijn er deze week geplaatst?"
+            ],
+            "Which product is performing best?": [
+                "Welk product presteert het best?"
+            ],
+            "What is my average order value this month?": [
+                "Wat is mijn gemiddelde bestelwaarde deze maand?"
+            ],
+            "How many new vs returning customers this week?": [
+                "Hoeveel nieuwe versus terugkerende klanten deze week?"
+            ],
+            "Which products are low in stock?": [
+                "Welke producten hebben een lage voorraad?"
+            ],
+            "Examples": [
+                "Voorbeelden"
+            ],
+            "Uses %d credit.": [
+                "Gebruikt %d credit.",
+                "Gebruikt %d credits."
+            ],
+            "%d Credit": [
+                "%d credit",
+                "%d credits"
+            ],
+            "Remaining": [
+                "Resterend"
+            ],
+            "Network response was not okay": [
+                "Netwerkantwoord was niet in orde"
+            ],
+            "No answer found": [
+                "Geen antwoord gevonden"
+            ],
+            "Ask a Question": [
+                "Stel een vraag"
+            ],
+            "No credits available": [
+                "Geen credits beschikbaar"
+            ],
+            "Two AI Agents, One Free Key": [
+                "Twee AI-agents, \u00e9\u00e9n gratis sleutel"
+            ],
+            "Connect a free API key -": [
+                "Verbind een gratis API-sleutel -"
+            ],
+            "100 AI credits": [
+                "100 AI-credits"
+            ],
+            "free, more with": [
+                "gratis, meer met"
+            ],
+            "Store Copilot - For You": [
+                "Store Copilot - voor jou"
+            ],
+            "Chat to run your store: ask about sales, create and edit products, and update orders - in plain English, with your approval.": [
+                "Chat om je winkel te runnen: vraag naar verkopen, maak en bewerk producten en werk bestellingen bij - in gewone taal, met jouw goedkeuring."
+            ],
+            "Shopping Agent - For Your Shoppers": [
+                "Winkelagent - voor je klanten"
+            ],
+            "A 24\/7 storefront agent that helps customers find the right product, answers their questions, and places orders for them.": [
+                "Een 24\/7-winkelagent die klanten helpt het juiste product te vinden, hun vragen beantwoordt en bestellingen voor hen plaatst."
+            ],
+            "Plus": [
+                "Plus"
+            ],
+            "& more.": [
+                "& meer."
+            ],
+            "Each AI request transmits only the relevant records - the item you're working on, or a shopper's query and its products - to EasyCommerce's AI service. Your bulk customer and order data is never uploaded, sold, or used to train models.": [
+                "Elke AI-aanvraag verstuurt alleen de relevante gegevens - het item waaraan je werkt, of de vraag van een klant en de bijbehorende producten - naar de AI-service van EasyCommerce. Je volledige klant- en bestelgegevens worden nooit ge\u00fcpload, verkocht of gebruikt om modellen te trainen."
+            ],
+            "Learn more.": [
+                "Meer info."
+            ],
+            "I have an API key": [
+                "Ik heb een API-sleutel"
+            ],
+            "I want an API key": [
+                "Ik wil een API-sleutel"
+            ],
+            "Please fill all the fields": [
+                "Vul alle velden in"
+            ],
+            "Enter Your Connection Key": [
+                "Voer je verbindingssleutel in"
+            ],
+            "The link in your email connects AI automatically. To do it manually, paste the key we emailed below.": [
+                "De link in je e-mail verbindt AI automatisch. Om dit handmatig te doen, plak je hieronder de sleutel die we je hebben gemaild."
+            ],
+            "Your Key": [
+                "Je sleutel"
+            ],
+            "Paste your key": [
+                "Plak je sleutel"
+            ],
+            "I don't have a key": [
+                "Ik heb geen sleutel"
+            ],
+            "Check your email and click the link to connect AI.": [
+                "Controleer je e-mail en klik op de link om AI te verbinden."
+            ],
+            "Connect EasyCommerce AI": [
+                "EasyCommerce AI verbinden"
+            ],
+            "Enter your name and email - we'll send a one-click link to connect AI, plus a backup key.": [
+                "Voer je naam en e-mailadres in - we sturen je een link om AI met \u00e9\u00e9n klik te verbinden, plus een reservesleutel."
+            ],
+            "Your Name": [
+                "Je naam"
+            ],
+            "Enter your Name": [
+                "Voer je naam in"
+            ],
+            "Email My Link": [
+                "Mail mij mijn link"
+            ],
+            "I already have a key": [
+                "Ik heb al een sleutel"
+            ],
+            "Join Community": [
+                "Word lid van de community"
+            ],
+            "Support": [
+                "Ondersteuning"
+            ],
+            "Disconnect": [
+                "Loskoppelen"
+            ],
+            "Dismiss this notice": [
+                "Deze melding sluiten"
+            ],
+            "Last 7 days": [
+                "Afgelopen 7 dagen"
+            ],
+            "Last 30 days": [
+                "Afgelopen 30 dagen"
+            ],
+            "This week": [
+                "Deze week"
+            ],
+            "This month": [
+                "Deze maand"
+            ],
+            "This year": [
+                "Dit jaar"
+            ],
+            "View all": [
+                "Alles bekijken"
+            ],
+            "Show Digits": [
+                "Cijfers tonen"
+            ],
+            "Hide Digits": [
+                "Cijfers verbergen"
+            ],
+            "Previous %s": [
+                "Vorige %s"
+            ],
+            "Product Name": [
+                "Productnaam"
+            ],
+            "Items Sold": [
+                "Verkochte artikelen"
+            ],
+            "Total Sales": [
+                "Totale verkopen"
+            ],
+            "No top selling products found.": [
+                "Geen best verkochte producten gevonden."
+            ],
+            "No low stock products found.": [
+                "Geen producten met lage voorraad gevonden."
+            ],
+            "Abandoned Cart Details": [
+                "Details verlaten winkelwagen"
+            ],
+            "Last Activity": [
+                "Laatste activiteit"
+            ],
+            "%ds ago": [
+                "%ds geleden"
+            ],
+            "%dm ago": [
+                "%dm geleden"
+            ],
+            "%dh ago": [
+                "%du geleden"
+            ],
+            "%dd ago": [
+                "%dd geleden"
+            ],
+            "Total Products": [
+                "Totaal aantal producten"
+            ],
+            "Reminder": [
+                "Herinnering"
+            ],
+            "Cart Summary": [
+                "Winkelwagenoverzicht"
+            ],
+            "Subject Line": [
+                "Onderwerpregel"
+            ],
+            "Complete your purchase - Items waiting in your cart!": [
+                "Rond je aankoop af - Er wachten artikelen in je winkelwagen!"
+            ],
+            "Email Message": [
+                "E-mailbericht"
+            ],
+            "Abandoned cart deleted successfully": [
+                "Verlaten winkelwagen succesvol verwijderd"
+            ],
+            "Failed to delete abandoned cart. Please try again.": [
+                "Kon verlaten winkelwagen niet verwijderen. Probeer het opnieuw."
+            ],
+            "Deleting...": [
+                "Verwijderen..."
+            ],
+            "Delete": [
+                "Verwijderen"
+            ],
+            "Something went wrong. Please try again.": [
+                "Er is iets misgegaan. Probeer het opnieuw."
+            ],
+            "Send Email": [
+                "E-mail verzenden"
+            ],
+            "Cart Items": [
+                "Winkelwagenartikelen"
+            ],
+            "Variant": [
+                "Variant"
+            ],
+            "Loading cart items...": [
+                "Winkelwagenartikelen laden..."
+            ],
+            "No items found.": [
+                "Geen artikelen gevonden."
+            ],
+            "No abandoned carts found.": [
+                "Geen verlaten winkelwagens gevonden."
+            ],
+            "No activities found.": [
+                "Geen activiteiten gevonden."
+            ],
+            "Join the community and post your issue to get a faster response.": [
+                "Word lid van de community en plaats je probleem voor een snellere reactie."
+            ],
+            "Latest Orders": [
+                "Nieuwste bestellingen"
+            ],
+            "Recent Sales": [
+                "Recente verkopen"
+            ],
+            "Top Selling": [
+                "Best verkocht"
+            ],
+            "Recent Activities": [
+                "Recente activiteiten"
+            ],
+            "Failed to update status": [
+                "Kon status niet bijwerken"
+            ],
+            "Dropdown Arrow": [
+                "Vervolgkeuzepijl"
+            ],
+            "Category": [
+                "Categorie"
+            ],
+            "Total Sale": [
+                "Totale verkoop"
+            ],
+            "Restore": [
+                "Herstellen"
+            ],
+            "Edit": [
+                "Bewerken"
+            ],
+            "Builder": [
+                "Bouwer"
+            ],
+            "Select status": [
+                "Selecteer status"
+            ],
+            "Reset": [
+                "Resetten"
+            ],
+            "Are you sure you want to delete?": [
+                "Weet je zeker dat je wilt verwijderen?"
+            ],
+            "You're going to delete this, are you sure?": [
+                "Je gaat dit verwijderen, weet je het zeker?"
+            ],
+            "No, Keep it": [
+                "Nee, behouden"
+            ],
+            "Yes, Delete": [
+                "Ja, verwijderen"
+            ],
+            "Delete Permanently": [
+                "Permanent verwijderen"
+            ],
+            "Are you sure you want to update?": [
+                "Weet je zeker dat je wilt bijwerken?"
+            ],
+            "You're going to update <strong>All<\/strong> are you sure?": [
+                "Je gaat <strong>alles<\/strong> bijwerken, weet je het zeker?"
+            ],
+            "No, Keep as it is": [
+                "Nee, laat zoals het is"
+            ],
+            "Yes, Update": [
+                "Ja, bijwerken"
+            ],
+            "Product deleted": [
+                "Product verwijderd",
+                "Producten verwijderd"
+            ],
+            "Delete failed.": [
+                "Verwijderen mislukt."
+            ],
+            "Something went wrong.": [
+                "Er is iets misgegaan."
+            ],
+            "Set Status": [
+                "Status instellen"
+            ],
+            "Status updated successfully": [
+                "Status succesvol bijgewerkt"
+            ],
+            "Failed to update products.": [
+                "Kon producten niet bijwerken."
+            ],
+            "An error occurred while updating statuses.": [
+                "Er is een fout opgetreden bij het bijwerken van de statussen."
+            ],
+            "Please select a valid status.": [
+                "Selecteer een geldige status."
+            ],
+            "Please select a CSV file": [
+                "Selecteer een CSV-bestand"
+            ],
+            "Failed to upload CSV": [
+                "Kon CSV niet uploaden"
+            ],
+            "Upload failed": [
+                "Uploaden mislukt"
+            ],
+            "Columns mapped successfully": [
+                "Kolommen succesvol toegewezen"
+            ],
+            "Failed to map columns": [
+                "Kon kolommen niet toewijzen"
+            ],
+            "Mapping failed": [
+                "Toewijzen mislukt"
+            ],
+            "Failed to start import": [
+                "Kon import niet starten"
+            ],
+            "Import started in background...": [
+                "Import gestart op de achtergrond..."
+            ],
+            "Import completed! %d product imported": [
+                "Import voltooid! %d product ge\u00efmporteerd",
+                "Import voltooid! %d producten ge\u00efmporteerd"
+            ],
+            "%d error occurred": [
+                "%d fout opgetreden",
+                "%d fouten opgetreden"
+            ],
+            "Import failed to start": [
+                "Import kon niet worden gestart"
+            ],
+            "Description": [
+                "Beschrijving"
+            ],
+            "Thumbnail Url": [
+                "Thumbnail-URL"
+            ],
+            "Attribute Names": [
+                "Attribuutnamen"
+            ],
+            "Attribute Values Name": [
+                "Naam van attribuutwaarden"
+            ],
+            "Attribute Values Value": [
+                "Waarde van attribuutwaarden"
+            ],
+            "Variation Names": [
+                "Variantnamen"
+            ],
+            "Variation Types": [
+                "Varianttypen"
+            ],
+            "Variation Status": [
+                "Variantstatus"
+            ],
+            "Regular Prices": [
+                "Normale prijzen"
+            ],
+            "Sale Prices": [
+                "Aanbiedingsprijzen"
+            ],
+            "SKUs": [
+                "SKU's"
+            ],
+            "Stock Quantities": [
+                "Voorraadaantallen"
+            ],
+            "Stock Limits": [
+                "Voorraadlimieten"
+            ],
+            "Variation Attribute Names": [
+                "Namen variantattributen"
+            ],
+            "Variation Attribute Values": [
+                "Waarden variantattributen"
+            ],
+            "Managed Stocks": [
+                "Beheerde voorraden"
+            ],
+            "Tax Classes": [
+                "Belastingklassen"
+            ],
+            "Thumbnail URLs": [
+                "Thumbnail-URL's"
+            ],
+            "Width Values": [
+                "Breedtewaarden"
+            ],
+            "Width Units": [
+                "Breedte-eenheden"
+            ],
+            "Height Values": [
+                "Hoogtewaarden"
+            ],
+            "Height Units": [
+                "Hoogte-eenheden"
+            ],
+            "Weight Values": [
+                "Gewichtwaarden"
+            ],
+            "Weight Units": [
+                "Gewichtseenheden"
+            ],
+            "Length Values": [
+                "Lengtewaarden"
+            ],
+            "Length Units": [
+                "Lengte-eenheden"
+            ],
+            "Meta Gallery URLs": [
+                "Meta galerij-URL's"
+            ],
+            "Meta Gallery Titles": [
+                "Meta galerijtitels"
+            ],
+            "Meta Templates": [
+                "Meta-sjablonen"
+            ],
+            "Show Reviews": [
+                "Beoordelingen tonen"
+            ],
+            "Review Text Mandatory": [
+                "Beoordelingstekst verplicht"
+            ],
+            "Hide From Shop": [
+                "Verbergen in winkel"
+            ],
+            "Noindex": [
+                "Noindex"
+            ],
+            "Published Date": [
+                "Publicatiedatum"
+            ],
+            "Upload CSV": [
+                "CSV uploaden"
+            ],
+            "Column Mapping": [
+                "Kolomtoewijzing"
+            ],
+            "Import": [
+                "Importeren"
+            ],
+            "Upload CSV File": [
+                "CSV-bestand uploaden"
+            ],
+            "Download the": [
+                "Download het"
+            ],
+            "Demo CSV": [
+                "Demo-CSV"
+            ],
+            "file. Add your data, upload it below, and click continue. To learn more,": [
+                "bestand. Voeg je gegevens toe, upload het hieronder en klik op doorgaan. Meer info,"
+            ],
+            "click here": [
+                "klik hier"
+            ],
+            "Uploading...": [
+                "Uploaden..."
+            ],
+            "Continue": [
+                "Doorgaan"
+            ],
+            "Column Name": [
+                "Kolomnaam"
+            ],
+            "Map to Field": [
+                "Toewijzen aan veld"
+            ],
+            "Do not import": [
+                "Niet importeren"
+            ],
+            "Mapping...": [
+                "Toewijzen..."
+            ],
+            "Import Products": [
+                "Producten importeren"
+            ],
+            "Importing...": [
+                "Importeren..."
+            ],
+            "%1$d of %2$d products": [
+                "%1$d van %2$d producten"
+            ],
+            "Products are ready to import. Click the button below to start importing.": [
+                "Producten zijn klaar om te importeren. Klik op de knop hieronder om te beginnen met importeren."
+            ],
+            "Import Now": [
+                "Nu importeren"
+            ],
+            "Demo products imported!": [
+                "Demoproducten ge\u00efmporteerd!"
+            ],
+            "Failed to import": [
+                "Kon niet importeren"
+            ],
+            "Failed to import demo products": [
+                "Kon demoproducten niet importeren"
+            ],
+            "Importing Sample Products": [
+                "Voorbeeldproducten importeren"
+            ],
+            "We are generating some sample products into your store. You can refresh the page to see the progress..": [
+                "We genereren enkele voorbeeldproducten in je winkel. Je kunt de pagina vernieuwen om de voortgang te zien.."
+            ],
+            "All": [
+                "Alle"
+            ],
+            "Product trashed successfully!": [
+                "Product succesvol naar de prullenbak verplaatst!"
+            ],
+            "Product deleted successfully!": [
+                "Product succesvol verwijderd!"
+            ],
+            "No %s Products Found": [
+                "Geen %s-producten gevonden"
+            ],
+            "Your Store is Empty": [
+                "Je winkel is leeg"
+            ],
+            "Create a new product or generate samples to get started.": [
+                "Maak een nieuw product aan of genereer voorbeelden om te beginnen."
+            ],
+            "or": [
+                "of"
+            ],
+            "Generate Samples": [
+                "Voorbeelden genereren"
+            ],
+            "Write a short, compelling product sumamry with key features and benefits.": [
+                "Schrijf een korte, overtuigende productsamenvatting met de belangrijkste kenmerken en voordelen."
+            ],
+            "Write a detailed, persuasive product description covering features, benefits, use cases, and why it's a great choice. Mention features in ordered list if any.": [
+                "Schrijf een gedetailleerde, overtuigende productbeschrijving over kenmerken, voordelen, gebruiksscenario's en waarom het een goede keuze is. Vermeld kenmerken indien mogelijk in een genummerde lijst."
+            ],
+            "Invalid response from AI service. Please try again.": [
+                "Ongeldig antwoord van AI-service. Probeer het opnieuw."
+            ],
+            "AI Copywriter": [
+                "AI-copywriter"
+            ],
+            "AI-powered copy writer to write your product description and summary": [
+                "AI-copywriter om je productbeschrijving en -samenvatting te schrijven"
+            ],
+            "You have used all your free credits.": [
+                "Je hebt al je gratis credits gebruikt."
+            ],
+            "Upgrade Now": [
+                "Nu upgraden"
+            ],
+            "Please type your instructions here": [
+                "Typ hier je instructies"
+            ],
+            "loading": [
+                "laden"
+            ],
+            "Generate": [
+                "Genereren"
+            ],
+            "Product Summary": [
+                "Productsamenvatting"
+            ],
+            "Write a compelling summary to highlight key product features.": [
+                "Schrijf een overtuigende samenvatting om de belangrijkste productkenmerken te benadrukken."
+            ],
+            "Add product title first!": [
+                "Voeg eerst een producttitel toe!"
+            ],
+            "Generate with AI": [
+                "Genereren met AI"
+            ],
+            "Briefly describe the product, its key benefit, and who it\u2019s for. Keep it within 20\u201340 words.": [
+                "Beschrijf kort het product, het belangrijkste voordeel en voor wie het bedoeld is. Houd het tussen de 20\u201340 woorden."
+            ],
+            "Selected": [
+                "Geselecteerd"
+            ],
+            "Select Options": [
+                "Selecteer opties"
+            ],
+            "Loading attribute...": [
+                "Attribuut laden..."
+            ],
+            "Attribute name are required!": [
+                "Attribuutnaam is verplicht!"
+            ],
+            "Attribute slug are required!": [
+                "Attribuutslug is verplicht!"
+            ],
+            "Attribute name already exists!": [
+                "Attribuutnaam bestaat al!"
+            ],
+            "Attribute slug already exists!": [
+                "Attribuutslug bestaat al!"
+            ],
+            "Option %d must have a label!": [
+                "Optie %d moet een label hebben!"
+            ],
+            "Option %d must have a label and image": [
+                "Optie %d moet een label en afbeelding hebben"
+            ],
+            "Option %d must have a label and color": [
+                "Optie %d moet een label en kleur hebben"
+            ],
+            "Duplicate option labels are not allowed!": [
+                "Dubbele optielabels zijn niet toegestaan!"
+            ],
+            "Attribute updated successfully!": [
+                "Attribuut succesvol bijgewerkt!"
+            ],
+            "Attribute created successfully!": [
+                "Attribuut succesvol aangemaakt!"
+            ],
+            "It'll show on the single product screen": [
+                "Dit wordt getoond op het productscherm"
+            ],
+            "Enter Name": [
+                "Voer naam in"
+            ],
+            "URL-friendly slug of the attribute": [
+                "URL-vriendelijke slug van het attribuut"
+            ],
+            "How customers will see this on the single product screen": [
+                "Hoe klanten dit op het productscherm te zien krijgen"
+            ],
+            "Options": [
+                "Opties"
+            ],
+            "Options of the attribute": [
+                "Opties van het attribuut"
+            ],
+            "Select an Image": [
+                "Selecteer een afbeelding"
+            ],
+            "Use this image": [
+                "Deze afbeelding gebruiken"
+            ],
+            "Update Attribute": [
+                "Attribuut bijwerken"
+            ],
+            "Create Attribute": [
+                "Attribuut aanmaken"
+            ],
+            "Attribute deleted successfully!": [
+                "Attribuut succesvol verwijderd!"
+            ],
+            "Failed to delete attribute.": [
+                "Kon attribuut niet verwijderen."
+            ],
+            "Delete failed, please try again.": [
+                "Verwijderen mislukt, probeer het opnieuw."
+            ],
+            "No attributes found.": [
+                "Geen attributen gevonden."
+            ],
+            "Add New Attribute": [
+                "Nieuw attribuut toevoegen"
+            ],
+            "Add to Product": [
+                "Toevoegen aan product"
+            ],
+            "Edit Attribute: %s": [
+                "Attribuut bewerken: %s"
+            ],
+            "AI Attributes Generator": [
+                "AI-attributengenerator"
+            ],
+            "AI-powered attribute generator to create product attributes": [
+                "AI-attribuutgenerator om productattributen te maken"
+            ],
+            "Number of Attributes to Generate": [
+                "Aantal te genereren attributen"
+            ],
+            "Number of Values Per Attribute": [
+                "Aantal waarden per attribuut"
+            ],
+            "Attributes generated successfully!": [
+                "Attributen succesvol gegenereerd!"
+            ],
+            "Failed to generate attributes": [
+                "Kon attributen niet genereren"
+            ],
+            "Add attributes to your product to help customers filter and search for products more easily.": [
+                "Voeg attributen toe aan je product zodat klanten producten gemakkelijker kunnen filteren en zoeken."
+            ],
+            "Generating...": [
+                "Genereren..."
+            ],
+            "Fetching generated attributes...": [
+                "Gegenereerde attributen ophalen..."
+            ],
+            "No attributes are added yet. Click the \"Add New\" button below to add attributes to this product.": [
+                "Er zijn nog geen attributen toegevoegd. Klik op de knop \"Nieuwe toevoegen\" hieronder om attributen aan dit product toe te voegen."
+            ],
+            "Add options like color or size. Click the \"Manage Attributes\" button below or \"Generate with AI\" above.": [
+                "Voeg opties toe zoals kleur of maat. Klik op de knop \"Attributen beheren\" hieronder of \"Genereren met AI\" hierboven."
+            ],
+            "Add Attribute": [
+                "Attribuut toevoegen"
+            ],
+            "Write variation name": [
+                "Schrijf variantnaam"
+            ],
+            "Expand": [
+                "Uitklappen"
+            ],
+            "Product Type": [
+                "Producttype"
+            ],
+            "Physical Product": [
+                "Fysiek product"
+            ],
+            "Digital Product": [
+                "Digitaal product"
+            ],
+            "Select %s": [
+                "Selecteer %s"
+            ],
+            "If there is no sale going on for this variation, simply leave it blank.": [
+                "Als er geen aanbieding loopt voor deze variant, laat je dit gewoon leeg."
+            ],
+            "Sale price should be less than regular price.": [
+                "De aanbiedingsprijs moet lager zijn dan de normale prijs."
+            ],
+            "Calculate profit margin": [
+                "Winstmarge berekenen"
+            ],
+            "Cost of Goods": [
+                "Inkoopkosten"
+            ],
+            "Enter Cost": [
+                "Voer kosten in"
+            ],
+            "Profit": [
+                "Winst"
+            ],
+            "Yet to calculate": [
+                "Nog te berekenen"
+            ],
+            "Margin": [
+                "Marge"
+            ],
+            "Inventory": [
+                "Voorraad"
+            ],
+            "Stock Count": [
+                "Voorraadaantal"
+            ],
+            "Number of items we have in stock. If you don't manage stock for this variation, simply leave it blank.": [
+                "Aantal artikelen dat we op voorraad hebben. Als je geen voorraad beheert voor deze variant, laat je dit gewoon leeg."
+            ],
+            "Enter Stock Count": [
+                "Voer voorraadaantal in"
+            ],
+            "Low Stock Limit": [
+                "Lagevoorraadlimiet"
+            ],
+            "When should we call it low stock?": [
+                "Wanneer moeten we het als lage voorraad beschouwen?"
+            ],
+            "Stock Limit": [
+                "Voorraadlimiet"
+            ],
+            "Package Dimension": [
+                "Verpakkingsafmetingen"
+            ],
+            "Height": [
+                "Hoogte"
+            ],
+            "Set Height": [
+                "Stel hoogte in"
+            ],
+            "Width": [
+                "Breedte"
+            ],
+            "Set Width": [
+                "Stel breedte in"
+            ],
+            "Length": [
+                "Lengte"
+            ],
+            "Set Length": [
+                "Stel lengte in"
+            ],
+            "Weight": [
+                "Gewicht"
+            ],
+            "Set Weight": [
+                "Stel gewicht in"
+            ],
+            "Select Images": [
+                "Selecteer afbeeldingen"
+            ],
+            "Insert": [
+                "Invoegen"
+            ],
+            "Files": [
+                "Bestanden"
+            ],
+            "File title": [
+                "Bestandstitel"
+            ],
+            "Add More Files": [
+                "Meer bestanden toevoegen"
+            ],
+            "Uploading files...": [
+                "Bestanden uploaden..."
+            ],
+            "Click to update": [
+                "Klik om bij te werken"
+            ],
+            "or Drag and drop": [
+                "of sleep en zet neer"
+            ],
+            "Upload Files": [
+                "Bestanden uploaden"
+            ],
+            "Unlock %s": [
+                "%s ontgrendelen"
+            ],
+            "See Pro Plans": [
+                "Bekijk Pro-abonnementen"
+            ],
+            "Addon activated successfully.": [
+                "Add-on succesvol geactiveerd."
+            ],
+            "Error activating addon.": [
+                "Fout bij het activeren van de add-on."
+            ],
+            "Install A New Addon?": [
+                "Een nieuwe add-on installeren?"
+            ],
+            "This will install %s. Are you sure to proceed?": [
+                "Hiermee wordt %s ge\u00efnstalleerd. Weet je zeker dat je wilt doorgaan?"
+            ],
+            "Install & Activate": [
+                "Installeren & activeren"
+            ],
+            "Variation Name": [
+                "Variantnaam"
+            ],
+            "Choose attributes that apply to this pricing option": [
+                "Kies attributen die van toepassing zijn op deze prijsoptie"
+            ],
+            "Subscription Manager": [
+                "Abonnementenbeheer"
+            ],
+            "Add recurring billing to your store with the EasyCommerce Subscription Addon.": [
+                "Voeg terugkerende betalingen toe aan je winkel met de EasyCommerce Subscription-add-on."
+            ],
+            "Enable Subscription": [
+                "Abonnement inschakelen"
+            ],
+            "Turn on subscriptions to sell products with recurring payments.": [
+                "Schakel abonnementen in om producten met terugkerende betalingen te verkopen."
+            ],
+            "License Manager": [
+                "Licentiebeheer"
+            ],
+            "Configure your ecommerce store with licensing capability and sell digital products and manage their licenses.": [
+                "Configureer je e-commercewinkel met licentiefunctionaliteit, verkoop digitale producten en beheer hun licenties."
+            ],
+            "Generate License": [
+                "Licentie genereren"
+            ],
+            "Turn on licensing to sell products that require license keys.": [
+                "Schakel licenties in om producten te verkopen waarvoor licentiesleutels nodig zijn."
+            ],
+            "Are you sure you want to replace?": [
+                "Weet je zeker dat je wilt vervangen?"
+            ],
+            "Auto generating variants will replace all existing variants for": [
+                "Automatisch genereren van varianten vervangt alle bestaande varianten voor"
+            ],
+            "No, Keep": [
+                "Nee, behouden"
+            ],
+            "Yes, Replace": [
+                "Ja, vervangen"
+            ],
+            "Set product type, price, sale price, stock count, and dimensions of the product.": [
+                "Stel het producttype, de prijs, de aanbiedingsprijs, het voorraadaantal en de afmetingen van het product in."
+            ],
+            "Add attributes to enable variant generation": [
+                "Voeg attributen toe om het genereren van varianten in te schakelen"
+            ],
+            "Add attributes above to add multiple price options.": [
+                "Voeg hierboven attributen toe om meerdere prijsopties toe te voegen."
+            ],
+            "Need multiple prices?": [
+                "Meerdere prijzen nodig?"
+            ],
+            "No prices added yet": [
+                "Nog geen prijzen toegevoegd"
+            ],
+            "Add New Price": [
+                "Nieuwe prijs toevoegen"
+            ],
+            "Add Media": [
+                "Media toevoegen"
+            ],
+            "Provide an in-depth product description of 600\u2013900 words, outlining key features, benefits, and usage instructions.": [
+                "Geef een uitgebreide productbeschrijving van 600\u2013900 woorden waarin de belangrijkste kenmerken, voordelen en gebruiksinstructies worden uiteengezet."
+            ],
+            "Generating image": [
+                "Afbeelding genereren"
+            ],
+            "Edit this image. Keep the product exactly as-is. Place it in a clean, modern lifestyle setting with soft natural lighting, shallow depth of field, and a professional commercial look.": [
+                "Bewerk deze afbeelding. Houd het product precies zoals het is. Plaats het in een strakke, moderne lifestyle-omgeving met zacht natuurlijk licht, een geringe scherptediepte en een professionele, commerci\u00eble uitstraling."
+            ],
+            "1024x1024 Pixels": [
+                "1024x1024 pixels"
+            ],
+            "1792x1024 Pixels": [
+                "1792x1024 pixels"
+            ],
+            "1024x1792 Pixels": [
+                "1024x1792 pixels"
+            ],
+            "Standard": [
+                "Standaard"
+            ],
+            "HD": [
+                "HD"
+            ],
+            "No enhanced image to choose from.": [
+                "Geen verbeterde afbeelding om uit te kiezen."
+            ],
+            "Failed to choose image. Please try again.": [
+                "Kon afbeelding niet kiezen. Probeer het opnieuw."
+            ],
+            "AI Image Enhancer": [
+                "AI-afbeeldingsverbeteraar"
+            ],
+            "Enhance your image with AI": [
+                "Verbeter je afbeelding met AI"
+            ],
+            "Original Image": [
+                "Originele afbeelding"
+            ],
+            "Image Size": [
+                "Afbeeldingsgrootte"
+            ],
+            "Quality": [
+                "Kwaliteit"
+            ],
+            "Enhance Image": [
+                "Afbeelding verbeteren"
+            ],
+            "Use This Image": [
+                "Deze afbeelding gebruiken"
+            ],
+            "Image Preview.": [
+                "Afbeeldingsvoorbeeld."
+            ],
+            "Uploaded %d": [
+                "%d ge\u00fcpload"
+            ],
+            "Set as thumbnail": [
+                "Instellen als thumbnail"
+            ],
+            "Enhance With AI": [
+                "Verbeteren met AI"
+            ],
+            "Uploading images...": [
+                "Afbeeldingen uploaden..."
+            ],
+            "Upload Images": [
+                "Afbeeldingen uploaden"
+            ],
+            "A professional product photo of %s on a clean white background, studio lighting, sharp focus, high resolution, commercial photography style, no shadows, photorealistic.": [
+                "Een professionele productfoto van %s op een strakke witte achtergrond, studioverlichting, scherpe focus, hoge resolutie, commerci\u00eble fotografiestijl, geen schaduwen, fotorealistisch."
+            ],
+            "No generated image to choose from.": [
+                "Geen gegenereerde afbeelding om uit te kiezen."
+            ],
+            "Describe what you want to see in the image": [
+                "Beschrijf wat je in de afbeelding wilt zien"
+            ],
+            "Generated image will appear here once created.": [
+                "De gegenereerde afbeelding verschijnt hier zodra deze is gemaakt."
+            ],
+            "Product Gallery": [
+                "Productgalerij"
+            ],
+            "Upload images to showcase your product visually.": [
+                "Upload afbeeldingen om je product visueel te presenteren."
+            ],
+            "For best appearance, use images larger than": [
+                "Gebruik voor het beste resultaat afbeeldingen groter dan"
+            ],
+            "pixels.": [
+                "pixels."
+            ],
+            "All fields are required!": [
+                "Alle velden zijn verplicht!"
+            ],
+            "Category created successfully": [
+                "Categorie succesvol aangemaakt"
+            ],
+            "Operation failed": [
+                "Bewerking mislukt"
+            ],
+            "It'll be used to filter products": [
+                "Dit wordt gebruikt om producten te filteren"
+            ],
+            "URL-friendly slug of the category": [
+                "URL-vriendelijke slug van de categorie"
+            ],
+            "Parent": [
+                "Bovenliggend"
+            ],
+            "Select a parent category if any": [
+                "Selecteer eventueel een bovenliggende categorie"
+            ],
+            "Select Parent": [
+                "Selecteer bovenliggend"
+            ],
+            "Create Category": [
+                "Categorie aanmaken"
+            ],
+            "Tag created successfully": [
+                "Tag succesvol aangemaakt"
+            ],
+            "URL-friendly slug of the tag": [
+                "URL-vriendelijke slug van de tag"
+            ],
+            "Create Tag": [
+                "Tag aanmaken"
+            ],
+            "Brand created successfully": [
+                "Merk succesvol aangemaakt"
+            ],
+            "URL-friendly slug of the brand": [
+                "URL-vriendelijke slug van het merk"
+            ],
+            "Select a parent brand if any": [
+                "Selecteer eventueel een bovenliggend merk"
+            ],
+            "Create Brand": [
+                "Merk aanmaken"
+            ],
+            "No categories available": [
+                "Geen categorie\u00ebn beschikbaar"
+            ],
+            "No tags available": [
+                "Geen tags beschikbaar"
+            ],
+            "No brands available": [
+                "Geen merken beschikbaar"
+            ],
+            "Failed to fetch categories.": [
+                "Kon categorie\u00ebn niet ophalen."
+            ],
+            "Failed to fetch tags.": [
+                "Kon tags niet ophalen."
+            ],
+            "Failed to fetch brands.": [
+                "Kon merken niet ophalen."
+            ],
+            "Organize your product with Categories, Tags, and Brands for better sorting.": [
+                "Orden je product met categorie\u00ebn, tags en merken voor een betere sortering."
+            ],
+            "Manage Categories": [
+                "Categorie\u00ebn beheren"
+            ],
+            "Manage Tags": [
+                "Tags beheren"
+            ],
+            "Manage Brands": [
+                "Merken beheren"
+            ],
+            "Product View": [
+                "Productweergave"
+            ],
+            "Choose a template to customize how your product page is displayed to customers.": [
+                "Kies een sjabloon om aan te passen hoe je productpagina aan klanten wordt getoond."
+            ],
+            "Select Template": [
+                "Selecteer sjabloon"
+            ],
+            "Select a template": [
+                "Selecteer een sjabloon"
+            ],
+            "Configure general product settings like visibility, URL slug, and reviews.": [
+                "Configureer algemene productinstellingen zoals zichtbaarheid, URL-slug en beoordelingen."
+            ],
+            "URL:": [
+                "URL:"
+            ],
+            "Hide from Shop": [
+                "Verbergen in winkel"
+            ],
+            "Hide from Search Engines": [
+                "Verbergen voor zoekmachines"
+            ],
+            "Enable Review": [
+                "Beoordelingen inschakelen"
+            ],
+            "Product title is required": [
+                "Producttitel is verplicht"
+            ],
+            "Invalid Pricing Data": [
+                "Ongeldige prijsgegevens"
+            ],
+            "Duplicate pricing plan found: %s": [
+                "Dubbel prijsplan gevonden: %s"
+            ],
+            "Duplicate attributes found in %1$s and %2$s": [
+                "Dubbele attributen gevonden in %1$s en %2$s"
+            ],
+            "Product is live now!": [
+                "Product is nu live!"
+            ],
+            "Product saved as draft!": [
+                "Product opgeslagen als concept!"
+            ],
+            "Product Creation Failed": [
+                "Aanmaken van product mislukt"
+            ],
+            "Save as Draft": [
+                "Opslaan als concept"
+            ],
+            "Save as Live": [
+                "Opslaan als live"
+            ],
+            "Add your product title here": [
+                "Voeg hier je producttitel toe"
+            ],
+            "Product trashed!": [
+                "Product naar de prullenbak verplaatst!"
+            ],
+            "Product deleted permanently!": [
+                "Product permanent verwijderd!"
+            ],
+            "Product doesn't exist": [
+                "Product bestaat niet"
+            ],
+            "Failed to fetch product data": [
+                "Kon productgegevens niet ophalen"
+            ],
+            "Product updated successfully": [
+                "Product succesvol bijgewerkt"
+            ],
+            "Product update failed": [
+                "Bijwerken van product mislukt"
+            ],
+            "Edit: ": [
+                "Bewerken: "
+            ],
+            "Preview": [
+                "Voorbeeld"
+            ],
+            "Loading product data...": [
+                "Productgegevens laden..."
+            ],
+            "Selected attributes deleted successfully!": [
+                "Geselecteerde attributen succesvol verwijderd!"
+            ],
+            "Failed to delete selected attributes.": [
+                "Kon geselecteerde attributen niet verwijderen."
+            ],
+            "Bulk delete failed, please try again.": [
+                "Bulkverwijdering mislukt, probeer het opnieuw."
+            ],
+            "Delete Selected": [
+                "Geselecteerde verwijderen"
+            ],
+            "Attributes List": [
+                "Attributenlijst"
+            ],
+            "Category deleted successfully": [
+                "Categorie succesvol verwijderd"
+            ],
+            "Failed to delete": [
+                "Verwijderen mislukt"
+            ],
+            "No categories found.": [
+                "Geen categorie\u00ebn gevonden."
+            ],
+            "Category updated successfully": [
+                "Categorie succesvol bijgewerkt"
+            ],
+            "Selected categories deleted successfully!": [
+                "Geselecteerde categorie\u00ebn succesvol verwijderd!"
+            ],
+            "Failed to delete selected categories.": [
+                "Kon geselecteerde categorie\u00ebn niet verwijderen."
+            ],
+            "Categories List": [
+                "Categorielijst"
+            ],
+            "Edit Category: %s": [
+                "Categorie bewerken: %s"
+            ],
+            "Tag deleted successfully": [
+                "Tag succesvol verwijderd"
+            ],
+            "No tags found.": [
+                "Geen tags gevonden."
+            ],
+            "Tag updated successfully": [
+                "Tag succesvol bijgewerkt"
+            ],
+            "Selected tags deleted successfully!": [
+                "Geselecteerde tags succesvol verwijderd!"
+            ],
+            "Failed to delete selected tags.": [
+                "Kon geselecteerde tags niet verwijderen."
+            ],
+            "Tags List": [
+                "Taglijst"
+            ],
+            "Edit Tag: %s": [
+                "Tag bewerken: %s"
+            ],
+            "Brand deleted successfully": [
+                "Merk succesvol verwijderd"
+            ],
+            "No brands found.": [
+                "Geen merken gevonden."
+            ],
+            "Brand updated successfully": [
+                "Merk succesvol bijgewerkt"
+            ],
+            "Selected brands deleted successfully!": [
+                "Geselecteerde merken succesvol verwijderd!"
+            ],
+            "Failed to delete selected brands.": [
+                "Kon geselecteerde merken niet verwijderen."
+            ],
+            "Brands List": [
+                "Merkenlijst"
+            ],
+            "Edit Brand: %s": [
+                "Merk bewerken: %s"
+            ],
+            "An error occurred while updating status": [
+                "Er is een fout opgetreden bij het bijwerken van de status"
+            ],
+            "Please enter an amount greater than 0 before refunding": [
+                "Voer een bedrag groter dan 0 in voordat je terugbetaalt"
+            ],
+            "Failed to process refund. Please try again.": [
+                "Kon terugbetaling niet verwerken. Probeer het opnieuw."
+            ],
+            "Please enter the Refund Transaction ID.": [
+                "Voer het terugbetalingstransactie-ID in."
+            ],
+            "Please enter an amount before refunding": [
+                "Voer een bedrag in voordat je terugbetaalt"
+            ],
+            "Please select a reason before refunding": [
+                "Selecteer een reden voordat je terugbetaalt"
+            ],
+            "Refund Payment": [
+                "Betaling terugbetalen"
+            ],
+            "Refundable": [
+                "Terugbetaalbaar"
+            ],
+            "Refund Amount": [
+                "Terugbetaalbedrag"
+            ],
+            "Enter amount": [
+                "Voer bedrag in"
+            ],
+            "Refund Reason": [
+                "Reden van terugbetaling"
+            ],
+            "Select Refund Reason": [
+                "Selecteer reden van terugbetaling"
+            ],
+            "For %s, refunds should be processed manually outside of the system. After succesful processing, enter the Refund Transaction ID": [
+                "Voor %s moeten terugbetalingen handmatig buiten het systeem worden verwerkt. Voer na succesvolle verwerking het terugbetalingstransactie-ID in"
+            ],
+            "Enter Refund Transaction ID": [
+                "Voer terugbetalingstransactie-ID in"
+            ],
+            "Refund now": [
+                "Nu terugbetalen"
+            ],
+            "ID": [
+                "ID"
+            ],
+            "Fulfillment": [
+                "Fulfilment"
+            ],
+            "Transactions ID": [
+                "Transactie-ID"
+            ],
+            "Date & Time": [
+                "Datum & tijd"
+            ],
+            "On hold": [
+                "In de wacht"
+            ],
+            "payment-icon": [
+                "betaalpictogram"
+            ],
+            "Select date range": [
+                "Selecteer datumbereik"
+            ],
+            "Calendar": [
+                "Kalender"
+            ],
+            "eg. 12 Sep - 28 Oct 2025": [
+                "bijv. 12 sep - 28 okt 2025"
+            ],
+            "Order deleted permanently": [
+                "Bestelling permanent verwijderd",
+                "Bestellingen permanent verwijderd"
+            ],
+            "Something went wrong while deleting.": [
+                "Er is iets misgegaan tijdens het verwijderen."
+            ],
+            "Fulfill Status": [
+                "Fulfilment-status"
+            ],
+            "%d order": [
+                "%d bestelling",
+                "%d bestellingen"
+            ],
+            "Failed to update orders.": [
+                "Kon bestellingen niet bijwerken."
+            ],
+            "Please select a status to update.": [
+                "Selecteer een status om bij te werken."
+            ],
+            "No %s Orders Found": [
+                "Geen %s-bestellingen gevonden"
+            ],
+            "No Orders Found": [
+                "Geen bestellingen gevonden"
+            ],
+            "You're yet to receive any orders in your store. Keep promoting \nyour store to bring in your first sale.": [
+                "Je hebt nog geen bestellingen ontvangen in je winkel. Blijf je winkel promoten \nom je eerste verkoop binnen te halen."
+            ],
+            "No %s orders in your store. Keep promoting \nyour store to bring in your first sale.": [
+                "Geen %s-bestellingen in je winkel. Blijf je winkel promoten \nom je eerste verkoop binnen te halen."
+            ],
+            "Resend Order Email": [
+                "Bestelmail opnieuw verzenden"
+            ],
+            "Email Event": [
+                "E-mailgebeurtenis"
+            ],
+            "Select an event": [
+                "Selecteer een gebeurtenis"
+            ],
+            "Email sent": [
+                "E-mail verzonden"
+            ],
+            "Refund": [
+                "Terugbetaling"
+            ],
+            "Order Deleted!": [
+                "Bestelling verwijderd!"
+            ],
+            "Delivery Date": [
+                "Leverdatum"
+            ],
+            "Order Refund": [
+                "Bestelterugbetaling"
+            ],
+            "Fulfillment Status": [
+                "Fulfilment-status"
+            ],
+            "Payment Icon": [
+                "Betaalpictogram"
+            ],
+            "Payment URL": [
+                "Betaal-URL"
+            ],
+            "date": [
+                "datum"
+            ],
+            "Avg. Order Value": [
+                "Gem. bestelwaarde"
+            ],
+            "Last Order": [
+                "Laatste bestelling"
+            ],
+            "Reason": [
+                "Reden"
+            ],
+            "Refunded By": [
+                "Terugbetaald door"
+            ],
+            "Add Note": [
+                "Notitie toevoegen"
+            ],
+            "Required": [
+                "Verplicht"
+            ],
+            "Write your note here": [
+                "Schrijf hier je notitie"
+            ],
+            "Note To Customer": [
+                "Notitie aan klant"
+            ],
+            "Unable to save note. The database may need to be updated. Please contact your administrator.": [
+                "Kan notitie niet opslaan. Mogelijk moet de database worden bijgewerkt. Neem contact op met je beheerder."
+            ],
+            "Delete Note": [
+                "Notitie verwijderen"
+            ],
+            "Are you sure you want to delete this note? This action cannot be undone.": [
+                "Weet je zeker dat je deze notitie wilt verwijderen? Deze actie kan niet ongedaan worden gemaakt."
+            ],
+            "Unable to delete note. Please try again or contact your administrator.": [
+                "Kan notitie niet verwijderen. Probeer het opnieuw of neem contact op met je beheerder."
+            ],
+            "Order doesn't exist": [
+                "Bestelling bestaat niet"
+            ],
+            "Failed to fetch order data": [
+                "Kon bestelgegevens niet ophalen"
+            ],
+            "Unknown": [
+                "Onbekend"
+            ],
+            "eg. %1$s - %2$s %3$s": [
+                "bijv. %1$s - %2$s %3$s"
+            ],
+            "Adjustment": [
+                "Aanpassing"
+            ],
+            "No %s Transactions Found": [
+                "Geen %s-transacties gevonden"
+            ],
+            "No Transactions Found.": [
+                "Geen transacties gevonden."
+            ],
+            "All type of payment activities will appear here once they occur": [
+                "Alle soorten betaalactiviteiten verschijnen hier zodra ze plaatsvinden"
+            ],
+            "Add New Customer": [
+                "Nieuwe klant toevoegen"
+            ],
+            "Select a Image": [
+                "Selecteer een afbeelding"
+            ],
+            "Enter last name": [
+                "Voer achternaam in"
+            ],
+            "Enter Password": [
+                "Voer wachtwoord in"
+            ],
+            "Re-enter Password": [
+                "Voer wachtwoord opnieuw in"
+            ],
+            "Re-ender password to confirm": [
+                "Voer wachtwoord opnieuw in ter bevestiging"
+            ],
+            "Submit": [
+                "Verzenden"
+            ],
+            "Customer Since": [
+                "Klant sinds"
+            ],
+            "Lifetime Value": [
+                "Levenslange waarde"
+            ],
+            "No customers found": [
+                "Geen klanten gevonden"
+            ],
+            "Recurring": [
+                "Terugkerend"
+            ],
+            "One-time": [
+                "Eenmalig"
+            ],
+            "No %s Customers Found": [
+                "Geen %s-klanten gevonden"
+            ],
+            "No Customers Found": [
+                "Geen klanten gevonden"
+            ],
+            "You're yet to receive any customers in your store.": [
+                "Je hebt nog geen klanten in je winkel."
+            ],
+            "No %s customers in your store.": [
+                "Geen %s-klanten in je winkel."
+            ],
+            "Keep promoting \nyour store to bring in your first customer.": [
+                "Blijf je winkel promoten \nom je eerste klant binnen te halen."
+            ],
+            "Add Customer": [
+                "Klant toevoegen"
+            ],
+            "Purchase Amount": [
+                "Aankoopbedrag"
+            ],
+            "Customer Details": [
+                "Klantgegevens"
+            ],
+            "unknown": [
+                "onbekend"
+            ],
+            "Orders Over Time": [
+                "Bestellingen in de tijd"
+            ],
+            "Fullfillment": [
+                "Fulfilment"
+            ],
+            "No order found for this customer": [
+                "Geen bestelling gevonden voor deze klant"
+            ],
+            "Active": [
+                "Actief"
+            ],
+            "Inactive": [
+                "Inactief"
+            ],
+            "Coupon status updated": [
+                "Couponstatus bijgewerkt"
+            ],
+            "Failed to update coupon status": [
+                "Kon couponstatus niet bijwerken"
+            ],
+            "Something went wrong while updating coupon status": [
+                "Er is iets misgegaan bij het bijwerken van de couponstatus"
+            ],
+            "No coupons found": [
+                "Geen coupons gevonden"
+            ],
+            "All type of Coupons activities will appear here once they occur.": [
+                "Alle soorten couponactiviteiten verschijnen hier zodra ze plaatsvinden."
+            ],
+            "Add Coupon": [
+                "Coupon toevoegen"
+            ],
+            "Coupons deleted successfully": [
+                "Coupons succesvol verwijderd"
+            ],
+            "%d coupon": [
+                "%d coupon",
+                "%d coupons"
+            ],
+            "Code": [
+                "Code"
+            ],
+            "Offer": [
+                "Aanbieding"
+            ],
+            "No coupons found for this tab.": [
+                "Geen coupons gevonden voor dit tabblad."
+            ],
+            "Create Coupon": [
+                "Coupon aanmaken"
+            ],
+            "Coupon Deleted": [
+                "Coupon verwijderd"
+            ],
+            "Coupon Name": [
+                "Couponnaam"
+            ],
+            "Coupon Code": [
+                "Couponcode"
+            ],
+            "Offers": [
+                "Aanbiedingen"
+            ],
+            "Discount Type": [
+                "Kortingstype"
+            ],
+            "Percentage Discount": [
+                "Procentuele korting"
+            ],
+            "Fixed Cart Discount": [
+                "Vaste winkelwagenkorting"
+            ],
+            "Free Products": [
+                "Gratis producten"
+            ],
+            "Offer Amount": [
+                "Aanbiedingsbedrag"
+            ],
+            "Select products to give for free": [
+                "Selecteer producten om gratis weg te geven"
+            ],
+            "Search for products": [
+                "Zoek naar producten"
+            ],
+            "Conditions": [
+                "Voorwaarden"
+            ],
+            "Discount applies to specific products?": [
+                "Geldt de korting voor specifieke producten?"
+            ],
+            "Minimum Spend": [
+                "Minimale besteding"
+            ],
+            "Maximum Spend": [
+                "Maximale besteding"
+            ],
+            "Start Date": [
+                "Startdatum"
+            ],
+            "calendar": [
+                "kalender"
+            ],
+            "End Date": [
+                "Einddatum"
+            ],
+            "Edit Coupon": [
+                "Coupon bewerken"
+            ],
+            "offer is required": [
+                "aanbieding is verplicht"
+            ],
+            "Code is required": [
+                "Code is verplicht"
+            ],
+            "Name is required": [
+                "Naam is verplicht"
+            ],
+            "Save as Inactive": [
+                "Opslaan als inactief"
+            ],
+            "Save as Active": [
+                "Opslaan als actief"
+            ],
+            "(No Name)": [
+                "(Geen naam)"
+            ],
+            "+%d more": [
+                "+%d meer"
+            ],
+            "Remind": [
+                "Herinneren"
+            ],
+            "No Abandoned Carts found": [
+                "Geen verlaten winkelwagens gevonden"
+            ],
+            "All Abandoned Carts will appear here once they occur.": [
+                "Alle verlaten winkelwagens verschijnen hier zodra ze plaatsvinden."
+            ],
+            "Are you sure you want to send reminder?": [
+                "Weet je zeker dat je een herinnering wilt sturen?"
+            ],
+            "You're going to Remind": [
+                "Je gaat een herinnering sturen naar"
+            ],
+            "selected?": [
+                "geselecteerde?"
+            ],
+            "Don't Send": [
+                "Niet verzenden"
+            ],
+            "Yes, Send": [
+                "Ja, verzenden"
+            ],
+            "Remind All": [
+                "Iedereen herinneren"
+            ],
+            "carts deleted successfully": [
+                "winkelwagens succesvol verwijderd"
+            ],
+            "%d cart": [
+                "%d winkelwagen",
+                "%d winkelwagens"
+            ],
+            "Reminders sent successfully": [
+                "Herinneringen succesvol verzonden"
+            ],
+            "Clean Abandoned Carts": [
+                "Verlaten winkelwagens opschonen"
+            ],
+            "Choose whether to clean all abandoned carts or only invalid ones.": [
+                "Kies of je alle verlaten winkelwagens wilt opschonen of alleen de ongeldige."
+            ],
+            "Clean All": [
+                "Alles opschonen"
+            ],
+            "Clean Invalid": [
+                "Ongeldige opschonen"
+            ],
+            "Not Contacted": [
+                "Niet benaderd"
+            ],
+            "Contacted": [
+                "Benaderd"
+            ],
+            "Recovered": [
+                "Hersteld"
+            ],
+            "Clean": [
+                "Opschonen"
+            ],
+            "No %s Carts Found": [
+                "Geen %s-winkelwagens gevonden"
+            ],
+            "Reminders": [
+                "Herinneringen"
+            ],
+            "Actions": [
+                "Acties"
+            ],
+            "Abandoned Cart Deleted": [
+                "Verlaten winkelwagen verwijderd"
+            ],
+            "Approved": [
+                "Goedgekeurd"
+            ],
+            "Not Approved": [
+                "Niet goedgekeurd"
+            ],
+            "Review #%d": [
+                "Beoordeling #%d"
+            ],
+            "Product #%d": [
+                "Product #%d"
+            ],
+            "Review Content": [
+                "Inhoud beoordeling"
+            ],
+            "Rating": [
+                "Beoordeling"
+            ],
+            "Search by customer name or content": [
+                "Zoeken op klantnaam of inhoud"
+            ],
+            "Product Reviews": [
+                "Productbeoordelingen"
+            ],
+            "No Reviews Yet for Your Search": [
+                "Nog geen beoordelingen voor je zoekopdracht"
+            ],
+            "No Reviews Yet": [
+                "Nog geen beoordelingen"
+            ],
+            "No reviews match your search criteria. Try a different search.": [
+                "Geen beoordelingen komen overeen met je zoekcriteria. Probeer een andere zoekopdracht."
+            ],
+            "All customer reviews and feedback will appear here once they\u2019re submitted.": [
+                "Alle klantbeoordelingen en feedback verschijnen hier zodra ze zijn ingediend."
+            ],
+            "Review deleted successfully": [
+                "Beoordeling succesvol verwijderd"
+            ],
+            "Failed to delete review": [
+                "Kon beoordeling niet verwijderen"
+            ],
+            "An error occurred while deleting the review": [
+                "Er is een fout opgetreden bij het verwijderen van de beoordeling"
+            ],
+            "Community": [
+                "Community"
+            ],
+            "Documentation": [
+                "Documentatie"
+            ],
+            "Detailed step-by-step guides on how to use and get the best out of EasyCommerce.": [
+                "Gedetailleerde stapsgewijze handleidingen over hoe je EasyCommerce gebruikt en er het meeste uit haalt."
+            ],
+            "Enabled": [
+                "Ingeschakeld"
+            ],
+            "Disabled": [
+                "Uitgeschakeld"
+            ],
+            "EasyCommerce Addons": [
+                "EasyCommerce add-ons"
+            ],
+            "Use EasyCommerce addons to extend and customize the functionality of your online store.": [
+                "Gebruik EasyCommerce add-ons om de functionaliteit van je onlinewinkel uit te breiden en aan te passen."
+            ],
+            "No Addons Found": [
+                "Geen add-ons gevonden"
+            ],
+            "Coming Soon": [
+                "Binnenkort beschikbaar"
+            ],
+            "Upgrade to PRO": [
+                "Upgraden naar PRO"
+            ],
+            "Manage Subscriptions": [
+                "Abonnementen beheren"
+            ],
+            "Offer recurring payments with automatic renewals to keep your revenue consistent and predictable.": [
+                "Bied terugkerende betalingen met automatische verlengingen om je omzet consistent en voorspelbaar te houden."
+            ],
+            "Sell Licensed Products": [
+                "Producten met licentie verkopen"
+            ],
+            "Automate license generation, activation, and renewals. It\u2019s perfect for digital products and software sales.": [
+                "Automatiseer het genereren, activeren en verlengen van licenties. Perfect voor digitale producten en softwareverkoop."
+            ],
+            "Sell on Facebook Messenger": [
+                "Verkopen via Facebook Messenger"
+            ],
+            "Bring your AI shopping assistant to Messenger, so customers can discover products and place orders right in the chat.": [
+                "Breng je AI-winkelassistent naar Messenger, zodat klanten producten kunnen ontdekken en bestellingen kunnen plaatsen direct in de chat."
+            ],
+            "Sell on WhatsApp": [
+                "Verkopen via WhatsApp"
+            ],
+            "Let customers chat with your AI shopping assistant on WhatsApp, from product discovery to checkout in the app they use every day.": [
+                "Laat klanten met je AI-winkelassistent chatten op WhatsApp, van productontdekking tot afrekenen in de app die ze elke dag gebruiken."
+            ],
+            "Create Membership Plans": [
+                "Lidmaatschapsplannen maken"
+            ],
+            "Build exclusive access areas, manage tiers, and reward loyal members with premium content.": [
+                "Bouw exclusieve toegangsgebieden, beheer niveaus en beloon trouwe leden met premiumcontent."
+            ],
+            "Run an LMS": [
+                "Een LMS draaien"
+            ],
+            "Sell online courses, manage lessons, and track student progress - all from your EasyCommerce dashboard.": [
+                "Verkoop online cursussen, beheer lessen en volg de voortgang van studenten - allemaal vanuit je EasyCommerce-dashboard."
+            ],
+            "Handle Bookings": [
+                "Boekingen afhandelen"
+            ],
+            "Accept appointments, manage schedules, and let customers book services directly from your store.": [
+                "Accepteer afspraken, beheer roosters en laat klanten diensten rechtstreeks vanuit je winkel boeken."
+            ],
+            "Didn\u2019t spot the feature you were hoping for?": [
+                "Heb je de functie waar je op hoopte niet gezien?"
+            ],
+            "Drop us a message. Your suggestion could inspire our next EasyCommerce feature, or who knows, it might be cooking already!": [
+                "Stuur ons een bericht. Jouw suggestie kan onze volgende EasyCommerce-functie inspireren, of wie weet, misschien is deze al in de maak!"
+            ],
+            "Say Howdy!": [
+                "Zeg hallo!"
+            ],
+            "AI-Powered Smart Features": [
+                "Slimme AI-functies"
+            ],
+            "Free AI Credits": [
+                "Gratis AI-credits"
+            ],
+            "Drag & Drop Builder Integrations (Gutenberg, WP Bakery)": [
+                "Drag-and-drop bouwerintegraties (Gutenberg, WP Bakery)"
+            ],
+            "Product, Order & Customer Management": [
+                "Product-, bestel- & klantbeheer"
+            ],
+            "Bring Your Own Key (OpenAI\/DeepSeek\/Claude)": [
+                "Bring Your Own Key (OpenAI\/DeepSeek\/Claude)"
+            ],
+            "Shipping & Advanced Taxation": [
+                "Verzending & geavanceerde belasting"
+            ],
+            "Coupon Management": [
+                "Couponbeheer"
+            ],
+            "Personalized Emails": [
+                "Gepersonaliseerde e-mails"
+            ],
+            "Abandoned Cart Recovery": [
+                "Herstel van verlaten winkelwagens"
+            ],
+            "Automated Abandoned Cart Emails": [
+                "Geautomatiseerde e-mails voor verlaten winkelwagens"
+            ],
+            "Single Product Templates": [
+                "Sjablonen voor productpagina's"
+            ],
+            "Checkout Templates": [
+                "Afrekensjablonen"
+            ],
+            "Popular Payment Gateways (Stripe, PayPal, Mollie, etc)": [
+                "Populaire betaalgateways (Stripe, PayPal, Mollie, enz.)"
+            ],
+            "Subscriptions Management": [
+                "Abonnementenbeheer"
+            ],
+            "License Management": [
+                "Licentiebeheer"
+            ],
+            "Facebook Messenger Integration (AI Shopping Assistant)": [
+                "Facebook Messenger-integratie (AI-winkelassistent)"
+            ],
+            "WhatsApp Integration (AI Shopping Assistant)": [
+                "WhatsApp-integratie (AI-winkelassistent)"
+            ],
+            "Marketing & Automation Integrations": [
+                "Marketing- & automatiseringsintegraties"
+            ],
+            "Membership Management": [
+                "Lidmaatschapsbeheer"
+            ],
+            "Multivendor Marketplace": [
+                "Multivendor-marktplaats"
+            ],
+            "Learning Management System": [
+                "Learning Management System"
+            ],
+            "Migration Tool": [
+                "Migratietool"
+            ],
+            "Bookings": [
+                "Boekingen"
+            ],
+            "The Best of Both Worlds": [
+                "Het beste van twee werelden"
+            ],
+            "EasyCommerce Free + Pro": [
+                "EasyCommerce Free + Pro"
+            ],
+            "Features": [
+                "Functies"
+            ],
+            "(upcoming)": [
+                "(binnenkort)"
+            ],
+            "Your Current Plan": [
+                "Je huidige abonnement"
+            ],
+            "Trusted by Businesses Like Yours": [
+                "Vertrouwd door bedrijven zoals dat van jou"
+            ],
+            "What is EasyCommerce Pro?": [
+                "Wat is EasyCommerce Pro?"
+            ],
+            "EasyCommerce Pro is the premium addon that unlocks advanced features and capabilities within the EasyCommerce plugin. It serves as the key to accessing pro-level addons and enhancements that take your ecommerce store to the next level.": [
+                "EasyCommerce Pro is de premium add-on die geavanceerde functies en mogelijkheden binnen de EasyCommerce-plugin ontgrendelt. Het is de sleutel tot add-ons en verbeteringen op pro-niveau die je e-commercewinkel naar een hoger niveau tillen."
+            ],
+            "Is there a free trial?": [
+                "Is er een gratis proefperiode?"
+            ],
+            "While we do not offer a traditional free trial for EasyCommerce Pro, we stand behind our product with a generous 30-day refund policy. This allows you to purchase and try Pro features risk-free, and if it doesn't meet your needs, you can request a full refund within 30 days.": [
+                "Hoewel we geen traditionele gratis proefperiode voor EasyCommerce Pro aanbieden, staan we achter ons product met een ruim terugbetalingsbeleid van 30 dagen. Zo kun je Pro-functies risicovrij kopen en uitproberen, en als het niet aan je wensen voldoet, kun je binnen 30 dagen een volledige terugbetaling aanvragen."
+            ],
+            "What does EasyCommerce Pro enable?": [
+                "Wat maakt EasyCommerce Pro mogelijk?"
+            ],
+            "EasyCommerce Pro enables access to premium addons such as \"License Manager\" for managing digital product licenses and \"Subscriptions\" for handling recurring payments. These addons provide powerful tools to expand your store's functionality and revenue streams.": [
+                "EasyCommerce Pro geeft toegang tot premium add-ons zoals \"License Manager\" voor het beheren van licenties van digitale producten en \"Subscriptions\" voor het afhandelen van terugkerende betalingen. Deze add-ons bieden krachtige tools om de functionaliteit en inkomstenstromen van je winkel uit te breiden."
+            ],
+            "Can customers shop through Messenger or WhatsApp?": [
+                "Kunnen klanten winkelen via Messenger of WhatsApp?"
+            ],
+            "Yes. The Messenger Integration addon connects your Facebook Page to the EasyCommerce AI shopping assistant, so customers can discover products, check stock, and place orders without leaving the chat. WhatsApp integration is coming soon and will work the same way.": [
+                "Ja. De Messenger-integratie-add-on verbindt je Facebook-pagina met de EasyCommerce AI-winkelassistent, zodat klanten producten kunnen ontdekken, de voorraad kunnen controleren en bestellingen kunnen plaatsen zonder de chat te verlaten. WhatsApp-integratie komt binnenkort en werkt op dezelfde manier."
+            ],
+            "Are future pro addons included?": [
+                "Zijn toekomstige pro-add-ons inbegrepen?"
+            ],
+            "Yes, all future pro addons will be included automatically with your EasyCommerce Pro subscription. As we release new premium features and addons, you'll have immediate access without any additional purchases.": [
+                "Ja, alle toekomstige pro-add-ons worden automatisch inbegrepen bij je EasyCommerce Pro-abonnement. Zodra we nieuwe premiumfuncties en add-ons uitbrengen, heb je direct toegang zonder aanvullende aankopen."
+            ],
+            "What payment methods are supported?": [
+                "Welke betaalmethoden worden ondersteund?"
+            ],
+            "EasyCommerce Pro supports a wide range of payment methods through Stripe integration, including all major credit and debit cards, as well as popular options like LINK for instant payments and Klarna for buy now, pay later services. This ensures your customers have flexible and secure payment choices.": [
+                "EasyCommerce Pro ondersteunt via de Stripe-integratie een breed scala aan betaalmethoden, waaronder alle gangbare creditcards en betaalkaarten, evenals populaire opties zoals LINK voor directe betalingen en Klarna voor 'nu kopen, later betalen'-diensten. Zo hebben je klanten flexibele en veilige betaalopties."
+            ],
+            "What support do you offer?": [
+                "Welke ondersteuning bieden jullie?"
+            ],
+            "We provide top-class support through multiple channels including support tickets for detailed inquiries, email for direct communication, and phone support for urgent issues. Our expert team is dedicated to helping you succeed with EasyCommerce.": [
+                "We bieden eersteklas ondersteuning via meerdere kanalen, waaronder supporttickets voor gedetailleerde vragen, e-mail voor directe communicatie en telefonische ondersteuning voor urgente kwesties. Ons deskundige team zet zich in om je te laten slagen met EasyCommerce."
+            ],
+            "Do you offer migration from other platforms?": [
+                "Bieden jullie migratie vanaf andere platforms aan?"
+            ],
+            "Yes, we offer free migration services to help you seamlessly move your store from other ecommerce platforms to EasyCommerce. Our team will assist with transferring your products, customers, and order data at no extra cost.": [
+                "Ja, we bieden gratis migratiediensten om je te helpen je winkel naadloos van andere e-commerceplatforms naar EasyCommerce te verplaatsen. Ons team helpt je bij het overzetten van je product-, klant- en bestelgegevens zonder extra kosten."
+            ],
+            "Where can I get additional help?": [
+                "Waar kan ik aanvullende hulp krijgen?"
+            ],
+            "For additional help and resources, please visit our comprehensive support center at": [
+                "Voor aanvullende hulp en bronnen kun je terecht in ons uitgebreide ondersteuningscentrum op"
+            ],
+            ", where you can find documentation, tutorials, and contact our support team.": [
+                ", waar je documentatie en tutorials vindt en contact kunt opnemen met ons supportteam."
+            ],
+            "Frequently Asked": [
+                "Veelgestelde"
+            ],
+            "Questions": [
+                "vragen"
+            ],
+            "Free is perfect for starters": [
+                "Free is perfect voor starters"
+            ],
+            "But growth needs Pro \ud83d\ude80": [
+                "Maar groei vraagt om Pro \ud83d\ude80"
+            ],
+            "Ready to Upgrade?": [
+                "Klaar om te upgraden?"
+            ],
+            "Enhance your experience with powerful features to increase performance and flexibility.": [
+                "Verbeter je ervaring met krachtige functies om prestaties en flexibiliteit te vergroten."
+            ],
+            "Please enter both email and license key.": [
+                "Voer zowel het e-mailadres als de licentiesleutel in."
+            ],
+            "Invalid email or license key. Please try again.": [
+                "Ongeldig e-mailadres of licentiesleutel. Probeer het opnieuw."
+            ],
+            "An error occurred while verifying the license. Please try again.": [
+                "Er is een fout opgetreden bij het verifi\u00ebren van de licentie. Probeer het opnieuw."
+            ],
+            "Enter your email and license key to unlock premium features": [
+                "Voer je e-mailadres en licentiesleutel in om premiumfuncties te ontgrendelen"
+            ],
+            "Enter Your Email": [
+                "Voer je e-mailadres in"
+            ],
+            "License Key": [
+                "Licentiesleutel"
+            ],
+            "Enter your License Key": [
+                "Voer je licentiesleutel in"
+            ],
+            "Verify License": [
+                "Licentie verifi\u00ebren"
+            ],
+            "Email:": [
+                "E-mail:"
+            ],
+            "License Key:": [
+                "Licentiesleutel:"
+            ],
+            "Expiry Date:": [
+                "Vervaldatum:"
+            ],
+            "Failed to fetch license information.": [
+                "Kon licentie-informatie niet ophalen."
+            ],
+            "Failed to deactivate license. Please try again.": [
+                "Kon licentie niet deactiveren. Probeer het opnieuw."
+            ],
+            "An error occurred while deactivating the license. Please try again.": [
+                "Er is een fout opgetreden bij het deactiveren van de licentie. Probeer het opnieuw."
+            ],
+            "Your active license details": [
+                "Je actieve licentiegegevens"
+            ],
+            "Deactivate": [
+                "Deactiveren"
+            ],
+            "Are you sure?": [
+                "Weet je het zeker?"
+            ],
+            "Deactivating the license will remove all associated benefits and features from your account.": [
+                "Door de licentie te deactiveren worden alle bijbehorende voordelen en functies uit je account verwijderd."
+            ],
+            "No, Return": [
+                "Nee, terug"
+            ],
+            "Addon deactivated.": [
+                "Add-on gedeactiveerd."
+            ],
+            "Error deactivating addon.": [
+                "Fout bij het deactiveren van de add-on."
+            ],
+            "Welcome to": [
+                "Welkom bij"
+            ],
+            "Manage all your premium features from a single dashboard.": [
+                "Beheer al je premiumfuncties vanuit \u00e9\u00e9n dashboard."
+            ],
+            "Pro Features in Use": [
+                "Gebruikte Pro-functies"
+            ],
+            "You need to activate your license to use this feature.": [
+                "Je moet je licentie activeren om deze functie te gebruiken."
+            ],
+            "No Refunds Found.": [
+                "Geen terugbetalingen gevonden."
+            ],
+            "Refunds will appear here once processed.": [
+                "Terugbetalingen verschijnen hier zodra ze zijn verwerkt."
+            ],
+            "Prev. 30 days": [
+                "Vorige 30 dagen"
+            ],
+            "30 days last year": [
+                "30 dagen vorig jaar"
+            ],
+            "Prev. 7 days": [
+                "Vorige 7 dagen"
+            ],
+            "7 days last month": [
+                "7 dagen vorige maand"
+            ],
+            "7 days last year": [
+                "7 dagen vorig jaar"
+            ],
+            "Last week": [
+                "Vorige week"
+            ],
+            "Same week last month": [
+                "Zelfde week vorige maand"
+            ],
+            "Same week last year": [
+                "Zelfde week vorig jaar"
+            ],
+            "Last month": [
+                "Vorige maand"
+            ],
+            "Same month last year": [
+                "Zelfde maand vorig jaar"
+            ],
+            "Last year": [
+                "Vorig jaar"
+            ],
+            "vs.": [
+                "t.o.v."
+            ],
+            "Export": [
+                "Exporteren"
+            ],
+            "vs prev. period": [
+                "t.o.v. vorige periode"
+            ],
+            "Current Subscriptions": [
+                "Huidige abonnementen"
+            ],
+            "Subscriptions ending this month": [
+                "Abonnementen die deze maand aflopen"
+            ],
+            "MRR amount": [
+                "MRR-bedrag"
+            ],
+            "Projected MRR": [
+                "Verwachte MRR"
+            ],
+            "Sell Subscriptions": [
+                "Abonnementen verkopen"
+            ],
+            "No data available for the selected range.": [
+                "Geen gegevens beschikbaar voor het geselecteerde bereik."
+            ],
+            "Rank": [
+                "Rang"
+            ],
+            "Units Sold": [
+                "Verkochte eenheden"
+            ],
+            "Top Customers": [
+                "Topklanten"
+            ],
+            "Purchased": [
+                "Gekocht"
+            ],
+            "Sales vs. Refunds vs. Net Revenue": [
+                "Verkopen t.o.v. terugbetalingen t.o.v. netto-omzet"
+            ],
+            "Comparison of sales, refunds, and net revenue over time": [
+                "Vergelijking van verkopen, terugbetalingen en netto-omzet in de tijd"
+            ],
+            "Order vs. Refund Count": [
+                "Aantal bestellingen t.o.v. terugbetalingen"
+            ],
+            "Order Statuses": [
+                "Bestelstatussen"
+            ],
+            "Subscriptions": [
+                "Abonnementen"
+            ],
+            "Order Type": [
+                "Besteltype"
+            ],
+            "Top Selling Items": [
+                "Best verkochte artikelen"
+            ],
+            "Product Stats": [
+                "Productstatistieken"
+            ],
+            "New vs. Returning Customers": [
+                "Nieuwe t.o.v. terugkerende klanten"
+            ],
+            "Customer Overview": [
+                "Klantoverzicht"
+            ],
+            "No data available": [
+                "Geen gegevens beschikbaar"
+            ],
+            "Failed to load heatmap data.": [
+                "Kon heatmapgegevens niet laden."
+            ],
+            "Error loading data.": [
+                "Fout bij het laden van gegevens."
+            ],
+            " Value: %s": [
+                " Waarde: %s"
+            ],
+            "No orders": [
+                "Geen bestellingen"
+            ],
+            "Top Locations": [
+                "Toplocaties"
+            ],
+            "No location data available": [
+                "Geen locatiegegevens beschikbaar"
+            ],
+            "Average Order Per Customer": [
+                "Gemiddeld aantal bestellingen per klant"
+            ],
+            "People Ordered once": [
+                "Mensen die \u00e9\u00e9n keer hebben besteld"
+            ],
+            "People Ordered twice": [
+                "Mensen die twee keer hebben besteld"
+            ],
+            "People Ordered three times": [
+                "Mensen die drie keer hebben besteld"
+            ],
+            "Order vs. Customers": [
+                "Bestellingen t.o.v. klanten"
+            ],
+            "Order Status Breakdown": [
+                "Uitsplitsing bestelstatus"
+            ],
+            "Fulfillment Status Breakdown": [
+                "Uitsplitsing fulfilment-status"
+            ],
+            "Orders by Location": [
+                "Bestellingen per locatie"
+            ],
+            "Daily Orders Heatmap": [
+                "Heatmap dagelijkse bestellingen"
+            ],
+            "First Order": [
+                "Eerste bestelling"
+            ],
+            "Revenue Earned": [
+                "Verdiende omzet"
+            ],
+            "Revenue Over Time": [
+                "Omzet in de tijd"
+            ],
+            "Top Customers by Revenue": [
+                "Topklanten op omzet"
+            ],
+            "In Stock (Unit)": [
+                "Op voorraad (stuks)"
+            ],
+            "See Report": [
+                "Rapport bekijken"
+            ],
+            "Products Sold Over Time": [
+                "Verkochte producten in de tijd"
+            ],
+            " Most sold products": [
+                " Meest verkochte producten"
+            ],
+            " Least sold products": [
+                " Minst verkochte producten"
+            ],
+            "Total %d Review": [
+                "Totaal %d beoordeling",
+                "Totaal %d beoordelingen"
+            ],
+            "%d Star": [
+                "%d ster"
+            ],
+            "%d review": [
+                "%d beoordeling",
+                "%d beoordelingen"
+            ],
+            "No reviews yet": [
+                "Nog geen beoordelingen"
+            ],
+            "Variation": [
+                "Variant"
+            ],
+            "Amount Sold": [
+                "Verkocht bedrag"
+            ],
+            "Item Sold": [
+                "Verkocht artikel"
+            ],
+            "Basic Info": [
+                "Basisinformatie"
+            ],
+            "Sales Over Time": [
+                "Verkopen in de tijd"
+            ],
+            "Product Sale by Location": [
+                "Productverkoop per locatie"
+            ],
+            "Order Placed": [
+                "Bestelling geplaatst"
+            ],
+            "Product Purchased": [
+                "Product gekocht"
+            ],
+            "Total Purchase": [
+                "Totale aankoop"
+            ],
+            " See Report": [
+                " Rapport bekijken"
+            ],
+            "Customers Over Time": [
+                "Klanten in de tijd"
+            ],
+            "Customers location": [
+                "Locatie klanten"
+            ],
+            "Customer By Day Heatmap": [
+                "Heatmap klanten per dag"
+            ],
+            "AI connected successfully": [
+                "AI succesvol verbonden"
+            ],
+            "AI connection failed. Please try again.": [
+                "AI-verbinding mislukt. Probeer het opnieuw."
+            ],
+            "New Order": [
+                "Nieuwe bestelling"
+            ]
+        }
+    }
+}

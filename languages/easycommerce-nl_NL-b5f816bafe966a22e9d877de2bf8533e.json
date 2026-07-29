@@ -1,0 +1,34 @@
+{
+    "translation-revision-date": "2026-07-23 00:00+0000",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "blocks\/single-product\/product-tab\/components\/review.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "nl_NL",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Reviews": [
+                "Beoordelingen"
+            ],
+            "Showing %d review": [
+                "%d beoordeling wordt getoond",
+                "%d beoordelingen worden getoond"
+            ],
+            "Write a review": [
+                "Schrijf een beoordeling"
+            ],
+            "Your email address will not be published. required fields are marked": [
+                "Je e-mailadres wordt niet gepubliceerd. Verplichte velden zijn gemarkeerd"
+            ],
+            "Write your review": [
+                "Schrijf je beoordeling"
+            ],
+            "Submit Now": [
+                "Nu verzenden"
+            ]
+        }
+    }
+}

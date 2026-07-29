@@ -1,0 +1,354 @@
+{
+    "translation-revision-date": "2026-07-23 00:00+0000",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "build\/blocks.bundle.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "zh_CN",
+                "plural-forms": "nplurals=1; plural=0;"
+            },
+            "Cart": [
+                "\u8d2d\u7269\u8f66"
+            ],
+            "No products found.": [
+                "\u672a\u627e\u5230\u5546\u54c1\u3002"
+            ],
+            "Categories": [
+                "\u5206\u7c7b"
+            ],
+            "Brands": [
+                "\u54c1\u724c"
+            ],
+            "Checkout": [
+                "\u7ed3\u8d26"
+            ],
+            "Settings": [
+                "\u8bbe\u7f6e"
+            ],
+            "Body": [
+                "\u6b63\u6587"
+            ],
+            "Low to High": [
+                "\u4ece\u4f4e\u5230\u9ad8"
+            ],
+            "High to Low": [
+                "\u4ece\u9ad8\u5230\u4f4e"
+            ],
+            "Newest": [
+                "\u6700\u65b0"
+            ],
+            "Oldest": [
+                "\u6700\u65e9"
+            ],
+            "Best Selling": [
+                "\u6700\u7545\u9500"
+            ],
+            "Lowest Selling": [
+                "\u9500\u91cf\u6700\u4f4e"
+            ],
+            "Top rating": [
+                "\u8bc4\u5206\u6700\u9ad8"
+            ],
+            "Lowest rating": [
+                "\u8bc4\u5206\u6700\u4f4e"
+            ],
+            "Reviews": [
+                "\u8bc4\u4ef7"
+            ],
+            "Min Price": [
+                "\u6700\u4f4e\u4ef7\u683c"
+            ],
+            "Max Price": [
+                "\u6700\u9ad8\u4ef7\u683c"
+            ],
+            "Search Icon": [
+                "\u641c\u7d22\u56fe\u6807"
+            ],
+            "Sort by": [
+                "\u6392\u5e8f\u65b9\u5f0f"
+            ],
+            "Add to cart": [
+                "\u52a0\u5165\u8d2d\u7269\u8f66"
+            ],
+            "Color": [
+                "\u989c\u8272"
+            ],
+            "Product Description": [
+                "\u5546\u54c1\u63cf\u8ff0"
+            ],
+            "Billing Address": [
+                "\u8d26\u5355\u5730\u5740"
+            ],
+            "Your Cart": [
+                "\u60a8\u7684\u8d2d\u7269\u8f66"
+            ],
+            "Showing %d review": [
+                "\u663e\u793a %d \u6761\u8bc4\u4ef7"
+            ],
+            "Write a review": [
+                "\u64b0\u5199\u8bc4\u4ef7"
+            ],
+            "Your email address will not be published. required fields are marked": [
+                "\u60a8\u7684\u7535\u5b50\u90ae\u7bb1\u5730\u5740\u4e0d\u4f1a\u88ab\u516c\u5f00\u3002\u5fc5\u586b\u5b57\u6bb5\u5df2\u6807\u8bb0"
+            ],
+            "Write your review": [
+                "\u64b0\u5199\u60a8\u7684\u8bc4\u4ef7"
+            ],
+            "Submit Now": [
+                "\u7acb\u5373\u63d0\u4ea4"
+            ],
+            "Product Details": [
+                "\u5546\u54c1\u8be6\u60c5"
+            ],
+            "Review": [
+                "\u8bc4\u4ef7"
+            ],
+            "Quantity": [
+                "\u6570\u91cf"
+            ],
+            "This is your billing address being edited.": [
+                "\u8fd9\u662f\u60a8\u6b63\u5728\u7f16\u8f91\u7684\u8d26\u5355\u5730\u5740\u3002"
+            ],
+            "This is your billing address as saved.": [
+                "\u8fd9\u662f\u60a8\u5df2\u4fdd\u5b58\u7684\u8d26\u5355\u5730\u5740\u3002"
+            ],
+            "Clear cart": [
+                "\u6e05\u7a7a\u8d2d\u7269\u8f66"
+            ],
+            "This is your cart being edited.": [
+                "\u8fd9\u662f\u60a8\u6b63\u5728\u7f16\u8f91\u7684\u8d2d\u7269\u8f66\u3002"
+            ],
+            "Font Size": [
+                "\u5b57\u4f53\u5927\u5c0f"
+            ],
+            "Font Weight": [
+                "\u5b57\u91cd"
+            ],
+            "100 (Thin)": [
+                "100\uff08\u6781\u7ec6\uff09"
+            ],
+            "200 (Extra Light)": [
+                "200\uff08\u7279\u7ec6\uff09"
+            ],
+            "300 (Light)": [
+                "300\uff08\u7ec6\uff09"
+            ],
+            "400 (Normal)": [
+                "400\uff08\u5e38\u89c4\uff09"
+            ],
+            "500 (Medium)": [
+                "500\uff08\u4e2d\u7b49\uff09"
+            ],
+            "600 (Semi Bold)": [
+                "600\uff08\u534a\u7c97\uff09"
+            ],
+            "700 (Bold)": [
+                "700\uff08\u7c97\u4f53\uff09"
+            ],
+            "800 (Extra Bold)": [
+                "800\uff08\u7279\u7c97\uff09"
+            ],
+            "900 (Black)": [
+                "900\uff08\u9ed1\u4f53\uff09"
+            ],
+            "Default": [
+                "\u9ed8\u8ba4"
+            ],
+            "Normal": [
+                "\u5e38\u89c4"
+            ],
+            "Bold": [
+                "\u7c97\u4f53"
+            ],
+            "Text Transform": [
+                "\u6587\u672c\u8f6c\u6362"
+            ],
+            "Uppercase": [
+                "\u5927\u5199"
+            ],
+            "Lowercase": [
+                "\u5c0f\u5199"
+            ],
+            "Capitalize": [
+                "\u9996\u5b57\u6bcd\u5927\u5199"
+            ],
+            "Text Style": [
+                "\u6587\u672c\u6837\u5f0f"
+            ],
+            "Italic": [
+                "\u659c\u4f53"
+            ],
+            "Oblique": [
+                "\u503e\u659c\u4f53"
+            ],
+            "Text Decoration": [
+                "\u6587\u672c\u4fee\u9970"
+            ],
+            "None": [
+                "\u65e0"
+            ],
+            "Underline": [
+                "\u4e0b\u5212\u7ebf"
+            ],
+            "Overline": [
+                "\u4e0a\u5212\u7ebf"
+            ],
+            "Line Through": [
+                "\u5220\u9664\u7ebf"
+            ],
+            "Line Height": [
+                "\u884c\u9ad8"
+            ],
+            "Word Spacing": [
+                "\u5b57\u95f4\u8ddd"
+            ],
+            "Price Range": [
+                "\u4ef7\u683c\u533a\u95f4"
+            ],
+            " Search": [
+                " \u641c\u7d22"
+            ],
+            "full star": [
+                "\u6ee1\u661f"
+            ],
+            "half star": [
+                "\u534a\u661f"
+            ],
+            "empty star": [
+                "\u7a7a\u661f"
+            ],
+            "Product Settings": [
+                "\u5546\u54c1\u8bbe\u7f6e"
+            ],
+            "Products Per Page": [
+                "\u6bcf\u9875\u5546\u54c1\u6570\u91cf"
+            ],
+            "Grid Settings": [
+                "\u7f51\u683c\u8bbe\u7f6e"
+            ],
+            "Show Filters": [
+                "\u663e\u793a\u7b5b\u9009\u5668"
+            ],
+            "Show Pagination": [
+                "\u663e\u793a\u5206\u9875"
+            ],
+            "Number of Columns": [
+                "\u5217\u6570"
+            ],
+            "Product Title": [
+                "\u5546\u54c1\u6807\u9898"
+            ],
+            "Text Color": [
+                "\u6587\u672c\u989c\u8272"
+            ],
+            "Hover Text Color": [
+                "\u60ac\u505c\u6587\u672c\u989c\u8272"
+            ],
+            "Product Category": [
+                "\u5546\u54c1\u5206\u7c7b"
+            ],
+            "Product Rating": [
+                "\u5546\u54c1\u8bc4\u5206"
+            ],
+            "Star Size": [
+                "\u661f\u661f\u5927\u5c0f"
+            ],
+            "Product Price": [
+                "\u5546\u54c1\u4ef7\u683c"
+            ],
+            "Regular Price": [
+                "\u539f\u4ef7"
+            ],
+            "Sale Price": [
+                "\u4fc3\u9500\u4ef7"
+            ],
+            "Cart Button": [
+                "\u8d2d\u7269\u8f66\u6309\u94ae"
+            ],
+            "Hover": [
+                "\u60ac\u505c"
+            ],
+            "Background Color": [
+                "\u80cc\u666f\u989c\u8272"
+            ],
+            "Focus Text Color": [
+                "\u805a\u7126\u6587\u672c\u989c\u8272"
+            ],
+            "Focus Background Color": [
+                "\u805a\u7126\u80cc\u666f\u989c\u8272"
+            ],
+            "Text Color (Hover)": [
+                "\u6587\u672c\u989c\u8272\uff08\u60ac\u505c\uff09"
+            ],
+            "Background Color (Hover)": [
+                "\u80cc\u666f\u989c\u8272\uff08\u60ac\u505c\uff09"
+            ],
+            "Checkout Button": [
+                "\u7ed3\u8d26\u6309\u94ae"
+            ],
+            "Add To Cart": [
+                "\u52a0\u5165\u8d2d\u7269\u8f66"
+            ],
+            "Show Sort By": [
+                "\u663e\u793a\u6392\u5e8f\u65b9\u5f0f"
+            ],
+            "Description Color": [
+                "\u63cf\u8ff0\u989c\u8272"
+            ],
+            "Hover Description Color": [
+                "\u60ac\u505c\u63cf\u8ff0\u989c\u8272"
+            ],
+            "Post type is not product.": [
+                "\u6587\u7ae0\u7c7b\u578b\u4e0d\u662f product\u3002"
+            ],
+            "Number of Gallery Item": [
+                "\u56fe\u5e93\u9879\u6570\u91cf"
+            ],
+            "Show Tax included": [
+                "\u663e\u793a\u542b\u7a0e"
+            ],
+            "SKU:": [
+                "SKU\uff1a"
+            ],
+            "Show Rating": [
+                "\u663e\u793a\u8bc4\u5206"
+            ],
+            "Show SKU": [
+                "\u663e\u793a SKU"
+            ],
+            "Show Favourite": [
+                "\u663e\u793a\u6536\u85cf"
+            ],
+            "Styles": [
+                "\u6837\u5f0f"
+            ],
+            "Border": [
+                "\u8fb9\u6846"
+            ],
+            "Only <strong>%d<\/strong> item left in stock": [
+                "\u5e93\u5b58\u4ec5\u5269 <strong>%d<\/strong> \u4ef6"
+            ],
+            "Primary": [
+                "\u4e3b\u8272"
+            ],
+            "Body Light": [
+                "\u6b63\u6587\u6d45\u8272"
+            ],
+            "Title": [
+                "\u6807\u9898"
+            ],
+            "Dropdown Icon": [
+                "\u4e0b\u62c9\u56fe\u6807"
+            ],
+            "Showing %1$d-%2$d of %3$d Results": [
+                "\u663e\u793a\u7b2c %1$d-%2$d \u9879\uff0c\u5171 %3$d \u9879\u7ed3\u679c"
+            ],
+            "Default Sorter": [
+                "\u9ed8\u8ba4\u6392\u5e8f"
+            ]
+        }
+    }
+}

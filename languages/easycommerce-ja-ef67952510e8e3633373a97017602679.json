@@ -1,0 +1,24 @@
+{
+    "translation-revision-date": "2026-07-23 12:00+0000",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "blocks\/shops-page\/template-3\/components\/Rating.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "ja",
+                "plural-forms": "nplurals=1; plural=0;"
+            },
+            "full star": [
+                "\u5857\u308a\u3064\u3076\u3057\u306e\u661f"
+            ],
+            "half star": [
+                "\u534a\u5206\u306e\u661f"
+            ],
+            "empty star": [
+                "\u7a7a\u306e\u661f"
+            ]
+        }
+    }
+}

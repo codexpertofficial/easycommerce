@@ -1,0 +1,195 @@
+{
+    "translation-revision-date": "2026-07-23 00:00+0000",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "build\/shipping.bundle.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "nl_NL",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Failed to update shipping plan.": [
+                "Kon verzendplan niet bijwerken."
+            ],
+            "Shipping plan updated successfully.": [
+                "Verzendplan succesvol bijgewerkt."
+            ],
+            "Country": [
+                "Land"
+            ],
+            "State": [
+                "Staat"
+            ],
+            "City": [
+                "Plaats"
+            ],
+            "Write here": [
+                "Schrijf hier"
+            ],
+            "Select Country": [
+                "Selecteer land"
+            ],
+            "Methods": [
+                "Methoden"
+            ],
+            "Cancel": [
+                "Annuleren"
+            ],
+            "Action": [
+                "Actie"
+            ],
+            "Name": [
+                "Naam"
+            ],
+            "Select City": [
+                "Selecteer plaats"
+            ],
+            "Select State": [
+                "Selecteer staat"
+            ],
+            "Status": [
+                "Status"
+            ],
+            "Are you sure you want to delete?": [
+                "Weet je zeker dat je wilt verwijderen?"
+            ],
+            "You're going to delete this, are you sure?": [
+                "Je gaat dit verwijderen, weet je het zeker?"
+            ],
+            "No, Keep it": [
+                "Nee, behouden"
+            ],
+            "Yes, Delete": [
+                "Ja, verwijderen"
+            ],
+            "Delete Permanently": [
+                "Permanent verwijderen"
+            ],
+            "Description": [
+                "Beschrijving"
+            ],
+            "Enabled": [
+                "Ingeschakeld"
+            ],
+            "Disabled": [
+                "Uitgeschakeld"
+            ],
+            "No shipping plans configured": [
+                "Geen verzendplannen geconfigureerd"
+            ],
+            "Set up shipping plans to define shipping rates by region. ": [
+                "Stel verzendplannen in om verzendtarieven per regio te bepalen. "
+            ],
+            "Read docs.": [
+                "Lees de documentatie."
+            ],
+            "+ Add Plan": [
+                "+ Plan toevoegen"
+            ],
+            "Min Price (%s)": [
+                "Min. prijs (%s)"
+            ],
+            "Max Price (%s)": [
+                "Max. prijs (%s)"
+            ],
+            "Min Weight": [
+                "Min. gewicht"
+            ],
+            "Max Weight": [
+                "Max. gewicht"
+            ],
+            "Min Quantity": [
+                "Min. aantal"
+            ],
+            "Max Quantity": [
+                "Max. aantal"
+            ],
+            "Min": [
+                "Min."
+            ],
+            "Max": [
+                "Max."
+            ],
+            "Shipping name here": [
+                "Verzendnaam hier"
+            ],
+            "Write description here": [
+                "Schrijf hier de beschrijving"
+            ],
+            "Enable\/Disable": [
+                "In-\/uitschakelen"
+            ],
+            "Regions": [
+                "Regio's"
+            ],
+            "Zip Code": [
+                "Postcode"
+            ],
+            "Calculation Base": [
+                "Berekeningsbasis"
+            ],
+            "Select Base": [
+                "Selecteer basis"
+            ],
+            "Cart Total": [
+                "Winkelwagentotaal"
+            ],
+            "Total Weight": [
+                "Totaal gewicht"
+            ],
+            "Item Count": [
+                "Aantal artikelen"
+            ],
+            "Taxable": [
+                "Belastbaar"
+            ],
+            "No tax rate configured for this country.": [
+                "Geen belastingtarief geconfigureerd voor dit land."
+            ],
+            "Method Name": [
+                "Methodenaam"
+            ],
+            "Shipping Fee (%s)": [
+                "Verzendkosten (%s)"
+            ],
+            "Write name here": [
+                "Schrijf hier de naam"
+            ],
+            "Write min weight": [
+                "Schrijf min. gewicht"
+            ],
+            "Write max weight": [
+                "Schrijf max. gewicht"
+            ],
+            "Write your fee": [
+                "Schrijf je kosten"
+            ],
+            "Calculation base is required.": [
+                "Berekeningsbasis is verplicht."
+            ],
+            "Shipping plan name is required.": [
+                "Naam verzendplan is verplicht."
+            ],
+            "Update Shipping Plan": [
+                "Verzendplan bijwerken"
+            ],
+            "Save Shipping Plan": [
+                "Verzendplan opslaan"
+            ],
+            "Plan": [
+                "Plan"
+            ],
+            "Add Shipping Plan": [
+                "Verzendplan toevoegen"
+            ],
+            "Shipping Plans": [
+                "Verzendplannen"
+            ],
+            "+ New Plan": [
+                "+ Nieuw plan"
+            ]
+        }
+    }
+}

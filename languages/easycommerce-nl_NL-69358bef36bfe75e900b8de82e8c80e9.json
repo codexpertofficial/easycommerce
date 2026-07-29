@@ -1,0 +1,35 @@
+{
+    "translation-revision-date": "2026-07-23 00:00+0000",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "assets\/public\/js\/shop.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "nl_NL",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Showing %s result": [
+                "%s resultaat wordt getoond",
+                "%s resultaten worden getoond"
+            ],
+            "Failed to add to cart. Please try again.": [
+                "Kon niet toevoegen aan winkelwagen. Probeer het opnieuw."
+            ],
+            "Showing %1$s-%2$s of %3$s result": [
+                "%1$s-%2$s van %3$s resultaat wordt getoond",
+                "%1$s-%2$s van %3$s resultaten worden getoond"
+            ],
+            "No results found": [
+                "Geen resultaten gevonden"
+            ],
+            "Adding...": [
+                "Toevoegen..."
+            ],
+            "Added": [
+                "Toegevoegd"
+            ]
+        }
+    }
+}

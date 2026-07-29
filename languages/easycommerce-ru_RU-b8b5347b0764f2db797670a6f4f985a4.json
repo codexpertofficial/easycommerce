@@ -1,0 +1,21 @@
+{
+    "translation-revision-date": "2026-07-23 00:00+0000",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "blocks\/shops-page\/template-1\/components\/DualRangeSlider.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "ru_RU",
+                "plural-forms": "nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);"
+            },
+            "Min Price": [
+                "\u041c\u0438\u043d. \u0446\u0435\u043d\u0430"
+            ],
+            "Max Price": [
+                "\u041c\u0430\u043a\u0441. \u0446\u0435\u043d\u0430"
+            ]
+        }
+    }
+}

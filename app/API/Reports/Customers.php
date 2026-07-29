@@ -159,18 +159,17 @@ class Customers extends Reports {
 			$repeat_customers = ! empty( $repeat_result ) ? (int) ( $repeat_result[0]['repeat_customers'] ?? 0 ) : 0;
 		}
 
-		$ltv_query = $db->prepare(
-			"SELECT AVG(customer_revenue) AS avg_ltv
+		// Lifetime value is intentionally all-time (no date filter), so there is
+		// no placeholder to prepare -- passing args to prepare() without one is a
+		// _doing_it_wrong under WP 6.9. Use the static query directly.
+		$ltv_query = "SELECT AVG(customer_revenue) AS avg_ltv
 			FROM (
 				SELECT customer_id, SUM(total) AS customer_revenue
 				FROM {$orders_table}
 				WHERE customer_id > 0
 				AND status IN ('completed', 'processing', 'refunded', 'partially_refunded')
 				GROUP BY customer_id
-			) AS customer_totals",
-			$date_from,
-			$date_to
-		);
+			) AS customer_totals";
 
 		$ltv_result          = $db->exec( $ltv_query, ARRAY_A );
 		$ltv                 = ! empty( $ltv_result ) ? (float) ( $ltv_result[0]['avg_ltv'] ?? 0 ) : 0;

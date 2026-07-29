@@ -1,0 +1,138 @@
+{
+    "translation-revision-date": "2026-07-23 00:00+0000",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "build\/checkout.bundle.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "nl_NL",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Payment Method": [
+                "Betaalmethode"
+            ],
+            "First Name": [
+                "Voornaam"
+            ],
+            "Your first name": [
+                "Je voornaam"
+            ],
+            "Last Name": [
+                "Achternaam"
+            ],
+            "Your last name": [
+                "Je achternaam"
+            ],
+            "Email": [
+                "E-mail"
+            ],
+            "Your email": [
+                "Je e-mailadres"
+            ],
+            "Phone": [
+                "Telefoon"
+            ],
+            "Enter your phone number": [
+                "Voer je telefoonnummer in"
+            ],
+            "Country": [
+                "Land"
+            ],
+            "State": [
+                "Staat"
+            ],
+            "City": [
+                "Plaats"
+            ],
+            "Write here": [
+                "Schrijf hier"
+            ],
+            "Card Number": [
+                "Kaartnummer"
+            ],
+            "CVC": [
+                "CVC"
+            ],
+            "Confirm Order": [
+                "Bestelling bevestigen"
+            ],
+            "Subtotal": [
+                "Subtotaal"
+            ],
+            "Billing Address": [
+                "Factuuradres"
+            ],
+            "Shipping Address": [
+                "Verzendadres"
+            ],
+            "Same as Billing": [
+                "Zelfde als facturering"
+            ],
+            "Discount code": [
+                "Kortingscode"
+            ],
+            "Apply": [
+                "Toepassen"
+            ],
+            "Order Total": [
+                "Besteltotaal"
+            ],
+            "Loading...": [
+                "Laden..."
+            ],
+            "Address line 1": [
+                "Adresregel 1"
+            ],
+            "Your address": [
+                "Je adres"
+            ],
+            "Address line 2": [
+                "Adresregel 2"
+            ],
+            "Select your City": [
+                "Selecteer je plaats"
+            ],
+            "Select your State": [
+                "Selecteer je staat"
+            ],
+            "Select your country": [
+                "Selecteer je land"
+            ],
+            "Postal Code": [
+                "Postcode"
+            ],
+            "Your Orders": [
+                "Je bestellingen"
+            ],
+            "Shipping Eastimate": [
+                "Geschatte verzendkosten"
+            ],
+            "Tax Eastimate": [
+                "Geschatte belasting"
+            ],
+            "Debit \/ Credit card": [
+                "Betaal- \/ creditcard"
+            ],
+            "Internet banking": [
+                "Internetbankieren"
+            ],
+            "Google \/ Apple Wallet": [
+                "Google \/ Apple Wallet"
+            ],
+            "Name on Card": [
+                "Naam op kaart"
+            ],
+            "Enter card holder name": [
+                "Voer naam kaarthouder in"
+            ],
+            "Expiration date (MM\/YY)": [
+                "Vervaldatum (MM\/JJ)"
+            ],
+            "Learn more Taxes and Shipping information": [
+                "Meer informatie over belastingen en verzending"
+            ]
+        }
+    }
+}

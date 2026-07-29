@@ -78,3 +78,34 @@
 .easycommerce.toplevel_page_easycommerce-wizard #wpbody {
     margin-top: -32px !important;
 }
+
+/*
+ * Data-sharing consent checkbox.
+ *
+ * WordPress admin sets -webkit-appearance:none on checkboxes and paints the
+ * checked state with --wp-admin-theme-color (blue by default), so Tailwind's
+ * accent-color utility has no effect here — it only applies to natively
+ * rendered controls. These rules override WP's own instead.
+ */
+#share_data {
+    border-color: #828282;
+}
+#share_data:checked {
+    background: #828282;
+    border-color: #828282;
+}
+#share_data:focus {
+    border-color: #828282;
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px #828282;
+}
+
+/* Invalid field, flagged when a required-field toast fires. */
+.easycommerce.toplevel_page_easycommerce-wizard
+    .easycommerce-wizard-input.easycommerce-field-error {
+    border: 1px solid #B4322E;
+}
+.easycommerce.toplevel_page_easycommerce-wizard
+    .easycommerce-wizard-input.easycommerce-field-error:focus {
+    border: 1px solid #B4322E;
+    box-shadow: 0 0 0 5px #FDF0F0;
+}

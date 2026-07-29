@@ -1,0 +1,24 @@
+{
+    "translation-revision-date": "2026-07-23 00:00+0000",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "assets\/admin\/js\/notice.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "nl_NL",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Installing..": [
+                "Installeren.."
+            ],
+            "Migration addon activated successfully!": [
+                "Migratie-add-on succesvol geactiveerd!"
+            ],
+            "Failed to install migration addon.": [
+                "Kon migratie-add-on niet installeren."
+            ]
+        }
+    }
+}

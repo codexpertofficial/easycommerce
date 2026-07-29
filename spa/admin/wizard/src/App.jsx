@@ -63,6 +63,23 @@ const App = () => {
         });
     };
 
+    // Flag the offending field alongside the toast, then scroll to and focus it.
+    // The toast alone says what is wrong but not where, and the Business step is
+    // long enough that the field can be off-screen when Next is pressed. The
+    // marker clears as soon as the field is touched.
+    const flagField = (id) => {
+        const field = document.getElementById(id);
+        if (!field) return;
+
+        field.classList.add("easycommerce-field-error");
+        field.scrollIntoView({ behavior: "smooth", block: "center" });
+        field.focus({ preventScroll: true });
+
+        const clear = () => field.classList.remove("easycommerce-field-error");
+        field.addEventListener("input", clear, { once: true });
+        field.addEventListener("change", clear, { once: true });
+    };
+
     const [formValues, setFormValues] = useState({
         store_name: "",
         logo: "",
@@ -77,6 +94,7 @@ const App = () => {
         format : "",
         payment_methods: [],
         name: "",
+        share_data: true,
     });
 
     useEffect(() => {
@@ -114,6 +132,7 @@ const App = () => {
                         : (d.payment_methods ? [d.payment_methods] : []),
                         // name: d.name || EASYCOMMERCE.user.data.display_name,
                         name: d.name || EASYCOMMERCE?.user?.name || "",
+                        share_data: d.share_data === undefined ? true : !!d.share_data,
                     });
                 }
             });
@@ -138,7 +157,7 @@ const App = () => {
         };
     }, []);
 
-    const saveDataToAPI = () => {
+    const saveDataToAPI = async () => {
         if (!formRef.current) return;
 
         let logoInput = formRef.current.querySelector('input[name="general-business-logo"]');
@@ -156,7 +175,7 @@ const App = () => {
 
         entries['payment-methods-active_methods'] = paymentMethods;
     
-        fetch(`${EASYCOMMERCE.rest_base}/connectivity/setup/save`, {
+        return fetch(`${EASYCOMMERCE.rest_base}/connectivity/setup/save`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -168,23 +187,60 @@ const App = () => {
                 }),
             })
             .then((res) => res.json())
-            .then((result) => {
-            });
+            .catch(() => {});
     };
 
+    // Fire-and-forget wizard-completion telemetry. Rides the same
+    // /connectivity/feedback pipeline as the deactivation survey; the
+    // onboarding snapshot is attached server-side, and the hub decides what
+    // becomes a GitHub issue (a setup_wizard event never does). Repeat sends
+    // are harmless — the hub upserts the contact — so a back-then-forward
+    // navigation is not guarded against. Never blocks the Success screen;
+    // skipped without consent or a store email.
+    const sendTelemetry = () => {
+        const email = (formValues.email || "").trim();
+        if (!formValues.share_data || !email) return;
+
+        fetch(`${EASYCOMMERCE.rest_base}/connectivity/feedback`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "X-WP-Nonce": EASYCOMMERCE.nonce,
+            },
+            body: JSON.stringify({
+                event: "setup_wizard",
+                name: formValues.name || EASYCOMMERCE?.user?.name || "",
+                email,
+                home: EASYCOMMERCE.home_url,
+                subject: "setup_wizard",
+                message: "",
+                deactivated: 0,
+            }),
+        }).catch(() => {});
+    };
 
     const handleNext = async () => {
         const currentIndex = tabs.indexOf(activeTab);
 
-        // Store Email is required before leaving the Business step.
+        // Business Type and Store Email are required before leaving the Business
+        // step. The Next button is not a native form submit, so the `required`
+        // attributes alone would not block navigation.
         if (activeTab === "/business") {
+            if (!(formValues.business_type || "").trim()) {
+                showToast("error", __("Business Type is required.", "easycommerce"));
+                flagField("business_type");
+                return;
+            }
+
             const email = (formValues.email || "").trim();
             if (!email) {
                 showToast("error", __("Store Email is required.", "easycommerce"));
+                flagField("email");
                 return;
             }
             if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
                 showToast("error", __("Please enter a valid Store Email.", "easycommerce"));
+                flagField("email");
                 return;
             }
         }
@@ -230,7 +286,14 @@ const App = () => {
             window.location.hash = nextTab;
             window.scrollTo({ top: 0, behavior: "smooth" });
 
-            saveDataToAPI();
+            // Await the save: the hub builds the onboarding snapshot server-side
+            // when the telemetry request lands, so firing both at once can
+            // snapshot pre-save state.
+            await saveDataToAPI();
+
+            if (nextTab === "/success") {
+                sendTelemetry();
+            }
         }
     };
     
@@ -252,6 +315,10 @@ const App = () => {
             setActiveTab(nextTab);
             window.location.hash = nextTab;
             window.scrollTo({ top: 0, behavior: "smooth" });
+
+            if (nextTab === "/success") {
+                sendTelemetry();
+            }
         }
     };
 

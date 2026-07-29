@@ -1,0 +1,138 @@
+{
+    "translation-revision-date": "2026-07-23 12:00+0000",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "build\/checkout.bundle.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "it_IT",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Payment Method": [
+                "Metodo di pagamento"
+            ],
+            "First Name": [
+                "Nome"
+            ],
+            "Your first name": [
+                "Il tuo nome"
+            ],
+            "Last Name": [
+                "Cognome"
+            ],
+            "Your last name": [
+                "Il tuo cognome"
+            ],
+            "Email": [
+                "Email"
+            ],
+            "Your email": [
+                "La tua email"
+            ],
+            "Phone": [
+                "Telefono"
+            ],
+            "Enter your phone number": [
+                "Inserisci il tuo numero di telefono"
+            ],
+            "Country": [
+                "Paese"
+            ],
+            "State": [
+                "Stato"
+            ],
+            "City": [
+                "Citt\u00e0"
+            ],
+            "Write here": [
+                "Scrivi qui"
+            ],
+            "Card Number": [
+                "Numero della carta"
+            ],
+            "CVC": [
+                "CVC"
+            ],
+            "Confirm Order": [
+                "Conferma ordine"
+            ],
+            "Subtotal": [
+                "Subtotale"
+            ],
+            "Billing Address": [
+                "Indirizzo di fatturazione"
+            ],
+            "Shipping Address": [
+                "Indirizzo di spedizione"
+            ],
+            "Same as Billing": [
+                "Uguale alla fatturazione"
+            ],
+            "Discount code": [
+                "Codice sconto"
+            ],
+            "Apply": [
+                "Applica"
+            ],
+            "Order Total": [
+                "Totale dell'ordine"
+            ],
+            "Loading...": [
+                "Caricamento..."
+            ],
+            "Address line 1": [
+                "Indirizzo riga 1"
+            ],
+            "Your address": [
+                "Il tuo indirizzo"
+            ],
+            "Address line 2": [
+                "Indirizzo riga 2"
+            ],
+            "Select your City": [
+                "Seleziona la tua citt\u00e0"
+            ],
+            "Select your State": [
+                "Seleziona il tuo stato"
+            ],
+            "Select your country": [
+                "Seleziona il tuo paese"
+            ],
+            "Postal Code": [
+                "Codice postale"
+            ],
+            "Your Orders": [
+                "I tuoi ordini"
+            ],
+            "Shipping Eastimate": [
+                "Stima della spedizione"
+            ],
+            "Tax Eastimate": [
+                "Stima delle imposte"
+            ],
+            "Debit \/ Credit card": [
+                "Carta di debito \/ credito"
+            ],
+            "Internet banking": [
+                "Home banking"
+            ],
+            "Google \/ Apple Wallet": [
+                "Google \/ Apple Wallet"
+            ],
+            "Name on Card": [
+                "Nome sulla carta"
+            ],
+            "Enter card holder name": [
+                "Inserisci il nome del titolare della carta"
+            ],
+            "Expiration date (MM\/YY)": [
+                "Data di scadenza (MM\/AA)"
+            ],
+            "Learn more Taxes and Shipping information": [
+                "Scopri di pi\u00f9 sulle informazioni relative a imposte e spedizione"
+            ]
+        }
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "translation-revision-date": "2026-07-23 12:00+0000",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "blocks\/shops-page\/template-1\/components\/Rating.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "it_IT",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "full star": [
+                "stella piena"
+            ],
+            "half star": [
+                "mezza stella"
+            ],
+            "empty star": [
+                "stella vuota"
+            ]
+        }
+    }
+}

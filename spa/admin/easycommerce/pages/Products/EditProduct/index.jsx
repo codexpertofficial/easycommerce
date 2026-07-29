@@ -114,6 +114,9 @@ const EditProduct = ({ id, setBreadcrumbTitle }) => {
 				show_review: productData.meta?.show_review || false,
 				review_text_mandatory: productData.meta?.review_text_mandatory || false,
 				tax_class: productData.meta?.tax_class || '',
+				_badge_new: rawData._badge_new === '1',
+				_badge_best_seller: rawData._badge_best_seller === '1',
+				_badge_featured: rawData._badge_featured === '1',
 			},
 		};
 

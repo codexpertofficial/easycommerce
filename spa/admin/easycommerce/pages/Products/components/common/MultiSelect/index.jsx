@@ -11,6 +11,7 @@ const MultiSelect = ({
     placeholder = '',
     handleSelect,
     handleRemove,
+    showOptionColor = false,
 }) => {
     const [isFocused, setIsFocused] = useState(false);
     const [query, setQuery] = useState("");
@@ -87,15 +88,23 @@ const MultiSelect = ({
                         )
                         .map((suggestion, index) => (
                             <li
-                                className="w-full p-2 m-0 font-inter text-base leading-[26px] text-ec-body hover:bg-[#F8F8F8] 
-                                rounded-md cursor-pointer"
+                                className="w-full flex items-center gap-3 p-2 m-0 font-inter text-base leading-[26px] text-ec-body hover:bg-[#F8F8F8] rounded-md cursor-pointer"
                                 key={suggestion.id || index}
                                 onClick={() => {
                                     handleSelect(suggestion);
                                     setQuery("");
                                 }}
                             >
-                                {suggestion.name}
+                                {showOptionColor && suggestion.color && (
+                                    <span
+                                        className="w-4 h-4 rounded border-none shrink-0"
+                                        style={{
+                                            backgroundColor: suggestion.color,
+                                        }}
+                                    />
+                                )}
+
+                                <span>{suggestion.name}</span>
                             </li>
                         ))}
                 </ul>

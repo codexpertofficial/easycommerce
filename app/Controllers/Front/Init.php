@@ -297,7 +297,7 @@ class Init {
 	 */
 	public function show_notices() {
 
-		$notices = Notice::list( null, null, 2 );
+		$notices = Notice::list( null, null, 1 );
 
 		foreach ( $notices as $notice ) {
 			printf( "

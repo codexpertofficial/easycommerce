@@ -38,7 +38,7 @@ class Init {
 		$this->action( 'pre_get_posts', array( $this, 'restrict_media_access' ) );
 		$this->filter( 'map_meta_cap', array( $this, 'map_meta_cap' ), 10, 4 );
 		$this->action( 'easycommerce_log', array( $this, 'add_log' ) );
-		$this->action( 'init', array( $this, 'add_notices' ) );
+		$this->action( 'rest_api_init', array( $this, 'add_notices' ) );
 		$this->filter( 'theme_page_templates', array( $this, 'register_full_width_template' ) );
 		$this->filter( 'template_include', array( $this, 'load_full_width_template' ) );
 		$this->action( 'admin_bar_menu', array( $this, 'add_ai_credits_admin_bar' ), 999 );

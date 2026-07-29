@@ -1,0 +1,51 @@
+{
+    "translation-revision-date": "2026-07-23 00:00+0000",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "assets\/public\/js\/agent-chatbot.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "nl_NL",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Message": [
+                "Bericht"
+            ],
+            "AI Shopping Assistant": [
+                "AI-winkelassistent"
+            ],
+            "Complete your order \u2192": [
+                "Voltooi je bestelling \u2192"
+            ],
+            "Sorry, something went wrong. Please try again.": [
+                "Sorry, er is iets misgegaan. Probeer het opnieuw."
+            ],
+            "Connection error. Please try again.": [
+                "Verbindingsfout. Probeer het opnieuw."
+            ],
+            "Open %s": [
+                "%s openen"
+            ],
+            "Online": [
+                "Online"
+            ],
+            "New conversation": [
+                "Nieuw gesprek"
+            ],
+            "Minimize": [
+                "Minimaliseren"
+            ],
+            "Ask about products, orders\u2026": [
+                "Vraag over producten, bestellingen\u2026"
+            ],
+            "Send": [
+                "Verzenden"
+            ],
+            "Hi! \ud83d\udc4b I'm %s. How can I help you today?": [
+                "Hoi! \ud83d\udc4b Ik ben %s. Hoe kan ik je vandaag helpen?"
+            ]
+        }
+    }
+}

@@ -1,0 +1,36 @@
+{
+    "translation-revision-date": "2026-07-23 00:00+0000",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "assets\/public\/js\/checkout.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "zh_CN",
+                "plural-forms": "nplurals=1; plural=0;"
+            },
+            "Please enter a valid email address.": [
+                "\u8bf7\u8f93\u5165\u6709\u6548\u7684\u7535\u5b50\u90ae\u7bb1\u5730\u5740\u3002"
+            ],
+            "Please enter a valid postcode.": [
+                "\u8bf7\u8f93\u5165\u6709\u6548\u7684\u90ae\u653f\u7f16\u7801\u3002"
+            ],
+            "Only letters, spaces, hyphens, apostrophes, and periods are allowed.": [
+                "\u53ea\u80fd\u5305\u542b\u5b57\u6bcd\u3001\u7a7a\u683c\u3001\u8fde\u5b57\u7b26\u3001\u6487\u53f7\u548c\u53e5\u70b9\u3002"
+            ],
+            "Please enter a valid phone number (6\u201320 characters).": [
+                "\u8bf7\u8f93\u5165\u6709\u6548\u7684\u7535\u8bdd\u53f7\u7801\uff086\u201320 \u4e2a\u5b57\u7b26\uff09\u3002"
+            ],
+            "%s is required.": [
+                "%s \u4e3a\u5fc5\u586b\u9879\u3002"
+            ],
+            "Enter city": [
+                "\u8bf7\u8f93\u5165\u57ce\u5e02"
+            ],
+            "An error occurred. Please try again.": [
+                "\u53d1\u751f\u9519\u8bef\u3002\u8bf7\u91cd\u8bd5\u3002"
+            ]
+        }
+    }
+}

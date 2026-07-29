@@ -6,6 +6,8 @@
 namespace EasyCommerce\Tests\Models;
 
 use EasyCommerce\Tests\EasyCommerceTestCase;
+use EasyCommerce\Models\Attribute;
+use EasyCommerce\Models\Attribute_Value;
 use EasyCommerce\Models\Product;
 use EasyCommerce\Models\Product_Variation;
 
@@ -540,7 +542,11 @@ class ProductVariationTest extends EasyCommerceTestCase {
 		$attributes = $variation->get_attributes();
 		$this->assertIsArray( $attributes );
 
-		$result = $variation->add_attribute( 1, 1 );
+		// Seed a real attribute + value so the FK-backed insert can succeed.
+		$attribute_id = ( new Attribute() )->add( 'Color', 'Text', 'color' );
+		$value_id     = ( new Attribute_Value() )->add( $attribute_id, 'Red', 'red', 'red' );
+
+		$result = $variation->add_attribute( $attribute_id, $value_id );
 		$this->assertIsInt( $result );
 	}
 

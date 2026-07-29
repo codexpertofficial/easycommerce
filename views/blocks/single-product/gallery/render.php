@@ -19,7 +19,9 @@ $settings         = $attributes;
 $gallery_item     = isset( $settings['GalleryItem'] ) ? $settings['GalleryItem'] : '4';
 $show_stock_badge = easycommerce_is_stock_badge_enabled();
 
+
 if ( $product = new Product( get_the_ID() ) ) {
+    $badges        = $product->get_badges();
     $get_thumbnail = $product->get_thumbnail();
     if ( ! empty( $gallery = $product->get_gallery() ) ) {
         $unique_images = [];
@@ -45,27 +47,50 @@ if ( $product = new Product( get_the_ID() ) ) {
         ?>
 
         <!-- Product gallery features image slider -->
-        <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff; margin-bottom: 24px;" class="swiper mySwiper2 easycommerce-single-product-gallery-feature-slider">
-            <div class="swiper-wrapper">
-                <?php foreach ( $unique_images as $data ) { ?>
-                    <div class="swiper-slide easycommerce-gallery-main-image relative" data-id='<?php echo esc_attr( json_encode( $data['parent_ids'] ) ); ?>'>
-                        <?php if ( $show_stock_badge ) : 
-                            $stock = $product->get_stock();
-                            if ( $stock !== false && $stock !== null ) :
-                                if ( $stock > 0 ) : ?>
-                                    <span class="absolute top-3 left-3 z-10 inline-flex items-center bg-emerald-500 text-white text-xs font-semibold px-2.5 py-1 shadow-md">
-                                        <?php esc_html_e( 'In Stock', 'easycommerce' ); ?>
-                                    </span>
-                                <?php else : ?>
-                                    <span class="absolute top-3 left-3 z-10 inline-flex items-center bg-red-500 text-white text-xs font-semibold px-2.5 py-1 shadow-md">
-                                        <?php esc_html_e( 'Out of Stock', 'easycommerce' ); ?>
-                                    </span>
-                                <?php endif;
-                            endif; 
-                        endif; ?>
-                        <img src="<?php echo esc_url( $data['image']['url'] ); ?>" alt="<?php echo esc_attr( $data['image']['alt'] ?? __( 'Product Image', 'easycommerce' ) ); ?>">
-                    </div>
-                <?php } ?>
+        <div class="relative">
+            <?php
+                $product_type_badges = array_filter(
+                    $badges,
+                    function ( $badge ) {
+                        return $badge['type'] !== 'out_of_stock';
+                    }
+                );
+            ?>
+            <?php if ( ! empty( $product_type_badges ) ) : ?>
+                <div class="absolute top-3 left-[86px] z-10 flex flex-row flex-wrap items-center gap-1.5 max-w-[calc(100%-1.5rem)] pointer-events-none">
+                    <?php foreach ( $product_type_badges as $badge ) : ?>
+                        <span
+                            class="inline-flex items-center text-xs font-semibold px-2.5 py-1 shadow-md rounded"
+                            style="background-color: <?php echo esc_attr( $badge['color'] ); ?>; color: <?php echo esc_attr( $badge['text_color'] ); ?>;"
+                        >
+                            <?php echo esc_html( $badge['label'] ); ?>
+                        </span>
+                    <?php endforeach; ?>
+                </div>
+            <?php endif; ?>
+
+            <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff; margin-bottom: 24px;" class="swiper mySwiper2 easycommerce-single-product-gallery-feature-slider">
+                <div class="swiper-wrapper">
+                    <?php foreach ( $unique_images as $data ) { ?>
+                        <div class="swiper-slide easycommerce-gallery-main-image relative" data-id='<?php echo esc_attr( json_encode( $data['parent_ids'] ) ); ?>'>
+                            <?php if ( $show_stock_badge ) : 
+                                $stock = $product->get_stock();
+                                if ( $stock !== false && $stock !== null ) :
+                                    if ( $stock > 0 ) : ?>
+                                        <span class="absolute top-3 left-3 z-10 inline-flex items-center bg-emerald-500 text-white text-xs rounded font-semibold px-2.5 py-1 shadow-md">
+                                            <?php esc_html_e( 'In Stock', 'easycommerce' ); ?>
+                                        </span>
+                                    <?php else : ?>
+                                        <span class="absolute top-3 left-3 z-10 inline-flex items-center bg-red-500 text-white text-xs font-semibold px-2.5 py-1 shadow-md">
+                                            <?php esc_html_e( 'Out of Stock', 'easycommerce' ); ?>
+                                        </span>
+                                    <?php endif;
+                                endif; 
+                            endif; ?>
+                            <img src="<?php echo esc_url( $data['image']['url'] ); ?>" alt="<?php echo esc_attr( $data['image']['alt'] ?? __( 'Product Image', 'easycommerce' ) ); ?>">
+                        </div>
+                    <?php } ?>
+                </div>
             </div>
         </div>
 

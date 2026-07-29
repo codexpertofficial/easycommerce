@@ -207,18 +207,57 @@ foreach ( $products as $product ) :
                         href="<?php echo esc_attr( $product['link'] ); ?>"
                         style="text-decoration: none; outline: none;">
                             <div class="rounded-md overflow-hidden h-full relative">
-                                <?php if ( $show_stock_badge ) : ?>
-                                    <?php if ( $product['stock'] !== false && $product['stock'] !== null ) : ?>
-                                        <?php if ( $product['stock'] > 0 ) : ?>
-                                            <span class="absolute top-3 left-3 z-10 inline-flex items-center bg-emerald-500 text-white text-xs font-semibold px-2.5 py-1 shadow-md">
-                                                <?php esc_html_e( 'In Stock', 'easycommerce' ); ?>
-                                            </span>
-                                        <?php else : ?>
-                                            <span class="absolute top-3 left-3 z-10 inline-flex items-center bg-red-500 text-white text-xs font-semibold px-2.5 py-1 shadow-md">
-                                                <?php esc_html_e( 'Out of Stock', 'easycommerce' ); ?>
-                                            </span>
-                                        <?php endif; ?>
+                                <?php
+                                $product_badges = $product['badges'] ?? array();
+
+                                $is_out_of_stock = (
+                                    $product['stock'] !== false &&
+                                    $product['stock'] !== null &&
+                                    (int) $product['stock'] <= 0
+                                );
+
+                                // Remove the out_of_stock badge from the custom badges list.
+                                $display_badges = array_filter(
+                                    $product_badges,
+                                    function ( $badge ) {
+                                        return $badge['type'] !== 'out_of_stock';
+                                    }
+                                );
+
+                                // Add the In Stock badge when enabled.
+                                if ( ! $is_out_of_stock && $show_stock_badge ) {
+                                    $display_badges[] = array(
+                                        'label'      => __( 'In Stock', 'easycommerce' ),
+                                        'color'      => '#10B981',
+                                        'text_color' => '#FFFFFF',
+                                    );
+                                }
+                                ?>
+
+                                <?php if ( $is_out_of_stock ) : ?>
+
+                                    <?php if ( $show_stock_badge ) : ?>
+                                        <span class="absolute top-3 left-3 z-10 inline-flex items-center bg-red-500 text-white text-xs rounded font-semibold px-2.5 py-1 shadow-md">
+                                            <?php esc_html_e( 'Out of Stock', 'easycommerce' ); ?>
+                                        </span>
                                     <?php endif; ?>
+
+                                <?php elseif ( ! empty( $display_badges ) ) : ?>
+
+                                    <div class="absolute top-3 left-3 z-10 flex flex-row flex-wrap items-center gap-1.5 max-w-[calc(100%-1.5rem)]">
+                                        <?php foreach ( $display_badges as $badge ) : ?>
+                                            <span
+                                                class="inline-flex items-center text-xs font-semibold px-2.5 py-1 rounded shadow-md"
+                                                style="
+                                                    background-color: <?php echo esc_attr( $badge['color'] ); ?>;
+                                                    color: <?php echo esc_attr( $badge['text_color'] ?? '#FFFFFF' ); ?>;
+                                                "
+                                            >
+                                                <?php echo esc_html( $badge['label'] ); ?>
+                                            </span>
+                                        <?php endforeach; ?>
+                                    </div>
+
                                 <?php endif; ?>
                                 <?php if ( $image_url ) : ?>
                                     <img src="<?php echo esc_url( $image_url ); ?>" 

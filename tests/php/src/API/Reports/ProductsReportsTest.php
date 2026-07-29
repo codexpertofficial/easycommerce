@@ -24,8 +24,8 @@ class ProductsReportsTest extends EasyCommerceTestCase {
 	private int $product_id;
 	private int $customer_id = 1;
 
-	private const RANGE      = '2099-04-01,2099-04-30';
-	private const ORDER_DATE = '2099-04-15 10:00:00';
+	private const RANGE      = '2035-04-01,2035-04-30';
+	private const ORDER_DATE = '2035-04-15 10:00:00';
 
 	public function set_up(): void {
 		parent::set_up();
@@ -59,7 +59,10 @@ class ProductsReportsTest extends EasyCommerceTestCase {
 		$match    = $this->find_product( $products, $this->product_id );
 
 		$this->assertNotNull( $match, 'Product must appear in sold list' );
-		$this->assertEquals( 30.0, (float) $match['refunds'], 'Refund amount must not be multiplied by line-item count' );
+		// refunds is a formatted price string; compare via the same formatter so
+		// $30 is distinguished from a JOIN-multiplied $60 (a (float) cast of
+		// "$30.00" is 0.0 and could not tell the two apart).
+		$this->assertEquals( easycommerce_price( 30.0 ), $match['refunds'], 'Refund amount must not be multiplied by line-item count' );
 	}
 
 	/**
@@ -74,7 +77,7 @@ class ProductsReportsTest extends EasyCommerceTestCase {
 		$match    = $this->find_product( $products, $this->product_id );
 
 		$this->assertNotNull( $match );
-		$this->assertEquals( 30.0, (float) $match['refunds'] );
+		$this->assertEquals( easycommerce_price( 30.0 ), $match['refunds'] );
 	}
 
 	/**

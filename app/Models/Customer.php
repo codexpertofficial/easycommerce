@@ -104,19 +104,19 @@ class Customer extends User {
 	/**
 	 * Get billing address
 	 *
-	 * @return string
+	 * @return array The billing address fields, or an empty array when unset.
 	 */
 	public function get_billing_address() {
-		return $this->get_meta( 'billing_address' );
+		return $this->get_meta( 'billing_address' ) ?: array();
 	}
 
 	/**
 	 * Get shipping address
 	 *
-	 * @return string
+	 * @return array The shipping address fields, or an empty array when unset.
 	 */
 	public function get_shipping_address() {
-		return $this->get_meta( 'shipping_address' );
+		return $this->get_meta( 'shipping_address' ) ?: array();
 	}
 
 	/**

@@ -22,8 +22,8 @@ class OrdersReportsTest extends EasyCommerceTestCase {
 	private array $refund_ids = [];
 	private int $customer_id = 1;
 
-	private const RANGE      = '2099-06-01,2099-06-30';
-	private const ORDER_DATE = '2099-06-15 10:00:00';
+	private const RANGE      = '2035-06-01,2035-06-30';
+	private const ORDER_DATE = '2035-06-15 10:00:00';
 
 	public function tear_down(): void {
 		foreach ( $this->refund_ids as $rid ) {
@@ -83,8 +83,8 @@ class OrdersReportsTest extends EasyCommerceTestCase {
 
 		$stats = $this->call_calculate_stats( self::RANGE );
 
-		// Must have at least 1 completed order; pending should not inflate completed_orders.
-		$this->assertGreaterThanOrEqual( 1, count( $stats['completed_orders'] ) );
+		// completed_orders is already an int count; pending must not inflate it.
+		$this->assertGreaterThanOrEqual( 1, (int) $stats['completed_orders'] );
 	}
 
 	/**
@@ -95,7 +95,7 @@ class OrdersReportsTest extends EasyCommerceTestCase {
 
 		$this->assertEquals( 0.0, (float) $stats['sales'] );
 		$this->assertEquals( 0.0, (float) $stats['refunds'] );
-		$this->assertEquals( 0, count( $stats['completed_orders'] ) );
+		$this->assertEquals( 0, (int) $stats['completed_orders'] );
 	}
 
 	// -------------------------------------------------------------------------

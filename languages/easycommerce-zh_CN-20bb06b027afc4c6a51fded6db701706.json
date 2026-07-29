@@ -1,0 +1,99 @@
+{
+    "translation-revision-date": "2026-07-23 00:00+0000",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "blocks\/shops-page\/template-2\/edit.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "zh_CN",
+                "plural-forms": "nplurals=1; plural=0;"
+            },
+            "No products found.": [
+                "\u672a\u627e\u5230\u5546\u54c1\u3002"
+            ],
+            "Checkout": [
+                "\u7ed3\u8d26"
+            ],
+            "Color": [
+                "\u989c\u8272"
+            ],
+            "Normal": [
+                "\u5e38\u89c4"
+            ],
+            "Product Settings": [
+                "\u5546\u54c1\u8bbe\u7f6e"
+            ],
+            "Products Per Page": [
+                "\u6bcf\u9875\u5546\u54c1\u6570\u91cf"
+            ],
+            "Grid Settings": [
+                "\u7f51\u683c\u8bbe\u7f6e"
+            ],
+            "Show Filters": [
+                "\u663e\u793a\u7b5b\u9009\u5668"
+            ],
+            "Show Pagination": [
+                "\u663e\u793a\u5206\u9875"
+            ],
+            "Number of Columns": [
+                "\u5217\u6570"
+            ],
+            "Product Title": [
+                "\u5546\u54c1\u6807\u9898"
+            ],
+            "Text Color": [
+                "\u6587\u672c\u989c\u8272"
+            ],
+            "Hover Text Color": [
+                "\u60ac\u505c\u6587\u672c\u989c\u8272"
+            ],
+            "Product Category": [
+                "\u5546\u54c1\u5206\u7c7b"
+            ],
+            "Product Rating": [
+                "\u5546\u54c1\u8bc4\u5206"
+            ],
+            "Star Size": [
+                "\u661f\u661f\u5927\u5c0f"
+            ],
+            "Product Price": [
+                "\u5546\u54c1\u4ef7\u683c"
+            ],
+            "Regular Price": [
+                "\u539f\u4ef7"
+            ],
+            "Sale Price": [
+                "\u4fc3\u9500\u4ef7"
+            ],
+            "Cart Button": [
+                "\u8d2d\u7269\u8f66\u6309\u94ae"
+            ],
+            "Hover": [
+                "\u60ac\u505c"
+            ],
+            "Background Color": [
+                "\u80cc\u666f\u989c\u8272"
+            ],
+            "Focus Text Color": [
+                "\u805a\u7126\u6587\u672c\u989c\u8272"
+            ],
+            "Focus Background Color": [
+                "\u805a\u7126\u80cc\u666f\u989c\u8272"
+            ],
+            "Text Color (Hover)": [
+                "\u6587\u672c\u989c\u8272\uff08\u60ac\u505c\uff09"
+            ],
+            "Background Color (Hover)": [
+                "\u80cc\u666f\u989c\u8272\uff08\u60ac\u505c\uff09"
+            ],
+            "Checkout Button": [
+                "\u7ed3\u8d26\u6309\u94ae"
+            ],
+            "Add To Cart": [
+                "\u52a0\u5165\u8d2d\u7269\u8f66"
+            ]
+        }
+    }
+}

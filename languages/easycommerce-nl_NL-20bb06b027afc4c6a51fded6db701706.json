@@ -1,0 +1,99 @@
+{
+    "translation-revision-date": "2026-07-23 00:00+0000",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "blocks\/shops-page\/template-2\/edit.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "nl_NL",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "No products found.": [
+                "Geen producten gevonden."
+            ],
+            "Checkout": [
+                "Afrekenen"
+            ],
+            "Color": [
+                "Kleur"
+            ],
+            "Normal": [
+                "Normaal"
+            ],
+            "Product Settings": [
+                "Productinstellingen"
+            ],
+            "Products Per Page": [
+                "Producten per pagina"
+            ],
+            "Grid Settings": [
+                "Rasterinstellingen"
+            ],
+            "Show Filters": [
+                "Filters tonen"
+            ],
+            "Show Pagination": [
+                "Paginering tonen"
+            ],
+            "Number of Columns": [
+                "Aantal kolommen"
+            ],
+            "Product Title": [
+                "Producttitel"
+            ],
+            "Text Color": [
+                "Tekstkleur"
+            ],
+            "Hover Text Color": [
+                "Tekstkleur bij hover"
+            ],
+            "Product Category": [
+                "Productcategorie"
+            ],
+            "Product Rating": [
+                "Productbeoordeling"
+            ],
+            "Star Size": [
+                "Stergrootte"
+            ],
+            "Product Price": [
+                "Productprijs"
+            ],
+            "Regular Price": [
+                "Normale prijs"
+            ],
+            "Sale Price": [
+                "Aanbiedingsprijs"
+            ],
+            "Cart Button": [
+                "Winkelwagenknop"
+            ],
+            "Hover": [
+                "Hover"
+            ],
+            "Background Color": [
+                "Achtergrondkleur"
+            ],
+            "Focus Text Color": [
+                "Tekstkleur bij focus"
+            ],
+            "Focus Background Color": [
+                "Achtergrondkleur bij focus"
+            ],
+            "Text Color (Hover)": [
+                "Tekstkleur (hover)"
+            ],
+            "Background Color (Hover)": [
+                "Achtergrondkleur (hover)"
+            ],
+            "Checkout Button": [
+                "Afrekenknop"
+            ],
+            "Add To Cart": [
+                "Toevoegen aan winkelwagen"
+            ]
+        }
+    }
+}

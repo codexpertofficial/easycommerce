@@ -21,8 +21,8 @@ class CustomersReportsTest extends EasyCommerceTestCase {
 	private int $product_id;
 	private int $customer_id = 1;
 
-	private const RANGE      = '2099-03-01,2099-03-31';
-	private const ORDER_DATE = '2099-03-15 10:00:00';
+	private const RANGE      = '2035-03-01,2035-03-31';
+	private const ORDER_DATE = '2035-03-15 10:00:00';
 
 	public function set_up(): void {
 		parent::set_up();

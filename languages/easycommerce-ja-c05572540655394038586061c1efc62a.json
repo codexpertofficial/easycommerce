@@ -1,0 +1,72 @@
+{
+    "translation-revision-date": "2026-07-23 12:00+0000",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "assets\/payment\/js\/stripe-payment.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "ja",
+                "plural-forms": "nplurals=1; plural=0;"
+            },
+            "Failed to load cart data. Please refresh the page.": [
+                "\u30ab\u30fc\u30c8\u30c7\u30fc\u30bf\u306e\u8aad\u307f\u8fbc\u307f\u306b\u5931\u6557\u3057\u307e\u3057\u305f\u3002\u30da\u30fc\u30b8\u3092\u518d\u8aad\u307f\u8fbc\u307f\u3057\u3066\u304f\u3060\u3055\u3044\u3002"
+            ],
+            "Failed to create payment. Please try again.": [
+                "\u652f\u6255\u3044\u306e\u4f5c\u6210\u306b\u5931\u6557\u3057\u307e\u3057\u305f\u3002\u3082\u3046\u4e00\u5ea6\u304a\u8a66\u3057\u304f\u3060\u3055\u3044\u3002"
+            ],
+            "Payment form failed to load. Please refresh.": [
+                "\u6c7a\u6e08\u30d5\u30a9\u30fc\u30e0\u306e\u8aad\u307f\u8fbc\u307f\u306b\u5931\u6557\u3057\u307e\u3057\u305f\u3002\u518d\u8aad\u307f\u8fbc\u307f\u3057\u3066\u304f\u3060\u3055\u3044\u3002"
+            ],
+            "Could not verify cart. Please refresh and try again.": [
+                "\u30ab\u30fc\u30c8\u3092\u78ba\u8a8d\u3067\u304d\u307e\u305b\u3093\u3067\u3057\u305f\u3002\u518d\u8aad\u307f\u8fbc\u307f\u3057\u3066\u3082\u3046\u4e00\u5ea6\u304a\u8a66\u3057\u304f\u3060\u3055\u3044\u3002"
+            ],
+            "Failed to create payment. Please refresh the page and try again.": [
+                "\u652f\u6255\u3044\u306e\u4f5c\u6210\u306b\u5931\u6557\u3057\u307e\u3057\u305f\u3002\u30da\u30fc\u30b8\u3092\u518d\u8aad\u307f\u8fbc\u307f\u3057\u3066\u3082\u3046\u4e00\u5ea6\u304a\u8a66\u3057\u304f\u3060\u3055\u3044\u3002"
+            ],
+            "This payment handler is not available. Please refresh and try again.": [
+                "\u3053\u306e\u652f\u6255\u3044\u30cf\u30f3\u30c9\u30e9\u30fc\u306f\u5229\u7528\u3067\u304d\u307e\u305b\u3093\u3002\u518d\u8aad\u307f\u8fbc\u307f\u3057\u3066\u3082\u3046\u4e00\u5ea6\u304a\u8a66\u3057\u304f\u3060\u3055\u3044\u3002"
+            ],
+            "Additional verification required. Please complete the payment process.": [
+                "\u8ffd\u52a0\u306e\u8a8d\u8a3c\u304c\u5fc5\u8981\u3067\u3059\u3002\u652f\u6255\u3044\u624b\u7d9a\u304d\u3092\u5b8c\u4e86\u3057\u3066\u304f\u3060\u3055\u3044\u3002"
+            ],
+            "Payment failed. Please try a different payment method.": [
+                "\u652f\u6255\u3044\u306b\u5931\u6557\u3057\u307e\u3057\u305f\u3002\u5225\u306e\u652f\u6255\u3044\u65b9\u6cd5\u3092\u304a\u8a66\u3057\u304f\u3060\u3055\u3044\u3002"
+            ],
+            "Payment was canceled. Please try again.": [
+                "\u652f\u6255\u3044\u304c\u30ad\u30e3\u30f3\u30bb\u30eb\u3055\u308c\u307e\u3057\u305f\u3002\u3082\u3046\u4e00\u5ea6\u304a\u8a66\u3057\u304f\u3060\u3055\u3044\u3002"
+            ],
+            "Payment status: %s. Please contact support if this persists.": [
+                "\u652f\u6255\u3044\u30b9\u30c6\u30fc\u30bf\u30b9\uff1a%s\u3002\u3053\u306e\u72b6\u614b\u304c\u7d9a\u304f\u5834\u5408\u306f\u3001\u30b5\u30dd\u30fc\u30c8\u306b\u304a\u554f\u3044\u5408\u308f\u305b\u304f\u3060\u3055\u3044\u3002"
+            ],
+            "Payment could not be processed. Please try again.": [
+                "\u652f\u6255\u3044\u3092\u51e6\u7406\u3067\u304d\u307e\u305b\u3093\u3067\u3057\u305f\u3002\u3082\u3046\u4e00\u5ea6\u304a\u8a66\u3057\u304f\u3060\u3055\u3044\u3002"
+            ],
+            "An error occurred while processing your payment. Please try again.": [
+                "\u652f\u6255\u3044\u306e\u51e6\u7406\u4e2d\u306b\u30a8\u30e9\u30fc\u304c\u767a\u751f\u3057\u307e\u3057\u305f\u3002\u3082\u3046\u4e00\u5ea6\u304a\u8a66\u3057\u304f\u3060\u3055\u3044\u3002"
+            ],
+            "Verifying payment...": [
+                "\u652f\u6255\u3044\u3092\u78ba\u8a8d\u3057\u3066\u3044\u307e\u3059..."
+            ],
+            "Payment successful! Creating order...": [
+                "\u652f\u6255\u3044\u304c\u5b8c\u4e86\u3057\u307e\u3057\u305f\uff01\u6ce8\u6587\u3092\u4f5c\u6210\u3057\u3066\u3044\u307e\u3059..."
+            ],
+            "Payment method could not be saved. Status: %s": [
+                "\u652f\u6255\u3044\u65b9\u6cd5\u3092\u4fdd\u5b58\u3067\u304d\u307e\u305b\u3093\u3067\u3057\u305f\u3002\u30b9\u30c6\u30fc\u30bf\u30b9\uff1a%s"
+            ],
+            "Failed to verify payment. Please contact support.": [
+                "\u652f\u6255\u3044\u306e\u78ba\u8a8d\u306b\u5931\u6557\u3057\u307e\u3057\u305f\u3002\u30b5\u30dd\u30fc\u30c8\u306b\u304a\u554f\u3044\u5408\u308f\u305b\u304f\u3060\u3055\u3044\u3002"
+            ],
+            "Payment failed. Please try again with a different payment method.": [
+                "\u652f\u6255\u3044\u306b\u5931\u6557\u3057\u307e\u3057\u305f\u3002\u5225\u306e\u652f\u6255\u3044\u65b9\u6cd5\u3067\u3082\u3046\u4e00\u5ea6\u304a\u8a66\u3057\u304f\u3060\u3055\u3044\u3002"
+            ],
+            "Additional action required. Please complete the payment process.": [
+                "\u8ffd\u52a0\u306e\u64cd\u4f5c\u304c\u5fc5\u8981\u3067\u3059\u3002\u652f\u6255\u3044\u624b\u7d9a\u304d\u3092\u5b8c\u4e86\u3057\u3066\u304f\u3060\u3055\u3044\u3002"
+            ],
+            "Payment could not be completed. Status: %s": [
+                "\u652f\u6255\u3044\u3092\u5b8c\u4e86\u3067\u304d\u307e\u305b\u3093\u3067\u3057\u305f\u3002\u30b9\u30c6\u30fc\u30bf\u30b9\uff1a%s"
+            ]
+        }
+    }
+}

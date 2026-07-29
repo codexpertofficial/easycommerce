@@ -1,0 +1,2877 @@
+{
+    "translation-revision-date": "2026-07-23 00:00+0000",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "build\/easycommerce.bundle.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "zh_CN",
+                "plural-forms": "nplurals=1; plural=0;"
+            },
+            "Something went wrong": [
+                "\u51fa\u9519\u4e86"
+            ],
+            "Free": [
+                "\u514d\u8d39"
+            ],
+            "Pro": [
+                "\u4e13\u4e1a\u7248"
+            ],
+            "AI Image Generator": [
+                "AI \u56fe\u50cf\u751f\u6210\u5668"
+            ],
+            "Password must be at least 6 characters long.": [
+                "\u5bc6\u7801\u957f\u5ea6\u81f3\u5c11\u4e3a 6 \u4e2a\u5b57\u7b26\u3002"
+            ],
+            "Passwords do not match.": [
+                "\u4e24\u6b21\u8f93\u5165\u7684\u5bc6\u7801\u4e0d\u4e00\u81f4\u3002"
+            ],
+            "Payment Method": [
+                "\u652f\u4ed8\u65b9\u5f0f"
+            ],
+            "Reminder email sent successfully.": [
+                "\u63d0\u9192\u90ae\u4ef6\u53d1\u9001\u6210\u529f\u3002"
+            ],
+            "Failed to send reminder email.": [
+                "\u63d0\u9192\u90ae\u4ef6\u53d1\u9001\u5931\u8d25\u3002"
+            ],
+            "Private Note": [
+                "\u79c1\u5bc6\u5907\u6ce8"
+            ],
+            "Order ID": [
+                "\u8ba2\u5355 ID"
+            ],
+            "Customer Name": [
+                "\u5ba2\u6237\u59d3\u540d"
+            ],
+            "Order Status": [
+                "\u8ba2\u5355\u72b6\u6001"
+            ],
+            "General": [
+                "\u5e38\u89c4"
+            ],
+            "CSV uploaded successfully": [
+                "CSV \u4e0a\u4f20\u6210\u529f"
+            ],
+            "No orders found.": [
+                "\u672a\u627e\u5230\u8ba2\u5355\u3002"
+            ],
+            "Please enter a valid email address.": [
+                "\u8bf7\u8f93\u5165\u6709\u6548\u7684\u7535\u5b50\u90ae\u7bb1\u5730\u5740\u3002"
+            ],
+            "Orders": [
+                "\u8ba2\u5355"
+            ],
+            "Refunds": [
+                "\u9000\u6b3e"
+            ],
+            "Order Count": [
+                "\u8ba2\u5355\u6570\u91cf"
+            ],
+            "Customers": [
+                "\u5ba2\u6237"
+            ],
+            "Low Stock": [
+                "\u5e93\u5b58\u4e0d\u8db3"
+            ],
+            "Stock": [
+                "\u5e93\u5b58"
+            ],
+            "Pending": [
+                "\u5f85\u5904\u7406"
+            ],
+            "Processing": [
+                "\u5904\u7406\u4e2d"
+            ],
+            "Completed": [
+                "\u5df2\u5b8c\u6210"
+            ],
+            "Refunded": [
+                "\u5df2\u9000\u6b3e"
+            ],
+            "Partially Refunded": [
+                "\u90e8\u5206\u9000\u6b3e"
+            ],
+            "Cancelled": [
+                "\u5df2\u53d6\u6d88"
+            ],
+            "Revenue": [
+                "\u6536\u5165"
+            ],
+            "Add New Product": [
+                "\u65b0\u589e\u5546\u54c1"
+            ],
+            "New Product": [
+                "\u65b0\u5546\u54c1"
+            ],
+            "View Product": [
+                "\u67e5\u770b\u5546\u54c1"
+            ],
+            "Products": [
+                "\u5546\u54c1"
+            ],
+            "Update Category": [
+                "\u66f4\u65b0\u5206\u7c7b"
+            ],
+            "Add New Category": [
+                "\u65b0\u589e\u5206\u7c7b"
+            ],
+            "Categories": [
+                "\u5206\u7c7b"
+            ],
+            "Update Brand": [
+                "\u66f4\u65b0\u54c1\u724c"
+            ],
+            "Add New Brand": [
+                "\u65b0\u589e\u54c1\u724c"
+            ],
+            "Brands": [
+                "\u54c1\u724c"
+            ],
+            "Update Tag": [
+                "\u66f4\u65b0\u6807\u7b7e"
+            ],
+            "Add New Tag": [
+                "\u65b0\u589e\u6807\u7b7e"
+            ],
+            "Tags": [
+                "\u6807\u7b7e"
+            ],
+            "Customer": [
+                "\u5ba2\u6237"
+            ],
+            "Dashboard": [
+                "\u4eea\u8868\u76d8"
+            ],
+            "Payment": [
+                "\u652f\u4ed8"
+            ],
+            "First Name": [
+                "\u540d\u5b57"
+            ],
+            "Last Name": [
+                "\u59d3\u6c0f"
+            ],
+            "Email": [
+                "\u7535\u5b50\u90ae\u7bb1"
+            ],
+            "Country": [
+                "\u56fd\u5bb6\/\u5730\u533a"
+            ],
+            "State": [
+                "\u5dde\/\u7701"
+            ],
+            "City": [
+                "\u57ce\u5e02"
+            ],
+            "Write here": [
+                "\u5728\u6b64\u586b\u5199"
+            ],
+            "Address": [
+                "\u5730\u5740"
+            ],
+            "Visibility": [
+                "\u53ef\u89c1\u6027"
+            ],
+            "Live": [
+                "\u6b63\u5f0f"
+            ],
+            "Pricing": [
+                "\u5b9a\u4ef7"
+            ],
+            "Unfulfilled": [
+                "\u672a\u5c65\u7ea6"
+            ],
+            "Fulfilled": [
+                "\u5df2\u5c65\u7ea6"
+            ],
+            "Partially Fulfilled": [
+                "\u90e8\u5206\u5c65\u7ea6"
+            ],
+            "Shipped": [
+                "\u5df2\u53d1\u8d27"
+            ],
+            "Delivered": [
+                "\u5df2\u9001\u8fbe"
+            ],
+            "Settings": [
+                "\u8bbe\u7f6e"
+            ],
+            "Shipping": [
+                "\u914d\u9001"
+            ],
+            "Subject": [
+                "\u4e3b\u9898"
+            ],
+            "Smart Search": [
+                "\u667a\u80fd\u641c\u7d22"
+            ],
+            "Usage": [
+                "\u7528\u91cf"
+            ],
+            "EasyCommerce": [
+                "EasyCommerce"
+            ],
+            "Cancel": [
+                "\u53d6\u6d88"
+            ],
+            "Activate License": [
+                "\u6fc0\u6d3b\u8bb8\u53ef\u8bc1"
+            ],
+            "Get Pro": [
+                "\u83b7\u53d6\u4e13\u4e1a\u7248"
+            ],
+            "Your Email": [
+                "\u60a8\u7684\u7535\u5b50\u90ae\u7bb1"
+            ],
+            "Message": [
+                "\u6d88\u606f"
+            ],
+            "Action": [
+                "\u64cd\u4f5c"
+            ],
+            "Transaction ID": [
+                "\u4ea4\u6613 ID"
+            ],
+            "Abandoned Cart": [
+                "\u5f03\u8d2d\u8d2d\u7269\u8f66"
+            ],
+            "Transactions": [
+                "\u4ea4\u6613"
+            ],
+            "Coupons": [
+                "\u4f18\u60e0\u5238"
+            ],
+            "Reports": [
+                "\u62a5\u544a"
+            ],
+            "Addons": [
+                "\u6269\u5c55"
+            ],
+            "Help & Support": [
+                "\u5e2e\u52a9\u4e0e\u652f\u6301"
+            ],
+            "Connect AI": [
+                "\u8fde\u63a5 AI"
+            ],
+            "Instruction": [
+                "\u8bf4\u660e"
+            ],
+            "Template 1": [
+                "\u6a21\u677f 1"
+            ],
+            "Template 2": [
+                "\u6a21\u677f 2"
+            ],
+            "Duplicate": [
+                "\u91cd\u590d"
+            ],
+            "Failed": [
+                "\u5931\u8d25"
+            ],
+            "Draft": [
+                "\u8349\u7a3f"
+            ],
+            "Trash": [
+                "\u56de\u6536\u7ad9"
+            ],
+            "Returned": [
+                "\u5df2\u9000\u8d27"
+            ],
+            "Add Product": [
+                "\u6dfb\u52a0\u5546\u54c1"
+            ],
+            "Attributes": [
+                "\u5c5e\u6027"
+            ],
+            "Abandoned Carts": [
+                "\u5f03\u8d2d\u8d2d\u7269\u8f66"
+            ],
+            "Reviews": [
+                "\u8bc4\u4ef7"
+            ],
+            "Overview": [
+                "\u6982\u89c8"
+            ],
+            "Revenues": [
+                "\u6536\u5165"
+            ],
+            "Price": [
+                "\u4ef7\u683c"
+            ],
+            "Sort by": [
+                "\u6392\u5e8f\u65b9\u5f0f"
+            ],
+            "Search": [
+                "\u641c\u7d22"
+            ],
+            "AI Writer": [
+                "AI \u64b0\u5199\u52a9\u624b"
+            ],
+            "Image Editor": [
+                "\u56fe\u50cf\u7f16\u8f91\u5668"
+            ],
+            "Store Copilot": [
+                "\u5e97\u94fa\u526f\u9a7e\u9a76"
+            ],
+            "Date": [
+                "\u65e5\u671f"
+            ],
+            "Discount": [
+                "\u6298\u6263"
+            ],
+            "Total": [
+                "\u5408\u8ba1"
+            ],
+            "Organize": [
+                "\u6574\u7406"
+            ],
+            "Name": [
+                "\u540d\u79f0"
+            ],
+            "Slug": [
+                "\u522b\u540d\uff08slug\uff09"
+            ],
+            "Type": [
+                "\u7c7b\u578b"
+            ],
+            "Image": [
+                "\u56fe\u7247"
+            ],
+            "Color": [
+                "\u989c\u8272"
+            ],
+            "Text": [
+                "\u6587\u672c"
+            ],
+            "Enter Price": [
+                "\u8bf7\u8f93\u5165\u4ef7\u683c"
+            ],
+            "SKU": [
+                "SKU"
+            ],
+            "Auto Generate Variants": [
+                "\u81ea\u52a8\u751f\u6210\u53d8\u4f53"
+            ],
+            "Product Description": [
+                "\u5546\u54c1\u63cf\u8ff0"
+            ],
+            "Billing Address": [
+                "\u8d26\u5355\u5730\u5740"
+            ],
+            "Shipping Address": [
+                "\u914d\u9001\u5730\u5740"
+            ],
+            "Free Shipping": [
+                "\u514d\u8fd0\u8d39"
+            ],
+            "Product Tax": [
+                "\u5546\u54c1\u7a0e"
+            ],
+            "Shipping Tax": [
+                "\u914d\u9001\u7a0e"
+            ],
+            "Order Total": [
+                "\u8ba2\u5355\u603b\u989d"
+            ],
+            "Out of stock": [
+                "\u7f3a\u8d27"
+            ],
+            "Review": [
+                "\u8bc4\u4ef7"
+            ],
+            "Close": [
+                "\u5173\u95ed"
+            ],
+            "Loading...": [
+                "\u52a0\u8f7d\u4e2d\u2026\u2026"
+            ],
+            "Send": [
+                "\u53d1\u9001"
+            ],
+            "An error occurred. Please try again.": [
+                "\u53d1\u751f\u9519\u8bef\u3002\u8bf7\u91cd\u8bd5\u3002"
+            ],
+            "Product": [
+                "\u5546\u54c1"
+            ],
+            "Quantity": [
+                "\u6570\u91cf"
+            ],
+            "None": [
+                "\u65e0"
+            ],
+            "Regular Price": [
+                "\u539f\u4ef7"
+            ],
+            "Sale Price": [
+                "\u4fc3\u9500\u4ef7"
+            ],
+            "SKU:": [
+                "SKU\uff1a"
+            ],
+            "Title": [
+                "\u6807\u9898"
+            ],
+            "Email Address": [
+                "\u7535\u5b50\u90ae\u7bb1\u5730\u5740"
+            ],
+            "Enter your Email": [
+                "\u8bf7\u8f93\u5165\u60a8\u7684\u7535\u5b50\u90ae\u7bb1"
+            ],
+            "Enter new password": [
+                "\u8bf7\u8f93\u5165\u65b0\u5bc6\u7801"
+            ],
+            "Sending...": [
+                "\u53d1\u9001\u4e2d\u2026\u2026"
+            ],
+            "Downloads": [
+                "\u4e0b\u8f7d"
+            ],
+            "Profile": [
+                "\u4e2a\u4eba\u8d44\u6599"
+            ],
+            "Total Orders": [
+                "\u8ba2\u5355\u603b\u6570"
+            ],
+            "N\/A": [
+                "\u4e0d\u9002\u7528"
+            ],
+            "Customer since": [
+                "\u6210\u4e3a\u5ba2\u6237\u65f6\u95f4"
+            ],
+            "Summary": [
+                "\u6458\u8981"
+            ],
+            "View": [
+                "\u67e5\u770b"
+            ],
+            "Amount": [
+                "\u91d1\u989d"
+            ],
+            "Status": [
+                "\u72b6\u6001"
+            ],
+            "Back": [
+                "\u4e0a\u4e00\u9875"
+            ],
+            "Next": [
+                "\u4e0b\u4e00\u9875"
+            ],
+            "Select Image": [
+                "\u9009\u62e9\u56fe\u7247"
+            ],
+            "Use selected image": [
+                "\u4f7f\u7528\u6240\u9009\u56fe\u7247"
+            ],
+            "Phone Number": [
+                "\u7535\u8bdd\u53f7\u7801"
+            ],
+            "Address Line 1": [
+                "\u5730\u5740\u7b2c 1 \u884c"
+            ],
+            "Address Line 2": [
+                "\u5730\u5740\u7b2c 2 \u884c"
+            ],
+            "Items": [
+                "\u5546\u54c1"
+            ],
+            "Order Date": [
+                "\u4e0b\u5355\u65e5\u671f"
+            ],
+            "Order Notes": [
+                "\u8ba2\u5355\u5907\u6ce8"
+            ],
+            "Loading notes...": [
+                "\u6b63\u5728\u52a0\u8f7d\u5907\u6ce8\u2026\u2026"
+            ],
+            "No notes found for this order": [
+                "\u672a\u627e\u5230\u6b64\u8ba2\u5355\u7684\u5907\u6ce8"
+            ],
+            "Track here:": [
+                "\u5728\u6b64\u8ffd\u8e2a\uff1a"
+            ],
+            "Order #%s": [
+                "\u8ba2\u5355 #%s"
+            ],
+            "Your Voice Matters": [
+                "\u60a8\u7684\u58f0\u97f3\u5f88\u91cd\u8981"
+            ],
+            "Help us make EasyCommerce the best it can be. Share your feedback and ideas with us!": [
+                "\u5e2e\u52a9\u6211\u4eec\u628a EasyCommerce \u6253\u9020\u5f97\u5c3d\u5584\u5c3d\u7f8e\u3002\u8bf7\u4e0e\u6211\u4eec\u5206\u4eab\u60a8\u7684\u53cd\u9988\u548c\u60f3\u6cd5\uff01"
+            ],
+            "Enter first name": [
+                "\u8bf7\u8f93\u5165\u540d\u5b57"
+            ],
+            "Enter a valid email address": [
+                "\u8bf7\u8f93\u5165\u6709\u6548\u7684\u7535\u5b50\u90ae\u7bb1\u5730\u5740"
+            ],
+            "Send Message": [
+                "\u53d1\u9001\u6d88\u606f"
+            ],
+            "Thank you for your feedback": [
+                "\u611f\u8c22\u60a8\u7684\u53cd\u9988"
+            ],
+            "We will use your feedback to build a better experience for everyone.": [
+                "\u6211\u4eec\u5c06\u6839\u636e\u60a8\u7684\u53cd\u9988\uff0c\u4e3a\u6bcf\u4f4d\u7528\u6237\u6253\u9020\u66f4\u597d\u7684\u4f53\u9a8c\u3002"
+            ],
+            "Feedback": [
+                "\u53cd\u9988"
+            ],
+            "Ask Store Copilot anything about your store - get insights, or manage products and orders right from chat.": [
+                "\u5411\u5e97\u94fa\u526f\u9a7e\u9a76\u54a8\u8be2\u6709\u5173\u5e97\u94fa\u7684\u4efb\u4f55\u95ee\u9898\u2014\u2014\u83b7\u53d6\u6d1e\u5bdf\uff0c\u6216\u76f4\u63a5\u5728\u804a\u5929\u4e2d\u7ba1\u7406\u5546\u54c1\u548c\u8ba2\u5355\u3002"
+            ],
+            "What is today's total revenue?": [
+                "\u4eca\u5929\u7684\u603b\u6536\u5165\u662f\u591a\u5c11\uff1f"
+            ],
+            "How many orders were placed this week?": [
+                "\u672c\u5468\u5171\u4e0b\u4e86\u591a\u5c11\u8ba2\u5355\uff1f"
+            ],
+            "Which product is performing best?": [
+                "\u54ea\u6b3e\u5546\u54c1\u8868\u73b0\u6700\u597d\uff1f"
+            ],
+            "What is my average order value this month?": [
+                "\u6211\u672c\u6708\u7684\u5e73\u5747\u8ba2\u5355\u91d1\u989d\u662f\u591a\u5c11\uff1f"
+            ],
+            "How many new vs returning customers this week?": [
+                "\u672c\u5468\u65b0\u5ba2\u6237\u4e0e\u56de\u5934\u5ba2\u5404\u6709\u591a\u5c11\uff1f"
+            ],
+            "Which products are low in stock?": [
+                "\u54ea\u4e9b\u5546\u54c1\u5e93\u5b58\u4e0d\u8db3\uff1f"
+            ],
+            "Examples": [
+                "\u793a\u4f8b"
+            ],
+            "Uses %d credit.": [
+                "\u6d88\u8017 %d \u4e2a\u989d\u5ea6\u3002"
+            ],
+            "%d Credit": [
+                "%d \u4e2a\u989d\u5ea6"
+            ],
+            "Remaining": [
+                "\u5269\u4f59"
+            ],
+            "Network response was not okay": [
+                "\u7f51\u7edc\u54cd\u5e94\u5f02\u5e38"
+            ],
+            "No answer found": [
+                "\u672a\u627e\u5230\u7b54\u6848"
+            ],
+            "Ask a Question": [
+                "\u63d0\u95ee"
+            ],
+            "No credits available": [
+                "\u6ca1\u6709\u53ef\u7528\u989d\u5ea6"
+            ],
+            "Two AI Agents, One Free Key": [
+                "\u4e24\u4e2a AI \u667a\u80fd\u4f53\uff0c\u4e00\u4e2a\u514d\u8d39\u5bc6\u94a5"
+            ],
+            "Connect a free API key -": [
+                "\u8fde\u63a5\u4e00\u4e2a\u514d\u8d39\u7684 API \u5bc6\u94a5 -"
+            ],
+            "100 AI credits": [
+                "100 \u4e2a AI \u989d\u5ea6"
+            ],
+            "free, more with": [
+                "\u514d\u8d39\uff0c\u66f4\u591a\u8bf7\u5347\u7ea7"
+            ],
+            "Store Copilot - For You": [
+                "\u5e97\u94fa\u526f\u9a7e\u9a76 - \u4e3a\u60a8\u670d\u52a1"
+            ],
+            "Chat to run your store: ask about sales, create and edit products, and update orders - in plain English, with your approval.": [
+                "\u901a\u8fc7\u804a\u5929\u7ba1\u7406\u60a8\u7684\u5e97\u94fa\uff1a\u67e5\u8be2\u9500\u552e\u60c5\u51b5\u3001\u521b\u5efa\u548c\u7f16\u8f91\u5546\u54c1\u3001\u66f4\u65b0\u8ba2\u5355\u2014\u2014\u7528\u65e5\u5e38\u8bed\u8a00\u5373\u53ef\u5b8c\u6210\uff0c\u4e14\u9700\u7ecf\u60a8\u786e\u8ba4\u3002"
+            ],
+            "Shopping Agent - For Your Shoppers": [
+                "\u8d2d\u7269\u667a\u80fd\u4f53 - \u4e3a\u60a8\u7684\u987e\u5ba2\u670d\u52a1"
+            ],
+            "A 24\/7 storefront agent that helps customers find the right product, answers their questions, and places orders for them.": [
+                "\u5168\u5929\u5019\u7684\u5e97\u94fa\u667a\u80fd\u4f53\uff0c\u5e2e\u52a9\u5ba2\u6237\u627e\u5230\u5408\u9002\u7684\u5546\u54c1\u3001\u89e3\u7b54\u4ed6\u4eec\u7684\u7591\u95ee\uff0c\u5e76\u4e3a\u4ed6\u4eec\u4e0b\u5355\u3002"
+            ],
+            "Plus": [
+                "\u53e6\u5916"
+            ],
+            "& more.": [
+                "\u7b49\u66f4\u591a\u529f\u80fd\u3002"
+            ],
+            "Each AI request transmits only the relevant records - the item you're working on, or a shopper's query and its products - to EasyCommerce's AI service. Your bulk customer and order data is never uploaded, sold, or used to train models.": [
+                "\u6bcf\u6b21 AI \u8bf7\u6c42\u4ec5\u5c06\u76f8\u5173\u8bb0\u5f55\u2014\u2014\u60a8\u6b63\u5728\u5904\u7406\u7684\u5546\u54c1\uff0c\u6216\u987e\u5ba2\u7684\u67e5\u8be2\u53ca\u5176\u76f8\u5173\u5546\u54c1\u2014\u2014\u4f20\u8f93\u81f3 EasyCommerce \u7684 AI \u670d\u52a1\u3002\u60a8\u7684\u6279\u91cf\u5ba2\u6237\u548c\u8ba2\u5355\u6570\u636e\u7edd\u4e0d\u4f1a\u88ab\u4e0a\u4f20\u3001\u51fa\u552e\u6216\u7528\u4e8e\u8bad\u7ec3\u6a21\u578b\u3002"
+            ],
+            "Learn more.": [
+                "\u4e86\u89e3\u66f4\u591a\u3002"
+            ],
+            "I have an API key": [
+                "\u6211\u5df2\u6709 API \u5bc6\u94a5"
+            ],
+            "I want an API key": [
+                "\u6211\u60f3\u8981\u4e00\u4e2a API \u5bc6\u94a5"
+            ],
+            "Please fill all the fields": [
+                "\u8bf7\u586b\u5199\u6240\u6709\u5b57\u6bb5"
+            ],
+            "Enter Your Connection Key": [
+                "\u8f93\u5165\u60a8\u7684\u8fde\u63a5\u5bc6\u94a5"
+            ],
+            "The link in your email connects AI automatically. To do it manually, paste the key we emailed below.": [
+                "\u90ae\u4ef6\u4e2d\u7684\u94fe\u63a5\u4f1a\u81ea\u52a8\u8fde\u63a5 AI\u3002\u82e5\u8981\u624b\u52a8\u8fde\u63a5\uff0c\u8bf7\u5c06\u6211\u4eec\u53d1\u9001\u5230\u90ae\u7bb1\u7684\u5bc6\u94a5\u7c98\u8d34\u5230\u4e0b\u65b9\u3002"
+            ],
+            "Your Key": [
+                "\u60a8\u7684\u5bc6\u94a5"
+            ],
+            "Paste your key": [
+                "\u7c98\u8d34\u60a8\u7684\u5bc6\u94a5"
+            ],
+            "I don't have a key": [
+                "\u6211\u6ca1\u6709\u5bc6\u94a5"
+            ],
+            "Check your email and click the link to connect AI.": [
+                "\u8bf7\u67e5\u770b\u60a8\u7684\u7535\u5b50\u90ae\u7bb1\u5e76\u70b9\u51fb\u94fe\u63a5\u4ee5\u8fde\u63a5 AI\u3002"
+            ],
+            "Connect EasyCommerce AI": [
+                "\u8fde\u63a5 EasyCommerce AI"
+            ],
+            "Enter your name and email - we'll send a one-click link to connect AI, plus a backup key.": [
+                "\u8bf7\u8f93\u5165\u60a8\u7684\u59d3\u540d\u548c\u7535\u5b50\u90ae\u7bb1\u2014\u2014\u6211\u4eec\u5c06\u53d1\u9001\u4e00\u4e2a\u4e00\u952e\u8fde\u63a5 AI \u7684\u94fe\u63a5\uff0c\u4ee5\u53ca\u4e00\u4e2a\u5907\u7528\u5bc6\u94a5\u3002"
+            ],
+            "Your Name": [
+                "\u60a8\u7684\u59d3\u540d"
+            ],
+            "Enter your Name": [
+                "\u8bf7\u8f93\u5165\u60a8\u7684\u59d3\u540d"
+            ],
+            "Email My Link": [
+                "\u5c06\u94fe\u63a5\u53d1\u9001\u5230\u6211\u7684\u90ae\u7bb1"
+            ],
+            "I already have a key": [
+                "\u6211\u5df2\u6709\u5bc6\u94a5"
+            ],
+            "Join Community": [
+                "\u52a0\u5165\u793e\u533a"
+            ],
+            "Support": [
+                "\u652f\u6301"
+            ],
+            "Disconnect": [
+                "\u65ad\u5f00\u8fde\u63a5"
+            ],
+            "Dismiss this notice": [
+                "\u5173\u95ed\u6b64\u901a\u77e5"
+            ],
+            "Last 7 days": [
+                "\u6700\u8fd1 7 \u5929"
+            ],
+            "Last 30 days": [
+                "\u6700\u8fd1 30 \u5929"
+            ],
+            "This week": [
+                "\u672c\u5468"
+            ],
+            "This month": [
+                "\u672c\u6708"
+            ],
+            "This year": [
+                "\u4eca\u5e74"
+            ],
+            "View all": [
+                "\u67e5\u770b\u5168\u90e8"
+            ],
+            "Show Digits": [
+                "\u663e\u793a\u6570\u5b57"
+            ],
+            "Hide Digits": [
+                "\u9690\u85cf\u6570\u5b57"
+            ],
+            "Previous %s": [
+                "\u4e0a\u4e00\u4e2a %s"
+            ],
+            "Product Name": [
+                "\u5546\u54c1\u540d\u79f0"
+            ],
+            "Items Sold": [
+                "\u5df2\u552e\u6570\u91cf"
+            ],
+            "Total Sales": [
+                "\u603b\u9500\u552e\u989d"
+            ],
+            "No top selling products found.": [
+                "\u672a\u627e\u5230\u70ed\u9500\u5546\u54c1\u3002"
+            ],
+            "No low stock products found.": [
+                "\u672a\u627e\u5230\u5e93\u5b58\u4e0d\u8db3\u7684\u5546\u54c1\u3002"
+            ],
+            "Abandoned Cart Details": [
+                "\u5f03\u8d2d\u8d2d\u7269\u8f66\u8be6\u60c5"
+            ],
+            "Last Activity": [
+                "\u6700\u8fd1\u6d3b\u52a8"
+            ],
+            "%ds ago": [
+                "%d \u79d2\u524d"
+            ],
+            "%dm ago": [
+                "%d \u5206\u949f\u524d"
+            ],
+            "%dh ago": [
+                "%d \u5c0f\u65f6\u524d"
+            ],
+            "%dd ago": [
+                "%d \u5929\u524d"
+            ],
+            "Total Products": [
+                "\u5546\u54c1\u603b\u6570"
+            ],
+            "Reminder": [
+                "\u63d0\u9192"
+            ],
+            "Cart Summary": [
+                "\u8d2d\u7269\u8f66\u6458\u8981"
+            ],
+            "Subject Line": [
+                "\u4e3b\u9898\u884c"
+            ],
+            "Complete your purchase - Items waiting in your cart!": [
+                "\u5b8c\u6210\u60a8\u7684\u8d2d\u4e70 - \u5546\u54c1\u6b63\u5728\u8d2d\u7269\u8f66\u4e2d\u7b49\u5f85\u60a8\uff01"
+            ],
+            "Email Message": [
+                "\u90ae\u4ef6\u5185\u5bb9"
+            ],
+            "Abandoned cart deleted successfully": [
+                "\u5f03\u8d2d\u8d2d\u7269\u8f66\u5220\u9664\u6210\u529f"
+            ],
+            "Failed to delete abandoned cart. Please try again.": [
+                "\u5220\u9664\u5f03\u8d2d\u8d2d\u7269\u8f66\u5931\u8d25\u3002\u8bf7\u91cd\u8bd5\u3002"
+            ],
+            "Deleting...": [
+                "\u5220\u9664\u4e2d\u2026\u2026"
+            ],
+            "Delete": [
+                "\u5220\u9664"
+            ],
+            "Something went wrong. Please try again.": [
+                "\u51fa\u9519\u4e86\u3002\u8bf7\u91cd\u8bd5\u3002"
+            ],
+            "Send Email": [
+                "\u53d1\u9001\u90ae\u4ef6"
+            ],
+            "Cart Items": [
+                "\u8d2d\u7269\u8f66\u5546\u54c1"
+            ],
+            "Variant": [
+                "\u53d8\u4f53"
+            ],
+            "Loading cart items...": [
+                "\u6b63\u5728\u52a0\u8f7d\u8d2d\u7269\u8f66\u5546\u54c1\u2026\u2026"
+            ],
+            "No items found.": [
+                "\u672a\u627e\u5230\u5546\u54c1\u3002"
+            ],
+            "No abandoned carts found.": [
+                "\u672a\u627e\u5230\u5f03\u8d2d\u8d2d\u7269\u8f66\u3002"
+            ],
+            "No activities found.": [
+                "\u672a\u627e\u5230\u6d3b\u52a8\u3002"
+            ],
+            "Join the community and post your issue to get a faster response.": [
+                "\u52a0\u5165\u793e\u533a\u5e76\u53d1\u5e03\u60a8\u7684\u95ee\u9898\uff0c\u4ee5\u83b7\u5f97\u66f4\u5feb\u7684\u56de\u590d\u3002"
+            ],
+            "Latest Orders": [
+                "\u6700\u65b0\u8ba2\u5355"
+            ],
+            "Recent Sales": [
+                "\u6700\u8fd1\u9500\u552e"
+            ],
+            "Top Selling": [
+                "\u70ed\u9500"
+            ],
+            "Recent Activities": [
+                "\u6700\u8fd1\u6d3b\u52a8"
+            ],
+            "Failed to update status": [
+                "\u66f4\u65b0\u72b6\u6001\u5931\u8d25"
+            ],
+            "Dropdown Arrow": [
+                "\u4e0b\u62c9\u7bad\u5934"
+            ],
+            "Category": [
+                "\u5206\u7c7b"
+            ],
+            "Total Sale": [
+                "\u603b\u9500\u552e\u989d"
+            ],
+            "Restore": [
+                "\u6062\u590d"
+            ],
+            "Edit": [
+                "\u7f16\u8f91"
+            ],
+            "Builder": [
+                "\u6784\u5efa\u5668"
+            ],
+            "Select status": [
+                "\u9009\u62e9\u72b6\u6001"
+            ],
+            "Reset": [
+                "\u91cd\u7f6e"
+            ],
+            "Are you sure you want to delete?": [
+                "\u60a8\u786e\u5b9a\u8981\u5220\u9664\u5417\uff1f"
+            ],
+            "You're going to delete this, are you sure?": [
+                "\u60a8\u5373\u5c06\u5220\u9664\u6b64\u9879\uff0c\u786e\u5b9a\u5417\uff1f"
+            ],
+            "No, Keep it": [
+                "\u4e0d\uff0c\u4fdd\u7559"
+            ],
+            "Yes, Delete": [
+                "\u662f\uff0c\u5220\u9664"
+            ],
+            "Delete Permanently": [
+                "\u6c38\u4e45\u5220\u9664"
+            ],
+            "Are you sure you want to update?": [
+                "\u60a8\u786e\u5b9a\u8981\u66f4\u65b0\u5417\uff1f"
+            ],
+            "You're going to update <strong>All<\/strong> are you sure?": [
+                "\u60a8\u5373\u5c06\u66f4\u65b0<strong>\u5168\u90e8<\/strong>\uff0c\u786e\u5b9a\u5417\uff1f"
+            ],
+            "No, Keep as it is": [
+                "\u4e0d\uff0c\u4fdd\u6301\u539f\u6837"
+            ],
+            "Yes, Update": [
+                "\u662f\uff0c\u66f4\u65b0"
+            ],
+            "Product deleted": [
+                "\u5546\u54c1\u5df2\u5220\u9664"
+            ],
+            "Delete failed.": [
+                "\u5220\u9664\u5931\u8d25\u3002"
+            ],
+            "Something went wrong.": [
+                "\u51fa\u9519\u4e86\u3002"
+            ],
+            "Set Status": [
+                "\u8bbe\u7f6e\u72b6\u6001"
+            ],
+            "Status updated successfully": [
+                "\u72b6\u6001\u66f4\u65b0\u6210\u529f"
+            ],
+            "Failed to update products.": [
+                "\u66f4\u65b0\u5546\u54c1\u5931\u8d25\u3002"
+            ],
+            "An error occurred while updating statuses.": [
+                "\u66f4\u65b0\u72b6\u6001\u65f6\u53d1\u751f\u9519\u8bef\u3002"
+            ],
+            "Please select a valid status.": [
+                "\u8bf7\u9009\u62e9\u4e00\u4e2a\u6709\u6548\u7684\u72b6\u6001\u3002"
+            ],
+            "Please select a CSV file": [
+                "\u8bf7\u9009\u62e9\u4e00\u4e2a CSV \u6587\u4ef6"
+            ],
+            "Failed to upload CSV": [
+                "\u4e0a\u4f20 CSV \u5931\u8d25"
+            ],
+            "Upload failed": [
+                "\u4e0a\u4f20\u5931\u8d25"
+            ],
+            "Columns mapped successfully": [
+                "\u5217\u6620\u5c04\u6210\u529f"
+            ],
+            "Failed to map columns": [
+                "\u5217\u6620\u5c04\u5931\u8d25"
+            ],
+            "Mapping failed": [
+                "\u6620\u5c04\u5931\u8d25"
+            ],
+            "Failed to start import": [
+                "\u542f\u52a8\u5bfc\u5165\u5931\u8d25"
+            ],
+            "Import started in background...": [
+                "\u5df2\u5728\u540e\u53f0\u5f00\u59cb\u5bfc\u5165\u2026\u2026"
+            ],
+            "Import completed! %d product imported": [
+                "\u5bfc\u5165\u5b8c\u6210\uff01\u5df2\u5bfc\u5165 %d \u4e2a\u5546\u54c1"
+            ],
+            "%d error occurred": [
+                "\u53d1\u751f\u4e86 %d \u4e2a\u9519\u8bef"
+            ],
+            "Import failed to start": [
+                "\u5bfc\u5165\u542f\u52a8\u5931\u8d25"
+            ],
+            "Description": [
+                "\u63cf\u8ff0"
+            ],
+            "Thumbnail Url": [
+                "\u7f29\u7565\u56fe URL"
+            ],
+            "Attribute Names": [
+                "\u5c5e\u6027\u540d\u79f0"
+            ],
+            "Attribute Values Name": [
+                "\u5c5e\u6027\u503c\u540d\u79f0"
+            ],
+            "Attribute Values Value": [
+                "\u5c5e\u6027\u503c"
+            ],
+            "Variation Names": [
+                "\u53d8\u4f53\u540d\u79f0"
+            ],
+            "Variation Types": [
+                "\u53d8\u4f53\u7c7b\u578b"
+            ],
+            "Variation Status": [
+                "\u53d8\u4f53\u72b6\u6001"
+            ],
+            "Regular Prices": [
+                "\u539f\u4ef7"
+            ],
+            "Sale Prices": [
+                "\u4fc3\u9500\u4ef7"
+            ],
+            "SKUs": [
+                "SKU"
+            ],
+            "Stock Quantities": [
+                "\u5e93\u5b58\u6570\u91cf"
+            ],
+            "Stock Limits": [
+                "\u5e93\u5b58\u4e0b\u9650"
+            ],
+            "Variation Attribute Names": [
+                "\u53d8\u4f53\u5c5e\u6027\u540d\u79f0"
+            ],
+            "Variation Attribute Values": [
+                "\u53d8\u4f53\u5c5e\u6027\u503c"
+            ],
+            "Managed Stocks": [
+                "\u5e93\u5b58\u7ba1\u7406"
+            ],
+            "Tax Classes": [
+                "\u7a0e\u79cd"
+            ],
+            "Thumbnail URLs": [
+                "\u7f29\u7565\u56fe URL"
+            ],
+            "Width Values": [
+                "\u5bbd\u5ea6\u503c"
+            ],
+            "Width Units": [
+                "\u5bbd\u5ea6\u5355\u4f4d"
+            ],
+            "Height Values": [
+                "\u9ad8\u5ea6\u503c"
+            ],
+            "Height Units": [
+                "\u9ad8\u5ea6\u5355\u4f4d"
+            ],
+            "Weight Values": [
+                "\u91cd\u91cf\u503c"
+            ],
+            "Weight Units": [
+                "\u91cd\u91cf\u5355\u4f4d"
+            ],
+            "Length Values": [
+                "\u957f\u5ea6\u503c"
+            ],
+            "Length Units": [
+                "\u957f\u5ea6\u5355\u4f4d"
+            ],
+            "Meta Gallery URLs": [
+                "\u56fe\u5e93 URL"
+            ],
+            "Meta Gallery Titles": [
+                "\u56fe\u5e93\u6807\u9898"
+            ],
+            "Meta Templates": [
+                "\u6a21\u677f"
+            ],
+            "Show Reviews": [
+                "\u663e\u793a\u8bc4\u4ef7"
+            ],
+            "Review Text Mandatory": [
+                "\u8bc4\u4ef7\u5185\u5bb9\u5fc5\u586b"
+            ],
+            "Hide From Shop": [
+                "\u4ece\u5546\u5e97\u4e2d\u9690\u85cf"
+            ],
+            "Noindex": [
+                "Noindex"
+            ],
+            "Published Date": [
+                "\u53d1\u5e03\u65e5\u671f"
+            ],
+            "Upload CSV": [
+                "\u4e0a\u4f20 CSV"
+            ],
+            "Column Mapping": [
+                "\u5217\u6620\u5c04"
+            ],
+            "Import": [
+                "\u5bfc\u5165"
+            ],
+            "Upload CSV File": [
+                "\u4e0a\u4f20 CSV \u6587\u4ef6"
+            ],
+            "Download the": [
+                "\u4e0b\u8f7d"
+            ],
+            "Demo CSV": [
+                "\u6f14\u793a CSV"
+            ],
+            "file. Add your data, upload it below, and click continue. To learn more,": [
+                "\u6587\u4ef6\u3002\u6dfb\u52a0\u60a8\u7684\u6570\u636e\uff0c\u5728\u4e0b\u65b9\u4e0a\u4f20\uff0c\u7136\u540e\u70b9\u51fb\u201c\u7ee7\u7eed\u201d\u3002\u8981\u4e86\u89e3\u66f4\u591a\u4fe1\u606f\uff0c"
+            ],
+            "click here": [
+                "\u8bf7\u70b9\u51fb\u6b64\u5904"
+            ],
+            "Uploading...": [
+                "\u4e0a\u4f20\u4e2d\u2026\u2026"
+            ],
+            "Continue": [
+                "\u7ee7\u7eed"
+            ],
+            "Column Name": [
+                "\u5217\u540d"
+            ],
+            "Map to Field": [
+                "\u6620\u5c04\u5230\u5b57\u6bb5"
+            ],
+            "Do not import": [
+                "\u4e0d\u5bfc\u5165"
+            ],
+            "Mapping...": [
+                "\u6620\u5c04\u4e2d\u2026\u2026"
+            ],
+            "Import Products": [
+                "\u5bfc\u5165\u5546\u54c1"
+            ],
+            "Importing...": [
+                "\u5bfc\u5165\u4e2d\u2026\u2026"
+            ],
+            "%1$d of %2$d products": [
+                "%2$d \u4e2a\u5546\u54c1\u4e2d\u7684 %1$d \u4e2a"
+            ],
+            "Products are ready to import. Click the button below to start importing.": [
+                "\u5546\u54c1\u5df2\u51c6\u5907\u597d\u5bfc\u5165\u3002\u8bf7\u70b9\u51fb\u4e0b\u65b9\u6309\u94ae\u5f00\u59cb\u5bfc\u5165\u3002"
+            ],
+            "Import Now": [
+                "\u7acb\u5373\u5bfc\u5165"
+            ],
+            "Demo products imported!": [
+                "\u6f14\u793a\u5546\u54c1\u5df2\u5bfc\u5165\uff01"
+            ],
+            "Failed to import": [
+                "\u5bfc\u5165\u5931\u8d25"
+            ],
+            "Failed to import demo products": [
+                "\u5bfc\u5165\u6f14\u793a\u5546\u54c1\u5931\u8d25"
+            ],
+            "Importing Sample Products": [
+                "\u6b63\u5728\u5bfc\u5165\u793a\u4f8b\u5546\u54c1"
+            ],
+            "We are generating some sample products into your store. You can refresh the page to see the progress..": [
+                "\u6211\u4eec\u6b63\u5728\u4e3a\u60a8\u7684\u5e97\u94fa\u751f\u6210\u4e00\u4e9b\u793a\u4f8b\u5546\u54c1\u3002\u60a8\u53ef\u4ee5\u5237\u65b0\u9875\u9762\u67e5\u770b\u8fdb\u5ea6\u2026\u2026"
+            ],
+            "All": [
+                "\u5168\u90e8"
+            ],
+            "Product trashed successfully!": [
+                "\u5546\u54c1\u5df2\u6210\u529f\u79fb\u81f3\u56de\u6536\u7ad9\uff01"
+            ],
+            "Product deleted successfully!": [
+                "\u5546\u54c1\u5220\u9664\u6210\u529f\uff01"
+            ],
+            "No %s Products Found": [
+                "\u672a\u627e\u5230 %s \u5546\u54c1"
+            ],
+            "Your Store is Empty": [
+                "\u60a8\u7684\u5e97\u94fa\u662f\u7a7a\u7684"
+            ],
+            "Create a new product or generate samples to get started.": [
+                "\u521b\u5efa\u65b0\u5546\u54c1\u6216\u751f\u6210\u793a\u4f8b\u5546\u54c1\u5373\u53ef\u5f00\u59cb\u3002"
+            ],
+            "or": [
+                "\u6216"
+            ],
+            "Generate Samples": [
+                "\u751f\u6210\u793a\u4f8b"
+            ],
+            "Write a short, compelling product sumamry with key features and benefits.": [
+                "\u64b0\u5199\u4e00\u6bb5\u7b80\u77ed\u800c\u6709\u5438\u5f15\u529b\u7684\u5546\u54c1\u6458\u8981\uff0c\u7a81\u51fa\u4e3b\u8981\u529f\u80fd\u548c\u4f18\u52bf\u3002"
+            ],
+            "Write a detailed, persuasive product description covering features, benefits, use cases, and why it's a great choice. Mention features in ordered list if any.": [
+                "\u64b0\u5199\u4e00\u6bb5\u8be6\u7ec6\u800c\u6709\u8bf4\u670d\u529b\u7684\u5546\u54c1\u63cf\u8ff0\uff0c\u6db5\u76d6\u529f\u80fd\u3001\u4f18\u52bf\u3001\u4f7f\u7528\u573a\u666f\uff0c\u4ee5\u53ca\u4e3a\u4f55\u5b83\u662f\u7edd\u4f73\u4e4b\u9009\u3002\u5982\u6709\u529f\u80fd\u7279\u6027\uff0c\u8bf7\u4ee5\u6709\u5e8f\u5217\u8868\u5f62\u5f0f\u5217\u51fa\u3002"
+            ],
+            "Invalid response from AI service. Please try again.": [
+                "AI \u670d\u52a1\u8fd4\u56de\u7684\u54cd\u5e94\u65e0\u6548\u3002\u8bf7\u91cd\u8bd5\u3002"
+            ],
+            "AI Copywriter": [
+                "AI \u6587\u6848\u52a9\u624b"
+            ],
+            "AI-powered copy writer to write your product description and summary": [
+                "\u7531 AI \u9a71\u52a8\u7684\u6587\u6848\u52a9\u624b\uff0c\u4e3a\u60a8\u64b0\u5199\u5546\u54c1\u63cf\u8ff0\u548c\u6458\u8981"
+            ],
+            "You have used all your free credits.": [
+                "\u60a8\u5df2\u7528\u5b8c\u6240\u6709\u514d\u8d39\u989d\u5ea6\u3002"
+            ],
+            "Upgrade Now": [
+                "\u7acb\u5373\u5347\u7ea7"
+            ],
+            "Please type your instructions here": [
+                "\u8bf7\u5728\u6b64\u8f93\u5165\u60a8\u7684\u6307\u4ee4"
+            ],
+            "loading": [
+                "\u52a0\u8f7d\u4e2d"
+            ],
+            "Generate": [
+                "\u751f\u6210"
+            ],
+            "Product Summary": [
+                "\u5546\u54c1\u6458\u8981"
+            ],
+            "Write a compelling summary to highlight key product features.": [
+                "\u64b0\u5199\u4e00\u6bb5\u6709\u5438\u5f15\u529b\u7684\u6458\u8981\uff0c\u7a81\u51fa\u5546\u54c1\u7684\u4e3b\u8981\u529f\u80fd\u3002"
+            ],
+            "Add product title first!": [
+                "\u8bf7\u5148\u6dfb\u52a0\u5546\u54c1\u6807\u9898\uff01"
+            ],
+            "Generate with AI": [
+                "\u4f7f\u7528 AI \u751f\u6210"
+            ],
+            "Briefly describe the product, its key benefit, and who it\u2019s for. Keep it within 20\u201340 words.": [
+                "\u7b80\u8981\u63cf\u8ff0\u5546\u54c1\u3001\u5176\u4e3b\u8981\u4f18\u52bf\u53ca\u9002\u7528\u4eba\u7fa4\u3002\u8bf7\u63a7\u5236\u5728 20\u201340 \u5b57\u4ee5\u5185\u3002"
+            ],
+            "Selected": [
+                "\u5df2\u9009\u62e9"
+            ],
+            "Select Options": [
+                "\u9009\u62e9\u9009\u9879"
+            ],
+            "Loading attribute...": [
+                "\u6b63\u5728\u52a0\u8f7d\u5c5e\u6027\u2026\u2026"
+            ],
+            "Attribute name are required!": [
+                "\u5c5e\u6027\u540d\u79f0\u4e3a\u5fc5\u586b\u9879\uff01"
+            ],
+            "Attribute slug are required!": [
+                "\u5c5e\u6027\u522b\u540d\u4e3a\u5fc5\u586b\u9879\uff01"
+            ],
+            "Attribute name already exists!": [
+                "\u5c5e\u6027\u540d\u79f0\u5df2\u5b58\u5728\uff01"
+            ],
+            "Attribute slug already exists!": [
+                "\u5c5e\u6027\u522b\u540d\u5df2\u5b58\u5728\uff01"
+            ],
+            "Option %d must have a label!": [
+                "\u9009\u9879 %d \u5fc5\u987b\u6709\u6807\u7b7e\uff01"
+            ],
+            "Option %d must have a label and image": [
+                "\u9009\u9879 %d \u5fc5\u987b\u6709\u6807\u7b7e\u548c\u56fe\u7247"
+            ],
+            "Option %d must have a label and color": [
+                "\u9009\u9879 %d \u5fc5\u987b\u6709\u6807\u7b7e\u548c\u989c\u8272"
+            ],
+            "Duplicate option labels are not allowed!": [
+                "\u4e0d\u5141\u8bb8\u4f7f\u7528\u91cd\u590d\u7684\u9009\u9879\u6807\u7b7e\uff01"
+            ],
+            "Attribute updated successfully!": [
+                "\u5c5e\u6027\u66f4\u65b0\u6210\u529f\uff01"
+            ],
+            "Attribute created successfully!": [
+                "\u5c5e\u6027\u521b\u5efa\u6210\u529f\uff01"
+            ],
+            "It'll show on the single product screen": [
+                "\u5b83\u5c06\u663e\u793a\u5728\u5355\u4e2a\u5546\u54c1\u9875\u9762\u4e0a"
+            ],
+            "Enter Name": [
+                "\u8bf7\u8f93\u5165\u540d\u79f0"
+            ],
+            "URL-friendly slug of the attribute": [
+                "\u5c5e\u6027\u7684 URL \u53cb\u597d\u522b\u540d"
+            ],
+            "How customers will see this on the single product screen": [
+                "\u5ba2\u6237\u5728\u5355\u4e2a\u5546\u54c1\u9875\u9762\u4e0a\u770b\u5230\u7684\u663e\u793a\u65b9\u5f0f"
+            ],
+            "Options": [
+                "\u9009\u9879"
+            ],
+            "Options of the attribute": [
+                "\u5c5e\u6027\u7684\u9009\u9879"
+            ],
+            "Select an Image": [
+                "\u9009\u62e9\u4e00\u5f20\u56fe\u7247"
+            ],
+            "Use this image": [
+                "\u4f7f\u7528\u6b64\u56fe\u7247"
+            ],
+            "Update Attribute": [
+                "\u66f4\u65b0\u5c5e\u6027"
+            ],
+            "Create Attribute": [
+                "\u521b\u5efa\u5c5e\u6027"
+            ],
+            "Attribute deleted successfully!": [
+                "\u5c5e\u6027\u5220\u9664\u6210\u529f\uff01"
+            ],
+            "Failed to delete attribute.": [
+                "\u5220\u9664\u5c5e\u6027\u5931\u8d25\u3002"
+            ],
+            "Delete failed, please try again.": [
+                "\u5220\u9664\u5931\u8d25\uff0c\u8bf7\u91cd\u8bd5\u3002"
+            ],
+            "No attributes found.": [
+                "\u672a\u627e\u5230\u5c5e\u6027\u3002"
+            ],
+            "Add New Attribute": [
+                "\u65b0\u589e\u5c5e\u6027"
+            ],
+            "Add to Product": [
+                "\u6dfb\u52a0\u5230\u5546\u54c1"
+            ],
+            "Edit Attribute: %s": [
+                "\u7f16\u8f91\u5c5e\u6027\uff1a%s"
+            ],
+            "AI Attributes Generator": [
+                "AI \u5c5e\u6027\u751f\u6210\u5668"
+            ],
+            "AI-powered attribute generator to create product attributes": [
+                "\u7531 AI \u9a71\u52a8\u7684\u5c5e\u6027\u751f\u6210\u5668\uff0c\u7528\u4e8e\u521b\u5efa\u5546\u54c1\u5c5e\u6027"
+            ],
+            "Number of Attributes to Generate": [
+                "\u8981\u751f\u6210\u7684\u5c5e\u6027\u6570\u91cf"
+            ],
+            "Number of Values Per Attribute": [
+                "\u6bcf\u4e2a\u5c5e\u6027\u7684\u503c\u6570\u91cf"
+            ],
+            "Attributes generated successfully!": [
+                "\u5c5e\u6027\u751f\u6210\u6210\u529f\uff01"
+            ],
+            "Failed to generate attributes": [
+                "\u751f\u6210\u5c5e\u6027\u5931\u8d25"
+            ],
+            "Add attributes to your product to help customers filter and search for products more easily.": [
+                "\u4e3a\u60a8\u7684\u5546\u54c1\u6dfb\u52a0\u5c5e\u6027\uff0c\u5e2e\u52a9\u5ba2\u6237\u66f4\u8f7b\u677e\u5730\u7b5b\u9009\u548c\u641c\u7d22\u5546\u54c1\u3002"
+            ],
+            "Generating...": [
+                "\u751f\u6210\u4e2d\u2026\u2026"
+            ],
+            "Fetching generated attributes...": [
+                "\u6b63\u5728\u83b7\u53d6\u751f\u6210\u7684\u5c5e\u6027\u2026\u2026"
+            ],
+            "No attributes are added yet. Click the \"Add New\" button below to add attributes to this product.": [
+                "\u5c1a\u672a\u6dfb\u52a0\u4efb\u4f55\u5c5e\u6027\u3002\u70b9\u51fb\u4e0b\u65b9\u7684\u201c\u65b0\u589e\u201d\u6309\u94ae\uff0c\u4e3a\u6b64\u5546\u54c1\u6dfb\u52a0\u5c5e\u6027\u3002"
+            ],
+            "Add options like color or size. Click the \"Manage Attributes\" button below or \"Generate with AI\" above.": [
+                "\u6dfb\u52a0\u989c\u8272\u6216\u5c3a\u5bf8\u7b49\u9009\u9879\u3002\u70b9\u51fb\u4e0b\u65b9\u7684\u201c\u7ba1\u7406\u5c5e\u6027\u201d\u6309\u94ae\uff0c\u6216\u4e0a\u65b9\u7684\u201c\u4f7f\u7528 AI \u751f\u6210\u201d\u3002"
+            ],
+            "Add Attribute": [
+                "\u6dfb\u52a0\u5c5e\u6027"
+            ],
+            "Write variation name": [
+                "\u586b\u5199\u53d8\u4f53\u540d\u79f0"
+            ],
+            "Expand": [
+                "\u5c55\u5f00"
+            ],
+            "Product Type": [
+                "\u5546\u54c1\u7c7b\u578b"
+            ],
+            "Physical Product": [
+                "\u5b9e\u7269\u5546\u54c1"
+            ],
+            "Digital Product": [
+                "\u6570\u5b57\u5546\u54c1"
+            ],
+            "Select %s": [
+                "\u9009\u62e9 %s"
+            ],
+            "If there is no sale going on for this variation, simply leave it blank.": [
+                "\u5982\u679c\u6b64\u53d8\u4f53\u6ca1\u6709\u6b63\u5728\u8fdb\u884c\u7684\u4fc3\u9500\uff0c\u7559\u7a7a\u5373\u53ef\u3002"
+            ],
+            "Sale price should be less than regular price.": [
+                "\u4fc3\u9500\u4ef7\u5e94\u4f4e\u4e8e\u539f\u4ef7\u3002"
+            ],
+            "Calculate profit margin": [
+                "\u8ba1\u7b97\u5229\u6da6\u7387"
+            ],
+            "Cost of Goods": [
+                "\u5546\u54c1\u6210\u672c"
+            ],
+            "Enter Cost": [
+                "\u8bf7\u8f93\u5165\u6210\u672c"
+            ],
+            "Profit": [
+                "\u5229\u6da6"
+            ],
+            "Yet to calculate": [
+                "\u5c1a\u672a\u8ba1\u7b97"
+            ],
+            "Margin": [
+                "\u5229\u6da6\u7387"
+            ],
+            "Inventory": [
+                "\u5e93\u5b58"
+            ],
+            "Stock Count": [
+                "\u5e93\u5b58\u6570\u91cf"
+            ],
+            "Number of items we have in stock. If you don't manage stock for this variation, simply leave it blank.": [
+                "\u6211\u4eec\u7684\u5e93\u5b58\u6570\u91cf\u3002\u5982\u679c\u60a8\u4e0d\u7ba1\u7406\u6b64\u53d8\u4f53\u7684\u5e93\u5b58\uff0c\u7559\u7a7a\u5373\u53ef\u3002"
+            ],
+            "Enter Stock Count": [
+                "\u8bf7\u8f93\u5165\u5e93\u5b58\u6570\u91cf"
+            ],
+            "Low Stock Limit": [
+                "\u4f4e\u5e93\u5b58\u4e0b\u9650"
+            ],
+            "When should we call it low stock?": [
+                "\u8fbe\u5230\u591a\u5c11\u65f6\u89c6\u4e3a\u5e93\u5b58\u4e0d\u8db3\uff1f"
+            ],
+            "Stock Limit": [
+                "\u5e93\u5b58\u4e0b\u9650"
+            ],
+            "Package Dimension": [
+                "\u5305\u88f9\u5c3a\u5bf8"
+            ],
+            "Height": [
+                "\u9ad8\u5ea6"
+            ],
+            "Set Height": [
+                "\u8bbe\u7f6e\u9ad8\u5ea6"
+            ],
+            "Width": [
+                "\u5bbd\u5ea6"
+            ],
+            "Set Width": [
+                "\u8bbe\u7f6e\u5bbd\u5ea6"
+            ],
+            "Length": [
+                "\u957f\u5ea6"
+            ],
+            "Set Length": [
+                "\u8bbe\u7f6e\u957f\u5ea6"
+            ],
+            "Weight": [
+                "\u91cd\u91cf"
+            ],
+            "Set Weight": [
+                "\u8bbe\u7f6e\u91cd\u91cf"
+            ],
+            "Select Images": [
+                "\u9009\u62e9\u56fe\u7247"
+            ],
+            "Insert": [
+                "\u63d2\u5165"
+            ],
+            "Files": [
+                "\u6587\u4ef6"
+            ],
+            "File title": [
+                "\u6587\u4ef6\u6807\u9898"
+            ],
+            "Add More Files": [
+                "\u6dfb\u52a0\u66f4\u591a\u6587\u4ef6"
+            ],
+            "Uploading files...": [
+                "\u6b63\u5728\u4e0a\u4f20\u6587\u4ef6\u2026\u2026"
+            ],
+            "Click to update": [
+                "\u70b9\u51fb\u4e0a\u4f20"
+            ],
+            "or Drag and drop": [
+                "\u6216\u62d6\u653e"
+            ],
+            "Upload Files": [
+                "\u4e0a\u4f20\u6587\u4ef6"
+            ],
+            "Unlock %s": [
+                "\u89e3\u9501 %s"
+            ],
+            "See Pro Plans": [
+                "\u67e5\u770b\u4e13\u4e1a\u7248\u5957\u9910"
+            ],
+            "Addon activated successfully.": [
+                "\u6269\u5c55\u6fc0\u6d3b\u6210\u529f\u3002"
+            ],
+            "Error activating addon.": [
+                "\u6fc0\u6d3b\u6269\u5c55\u65f6\u51fa\u9519\u3002"
+            ],
+            "Install A New Addon?": [
+                "\u5b89\u88c5\u65b0\u6269\u5c55\uff1f"
+            ],
+            "This will install %s. Are you sure to proceed?": [
+                "\u8fd9\u5c06\u5b89\u88c5 %s\u3002\u60a8\u786e\u5b9a\u8981\u7ee7\u7eed\u5417\uff1f"
+            ],
+            "Install & Activate": [
+                "\u5b89\u88c5\u5e76\u6fc0\u6d3b"
+            ],
+            "Variation Name": [
+                "\u53d8\u4f53\u540d\u79f0"
+            ],
+            "Choose attributes that apply to this pricing option": [
+                "\u9009\u62e9\u9002\u7528\u4e8e\u6b64\u5b9a\u4ef7\u9009\u9879\u7684\u5c5e\u6027"
+            ],
+            "Subscription Manager": [
+                "\u8ba2\u9605\u7ba1\u7406\u5668"
+            ],
+            "Add recurring billing to your store with the EasyCommerce Subscription Addon.": [
+                "\u4f7f\u7528 EasyCommerce \u8ba2\u9605\u6269\u5c55\u4e3a\u60a8\u7684\u5e97\u94fa\u6dfb\u52a0\u5468\u671f\u6027\u8ba1\u8d39\u3002"
+            ],
+            "Enable Subscription": [
+                "\u542f\u7528\u8ba2\u9605"
+            ],
+            "Turn on subscriptions to sell products with recurring payments.": [
+                "\u5f00\u542f\u8ba2\u9605\u529f\u80fd\uff0c\u5373\u53ef\u9500\u552e\u652f\u6301\u5468\u671f\u6027\u4ed8\u6b3e\u7684\u5546\u54c1\u3002"
+            ],
+            "License Manager": [
+                "\u8bb8\u53ef\u8bc1\u7ba1\u7406\u5668"
+            ],
+            "Configure your ecommerce store with licensing capability and sell digital products and manage their licenses.": [
+                "\u4e3a\u60a8\u7684\u7535\u5546\u5e97\u94fa\u914d\u7f6e\u8bb8\u53ef\u8bc1\u529f\u80fd\uff0c\u9500\u552e\u6570\u5b57\u5546\u54c1\u5e76\u7ba1\u7406\u5176\u8bb8\u53ef\u8bc1\u3002"
+            ],
+            "Generate License": [
+                "\u751f\u6210\u8bb8\u53ef\u8bc1"
+            ],
+            "Turn on licensing to sell products that require license keys.": [
+                "\u5f00\u542f\u8bb8\u53ef\u8bc1\u529f\u80fd\uff0c\u5373\u53ef\u9500\u552e\u9700\u8981\u8bb8\u53ef\u8bc1\u5bc6\u94a5\u7684\u5546\u54c1\u3002"
+            ],
+            "Are you sure you want to replace?": [
+                "\u60a8\u786e\u5b9a\u8981\u66ff\u6362\u5417\uff1f"
+            ],
+            "Auto generating variants will replace all existing variants for": [
+                "\u81ea\u52a8\u751f\u6210\u53d8\u4f53\u5c06\u66ff\u6362\u6240\u6709\u73b0\u6709\u53d8\u4f53\uff1a"
+            ],
+            "No, Keep": [
+                "\u4e0d\uff0c\u4fdd\u7559"
+            ],
+            "Yes, Replace": [
+                "\u662f\uff0c\u66ff\u6362"
+            ],
+            "Set product type, price, sale price, stock count, and dimensions of the product.": [
+                "\u8bbe\u7f6e\u5546\u54c1\u7684\u7c7b\u578b\u3001\u4ef7\u683c\u3001\u4fc3\u9500\u4ef7\u3001\u5e93\u5b58\u6570\u91cf\u548c\u5c3a\u5bf8\u3002"
+            ],
+            "Add attributes to enable variant generation": [
+                "\u6dfb\u52a0\u5c5e\u6027\u4ee5\u542f\u7528\u53d8\u4f53\u751f\u6210"
+            ],
+            "Add attributes above to add multiple price options.": [
+                "\u5728\u4e0a\u65b9\u6dfb\u52a0\u5c5e\u6027\u4ee5\u6dfb\u52a0\u591a\u4e2a\u4ef7\u683c\u9009\u9879\u3002"
+            ],
+            "Need multiple prices?": [
+                "\u9700\u8981\u591a\u4e2a\u4ef7\u683c\u5417\uff1f"
+            ],
+            "No prices added yet": [
+                "\u5c1a\u672a\u6dfb\u52a0\u4ef7\u683c"
+            ],
+            "Add New Price": [
+                "\u6dfb\u52a0\u65b0\u4ef7\u683c"
+            ],
+            "Add Media": [
+                "\u6dfb\u52a0\u5a92\u4f53"
+            ],
+            "Provide an in-depth product description of 600\u2013900 words, outlining key features, benefits, and usage instructions.": [
+                "\u63d0\u4f9b\u4e00\u6bb5 600\u2013900 \u5b57\u7684\u6df1\u5165\u5546\u54c1\u63cf\u8ff0\uff0c\u6982\u8ff0\u4e3b\u8981\u529f\u80fd\u3001\u4f18\u52bf\u548c\u4f7f\u7528\u8bf4\u660e\u3002"
+            ],
+            "Generating image": [
+                "\u6b63\u5728\u751f\u6210\u56fe\u50cf"
+            ],
+            "Edit this image. Keep the product exactly as-is. Place it in a clean, modern lifestyle setting with soft natural lighting, shallow depth of field, and a professional commercial look.": [
+                "\u7f16\u8f91\u6b64\u56fe\u50cf\u3002\u4fdd\u6301\u5546\u54c1\u539f\u6837\u4e0d\u53d8\u3002\u5c06\u5176\u7f6e\u4e8e\u7b80\u6d01\u3001\u73b0\u4ee3\u7684\u751f\u6d3b\u573a\u666f\u4e2d\uff0c\u914d\u4ee5\u67d4\u548c\u7684\u81ea\u7136\u5149\u7ebf\u3001\u6d45\u666f\u6df1\u548c\u4e13\u4e1a\u7684\u5546\u4e1a\u8d28\u611f\u3002"
+            ],
+            "1024x1024 Pixels": [
+                "1024x1024 \u50cf\u7d20"
+            ],
+            "1792x1024 Pixels": [
+                "1792x1024 \u50cf\u7d20"
+            ],
+            "1024x1792 Pixels": [
+                "1024x1792 \u50cf\u7d20"
+            ],
+            "Standard": [
+                "\u6807\u51c6"
+            ],
+            "HD": [
+                "\u9ad8\u6e05"
+            ],
+            "No enhanced image to choose from.": [
+                "\u6ca1\u6709\u53ef\u4f9b\u9009\u62e9\u7684\u589e\u5f3a\u56fe\u50cf\u3002"
+            ],
+            "Failed to choose image. Please try again.": [
+                "\u9009\u62e9\u56fe\u50cf\u5931\u8d25\u3002\u8bf7\u91cd\u8bd5\u3002"
+            ],
+            "AI Image Enhancer": [
+                "AI \u56fe\u50cf\u589e\u5f3a\u5668"
+            ],
+            "Enhance your image with AI": [
+                "\u4f7f\u7528 AI \u589e\u5f3a\u60a8\u7684\u56fe\u50cf"
+            ],
+            "Original Image": [
+                "\u539f\u59cb\u56fe\u50cf"
+            ],
+            "Image Size": [
+                "\u56fe\u50cf\u5c3a\u5bf8"
+            ],
+            "Quality": [
+                "\u8d28\u91cf"
+            ],
+            "Enhance Image": [
+                "\u589e\u5f3a\u56fe\u50cf"
+            ],
+            "Use This Image": [
+                "\u4f7f\u7528\u6b64\u56fe\u50cf"
+            ],
+            "Image Preview.": [
+                "\u56fe\u50cf\u9884\u89c8\u3002"
+            ],
+            "Uploaded %d": [
+                "\u5df2\u4e0a\u4f20 %d"
+            ],
+            "Set as thumbnail": [
+                "\u8bbe\u4e3a\u7f29\u7565\u56fe"
+            ],
+            "Enhance With AI": [
+                "\u4f7f\u7528 AI \u589e\u5f3a"
+            ],
+            "Uploading images...": [
+                "\u6b63\u5728\u4e0a\u4f20\u56fe\u50cf\u2026\u2026"
+            ],
+            "Upload Images": [
+                "\u4e0a\u4f20\u56fe\u50cf"
+            ],
+            "A professional product photo of %s on a clean white background, studio lighting, sharp focus, high resolution, commercial photography style, no shadows, photorealistic.": [
+                "\u4e00\u5f20 %s \u7684\u4e13\u4e1a\u5546\u54c1\u7167\u7247\uff0c\u91c7\u7528\u7b80\u6d01\u7684\u767d\u8272\u80cc\u666f\u3001\u5f71\u68da\u706f\u5149\u3001\u6e05\u6670\u5bf9\u7126\u3001\u9ad8\u5206\u8fa8\u7387\u3001\u5546\u4e1a\u6444\u5f71\u98ce\u683c\u3001\u65e0\u9634\u5f71\u3001\u7167\u7247\u7ea7\u771f\u5b9e\u611f\u3002"
+            ],
+            "No generated image to choose from.": [
+                "\u6ca1\u6709\u53ef\u4f9b\u9009\u62e9\u7684\u751f\u6210\u56fe\u50cf\u3002"
+            ],
+            "Describe what you want to see in the image": [
+                "\u63cf\u8ff0\u60a8\u5e0c\u671b\u5728\u56fe\u50cf\u4e2d\u770b\u5230\u7684\u5185\u5bb9"
+            ],
+            "Generated image will appear here once created.": [
+                "\u751f\u6210\u7684\u56fe\u50cf\u521b\u5efa\u540e\u5c06\u663e\u793a\u5728\u6b64\u5904\u3002"
+            ],
+            "Product Gallery": [
+                "\u5546\u54c1\u56fe\u5e93"
+            ],
+            "Upload images to showcase your product visually.": [
+                "\u4e0a\u4f20\u56fe\u7247\uff0c\u76f4\u89c2\u5730\u5c55\u793a\u60a8\u7684\u5546\u54c1\u3002"
+            ],
+            "For best appearance, use images larger than": [
+                "\u4e3a\u83b7\u5f97\u6700\u4f73\u6548\u679c\uff0c\u8bf7\u4f7f\u7528\u5927\u4e8e"
+            ],
+            "pixels.": [
+                "\u50cf\u7d20\u7684\u56fe\u7247\u3002"
+            ],
+            "All fields are required!": [
+                "\u6240\u6709\u5b57\u6bb5\u5747\u4e3a\u5fc5\u586b\u9879\uff01"
+            ],
+            "Category created successfully": [
+                "\u5206\u7c7b\u521b\u5efa\u6210\u529f"
+            ],
+            "Operation failed": [
+                "\u64cd\u4f5c\u5931\u8d25"
+            ],
+            "It'll be used to filter products": [
+                "\u5b83\u5c06\u7528\u4e8e\u7b5b\u9009\u5546\u54c1"
+            ],
+            "URL-friendly slug of the category": [
+                "\u5206\u7c7b\u7684 URL \u53cb\u597d\u522b\u540d"
+            ],
+            "Parent": [
+                "\u7236\u7ea7"
+            ],
+            "Select a parent category if any": [
+                "\u5982\u6709\uff0c\u8bf7\u9009\u62e9\u4e00\u4e2a\u7236\u7ea7\u5206\u7c7b"
+            ],
+            "Select Parent": [
+                "\u9009\u62e9\u7236\u7ea7"
+            ],
+            "Create Category": [
+                "\u521b\u5efa\u5206\u7c7b"
+            ],
+            "Tag created successfully": [
+                "\u6807\u7b7e\u521b\u5efa\u6210\u529f"
+            ],
+            "URL-friendly slug of the tag": [
+                "\u6807\u7b7e\u7684 URL \u53cb\u597d\u522b\u540d"
+            ],
+            "Create Tag": [
+                "\u521b\u5efa\u6807\u7b7e"
+            ],
+            "Brand created successfully": [
+                "\u54c1\u724c\u521b\u5efa\u6210\u529f"
+            ],
+            "URL-friendly slug of the brand": [
+                "\u54c1\u724c\u7684 URL \u53cb\u597d\u522b\u540d"
+            ],
+            "Select a parent brand if any": [
+                "\u5982\u6709\uff0c\u8bf7\u9009\u62e9\u4e00\u4e2a\u7236\u7ea7\u54c1\u724c"
+            ],
+            "Create Brand": [
+                "\u521b\u5efa\u54c1\u724c"
+            ],
+            "No categories available": [
+                "\u6682\u65e0\u53ef\u7528\u5206\u7c7b"
+            ],
+            "No tags available": [
+                "\u6682\u65e0\u53ef\u7528\u6807\u7b7e"
+            ],
+            "No brands available": [
+                "\u6682\u65e0\u53ef\u7528\u54c1\u724c"
+            ],
+            "Failed to fetch categories.": [
+                "\u83b7\u53d6\u5206\u7c7b\u5931\u8d25\u3002"
+            ],
+            "Failed to fetch tags.": [
+                "\u83b7\u53d6\u6807\u7b7e\u5931\u8d25\u3002"
+            ],
+            "Failed to fetch brands.": [
+                "\u83b7\u53d6\u54c1\u724c\u5931\u8d25\u3002"
+            ],
+            "Organize your product with Categories, Tags, and Brands for better sorting.": [
+                "\u4f7f\u7528\u5206\u7c7b\u3001\u6807\u7b7e\u548c\u54c1\u724c\u6765\u6574\u7406\u60a8\u7684\u5546\u54c1\uff0c\u4ee5\u4fbf\u66f4\u597d\u5730\u6392\u5e8f\u3002"
+            ],
+            "Manage Categories": [
+                "\u7ba1\u7406\u5206\u7c7b"
+            ],
+            "Manage Tags": [
+                "\u7ba1\u7406\u6807\u7b7e"
+            ],
+            "Manage Brands": [
+                "\u7ba1\u7406\u54c1\u724c"
+            ],
+            "Product View": [
+                "\u5546\u54c1\u89c6\u56fe"
+            ],
+            "Choose a template to customize how your product page is displayed to customers.": [
+                "\u9009\u62e9\u4e00\u4e2a\u6a21\u677f\uff0c\u4ee5\u81ea\u5b9a\u4e49\u60a8\u7684\u5546\u54c1\u9875\u9762\u5411\u5ba2\u6237\u5c55\u793a\u7684\u65b9\u5f0f\u3002"
+            ],
+            "Select Template": [
+                "\u9009\u62e9\u6a21\u677f"
+            ],
+            "Select a template": [
+                "\u9009\u62e9\u4e00\u4e2a\u6a21\u677f"
+            ],
+            "Configure general product settings like visibility, URL slug, and reviews.": [
+                "\u914d\u7f6e\u5e38\u89c4\u5546\u54c1\u8bbe\u7f6e\uff0c\u5982\u53ef\u89c1\u6027\u3001URL \u522b\u540d\u548c\u8bc4\u4ef7\u3002"
+            ],
+            "URL:": [
+                "URL\uff1a"
+            ],
+            "Hide from Shop": [
+                "\u4ece\u5546\u5e97\u4e2d\u9690\u85cf"
+            ],
+            "Hide from Search Engines": [
+                "\u5bf9\u641c\u7d22\u5f15\u64ce\u9690\u85cf"
+            ],
+            "Enable Review": [
+                "\u542f\u7528\u8bc4\u4ef7"
+            ],
+            "Product title is required": [
+                "\u5546\u54c1\u6807\u9898\u4e3a\u5fc5\u586b\u9879"
+            ],
+            "Invalid Pricing Data": [
+                "\u5b9a\u4ef7\u6570\u636e\u65e0\u6548"
+            ],
+            "Duplicate pricing plan found: %s": [
+                "\u53d1\u73b0\u91cd\u590d\u7684\u5b9a\u4ef7\u65b9\u6848\uff1a%s"
+            ],
+            "Duplicate attributes found in %1$s and %2$s": [
+                "\u5728 %1$s \u548c %2$s \u4e2d\u53d1\u73b0\u91cd\u590d\u7684\u5c5e\u6027"
+            ],
+            "Product is live now!": [
+                "\u5546\u54c1\u73b0\u5df2\u4e0a\u7ebf\uff01"
+            ],
+            "Product saved as draft!": [
+                "\u5546\u54c1\u5df2\u4fdd\u5b58\u4e3a\u8349\u7a3f\uff01"
+            ],
+            "Product Creation Failed": [
+                "\u5546\u54c1\u521b\u5efa\u5931\u8d25"
+            ],
+            "Save as Draft": [
+                "\u4fdd\u5b58\u4e3a\u8349\u7a3f"
+            ],
+            "Save as Live": [
+                "\u4fdd\u5b58\u5e76\u4e0a\u7ebf"
+            ],
+            "Add your product title here": [
+                "\u5728\u6b64\u6dfb\u52a0\u60a8\u7684\u5546\u54c1\u6807\u9898"
+            ],
+            "Product trashed!": [
+                "\u5546\u54c1\u5df2\u79fb\u81f3\u56de\u6536\u7ad9\uff01"
+            ],
+            "Product deleted permanently!": [
+                "\u5546\u54c1\u5df2\u6c38\u4e45\u5220\u9664\uff01"
+            ],
+            "Product doesn't exist": [
+                "\u5546\u54c1\u4e0d\u5b58\u5728"
+            ],
+            "Failed to fetch product data": [
+                "\u83b7\u53d6\u5546\u54c1\u6570\u636e\u5931\u8d25"
+            ],
+            "Product updated successfully": [
+                "\u5546\u54c1\u66f4\u65b0\u6210\u529f"
+            ],
+            "Product update failed": [
+                "\u5546\u54c1\u66f4\u65b0\u5931\u8d25"
+            ],
+            "Edit: ": [
+                "\u7f16\u8f91\uff1a "
+            ],
+            "Preview": [
+                "\u9884\u89c8"
+            ],
+            "Loading product data...": [
+                "\u6b63\u5728\u52a0\u8f7d\u5546\u54c1\u6570\u636e\u2026\u2026"
+            ],
+            "Selected attributes deleted successfully!": [
+                "\u6240\u9009\u5c5e\u6027\u5220\u9664\u6210\u529f\uff01"
+            ],
+            "Failed to delete selected attributes.": [
+                "\u5220\u9664\u6240\u9009\u5c5e\u6027\u5931\u8d25\u3002"
+            ],
+            "Bulk delete failed, please try again.": [
+                "\u6279\u91cf\u5220\u9664\u5931\u8d25\uff0c\u8bf7\u91cd\u8bd5\u3002"
+            ],
+            "Delete Selected": [
+                "\u5220\u9664\u6240\u9009"
+            ],
+            "Attributes List": [
+                "\u5c5e\u6027\u5217\u8868"
+            ],
+            "Category deleted successfully": [
+                "\u5206\u7c7b\u5220\u9664\u6210\u529f"
+            ],
+            "Failed to delete": [
+                "\u5220\u9664\u5931\u8d25"
+            ],
+            "No categories found.": [
+                "\u672a\u627e\u5230\u5206\u7c7b\u3002"
+            ],
+            "Category updated successfully": [
+                "\u5206\u7c7b\u66f4\u65b0\u6210\u529f"
+            ],
+            "Selected categories deleted successfully!": [
+                "\u6240\u9009\u5206\u7c7b\u5220\u9664\u6210\u529f\uff01"
+            ],
+            "Failed to delete selected categories.": [
+                "\u5220\u9664\u6240\u9009\u5206\u7c7b\u5931\u8d25\u3002"
+            ],
+            "Categories List": [
+                "\u5206\u7c7b\u5217\u8868"
+            ],
+            "Edit Category: %s": [
+                "\u7f16\u8f91\u5206\u7c7b\uff1a%s"
+            ],
+            "Tag deleted successfully": [
+                "\u6807\u7b7e\u5220\u9664\u6210\u529f"
+            ],
+            "No tags found.": [
+                "\u672a\u627e\u5230\u6807\u7b7e\u3002"
+            ],
+            "Tag updated successfully": [
+                "\u6807\u7b7e\u66f4\u65b0\u6210\u529f"
+            ],
+            "Selected tags deleted successfully!": [
+                "\u6240\u9009\u6807\u7b7e\u5220\u9664\u6210\u529f\uff01"
+            ],
+            "Failed to delete selected tags.": [
+                "\u5220\u9664\u6240\u9009\u6807\u7b7e\u5931\u8d25\u3002"
+            ],
+            "Tags List": [
+                "\u6807\u7b7e\u5217\u8868"
+            ],
+            "Edit Tag: %s": [
+                "\u7f16\u8f91\u6807\u7b7e\uff1a%s"
+            ],
+            "Brand deleted successfully": [
+                "\u54c1\u724c\u5220\u9664\u6210\u529f"
+            ],
+            "No brands found.": [
+                "\u672a\u627e\u5230\u54c1\u724c\u3002"
+            ],
+            "Brand updated successfully": [
+                "\u54c1\u724c\u66f4\u65b0\u6210\u529f"
+            ],
+            "Selected brands deleted successfully!": [
+                "\u6240\u9009\u54c1\u724c\u5220\u9664\u6210\u529f\uff01"
+            ],
+            "Failed to delete selected brands.": [
+                "\u5220\u9664\u6240\u9009\u54c1\u724c\u5931\u8d25\u3002"
+            ],
+            "Brands List": [
+                "\u54c1\u724c\u5217\u8868"
+            ],
+            "Edit Brand: %s": [
+                "\u7f16\u8f91\u54c1\u724c\uff1a%s"
+            ],
+            "An error occurred while updating status": [
+                "\u66f4\u65b0\u72b6\u6001\u65f6\u53d1\u751f\u9519\u8bef"
+            ],
+            "Please enter an amount greater than 0 before refunding": [
+                "\u9000\u6b3e\u524d\u8bf7\u8f93\u5165\u5927\u4e8e 0 \u7684\u91d1\u989d"
+            ],
+            "Failed to process refund. Please try again.": [
+                "\u5904\u7406\u9000\u6b3e\u5931\u8d25\u3002\u8bf7\u91cd\u8bd5\u3002"
+            ],
+            "Please enter the Refund Transaction ID.": [
+                "\u8bf7\u8f93\u5165\u9000\u6b3e\u4ea4\u6613 ID\u3002"
+            ],
+            "Please enter an amount before refunding": [
+                "\u9000\u6b3e\u524d\u8bf7\u8f93\u5165\u91d1\u989d"
+            ],
+            "Please select a reason before refunding": [
+                "\u9000\u6b3e\u524d\u8bf7\u9009\u62e9\u539f\u56e0"
+            ],
+            "Refund Payment": [
+                "\u9000\u6b3e"
+            ],
+            "Refundable": [
+                "\u53ef\u9000\u6b3e"
+            ],
+            "Refund Amount": [
+                "\u9000\u6b3e\u91d1\u989d"
+            ],
+            "Enter amount": [
+                "\u8bf7\u8f93\u5165\u91d1\u989d"
+            ],
+            "Refund Reason": [
+                "\u9000\u6b3e\u539f\u56e0"
+            ],
+            "Select Refund Reason": [
+                "\u9009\u62e9\u9000\u6b3e\u539f\u56e0"
+            ],
+            "For %s, refunds should be processed manually outside of the system. After succesful processing, enter the Refund Transaction ID": [
+                "\u5bf9\u4e8e %s\uff0c\u9000\u6b3e\u5e94\u5728\u7cfb\u7edf\u5916\u624b\u52a8\u5904\u7406\u3002\u5904\u7406\u6210\u529f\u540e\uff0c\u8bf7\u8f93\u5165\u9000\u6b3e\u4ea4\u6613 ID"
+            ],
+            "Enter Refund Transaction ID": [
+                "\u8bf7\u8f93\u5165\u9000\u6b3e\u4ea4\u6613 ID"
+            ],
+            "Refund now": [
+                "\u7acb\u5373\u9000\u6b3e"
+            ],
+            "ID": [
+                "ID"
+            ],
+            "Fulfillment": [
+                "\u5c65\u7ea6"
+            ],
+            "Transactions ID": [
+                "\u4ea4\u6613 ID"
+            ],
+            "Date & Time": [
+                "\u65e5\u671f\u548c\u65f6\u95f4"
+            ],
+            "On hold": [
+                "\u6682\u6302"
+            ],
+            "payment-icon": [
+                "\u652f\u4ed8\u56fe\u6807"
+            ],
+            "Select date range": [
+                "\u9009\u62e9\u65e5\u671f\u8303\u56f4"
+            ],
+            "Calendar": [
+                "\u65e5\u5386"
+            ],
+            "eg. 12 Sep - 28 Oct 2025": [
+                "\u4f8b\u5982\uff1a2025 \u5e74 9 \u6708 12 \u65e5 - 10 \u6708 28 \u65e5"
+            ],
+            "Order deleted permanently": [
+                "\u8ba2\u5355\u5df2\u6c38\u4e45\u5220\u9664"
+            ],
+            "Something went wrong while deleting.": [
+                "\u5220\u9664\u65f6\u51fa\u9519\u3002"
+            ],
+            "Fulfill Status": [
+                "\u5c65\u7ea6\u72b6\u6001"
+            ],
+            "%d order": [
+                "%d \u4e2a\u8ba2\u5355"
+            ],
+            "Failed to update orders.": [
+                "\u66f4\u65b0\u8ba2\u5355\u5931\u8d25\u3002"
+            ],
+            "Please select a status to update.": [
+                "\u8bf7\u9009\u62e9\u8981\u66f4\u65b0\u7684\u72b6\u6001\u3002"
+            ],
+            "No %s Orders Found": [
+                "\u672a\u627e\u5230 %s \u8ba2\u5355"
+            ],
+            "No Orders Found": [
+                "\u672a\u627e\u5230\u8ba2\u5355"
+            ],
+            "You're yet to receive any orders in your store. Keep promoting \nyour store to bring in your first sale.": [
+                "\u60a8\u7684\u5e97\u94fa\u5c1a\u672a\u6536\u5230\u4efb\u4f55\u8ba2\u5355\u3002\u8bf7\u7ee7\u7eed\u63a8\u5e7f\n\u60a8\u7684\u5e97\u94fa\uff0c\u4ee5\u5e26\u6765\u7b2c\u4e00\u7b14\u9500\u552e\u3002"
+            ],
+            "No %s orders in your store. Keep promoting \nyour store to bring in your first sale.": [
+                "\u60a8\u7684\u5e97\u94fa\u4e2d\u6ca1\u6709 %s \u8ba2\u5355\u3002\u8bf7\u7ee7\u7eed\u63a8\u5e7f\n\u60a8\u7684\u5e97\u94fa\uff0c\u4ee5\u5e26\u6765\u7b2c\u4e00\u7b14\u9500\u552e\u3002"
+            ],
+            "Resend Order Email": [
+                "\u91cd\u65b0\u53d1\u9001\u8ba2\u5355\u90ae\u4ef6"
+            ],
+            "Email Event": [
+                "\u90ae\u4ef6\u4e8b\u4ef6"
+            ],
+            "Select an event": [
+                "\u9009\u62e9\u4e00\u4e2a\u4e8b\u4ef6"
+            ],
+            "Email sent": [
+                "\u90ae\u4ef6\u5df2\u53d1\u9001"
+            ],
+            "Refund": [
+                "\u9000\u6b3e"
+            ],
+            "Order Deleted!": [
+                "\u8ba2\u5355\u5df2\u5220\u9664\uff01"
+            ],
+            "Delivery Date": [
+                "\u4ea4\u4ed8\u65e5\u671f"
+            ],
+            "Order Refund": [
+                "\u8ba2\u5355\u9000\u6b3e"
+            ],
+            "Fulfillment Status": [
+                "\u5c65\u7ea6\u72b6\u6001"
+            ],
+            "Payment Icon": [
+                "\u652f\u4ed8\u56fe\u6807"
+            ],
+            "Payment URL": [
+                "\u652f\u4ed8 URL"
+            ],
+            "date": [
+                "\u65e5\u671f"
+            ],
+            "Avg. Order Value": [
+                "\u5e73\u5747\u8ba2\u5355\u91d1\u989d"
+            ],
+            "Last Order": [
+                "\u6700\u8fd1\u8ba2\u5355"
+            ],
+            "Reason": [
+                "\u539f\u56e0"
+            ],
+            "Refunded By": [
+                "\u9000\u6b3e\u64cd\u4f5c\u8005"
+            ],
+            "Add Note": [
+                "\u6dfb\u52a0\u5907\u6ce8"
+            ],
+            "Required": [
+                "\u5fc5\u586b"
+            ],
+            "Write your note here": [
+                "\u5728\u6b64\u586b\u5199\u60a8\u7684\u5907\u6ce8"
+            ],
+            "Note To Customer": [
+                "\u7ed9\u5ba2\u6237\u7684\u5907\u6ce8"
+            ],
+            "Unable to save note. The database may need to be updated. Please contact your administrator.": [
+                "\u65e0\u6cd5\u4fdd\u5b58\u5907\u6ce8\u3002\u6570\u636e\u5e93\u53ef\u80fd\u9700\u8981\u66f4\u65b0\u3002\u8bf7\u8054\u7cfb\u60a8\u7684\u7ba1\u7406\u5458\u3002"
+            ],
+            "Delete Note": [
+                "\u5220\u9664\u5907\u6ce8"
+            ],
+            "Are you sure you want to delete this note? This action cannot be undone.": [
+                "\u60a8\u786e\u5b9a\u8981\u5220\u9664\u6b64\u5907\u6ce8\u5417\uff1f\u6b64\u64cd\u4f5c\u65e0\u6cd5\u64a4\u9500\u3002"
+            ],
+            "Unable to delete note. Please try again or contact your administrator.": [
+                "\u65e0\u6cd5\u5220\u9664\u5907\u6ce8\u3002\u8bf7\u91cd\u8bd5\u6216\u8054\u7cfb\u60a8\u7684\u7ba1\u7406\u5458\u3002"
+            ],
+            "Order doesn't exist": [
+                "\u8ba2\u5355\u4e0d\u5b58\u5728"
+            ],
+            "Failed to fetch order data": [
+                "\u83b7\u53d6\u8ba2\u5355\u6570\u636e\u5931\u8d25"
+            ],
+            "Unknown": [
+                "\u672a\u77e5"
+            ],
+            "eg. %1$s - %2$s %3$s": [
+                "\u4f8b\u5982\uff1a%1$s - %2$s %3$s"
+            ],
+            "Adjustment": [
+                "\u8c03\u6574"
+            ],
+            "No %s Transactions Found": [
+                "\u672a\u627e\u5230 %s \u4ea4\u6613"
+            ],
+            "No Transactions Found.": [
+                "\u672a\u627e\u5230\u4ea4\u6613\u3002"
+            ],
+            "All type of payment activities will appear here once they occur": [
+                "\u6240\u6709\u7c7b\u578b\u7684\u652f\u4ed8\u6d3b\u52a8\u53d1\u751f\u540e\u90fd\u5c06\u663e\u793a\u5728\u6b64\u5904"
+            ],
+            "Add New Customer": [
+                "\u65b0\u589e\u5ba2\u6237"
+            ],
+            "Select a Image": [
+                "\u9009\u62e9\u4e00\u5f20\u56fe\u7247"
+            ],
+            "Enter last name": [
+                "\u8bf7\u8f93\u5165\u59d3\u6c0f"
+            ],
+            "Enter Password": [
+                "\u8bf7\u8f93\u5165\u5bc6\u7801"
+            ],
+            "Re-enter Password": [
+                "\u91cd\u65b0\u8f93\u5165\u5bc6\u7801"
+            ],
+            "Re-ender password to confirm": [
+                "\u91cd\u65b0\u8f93\u5165\u5bc6\u7801\u4ee5\u786e\u8ba4"
+            ],
+            "Submit": [
+                "\u63d0\u4ea4"
+            ],
+            "Customer Since": [
+                "\u6210\u4e3a\u5ba2\u6237\u65f6\u95f4"
+            ],
+            "Lifetime Value": [
+                "\u7ec8\u8eab\u4ef7\u503c"
+            ],
+            "No customers found": [
+                "\u672a\u627e\u5230\u5ba2\u6237"
+            ],
+            "Recurring": [
+                "\u5468\u671f\u6027"
+            ],
+            "One-time": [
+                "\u4e00\u6b21\u6027"
+            ],
+            "No %s Customers Found": [
+                "\u672a\u627e\u5230 %s \u5ba2\u6237"
+            ],
+            "No Customers Found": [
+                "\u672a\u627e\u5230\u5ba2\u6237"
+            ],
+            "You're yet to receive any customers in your store.": [
+                "\u60a8\u7684\u5e97\u94fa\u5c1a\u672a\u83b7\u5f97\u4efb\u4f55\u5ba2\u6237\u3002"
+            ],
+            "No %s customers in your store.": [
+                "\u60a8\u7684\u5e97\u94fa\u4e2d\u6ca1\u6709 %s \u5ba2\u6237\u3002"
+            ],
+            "Keep promoting \nyour store to bring in your first customer.": [
+                "\u8bf7\u7ee7\u7eed\u63a8\u5e7f\n\u60a8\u7684\u5e97\u94fa\uff0c\u4ee5\u5e26\u6765\u7b2c\u4e00\u4f4d\u5ba2\u6237\u3002"
+            ],
+            "Add Customer": [
+                "\u6dfb\u52a0\u5ba2\u6237"
+            ],
+            "Purchase Amount": [
+                "\u8d2d\u4e70\u91d1\u989d"
+            ],
+            "Customer Details": [
+                "\u5ba2\u6237\u8be6\u60c5"
+            ],
+            "unknown": [
+                "\u672a\u77e5"
+            ],
+            "Orders Over Time": [
+                "\u8ba2\u5355\u8d8b\u52bf"
+            ],
+            "Fullfillment": [
+                "\u5c65\u7ea6"
+            ],
+            "No order found for this customer": [
+                "\u672a\u627e\u5230\u6b64\u5ba2\u6237\u7684\u8ba2\u5355"
+            ],
+            "Active": [
+                "\u542f\u7528"
+            ],
+            "Inactive": [
+                "\u505c\u7528"
+            ],
+            "Coupon status updated": [
+                "\u4f18\u60e0\u5238\u72b6\u6001\u5df2\u66f4\u65b0"
+            ],
+            "Failed to update coupon status": [
+                "\u66f4\u65b0\u4f18\u60e0\u5238\u72b6\u6001\u5931\u8d25"
+            ],
+            "Something went wrong while updating coupon status": [
+                "\u66f4\u65b0\u4f18\u60e0\u5238\u72b6\u6001\u65f6\u51fa\u9519"
+            ],
+            "No coupons found": [
+                "\u672a\u627e\u5230\u4f18\u60e0\u5238"
+            ],
+            "All type of Coupons activities will appear here once they occur.": [
+                "\u6240\u6709\u7c7b\u578b\u7684\u4f18\u60e0\u5238\u6d3b\u52a8\u53d1\u751f\u540e\u90fd\u5c06\u663e\u793a\u5728\u6b64\u5904\u3002"
+            ],
+            "Add Coupon": [
+                "\u6dfb\u52a0\u4f18\u60e0\u5238"
+            ],
+            "Coupons deleted successfully": [
+                "\u4f18\u60e0\u5238\u5220\u9664\u6210\u529f"
+            ],
+            "%d coupon": [
+                "%d \u5f20\u4f18\u60e0\u5238"
+            ],
+            "Code": [
+                "\u4ee3\u7801"
+            ],
+            "Offer": [
+                "\u4f18\u60e0"
+            ],
+            "No coupons found for this tab.": [
+                "\u6b64\u9009\u9879\u5361\u4e0b\u672a\u627e\u5230\u4f18\u60e0\u5238\u3002"
+            ],
+            "Create Coupon": [
+                "\u521b\u5efa\u4f18\u60e0\u5238"
+            ],
+            "Coupon Deleted": [
+                "\u4f18\u60e0\u5238\u5df2\u5220\u9664"
+            ],
+            "Coupon Name": [
+                "\u4f18\u60e0\u5238\u540d\u79f0"
+            ],
+            "Coupon Code": [
+                "\u4f18\u60e0\u5238\u4ee3\u7801"
+            ],
+            "Offers": [
+                "\u4f18\u60e0"
+            ],
+            "Discount Type": [
+                "\u6298\u6263\u7c7b\u578b"
+            ],
+            "Percentage Discount": [
+                "\u767e\u5206\u6bd4\u6298\u6263"
+            ],
+            "Fixed Cart Discount": [
+                "\u56fa\u5b9a\u8d2d\u7269\u8f66\u6298\u6263"
+            ],
+            "Free Products": [
+                "\u514d\u8d39\u5546\u54c1"
+            ],
+            "Offer Amount": [
+                "\u4f18\u60e0\u91d1\u989d"
+            ],
+            "Select products to give for free": [
+                "\u9009\u62e9\u8981\u514d\u8d39\u8d60\u9001\u7684\u5546\u54c1"
+            ],
+            "Search for products": [
+                "\u641c\u7d22\u5546\u54c1"
+            ],
+            "Conditions": [
+                "\u6761\u4ef6"
+            ],
+            "Discount applies to specific products?": [
+                "\u6298\u6263\u662f\u5426\u9002\u7528\u4e8e\u7279\u5b9a\u5546\u54c1\uff1f"
+            ],
+            "Minimum Spend": [
+                "\u6700\u4f4e\u6d88\u8d39"
+            ],
+            "Maximum Spend": [
+                "\u6700\u9ad8\u6d88\u8d39"
+            ],
+            "Start Date": [
+                "\u5f00\u59cb\u65e5\u671f"
+            ],
+            "calendar": [
+                "\u65e5\u5386"
+            ],
+            "End Date": [
+                "\u7ed3\u675f\u65e5\u671f"
+            ],
+            "Edit Coupon": [
+                "\u7f16\u8f91\u4f18\u60e0\u5238"
+            ],
+            "offer is required": [
+                "\u4f18\u60e0\u4e3a\u5fc5\u586b\u9879"
+            ],
+            "Code is required": [
+                "\u4ee3\u7801\u4e3a\u5fc5\u586b\u9879"
+            ],
+            "Name is required": [
+                "\u540d\u79f0\u4e3a\u5fc5\u586b\u9879"
+            ],
+            "Save as Inactive": [
+                "\u4fdd\u5b58\u4e3a\u505c\u7528"
+            ],
+            "Save as Active": [
+                "\u4fdd\u5b58\u4e3a\u542f\u7528"
+            ],
+            "(No Name)": [
+                "\uff08\u65e0\u540d\u79f0\uff09"
+            ],
+            "+%d more": [
+                "\u8fd8\u6709 %d \u4e2a"
+            ],
+            "Remind": [
+                "\u63d0\u9192"
+            ],
+            "No Abandoned Carts found": [
+                "\u672a\u627e\u5230\u5f03\u8d2d\u8d2d\u7269\u8f66"
+            ],
+            "All Abandoned Carts will appear here once they occur.": [
+                "\u6240\u6709\u5f03\u8d2d\u8d2d\u7269\u8f66\u51fa\u73b0\u540e\u90fd\u5c06\u663e\u793a\u5728\u6b64\u5904\u3002"
+            ],
+            "Are you sure you want to send reminder?": [
+                "\u60a8\u786e\u5b9a\u8981\u53d1\u9001\u63d0\u9192\u5417\uff1f"
+            ],
+            "You're going to Remind": [
+                "\u60a8\u5373\u5c06\u63d0\u9192"
+            ],
+            "selected?": [
+                "\u4e2a\u6240\u9009\u8d2d\u7269\u8f66\uff1f"
+            ],
+            "Don't Send": [
+                "\u4e0d\u53d1\u9001"
+            ],
+            "Yes, Send": [
+                "\u662f\uff0c\u53d1\u9001"
+            ],
+            "Remind All": [
+                "\u5168\u90e8\u63d0\u9192"
+            ],
+            "carts deleted successfully": [
+                "\u8d2d\u7269\u8f66\u5220\u9664\u6210\u529f"
+            ],
+            "%d cart": [
+                "%d \u4e2a\u8d2d\u7269\u8f66"
+            ],
+            "Reminders sent successfully": [
+                "\u63d0\u9192\u53d1\u9001\u6210\u529f"
+            ],
+            "Clean Abandoned Carts": [
+                "\u6e05\u7406\u5f03\u8d2d\u8d2d\u7269\u8f66"
+            ],
+            "Choose whether to clean all abandoned carts or only invalid ones.": [
+                "\u9009\u62e9\u6e05\u7406\u6240\u6709\u5f03\u8d2d\u8d2d\u7269\u8f66\u8fd8\u662f\u4ec5\u6e05\u7406\u65e0\u6548\u7684\u8d2d\u7269\u8f66\u3002"
+            ],
+            "Clean All": [
+                "\u5168\u90e8\u6e05\u7406"
+            ],
+            "Clean Invalid": [
+                "\u6e05\u7406\u65e0\u6548\u9879"
+            ],
+            "Not Contacted": [
+                "\u672a\u8054\u7cfb"
+            ],
+            "Contacted": [
+                "\u5df2\u8054\u7cfb"
+            ],
+            "Recovered": [
+                "\u5df2\u6062\u590d"
+            ],
+            "Clean": [
+                "\u6e05\u7406"
+            ],
+            "No %s Carts Found": [
+                "\u672a\u627e\u5230 %s \u8d2d\u7269\u8f66"
+            ],
+            "Reminders": [
+                "\u63d0\u9192"
+            ],
+            "Actions": [
+                "\u64cd\u4f5c"
+            ],
+            "Abandoned Cart Deleted": [
+                "\u5f03\u8d2d\u8d2d\u7269\u8f66\u5df2\u5220\u9664"
+            ],
+            "Approved": [
+                "\u5df2\u6279\u51c6"
+            ],
+            "Not Approved": [
+                "\u672a\u6279\u51c6"
+            ],
+            "Review #%d": [
+                "\u8bc4\u4ef7 #%d"
+            ],
+            "Product #%d": [
+                "\u5546\u54c1 #%d"
+            ],
+            "Review Content": [
+                "\u8bc4\u4ef7\u5185\u5bb9"
+            ],
+            "Rating": [
+                "\u8bc4\u5206"
+            ],
+            "Search by customer name or content": [
+                "\u6309\u5ba2\u6237\u59d3\u540d\u6216\u5185\u5bb9\u641c\u7d22"
+            ],
+            "Product Reviews": [
+                "\u5546\u54c1\u8bc4\u4ef7"
+            ],
+            "No Reviews Yet for Your Search": [
+                "\u60a8\u7684\u641c\u7d22\u6682\u65e0\u8bc4\u4ef7"
+            ],
+            "No Reviews Yet": [
+                "\u6682\u65e0\u8bc4\u4ef7"
+            ],
+            "No reviews match your search criteria. Try a different search.": [
+                "\u6ca1\u6709\u7b26\u5408\u60a8\u641c\u7d22\u6761\u4ef6\u7684\u8bc4\u4ef7\u3002\u8bf7\u5c1d\u8bd5\u5176\u4ed6\u641c\u7d22\u3002"
+            ],
+            "All customer reviews and feedback will appear here once they\u2019re submitted.": [
+                "\u6240\u6709\u5ba2\u6237\u8bc4\u4ef7\u548c\u53cd\u9988\u63d0\u4ea4\u540e\u90fd\u5c06\u663e\u793a\u5728\u6b64\u5904\u3002"
+            ],
+            "Review deleted successfully": [
+                "\u8bc4\u4ef7\u5220\u9664\u6210\u529f"
+            ],
+            "Failed to delete review": [
+                "\u5220\u9664\u8bc4\u4ef7\u5931\u8d25"
+            ],
+            "An error occurred while deleting the review": [
+                "\u5220\u9664\u8bc4\u4ef7\u65f6\u53d1\u751f\u9519\u8bef"
+            ],
+            "Community": [
+                "\u793e\u533a"
+            ],
+            "Documentation": [
+                "\u6587\u6863"
+            ],
+            "Detailed step-by-step guides on how to use and get the best out of EasyCommerce.": [
+                "\u8be6\u7ec6\u7684\u5206\u6b65\u6307\u5357\uff0c\u6559\u60a8\u5982\u4f55\u4f7f\u7528\u5e76\u5145\u5206\u53d1\u6325 EasyCommerce \u7684\u529f\u80fd\u3002"
+            ],
+            "Enabled": [
+                "\u5df2\u542f\u7528"
+            ],
+            "Disabled": [
+                "\u5df2\u7981\u7528"
+            ],
+            "EasyCommerce Addons": [
+                "EasyCommerce \u6269\u5c55"
+            ],
+            "Use EasyCommerce addons to extend and customize the functionality of your online store.": [
+                "\u4f7f\u7528 EasyCommerce \u6269\u5c55\u6765\u6269\u5c55\u548c\u81ea\u5b9a\u4e49\u60a8\u5728\u7ebf\u5546\u5e97\u7684\u529f\u80fd\u3002"
+            ],
+            "No Addons Found": [
+                "\u672a\u627e\u5230\u6269\u5c55"
+            ],
+            "Coming Soon": [
+                "\u5373\u5c06\u63a8\u51fa"
+            ],
+            "Upgrade to PRO": [
+                "\u5347\u7ea7\u5230 PRO"
+            ],
+            "Manage Subscriptions": [
+                "\u7ba1\u7406\u8ba2\u9605"
+            ],
+            "Offer recurring payments with automatic renewals to keep your revenue consistent and predictable.": [
+                "\u63d0\u4f9b\u652f\u6301\u81ea\u52a8\u7eed\u8ba2\u7684\u5468\u671f\u6027\u4ed8\u6b3e\uff0c\u8ba9\u60a8\u7684\u6536\u5165\u7a33\u5b9a\u4e14\u53ef\u9884\u6d4b\u3002"
+            ],
+            "Sell Licensed Products": [
+                "\u9500\u552e\u6388\u6743\u5546\u54c1"
+            ],
+            "Automate license generation, activation, and renewals. It\u2019s perfect for digital products and software sales.": [
+                "\u81ea\u52a8\u5316\u8bb8\u53ef\u8bc1\u7684\u751f\u6210\u3001\u6fc0\u6d3b\u548c\u7eed\u8ba2\u3002\u975e\u5e38\u9002\u5408\u6570\u5b57\u5546\u54c1\u548c\u8f6f\u4ef6\u9500\u552e\u3002"
+            ],
+            "Sell on Facebook Messenger": [
+                "\u5728 Facebook Messenger \u4e0a\u9500\u552e"
+            ],
+            "Bring your AI shopping assistant to Messenger, so customers can discover products and place orders right in the chat.": [
+                "\u5c06\u60a8\u7684 AI \u8d2d\u7269\u52a9\u624b\u5f15\u5165 Messenger\uff0c\u8ba9\u5ba2\u6237\u53ef\u4ee5\u76f4\u63a5\u5728\u804a\u5929\u4e2d\u53d1\u73b0\u5546\u54c1\u5e76\u4e0b\u5355\u3002"
+            ],
+            "Sell on WhatsApp": [
+                "\u5728 WhatsApp \u4e0a\u9500\u552e"
+            ],
+            "Let customers chat with your AI shopping assistant on WhatsApp, from product discovery to checkout in the app they use every day.": [
+                "\u8ba9\u5ba2\u6237\u5728 WhatsApp \u4e0a\u4e0e\u60a8\u7684 AI \u8d2d\u7269\u52a9\u624b\u804a\u5929\uff0c\u5728\u4ed6\u4eec\u6bcf\u5929\u4f7f\u7528\u7684\u5e94\u7528\u4e2d\u5b8c\u6210\u4ece\u53d1\u73b0\u5546\u54c1\u5230\u7ed3\u8d26\u7684\u5168\u8fc7\u7a0b\u3002"
+            ],
+            "Create Membership Plans": [
+                "\u521b\u5efa\u4f1a\u5458\u65b9\u6848"
+            ],
+            "Build exclusive access areas, manage tiers, and reward loyal members with premium content.": [
+                "\u6253\u9020\u4e13\u5c5e\u8bbf\u95ee\u533a\u57df\u3001\u7ba1\u7406\u4f1a\u5458\u7b49\u7ea7\uff0c\u5e76\u4ee5\u4f18\u8d28\u5185\u5bb9\u56de\u9988\u5fe0\u5b9e\u4f1a\u5458\u3002"
+            ],
+            "Run an LMS": [
+                "\u8fd0\u8425\u5b66\u4e60\u7ba1\u7406\u7cfb\u7edf"
+            ],
+            "Sell online courses, manage lessons, and track student progress - all from your EasyCommerce dashboard.": [
+                "\u9500\u552e\u5728\u7ebf\u8bfe\u7a0b\u3001\u7ba1\u7406\u8bfe\u65f6\u5e76\u8ddf\u8e2a\u5b66\u5458\u8fdb\u5ea6\u2014\u2014\u5168\u90e8\u5728\u60a8\u7684 EasyCommerce \u4eea\u8868\u76d8\u4e2d\u5b8c\u6210\u3002"
+            ],
+            "Handle Bookings": [
+                "\u5904\u7406\u9884\u7ea6"
+            ],
+            "Accept appointments, manage schedules, and let customers book services directly from your store.": [
+                "\u63a5\u53d7\u9884\u7ea6\u3001\u7ba1\u7406\u65e5\u7a0b\uff0c\u5e76\u8ba9\u5ba2\u6237\u76f4\u63a5\u4ece\u60a8\u7684\u5e97\u94fa\u9884\u8ba2\u670d\u52a1\u3002"
+            ],
+            "Didn\u2019t spot the feature you were hoping for?": [
+                "\u6ca1\u6709\u627e\u5230\u60a8\u671f\u5f85\u7684\u529f\u80fd\uff1f"
+            ],
+            "Drop us a message. Your suggestion could inspire our next EasyCommerce feature, or who knows, it might be cooking already!": [
+                "\u7ed9\u6211\u4eec\u7559\u8a00\u5427\u3002\u60a8\u7684\u5efa\u8bae\u53ef\u80fd\u4f1a\u542f\u53d1\u6211\u4eec\u6253\u9020 EasyCommerce \u7684\u4e0b\u4e00\u4e2a\u529f\u80fd\uff0c\u6216\u8005\uff0c\u8bf4\u4e0d\u5b9a\u5b83\u5df2\u7ecf\u5728\u7b79\u5907\u4e2d\u4e86\uff01"
+            ],
+            "Say Howdy!": [
+                "\u6253\u4e2a\u62db\u547c\u5427\uff01"
+            ],
+            "AI-Powered Smart Features": [
+                "AI \u9a71\u52a8\u7684\u667a\u80fd\u529f\u80fd"
+            ],
+            "Free AI Credits": [
+                "\u514d\u8d39 AI \u989d\u5ea6"
+            ],
+            "Drag & Drop Builder Integrations (Gutenberg, WP Bakery)": [
+                "\u62d6\u653e\u5f0f\u6784\u5efa\u5668\u96c6\u6210\uff08Gutenberg\u3001WP Bakery\uff09"
+            ],
+            "Product, Order & Customer Management": [
+                "\u5546\u54c1\u3001\u8ba2\u5355\u548c\u5ba2\u6237\u7ba1\u7406"
+            ],
+            "Bring Your Own Key (OpenAI\/DeepSeek\/Claude)": [
+                "\u4f7f\u7528\u60a8\u81ea\u5df1\u7684\u5bc6\u94a5\uff08OpenAI\/DeepSeek\/Claude\uff09"
+            ],
+            "Shipping & Advanced Taxation": [
+                "\u914d\u9001\u4e0e\u9ad8\u7ea7\u7a0e\u52a1"
+            ],
+            "Coupon Management": [
+                "\u4f18\u60e0\u5238\u7ba1\u7406"
+            ],
+            "Personalized Emails": [
+                "\u4e2a\u6027\u5316\u90ae\u4ef6"
+            ],
+            "Abandoned Cart Recovery": [
+                "\u5f03\u8d2d\u8d2d\u7269\u8f66\u6062\u590d"
+            ],
+            "Automated Abandoned Cart Emails": [
+                "\u81ea\u52a8\u5f03\u8d2d\u8d2d\u7269\u8f66\u90ae\u4ef6"
+            ],
+            "Single Product Templates": [
+                "\u5355\u4e2a\u5546\u54c1\u6a21\u677f"
+            ],
+            "Checkout Templates": [
+                "\u7ed3\u8d26\u6a21\u677f"
+            ],
+            "Popular Payment Gateways (Stripe, PayPal, Mollie, etc)": [
+                "\u70ed\u95e8\u652f\u4ed8\u7f51\u5173\uff08Stripe\u3001PayPal\u3001Mollie \u7b49\uff09"
+            ],
+            "Subscriptions Management": [
+                "\u8ba2\u9605\u7ba1\u7406"
+            ],
+            "License Management": [
+                "\u8bb8\u53ef\u8bc1\u7ba1\u7406"
+            ],
+            "Facebook Messenger Integration (AI Shopping Assistant)": [
+                "Facebook Messenger \u96c6\u6210\uff08AI \u8d2d\u7269\u52a9\u624b\uff09"
+            ],
+            "WhatsApp Integration (AI Shopping Assistant)": [
+                "WhatsApp \u96c6\u6210\uff08AI \u8d2d\u7269\u52a9\u624b\uff09"
+            ],
+            "Marketing & Automation Integrations": [
+                "\u8425\u9500\u4e0e\u81ea\u52a8\u5316\u96c6\u6210"
+            ],
+            "Membership Management": [
+                "\u4f1a\u5458\u7ba1\u7406"
+            ],
+            "Multivendor Marketplace": [
+                "\u591a\u5546\u6237\u5e02\u573a"
+            ],
+            "Learning Management System": [
+                "\u5b66\u4e60\u7ba1\u7406\u7cfb\u7edf"
+            ],
+            "Migration Tool": [
+                "\u8fc1\u79fb\u5de5\u5177"
+            ],
+            "Bookings": [
+                "\u9884\u7ea6"
+            ],
+            "The Best of Both Worlds": [
+                "\u4e24\u5168\u5176\u7f8e"
+            ],
+            "EasyCommerce Free + Pro": [
+                "EasyCommerce \u514d\u8d39\u7248 + \u4e13\u4e1a\u7248"
+            ],
+            "Features": [
+                "\u529f\u80fd"
+            ],
+            "(upcoming)": [
+                "\uff08\u5373\u5c06\u63a8\u51fa\uff09"
+            ],
+            "Your Current Plan": [
+                "\u60a8\u5f53\u524d\u7684\u5957\u9910"
+            ],
+            "Trusted by Businesses Like Yours": [
+                "\u53d7\u5230\u50cf\u60a8\u4e00\u6837\u7684\u5546\u5bb6\u4fe1\u8d56"
+            ],
+            "What is EasyCommerce Pro?": [
+                "\u4ec0\u4e48\u662f EasyCommerce Pro\uff1f"
+            ],
+            "EasyCommerce Pro is the premium addon that unlocks advanced features and capabilities within the EasyCommerce plugin. It serves as the key to accessing pro-level addons and enhancements that take your ecommerce store to the next level.": [
+                "EasyCommerce Pro \u662f\u4e00\u6b3e\u9ad8\u7ea7\u6269\u5c55\uff0c\u53ef\u89e3\u9501 EasyCommerce \u63d2\u4ef6\u4e2d\u7684\u9ad8\u7ea7\u529f\u80fd\u548c\u80fd\u529b\u3002\u5b83\u662f\u83b7\u53d6\u4e13\u4e1a\u7ea7\u6269\u5c55\u548c\u589e\u5f3a\u529f\u80fd\u7684\u94a5\u5319\uff0c\u8ba9\u60a8\u7684\u7535\u5546\u5e97\u94fa\u66f4\u4e0a\u4e00\u5c42\u697c\u3002"
+            ],
+            "Is there a free trial?": [
+                "\u662f\u5426\u63d0\u4f9b\u514d\u8d39\u8bd5\u7528\uff1f"
+            ],
+            "While we do not offer a traditional free trial for EasyCommerce Pro, we stand behind our product with a generous 30-day refund policy. This allows you to purchase and try Pro features risk-free, and if it doesn't meet your needs, you can request a full refund within 30 days.": [
+                "\u867d\u7136\u6211\u4eec\u4e0d\u4e3a EasyCommerce Pro \u63d0\u4f9b\u4f20\u7edf\u610f\u4e49\u4e0a\u7684\u514d\u8d39\u8bd5\u7528\uff0c\u4f46\u6211\u4eec\u4ee5\u6177\u6168\u7684 30 \u5929\u9000\u6b3e\u653f\u7b56\u4e3a\u4ea7\u54c1\u4fdd\u9a7e\u62a4\u822a\u3002\u8fd9\u8ba9\u60a8\u53ef\u4ee5\u65e0\u98ce\u9669\u5730\u8d2d\u4e70\u5e76\u8bd5\u7528\u4e13\u4e1a\u7248\u529f\u80fd\uff0c\u5982\u679c\u4e0d\u7b26\u5408\u60a8\u7684\u9700\u6c42\uff0c\u53ef\u5728 30 \u5929\u5185\u7533\u8bf7\u5168\u989d\u9000\u6b3e\u3002"
+            ],
+            "What does EasyCommerce Pro enable?": [
+                "EasyCommerce Pro \u80fd\u5b9e\u73b0\u4ec0\u4e48\uff1f"
+            ],
+            "EasyCommerce Pro enables access to premium addons such as \"License Manager\" for managing digital product licenses and \"Subscriptions\" for handling recurring payments. These addons provide powerful tools to expand your store's functionality and revenue streams.": [
+                "EasyCommerce Pro \u53ef\u89e3\u9501\u9ad8\u7ea7\u6269\u5c55\u7684\u4f7f\u7528\u6743\u9650\uff0c\u4f8b\u5982\u7528\u4e8e\u7ba1\u7406\u6570\u5b57\u5546\u54c1\u8bb8\u53ef\u8bc1\u7684\u201c\u8bb8\u53ef\u8bc1\u7ba1\u7406\u5668\u201d\uff0c\u4ee5\u53ca\u7528\u4e8e\u5904\u7406\u5468\u671f\u6027\u4ed8\u6b3e\u7684\u201c\u8ba2\u9605\u201d\u3002\u8fd9\u4e9b\u6269\u5c55\u63d0\u4f9b\u5f3a\u5927\u7684\u5de5\u5177\uff0c\u52a9\u60a8\u62d3\u5c55\u5e97\u94fa\u529f\u80fd\u548c\u6536\u5165\u6765\u6e90\u3002"
+            ],
+            "Can customers shop through Messenger or WhatsApp?": [
+                "\u5ba2\u6237\u53ef\u4ee5\u901a\u8fc7 Messenger \u6216 WhatsApp \u8d2d\u7269\u5417\uff1f"
+            ],
+            "Yes. The Messenger Integration addon connects your Facebook Page to the EasyCommerce AI shopping assistant, so customers can discover products, check stock, and place orders without leaving the chat. WhatsApp integration is coming soon and will work the same way.": [
+                "\u53ef\u4ee5\u3002Messenger \u96c6\u6210\u6269\u5c55\u4f1a\u5c06\u60a8\u7684 Facebook \u4e3b\u9875\u8fde\u63a5\u5230 EasyCommerce AI \u8d2d\u7269\u52a9\u624b\uff0c\u8ba9\u5ba2\u6237\u65e0\u9700\u79bb\u5f00\u804a\u5929\u5373\u53ef\u53d1\u73b0\u5546\u54c1\u3001\u67e5\u8be2\u5e93\u5b58\u5e76\u4e0b\u5355\u3002WhatsApp \u96c6\u6210\u5373\u5c06\u63a8\u51fa\uff0c\u5de5\u4f5c\u65b9\u5f0f\u76f8\u540c\u3002"
+            ],
+            "Are future pro addons included?": [
+                "\u672a\u6765\u7684\u4e13\u4e1a\u7248\u6269\u5c55\u662f\u5426\u5305\u542b\u5728\u5185\uff1f"
+            ],
+            "Yes, all future pro addons will be included automatically with your EasyCommerce Pro subscription. As we release new premium features and addons, you'll have immediate access without any additional purchases.": [
+                "\u662f\u7684\uff0c\u6240\u6709\u672a\u6765\u7684\u4e13\u4e1a\u7248\u6269\u5c55\u90fd\u5c06\u81ea\u52a8\u5305\u542b\u5728\u60a8\u7684 EasyCommerce Pro \u8ba2\u9605\u4e2d\u3002\u968f\u7740\u6211\u4eec\u53d1\u5e03\u65b0\u7684\u9ad8\u7ea7\u529f\u80fd\u548c\u6269\u5c55\uff0c\u60a8\u65e0\u9700\u989d\u5916\u8d2d\u4e70\u5373\u53ef\u7acb\u5373\u4f7f\u7528\u3002"
+            ],
+            "What payment methods are supported?": [
+                "\u652f\u6301\u54ea\u4e9b\u652f\u4ed8\u65b9\u5f0f\uff1f"
+            ],
+            "EasyCommerce Pro supports a wide range of payment methods through Stripe integration, including all major credit and debit cards, as well as popular options like LINK for instant payments and Klarna for buy now, pay later services. This ensures your customers have flexible and secure payment choices.": [
+                "EasyCommerce Pro \u901a\u8fc7 Stripe \u96c6\u6210\u652f\u6301\u591a\u79cd\u652f\u4ed8\u65b9\u5f0f\uff0c\u5305\u62ec\u6240\u6709\u4e3b\u6d41\u4fe1\u7528\u5361\u548c\u501f\u8bb0\u5361\uff0c\u4ee5\u53ca LINK \u5373\u65f6\u652f\u4ed8\u3001Klarna \u5148\u4e70\u540e\u4ed8\u7b49\u70ed\u95e8\u9009\u9879\u3002\u8fd9\u786e\u4fdd\u60a8\u7684\u5ba2\u6237\u62e5\u6709\u7075\u6d3b\u800c\u5b89\u5168\u7684\u652f\u4ed8\u9009\u62e9\u3002"
+            ],
+            "What support do you offer?": [
+                "\u4f60\u4eec\u63d0\u4f9b\u54ea\u4e9b\u652f\u6301\uff1f"
+            ],
+            "We provide top-class support through multiple channels including support tickets for detailed inquiries, email for direct communication, and phone support for urgent issues. Our expert team is dedicated to helping you succeed with EasyCommerce.": [
+                "\u6211\u4eec\u901a\u8fc7\u591a\u79cd\u6e20\u9053\u63d0\u4f9b\u4e00\u6d41\u7684\u652f\u6301\uff0c\u5305\u62ec\u7528\u4e8e\u8be6\u7ec6\u54a8\u8be2\u7684\u5de5\u5355\u3001\u7528\u4e8e\u76f4\u63a5\u6c9f\u901a\u7684\u7535\u5b50\u90ae\u4ef6\uff0c\u4ee5\u53ca\u7528\u4e8e\u7d27\u6025\u95ee\u9898\u7684\u7535\u8bdd\u652f\u6301\u3002\u6211\u4eec\u7684\u4e13\u5bb6\u56e2\u961f\u81f4\u529b\u4e8e\u5e2e\u52a9\u60a8\u501f\u52a9 EasyCommerce \u53d6\u5f97\u6210\u529f\u3002"
+            ],
+            "Do you offer migration from other platforms?": [
+                "\u4f60\u4eec\u63d0\u4f9b\u4ece\u5176\u4ed6\u5e73\u53f0\u8fc1\u79fb\u7684\u670d\u52a1\u5417\uff1f"
+            ],
+            "Yes, we offer free migration services to help you seamlessly move your store from other ecommerce platforms to EasyCommerce. Our team will assist with transferring your products, customers, and order data at no extra cost.": [
+                "\u662f\u7684\uff0c\u6211\u4eec\u63d0\u4f9b\u514d\u8d39\u7684\u8fc1\u79fb\u670d\u52a1\uff0c\u5e2e\u52a9\u60a8\u5c06\u5e97\u94fa\u4ece\u5176\u4ed6\u7535\u5546\u5e73\u53f0\u65e0\u7f1d\u8fc1\u79fb\u5230 EasyCommerce\u3002\u6211\u4eec\u7684\u56e2\u961f\u5c06\u534f\u52a9\u8f6c\u79fb\u60a8\u7684\u5546\u54c1\u3001\u5ba2\u6237\u548c\u8ba2\u5355\u6570\u636e\uff0c\u65e0\u9700\u989d\u5916\u8d39\u7528\u3002"
+            ],
+            "Where can I get additional help?": [
+                "\u6211\u53ef\u4ee5\u5728\u54ea\u91cc\u83b7\u5f97\u66f4\u591a\u5e2e\u52a9\uff1f"
+            ],
+            "For additional help and resources, please visit our comprehensive support center at": [
+                "\u5982\u9700\u66f4\u591a\u5e2e\u52a9\u548c\u8d44\u6e90\uff0c\u8bf7\u8bbf\u95ee\u6211\u4eec\u5168\u9762\u7684\u652f\u6301\u4e2d\u5fc3\uff1a"
+            ],
+            ", where you can find documentation, tutorials, and contact our support team.": [
+                "\uff0c\u5728\u90a3\u91cc\u60a8\u53ef\u4ee5\u627e\u5230\u6587\u6863\u3001\u6559\u7a0b\u5e76\u8054\u7cfb\u6211\u4eec\u7684\u652f\u6301\u56e2\u961f\u3002"
+            ],
+            "Frequently Asked": [
+                "\u5e38\u89c1"
+            ],
+            "Questions": [
+                "\u95ee\u9898"
+            ],
+            "Free is perfect for starters": [
+                "\u514d\u8d39\u7248\u975e\u5e38\u9002\u5408\u5165\u95e8\u8005"
+            ],
+            "But growth needs Pro \ud83d\ude80": [
+                "\u4f46\u8981\u6210\u957f\uff0c\u5c31\u9700\u8981\u4e13\u4e1a\u7248 \ud83d\ude80"
+            ],
+            "Ready to Upgrade?": [
+                "\u51c6\u5907\u597d\u5347\u7ea7\u4e86\u5417\uff1f"
+            ],
+            "Enhance your experience with powerful features to increase performance and flexibility.": [
+                "\u901a\u8fc7\u5f3a\u5927\u7684\u529f\u80fd\u63d0\u5347\u60a8\u7684\u4f53\u9a8c\uff0c\u589e\u5f3a\u6027\u80fd\u548c\u7075\u6d3b\u6027\u3002"
+            ],
+            "Please enter both email and license key.": [
+                "\u8bf7\u540c\u65f6\u8f93\u5165\u7535\u5b50\u90ae\u7bb1\u548c\u8bb8\u53ef\u8bc1\u5bc6\u94a5\u3002"
+            ],
+            "Invalid email or license key. Please try again.": [
+                "\u7535\u5b50\u90ae\u7bb1\u6216\u8bb8\u53ef\u8bc1\u5bc6\u94a5\u65e0\u6548\u3002\u8bf7\u91cd\u8bd5\u3002"
+            ],
+            "An error occurred while verifying the license. Please try again.": [
+                "\u9a8c\u8bc1\u8bb8\u53ef\u8bc1\u65f6\u53d1\u751f\u9519\u8bef\u3002\u8bf7\u91cd\u8bd5\u3002"
+            ],
+            "Enter your email and license key to unlock premium features": [
+                "\u8f93\u5165\u60a8\u7684\u7535\u5b50\u90ae\u7bb1\u548c\u8bb8\u53ef\u8bc1\u5bc6\u94a5\u4ee5\u89e3\u9501\u9ad8\u7ea7\u529f\u80fd"
+            ],
+            "Enter Your Email": [
+                "\u8bf7\u8f93\u5165\u60a8\u7684\u7535\u5b50\u90ae\u7bb1"
+            ],
+            "License Key": [
+                "\u8bb8\u53ef\u8bc1\u5bc6\u94a5"
+            ],
+            "Enter your License Key": [
+                "\u8bf7\u8f93\u5165\u60a8\u7684\u8bb8\u53ef\u8bc1\u5bc6\u94a5"
+            ],
+            "Verify License": [
+                "\u9a8c\u8bc1\u8bb8\u53ef\u8bc1"
+            ],
+            "Email:": [
+                "\u7535\u5b50\u90ae\u7bb1\uff1a"
+            ],
+            "License Key:": [
+                "\u8bb8\u53ef\u8bc1\u5bc6\u94a5\uff1a"
+            ],
+            "Expiry Date:": [
+                "\u5230\u671f\u65e5\u671f\uff1a"
+            ],
+            "Failed to fetch license information.": [
+                "\u83b7\u53d6\u8bb8\u53ef\u8bc1\u4fe1\u606f\u5931\u8d25\u3002"
+            ],
+            "Failed to deactivate license. Please try again.": [
+                "\u505c\u7528\u8bb8\u53ef\u8bc1\u5931\u8d25\u3002\u8bf7\u91cd\u8bd5\u3002"
+            ],
+            "An error occurred while deactivating the license. Please try again.": [
+                "\u505c\u7528\u8bb8\u53ef\u8bc1\u65f6\u53d1\u751f\u9519\u8bef\u3002\u8bf7\u91cd\u8bd5\u3002"
+            ],
+            "Your active license details": [
+                "\u60a8\u5df2\u6fc0\u6d3b\u7684\u8bb8\u53ef\u8bc1\u8be6\u60c5"
+            ],
+            "Deactivate": [
+                "\u505c\u7528"
+            ],
+            "Are you sure?": [
+                "\u60a8\u786e\u5b9a\u5417\uff1f"
+            ],
+            "Deactivating the license will remove all associated benefits and features from your account.": [
+                "\u505c\u7528\u8bb8\u53ef\u8bc1\u5c06\u4ece\u60a8\u7684\u8d26\u6237\u4e2d\u79fb\u9664\u6240\u6709\u76f8\u5173\u6743\u76ca\u548c\u529f\u80fd\u3002"
+            ],
+            "No, Return": [
+                "\u4e0d\uff0c\u8fd4\u56de"
+            ],
+            "Addon deactivated.": [
+                "\u6269\u5c55\u5df2\u505c\u7528\u3002"
+            ],
+            "Error deactivating addon.": [
+                "\u505c\u7528\u6269\u5c55\u65f6\u51fa\u9519\u3002"
+            ],
+            "Welcome to": [
+                "\u6b22\u8fce\u4f7f\u7528"
+            ],
+            "Manage all your premium features from a single dashboard.": [
+                "\u5728\u5355\u4e00\u4eea\u8868\u76d8\u4e2d\u7ba1\u7406\u60a8\u6240\u6709\u7684\u9ad8\u7ea7\u529f\u80fd\u3002"
+            ],
+            "Pro Features in Use": [
+                "\u6b63\u5728\u4f7f\u7528\u7684\u4e13\u4e1a\u7248\u529f\u80fd"
+            ],
+            "You need to activate your license to use this feature.": [
+                "\u60a8\u9700\u8981\u6fc0\u6d3b\u8bb8\u53ef\u8bc1\u624d\u80fd\u4f7f\u7528\u6b64\u529f\u80fd\u3002"
+            ],
+            "No Refunds Found.": [
+                "\u672a\u627e\u5230\u9000\u6b3e\u3002"
+            ],
+            "Refunds will appear here once processed.": [
+                "\u9000\u6b3e\u5904\u7406\u540e\u5c06\u663e\u793a\u5728\u6b64\u5904\u3002"
+            ],
+            "Prev. 30 days": [
+                "\u524d 30 \u5929"
+            ],
+            "30 days last year": [
+                "\u53bb\u5e74\u540c\u671f 30 \u5929"
+            ],
+            "Prev. 7 days": [
+                "\u524d 7 \u5929"
+            ],
+            "7 days last month": [
+                "\u4e0a\u6708\u540c\u671f 7 \u5929"
+            ],
+            "7 days last year": [
+                "\u53bb\u5e74\u540c\u671f 7 \u5929"
+            ],
+            "Last week": [
+                "\u4e0a\u5468"
+            ],
+            "Same week last month": [
+                "\u4e0a\u6708\u540c\u5468"
+            ],
+            "Same week last year": [
+                "\u53bb\u5e74\u540c\u5468"
+            ],
+            "Last month": [
+                "\u4e0a\u6708"
+            ],
+            "Same month last year": [
+                "\u53bb\u5e74\u540c\u6708"
+            ],
+            "Last year": [
+                "\u53bb\u5e74"
+            ],
+            "vs.": [
+                "\u5bf9\u6bd4"
+            ],
+            "Export": [
+                "\u5bfc\u51fa"
+            ],
+            "vs prev. period": [
+                "\u5bf9\u6bd4\u4e0a\u4e00\u5468\u671f"
+            ],
+            "Current Subscriptions": [
+                "\u5f53\u524d\u8ba2\u9605"
+            ],
+            "Subscriptions ending this month": [
+                "\u672c\u6708\u5230\u671f\u7684\u8ba2\u9605"
+            ],
+            "MRR amount": [
+                "MRR \u91d1\u989d"
+            ],
+            "Projected MRR": [
+                "\u9884\u8ba1 MRR"
+            ],
+            "Sell Subscriptions": [
+                "\u9500\u552e\u8ba2\u9605"
+            ],
+            "No data available for the selected range.": [
+                "\u6240\u9009\u8303\u56f4\u5185\u6ca1\u6709\u53ef\u7528\u6570\u636e\u3002"
+            ],
+            "Rank": [
+                "\u6392\u540d"
+            ],
+            "Units Sold": [
+                "\u9500\u552e\u6570\u91cf"
+            ],
+            "Top Customers": [
+                "\u9876\u7ea7\u5ba2\u6237"
+            ],
+            "Purchased": [
+                "\u5df2\u8d2d\u4e70"
+            ],
+            "Sales vs. Refunds vs. Net Revenue": [
+                "\u9500\u552e\u989d\u3001\u9000\u6b3e\u4e0e\u51c0\u6536\u5165\u5bf9\u6bd4"
+            ],
+            "Comparison of sales, refunds, and net revenue over time": [
+                "\u9500\u552e\u989d\u3001\u9000\u6b3e\u548c\u51c0\u6536\u5165\u968f\u65f6\u95f4\u7684\u5bf9\u6bd4"
+            ],
+            "Order vs. Refund Count": [
+                "\u8ba2\u5355\u6570\u4e0e\u9000\u6b3e\u6570\u5bf9\u6bd4"
+            ],
+            "Order Statuses": [
+                "\u8ba2\u5355\u72b6\u6001"
+            ],
+            "Subscriptions": [
+                "\u8ba2\u9605"
+            ],
+            "Order Type": [
+                "\u8ba2\u5355\u7c7b\u578b"
+            ],
+            "Top Selling Items": [
+                "\u70ed\u9500\u5546\u54c1"
+            ],
+            "Product Stats": [
+                "\u5546\u54c1\u7edf\u8ba1"
+            ],
+            "New vs. Returning Customers": [
+                "\u65b0\u5ba2\u6237\u4e0e\u56de\u5934\u5ba2\u5bf9\u6bd4"
+            ],
+            "Customer Overview": [
+                "\u5ba2\u6237\u6982\u89c8"
+            ],
+            "No data available": [
+                "\u6ca1\u6709\u53ef\u7528\u6570\u636e"
+            ],
+            "Failed to load heatmap data.": [
+                "\u52a0\u8f7d\u70ed\u529b\u56fe\u6570\u636e\u5931\u8d25\u3002"
+            ],
+            "Error loading data.": [
+                "\u52a0\u8f7d\u6570\u636e\u65f6\u51fa\u9519\u3002"
+            ],
+            " Value: %s": [
+                " \u503c\uff1a%s"
+            ],
+            "No orders": [
+                "\u65e0\u8ba2\u5355"
+            ],
+            "Top Locations": [
+                "\u70ed\u95e8\u5730\u533a"
+            ],
+            "No location data available": [
+                "\u6ca1\u6709\u53ef\u7528\u7684\u5730\u533a\u6570\u636e"
+            ],
+            "Average Order Per Customer": [
+                "\u6bcf\u4f4d\u5ba2\u6237\u5e73\u5747\u8ba2\u5355\u6570"
+            ],
+            "People Ordered once": [
+                "\u4e0b\u5355\u4e00\u6b21\u7684\u4eba\u6570"
+            ],
+            "People Ordered twice": [
+                "\u4e0b\u5355\u4e24\u6b21\u7684\u4eba\u6570"
+            ],
+            "People Ordered three times": [
+                "\u4e0b\u5355\u4e09\u6b21\u7684\u4eba\u6570"
+            ],
+            "Order vs. Customers": [
+                "\u8ba2\u5355\u4e0e\u5ba2\u6237\u5bf9\u6bd4"
+            ],
+            "Order Status Breakdown": [
+                "\u8ba2\u5355\u72b6\u6001\u660e\u7ec6"
+            ],
+            "Fulfillment Status Breakdown": [
+                "\u5c65\u7ea6\u72b6\u6001\u660e\u7ec6"
+            ],
+            "Orders by Location": [
+                "\u6309\u5730\u533a\u5212\u5206\u7684\u8ba2\u5355"
+            ],
+            "Daily Orders Heatmap": [
+                "\u6bcf\u65e5\u8ba2\u5355\u70ed\u529b\u56fe"
+            ],
+            "First Order": [
+                "\u9996\u6b21\u8ba2\u5355"
+            ],
+            "Revenue Earned": [
+                "\u5df2\u8d5a\u53d6\u6536\u5165"
+            ],
+            "Revenue Over Time": [
+                "\u6536\u5165\u8d8b\u52bf"
+            ],
+            "Top Customers by Revenue": [
+                "\u6309\u6536\u5165\u6392\u540d\u7684\u9876\u7ea7\u5ba2\u6237"
+            ],
+            "In Stock (Unit)": [
+                "\u5e93\u5b58\uff08\u4ef6\uff09"
+            ],
+            "See Report": [
+                "\u67e5\u770b\u62a5\u544a"
+            ],
+            "Products Sold Over Time": [
+                "\u5546\u54c1\u9500\u91cf\u8d8b\u52bf"
+            ],
+            " Most sold products": [
+                " \u6700\u7545\u9500\u5546\u54c1"
+            ],
+            " Least sold products": [
+                " \u6700\u6ede\u9500\u5546\u54c1"
+            ],
+            "Total %d Review": [
+                "\u5171 %d \u6761\u8bc4\u4ef7"
+            ],
+            "%d Star": [
+                "%d \u661f"
+            ],
+            "%d review": [
+                "%d \u6761\u8bc4\u4ef7"
+            ],
+            "No reviews yet": [
+                "\u6682\u65e0\u8bc4\u4ef7"
+            ],
+            "Variation": [
+                "\u53d8\u4f53"
+            ],
+            "Amount Sold": [
+                "\u9500\u552e\u989d"
+            ],
+            "Item Sold": [
+                "\u5df2\u552e\u6570\u91cf"
+            ],
+            "Basic Info": [
+                "\u57fa\u672c\u4fe1\u606f"
+            ],
+            "Sales Over Time": [
+                "\u9500\u552e\u989d\u8d8b\u52bf"
+            ],
+            "Product Sale by Location": [
+                "\u6309\u5730\u533a\u5212\u5206\u7684\u5546\u54c1\u9500\u552e"
+            ],
+            "Order Placed": [
+                "\u5df2\u4e0b\u5355"
+            ],
+            "Product Purchased": [
+                "\u5df2\u8d2d\u4e70\u5546\u54c1"
+            ],
+            "Total Purchase": [
+                "\u8d2d\u4e70\u603b\u989d"
+            ],
+            " See Report": [
+                " \u67e5\u770b\u62a5\u544a"
+            ],
+            "Customers Over Time": [
+                "\u5ba2\u6237\u8d8b\u52bf"
+            ],
+            "Customers location": [
+                "\u5ba2\u6237\u6240\u5728\u5730"
+            ],
+            "Customer By Day Heatmap": [
+                "\u6bcf\u65e5\u5ba2\u6237\u70ed\u529b\u56fe"
+            ],
+            "AI connected successfully": [
+                "AI \u8fde\u63a5\u6210\u529f"
+            ],
+            "AI connection failed. Please try again.": [
+                "AI \u8fde\u63a5\u5931\u8d25\u3002\u8bf7\u91cd\u8bd5\u3002"
+            ],
+            "New Order": [
+                "\u65b0\u5efa\u8ba2\u5355"
+            ]
+        }
+    }
+}

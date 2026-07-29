@@ -1,0 +1,36 @@
+{
+    "translation-revision-date": "2026-07-23 12:00+0000",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "assets\/public\/js\/init.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "ja",
+                "plural-forms": "nplurals=1; plural=0;"
+            },
+            "Price": [
+                "\u4fa1\u683c"
+            ],
+            "Your cart is empty.": [
+                "\u30ab\u30fc\u30c8\u306f\u7a7a\u3067\u3059\u3002"
+            ],
+            "Product": [
+                "\u5546\u54c1"
+            ],
+            "Quantity": [
+                "\u6570\u91cf"
+            ],
+            "Failed to load cart.": [
+                "\u30ab\u30fc\u30c8\u306e\u8aad\u307f\u8fbc\u307f\u306b\u5931\u6557\u3057\u307e\u3057\u305f\u3002"
+            ],
+            "Error loading cart.": [
+                "\u30ab\u30fc\u30c8\u306e\u8aad\u307f\u8fbc\u307f\u4e2d\u306b\u30a8\u30e9\u30fc\u304c\u767a\u751f\u3057\u307e\u3057\u305f\u3002"
+            ],
+            "Failed to add to cart. Please try again.": [
+                "\u30ab\u30fc\u30c8\u3078\u306e\u8ffd\u52a0\u306b\u5931\u6557\u3057\u307e\u3057\u305f\u3002\u3082\u3046\u4e00\u5ea6\u304a\u8a66\u3057\u304f\u3060\u3055\u3044\u3002"
+            ]
+        }
+    }
+}

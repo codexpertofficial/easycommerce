@@ -52,9 +52,9 @@ class Product_Variation extends Model {
 	public $type = 'digital';
 
 	/**
-	 * @var int Variation stock quantity
+	 * @var int|null Variation stock quantity. Null means stock is not managed.
 	 */
-	public $stock_quantity = 0;
+	public $stock_quantity = null;
 
 	/**
 	 * @var int Variation stock limit
@@ -98,15 +98,15 @@ class Product_Variation extends Model {
 			$variation = $this->db->get_by_id( $id );
 
 			if ( $variation ) {
-				$this->id             = $variation->id;
-				$this->product_id     = $variation->product_id;
-				$this->price_id       = $variation->price_id;
+				$this->id             = (int) $variation->id;
+				$this->product_id     = (int) $variation->product_id;
+				$this->price_id       = (int) $variation->price_id;
 				$this->name           = $variation->name;
 				$this->sku            = $variation->sku;
 				$this->type           = $variation->type;
-				$this->price          = $variation->price;
-				$this->sale_price     = $variation->sale_price;
-				$this->stock_quantity = $variation->stock_quantity;
+				$this->price          = (float) $variation->price;
+				$this->sale_price     = (float) $variation->sale_price;
+				$this->stock_quantity = is_null( $variation->stock_quantity ) ? null : (int) $variation->stock_quantity;
 				$this->stock_limit    = $variation->stock_limit;
 				$this->status         = $variation->status;
 				$this->exists         = true;
@@ -315,13 +315,13 @@ class Product_Variation extends Model {
  	 * @return bool
  	 */
  	public function manages_stock() {
- 		return $this->stock_quantity > 0;
+ 		return null !== $this->stock_quantity;
  	}
 
 	/**
 	 * Get variation stock quantity.
 	 *
-	 * @return int
+	 * @return int|null
 	 */
 	public function get_stock() {
 		return $this->stock_quantity;
@@ -330,10 +330,10 @@ class Product_Variation extends Model {
 	/**
 	 * Set variation stock quantity.
 	 *
-	 * @param int $stock_quantity
+	 * @param int|null $stock_quantity
 	 */
 	public function set_stock_quantity( $stock_quantity ) {
-		$this->stock_quantity = $stock_quantity;
+		$this->stock_quantity = ( null === $stock_quantity || '' === $stock_quantity ) ? null : (int) $stock_quantity;
 	}
 
 	/**
@@ -615,7 +615,17 @@ class Product_Variation extends Model {
 	 * @return bool
 	 */
 	public function add_attribute( $attribute_id, $value_id ) {
-		return $this->attributes->add( $this->id, $attribute_id, $value_id );
+		$attribute_id = (int) $attribute_id;
+		$value_id     = (int) $value_id;
+
+		// The FK columns are attribute_id/value_id; resolve their slugs (the
+		// row also stores them) so ids are not misrouted into the slug params.
+		$attribute      = ( new Attribute() )->get( $attribute_id );
+		$value          = ( new Attribute_Value() )->get( $value_id );
+		$attribute_slug = $attribute->slug ?? '';
+		$value_slug     = $value->slug ?? '';
+
+		return $this->attributes->add( $this->id, $attribute_slug, $value_slug, $attribute_id, $value_id );
 	}
 
 	/**

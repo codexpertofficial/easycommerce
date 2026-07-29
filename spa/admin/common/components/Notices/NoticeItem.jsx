@@ -72,13 +72,11 @@ const NoticeItem = ({ notice, onDismiss }) => {
                 <img src={`${assetPath}${config.icon}`} alt="" />
                 <div className="flex flex-col gap-[2px]">
                     {notice.title && (
-                        <h4 className={`${config.titleColor} font-inter font-medium text-base leading-[22.4px]`}>
-                            {notice.title}
-                        </h4>
+                        <h4 className={`${config.titleColor} font-inter font-medium text-base leading-[22.4px]`}
+                            dangerouslySetInnerHTML={{ __html: notice.title }} />
                     )}
-                    <p className="font-inter font-normal text-sm leading-[22.4px] m-0 p-0 text-[#3C3C42]">
-                        {notice.message}
-                    </p>
+                    <p className="font-inter font-normal text-sm leading-[22.4px] m-0 p-0 text-[#3C3C42]"
+                        dangerouslySetInnerHTML={{ __html: notice.message }} />
                 </div>
             </div>
 

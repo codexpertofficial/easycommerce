@@ -1,0 +1,150 @@
+{
+    "translation-revision-date": "2026-07-23 12:00+0000",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "build\/wizard.bundle.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "it_IT",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Business Info": [
+                "Informazioni aziendali"
+            ],
+            "Store Pages": [
+                "Pagine del negozio"
+            ],
+            "Business Type": [
+                "Tipo di attivit\u00e0"
+            ],
+            "Currency": [
+                "Valuta"
+            ],
+            "Payment Methods": [
+                "Metodi di pagamento"
+            ],
+            "Previous": [
+                "Precedente"
+            ],
+            "Next": [
+                "Successivo"
+            ],
+            "Business Setup": [
+                "Configurazione dell'attivit\u00e0"
+            ],
+            "Fill in your business details so your store functions seamlessly and is ready for customers. You can adjust these settings anytime.": [
+                "Inserisci i dettagli della tua attivit\u00e0 affinch\u00e9 il tuo negozio funzioni senza problemi e sia pronto per i clienti. Puoi modificare queste impostazioni in qualsiasi momento."
+            ],
+            "Store Name": [
+                "Nome del negozio"
+            ],
+            "Write your business name": [
+                "Scrivi il nome della tua attivit\u00e0"
+            ],
+            "Provide the name your store will use in your storefront and communications.": [
+                "Fornisci il nome che il tuo negozio user\u00e0 nella vetrina e nelle comunicazioni."
+            ],
+            "Pick the type that best describes your business. You can update it later if needed.": [
+                "Scegli il tipo che descrive meglio la tua attivit\u00e0. Puoi aggiornarlo in seguito, se necessario."
+            ],
+            "Business Country": [
+                "Paese dell'attivit\u00e0"
+            ],
+            "Select the country where your business is located to configure taxes, currency, and shipping correctly.": [
+                "Seleziona il paese in cui si trova la tua attivit\u00e0 per configurare correttamente imposte, valuta e spedizione."
+            ],
+            "Store Email": [
+                "Email del negozio"
+            ],
+            "Write your business email": [
+                "Scrivi l'email della tua attivit\u00e0"
+            ],
+            "Enter the email address your store will use for notifications and customer communications.": [
+                "Inserisci l'indirizzo email che il tuo negozio user\u00e0 per le notifiche e le comunicazioni con i clienti."
+            ],
+            "Store Setup": [
+                "Configurazione del negozio"
+            ],
+            "Your store needs a Shop page, Checkout page, Customer Dashboard, and Payment page to work properly. We\u2019ll create them for you automatically \u2014 you can change them anytime from the settings page.": [
+                "Il tuo negozio necessita di una pagina Negozio, una pagina Cassa, una Bacheca cliente e una pagina Pagamento per funzionare correttamente. Le creeremo automaticamente per te \u2014 puoi cambiarle in qualsiasi momento dalla pagina delle impostazioni."
+            ],
+            "Demo Products": [
+                "Prodotti demo"
+            ],
+            "Import demo products to preview your storefront and test features. Remove them anytime.": [
+                "Importa prodotti demo per visualizzare in anteprima la tua vetrina e testare le funzionalit\u00e0. Rimuovili in qualsiasi momento."
+            ],
+            "Payment Setup": [
+                "Configurazione dei pagamenti"
+            ],
+            "Fill in your payment information so your store is ready to accept payments safely and efficiently. You can change this anytime.": [
+                "Inserisci le tue informazioni di pagamento affinch\u00e9 il tuo negozio sia pronto ad accettare pagamenti in modo sicuro ed efficiente. Puoi modificarle in qualsiasi momento."
+            ],
+            "Select Your Currency": [
+                "Seleziona la tua valuta"
+            ],
+            "Select the currency your store will use for all prices and transactions.": [
+                "Seleziona la valuta che il tuo negozio user\u00e0 per tutti i prezzi e le transazioni."
+            ],
+            "Currency Format": [
+                "Formato della valuta"
+            ],
+            "Select Your Currency Format": [
+                "Seleziona il formato della tua valuta"
+            ],
+            "Select the format you want for displaying prices in your store.": [
+                "Seleziona il formato che desideri per visualizzare i prezzi nel tuo negozio."
+            ],
+            "Congratulations, you're all set!": [
+                "Congratulazioni, \u00e8 tutto pronto!"
+            ],
+            "You've successfully set up EasyCommerce on your website. Start by adding your first product, explore the": [
+                "Hai configurato con successo EasyCommerce sul tuo sito web. Inizia aggiungendo il tuo primo prodotto, esplora la"
+            ],
+            "documentation": [
+                "documentazione"
+            ],
+            ", or": [
+                ", oppure"
+            ],
+            "join the EasyCommerce Community": [
+                "unisciti alla community di EasyCommerce"
+            ],
+            "to ask questions and connect with other store owners.": [
+                "per fare domande e connetterti con altri proprietari di negozi."
+            ],
+            "Store Dashboard": [
+                "Bacheca del negozio"
+            ],
+            "Add A Product": [
+                "Aggiungi un prodotto"
+            ],
+            "Set up your store name, location, and contact details": [
+                "Configura il nome, la sede e i dati di contatto del tuo negozio"
+            ],
+            "Create essential pages like Shop, Cart, and Checkout": [
+                "Crea le pagine essenziali come Negozio, Carrello e Cassa"
+            ],
+            "Connect payment gateways to start accepting orders": [
+                "Collega i gateway di pagamento per iniziare ad accettare ordini"
+            ],
+            "Welcome to EasyCommerce": [
+                "Benvenuto in EasyCommerce"
+            ],
+            "Start selling in a few minutes with 3 easy steps:": [
+                "Inizia a vendere in pochi minuti con 3 semplici passaggi:"
+            ],
+            "Get Started Now": [
+                "Inizia ora"
+            ],
+            "Demo import failed. Please try again.": [
+                "Importazione dei demo non riuscita. Riprova."
+            ],
+            "Skip": [
+                "Salta"
+            ]
+        }
+    }
+}

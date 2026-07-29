@@ -2249,6 +2249,8 @@ function easycommerce_onboarding_snapshot() {
 		'product_bucket'     => $bucket( $product_count ),
 		'order_bucket'       => $bucket( $order_count ),
 		'deactivation_count' => (int) get_option( 'easycommerce_deactivation_count', 0 ),
+		'business_type'      => (string) Utility::get_option( 'general', 'business', 'business_type', '' ),
+		'store_design'       => (string) get_option( 'easycommerce_store_design', '' ),
 		'active_gateways'    => implode( ',', (array) $active_gateways ),
 		'ai_plan'            => isset( $ai['plan'] ) ? $ai['plan'] : 'free',
 		'ai_credits_used'    => isset( $ai['used'] ) ? (int) $ai['used'] : 0,
@@ -2270,6 +2272,96 @@ function easycommerce_onboarding_snapshot() {
 	 * @param array $snapshot The derived onboarding/engagement values.
 	 */
 	return apply_filters( 'easycommerce_onboarding_snapshot', $snapshot );
+}
+
+/**
+ * The telemetry event vocabulary understood by the hub.
+ *
+ * @since 1.45
+ * @return string[]
+ */
+function easycommerce_telemetry_events() {
+	return array( 'feedback', 'integration_request', 'setup_wizard', 'deactivation' );
+}
+
+/**
+ * Resolve which telemetry event a submission represents.
+ *
+ * An explicit event wins. Anything else falls back to the legacy shape so an
+ * older caller (or a third-party one) still classifies correctly.
+ *
+ * @since 1.45
+ * @param string $event       Explicit event name, if any.
+ * @param int    $deactivated Legacy deactivation flag.
+ * @param string $subject     Submitted subject.
+ * @return string
+ */
+function easycommerce_telemetry_event( $event, $deactivated = 0, $subject = '' ) {
+	$event = sanitize_key( (string) $event );
+
+	if ( in_array( $event, easycommerce_telemetry_events(), true ) ) {
+		return $event;
+	}
+
+	if ( 1 === (int) $deactivated ) {
+		return 'deactivation';
+	}
+
+	if ( 'setup_wizard' === (string) $subject ) {
+		return 'setup_wizard';
+	}
+
+	return 'feedback';
+}
+
+/**
+ * Whether the store owner consented to sharing diagnostics/usage data.
+ *
+ * Gates the passive site snapshot only — what the owner actually typed into a
+ * feedback or deactivation form is their own submission and always goes.
+ *
+ * Sources, in precedence order:
+ * - `easycommerce_share_data`, the standalone mirror written by the wizard. This
+ *   is authoritative: the `general-business` option group it also lives in gets
+ *   replaced wholesale on every settings save, so the group copy cannot be
+ *   trusted to survive.
+ * - `share_data` in the `easycommerce-general-business` group (the wizard's
+ *   Business step checkbox), for installs saved before the mirror existed.
+ * - `_easycommerce-no_tracking`, written by the wizard's older `dont_share_data`
+ *   field (it was never read anywhere until now).
+ *
+ * Installs that predate the checkbox have none of these; they keep their existing
+ * behaviour rather than silently going dark.
+ *
+ * @since 1.45
+ * @return bool
+ */
+function easycommerce_can_share_data() {
+	$consent = true;
+
+	if ( get_option( '_easycommerce-no_tracking' ) ) {
+		$consent = false;
+	}
+
+	$business = (array) get_option( 'easycommerce-general-business', array() );
+
+	if ( isset( $business['share_data'] ) ) {
+		$consent = (bool) (int) $business['share_data'];
+	}
+
+	$standalone = get_option( 'easycommerce_share_data', null );
+
+	if ( ! is_null( $standalone ) ) {
+		$consent = (bool) (int) $standalone;
+	}
+
+	/**
+	 * Filters whether diagnostics may be shared with the hub.
+	 *
+	 * @since 1.45
+	 * @param bool $consent Whether sharing is permitted.
+	 */
+	return (bool) apply_filters( 'easycommerce_can_share_data', $consent );
 }
 
 function easycommerce_deduct_ai_credits( $deduct = 1, $credits = null ) {

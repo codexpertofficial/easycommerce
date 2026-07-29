@@ -1,0 +1,33 @@
+{
+    "translation-revision-date": "2026-07-23 12:00+0000",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "assets\/admin\/js\/email-placeholders.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "it_IT",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Insert Email Placeholder": [
+                "Inserisci segnaposto email"
+            ],
+            "Select a placeholder:": [
+                "Seleziona un segnaposto:"
+            ],
+            "Select a placeholder to automatically insert it into your email template. These will be replaced with actual values when emails are sent.": [
+                "Seleziona un segnaposto per inserirlo automaticamente nel tuo template email. Verranno sostituiti con i valori effettivi al momento dell'invio delle email."
+            ],
+            "Close": [
+                "Chiudi"
+            ],
+            "Search for a placeholder...": [
+                "Cerca un segnaposto..."
+            ],
+            "Loading...": [
+                "Caricamento..."
+            ]
+        }
+    }
+}

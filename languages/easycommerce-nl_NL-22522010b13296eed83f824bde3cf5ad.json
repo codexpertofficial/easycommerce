@@ -1,0 +1,33 @@
+{
+    "translation-revision-date": "2026-07-23 00:00+0000",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "assets\/payment\/js\/paypal.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "nl_NL",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Failed to load cart data. Please refresh the page.": [
+                "Kon winkelwagengegevens niet laden. Vernieuw de pagina."
+            ],
+            "Purchase from EasyCommerce": [
+                "Aankoop bij EasyCommerce"
+            ],
+            "Item": [
+                "Artikel"
+            ],
+            "Your cart has been updated. Please refresh the page and try again.": [
+                "Je winkelwagen is bijgewerkt. Vernieuw de pagina en probeer het opnieuw."
+            ],
+            "An unknown error occurred with PayPal": [
+                "Er is een onbekende fout opgetreden met PayPal"
+            ],
+            "PayPal Error: %s": [
+                "PayPal-fout: %s"
+            ]
+        }
+    }
+}

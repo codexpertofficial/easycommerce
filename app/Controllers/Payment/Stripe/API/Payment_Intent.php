@@ -244,25 +244,46 @@ class Payment_Intent {
 					'type'            => 'setup_intent',
 				);
 			} else {
-				$amount_in_cents         = max( (int) ( $total_amount * 100 ), 50 );
-				$enabled_payment_methods = $this->payment_methods_helper->get_enabled_payment_methods();
-				$enabled_payment_methods = easycommerce_stripe_filter_payment_methods_by_currency( $enabled_payment_methods, $currency );
-				$enabled_payment_methods = easycommerce_stripe_filter_payment_methods_by_amount( $enabled_payment_methods, $amount_in_cents, $currency );
-				$enabled_payment_methods = easycommerce_stripe_filter_wallet_payment_methods( $enabled_payment_methods );
-				$enabled_payment_methods = apply_filters( 'easycommerce_stripe_payment_intent_methods', $enabled_payment_methods, $cart, $currency );
+				$amount_in_cents = max( (int) ( $total_amount * 100 ), 50 );
 
-				// Ensure at least 'card' is available
-				if ( empty( $enabled_payment_methods ) ) {
-					$enabled_payment_methods = array( 'card' );
-				}
+				// Non-recurring path. Let Stripe decide which of the account's enabled
+				// methods are eligible for this currency, country and amount — its rules
+				// are authoritative and self-updating, so no static method-to-currency
+				// map can go stale. This is what made Klarna misbehave: its allowed
+				// currency depends on the Stripe account country, not a fixed list
+				// (https://docs.stripe.com/payments/klarna). Recurring carts never reach
+				// here; they run as SetupIntents in the branch above. See Stripe's
+				// dynamic payment methods docs for the mechanism used here:
+				// https://docs.stripe.com/payments/payment-methods/dynamic-payment-methods .
+				$all_methods = $this->payment_methods_helper->get_enabled_payment_methods();
+				$all_methods = easycommerce_stripe_filter_wallet_payment_methods( $all_methods );
+
+				// Preserve the existing extension contract: a filter (e.g. the
+				// subscriptions add-on) may narrow the set. Automatic payment methods
+				// takes no allow-list, so whatever the filter removes is passed on as an
+				// explicit exclusion instead.
+				$kept     = apply_filters( 'easycommerce_stripe_payment_intent_methods', $all_methods, $cart, $currency );
+				$excluded = array_values( array_diff( $all_methods, $kept ) );
 
 				$payment_intent_data = array(
-					'amount'               => $amount_in_cents,
-					'currency'             => $currency,
-					'customer'             => $customer_id,
-					'metadata'             => $metadata,
-					'payment_method_types' => $enabled_payment_methods,
+					'amount'                    => $amount_in_cents,
+					'currency'                  => $currency,
+					'customer'                  => $customer_id,
+					'metadata'                  => $metadata,
+					'automatic_payment_methods' => array( 'enabled' => true ),
 				);
+
+				// Pin to the account's default payment method configuration when known so
+				// the server intent and the client Payment Element resolve the same set;
+				// Stripe falls back to the account default when it is omitted.
+				$pmc_id = $this->payment_methods_helper->get_default_pmc_id();
+				if ( ! empty( $pmc_id ) ) {
+					$payment_intent_data['payment_method_configuration'] = $pmc_id;
+				}
+
+				if ( ! empty( $excluded ) ) {
+					$payment_intent_data['excluded_payment_method_types'] = $excluded;
+				}
 
 				$payment_intent = $this->api_client->paymentIntents->create( $payment_intent_data );
 

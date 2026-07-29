@@ -97,25 +97,34 @@ jQuery(function ($) {
 
         const currency = (EASYCOMMERCE.currency_code || 'usd').toLowerCase();
         const amountInCents = getCartAmount();
-        const enabledPaymentMethods = filterMethodsByAmount(
-            EASYCOMMERCE.stripe.enabled_payment_methods || ['card'],
-            amountInCents,
-            currency
-        );
 
         var elementsOptions = {
             mode: intentMode,
             currency: currency,
-            paymentMethodTypes: enabledPaymentMethods,
             appearance: {
                 theme: EASYCOMMERCE.stripe.payment_element_theme || 'stripe',
             },
         };
 
         if (intentMode === 'setup') {
+            // Recurring flow: the subscriptions add-on narrows the server list to
+            // reusable methods and localizes it, so keep rendering that explicit set.
+            elementsOptions.paymentMethodTypes = filterMethodsByAmount(
+                EASYCOMMERCE.stripe.enabled_payment_methods || ['card'],
+                amountInCents,
+                currency
+            );
             elementsOptions.setupFutureUsage = 'off_session';
         } else {
+            // Non-recurring flow: let Stripe resolve the eligible methods from the
+            // account's payment method configuration so the Element matches the
+            // server PaymentIntent. Stripe filters by account country, currency and
+            // amount — no static method-to-currency map (fixes Klarna per-country).
+            // Docs: https://docs.stripe.com/payments/payment-methods/dynamic-payment-methods
             elementsOptions.amount = amountInCents;
+            if (EASYCOMMERCE.stripe.payment_method_configuration) {
+                elementsOptions.paymentMethodConfiguration = EASYCOMMERCE.stripe.payment_method_configuration;
+            }
         }
 
         elements = stripe.elements(elementsOptions);

@@ -252,7 +252,7 @@ class CustomerTest extends EasyCommerceTestCase {
 	 */
 	public function test_get_orders_by_status(): void {
 		$customer = new Customer( $this->user_id );
-		$orders   = $customer->get_orders_by_status();
+		$orders   = $customer->get_orders_by_status( 'completed' );
 
 		$this->assertIsArray( $orders );
 	}

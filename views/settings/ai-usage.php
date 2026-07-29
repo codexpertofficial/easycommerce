@@ -263,7 +263,23 @@ $date_format = get_option( 'date_format' ) . ' ' . get_option( 'time_format' );
 		</div>
 	</div>
 
-	<p class="text-ec-body text-xs mb-6" style="margin-bottom:20px;"><?php esc_html_e( 'Plan credits reset monthly and do not roll over. Top-up credits (coming soon) never expire.', 'easycommerce' ); ?></p>
+	
+	<div class="flex items-center justify-between">
+		<p class="text-ec-body text-xs mb-6" style="margin-bottom:20px;"><?php esc_html_e( 'Plan credits reset monthly and do not roll over. Top-up credits (coming soon) never expire.', 'easycommerce' ); ?></p>
+
+		<?php if ( $ec_ai_ready && $total > 0 ) : ?>
+			<button
+				type="button"
+				id="ec-ai-reset-logs-btn"
+				class="button mb-6 !h-[32px] text-ec-trashText underline border-none rounded-[6px] px-[14px] text-[13px] leading-[1.7] focus:outline-none hover:bg-transparent focus:shadow-none"
+				data-nonce="<?php echo esc_attr( wp_create_nonce( 'ec_ai_reset_logs' ) ); ?>"
+			>
+				<?php esc_html_e( 'Reset logs', 'easycommerce' ); ?>
+			</button>
+		<?php endif; ?>
+	</div>
+
+	<div id="ec-ai-reset-logs-modal-root"></div>
 
 	<table class="ec-ai-table">
 		<thead>

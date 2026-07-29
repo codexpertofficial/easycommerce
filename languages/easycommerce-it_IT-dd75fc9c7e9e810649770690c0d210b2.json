@@ -1,0 +1,36 @@
+{
+    "translation-revision-date": "2026-07-23 12:00+0000",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "assets\/public\/js\/init.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "it_IT",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Price": [
+                "Prezzo"
+            ],
+            "Your cart is empty.": [
+                "Il tuo carrello \u00e8 vuoto."
+            ],
+            "Product": [
+                "Prodotto"
+            ],
+            "Quantity": [
+                "Quantit\u00e0"
+            ],
+            "Failed to load cart.": [
+                "Impossibile caricare il carrello."
+            ],
+            "Error loading cart.": [
+                "Errore durante il caricamento del carrello."
+            ],
+            "Failed to add to cart. Please try again.": [
+                "Impossibile aggiungere al carrello. Riprova."
+            ]
+        }
+    }
+}

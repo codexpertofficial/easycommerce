@@ -337,6 +337,11 @@ class API {
 				'methods'	 => WP_REST_Server::CREATABLE,
 				'callback'	 => array( $connectivity, 'feedback' ),
 				'args'		 => array(
+					'event'	  => array(
+						'description' => __( 'Telemetry event name', 'easycommerce' ),
+						'required'	  => false,
+						'type'        => 'string',
+					),
 					'name'	  => array(
 						'description' => __( 'Your name', 'easycommerce' ),
 						'required'	  => true,
@@ -2289,6 +2294,46 @@ class API {
 				'permission' => array( $this, 'is_customer' ),
 			)
 		);
+
+		// Get active badges for a product
+		$this->register_route(
+			'/products/(?P<id>\d+)/badges',
+			array(
+				'methods'	 => WP_REST_Server::READABLE,
+				'callback'	 => array( $product, 'get_badges' ),
+				'args'		 => array(
+					'id' => array(
+						'description' => __( 'The product ID', 'easycommerce' ),
+						'required'	  => true,
+						'type'		  => 'integer',
+					),
+				),
+				'permission' => array( $this, 'is_user' ),
+			)
+		);
+
+		// Set badge(s) for a product
+		$this->register_route(
+			'/products/(?P<id>\d+)/badges',
+			array(
+				'methods'	 => WP_REST_Server::CREATABLE,
+				'callback'	 => array( $product, 'set_badges' ),
+				'args'		 => array(
+					'id'	 => array(
+						'description' => __( 'The product ID', 'easycommerce' ),
+						'required'	  => true,
+						'type'		  => 'integer',
+					),
+					'badges' => array(
+						'description' => __( 'Object of badge_type => bool. Supported keys: new, best_seller, featured, sale.', 'easycommerce' ),
+						'required'	  => true,
+						'type'		  => 'object',
+					),
+				),
+				'permission' => array( $this, 'is_admin' ),
+			)
+		);
+
 	}
 
 	/**
@@ -4938,7 +4983,7 @@ class API {
 						'enum'		  => array( 'asc', 'desc' ),
 					),
 				),
-				'permission' => array( $this, 'is_manager' ),
+				'permission' => array( $this, 'is_member' ),
 			)
 		);
 

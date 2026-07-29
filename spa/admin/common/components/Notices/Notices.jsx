@@ -9,10 +9,11 @@ const Notices = ({ screen = null, noticeType = null }) => {
         setNotices(prev => prev.filter(n => n.id !== noticeId));
     };
 
-    useEffect(() => {
-        const params = new URLSearchParams();
-        if (noticeType) params.append('type', noticeType);
-        if (screen)     params.append('screen', screen);
+	useEffect(() => {
+		const params = new URLSearchParams();
+		if (noticeType) params.append('type', noticeType);
+		if (screen)     params.append('screen', screen);
+		params.append('limit', '1');
 
         const queryString = params.toString();
         const apiUrl = `${EASYCOMMERCE.rest_base}/notices${queryString ? `?${queryString}` : ''}`;

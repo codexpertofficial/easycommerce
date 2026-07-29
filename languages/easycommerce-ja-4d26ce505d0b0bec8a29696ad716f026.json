@@ -1,0 +1,33 @@
+{
+    "translation-revision-date": "2026-07-23 12:00+0000",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "assets\/admin\/js\/email-placeholders.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "ja",
+                "plural-forms": "nplurals=1; plural=0;"
+            },
+            "Insert Email Placeholder": [
+                "\u30e1\u30fc\u30eb\u30d7\u30ec\u30fc\u30b9\u30db\u30eb\u30c0\u30fc\u3092\u633f\u5165"
+            ],
+            "Select a placeholder:": [
+                "\u30d7\u30ec\u30fc\u30b9\u30db\u30eb\u30c0\u30fc\u3092\u9078\u629e\uff1a"
+            ],
+            "Select a placeholder to automatically insert it into your email template. These will be replaced with actual values when emails are sent.": [
+                "\u30d7\u30ec\u30fc\u30b9\u30db\u30eb\u30c0\u30fc\u3092\u9078\u629e\u3059\u308b\u3068\u3001\u30e1\u30fc\u30eb\u30c6\u30f3\u30d7\u30ec\u30fc\u30c8\u306b\u81ea\u52d5\u7684\u306b\u633f\u5165\u3055\u308c\u307e\u3059\u3002\u30e1\u30fc\u30eb\u9001\u4fe1\u6642\u306b\u5b9f\u969b\u306e\u5024\u306b\u7f6e\u304d\u63db\u3048\u3089\u308c\u307e\u3059\u3002"
+            ],
+            "Close": [
+                "\u9589\u3058\u308b"
+            ],
+            "Search for a placeholder...": [
+                "\u30d7\u30ec\u30fc\u30b9\u30db\u30eb\u30c0\u30fc\u3092\u691c\u7d22..."
+            ],
+            "Loading...": [
+                "\u8aad\u307f\u8fbc\u307f\u4e2d..."
+            ]
+        }
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "translation-revision-date": "2026-07-23 00:00+0000",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "blocks\/shops-page\/template-3\/components\/Filters.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "zh_CN",
+                "plural-forms": "nplurals=1; plural=0;"
+            },
+            "Categories": [
+                "\u5206\u7c7b"
+            ],
+            "Brands": [
+                "\u54c1\u724c"
+            ],
+            "Price Range": [
+                "\u4ef7\u683c\u533a\u95f4"
+            ]
+        }
+    }
+}

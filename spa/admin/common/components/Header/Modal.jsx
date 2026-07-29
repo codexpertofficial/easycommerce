@@ -31,15 +31,17 @@ const Modal = ({ setShowModal }) => {
                 "Content-Type": "application/json",
                 "X-WP-Nonce": EASYCOMMERCE.nonce,
             },
-            body: JSON.stringify(data),
+            body: JSON.stringify({ ...data, event: "feedback" }),
         })
             .then((res) => res.json())
             .then((data) => {
                 easycommerce_modal(false);
-                if (data.success && data.data?.url) {
+                // Not gated on data.data.url: that is the GitHub issue URL, and the
+                // hub no longer opens an issue for every kind of submission.
+                if (data.success) {
                     setShowMessage(true);
                 } else {
-                    toast.error(data.data.message, {
+                    toast.error(data?.data?.message || __("Something went wrong.", "easycommerce"), {
                         position: "top-right",
                         style: {
                             fontSize: "16px",

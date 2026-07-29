@@ -1,0 +1,167 @@
+{
+    "translation-revision-date": "2026-07-23 00:00+0000",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "build\/editor.bundle.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "nl_NL",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Pro": [
+                "Pro"
+            ],
+            "Smart Search": [
+                "Slim zoeken"
+            ],
+            "Your Email": [
+                "Je e-mailadres"
+            ],
+            "Connect AI": [
+                "AI verbinden"
+            ],
+            "Instruction": [
+                "Instructie"
+            ],
+            "AI Writer": [
+                "AI Writer"
+            ],
+            "Image Editor": [
+                "Afbeeldingsbewerker"
+            ],
+            "Close": [
+                "Sluiten"
+            ],
+            "Enter your Email": [
+                "Voer je e-mailadres in"
+            ],
+            "Uses %d credit.": [
+                "Gebruikt %d credit.",
+                "Gebruikt %d credits."
+            ],
+            "%d Credit": [
+                "%d credit",
+                "%d credits"
+            ],
+            "Remaining": [
+                "Resterend"
+            ],
+            "No credits available": [
+                "Geen credits beschikbaar"
+            ],
+            "Two AI Agents, One Free Key": [
+                "Twee AI-agents, \u00e9\u00e9n gratis sleutel"
+            ],
+            "Connect a free API key -": [
+                "Verbind een gratis API-sleutel -"
+            ],
+            "100 AI credits": [
+                "100 AI-credits"
+            ],
+            "free, more with": [
+                "gratis, meer met"
+            ],
+            "Store Copilot - For You": [
+                "Store Copilot - voor jou"
+            ],
+            "Chat to run your store: ask about sales, create and edit products, and update orders - in plain English, with your approval.": [
+                "Chat om je winkel te runnen: vraag naar verkopen, maak en bewerk producten en werk bestellingen bij - in gewone taal, met jouw goedkeuring."
+            ],
+            "Shopping Agent - For Your Shoppers": [
+                "Winkelagent - voor je klanten"
+            ],
+            "A 24\/7 storefront agent that helps customers find the right product, answers their questions, and places orders for them.": [
+                "Een 24\/7-winkelagent die klanten helpt het juiste product te vinden, hun vragen beantwoordt en bestellingen voor hen plaatst."
+            ],
+            "Plus": [
+                "Plus"
+            ],
+            "& more.": [
+                "& meer."
+            ],
+            "Each AI request transmits only the relevant records - the item you're working on, or a shopper's query and its products - to EasyCommerce's AI service. Your bulk customer and order data is never uploaded, sold, or used to train models.": [
+                "Elke AI-aanvraag verstuurt alleen de relevante gegevens - het item waaraan je werkt, of de vraag van een klant en de bijbehorende producten - naar de AI-service van EasyCommerce. Je volledige klant- en bestelgegevens worden nooit ge\u00fcpload, verkocht of gebruikt om modellen te trainen."
+            ],
+            "Learn more.": [
+                "Meer info."
+            ],
+            "I have an API key": [
+                "Ik heb een API-sleutel"
+            ],
+            "I want an API key": [
+                "Ik wil een API-sleutel"
+            ],
+            "Please fill all the fields": [
+                "Vul alle velden in"
+            ],
+            "Enter Your Connection Key": [
+                "Voer je verbindingssleutel in"
+            ],
+            "The link in your email connects AI automatically. To do it manually, paste the key we emailed below.": [
+                "De link in je e-mail verbindt AI automatisch. Om dit handmatig te doen, plak je hieronder de sleutel die we je hebben gemaild."
+            ],
+            "Your Key": [
+                "Je sleutel"
+            ],
+            "Paste your key": [
+                "Plak je sleutel"
+            ],
+            "I don't have a key": [
+                "Ik heb geen sleutel"
+            ],
+            "Check your email and click the link to connect AI.": [
+                "Controleer je e-mail en klik op de link om AI te verbinden."
+            ],
+            "Connect EasyCommerce AI": [
+                "EasyCommerce AI verbinden"
+            ],
+            "Enter your name and email - we'll send a one-click link to connect AI, plus a backup key.": [
+                "Voer je naam en e-mailadres in - we sturen je een link om AI met \u00e9\u00e9n klik te verbinden, plus een reservesleutel."
+            ],
+            "Your Name": [
+                "Je naam"
+            ],
+            "Enter your Name": [
+                "Voer je naam in"
+            ],
+            "Email My Link": [
+                "Mail mij mijn link"
+            ],
+            "I already have a key": [
+                "Ik heb al een sleutel"
+            ],
+            "Invalid response from AI service. Please try again.": [
+                "Ongeldig antwoord van AI-service. Probeer het opnieuw."
+            ],
+            "You have used all your free credits.": [
+                "Je hebt al je gratis credits gebruikt."
+            ],
+            "Upgrade Now": [
+                "Nu upgraden"
+            ],
+            "AI Template Builder": [
+                "AI-sjabloonbouwer"
+            ],
+            "AI Assistant": [
+                "AI-assistent"
+            ],
+            "Failed to generate content. Please try again.": [
+                "Kon content niet genereren. Probeer het opnieuw."
+            ],
+            "Describe what you want to build": [
+                "Beschrijf wat je wilt bouwen"
+            ],
+            "Example: Make it 2 columns with a big gallery section at left.": [
+                "Voorbeeld: Maak het 2 kolommen met een grote galerijsectie aan de linkerkant."
+            ],
+            "Building...": [
+                "Bouwen..."
+            ],
+            "Build": [
+                "Bouwen"
+            ]
+        }
+    }
+}

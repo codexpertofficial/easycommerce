@@ -1,0 +1,195 @@
+{
+    "translation-revision-date": "2026-07-23 00:00+0000",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "build\/shipping.bundle.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "zh_CN",
+                "plural-forms": "nplurals=1; plural=0;"
+            },
+            "Failed to update shipping plan.": [
+                "\u66f4\u65b0\u914d\u9001\u65b9\u6848\u5931\u8d25\u3002"
+            ],
+            "Shipping plan updated successfully.": [
+                "\u914d\u9001\u65b9\u6848\u66f4\u65b0\u6210\u529f\u3002"
+            ],
+            "Country": [
+                "\u56fd\u5bb6\/\u5730\u533a"
+            ],
+            "State": [
+                "\u5dde\/\u7701"
+            ],
+            "City": [
+                "\u57ce\u5e02"
+            ],
+            "Write here": [
+                "\u5728\u6b64\u586b\u5199"
+            ],
+            "Select Country": [
+                "\u9009\u62e9\u56fd\u5bb6\/\u5730\u533a"
+            ],
+            "Methods": [
+                "\u65b9\u5f0f"
+            ],
+            "Cancel": [
+                "\u53d6\u6d88"
+            ],
+            "Action": [
+                "\u64cd\u4f5c"
+            ],
+            "Name": [
+                "\u540d\u79f0"
+            ],
+            "Select City": [
+                "\u9009\u62e9\u57ce\u5e02"
+            ],
+            "Select State": [
+                "\u9009\u62e9\u5dde\/\u7701"
+            ],
+            "Status": [
+                "\u72b6\u6001"
+            ],
+            "Are you sure you want to delete?": [
+                "\u60a8\u786e\u5b9a\u8981\u5220\u9664\u5417\uff1f"
+            ],
+            "You're going to delete this, are you sure?": [
+                "\u60a8\u5373\u5c06\u5220\u9664\u6b64\u9879\uff0c\u786e\u5b9a\u5417\uff1f"
+            ],
+            "No, Keep it": [
+                "\u4e0d\uff0c\u4fdd\u7559"
+            ],
+            "Yes, Delete": [
+                "\u662f\uff0c\u5220\u9664"
+            ],
+            "Delete Permanently": [
+                "\u6c38\u4e45\u5220\u9664"
+            ],
+            "Description": [
+                "\u63cf\u8ff0"
+            ],
+            "Enabled": [
+                "\u5df2\u542f\u7528"
+            ],
+            "Disabled": [
+                "\u5df2\u7981\u7528"
+            ],
+            "No shipping plans configured": [
+                "\u5c1a\u672a\u914d\u7f6e\u914d\u9001\u65b9\u6848"
+            ],
+            "Set up shipping plans to define shipping rates by region. ": [
+                "\u8bbe\u7f6e\u914d\u9001\u65b9\u6848\uff0c\u6309\u533a\u57df\u5b9a\u4e49\u914d\u9001\u8d39\u7387\u3002 "
+            ],
+            "Read docs.": [
+                "\u9605\u8bfb\u6587\u6863\u3002"
+            ],
+            "+ Add Plan": [
+                "+ \u6dfb\u52a0\u65b9\u6848"
+            ],
+            "Min Price (%s)": [
+                "\u6700\u4f4e\u4ef7\u683c\uff08%s\uff09"
+            ],
+            "Max Price (%s)": [
+                "\u6700\u9ad8\u4ef7\u683c\uff08%s\uff09"
+            ],
+            "Min Weight": [
+                "\u6700\u5c0f\u91cd\u91cf"
+            ],
+            "Max Weight": [
+                "\u6700\u5927\u91cd\u91cf"
+            ],
+            "Min Quantity": [
+                "\u6700\u5c0f\u6570\u91cf"
+            ],
+            "Max Quantity": [
+                "\u6700\u5927\u6570\u91cf"
+            ],
+            "Min": [
+                "\u6700\u5c0f"
+            ],
+            "Max": [
+                "\u6700\u5927"
+            ],
+            "Shipping name here": [
+                "\u5728\u6b64\u586b\u5199\u914d\u9001\u540d\u79f0"
+            ],
+            "Write description here": [
+                "\u5728\u6b64\u586b\u5199\u63cf\u8ff0"
+            ],
+            "Enable\/Disable": [
+                "\u542f\u7528\/\u7981\u7528"
+            ],
+            "Regions": [
+                "\u533a\u57df"
+            ],
+            "Zip Code": [
+                "\u90ae\u653f\u7f16\u7801"
+            ],
+            "Calculation Base": [
+                "\u8ba1\u7b97\u57fa\u51c6"
+            ],
+            "Select Base": [
+                "\u9009\u62e9\u57fa\u51c6"
+            ],
+            "Cart Total": [
+                "\u8d2d\u7269\u8f66\u603b\u989d"
+            ],
+            "Total Weight": [
+                "\u603b\u91cd\u91cf"
+            ],
+            "Item Count": [
+                "\u5546\u54c1\u6570\u91cf"
+            ],
+            "Taxable": [
+                "\u5e94\u7a0e"
+            ],
+            "No tax rate configured for this country.": [
+                "\u5c1a\u672a\u4e3a\u6b64\u56fd\u5bb6\/\u5730\u533a\u914d\u7f6e\u7a0e\u7387\u3002"
+            ],
+            "Method Name": [
+                "\u65b9\u5f0f\u540d\u79f0"
+            ],
+            "Shipping Fee (%s)": [
+                "\u914d\u9001\u8d39\u7528\uff08%s\uff09"
+            ],
+            "Write name here": [
+                "\u5728\u6b64\u586b\u5199\u540d\u79f0"
+            ],
+            "Write min weight": [
+                "\u586b\u5199\u6700\u5c0f\u91cd\u91cf"
+            ],
+            "Write max weight": [
+                "\u586b\u5199\u6700\u5927\u91cd\u91cf"
+            ],
+            "Write your fee": [
+                "\u586b\u5199\u60a8\u7684\u8d39\u7528"
+            ],
+            "Calculation base is required.": [
+                "\u8ba1\u7b97\u57fa\u51c6\u4e3a\u5fc5\u586b\u9879\u3002"
+            ],
+            "Shipping plan name is required.": [
+                "\u914d\u9001\u65b9\u6848\u540d\u79f0\u4e3a\u5fc5\u586b\u9879\u3002"
+            ],
+            "Update Shipping Plan": [
+                "\u66f4\u65b0\u914d\u9001\u65b9\u6848"
+            ],
+            "Save Shipping Plan": [
+                "\u4fdd\u5b58\u914d\u9001\u65b9\u6848"
+            ],
+            "Plan": [
+                "\u65b9\u6848"
+            ],
+            "Add Shipping Plan": [
+                "\u6dfb\u52a0\u914d\u9001\u65b9\u6848"
+            ],
+            "Shipping Plans": [
+                "\u914d\u9001\u65b9\u6848"
+            ],
+            "+ New Plan": [
+                "+ \u65b0\u5efa\u65b9\u6848"
+            ]
+        }
+    }
+}

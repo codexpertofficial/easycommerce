@@ -1,0 +1,195 @@
+{
+    "translation-revision-date": "2026-07-23 12:00+0000",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "build\/shipping.bundle.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "it_IT",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Failed to update shipping plan.": [
+                "Aggiornamento del piano di spedizione non riuscito."
+            ],
+            "Shipping plan updated successfully.": [
+                "Piano di spedizione aggiornato con successo."
+            ],
+            "Country": [
+                "Paese"
+            ],
+            "State": [
+                "Stato"
+            ],
+            "City": [
+                "Citt\u00e0"
+            ],
+            "Write here": [
+                "Scrivi qui"
+            ],
+            "Select Country": [
+                "Seleziona il paese"
+            ],
+            "Methods": [
+                "Metodi"
+            ],
+            "Cancel": [
+                "Annulla"
+            ],
+            "Action": [
+                "Azione"
+            ],
+            "Name": [
+                "Nome"
+            ],
+            "Select City": [
+                "Seleziona la citt\u00e0"
+            ],
+            "Select State": [
+                "Seleziona lo stato"
+            ],
+            "Status": [
+                "Stato"
+            ],
+            "Are you sure you want to delete?": [
+                "Sei sicuro di voler eliminare?"
+            ],
+            "You're going to delete this, are you sure?": [
+                "Stai per eliminarlo, sei sicuro?"
+            ],
+            "No, Keep it": [
+                "No, mantienilo"
+            ],
+            "Yes, Delete": [
+                "S\u00ec, elimina"
+            ],
+            "Delete Permanently": [
+                "Elimina definitivamente"
+            ],
+            "Description": [
+                "Descrizione"
+            ],
+            "Enabled": [
+                "Attivato"
+            ],
+            "Disabled": [
+                "Disattivato"
+            ],
+            "No shipping plans configured": [
+                "Nessun piano di spedizione configurato"
+            ],
+            "Set up shipping plans to define shipping rates by region. ": [
+                "Configura i piani di spedizione per definire le tariffe di spedizione per regione. "
+            ],
+            "Read docs.": [
+                "Leggi la documentazione."
+            ],
+            "+ Add Plan": [
+                "+ Aggiungi piano"
+            ],
+            "Min Price (%s)": [
+                "Prezzo min (%s)"
+            ],
+            "Max Price (%s)": [
+                "Prezzo max (%s)"
+            ],
+            "Min Weight": [
+                "Peso min"
+            ],
+            "Max Weight": [
+                "Peso max"
+            ],
+            "Min Quantity": [
+                "Quantit\u00e0 min"
+            ],
+            "Max Quantity": [
+                "Quantit\u00e0 max"
+            ],
+            "Min": [
+                "Min"
+            ],
+            "Max": [
+                "Max"
+            ],
+            "Shipping name here": [
+                "Nome della spedizione qui"
+            ],
+            "Write description here": [
+                "Scrivi qui la descrizione"
+            ],
+            "Enable\/Disable": [
+                "Attiva\/Disattiva"
+            ],
+            "Regions": [
+                "Regioni"
+            ],
+            "Zip Code": [
+                "CAP"
+            ],
+            "Calculation Base": [
+                "Base di calcolo"
+            ],
+            "Select Base": [
+                "Seleziona la base"
+            ],
+            "Cart Total": [
+                "Totale del carrello"
+            ],
+            "Total Weight": [
+                "Peso totale"
+            ],
+            "Item Count": [
+                "Numero di articoli"
+            ],
+            "Taxable": [
+                "Tassabile"
+            ],
+            "No tax rate configured for this country.": [
+                "Nessuna aliquota fiscale configurata per questo paese."
+            ],
+            "Method Name": [
+                "Nome del metodo"
+            ],
+            "Shipping Fee (%s)": [
+                "Tariffa di spedizione (%s)"
+            ],
+            "Write name here": [
+                "Scrivi qui il nome"
+            ],
+            "Write min weight": [
+                "Scrivi il peso minimo"
+            ],
+            "Write max weight": [
+                "Scrivi il peso massimo"
+            ],
+            "Write your fee": [
+                "Scrivi la tua tariffa"
+            ],
+            "Calculation base is required.": [
+                "La base di calcolo \u00e8 obbligatoria."
+            ],
+            "Shipping plan name is required.": [
+                "Il nome del piano di spedizione \u00e8 obbligatorio."
+            ],
+            "Update Shipping Plan": [
+                "Aggiorna piano di spedizione"
+            ],
+            "Save Shipping Plan": [
+                "Salva piano di spedizione"
+            ],
+            "Plan": [
+                "Piano"
+            ],
+            "Add Shipping Plan": [
+                "Aggiungi piano di spedizione"
+            ],
+            "Shipping Plans": [
+                "Piani di spedizione"
+            ],
+            "+ New Plan": [
+                "+ Nuovo piano"
+            ]
+        }
+    }
+}

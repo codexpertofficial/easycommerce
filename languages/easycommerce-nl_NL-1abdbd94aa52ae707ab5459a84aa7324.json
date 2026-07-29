@@ -1,0 +1,57 @@
+{
+    "translation-revision-date": "2026-07-23 00:00+0000",
+    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "source": "blocks\/shops-page\/template-1\/components\/Filters.js",
+    "domain": "messages",
+    "locale_data": {
+        "messages": {
+            "": {
+                "domain": "messages",
+                "lang": "nl_NL",
+                "plural-forms": "nplurals=2; plural=(n != 1);"
+            },
+            "Categories": [
+                "Categorie\u00ebn"
+            ],
+            "Brands": [
+                "Merken"
+            ],
+            "Low to High": [
+                "Laag naar hoog"
+            ],
+            "High to Low": [
+                "Hoog naar laag"
+            ],
+            "Newest": [
+                "Nieuwste"
+            ],
+            "Oldest": [
+                "Oudste"
+            ],
+            "Best Selling": [
+                "Best verkocht"
+            ],
+            "Lowest Selling": [
+                "Minst verkocht"
+            ],
+            "Top rating": [
+                "Hoogste beoordeling"
+            ],
+            "Lowest rating": [
+                "Laagste beoordeling"
+            ],
+            "Search Icon": [
+                "Zoekpictogram"
+            ],
+            "Sort by": [
+                "Sorteren op"
+            ],
+            "Price Range": [
+                "Prijsklasse"
+            ],
+            " Search": [
+                " Zoeken"
+            ]
+        }
+    }
+}
