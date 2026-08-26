@@ -21,8 +21,9 @@ class Reports extends API {
 
 	use Cache;
 
-	const CACHE_DURATION_HOUR  = 3600;
-	const CACHE_DURATION_DAY   = 86400;
+	const CACHE_DURATION_HOUR = 3600;
+	const CACHE_DURATION_DAY  = 86400;
+	const TOP_CUSTOMERS_LIMIT = 10;
 
 	/**
 	 * Returns a date key based on the given timestamp and range.

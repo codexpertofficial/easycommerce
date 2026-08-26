@@ -1,4 +1,6 @@
 <?php
+defined( 'ABSPATH' ) || exit;
+
 use EasyCommerce\Helpers\Utility;
 ?>
 <div >
@@ -75,7 +77,9 @@ use EasyCommerce\Helpers\Utility;
 				class="easycommerce-checkout-shipping-cost easycommerce-trendy-checkout-shipping-cost mt-6 mb-0 text-[#272435] font-inter font-medium text-base leading-[26px]">
 				<?php
 				if ( ! empty( $shipping_methods = $cart_obj->get_shipping_methods() ) ) {
-					$selected_method = $cart_obj->cart['data']['shipping_method'] ?? null;
+					$selected_method   = $cart_obj->cart['data']['shipping_method'] ?? null;
+					$shipping_discount = $cart['fragments']['shipping_fee_discount'] ?? 0;
+
 					foreach ( $shipping_methods as $index => $shipping_method ) {
 						$shipping_method = is_array( $shipping_method ) ? $shipping_method : (array) $shipping_method;
 						$is_checked      = ( $selected_method === null && $index === 0 ) || ( $selected_method == $shipping_method['id'] ) ? 'checked' : '';
@@ -85,15 +89,28 @@ use EasyCommerce\Helpers\Utility;
 							esc_html( $shipping_method['name'] ),
 							esc_html( easycommerce_price( $shipping_method['cost'] ) )
 						);
-						printf(
-							'<label class="easycommerce-shipping-label font-inter font-normal text-base text-[#737791] p-4 rounded-md">
+						if ( $shipping_discount > 0 ) {
+							printf(
+								'<label class="easycommerce-shipping-label font-inter font-normal text-base text-[#737791] p-4 rounded-md">
+								<input type="radio" name="shipping_method" value="%1$s" class="easycommerce-shipping-method" %3$s required />
+								<span class="shipping-label-text"> <del>%2$s</del> (%4$s) </span>
+							</label><br />',
+								esc_attr( $shipping_method['id'] ),
+								$method_label,
+								esc_attr( $is_checked ),
+								esc_html__( 'Free Shipping', 'easycommerce' )
+							);
+						} else {
+							printf(
+								'<label class="easycommerce-shipping-label font-inter font-normal text-base text-[#737791] p-4 rounded-md">
 								<input type="radio" name="shipping_method" value="%1$s" class="easycommerce-shipping-method" %3$s required />
 								<span class="shipping-label-text"> %2$s </span>
 							</label><br />',
-							$shipping_method['id'],
-							$method_label,
-							esc_attr( $is_checked )
-						);
+								esc_attr( $shipping_method['id'] ),
+								$method_label,
+								esc_attr( $is_checked )
+							);
+						}
 					}
 				} else {
 					printf( '<span>%1$s</span>', esc_html__( 'No shipping methods found', 'easycommerce' ) );
@@ -102,7 +119,7 @@ use EasyCommerce\Helpers\Utility;
 			</span>
 			<span class="easycommerce-shipping-method-error max-w-max mt-2 bg-[#FFF8F8] text-[#FF7373] text-[14px] px-3 py-1 rounded-md hidden"
 				style="background-color: #FFF8F8; color: #FF7373;max-width: max-content;">
-				<?php _e( 'Please select a shipping method', 'easycommerce' ); ?>
+				<?php esc_html_e( 'Please select a shipping method', 'easycommerce' ); ?>
 			</span>
 		</div>
 		<?php
@@ -130,7 +147,7 @@ use EasyCommerce\Helpers\Utility;
 				<?php esc_html_e( 'Shipping Tax', 'easycommerce' ); ?>
 				</label>
 				<span
-					class="easycommerce-checkout-tax mb-0 text-[#272435] font-inter font-medium text-base leading-[26px]">
+					class="easycommerce-checkout-shipping-tax mb-0 text-[#272435] font-inter font-medium text-base leading-[26px]">
 				<?php echo esc_html( easycommerce_price( $shipping_tax ) ); ?>
 				</span>
 			</div>

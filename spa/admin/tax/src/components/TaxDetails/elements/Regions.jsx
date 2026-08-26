@@ -20,7 +20,7 @@ const Regions = ({
 }) => {
     return (
         <div className="w-full">
-            <div className="w-full border border-ec-border px-4 py-4 rounded-lg overflow-x-auto">
+            <div className="w-full border border-ec-border px-4 py-4 rounded-lg">
                 <table className="w-full">
                     <RegionsHeader />
 
@@ -86,6 +86,25 @@ const Regions = ({
                                     </div>
                                 </td>
 
+
+                                {/* Postcode */}
+                                <td className="pb-[14px] px-[7px]">
+                                    <input
+                                        type="text"
+                                        className="h-ec-input p-3 rounded-lg font-inter text-[14px] leading-[20px] border border-ec-table-stock placeholder-ec-placeholder hover:border-ec-primary focus:border-ec-primary focus:outline-none 
+                                            focus:[box-shadow:0_0_0_4px_#F3F0FF] transition-colors duration-300 ease-in-out w-full disabled:cursor-not-allowed disabled:bg-ec-table-stock disabled:hover:border-ec-table-stock disabled:focus:border-ec-table-stock"
+                                        placeholder={__( "Any", "easycommerce" )}
+                                        title={__( "Leave empty for the whole area. Accepts a list (86351, 86336), a range (86300...86399) or a prefix (863*).", "easycommerce" )}
+                                        value={region.postcode || ""}
+                                        onChange={(e) =>
+                                            handleRegionChange(
+                                                index,
+                                                "postcode",
+                                                e.target.value
+                                            )
+                                        }
+                                    />
+                                </td>
 
                                 {/* Rate */}
                                 <td className="pb-[14px] px-[7px]">

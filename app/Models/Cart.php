@@ -51,6 +51,13 @@ class Cart extends Model {
 	 */
 	protected $formatted_cart = null;
 
+	/**
+	 * Total this cart was loaded with, which the payment form was built from.
+	 *
+	 * @var float
+	 */
+	protected $loaded_total = 0;
+
 	protected $table = 'cart_sessions';
 
 	/**
@@ -132,6 +139,25 @@ class Cart extends Model {
 	}
 
 	/**
+	 * Free unit count on a cart line, tolerating lines saved before it existed.
+	 *
+	 * @param array|null $item The cart line.
+	 * @return int
+	 */
+	protected function get_free_quantity( $item ) {
+
+		if ( empty( $item ) ) {
+			return 0;
+		}
+
+		if ( isset( $item['free_quantity'] ) ) {
+			return min( (int) $item['free_quantity'], (int) $item['quantity'] );
+		}
+
+		return empty( $item['is_free'] ) ? 0 : (int) $item['quantity'];
+	}
+
+	/**
 	 * Clear the formatted cart cache.
 	 */
 	protected function clear_cache() {
@@ -178,6 +204,8 @@ class Cart extends Model {
 		$hash_to_use = $hash ?: $this->hash;
 
 		$result = $this->db->get_row( array( 'hash' => $hash_to_use ) );
+
+		$this->loaded_total = $result ? (float) $result->total : 0;
 
 		if ( $result ) {
 			$this->cart = array(
@@ -347,18 +375,24 @@ class Cart extends Model {
 	 * @return array The cart data.
 	 */
 	public function get( $formatted = false, $formatted_price = true ) {
-		$old_total = $this->get_total();
 		if ( $formatted ) {
 			$formatted_cart          = array();
 			$product_variation_model = new Product_Variation();
 			$total_discount          = 0;
 
 			if ( ! empty( $this->get_items() ) ) {
-				$tax_model = new Tax();
-				$address   = $this->get_billing_address();
-				$country   = $address['country'] ?? null;
-				$state     = $address['state'] ?? null;
-				$city      = $address['city'] ?? null;
+				$tax_model         = new Tax();
+				$billing_location  = $this->tax_location( 'billing' );
+				$shipping_location = $this->tax_location( 'shipping' );
+
+				// Goods need a delivery address; template-2 never collects one.
+				$goods_location = $this->checkout_collects_shipping()
+					? $this->tax_location( 'shipping', false )
+					: $billing_location;
+				$country           = $billing_location['country'];
+				$state             = $billing_location['state'];
+				$city              = $billing_location['city'];
+				$postcode          = $billing_location['postcode'];
 
 				$formatted_cart['items']                      = array();
 				$formatted_cart['amounts']['subtotal']        = 0;
@@ -373,10 +407,12 @@ class Cart extends Model {
 							continue;
 						}
 
-						$is_free = $config['is_free'] ?? false;
-						$tax = 0;
+						$free_quantity = $this->get_free_quantity( $config );
+						$paid_quantity = max( 0, $config['quantity'] - $free_quantity );
+						$is_free       = 0 === $paid_quantity;
+						$tax           = 0;
 
-						$price = $config['rate'] * $config['quantity'];
+						$price = $config['rate'] * $paid_quantity;
 
 						$formatted_cart['items'][] = array(
 							'title'              => $variation->get_name( true ),
@@ -385,19 +421,17 @@ class Cart extends Model {
 							'thumbnail'          => $variation->get_thumbnail(),
 							'attributes'         => wp_list_pluck( $variation->get_attributes(), 'value_slug', 'attribute_slug' ),
 							'quantity'           => $config['quantity'],
+							'free_quantity'      => $free_quantity,
 							'unit_price'         => $formatted_price ? easycommerce_price( $config['rate'] ) : $config['rate'],
-							'subtotal'           => $is_free ? 0 : $price,
+							'subtotal'           => $price,
 							'tax'                => $tax,
-							'total'				 => $is_free ? 0 : $price,
-							'formatted_total' => $is_free ? easycommerce_price( 0 ) : easycommerce_price( $price ),
+							'total'				 => $price,
+							'formatted_total' => easycommerce_price( $price ),
 							'discount'           => 0,
 							'is_free'            => $is_free,
 						);
 
-						// Only add to subtotal if it's not a free product
-						if ( ! $is_free ) {
-							$formatted_cart['amounts']['subtotal'] += $price;
-						}
+						$formatted_cart['amounts']['subtotal'] += $price;
 					}
 				}
 
@@ -407,7 +441,15 @@ class Cart extends Model {
 					$applied_to                             = array();
 					$total_applicable_subtotal              = 0;
 
-					foreach ( $this->cart['data']['coupons'] as $code ) {
+					// Never discount the same coupon twice.
+					$unique_codes = array_values(
+						array_intersect_key(
+							$this->cart['data']['coupons'],
+							array_unique( array_map( 'strtolower', array_map( 'strval', $this->cart['data']['coupons'] ) ) )
+						)
+					);
+
+					foreach ( $unique_codes as $code ) {
 						$coupon = new Coupon( $code );
 						if ( ! $coupon->is_active() ) {
 							continue;
@@ -467,8 +509,11 @@ class Cart extends Model {
 							$coupon_discount = $this->handle_free_products( $coupon, $formatted_cart['items'], $applicable_items );
 						}
 
-						// Distribute discount proportionally across applicable items
-						if ( ! empty( $applicable_items ) ) {
+						// Cap here: nothing validates offer <= 100 and the cap below rarely binds.
+						$coupon_discount = min( $coupon_discount, $applicable_subtotal );
+
+						// Distribute proportionally; a previous coupon may have zeroed the base.
+						if ( ! empty( $applicable_items ) && $applicable_subtotal > 0 ) {
 							$remaining_discount = $coupon_discount;
 							$last_item_index    = end( $applicable_items );
 
@@ -510,50 +555,88 @@ class Cart extends Model {
 					$formatted_cart['amounts']['discount_amount'] = $total_discount;
 				}
 
-				// Process fees
+				// Process fees. A positive amount is a charge, only a negative one discounts.
+				$total_fee          = 0;
+				$total_fee_discount = 0;
+
 				if ( ! empty( $this->cart['data']['fees'] ) ) {
-					$total_fee_discount  = 0;
-
 					foreach ( $this->cart['data']['fees'] as $key => $value ) {
-						$amount = $value;
+						$amount = (float) $value;
 
-						if ( $amount == 0 ) {
+						if ( 0.0 === $amount ) {
 							continue;
 						}
+
+						if ( $amount > 0 ) {
+							$total_fee += $amount;
+
+							if ( ! isset( $formatted_cart['fragments']['fee_details'] ) ) {
+								$formatted_cart['fragments']['fee_details'] = [];
+							}
+
+							$formatted_cart['fragments']['fee_details'][ $key ] = $amount;
+							continue;
+						}
+
 						$subtotal             = $formatted_cart['amounts']['subtotal'] ?? $this->get_amount();
-						$max_discount_allowed = $subtotal - $total_discount;
+						$max_discount_allowed = max( 0, $subtotal - $total_discount - $total_fee_discount );
 						$discount             = min( abs( $amount ), $max_discount_allowed );
-						$total_fee_discount   += $discount;
+
+						if ( $discount <= 0 ) {
+							continue;
+						}
+
+						$total_fee_discount += $discount;
+
 						if ( ! isset( $formatted_cart['fragments']['discount_details'] ) ) {
 							$formatted_cart['fragments']['discount_details'] = [];
 						}
+
 						$formatted_cart['fragments']['discount_details'][ $key ] = $discount;
 					}
+
 					$formatted_cart['amounts']['discount_amount'] = $total_discount + $total_fee_discount;
+
+					// Tax follows what the customer pays, so the discount must reach the items.
+					$this->distribute_discount( $formatted_cart['items'], $total_fee_discount );
 				}
 
-				// Calculate tax on final post-discount item totals (after coupons and fees)
-				if ( ! empty( $country ) ) {
-					foreach ( $formatted_cart['items'] as $index => $item ) {
-						$variation = $product_variation_model->get_by_price( $item['price_id'], $item['product_id'] );
+				$formatted_cart['amounts']['fees'] = round( $total_fee, 2 );
 
-						if ( $variation ) {
-							$product_tax_class = $variation->get_tax_class();
+				// Tax on post-discount totals, unrounded: rounding per line over-collects.
+				$raw_item_tax = 0;
 
-							if ( ! empty( $product_tax_class ) ) {
-								$tax_rate = $tax_model->get_rate_by_location( $product_tax_class, $country, $state, $city );
-							} else {
-								$tax_rate = $tax_model->get_rate_for_location( $country, $state, $city );
-							}
+				foreach ( $formatted_cart['items'] as $index => $item ) {
+					$variation = $product_variation_model->get_by_price( $item['price_id'], $item['product_id'] );
 
-							$formatted_cart['items'][ $index ]['tax'] = round( ( $item['total'] * $tax_rate ) / 100, 2 );
-						}
+					if ( ! $variation ) {
+						continue;
 					}
+
+					// Goods are taxed where delivered, downloads where billed.
+					$location = 'physical' === $variation->get_type() ? $goods_location : $billing_location;
+
+					if ( empty( $location['country'] ) ) {
+						continue;
+					}
+
+					$product_tax_class = $variation->get_tax_class();
+
+					if ( ! empty( $product_tax_class ) ) {
+						$tax_rate = $tax_model->get_rate_by_location( $product_tax_class, $location['country'], $location['state'], $location['city'], $location['postcode'] );
+					} else {
+						$tax_rate = $tax_model->get_rate_for_location( $location['country'], $location['state'], $location['city'], $location['postcode'] );
+					}
+
+					$item_tax     = ( $item['total'] * $tax_rate ) / 100;
+					$raw_item_tax += $item_tax;
+
+					$formatted_cart['items'][ $index ]['tax'] = round( $item_tax, 2 );
 				}
 
 				// Calculate shipping and tax
 				$formatted_cart['amounts']['shipping_fee'] = 0;
-				$formatted_cart['amounts']['tax']          = round( array_sum( wp_list_pluck( $formatted_cart['items'], 'tax' ) ), 2 );
+				$formatted_cart['amounts']['tax']          = round( $raw_item_tax, 2 );
 				$physical_subtotal                         = 0;
 				$has_free_shipping_coupon                  = false;
 
@@ -579,8 +662,8 @@ class Cart extends Model {
 					}
 				}
 
-				// Only calculate shipping fee if no free shipping coupon is applied
-				if ( isset( $this->cart['data']['shipping_method'] ) ) {
+				// Nothing to ship, nothing to charge: a leftover method must not be billed.
+				if ( isset( $this->cart['data']['shipping_method'] ) && $this->has_item_type( 'physical' ) && $this->checkout_collects_shipping() ) {
 					$method = Shipping_Plan::get_shipping_plan_by_id( $this->cart['data']['shipping_method'] );
 
 					if ( ! is_null( $method ) ) {
@@ -588,14 +671,8 @@ class Cart extends Model {
 						$shipping_cost    = $method->cost;
 						$formatted_cart['amounts']['shipping_fee'] = round( $shipping_cost, 2 );
 						
-						if ( $taxable_shipping && ! empty( $country ) ) {
-							if( ! $this->is_shipping_same_as_billing() ) {
-								$address = $this->get_shipping_address();
-								$country = $address['country'] ?? null;
-								$state   = $address['state'] ?? null;
-								$city    = $address['city'] ?? null;
-							}
-							$shipping_tax_rate = $tax_model->get_rate_for_location( $country, $state, $city );
+						if ( $taxable_shipping && ! empty( $shipping_location['country'] ) ) {
+							$shipping_tax_rate = $tax_model->get_rate_for_location( $shipping_location['country'], $shipping_location['state'], $shipping_location['city'], $shipping_location['postcode'] );
 							
 							if ( $shipping_tax_rate > 0 ) {
 								$shipping_tax = ( $shipping_cost * $shipping_tax_rate ) / 100;
@@ -620,8 +697,9 @@ class Cart extends Model {
 				$formatted_cart['amounts']                        = apply_filters( 'easycommerce_cart_amounts', $formatted_cart['amounts'], $this->cart );
 				$shipping_tax                                     = $formatted_cart['amounts']['shipping_tax'] ?? 0;
 				$total_tax                                        = $formatted_cart['amounts']['tax'] + $shipping_tax;
-				$formatted_cart['amounts']['total']               = $formatted_cart['amounts']['subtotal'] + $formatted_cart['amounts']['shipping_fee'] + $formatted_cart['amounts']['tax'] + $shipping_tax - $formatted_cart['amounts']['discount_amount'];
-				$formatted_cart['amounts']['discount_amount']     = round( $formatted_cart['amounts']['discount_amount'], 2 );
+				$formatted_cart['amounts']['subtotal']            = round( (float) $formatted_cart['amounts']['subtotal'], 2 );
+				$formatted_cart['amounts']['discount_amount']     = round( (float) $formatted_cart['amounts']['discount_amount'], 2 );
+				$formatted_cart['amounts']['total']               = round( $formatted_cart['amounts']['subtotal'] + $formatted_cart['amounts']['shipping_fee'] + $formatted_cart['amounts']['tax'] + $shipping_tax + ( $formatted_cart['amounts']['fees'] ?? 0 ) - $formatted_cart['amounts']['discount_amount'], 2 );
 				$formatted_cart['fragments']['subtotal']          = easycommerce_price( $formatted_cart['amounts']['subtotal'] ?? 0 );
 				$formatted_cart['fragments']['tax']               = easycommerce_price( $total_tax );
 				$formatted_cart['fragments']['product_tax']       = easycommerce_price( $formatted_cart['amounts']['tax'] );
@@ -650,11 +728,11 @@ class Cart extends Model {
 					$formatted_cart['fragments']['payment_methods'] = ob_get_clean();
 				}
 			}
-			$total           = $formatted_cart['amounts']['total'] ?? 0;
-			$formatted_total = strpos( $total, '.' ) === false ? $total . '.00' : $total;
-			$old_total       = $this->get_total();
+			// Whole cents against the total the payment form was built from.
+			$total     = (int) round( (float) ( $formatted_cart['amounts']['total'] ?? 0 ) * 100 );
+			$old_total = (int) round( $this->loaded_total * 100 );
 
-			if( $formatted_total > 0 &&  $old_total > 0 && $old_total != $formatted_total ) {
+			if ( $total > 0 && $old_total > 0 && $total !== $old_total ) {
 				$formatted_cart['payment_update_required'] = true;
 			}
 
@@ -669,12 +747,16 @@ class Cart extends Model {
 	 * @return bool
 	 */
 	public function is_shipping_same_as_billing() {
-		$billing_address   = $this->get_billing_address();
-		$billing_country   = $billing_address['country'] ?? null;
-		$shipping_address  = $this->get_shipping_address();
-		$shipping_country  = $shipping_address['country'] ?? null;
+		$billing_address  = $this->get_billing_address();
+		$shipping_address = $this->get_shipping_address();
 
-		return $billing_country === $shipping_country;
+		foreach ( array( 'country', 'state', 'city' ) as $field ) {
+			if ( ( $billing_address[ $field ] ?? null ) !== ( $shipping_address[ $field ] ?? null ) ) {
+				return false;
+			}
+		}
+
+		return true;
 	}
 
 	/**
@@ -859,9 +941,16 @@ class Cart extends Model {
 			return;
 		}
 
+		$existing      = $this->cart['data']['items'][ $product_id ][ $price_id ] ?? null;
+		$free_quantity = $this->get_free_quantity( $existing );
+
 		// If it's already in the cart, increase the quantity
-		if ( isset( $this->cart['data']['items'][ $product_id ][ $price_id ] ) ) {
-			$quantity += $this->cart['data']['items'][ $product_id ][ $price_id ]['quantity'];
+		if ( ! is_null( $existing ) ) {
+			$quantity += $existing['quantity'];
+		}
+
+		if ( $is_free ) {
+			$free_quantity += $quantity - ( $existing['quantity'] ?? 0 );
 		}
 
 		// If it's a digital variation, limit the quantity to 1
@@ -869,12 +958,16 @@ class Cart extends Model {
 			$quantity = 1;
 		}
 
+		$free_quantity = min( $free_quantity, $quantity );
+		$paid_quantity = $quantity - $free_quantity;
+
 		$price = $variation->get_price( false );
 		$this->cart['data']['items'][ $product_id ][ $price_id ] = array(
-			'quantity' => $quantity,
-			'rate'     => $price,
-			'price'    => $quantity * $price,
-			'is_free'  => $is_free,
+			'quantity'      => $quantity,
+			'free_quantity' => $free_quantity,
+			'rate'          => $price,
+			'price'         => $paid_quantity * $price,
+			'is_free'       => 0 === $paid_quantity && $quantity > 0,
 		);
 
 		$this->save();
@@ -913,12 +1006,16 @@ class Cart extends Model {
 
 		if ( isset( $this->cart['data']['items'][ $product_id ][ $price_id ] ) ) {
 
-			$price = $variation->get_price( false );
+			$price         = $variation->get_price( false );
+			$free_quantity = min( $this->get_free_quantity( $this->cart['data']['items'][ $product_id ][ $price_id ] ), $quantity );
+			$paid_quantity = $quantity - $free_quantity;
 
 			$this->cart['data']['items'][ $product_id ][ $price_id ] = array(
-				'quantity' => $quantity,
-				'rate'     => $price,
-				'price'    => $quantity * $price,
+				'quantity'      => $quantity,
+				'free_quantity' => $free_quantity,
+				'rate'          => $price,
+				'price'         => $paid_quantity * $price,
+				'is_free'       => 0 === $paid_quantity && $quantity > 0,
 			);
 
 			$this->save();
@@ -1068,6 +1165,27 @@ class Cart extends Model {
 	 */
 	public function remove( $product_id, $price_id = 1, $is_free = false ) {
 		if ( isset( $this->cart['data']['items'][ $product_id ][ $price_id ] ) ) {
+
+			// Withdrawing a gift must not take the customer's paid units with it.
+			if ( $is_free ) {
+				$item          = $this->cart['data']['items'][ $product_id ][ $price_id ];
+				$free_quantity = $this->get_free_quantity( $item );
+
+				if ( $free_quantity > 0 && $item['quantity'] > $free_quantity ) {
+					$quantity      = $item['quantity'] - $free_quantity;
+					$this->cart['data']['items'][ $product_id ][ $price_id ] = array(
+						'quantity'      => $quantity,
+						'free_quantity' => 0,
+						'rate'          => $item['rate'],
+						'price'         => $quantity * $item['rate'],
+						'is_free'       => false,
+					);
+
+					$this->save();
+
+					return;
+				}
+			}
 
 			unset( $this->cart['data']['items'][ $product_id ][ $price_id ] );
 
@@ -1370,6 +1488,71 @@ class Cart extends Model {
 		$this->cart['data']['amounts']['total']    = $subtotal;
 
 		$this->save();
+	}
+
+	/**
+	 * Location a tax lookup should use, falling back to billing.
+	 *
+	 * An empty shipping address leaves billing as the only known location.
+	 *
+	 * @param string $type     billing or shipping.
+	 * @param bool   $fallback Whether an empty shipping address falls back to billing.
+	 * @return array
+	 */
+	protected function tax_location( $type = 'billing', $fallback = true ) {
+		$billing = (array) ( $this->get_billing_address() ?: array() );
+		$address = 'shipping' === $type ? (array) ( $this->get_shipping_address() ?: array() ) : $billing;
+
+		if ( empty( $address['country'] ) && $fallback ) {
+			$address = $billing;
+		}
+
+		return array(
+			'country'  => $address['country'] ?? null,
+			'state'    => $address['state'] ?? null,
+			'city'     => $address['city'] ?? null,
+			'postcode' => $address['postcode'] ?? null,
+		);
+	}
+
+	/**
+	 * Whether the active checkout template collects shipping at all.
+	 *
+	 * template-2 renders no shipping row, so a fee there is never explained.
+	 *
+	 * @return bool
+	 */
+	protected function checkout_collects_shipping() {
+		$collects = 'template-2' !== easycommerce_checkout_template();
+
+		return (bool) apply_filters( 'easycommerce_checkout_collects_shipping', $collects, $this );
+	}
+
+	/**
+	 * Spread an amount across the item totals, proportionally to each total.
+	 *
+	 * @param array $items    Formatted cart items, by reference.
+	 * @param float $discount Amount to take off.
+	 */
+	private function distribute_discount( &$items, $discount ) {
+		$base = array_sum( wp_list_pluck( $items, 'total' ) );
+
+		if ( $discount <= 0 || $base <= 0 ) {
+			return;
+		}
+
+		$remaining = $discount;
+		$last      = array_key_last( $items );
+
+		foreach ( $items as $index => $item ) {
+			$share      = $index === $last ? $remaining : round( ( $item['total'] / $base ) * $discount, 2 );
+			$remaining -= $share;
+			$total      = max( 0, $item['total'] - $share );
+
+			$items[ $index ]['discount']       += $share;
+			$items[ $index ]['total']           = $total;
+			$items[ $index ]['formatted_total'] = easycommerce_price( $total );
+		}
 	}
 
 	/**

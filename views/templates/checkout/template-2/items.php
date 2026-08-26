@@ -1,4 +1,6 @@
 <?php
+defined( 'ABSPATH' ) || exit;
+
 use EasyCommerce\Helpers\Utility;
 use EasyCommerce\Models\Product;
 use EasyCommerce\Models\Product_Variation;

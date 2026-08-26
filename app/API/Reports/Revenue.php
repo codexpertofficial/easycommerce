@@ -236,9 +236,10 @@ class Revenue extends Reports {
 					AND o.status IN ('completed', 'processing', 'partially_refunded', 'refunded')
 					GROUP BY o.customer_id
 					ORDER BY revenue_earned DESC
-					LIMIT 50",
+					LIMIT %d",
 					$date_from,
-					$date_to . ' 23:59:59'
+					$date_to . ' 23:59:59',
+					self::TOP_CUSTOMERS_LIMIT
 				);
 
 				$customers_data = $db->exec( $query, ARRAY_A );

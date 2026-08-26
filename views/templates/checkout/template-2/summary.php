@@ -1,4 +1,14 @@
 <?php
+/**
+ * Order summary for the compact, digital-only checkout.
+ *
+ * No shipping row here by design; product tax shows because digital is taxed too.
+ *
+ * @var array                     $cart     The formatted cart data.
+ * @var \EasyCommerce\Models\Cart $cart_obj The cart object.
+ */
+defined( 'ABSPATH' ) || exit;
+
 use EasyCommerce\Helpers\Utility;
 ?>
 <div class="flex items-center mb-4 md:mb-[30px] mx-[2px] mt-4 md:mt-0">
@@ -66,6 +76,22 @@ use EasyCommerce\Helpers\Utility;
 		</div>
 		<?php
 	endif;
+	$product_tax = $cart['amounts']['tax'] ?? 0;
+
+	if ( $product_tax > 0 ) :
+		?>
+		<div class="flex items-center justify-between p-4 border-b border-dotted border-ec-border">
+			<label class="text-ec-placeholder font-inter font-normal text-base leading-[26px]">
+				<?php esc_html_e( 'Product Tax', 'easycommerce' ); ?>
+			</label>
+			<span
+				class="easycommerce-checkout-tax mb-0 text-ec-body font-inter font-medium text-base leading-[26px]">
+				<?php echo esc_html( easycommerce_price( $product_tax ) ); ?>
+			</span>
+		</div>
+		<?php
+	endif;
+
 		do_action( 'easycommerce/views/templates/checkout/summary/totals', $cart, $cart_obj );
 	?>
 	<div class="flex items-center justify-between p-4 border-t border-ec-border">

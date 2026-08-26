@@ -338,6 +338,11 @@ $easycommerce_tables = array(
 		),
 		'options' => array(
 			'primary_key'  => 'id',
+			'unique_keys'  => array(
+				// A gateway transaction id must be unique so a duplicate payment
+				// record can never be inserted (payment audit / reconciliation).
+				'uk_transaction_id' => 'transaction_id',
+			),
 			'indexes'      => array(
 				'index_order_id'      => 'order_id',
 				'index_customer_id'   => 'customer_id',

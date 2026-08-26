@@ -365,36 +365,38 @@ class Order extends Model {
 
 					if( ! $product_variation ) continue;
 
-					$is_free = $item['is_free'] ?? false;
+					$free_quantity = isset( $item['free_quantity'] )
+						? min( (int) $item['free_quantity'], (int) $item['quantity'] )
+						: ( empty( $item['is_free'] ) ? 0 : (int) $item['quantity'] );
 
-					if ( ! $is_free && $product_variation->manages_stock() && ! is_null( $current_stock = $product_variation->get_stock() ) && $item['quantity'] > $current_stock ) {
+					if ( $product_variation->manages_stock() && ! is_null( $current_stock = $product_variation->get_stock() ) && $item['quantity'] > $current_stock ) {
 						$item['quantity'] = $current_stock;
+						$free_quantity    = min( $free_quantity, $item['quantity'] );
 					}
 
-					$item['product_id']   = $product_id;
-					$item['price_id']     = $price_id;
-					$item['variation_id'] = $product_variation->get_id();
-					$item['tax_class_id'] = $product_variation->get_tax_class();
-					$item['subtotal']     = $is_free ? 0 : ( $item['quantity'] * $item['rate'] );
-					$item['meta']         = array(
-						'name'       => $product_variation->get_product()->get_title(),
-						'price'      => $product_variation->get_price( true ),
-						'attributes' => $product_variation->get_name( false ),
-						'is_free'    => $is_free,
+					$paid_quantity = max( 0, $item['quantity'] - $free_quantity );
+					$is_free       = 0 === $paid_quantity && $item['quantity'] > 0;
+
+					$item['product_id']    = $product_id;
+					$item['price_id']      = $price_id;
+					$item['variation_id']  = $product_variation->get_id();
+					$item['tax_class_id']  = $product_variation->get_tax_class();
+					$item['free_quantity'] = $free_quantity;
+					$item['subtotal']      = $paid_quantity * $item['rate'];
+					$item['meta']          = array(
+						'name'          => $product_variation->get_product()->get_title(),
+						'price'         => $product_variation->get_price( true ),
+						'attributes'    => $product_variation->get_name( false ),
+						'is_free'       => $is_free,
+						'free_quantity' => $free_quantity,
 					);
 
 					$this->add_item( $item );
 
-					// Adjust stock only for non-free products
-					if ( ! $is_free && ( $current_stock = $product_variation->get_stock() ) >= $item['quantity'] ) {
-						$product_variation->set_stock_quantity( $current_stock - $item['quantity'] );
-						$product_variation->save();
-					}
+					// Every unit leaves the warehouse, including the gifted ones.
+					$product_variation->reduce_stock( $item['quantity'] );
 
-					// Only count non-free products in total sales
-					if ( ! $is_free ) {
-						$product_total_quantity += $item['quantity'];
-					}
+					$product_total_quantity += $paid_quantity;
 				}
 
 				// Only update total sales if there were non-free products

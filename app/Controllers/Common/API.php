@@ -3055,11 +3055,6 @@ class API {
 							),
 						),
 					),
-					'user_id'  => array(
-						'description' => __( 'The user ID', 'easycommerce' ),
-						'required'	  => false,
-						'type'		  => 'integer',
-					),
 				),
 				'permission' => array( $this, 'is_user' ),
 			)
@@ -3132,6 +3127,30 @@ class API {
 			'/cart/shipping',
 			array(
 				'methods'	 => WP_REST_Server::READABLE,
+				'callback'	 => array( $cart, 'get_shipping_options' ),
+				'args'		 => array(
+					'hash'			   => array(
+						'description' => __( 'The cart hash', 'easycommerce' ),
+						'required'	  => false,
+					),
+					'shipping_address' => array(
+						'description' => __( 'The shipping address', 'easycommerce' ),
+						'required'	  => false,
+					),
+					'billing_address'  => array(
+						'description' => __( 'The billing address', 'easycommerce' ),
+						'required'	  => false,
+					),
+				),
+				'permission' => array( $this, 'is_user' ),
+			)
+		);
+
+		// Recalculate shipping and tax. The GET above stays for compatibility.
+		$this->register_route(
+			'/cart/shipping/calculate',
+			array(
+				'methods'	 => WP_REST_Server::CREATABLE,
 				'callback'	 => array( $cart, 'get_shipping_options' ),
 				'args'		 => array(
 					'hash'			   => array(
@@ -4273,6 +4292,11 @@ class API {
 									'type'		  => 'string',
 									'required'	  => false,
 								),
+								'postcode' => array(
+									'description' => __( 'Postcode, a list, a from...to range or a prefix*', 'easycommerce' ),
+									'type'		  => array( 'string', 'null' ),
+									'required'	  => false,
+								),
 								'rate'	   => array(
 									'description' => __( 'Tax rate percentage', 'easycommerce' ),
 									'type'		  => 'number',
@@ -4365,6 +4389,11 @@ class API {
 								'city'	   => array(
 									'description' => __( 'City code', 'easycommerce' ),
 									'type'		  => 'string',
+									'required'	  => false,
+								),
+								'postcode' => array(
+									'description' => __( 'Postcode, a list, a from...to range or a prefix*', 'easycommerce' ),
+									'type'		  => array( 'string', 'null' ),
 									'required'	  => false,
 								),
 								'rate'	   => array(

@@ -146,7 +146,7 @@ add_action(
 				wp_enqueue_script(
 					'easycommerce-mollie',
 					EASYCOMMERCE_ASSETS_URL . 'payment/js/mollie.js',
-					array( 'mollie-js', 'jquery' ),
+					array( 'mollie-js', 'jquery', 'easycommerce_checkout' ),
 					EASYCOMMERCE_VERSION,
 					true
 				);

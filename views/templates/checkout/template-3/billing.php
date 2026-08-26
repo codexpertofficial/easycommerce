@@ -1,3 +1,6 @@
+<?php
+defined( 'ABSPATH' ) || exit;
+?>
 <div class="mt-8 easycommerce-clearfix">
 	<div class="mb-4">
 		<h3
@@ -26,7 +29,7 @@
 				}
 
 				$field_obj = new $field_factory( $field );
-				echo $field_obj->render();
+				echo $field_obj->render(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Field::render() escapes its own output.
 			}
 		}
 		?>

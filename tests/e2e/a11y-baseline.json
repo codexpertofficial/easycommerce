@@ -1,0 +1,15 @@
+{
+	"shop": [
+		"color-contrast",
+		"label"
+	],
+	"product": [
+		"color-contrast"
+	],
+	"checkout": [
+		"button-name",
+		"color-contrast",
+		"image-alt",
+		"label"
+	]
+}

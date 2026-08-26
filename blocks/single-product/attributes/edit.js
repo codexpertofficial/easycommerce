@@ -16,6 +16,11 @@ const Edit = (props) => {
     const { attributes, setAttributes } = props;
 
     useEffect(() => {
+        if ("product" !== postType) {
+            setIsLoading(false);
+            return;
+        }
+
         const fetchProducts = async () => {
             try {
                 const response = await fetch(
@@ -24,7 +29,7 @@ const Edit = (props) => {
                 const data = await response.json();
                 setIsLoading(false);
 
-                setProductVariations(data.data.variations);
+                setProductVariations(data?.data?.variations || []);
             } catch (error) {;
             }
         };
@@ -39,9 +44,9 @@ const Edit = (props) => {
     const getCommonAttributes = (productVariations) => {
         const commonAttributes = {};
 
-        productVariations.forEach((variation) => {
+        ( productVariations || [] ).forEach((variation) => {
             const { attributes } = variation;
-            attributes.forEach((attr) => {
+            ( attributes || [] ).forEach((attr) => {
                 if (!commonAttributes[attr.attribute_slug]) {
                     commonAttributes[attr.attribute_slug] = new Map();
                 }

@@ -423,7 +423,7 @@ add_action(
 				wp_enqueue_script(
 					'easycommerce-stripe',
 					EASYCOMMERCE_ASSETS_URL . 'payment/js/stripe-payment.js',
-					array( 'stripe.js', 'jquery', 'wp-i18n' ),
+					array( 'stripe.js', 'jquery', 'wp-i18n', 'easycommerce_checkout' ),
 					EASYCOMMERCE_VERSION,
 					array( 'in_footer' => true )
 				);

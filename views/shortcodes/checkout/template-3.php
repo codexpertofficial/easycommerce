@@ -1,4 +1,6 @@
 <?php
+defined( 'ABSPATH' ) || exit;
+
 use EasyCommerce\Models\Cart;
 
 $cart_obj   = new Cart();
@@ -28,7 +30,7 @@ $atts       = $args['atts'] ?? array();
                     </p>
                 </a>
 
-                <?php do_action( 'easycommerce-before_cart_billing' ); ?>
+                <?php do_action( 'easycommerce-before_cart_items' ); ?>
 
                 <h3 class="font-inter leading-8 font-medium text-xl text-[#272435] mb-4">
                     <?php esc_html_e( 'Product items', 'easycommerce' ); ?>
@@ -38,6 +40,7 @@ $atts       = $args['atts'] ?? array();
                     <?php do_action( 'easycommerce/views/templates/checkout/items', $cart ); ?>
                 </div>
 
+                <?php do_action( 'easycommerce-after_cart_items' ); ?>
                 <?php do_action( 'easycommerce-before_cart_billing' ); ?>
                 <?php do_action( 'easycommerce/views/templates/checkout/billing', $cart_obj ); ?>
                 <?php do_action( 'easycommerce-after_cart_billing' ); ?>
@@ -51,7 +54,6 @@ $atts       = $args['atts'] ?? array();
         <div class="easycommerce-checkout-right">
             <div class="w-full h-auto border border-ec-border bg-white rounded-2xl p-4 md:p-12 mb-8">
 
-                <?php do_action( 'easycommerce-after_cart_items' ); ?>
                 <?php do_action( 'easycommerce-before_cart_summary' ); ?>
 
                 <div class="easycommerce-summary-wrapper mt-12 mb-5">
@@ -72,15 +74,10 @@ $atts       = $args['atts'] ?? array();
                 <?php do_action( 'easycommerce-after_cart_payment_methods' ); ?>
 
                 <div class="mt-0">
-                    <button type="submit"
-                        class="easycommerce-checkout-main-btn text-white text-base w-full font-inter bg-ec-primary group border border-ec-primary py-[11px] px-8 rounded-lg font-semibold hover:text-white focus:bg-ec-primary focus:border-ec-primary hover:bg-ec-secondary focus:shadow-none focus:text-white hover:border-ec-secondary lg:text-sm md:text-xs sm:text-sm transition-all ease-in-out duration-500 leading-[26px]">
-                        <?php esc_html_e( 'Pay Now', 'easycommerce' ); ?>
-                    </button>
-
-                    <div class="flex">
+                    <div class="flex mb-4">
                         <label class="flex items-center cursor-pointer">
-                            <input type="checkbox" class="easycommerce-input-checkoutbox easycommerce-terms-input-checkoutbox rtl:mt-4" checked="true" />
-                            <p class="text-[#737791] font-inter font-normal text-base leading-[26px] ml-2 mt-4 rtl:mr-2">
+                            <input type="checkbox" id="easycommerce-terms" name="terms" class="easycommerce-input-checkoutbox easycommerce-terms-input-checkoutbox rtl:mt-4" required />
+                            <p class="text-[#737791] font-inter font-normal text-base leading-[26px] ml-2 rtl:mr-2">
                                 <?php esc_html_e( 'By clicking this, I agree to ', 'easycommerce' ); ?>
                                 <a href="<?php echo esc_url( easycommerce_terms_of_service_page( true ) ); ?>" class="text-ec-primary no-underline font-semibold">
                                     <?php esc_html_e( 'Terms & Conditions', 'easycommerce' ); ?>
@@ -92,6 +89,11 @@ $atts       = $args['atts'] ?? array();
                             </p>
                         </label>
                     </div>
+
+                    <button type="submit"
+                        class="easycommerce-checkout-main-btn text-white text-base w-full font-inter bg-ec-primary group border border-ec-primary py-[11px] px-8 rounded-lg font-semibold hover:text-white focus:bg-ec-primary focus:border-ec-primary hover:bg-ec-secondary focus:shadow-none focus:text-white hover:border-ec-secondary lg:text-sm md:text-xs sm:text-sm transition-all ease-in-out duration-500 leading-[26px]">
+                        <?php esc_html_e( 'Pay Now', 'easycommerce' ); ?>
+                    </button>
 
                     <div class="easycommerce-css-loader-wrapper w-full p-4 rounded-lg text-base leading-[26px] font-semibold hover:text-white focus:text-white bg-[#F4F0FF]"
                         style="display: none;">

@@ -1178,6 +1178,94 @@ function easycommerce_countries() {
 }
 
 /**
+ * Resolve a country name to the ISO-2 code regions are stored by.
+ *
+ * @param string $country Country code or name.
+ * @return string ISO-2 country code when resolvable, otherwise the input.
+ */
+function easycommerce_country_code( $country ) {
+
+	if ( empty( $country ) ) {
+		return $country;
+	}
+
+	$countries = easycommerce_countries(); // [ iso2 => name ].
+
+	if ( isset( $countries[ $country ] ) ) {
+		return $country;
+	}
+
+	$code = array_search( $country, $countries, true );
+
+	return false !== $code ? $code : $country;
+}
+
+/**
+ * Check a customer postcode against a shipping region postcode expression.
+ *
+ * Accepts `86351`, a comma or newline list, `86300...86399` ranges and `863*` wildcards.
+ *
+ * @param string $expression The postcode expression stored on the region.
+ * @param string $postcode   The postcode supplied by the customer.
+ * @return bool True when the postcode is covered by the expression.
+ */
+function easycommerce_zip_code_matches( $expression, $postcode ) {
+
+	$normalise = function ( $value ) {
+		return strtoupper( preg_replace( '/\s+/', '', (string) $value ) );
+	};
+
+	$postcode = $normalise( $postcode );
+
+	if ( '' === $postcode || '' === trim( (string) $expression ) ) {
+		return false;
+	}
+
+	foreach ( preg_split( '/[,\r\n]+/', $expression ) as $token ) {
+		$token = $normalise( $token );
+
+		if ( '' === $token ) {
+			continue;
+		}
+
+		if ( false !== strpos( $token, '...' ) ) {
+			list( $from, $to ) = array_pad( explode( '...', $token, 2 ), 2, '' );
+
+			if ( '' === $from || '' === $to ) {
+				continue;
+			}
+
+			if ( is_numeric( $from ) && is_numeric( $to ) && is_numeric( $postcode ) ) {
+				if ( (float) $postcode >= (float) $from && (float) $postcode <= (float) $to ) {
+					return true;
+				}
+				continue;
+			}
+
+			if ( strcmp( $postcode, $from ) >= 0 && strcmp( $postcode, $to ) <= 0 ) {
+				return true;
+			}
+			continue;
+		}
+
+		if ( false !== strpos( $token, '*' ) ) {
+			$prefix = substr( $token, 0, strpos( $token, '*' ) );
+
+			if ( '' === $prefix || 0 === strpos( $postcode, $prefix ) ) {
+				return true;
+			}
+			continue;
+		}
+
+		if ( $token === $postcode ) {
+			return true;
+		}
+	}
+
+	return false;
+}
+
+/**
  * Get an associative list of currencies
  *
  * @return []
@@ -2561,6 +2649,12 @@ function easycommerce_business_country() {
 
 	return $settings['country'] ?? '';
 }
+function easycommerce_business_phone() {
+	$settings = get_option( 'easycommerce-general-business', array() );
+
+	return $settings['phone'] ?? '';
+}
+
 function easycommerce_business_full_address(): string {
 	$address = array(
 		easycommerce_business_address_1(),

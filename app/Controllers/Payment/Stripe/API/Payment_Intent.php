@@ -244,7 +244,7 @@ class Payment_Intent {
 					'type'            => 'setup_intent',
 				);
 			} else {
-				$amount_in_cents = max( (int) ( $total_amount * 100 ), 50 );
+				$amount_in_cents = max( (int) round( $total_amount * 100 ), 50 );
 
 				// Non-recurring path. Let Stripe decide which of the account's enabled
 				// methods are eligible for this currency, country and amount — its rules
@@ -325,7 +325,7 @@ class Payment_Intent {
 			$intent_type       = $request->get_param( 'intent_type' );
 			$cart              = ( new Cart() )->get( true, false );
 			$total_amount      = (float) $cart['amounts']['total'];
-			$amount_in_cents   = max( (int) ( $total_amount * 100 ), 50 );
+			$amount_in_cents   = max( (int) round( $total_amount * 100 ), 50 );
 
 			if ( is_user_logged_in() ) {
 				$user           = wp_get_current_user();

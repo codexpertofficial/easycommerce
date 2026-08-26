@@ -3,14 +3,13 @@
 		"target": "ES2020",
 		"module": "ESNext",
 		"jsx": "react-jsx",
-		"moduleResolution": "node",
-		"baseUrl": ".",
+		"moduleResolution": "bundler",
 		"paths": {
-			"@/*": ["spa/admin/easycommerce/*"],
-			"@components/*": ["spa/admin/easycommerce/components/*"],
-			"@lib/*": ["spa/admin/easycommerce/lib/*"],
-			"@pages/*": ["spa/admin/easycommerce/pages/*"],
-			"@hooks/*": ["spa/admin/easycommerce/hooks/*"]
+			"@/*": ["./spa/admin/easycommerce/*"],
+			"@components/*": ["./spa/admin/easycommerce/components/*"],
+			"@lib/*": ["./spa/admin/easycommerce/lib/*"],
+			"@pages/*": ["./spa/admin/easycommerce/pages/*"],
+			"@hooks/*": ["./spa/admin/easycommerce/hooks/*"]
 		},
 		"allowSyntheticDefaultImports": true,
 		"esModuleInterop": true,

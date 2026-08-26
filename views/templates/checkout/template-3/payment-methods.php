@@ -1,4 +1,6 @@
 <?php
+defined( 'ABSPATH' ) || exit;
+
 $has_physical = $cart_obj->has_item_type( 'physical' );
 ?>
 <div class="easycommerce-payment-wrapper mt-12 mb-5">
@@ -50,7 +52,7 @@ $has_physical = $cart_obj->has_item_type( 'physical' );
 								class="easycommerce-payment_method <?php echo esc_attr( $method_btn_class ); ?>"
 								name="easycommerce-payment_method"
 								value="<?php echo esc_attr( $payment_id ); ?>"
-								<?php echo esc_attr( $checked_attr ); ?>
+								<?php echo $checked_attr; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- checked() output. ?>
 							/>
 
 							<div class="border border-[#ececec] rounded-md w-14 h-8 flex items-center justify-center">
@@ -76,7 +78,7 @@ $has_physical = $cart_obj->has_item_type( 'physical' );
 		?>
 		<span class="easycommerce-payment-method-error bg-[#FFF8F8] text-[#FF7373] px-3 py-1 text-[14px] rounded-md hidden"
 			style="background-color: #FFF8F8; color: #FF7373;">
-			<?php _e( 'Please select a payment method', 'easycommerce' ); ?>
+			<?php esc_html_e( 'Please select a payment method', 'easycommerce' ); ?>
 		</span>
 	</div>
 </div>

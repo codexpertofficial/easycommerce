@@ -15,6 +15,7 @@ use EasyCommerce\Models\Attribute_Value;
 use EasyCommerce\Models\Log as Log_Model;
 use EasyCommerce\API\Dashboard;
 use EasyCommerce\API\Reports\Reports;
+use EasyCommerce\Controllers\Payment\Square;
 
 class Init {
 
@@ -552,6 +553,12 @@ class Init {
 
 		// Square currency mismatch notice
 		$square_currency = get_transient( 'easycommerce_square_location_currency' );
+
+		// An unresolved location has no currency to compare, so it is not a mismatch.
+		if ( Square::CURRENCY_UNKNOWN === $square_currency ) {
+			$square_currency = '';
+		}
+
 		if ( $square_currency && easycommerce_currency() !== $square_currency && in_array( 'square', easycommerce_active_payment_methods(), true ) ) {
 			$notice->add( [
 				'id'			=> 'square-currency',

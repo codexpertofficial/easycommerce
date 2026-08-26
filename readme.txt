@@ -5,7 +5,7 @@ Donate link: https://easycommerce.dev
 Tags: ecommerce, online store, ai ecommerce, store builder, digital downloads
 Requires at least: 6.0
 Tested up to: 7.0
-Stable tag: 1.47
+Stable tag: 1.48
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -515,6 +515,50 @@ Free community support via WordPress.org forums and the [Facebook Community](htt
 
 == Changelog ==
 
+= 1.48 - 2026-08-26 =
+
+**🔒 Security**
+
+- [security] Cart requests can no longer be pointed at another shopper's cart, so one customer can never read or change someone else's basket
+- [security] Checkout templates and their partials can no longer be loaded directly, and shipping method IDs, select options, and error messages are now escaped before they are printed
+
+**✨ New**
+
+- [add] Postcode level tax rates - tax can now be set per postcode, and postcode lists, ranges, and wildcards are matched for both tax and shipping regions
+- [add] Terms and privacy consent at checkout - a consent checkbox now appears above the confirm/pay button on all three checkout templates
+- [add] Product structured data - product pages now publish Schema.org details such as price, availability, brand, product type, categories, and review ratings, so search engines can show rich results for your products
+- [add] Out of Stock badge on the shop and single product pages, so shoppers see availability without opening the product
+- [add] Business phone number setting, required for FedEx shipping labels
+
+**💳 Payments & Checkout**
+
+- [fix] Shipping cost and tax are now calculated correctly - regions saved at country, state, city, or postcode level are all matched, tax follows the delivery address for physical items and the billing address for downloads, and both lines refresh together whenever the address changes
+- [fix] Cart totals are now rounded so the amount charged always matches the total shown on screen
+- [fix] A second order can no longer be started while the first payment is still in flight, preventing duplicate orders and double charges
+- [fix] "Same as Billing" now loads ticked and editable, so guest checkout is no longer rejected for a missing shipping address
+- [fix] Shipping is no longer charged on a cart with nothing to ship, and shipping bands are recalculated when quantities change
+- [fix] Shipping tiers no longer both match at a shared boundary, and an empty or zero maximum is treated as unlimited
+- [fix] Coupons can no longer be applied twice, are capped at what is still discountable, and Buy X Get Y offers count free units per line
+- [fix] The payment method handler no longer fires twice per click, and only gateways the store has enabled can be stored on an order
+- [fix] Square no longer re-checks an unresolved store location on every screen, removing a slowdown on the checkout and settings pages
+- [fix] A payment transaction can no longer be recorded twice under the same transaction ID
+
+**🐛 Fixes**
+
+- [fix] Adding a variation that does not exist, or sending a zero or emptied quantity, is now rejected with the reason instead of failing silently
+- [fix] Checkout errors now show the message the server actually sent instead of [object Object]
+- [fix] Opening a customer who no longer exists now shows a clear message and returns to the customer list instead of a blank screen
+- [fix] EasyCommerce blocks render again in the block editor - Product Attributes and Product Tab no longer crash, and Rating previews with the product's real rating
+- [fix] The Top Customers tables in Reports now show ten rows, matching the other report screens
+- [ui] Refreshed the buttons and icons in the Brand, Category, Tag, and Attribute modals, unified the product popup styling, and stopped the tax rate dropdowns being clipped
+- [fix] The plugin now loads its Composer autoloader by absolute path, fixing a fatal error on some server setups
+
+**🧹 Internal**
+
+- [test] Added an automated accessibility and mobile checkout suite that runs on every change
+- [test] Added shipping and tax regression tests covering region granularity, postcode matching, digital and physical carts, and same-as-billing
+- [docs] Aligned the feature documentation with what the code actually ships
+
 = 1.47 - 2026-07-29 =
 
 **✨ New**
@@ -696,12 +740,6 @@ Free community support via WordPress.org forums and the [Facebook Community](htt
 - [fix] Single product report page no longer fires its data requests twice on load
 - [fix] Fixed transaction ID handling on the customer details page
 - [ui] Renamed "Dimension" to "Package Dimension" in the add product page pricing section
-
-= 1.40.2 - 2026-06-16 =
-
-- [add] Added a Subscriptions Overview card to the dashboard reports
-- [fix] Fixed an order amount mismatch when the cart changes during checkout
-- [fix] Shipping method ID is now validated before being stored in the cart
 
 == Upgrade Notice ==
 

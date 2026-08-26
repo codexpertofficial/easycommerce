@@ -210,44 +210,38 @@ foreach ( $products as $product ) :
 								return $badge['type'] !== 'out_of_stock';
 							}
 						);
+
+						if ( ! $is_out_of_stock && $show_stock_badge ) {
+							$display_badges[] = array(
+								'label'      => __( 'In Stock', 'easycommerce' ),
+								'color'      => '#10B981',
+								'text_color' => '#FFFFFF',
+							);
+						}
 						?>
 
-						<?php if ( $is_out_of_stock ) : ?>
+						<?php if ( ! empty( $display_badges ) ) : ?>
+							<div class="absolute top-3 left-3 z-10 flex flex-wrap items-center gap-1.5 max-w-[calc(100%-1.5rem)]">
+								<?php foreach ( $display_badges as $badge ) : ?>
+									<span
+										class="inline-flex items-center text-xs font-semibold px-2.5 py-1 rounded shadow-md"
+										style="
+											background-color: <?php echo esc_attr( $badge['color'] ); ?>;
+											color: <?php echo esc_attr( $badge['text_color'] ?? '#FFFFFF' ); ?>;
+										"
+									>
+										<?php echo esc_html( $badge['label'] ); ?>
+									</span>
+								<?php endforeach; ?>
+							</div>
+						<?php endif; ?>
 
-							<?php if ( $show_stock_badge ) : ?>
-								<span class="absolute top-3 left-3 z-10 inline-flex items-center bg-red-500 text-white text-xs rounded font-semibold px-2.5 py-1 shadow-md">
+						<?php if ( $is_out_of_stock && $show_stock_badge ) : ?>
+							<div class="absolute inset-0 z-20 flex items-center justify-center bg-black/40">
+								<span class="inline-flex items-center text-xs font-semibold px-3 py-1.5 shadow-md rounded bg-gray-700 text-white">
 									<?php esc_html_e( 'Out of Stock', 'easycommerce' ); ?>
 								</span>
-							<?php endif; ?>
-
-						<?php else : ?>
-
-							<?php if ( $show_stock_badge ) : ?>
-								<?php
-								$display_badges[] = array(
-									'label'      => __( 'In Stock', 'easycommerce' ),
-									'color'      => '#10B981',
-									'text_color' => '#FFFFFF',
-								);
-								?>
-							<?php endif; ?>
-
-							<?php if ( ! empty( $display_badges ) ) : ?>
-								<div class="absolute top-3 left-3 z-10 flex flex-wrap items-center gap-1.5 max-w-[calc(100%-1.5rem)]">
-									<?php foreach ( $display_badges as $badge ) : ?>
-										<span
-											class="inline-flex items-center text-xs font-semibold px-2.5 py-1 rounded shadow-md"
-											style="
-												background-color: <?php echo esc_attr( $badge['color'] ); ?>;
-												color: <?php echo esc_attr( $badge['text_color'] ?? '#FFFFFF' ); ?>;
-											"
-										>
-											<?php echo esc_html( $badge['label'] ); ?>
-										</span>
-									<?php endforeach; ?>
-								</div>
-							<?php endif; ?>
-
+							</div>
 						<?php endif; ?>
 						<?php
 						if ( $image_url ) {

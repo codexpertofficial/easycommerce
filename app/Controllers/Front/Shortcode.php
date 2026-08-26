@@ -106,18 +106,34 @@ class Shortcode {
 			return Utility::get_template( 'templates/store-mode.php' );
 		}
 
-		$template 			= Utility::get_option( 'checkout', 'settings', 'checkout_template', 'template-1' );
-		$columns  			= Utility::get_option( 'checkout', 'settings', 'columns' );
-		$atts     			= array( 'template' => $template, 'columns'  => $columns );
+		$templates = $this->checkout_templates();
+
+		$atts = shortcode_atts(
+			array(
+				'template' => Utility::get_option( 'checkout', 'settings', 'checkout_template', 'template-1' ),
+				'columns'  => Utility::get_option( 'checkout', 'settings', 'columns' ),
+			),
+			$atts,
+			'easycommerce-checkout'
+		);
+
+		// An unknown template resolves to no file, which renders a blank checkout.
+		if ( ! in_array( $atts['template'], $templates, true ) ) {
+			$atts['template'] = 'template-1';
+		}
+
+		$template = $atts['template'];
 
 		return Utility::get_template( "shortcodes/checkout/{$template}.php", array( 'atts' => $atts ) );
+	}
 
-		return sprintf(
-			// translators: 1: template name that was used, 2: comma separated list of valid template names.
-			__( 'Invlaid template <code>%1$s</code> used. Valid options are: <code>%2$s</code>.', 'easycommerce' ),
-			$atts['template'],
-			implode( ', ', $template )
-		);
+	/**
+	 * Checkout template slugs that have a file to render.
+	 *
+	 * @return array
+	 */
+	private function checkout_templates() {
+		return apply_filters( 'easycommerce_checkout_template_slugs', array_keys( easycommerce_checkout_templates() ) );
 	}
 
 	public function dashboard( $atts ) {

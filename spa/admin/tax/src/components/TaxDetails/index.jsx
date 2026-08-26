@@ -13,6 +13,7 @@ const initialRates = {
     country: "",
     state: "",
     city: "",
+    postcode: "",
     rate: "",
     compound: true,
 };
@@ -68,6 +69,7 @@ const TaxDetails = ({ hideAddNew, taxId, preloadedData = [] }) => {
                         country,
                         state: selectedState,
                         city: citiesList.includes(rate.city) ? rate.city : "",
+                        postcode: rate.postcode || "",
                         rate: rate.combined_rate || "",
                         compound: true,
                     };
@@ -250,6 +252,7 @@ const TaxDetails = ({ hideAddNew, taxId, preloadedData = [] }) => {
             ...taxData,
             rates: taxData.rates.map((rate) => ({
                 ...rate,
+                postcode: rate.postcode ?? "",
                 compound: rate.compound === true ? 1 : 0,
             })),
         };
@@ -285,6 +288,7 @@ const TaxDetails = ({ hideAddNew, taxId, preloadedData = [] }) => {
             ...taxData,
             rates: taxData.rates.map((rate) => ({
                 ...rate,
+                postcode: rate.postcode ?? "",
                 compound: rate.compound === true ? 1 : 0,
             })),
         };
@@ -376,7 +380,15 @@ const TaxDetails = ({ hideAddNew, taxId, preloadedData = [] }) => {
         })
             .then((res) => res.json())
             .then(async (data) => {
-                setTaxData(data.data.class);
+                const loaded = data.data.class;
+
+                // The column is nullable, but the input must stay controlled.
+                loaded.rates = (loaded.rates || []).map((rate) => ({
+                    ...rate,
+                    postcode: rate.postcode ?? "",
+                }));
+
+                setTaxData(loaded);
                 setIsLoading(false);
                 const rates = data.data.class.rates;
                 // Update states and cities

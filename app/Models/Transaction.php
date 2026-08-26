@@ -115,11 +115,43 @@ class Transaction extends Model {
 			$order->set_status( $order_status );
 		}
 
+		// A gateway transaction id is globally unique. If it is already
+		// recorded — e.g. a webhook and the return URL both fire for the same
+		// charge — treat it as already-recorded and return the existing row id
+		// instead of inserting a duplicate.
+		if ( ! empty( $data['transaction_id'] ) ) {
+			$existing = $this->get_by_transaction_id( $data['transaction_id'] );
+			if ( $existing ) {
+				return (int) $existing->id;
+			}
+		}
+
 		// insert_row() returns null on failure; normalise to the documented
 		// false-on-failure contract so a strict === false check reads correctly.
 		$result = $this->db->insert_row( $data );
 
+		// Lost the check-then-insert race: the UNIQUE(transaction_id) index
+		// rejected this duplicate. Re-read and treat it as already-recorded.
+		if ( null === $result && ! empty( $data['transaction_id'] ) ) {
+			$existing = $this->get_by_transaction_id( $data['transaction_id'] );
+			if ( $existing ) {
+				return (int) $existing->id;
+			}
+		}
+
 		return null === $result ? false : $result;
+	}
+
+	/**
+	 * Get a single transaction by its gateway transaction id.
+	 *
+	 * @param string $transaction_id The gateway transaction id.
+	 * @return object|null The transaction object if found, otherwise null.
+	 */
+	public function get_by_transaction_id( $transaction_id ) {
+		$rows = $this->db->get_rows( array( 'transaction_id' => $transaction_id ), 1 );
+
+		return ! empty( $rows ) ? $rows[0] : null;
 	}
 
 	/**

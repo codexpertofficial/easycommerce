@@ -444,7 +444,7 @@ class Customers extends Reports {
 			$cache_key,
 			function() use ( $date_from, $date_to ) {
 				return array(
-					'customers' => $this->get_top_customers_by_revenue( $date_from, $date_to, 50 ),
+					'customers' => $this->get_top_customers_by_revenue( $date_from, $date_to, self::TOP_CUSTOMERS_LIMIT ),
 				);
 			},
 			self::CACHE_DURATION_HOUR
@@ -464,7 +464,7 @@ class Customers extends Reports {
 	 * @param int    $limit     Number of customers to return.
 	 * @return array
 	 */
-	private function get_top_customers_by_revenue( $date_from, $date_to, $limit = 50 ) {
+	private function get_top_customers_by_revenue( $date_from, $date_to, $limit = self::TOP_CUSTOMERS_LIMIT ) {
 		$db           = new Database( 'orders' );
 		$orders_table = $db->get_table();
 		$items_db     = new Database( 'order_items' );

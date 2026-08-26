@@ -138,10 +138,9 @@ class Asset {
 
 			$this->set_spa_translations( 'easycommerce_blocks' );
 
-			// Scope Tailwind to the product editor only — loading it on all
-			// post types resets the editor UI via preflight for unrelated content.
+			// EC block previews are Tailwind-styled, so every editor canvas needs it, not just the product one.
 			$screen = get_current_screen();
-			if ( $screen && 'product' === $screen->post_type ) {
+			if ( $screen ) {
 				$this->enqueue_script(
 					'easycommerce-tailwind-editor',
 					EASYCOMMERCE_BUILD_URL . 'tailwind.bundle.js',
@@ -879,6 +878,18 @@ class Asset {
 
 			$this->localize_script(
 				'easycommerce',
+				'EASYCOMMERCE',
+				apply_filters( 'easycommerce-localized_vars', $localized )
+			);
+		}
+
+		// blocks.bundle.js loads on every editor screen but the common bundle does not, leaving EASYCOMMERCE undefined — issue #3282.
+		if ( ! $load_common_assets && wp_script_is( 'easycommerce_blocks', 'registered' ) ) {
+			$localized['currency_symbol'] = easycommerce_currency_symbol();
+			$localized['currency_code']   = easycommerce_currency();
+
+			$this->localize_script(
+				'easycommerce_blocks',
 				'EASYCOMMERCE',
 				apply_filters( 'easycommerce-localized_vars', $localized )
 			);

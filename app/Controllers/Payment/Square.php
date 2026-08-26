@@ -27,6 +27,8 @@ add_action(
 	'init',
 	function () {
 		class Square extends Payment_Method {
+			const CURRENCY_UNKNOWN = 'none';
+
 			protected $refund_transaction_id;
 
 			/**
@@ -140,30 +142,66 @@ add_action(
 					return false;
 				}
 
-				$square_currency = get_transient( 'easycommerce_square_location_currency' );
+				$location_currency = $this->get_location_currency( $location_id );
 
-				if ( ! $square_currency ) {
-					$sandbox = Utility::get_option( 'payment', 'square', 'sandbox', '1' );
-					$client  = new SquareClient(
-						array(
-							'accessToken' => Utility::get_option( 'payment', 'square', 'access_token', '' ),
-							'environment' => '1' === $sandbox ? Environment::SANDBOX : Environment::PRODUCTION,
-						)
-					);
+				return $location_currency && easycommerce_currency() === $location_currency;
+			}
 
-					$response = $client->getLocationsApi()->listLocations();
-					if ( $response->isSuccess() ) {
-						foreach ( $response->getResult()->getLocations() as $location ) {
-							if ( $location->getId() === $location_id ) {
-								$square_currency = $location->getCurrency();
-								set_transient( 'easycommerce_square_location_currency', $square_currency, HOUR_IN_SECONDS );
-								break;
-							}
-						}
+			/**
+			 * Currency of the configured Square location, cached.
+			 *
+			 * @param string $location_id Configured Square location ID.
+			 * @return string Currency code, or an empty string when it cannot be resolved.
+			 */
+			private function get_location_currency( $location_id ) {
+				$cache_key = 'easycommerce_square_location_currency';
+				$currency  = get_transient( $cache_key );
+
+				if ( false === $currency ) {
+					$currency = $this->look_up_location_currency( $location_id );
+
+					// An unresolved location is cached too, briefly, so it is not looked up again on every render.
+					$expiry = self::CURRENCY_UNKNOWN === $currency ? 5 * MINUTE_IN_SECONDS : HOUR_IN_SECONDS;
+
+					set_transient( $cache_key, $currency, $expiry );
+				}
+
+				return self::CURRENCY_UNKNOWN === $currency ? '' : $currency;
+			}
+
+			/**
+			 * Ask Square which currency the configured location trades in.
+			 *
+			 * @param string $location_id Configured Square location ID.
+			 * @return string Currency code, or self::CURRENCY_UNKNOWN when no location matches.
+			 */
+			private function look_up_location_currency( $location_id ) {
+				foreach ( $this->get_account_locations() as $location ) {
+					if ( $location->getId() === $location_id ) {
+						return (string) $location->getCurrency();
 					}
 				}
 
-				return $square_currency && easycommerce_currency() === $square_currency;
+				return self::CURRENCY_UNKNOWN;
+			}
+
+			/**
+			 * Locations on the connected Square account.
+			 *
+			 * @return array Empty when the request fails.
+			 */
+			private function get_account_locations() {
+				$sandbox = Utility::get_option( 'payment', 'square', 'sandbox', '1' );
+				$client  = new SquareClient(
+					array(
+						'accessToken' => Utility::get_option( 'payment', 'square', 'access_token', '' ),
+						'environment' => '1' === $sandbox ? Environment::SANDBOX : Environment::PRODUCTION,
+					)
+				);
+
+				$response = $client->getLocationsApi()->listLocations();
+
+				return $response->isSuccess() ? $response->getResult()->getLocations() : array();
 			}
 
 			public function enqueue_scripts() {
@@ -188,7 +226,7 @@ add_action(
 					wp_enqueue_script(
 						'easycommerce-square',
 						EASYCOMMERCE_ASSETS_URL . 'payment/js/square.js',
-						array( 'square-js', 'jquery' ),
+						array( 'square-js', 'jquery', 'easycommerce_checkout' ),
 						EASYCOMMERCE_VERSION,
 						true
 					);

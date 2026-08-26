@@ -146,6 +146,63 @@ class TransactionTest extends EasyCommerceTestCase {
 		$this->assertEquals( 'completed', $order->get_status() );
 	}
 
+	// ── UNIQUE(transaction_id) — #3128 ────────────────────────────────────────
+
+	/**
+	 * A second add() with an existing transaction_id must not create a duplicate
+	 * row — it returns the already-recorded row id instead.
+	 */
+	public function test_add_duplicate_transaction_id_is_no_op() {
+		$transaction = new Transaction();
+
+		$first = $transaction->add( $this->order_id, $this->transaction_data( [
+			'transaction_id' => 'txn_dup_3128',
+		] ) );
+
+		$second = $transaction->add( $this->order_id, $this->transaction_data( [
+			'transaction_id' => 'txn_dup_3128',
+			'amount'         => 999.00,
+		] ) );
+
+		$this->assertIsInt( $first );
+		$this->assertSame( (int) $first, (int) $second, 'Duplicate insert should return the existing row id.' );
+
+		$rows = $transaction->get_by_order_id( $this->order_id );
+		$matches = array_filter( $rows, function ( $row ) {
+			return 'txn_dup_3128' === $row->transaction_id;
+		} );
+		$this->assertCount( 1, $matches, 'Only one row may exist for a given transaction_id.' );
+	}
+
+	/**
+	 * Distinct transaction_ids are still inserted as separate rows.
+	 */
+	public function test_add_distinct_transaction_ids_create_separate_rows() {
+		$transaction = new Transaction();
+
+		$a = $transaction->add( $this->order_id, $this->transaction_data( [ 'transaction_id' => 'txn_a_3128' ] ) );
+		$b = $transaction->add( $this->order_id, $this->transaction_data( [ 'transaction_id' => 'txn_b_3128' ] ) );
+
+		$this->assertIsInt( $a );
+		$this->assertIsInt( $b );
+		$this->assertNotSame( (int) $a, (int) $b );
+	}
+
+	/**
+	 * get_by_transaction_id() returns the persisted row for a known id and null otherwise.
+	 */
+	public function test_get_by_transaction_id() {
+		$transaction = new Transaction();
+
+		$id = $transaction->add( $this->order_id, $this->transaction_data( [ 'transaction_id' => 'txn_lookup_3128' ] ) );
+
+		$found = $transaction->get_by_transaction_id( 'txn_lookup_3128' );
+		$this->assertIsObject( $found );
+		$this->assertEquals( $id, $found->id );
+
+		$this->assertNull( $transaction->get_by_transaction_id( 'txn_does_not_exist_3128' ) );
+	}
+
 	// ── get_by_order_id() ─────────────────────────────────────────────────────
 
 	/**

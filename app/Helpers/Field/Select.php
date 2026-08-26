@@ -70,10 +70,10 @@ class Select extends Field {
 
 			$options_html .= sprintf(
 				'<option value="%1$s" %2$s %3$s>%4$s</option>',
-				$key,
+				esc_attr( $key ),
 				$selected,
 				$is_option_disabled ? 'disabled' : '',
-				$value
+				esc_html( $value )
 			);
 		}
 

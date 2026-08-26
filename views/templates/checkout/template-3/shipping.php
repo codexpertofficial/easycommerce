@@ -1,4 +1,6 @@
 <?php
+defined( 'ABSPATH' ) || exit;
+
 $has_physical = $cart_obj->has_item_type( 'physical' );
 if ( ! $has_physical ) {
 	return;
@@ -37,7 +39,7 @@ if ( ! $has_physical ) {
 				}
 
 				$field_obj = new $field_factory( $field );
-				echo $field_obj->render();
+				echo $field_obj->render(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Field::render() escapes its own output.
 			}
 		}
 		?>

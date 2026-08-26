@@ -74,7 +74,8 @@ $easycommerce_checkout_fields = array(
 			'label'    => __( 'Country', 'easycommerce' ),
 			'required' => true,
 			'class'    => 'easycommerce-col-half easycommerce-checkout_field-wrapper',
-			'options'  => easycommerce_countries(),
+			// A blank first option stops the browser preselecting a country.
+			'options'  => array( '' => __( 'Select a country', 'easycommerce' ) ) + easycommerce_countries(),
 		),
 		'state'      => array(
 			'id'          => 'state',
@@ -124,7 +125,7 @@ $easycommerce_checkout_fields['shipping'] = apply_filters(
 			$field['required'] = false;
 
 			if ( $field['id'] === 'country' ) {
-				$field['options'] = array_intersect_key(
+				$field['options'] = array( '' => __( 'Select a country', 'easycommerce' ) ) + array_intersect_key(
 					easycommerce_countries(),
 					array_flip( (array) Utility::get_option( 'shipping', 'settings', 'countries', array_keys( easycommerce_countries() ) ) )
 				);

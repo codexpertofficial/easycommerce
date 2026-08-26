@@ -89,7 +89,8 @@ const Edit = (props) => {
                 </Swiper>
             </div>
         ) : (
-            <div>
+            <div {...blockProps}>
+                <Inspector {...props} />
                 <img
                     className="w-full h-auto"
                     src={

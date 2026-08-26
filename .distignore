@@ -39,11 +39,16 @@ yarn.lock
 
 # Testing and CI
 tests/
+/bin/
 .github/
 .syncignore
 .env*
 *.sh
 tree.txt
+playwright.config.js
+.wp-env.json
+/test-results/
+/playwright-report/
 
 # Debug-only controller (never ship)
 app/Controllers/Front/Debug.php

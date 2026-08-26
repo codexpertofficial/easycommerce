@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { __ } from "@wordpress/i18n";
+import { toast } from "react-toastify";
 
 // Components
 import CustomerSaleSummery from "./components/CustomerSaleSummery";
@@ -159,6 +160,9 @@ const SingleCustomer = ({ id, page = 1, setBreadcrumbTitle }) => {
                 if (data.success && data.data.customer) {
                     setCustomer(data.data.customer);
                     setBreadcrumbTitle(data.data.customer.name);
+                } else {
+                    toast.error(__("Customer doesn't exist", 'easycommerce'));
+                    window.location.hash = `#/customers`;
                 }
                 easycommerce_modal(false);
             });

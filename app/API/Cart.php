@@ -56,18 +56,13 @@ class Cart extends API {
 	public function add_items( $request ) {
 		$cart = new Cart_Model();
 
-		if ( $cart->is_locked() ) {
-			$this->response_error( __( 'Cart is locked for payment. Complete or cancel the current payment before making changes.', 'easycommerce' ), 403 );
-		}
+		$this->guard_locked( $cart );
 
 		$products = $request->get_param( 'products' );
-		$user_id  = $request->get_param( 'user_id' );
 
 		if ( ! is_array( $products ) || empty( $products ) ) {
 			$this->response_error( __( 'Invalid product data.', 'easycommerce' ) );
 		}
-
-		$cart_items = $cart->get_items();
 
 		foreach ( $products as $product ) {
 
@@ -82,18 +77,33 @@ class Cart extends API {
 				$this->response_error( sprintf( __( 'Invalid product ID: %d', 'easycommerce' ), $product_id ) );
 			}
 
-			// Check stock.
+			// Read the lines fresh: add() saves on every iteration.
 			$has_stock         = true;
+			$cart_items        = $cart->get_items();
 			$existing_quantity = $cart_items[ $product_id ][ $price_id ]['quantity'] ?? 0;
 
+			$variation_exists = false;
+
 			foreach ( $product_obj->get_variations() as $variation ) {
-				if ( $variation->get_price_id() == $price_id && $variation->manages_stock() && ! is_null( $stock = $variation->get_stock() ) && ( $quantity + $existing_quantity ) > $stock ) {
+				if ( $variation->get_price_id() != $price_id ) {
+					continue;
+				}
+
+				$variation_exists = true;
+
+				if ( $variation->manages_stock() && ! is_null( $stock = $variation->get_stock() ) && ( $quantity + $existing_quantity ) > $stock ) {
 					$has_stock = false;
 				}
 			}
 
+			// add() returns silently for an unknown variation.
+			if ( ! $variation_exists ) {
+				/* Translators: %d is the price ID. */
+				$this->response_error( sprintf( __( 'Invalid variation: %d', 'easycommerce' ), $price_id ) );
+			}
+
 			if ( $has_stock ) {
-				$cart->add( $product_id, $price_id, $quantity, $user_id );
+				$cart->add( $product_id, $price_id, $quantity );
 			} else {
 				$this->response_error( __( 'Product is out of stock!', 'easycommerce' ) );
 			}
@@ -137,22 +147,21 @@ class Cart extends API {
 	public function update_item( $request ) {
 		$cart = new Cart_Model();
 
-		if ( $cart->is_locked() ) {
-			$this->response_error( __( 'Cart is locked for payment. Complete or cancel the current payment before making changes.', 'easycommerce' ), 403 );
-		}
+		$this->guard_locked( $cart );
 
 		$product_id = absint( $request->get_param( 'id' ) );
 		$price_id   = absint( $request->get_param( 'price_id' ) );
 		$quantity   = absint( $request->get_param( 'quantity' ) );
 
-		if ( $product_id <= 0 || $quantity < 0 ) {
+		// Zero is not an update: update_qty() would leave a 0-quantity line behind.
+		if ( $product_id <= 0 || $quantity < 1 ) {
 			$this->response_error( __( 'Invalid product ID or quantity.', 'easycommerce' ) );
 		}
 
 		$product_obj = new Product( $product_id );
 
 		if ( ! $product_obj->is_sellable() ) {
-			$this->response_success( array( 'message' => __( 'Product not found.', 'easycommerce' ) ) );
+			$this->response_error( __( 'Product not found.', 'easycommerce' ), 404 );
 		}
 
 		$cart->update_qty( $product_id, $price_id, $quantity );
@@ -195,9 +204,7 @@ class Cart extends API {
 	public function remove_item( $request ) {
 		$cart = new Cart_Model();
 
-		if ( $cart->is_locked() ) {
-			$this->response_error( __( 'Cart is locked for payment. Complete or cancel the current payment before making changes.', 'easycommerce' ), 403 );
-		}
+		$this->guard_locked( $cart );
 
 		$product_id = absint( $request->get_param( 'id' ) );
 		$price_id   = absint( $request->get_param( 'price_id' ) );
@@ -210,13 +217,13 @@ class Cart extends API {
 		$coupons = $cart->cart['data']['coupons'] ?? array();
 		foreach ( $coupons as $code ) {
 			$coupon = new Coupon( $code );
-			if ( $coupon->get_type() === 'products' ) {
-			if ( in_array( $product_id, $coupon->get_products() ) ) {
-				$free_products = maybe_unserialize( $coupon->get_offer() );
-				foreach ( $free_products as $free_product ) {
-					$cart->remove( $free_product['id'], 1, true );
-				}
+
+			if ( $coupon->get_type() !== 'products' || ! in_array( $product_id, $coupon->get_products() ) ) {
+				continue;
 			}
+
+			foreach ( $this->get_free_products( $coupon ) as $free_product ) {
+				$cart->remove( $free_product['id'], 1, true );
 			}
 		}
 
@@ -299,8 +306,6 @@ class Cart extends API {
 		$shipping_address = $request->get_param( 'shipping_address' );
 		$billing_address  = $request->get_param( 'billing_address' );
 
-		// remove previous selected shipping method
-		$cart->cart['data']['shipping_method'] = null;
 		if ( ! is_null( $billing_address ) ) {
 			$billing_address                          = $this->sanitize_address( $billing_address );
 			$cart->cart['data']['address']['billing'] = $billing_address;
@@ -315,6 +320,8 @@ class Cart extends API {
 		$methods = apply_filters( 'easycommerce_shipping_methods', array(), $cart, $shipping_address, $billing_address, $request );
 
 		if ( ! is_null( $shipping_address ) ) {
+			// Only drop the stored method when this request recomputes the list.
+			$cart->cart['data']['shipping_method']     = null;
 			$shipping_address                          = $this->sanitize_address( $shipping_address );
 			$cart->cart['data']['address']['shipping'] = $shipping_address;
 
@@ -330,9 +337,11 @@ class Cart extends API {
 				$shipping_address['postcode'] ?? ''
 			);
 
-			if ( empty( $plans ) ) {
-				$this->cart['data']['shipping_methods'] = array();
-			}
+			// get( true ) is not memoised: read the tier figures once, not per plan.
+			$formatted_cart    = $cart->get( true );
+			$physical_subtotal = $formatted_cart['fragments']['physical_subtotal'] ?? 0;
+			$cart_weight_grams = $cart->get_weight() * easycommerce_weight_unit_conversion( 'g' )['kg'];
+			$cart_quantity     = $cart->get_quantity();
 
 			foreach ( $plans as $plan ) {
 
@@ -340,64 +349,68 @@ class Cart extends API {
 					continue;
 				}
 
-				$base = $plan['calculation_base'];
+				$base    = $plan['calculation_base'];
+				$matched = array();
+				$value   = null;
+
 				if ( $base == 'price' ) {
-					$cart_total = $cart->get_amount();
+					$value = $physical_subtotal;
 
-					$formatted_cart = $cart->get(true);
-					$physical_subtotal = 0;
-
-					if ( isset( $formatted_cart['fragments']['physical_subtotal'] ) ) {
-						$physical_subtotal = $formatted_cart['fragments']['physical_subtotal'];
-					}
 					foreach ( $plan['methods'] as $method ) {
 						$min = $method->min;
-						$max = $method->max !== null ? $method->max : PHP_INT_MAX;
+						$max = $this->tier_max( $method->max );
 
-						if ( $min <= $physical_subtotal && $max >= $physical_subtotal ) {
-							$methods[] = array(
+						if ( $min <= $value && $max >= $value ) {
+							$matched[] = array(
 								'id'   => $method->id,
 								'name' => $method->name,
 								'cost' => $method->cost,
+								'min'  => $min,
+								'max'  => $max,
 							);
 						}
 					}
 				} elseif ( $base == 'weight' ) {
-					$unit_conversions  = easycommerce_weight_unit_conversion( 'g' );
-
-					$cart_weight 	   = $cart->get_weight(); // Total cart weight in kilograms
-					$cart_weight_grams = $cart_weight * $unit_conversions['kg']; // Convert cart weight to grams
+					$unit_conversions = easycommerce_weight_unit_conversion( 'g' );
+					$value            = $cart_weight_grams;
 
 					foreach ( $plan['methods'] as $method ) {
 						// Convert min and max to grams based on their units
 						$min_grams = $method->min * ( $unit_conversions[$method->min_unit] ?? 1 );
-						$max_grams = $method->max !== null ? $method->max * ( $unit_conversions[$method->max_unit] ?? 1 ) : PHP_INT_MAX;
+						$max       = $this->tier_max( $method->max );
+						$max_grams = PHP_INT_MAX === $max ? PHP_INT_MAX : $max * ( $unit_conversions[$method->max_unit] ?? 1 );
 
 						// Compare cart weight (in grams) with method range (in grams)
-						if ( $min_grams <= $cart_weight_grams && $cart_weight_grams <= $max_grams ) {
-							$methods[] = [
+						if ( $min_grams <= $value && $value <= $max_grams ) {
+							$matched[] = array(
 								'id'   => $method->id,
 								'name' => $method->name,
 								'cost' => $method->cost,
-							];
+								'min'  => $min_grams,
+								'max'  => $max_grams,
+							);
 						}
 					}
 				} elseif ( $base == 'quantity' ) {
-					$cart_quantity = $cart->get_quantity();
+					$value = $cart_quantity;
+
 					foreach ( $plan['methods'] as $method ) {
-
 						$min = $method->min;
-						$max = $method->max !== null ? $method->max : PHP_INT_MAX;
+						$max = $this->tier_max( $method->max );
 
-						if ( $min <= $cart_quantity && $max >= $cart_quantity ) {
-							$methods[] = array(
+						if ( $min <= $value && $max >= $value ) {
+							$matched[] = array(
 								'id'   => $method->id,
 								'name' => $method->name,
 								'cost' => $method->cost,
+								'min'  => $min,
+								'max'  => $max,
 							);
 						}
 					}
 				}
+
+				$methods = array_merge( $methods, $this->drop_boundary_duplicates( $matched, $value ) );
 			}
 			usort( $methods, fn( $a, $b ) => $a['cost'] <=> $b['cost'] );
 			$cart->cart['data']['shipping_methods'] = $methods;
@@ -433,8 +446,17 @@ class Cart extends API {
 		$id     = $request->get_param( 'id' );
 		$method = Shipping_Plan::get_method_by_id( $id );
 
+		$this->guard_locked( $cart );
+
 		if ( ! $method ) {
 			$this->response_error( __( 'Shipping method not found.', 'easycommerce' ), 400 );
+		}
+
+		// Only the methods this cart's own address/tier lookup produced are selectable.
+		$available = array_map( 'absint', wp_list_pluck( $cart->get_shipping_methods(), 'id' ) );
+
+		if ( ! in_array( absint( $id ), $available, true ) ) {
+			$this->response_error( __( 'Shipping method is not available for this cart.', 'easycommerce' ), 400 );
 		}
 
 		$cart->cart['data']['shipping_method'] = $id;
@@ -468,7 +490,14 @@ class Cart extends API {
 
 	public function set_payment_method( $request ) {
 		$cart            = new Cart_Model();
-		$payment_method  = $request->get_param( 'payment_method' );
+		$payment_method  = sanitize_key( (string) $request->get_param( 'payment_method' ) );
+
+		$this->guard_locked( $cart );
+
+		// Only a gateway the store has switched on may be stored.
+		if ( ! in_array( $payment_method, easycommerce_active_payment_methods(), true ) ) {
+			$this->response_error( __( 'Payment method is not available.', 'easycommerce' ), 400 );
+		}
 
 		$cart->cart['data']['payment_method'] = $payment_method;
 
@@ -509,6 +538,8 @@ class Cart extends API {
 		$cart = new Cart_Model( $hash );
 		$code = $request->get_param( 'code' );
 
+		$this->guard_locked( $cart );
+
 		$coupon = new Coupon( $code );
 
 		if ( ! $coupon->exists() || ! $coupon->is_active() ) {
@@ -523,7 +554,8 @@ class Cart extends API {
 			$cart->cart['data']['coupons'] = array();
 		}
 
-		if ( ! $coupon->is_applicable() ) {
+		// Without the cart it validates against the requester's own session.
+		if ( ! $coupon->is_applicable( $cart ) ) {
 			$this->response_error(
 				array(
 					'message' => __( 'Coupon is not applicable.', 'easycommerce' ),
@@ -531,13 +563,16 @@ class Cart extends API {
 			);
 		}
 
-		if ( ! in_array( $code, $cart->cart['data']['coupons'] ) ) {
-			$cart->cart['data']['coupons'][] = $coupon->get_code();
+		// Coupon lookups are case insensitive, so compare the resolved code.
+		$canonical_code = $coupon->get_code();
+		$applied_codes  = array_map( 'strtolower', array_map( 'strval', $cart->cart['data']['coupons'] ) );
+
+		if ( ! in_array( strtolower( (string) $canonical_code ), $applied_codes, true ) ) {
+			$cart->cart['data']['coupons'][] = $canonical_code;
 
 			// Add free products if Buy X Get Y offer.
 			if ( $coupon->get_type() === 'products' ) {
-				$free_products = maybe_unserialize( $coupon->get_offer() );
-				foreach ( $free_products as $free_product ) {
+				foreach ( $this->get_free_products( $coupon ) as $free_product ) {
 					$cart->add( $free_product['id'], 1, 1, null, true );
 				}
 			}
@@ -582,7 +617,12 @@ class Cart extends API {
 		$cart = new Cart_Model( $hash );
 		$code = $request->get_param( 'code' );
 
-		if ( empty( $cart->cart['data']['coupons'] ) || ! in_array( $code, $cart->cart['data']['coupons'] ) ) {
+		$this->guard_locked( $cart );
+
+		$normalized_code = strtolower( (string) $code );
+		$applied_codes   = array_map( 'strtolower', array_map( 'strval', (array) ( $cart->cart['data']['coupons'] ?? array() ) ) );
+
+		if ( empty( $cart->cart['data']['coupons'] ) || ! in_array( $normalized_code, $applied_codes, true ) ) {
 			$this->response_error(
 				array(
 					'message' => __( 'Cart doesn\'t contain this coupon!', 'easycommerce' ),
@@ -590,13 +630,19 @@ class Cart extends API {
 			);
 		}
 
-		$cart->cart['data']['coupons'] = array_values( array_filter( $cart->cart['data']['coupons'], fn( $value ) => $value !== $code ) );
+		$cart->cart['data']['coupons'] = array_values(
+			array_filter(
+				$cart->cart['data']['coupons'],
+				function ( $value ) use ( $normalized_code ) {
+					return strtolower( (string) $value ) !== $normalized_code;
+				}
+			)
+		);
 
 		// Remove free products if Buy X Get Y offer.
 		$coupon = new Coupon( $code );
 		if ( $coupon->get_type() === 'products' ) {
-			$free_products = maybe_unserialize( $coupon->get_offer() );
-			foreach ( $free_products as $free_product ) {
+			foreach ( $this->get_free_products( $coupon ) as $free_product ) {
 				$cart->remove( $free_product['id'], 1, true );
 			}
 		}
@@ -635,6 +681,8 @@ class Cart extends API {
 	 */
 	public function clear( $request ) {
 		$cart = new Cart_Model();
+
+		$this->guard_locked( $cart );
 
 		$cart->empty();
 
@@ -710,27 +758,118 @@ class Cart extends API {
 		$this->response_success( $response_data );
 	}
 
-	private function sanitize_address( $address ) {
-		if ( ! is_array( $address ) ) {
-			return $address;
+	/**
+	 * Gift lines of a Buy X Get Y coupon, empty when the offer is not a list.
+	 *
+	 * @param Coupon $coupon The coupon.
+	 * @return array
+	 */
+	private function get_free_products( $coupon ) {
+		$free_products = maybe_unserialize( $coupon->get_offer() );
+
+		if ( empty( $free_products ) || ! is_array( $free_products ) ) {
+			return array();
 		}
 
-		$text_fields = array( 'first_name', 'last_name', 'address_1', 'address_2', 'city', 'state', 'country', 'postcode' );
+		return array_filter(
+			$free_products,
+			function ( $free_product ) {
+				return is_array( $free_product ) && ! empty( $free_product['id'] );
+			}
+		);
+	}
 
-		foreach ( $text_fields as $field ) {
-			if ( isset( $address[ $field ] ) ) {
-				$address[ $field ] = sanitize_text_field( $address[ $field ] );
+	/**
+	 * Drop a tier that only starts where another one of the same plan ends.
+	 *
+	 * @param array $matched Methods whose range covers the value, with min and max.
+	 * @param mixed $value   The compared subtotal, weight or quantity.
+	 * @return array Methods in the response shape, without the bounds.
+	 */
+	private function drop_boundary_duplicates( $matched, $value ) {
+		// DECIMAL columns arrive as floats and weights are unit converted.
+		$is = function ( $bound ) use ( $value ) {
+			return abs( (float) $bound - (float) $value ) < 0.0001;
+		};
+
+		$ends_here = false;
+
+		foreach ( $matched as $row ) {
+			if ( $is( $row['max'] ) ) {
+				$ends_here = true;
+				break;
 			}
 		}
 
-		if ( isset( $address['email'] ) ) {
-			$address['email'] = sanitize_email( $address['email'] );
+		$kept = array();
+
+		foreach ( $matched as $row ) {
+			if ( $ends_here && $is( $row['min'] ) && ! $is( $row['max'] ) ) {
+				continue;
+			}
+
+			unset( $row['min'], $row['max'] );
+
+			$kept[] = $row;
 		}
 
-		if ( isset( $address['phone'] ) ) {
-			$address['phone'] = sanitize_text_field( $address['phone'] );
+		return $kept;
+	}
+
+	/**
+	 * Upper bound of a shipping tier, where empty and zero mean no maximum.
+	 *
+	 * @param mixed $max The stored maximum.
+	 * @return float|int
+	 */
+	private function tier_max( $max ) {
+		if ( null === $max || '' === $max || 0.0 === (float) $max ) {
+			return PHP_INT_MAX;
 		}
 
-		return $address;
+		return $max;
+	}
+
+	/**
+	 * Reject a change when the cart is locked for payment.
+	 *
+	 * @param Cart_Model $cart The cart being changed.
+	 */
+	private function guard_locked( $cart ) {
+		if ( $cart->is_locked() ) {
+			$this->response_error( __( 'Cart is locked for payment. Complete or cancel the current payment before making changes.', 'easycommerce' ), 403 );
+		}
+	}
+
+	private function sanitize_address( $address ) {
+		// Consumers expect an array, and unknown keys must not reach the stored cart.
+		if ( ! is_array( $address ) ) {
+			return array();
+		}
+
+		$text_fields = array( 'first_name', 'last_name', 'address_1', 'address_2', 'city', 'state', 'country', 'postcode' );
+		$sanitized   = array();
+
+		foreach ( $text_fields as $field ) {
+			if ( isset( $address[ $field ] ) && is_scalar( $address[ $field ] ) ) {
+				$sanitized[ $field ] = sanitize_text_field( $address[ $field ] );
+			}
+		}
+
+		if ( isset( $address['email'] ) && is_scalar( $address['email'] ) ) {
+			$sanitized['email'] = sanitize_email( $address['email'] );
+		}
+
+		if ( isset( $address['phone'] ) && is_scalar( $address['phone'] ) ) {
+			$sanitized['phone'] = sanitize_text_field( $address['phone'] );
+		}
+
+		/**
+		 * Filter the sanitized checkout address, to allow extra address fields.
+		 *
+		 * @param array $sanitized The keys kept from the request.
+		 * @param array $address   The raw address from the request.
+		 */
+		return apply_filters( 'easycommerce_sanitize_cart_address', $sanitized, $address );
 	}
 }

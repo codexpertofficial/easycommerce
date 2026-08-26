@@ -1,4 +1,6 @@
 <?php
+defined( 'ABSPATH' ) || exit;
+
 use EasyCommerce\Models\Cart;
 
 $cart_obj   = new Cart();
@@ -54,6 +56,22 @@ $atts       = $args['atts'] ?? array();
             <?php do_action( 'easycommerce-after_cart_payment_methods' ); ?>
 
             <div>
+                <div class="flex mb-4">
+                    <label class="flex items-center cursor-pointer">
+                        <input type="checkbox" id="easycommerce-terms" name="terms" class="easycommerce-input-checkoutbox easycommerce-terms-input-checkoutbox rtl:mt-4" required />
+                        <p class="text-[#737791] font-inter font-normal text-base leading-[26px] ml-2 rtl:mr-2">
+                            <?php esc_html_e( 'By clicking this, I agree to ', 'easycommerce' ); ?>
+                            <a href="<?php echo esc_url( easycommerce_terms_of_service_page( true ) ); ?>" class="text-ec-primary no-underline font-semibold">
+                                <?php esc_html_e( 'Terms & Conditions', 'easycommerce' ); ?>
+                            </a>
+                            <?php esc_html_e( ' and ', 'easycommerce' ); ?>
+                            <a href="<?php echo esc_url( easycommerce_privacy_policy_page( true ) ); ?>" target="_blank" class="text-ec-primary no-underline font-semibold">
+                                <?php esc_html_e( 'Privacy Policy', 'easycommerce' ); ?>
+                            </a>
+                        </p>
+                    </label>
+                </div>
+
                 <button type="submit"
                     class="easycommerce-checkout-main-btn text-white w-full font-inter bg-ec-primary group border border-ec-primary py-[11px] px-8 rounded-lg font-normal hover:text-white focus:bg-ec-primary focus:border-ec-primary hover:bg-ec-secondary focus:shadow-none focus:text-white hover:border-ec-secondary lg:text-sm md:text-xs sm:text-sm transition-all ease-in-out duration-500 leading-[26px]">
                     <?php esc_html_e( 'Confirm Order', 'easycommerce' ); ?>

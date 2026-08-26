@@ -23,7 +23,7 @@ const Edit = (props) => {
                 );
                 const data = await response.json();
 
-                setProductDetails(data.data.description);
+                setProductDetails(data?.data?.description || "");
             } catch (error) {
             }
         };

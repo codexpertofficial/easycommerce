@@ -124,6 +124,7 @@ class Tax {
 					'country'  => $rate->country,
 					'state'    => $rate->state,
 					'city'     => $rate->city,
+					'postcode' => $rate->postcode,
 					'rate'     => rtrim( rtrim( $rate->rate, '0' ), '.' ),
 					'priority' => $rate->priority,
 					'compound' => (bool) $rate->compound,
@@ -201,6 +202,7 @@ class Tax {
 				'country'      => $rate['country'],
 				'state'        => $rate['state'] ?? '',
 				'city'         => $rate['city'] ?? '',
+				'postcode'     => $rate['postcode'] ?? null,
 				'rate'         => $rate['rate'],
 				'priority'     => $rate['priority'] ?? 1,
 				'compound'     => $rate['compound'] ?? 0,
@@ -243,6 +245,7 @@ class Tax {
 				'country'      => $rate['country'],
 				'state'        => $rate['state'] ?? '',
 				'city'         => $rate['city'] ?? '',
+				'postcode'     => $rate['postcode'] ?? null,
 				'rate'         => $rate['rate'],
 				'priority'     => $rate['priority'] ?? 1,
 				'compound'     => $rate['compound'] ?? 0,
@@ -383,7 +386,7 @@ class Tax {
 	 *
 	 * @return float
 	 */
-	public function get_rate_by_location( $tax_class_id, $country, $state = null, $city = null, $details = false ) {
+	public function get_rate_by_location( $tax_class_id, $country, $state = null, $city = null, $postcode = null, $details = false ) {
 		$conditions = array(
 			'tax_class_id' => $tax_class_id,
 			'country'      => $country,
@@ -399,21 +402,10 @@ class Tax {
 		$matched = array();
 
 		foreach ( $rates as $rate ) {
-			// Case 1: state + city match
-			if ( $rate->state && $rate->city ) {
-				if ( $state === $rate->state && $city === $rate->city ) {
-					$matched[] = array( 'rate' => $rate, 'level' => 3 );
-				}
-			}
-			// Case 2: state only
-			elseif ( $rate->state && empty( $rate->city ) ) {
-				if ( $state === $rate->state ) {
-					$matched[] = array( 'rate' => $rate, 'level' => 2 );
-				}
-			}
-			// Case 3: country only
-			elseif ( empty( $rate->state ) && empty( $rate->city ) ) {
-				$matched[] = array( 'rate' => $rate, 'level' => 1 );
+			$level = $this->get_match_level( $rate, $state, $city, $postcode );
+
+			if ( false !== $level ) {
+				$matched[] = array( 'rate' => $rate, 'level' => $level );
 			}
 		}
 
@@ -447,7 +439,46 @@ class Tax {
 	 * @param string|null $city    City name.
 	 * @return float Tax rate percentage.
 	 */
-	public function get_rate_for_location( $country, $state = null, $city = null ) {
+	/**
+	 * Score how specifically a rate matches: postcode, then city, state, country.
+	 *
+	 * @param object      $rate     The tax rate row.
+	 * @param string|null $state    Customer state.
+	 * @param string|null $city     Customer city.
+	 * @param string|null $postcode Customer postcode.
+	 * @return int|false Specificity level, or false when the rate does not apply.
+	 */
+	private function get_match_level( $rate, $state, $city, $postcode = null ) {
+		$level = 1;
+
+		if ( ! empty( $rate->postcode ) ) {
+			if ( ! easycommerce_zip_code_matches( $rate->postcode, $postcode ) ) {
+				return false;
+			}
+
+			$level = 4;
+		}
+
+		if ( ! empty( $rate->city ) ) {
+			if ( $city !== $rate->city ) {
+				return false;
+			}
+
+			$level = max( $level, 3 );
+		}
+
+		if ( ! empty( $rate->state ) ) {
+			if ( $state !== $rate->state ) {
+				return false;
+			}
+
+			$level = max( $level, 2 );
+		}
+
+		return $level;
+	}
+
+	public function get_rate_for_location( $country, $state = null, $city = null, $postcode = null ) {
 		$active_classes = $this->class_db->get_rows( array( 'status' => 1 ) );
 		
 		if ( empty( $active_classes ) ) {
@@ -469,18 +500,10 @@ class Tax {
 			}
 
 			foreach ( $rates as $rate ) {
-				if ( $rate->state && $rate->city ) {
-					if ( $state === $rate->state && $city === $rate->city ) {
-						$all_matches[] = array( 'rate' => $rate, 'level' => 3 );
-					}
-				}
-				elseif ( $rate->state && empty( $rate->city ) ) {
-					if ( $state === $rate->state ) {
-						$all_matches[] = array( 'rate' => $rate, 'level' => 2 );
-					}
-				}
-				elseif ( empty( $rate->state ) && empty( $rate->city ) ) {
-					$all_matches[] = array( 'rate' => $rate, 'level' => 1 );
+				$level = $this->get_match_level( $rate, $state, $city, $postcode );
+
+				if ( false !== $level ) {
+					$all_matches[] = array( 'rate' => $rate, 'level' => $level );
 				}
 			}
 		}

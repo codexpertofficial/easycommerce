@@ -138,7 +138,7 @@ add_action(
 				wp_enqueue_script(
 					'easycommerce-paypal',
 					EASYCOMMERCE_ASSETS_URL . 'payment/js/paypal.js',
-					array( 'paypal-sdk', 'jquery', 'wp-i18n' ),
+					array( 'paypal-sdk', 'jquery', 'wp-i18n', 'easycommerce_checkout' ),
 					EASYCOMMERCE_VERSION,
 					true
 				);

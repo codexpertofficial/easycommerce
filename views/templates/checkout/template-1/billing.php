@@ -1,3 +1,6 @@
+<?php
+defined( 'ABSPATH' ) || exit;
+?>
 <div class="border border-ec-border bg-white rounded-lg p-3 md:p-7 pb-0 mb-5 easycommerce-clearfix">
 	<div class="flex items-center mb-4 md:mb-[30px] px-[2px]">
 		<img src="<?php echo esc_url( EASYCOMMERCE_ASSETS_URL . 'public/img/checkout/billing.png' ); ?>"
@@ -21,7 +24,7 @@
 				$field['value'] = array_key_exists( $field['id'], $billing_address ) ? $billing_address[ $field['id'] ] : '';
 				$field['id']    = "billing_{$field['id']}";
 				$field_obj      = new $field_factory( $field );
-				echo $field_obj->render();
+				echo $field_obj->render(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Field::render() escapes its own output.
 			}
 		}
 		?>

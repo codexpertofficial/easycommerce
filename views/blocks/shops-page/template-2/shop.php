@@ -209,7 +209,7 @@ foreach ( $products as $product ) :
 							if ( $show_stock_badge && ! $is_out_of_stock ) {
 								$other_badges[] = array(
 									'label'      => __( 'In Stock', 'easycommerce' ),
-									'color'      => '#10B981', 
+									'color'      => '#10B981', // emerald-500
 									'text_color' => '#FFFFFF',
 								);
 							}
@@ -225,6 +225,14 @@ foreach ( $products as $product ) :
 										<?php echo esc_html( $badge['label'] ); ?>
 									</span>
 								<?php endforeach; ?>
+							</div>
+						<?php endif; ?>
+
+						<?php if ( $is_out_of_stock ) : ?>
+							<div class="absolute inset-0 z-20 flex items-center justify-center bg-black/40">
+								<span class="inline-flex items-center text-xs font-semibold px-3 py-1.5 shadow-md rounded bg-gray-700 text-white">
+									<?php esc_html_e( 'Out of Stock', 'easycommerce' ); ?>
+								</span>
 							</div>
 						<?php endif; ?>
 						<?php

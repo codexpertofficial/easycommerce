@@ -18,6 +18,13 @@ docs/*.xml
 tree.txt
 *.zip
 .*.json
+!.wp-env.json
+
+# Playwright e2e output (config + specs are tracked; results/reports are not)
+/test-results/
+/playwright-report/
+/blob-report/
+/.wp-env.override.json
 
 **/.DS_Store
 
@@ -27,5 +34,7 @@ opencode.json
 # AGENTS.md
 /.remember/
 .claude/settings.local.json
+.claude/auth-flow-screenshots/
+.claude/*-screenshots/
 /docs/superpowers/*
 

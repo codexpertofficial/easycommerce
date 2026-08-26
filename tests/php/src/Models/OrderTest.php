@@ -7,6 +7,7 @@ namespace EasyCommerce\Tests\Models;
 
 use EasyCommerce\Tests\EasyCommerceTestCase;
 use EasyCommerce\Models\Order;
+use EasyCommerce\Models\Product_Variation;
 use EasyCommerce\Models\Transaction;
 
 class OrderTest extends EasyCommerceTestCase {
@@ -710,5 +711,56 @@ class OrderTest extends EasyCommerceTestCase {
 
 		$this->assertCount( 2, $result['orders'] );
 		$this->assertEquals( 2, $result['per_page'] );
+	}
+
+	// ── Stock consumption ─────────────────────────────────────────────────────
+
+	/**
+	 * Two orders for the last unit cannot both take it.
+	 */
+	public function test_two_orders_for_the_last_unit_do_not_oversell() {
+		$product_id   = $this->factory->product->create( [ 'title' => 'Last unit', 'status' => 'publish' ] );
+		$variation_id = $this->factory->variation->create( [
+			'product_id'     => $product_id,
+			'name'           => 'Default',
+			'sku'            => 'LAST-UNIT-' . wp_generate_password( 6, false ),
+			'price'          => 50.00,
+			'price_id'       => 1,
+			'stock_quantity' => 1,
+		] );
+
+		$line = [
+			$product_id => [
+				1 => [ 'quantity' => 1, 'rate' => 50.00, 'price' => 50.00 ],
+			],
+		];
+
+		$first = new Order();
+		$first->create( [
+			'customer_id' => $this->customer_id,
+			'total'       => 50.00,
+			'status'      => 'pending',
+			'items'       => $line,
+			'meta'        => [],
+		] );
+
+		$after_first = ( new Product_Variation( $variation_id ) )->get_stock();
+
+		$second = new Order();
+		$second->create( [
+			'customer_id' => $this->customer_id,
+			'total'       => 50.00,
+			'status'      => 'pending',
+			'items'       => $line,
+			'meta'        => [],
+		] );
+
+		$after_second = ( new Product_Variation( $variation_id ) )->get_stock();
+
+		$sold = array_sum( array_map( fn( $item ) => (int) $item->quantity, $second->get_items() ) );
+
+		$this->assertSame( 0, $after_first, 'the first order takes the unit' );
+		$this->assertSame( 0, $after_second, 'the second cannot take it again, and cannot go negative' );
+		$this->assertSame( 0, $sold, 'the second order books no units' );
 	}
 }

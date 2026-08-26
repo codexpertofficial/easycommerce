@@ -513,84 +513,78 @@ class Shipping_Plan extends Model {
 
     public static function get_by_location_address( $country, $state, $city, $zip_code = '' ) {
 		$regions_db = new Database( 'shipping_plan_regions' );
-				
-		$location_patterns = array();
-		
-		if ( ! empty( $country ) && ! empty( $state ) && ! empty( $city ) && ! empty( $zip_code ) ) {
-			$location_patterns[] = array(
-				'region_code' => $country . '-' . $state . '-' . $city,
-				'zip_code' => $zip_code,
-			);
-		}
-		
+
+		$country = easycommerce_country_code( $country );
+
+		// Region codes from the most specific to the least.
+		$region_codes = array();
+
 		if ( ! empty( $country ) && ! empty( $state ) && ! empty( $city ) ) {
-			$location_patterns[] = array(
-				'region_code' => $country . '-' . $state . '-' . $city,
-				'zip_code' => '',
-			);
+			$region_codes[] = $country . '-' . $state . '-' . $city;
 		}
-		
-		if ( ! empty( $country ) && ! empty( $state ) && ! empty( $zip_code ) ) {
-			$location_patterns[] = array(
-				'region_code' => $country . '-' . $state . '-',
-				'zip_code' => $zip_code,
-			);
-		}
-		
+
 		if ( ! empty( $country ) && ! empty( $state ) ) {
-			$location_patterns[] = array(
-				'region_code' => $country . '-' . $state . '-',
-				'zip_code' => '',
-			);
+			$region_codes[] = $country . '-' . $state . '-';
 		}
-		
-		if ( ! empty( $country ) && ! empty( $zip_code ) ) {
-			$location_patterns[] = array(
-				'region_code' => $country . '--',
-				'zip_code' => $zip_code,
-			);
-		}
-		
+
 		if ( ! empty( $country ) ) {
-			$location_patterns[] = array(
-				'region_code' => $country . '--',
-				'zip_code' => '',
-			);
+			$region_codes[] = $country . '--';
 		}
-		
-		$location_patterns[] = array(
-			'region_code' => '--',
-			'zip_code' => '',
-		);
-				
-		foreach ( $location_patterns as $index => $pattern ) {
-			$query_conditions = array( 
-				'region_code' => $pattern['region_code'],
-				'zip_code' => $pattern['zip_code']
+
+		$region_codes[] = '--';
+
+		$build = function ( $rows ) {
+			return array_map(
+				function ( $plan_id ) {
+					$plan = new self( $plan_id );
+
+					return array(
+						'id'               => $plan->get_id(),
+						'name'             => $plan->get_name(),
+						'description'      => $plan->get_description(),
+						'active'           => $plan->is_active(),
+						'calculation_base' => $plan->get_calculation_base(),
+						'methods'          => $plan->get_methods(),
+						'regions'          => $plan->get_regions(),
+					);
+				},
+				array_values( wp_list_pluck( $rows, 'plan_id' ) )
 			);
-						
-			$plan_ids = $regions_db->get_rows( $query_conditions );
-						
-			if ( ! empty( $plan_ids ) ) {
-				return array_map(
-					function ( $plan_id ) {
-						$plan = new self( $plan_id );
-						
-						return array(
-							'id'               => $plan->get_id(),
-							'name'             => $plan->get_name(),
-							'description'      => $plan->get_description(),
-							'active'           => $plan->is_active(),
-							'calculation_base' => $plan->get_calculation_base(),
-							'methods'          => $plan->get_methods(),
-							'regions'          => $plan->get_regions(),
-						);
-					},
-					wp_list_pluck( $plan_ids, 'plan_id' )
+		};
+
+		foreach ( $region_codes as $region_code ) {
+			$rows = $regions_db->get_rows( array( 'region_code' => $region_code ) );
+
+			if ( empty( $rows ) ) {
+				continue;
+			}
+
+			// Within a region, a postcode restricted row beats an unrestricted one.
+			if ( ! empty( $zip_code ) ) {
+				$matched = array_filter(
+					$rows,
+					function ( $row ) use ( $zip_code ) {
+						return ! empty( $row->zip_code ) && easycommerce_zip_code_matches( $row->zip_code, $zip_code );
+					}
 				);
+
+				if ( ! empty( $matched ) ) {
+					return $build( $matched );
+				}
+			}
+
+			$unrestricted = array_filter(
+				$rows,
+				function ( $row ) {
+					return empty( $row->zip_code );
+				}
+			);
+
+			if ( ! empty( $unrestricted ) ) {
+				return $build( $unrestricted );
 			}
 		}
-		
+
 		return array();
 	}
 	/**

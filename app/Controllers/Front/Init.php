@@ -12,6 +12,7 @@ use EasyCommerce\Models\Order;
 use EasyCommerce\Models\Customer;
 use EasyCommerce\Helpers\Utility;
 use EasyCommerce\Services\AI as AI_Service;
+use EasyCommerce\Services\Schema as Schema_Service;
 
 class Init {
 
@@ -162,6 +163,8 @@ class Init {
 		if ( get_option( 'blog_public' ) == 1 && $product->get_meta( 'noindex' ) == 1 ) {
 			echo '<meta name="robots" content="noindex, nofollow">';
 		}
+
+		( new Schema_Service() )->output_product( $product );
 	}
 
 	public function smart_search( $result, $filters, $request ) {

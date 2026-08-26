@@ -337,6 +337,40 @@ class Product_Variation extends Model {
 	}
 
 	/**
+	 * Take stock off in one conditional statement, so a race cannot oversell.
+	 *
+	 * @param int $quantity Units to remove.
+	 * @return bool True when the units were taken, false when stock was short.
+	 */
+	public function reduce_stock( $quantity ) {
+		global $wpdb;
+
+		$quantity = (int) $quantity;
+
+		if ( $quantity <= 0 || ! $this->manages_stock() || ! $this->id ) {
+			return true;
+		}
+
+		$table = $this->db->get_table();
+
+		$updated = $wpdb->query(
+			$wpdb->prepare(
+				// phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared -- table name from the Database model.
+				"UPDATE {$table} SET stock_quantity = stock_quantity - %d WHERE id = %d AND stock_quantity >= %d",
+				$quantity,
+				$this->id,
+				$quantity
+			)
+		);
+
+		if ( $updated ) {
+			$this->stock_quantity = (int) $this->stock_quantity - $quantity;
+		}
+
+		return (bool) $updated;
+	}
+
+	/**
 	 * Set variation type.
 	 *
 	 * @param string $type

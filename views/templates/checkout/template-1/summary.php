@@ -8,6 +8,8 @@
  * @var array $cart The cart data.
  * @var \EasyCommerce\Models\Cart $cart_obj The cart object.
  */
+defined( 'ABSPATH' ) || exit;
+
 ?>
 <div class="flex items-center mb-4 md:mb-[30px] mx-[2px] mt-4 md:mt-0">
 	<img src="<?php echo esc_url( EASYCOMMERCE_ASSETS_URL . 'public/img/checkout/order-summary.png' ); ?>"
@@ -103,7 +105,7 @@
 								<input type="radio" name="shipping_method" value="%1$s" class="easycommerce-shipping-method" %3$s required />
 								<del>%2$s</del> (%4$s)
 							</label><br />',
-								$shipping_method['id'],
+								esc_attr( $shipping_method['id'] ),
 								$method_label,
 								esc_attr( $is_checked ),
 								esc_html__( 'Free Shipping', 'easycommerce' )
@@ -114,7 +116,7 @@
 								<input type="radio" name="shipping_method" value="%1$s" class="easycommerce-shipping-method" %3$s required />
 								%2$s
 							</label><br />',
-								$shipping_method['id'],
+								esc_attr( $shipping_method['id'] ),
 								$method_label,
 								esc_attr( $is_checked )
 							);
@@ -127,7 +129,7 @@
 			</span>
 			<span class="easycommerce-shipping-method-error max-w-max mt-2 bg-[#FFF8F8] text-[#FF7373] text-[14px] px-3 py-1 rounded-md hidden"
 				style="background-color: #FFF8F8; color: #FF7373;max-width: max-content;">
-				<?php _e( 'Please select a shipping method', 'easycommerce' ); ?>
+				<?php esc_html_e( 'Please select a shipping method', 'easycommerce' ); ?>
 			</span>
 		</div>
 	<?php endif; ?>

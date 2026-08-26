@@ -756,4 +756,76 @@ class ProductVariationTest extends EasyCommerceTestCase {
 
 		$this->assertFalse( $variations );
 	}
+
+	// ── Stock reservation ─────────────────────────────────────────────────────
+
+	/**
+	 * reduce_stock() takes the units and persists the new level.
+	 */
+	public function test_reduce_stock_takes_the_units(): void {
+		$variation = $this->make_variation( [ 'stock_quantity' => 10 ] );
+
+		$this->assertTrue( $variation->reduce_stock( 3 ) );
+		$this->assertSame( 7, $variation->get_stock() );
+		$this->assertSame( 7, ( new Product_Variation( $variation->get_id() ) )->get_stock() );
+	}
+
+	/**
+	 * reduce_stock() refuses to go below zero, so the last unit cannot be sold twice.
+	 */
+	public function test_reduce_stock_refuses_more_than_is_held(): void {
+		$variation = $this->make_variation( [ 'stock_quantity' => 1 ] );
+
+		$this->assertTrue( $variation->reduce_stock( 1 ) );
+		$this->assertSame( 0, ( new Product_Variation( $variation->get_id() ) )->get_stock() );
+
+		// A second checkout racing on the same unit.
+		$racing = new Product_Variation( $variation->get_id() );
+
+		$this->assertFalse( $racing->reduce_stock( 1 ) );
+		$this->assertSame( 0, ( new Product_Variation( $variation->get_id() ) )->get_stock() );
+	}
+
+	/**
+	 * Only as many racers as there are units get through.
+	 */
+	public function test_reduce_stock_lets_only_the_available_units_through(): void {
+		$variation = $this->make_variation( [ 'stock_quantity' => 3 ] );
+		$id        = $variation->get_id();
+
+		$racers = array();
+		for ( $i = 0; $i < 5; $i++ ) {
+			// Each instance is loaded before any of them writes.
+			$racers[] = new Product_Variation( $id );
+		}
+
+		$taken = 0;
+		foreach ( $racers as $racer ) {
+			if ( $racer->reduce_stock( 1 ) ) {
+				$taken++;
+			}
+		}
+
+		$this->assertSame( 3, $taken, 'three units, three winners' );
+		$this->assertSame( 0, ( new Product_Variation( $id ) )->get_stock() );
+	}
+
+	/**
+	 * A variation that does not track stock is not blocked by the condition.
+	 */
+	public function test_reduce_stock_passes_when_stock_is_not_managed(): void {
+		$variation             = new Product_Variation();
+		$variation->product_id = $this->product_id;
+
+		$variation->set_name( 'Unmanaged' );
+		$variation->set_sku( 'TEST-VAR-' . wp_generate_password( 6, false ) );
+		$variation->set_price( 19.99 );
+		$variation->set_stock_quantity( null );
+
+		$this->variation_id = $variation->save();
+
+		$this->assertFalse( $variation->manages_stock(), 'no stock level means no tracking' );
+		$this->assertTrue( $variation->reduce_stock( 5 ) );
+		$this->assertNull( ( new Product_Variation( $this->variation_id ) )->get_stock() );
+	}
 }

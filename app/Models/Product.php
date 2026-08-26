@@ -143,10 +143,12 @@ class Product extends Model {
 	/**
 	 * Check if the product is sellable.
 	 *
+	 * A draft, pending or trashed product is not.
+	 *
 	 * @return bool
 	 */
 	public function is_sellable() {
-		return $this->exists();
+		return $this->exists() && 'publish' === $this->get_status();
 	}
 
 	/**

@@ -33,6 +33,7 @@ class Installer {
 		add_action( 'easycommerce_migrate_coupons_table', array( $installer, 'handle_coupons_data_migration' ), 10, 4 );
 		add_action( 'easycommerce_migrate_cart_sessions_table', array( $installer, 'handle_cart_sessions_data_migration' ), 10, 4 );
 		add_action( 'easycommerce_migrate_orders_table', array( $installer, 'handle_orders_data_migration' ), 10, 4 );
+		add_action( 'easycommerce_migrate_transactions_table', array( $installer, 'handle_transactions_data_migration' ), 10, 4 );
 
 		$is_fresh_install = ! get_option( 'easycommerce_activated' );
 
@@ -455,6 +456,54 @@ class Installer {
 		// Recover orders left with an empty status (failed payments written
 		// before `failed` was a valid ENUM value, coerced by MySQL to '').
 		$wpdb->query( "UPDATE `{$table_full_name}` SET `status` = 'failed' WHERE `status` = ''" );
+	}
+
+	/**
+	 * Handles schema migration for the transactions table during schema updates.
+	 *
+	 * Adds a UNIQUE(transaction_id) constraint on existing installs so a
+	 * duplicate gateway transaction id can never be recorded twice (which would
+	 * corrupt the payment audit trail and reconciliation). Existing duplicate
+	 * rows are removed first — the earliest row (smallest id) is kept for each
+	 * transaction_id — because MySQL rejects the constraint while duplicates
+	 * remain. Distinct transactions carry distinct gateway ids, so only true
+	 * duplicates are deleted; no distinct transaction is lost. dbDelta does not
+	 * add keys to existing tables, so the change is applied explicitly here and
+	 * guarded to run at most once.
+	 *
+	 * @param Database $db              Database instance.
+	 * @param string   $table_full_name Full table name with prefix.
+	 * @param array    $columns         Current column definitions from config.
+	 * @param array    $options         Current table options from config.
+	 *
+	 * @return void
+	 */
+	public function handle_transactions_data_migration( Database $db, string $table_full_name, array $columns, array $options ) {
+		global $wpdb;
+
+		if ( ! $wpdb->get_var( $wpdb->prepare( 'SHOW TABLES LIKE %s', $wpdb->esc_like( $table_full_name ) ) ) ) {
+			return;
+		}
+
+		// Idempotent: bail if the unique key already exists.
+		$existing_index = $wpdb->get_var(
+			$wpdb->prepare( "SHOW INDEX FROM `{$table_full_name}` WHERE Key_name = %s", 'uk_transaction_id' )
+		);
+		if ( $existing_index ) {
+			return;
+		}
+
+		// De-duplicate before the constraint can be applied: keep the earliest
+		// row per transaction_id, delete the rest.
+		$wpdb->query(
+			"DELETE dup FROM `{$table_full_name}` dup
+			INNER JOIN `{$table_full_name}` keep
+				ON keep.transaction_id = dup.transaction_id
+				AND keep.id < dup.id"
+		);
+
+		// Apply the uniqueness guarantee.
+		$wpdb->query( "ALTER TABLE `{$table_full_name}` ADD UNIQUE KEY `uk_transaction_id` (`transaction_id`)" );
 	}
 
 	/**

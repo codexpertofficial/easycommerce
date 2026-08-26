@@ -44,7 +44,7 @@ const Edit = (props) => {
                                 paddingBottom: isBorder ? "24px" : "",
                             }}
                         >
-                            {showRating && <StarRating rating={5} />}
+                            {showRating && <StarRating rating={rating} />}
                         </div>
                     </>
                 )}

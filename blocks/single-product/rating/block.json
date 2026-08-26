@@ -10,6 +10,12 @@
     "supports": {
         "html": false
     },
+    "attributes": {
+        "showRating": { "type": "boolean", "default": true },
+        "showSku": { "type": "boolean", "default": false },
+        "showFav": { "type": "boolean", "default": false },
+        "isBorder": { "type": "boolean", "default": false }
+    },
     "textdomain": "easycommerce",
     "editorScript": "file:./index.js"
 }
