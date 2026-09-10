@@ -16,7 +16,7 @@ $settings = is_array( $attributes ) ? $attributes : array();
 $source   = isset( $settings['source'] ) ? sanitize_key( $settings['source'] ) : 'featured';
 $category = isset( $settings['category'] ) ? sanitize_text_field( $settings['category'] ) : '';
 $count    = isset( $settings['count'] ) ? max( 1, intval( $settings['count'] ) ) : 4;
-$columns  = isset( $settings['columns'] ) ? max( 1, intval( $settings['columns'] ) ) : 4;
+$columns  = isset( $settings['columns'] ) ? min( 4, max( 1, intval( $settings['columns'] ) ) ) : 4;
 
 // Normalise columns onto the shared shop settings key used by shop.php.
 $settings['columns'] = $columns;
@@ -150,8 +150,6 @@ $allowed_column_classes = array(
 	2 => 'grid-cols-2',
 	3 => 'grid-cols-3',
 	4 => 'grid-cols-4',
-	5 => 'grid-cols-5',
-	6 => 'grid-cols-6',
 );
 $grid_class = $allowed_column_classes[ $columns ] ?? 'grid-cols-4';
 ?>

@@ -38,8 +38,24 @@ const blockConfig = applyFilters('easycommerce.blocks.cart.config', {
     category: 'easycommerce-checkout',
 });
 
+const cartMarkup = () => {
+    const blockProps = useBlockProps.save();
+    return (
+        <div {...blockProps} className="">
+            <div className="flex justify-between items-center">
+                <h3 className="mt-0 font-semibold">{__('Your Cart', 'easycommerce')}</h3>
+                <button className="easycommerce-clear-cart">
+                    {__('Clear cart', 'easycommerce')}
+                </button>
+            </div>
+            <div id="easycommerce-cart-content"></div>
+        </div>
+    );
+};
+
 registerBlockType('easycommerce/checkout--cart', {
     ...blockConfig,
+    supports: { inserter: false },
     edit: () => {
         const blockProps = useBlockProps();
         return (
@@ -50,23 +66,15 @@ registerBlockType('easycommerce/checkout--cart', {
                         {__('Clear cart', 'easycommerce')}
                     </button>
                 </div>
-                <p>{__('This is your cart being edited.', 'easycommerce')}</p>
+                <p>
+                    {__(
+                        'This block is retired. Use the Checkout block instead.',
+                        'easycommerce'
+                    )}
+                </p>
                 <Slot name="easycommerce.blocks.cart.edit" props={{ blockProps }} />
             </div>
         );
     },
-    save: () => {
-        const blockProps = useBlockProps.save();
-        return (
-            <div {...blockProps} className="">
-                <div className="flex justify-between items-center">
-                    <h3 className="mt-0 font-semibold">{__('Your Cart', 'easycommerce')}</h3>
-                    <button className="easycommerce-clear-cart">
-                        {__('Clear cart', 'easycommerce')}
-                    </button>
-                </div>
-                <div id="easycommerce-cart-content"></div>
-            </div>
-        );
-    },
+    save: cartMarkup,
 });

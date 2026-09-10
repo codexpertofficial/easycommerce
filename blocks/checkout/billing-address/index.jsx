@@ -34,23 +34,34 @@ const blockConfig = applyFilters('easycommerce.blocks.billing-address.config', {
 
 registerBlockType('easycommerce/checkout--billing-address', {
     ...blockConfig,
+    supports: { inserter: false },
     edit: () => {
         const blockProps = useBlockProps();
         return (
             <div {...blockProps}>
-                <h3>{__('Billing Address', 'easycommerce')}</h3>
-                <p>{__('This is your billing address being edited.', 'easycommerce')}</p>
+                <p>
+                    {__(
+                        'This block is retired. Use the Checkout block instead.',
+                        'easycommerce'
+                    )}
+                </p>
                 <Slot name="easycommerce.blocks.billing-address.edit" props={{ blockProps }} />
             </div>
         );
     },
-    save: () => {
-        const blockProps = useBlockProps.save();
-        return (
-            <div {...blockProps}>
-                <h3>{__('Billing Address', 'easycommerce')}</h3>
-                <p>{__('This is your billing address as saved.', 'easycommerce')}</p>
-            </div>
-        );
-    },
+    save: () => null,
+    // Keeps already-published posts valid instead of flagging them as broken content.
+    deprecated: [
+        {
+            save: () => {
+                const blockProps = useBlockProps.save();
+                return (
+                    <div {...blockProps}>
+                        <h3>{__('Billing Address', 'easycommerce')}</h3>
+                        <p>{__('This is your billing address as saved.', 'easycommerce')}</p>
+                    </div>
+                );
+            },
+        },
+    ],
 });

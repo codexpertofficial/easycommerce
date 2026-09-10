@@ -19,11 +19,21 @@ const AiGenerateAttributes = ({ productTitle, setAiOpen, setAiContent }) => {
 	const [currentAPIModalTab, setCurrentAPIModalTab] = useState('');
 	const [user, setUser] = useState(null);
 	const [error, setError] = useState('');
+	const [verbIndex, setVerbIndex] = useState(0);
 
 	const isLicensed = EASYCOMMERCE.pro.activated && EASYCOMMERCE.pro.licensed;
 
 	const [numberOfAttributes, setNumberOfAttributes] = useState(2);
 	const [numberOfValues, setNumberOfValues] = useState(3);
+
+	const generatingVerbs = [
+		__('Thinking', 'easycommerce'),
+		__('Writing', 'easycommerce'),
+		__('Crafting', 'easycommerce'),
+		__('Composing', 'easycommerce'),
+		__('Polishing', 'easycommerce'),
+		__('Refining', 'easycommerce'),
+	];
 
 	useEffect(() => {
 		if (EASYCOMMERCE.credits === '') {
@@ -58,6 +68,19 @@ const AiGenerateAttributes = ({ productTitle, setAiOpen, setAiContent }) => {
 				setShowAPIModal(true);
 			});
 	}, []);
+
+	useEffect(() => {
+		if (!isLoading) {
+			setVerbIndex(0);
+			return;
+		}
+
+		const interval = setInterval(() => {
+			setVerbIndex((prev) => (prev + 1) % generatingVerbs.length);
+		}, 7000);
+
+		return () => clearInterval(interval);
+	}, [isLoading]);
 
 	const handleModalClose = () => {
 		setShowAPIModal(false);
@@ -246,29 +269,38 @@ const AiGenerateAttributes = ({ productTitle, setAiOpen, setAiContent }) => {
 									)}
 								</h2>
 							)}
-							<button
-								className={
-									'ml-auto flex items-center gap-4 text-[14px] justify-center w-[20%] h-ec-input rounded-[8px] text-white ' +
-									(String(EASYCOMMERCE.credits) === '0'
-										? 'ai-builder-disable cursor-not-allowed'
-										: 'ai-builder') +
-									(isLoading ? ' bg-gray-400 cursor-not-allowed' : '')
-								}
-								onClick={handleSend}
-								type="button"
-								disabled={
-									isLoading || String(EASYCOMMERCE.credits) === '0'
-								}
-							>
-								{isLoading ? (
-									<img src={loadingGifURL} alt={__('loading', 'easycommerce')} className="h-8" />
-								) : (
-									<>
-										{generateIcon}
-										{__('Generate', 'easycommerce')}
-									</>
+							<div className="ml-auto flex items-center">
+								{isLoading && (
+									<span className="mr-4 flex items-center text-[14px] text-ec-primary font-medium">
+										<span className="inline-block w-2 h-2 rounded-full mr-2 bg-ec-primary animate-pulse" />
+										{generatingVerbs[verbIndex]}
+										<span className="animate-pulse">…</span>
+									</span>
 								)}
-							</button>
+								<button
+									className={
+										'flex items-center gap-4 text-[14px] justify-center w-[120px] h-ec-input rounded-[8px] text-white ' +
+										(String(EASYCOMMERCE.credits) === '0'
+											? 'ai-builder-disable cursor-not-allowed'
+											: 'ai-builder') +
+										(isLoading ? ' bg-gray-400 cursor-not-allowed' : '')
+									}
+									onClick={handleSend}
+									type="button"
+									disabled={
+										isLoading || String(EASYCOMMERCE.credits) === '0'
+									}
+								>
+									{isLoading ? (
+										<img src={loadingGifURL} alt={__('loading', 'easycommerce')} className="h-8" />
+									) : (
+										<>
+											{generateIcon}
+											{__('Generate', 'easycommerce')}
+										</>
+									)}
+								</button>
+							</div>
 						</div>
 					</div>
 				</div>

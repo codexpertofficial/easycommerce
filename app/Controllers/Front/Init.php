@@ -237,8 +237,9 @@ class Init {
 
 		// Check shop page
 		if ( $page_id == easycommerce_shop_page() ) {
-			$has_block = false;
-			for ( $i = 1; $i <= 3; $i++ ) {
+			$has_block = has_block( 'easycommerce/product-collection', $post );
+
+			for ( $i = 1; ! $has_block && $i <= 3; $i++ ) {
 				if ( has_block( 'easycommerce/template-' . $i, $post ) ) {
 					$has_block = true;
 					break;
@@ -256,7 +257,7 @@ class Init {
 
 		// Check checkout page
 		if ( $page_id == easycommerce_checkout_page() ) {
-			$has_checkout_shortcode = has_shortcode( $post->post_content, 'easycommerce-checkout' );
+			$has_checkout_shortcode = has_shortcode( $post->post_content, 'easycommerce-checkout' ) || has_block( 'easycommerce/checkout', $post );
 			$show_checkout_page_notice = apply_filters( 'easycommerce_show_checkout_page_missing_shortcode_notice', true, $post );
 
 			if ( ! $has_checkout_shortcode && $show_checkout_page_notice ) {
@@ -264,7 +265,7 @@ class Init {
 					'<div class="easycommerce-notice easycommerce-warning"><p>%s</p></div>',
 					sprintf(
 						/* translators: %s: the [easycommerce-checkout] shortcode */
-						esc_html__( 'This page is missing the EasyCommerce checkout shortcode. Please add the %s shortcode to this page to function properly.', 'easycommerce' ),
+						esc_html__( 'This page is missing the EasyCommerce checkout. Please add the Checkout block or the %s shortcode to this page to function properly.', 'easycommerce' ),
 						'<span class="easycommerce-notice-code">&#91;easycommerce-checkout&#93;</span>'
 					)
 				);

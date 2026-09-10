@@ -28,8 +28,18 @@ const AiGenerateImages = ({ productTitle, setAiOpen, setAiContent }) => {
 	const [user, setUser] = useState(null);
 	const [error, setError] = useState('');
 	const [generatedContent, setGeneratedContent] = useState(null);
+	const [verbIndex, setVerbIndex] = useState(0);
 
 	const isLicensed = EASYCOMMERCE.pro.activated && EASYCOMMERCE.pro.licensed;
+
+	const generatingVerbs = [
+		__('Imagining', 'easycommerce'),
+		__('Sketching', 'easycommerce'),
+		__('Painting', 'easycommerce'),
+		__('Rendering', 'easycommerce'),
+		__('Coloring', 'easycommerce'),
+		__('Polishing', 'easycommerce'),
+	];
 
 	const ratioOptions = [
 		{ value: '1024x1024', label: __('1024x1024 Pixels', 'easycommerce') },
@@ -81,6 +91,19 @@ const AiGenerateImages = ({ productTitle, setAiOpen, setAiContent }) => {
 				setShowAPIModal(true);
 			});
 	}, []);
+
+	useEffect(() => {
+		if (!isLoading) {
+			setVerbIndex(0);
+			return;
+		}
+
+		const interval = setInterval(() => {
+			setVerbIndex((prev) => (prev + 1) % generatingVerbs.length);
+		}, 7000);
+
+		return () => clearInterval(interval);
+	}, [isLoading]);
 
 	const handleModalClose = () => {
 		setShowAPIModal(false);
@@ -395,6 +418,30 @@ const AiGenerateImages = ({ productTitle, setAiOpen, setAiContent }) => {
 											: __('Use This Image', 'easycommerce')}
 									</button>
 								</div>
+							) : isLoading ? (
+								<div className="relative overflow-hidden border border-solid border-ec-table-stock rounded-lg flex flex-col items-center justify-center gap-3 h-full bg-[linear-gradient(135deg,#F3F0FF_0%,#FAF9FF_50%,#EDE8FF_100%)] animate-pulse">
+									<svg
+										width="44"
+										height="44"
+										viewBox="0 0 44 44"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+										className="relative z-10 animate-bounce"
+									>
+										<path
+											d="M1.854 31.516L13.19 20.18C14.1171 19.2532 15.3743 18.7325 16.6853 18.7325C17.9962 18.7325 19.2534 19.2532 20.1805 20.18L31.5165 31.516M26.5728 26.5723L30.4931 22.6519C31.4202 21.7251 32.6775 21.2044 33.9884 21.2044C35.2993 21.2044 36.5565 21.7251 37.4836 22.6519L41.404 26.5723M26.5728 11.741H26.5975M6.79775 41.4035H36.4603C37.7714 41.4035 39.0289 40.8827 39.956 39.9555C40.8831 39.0284 41.404 37.7709 41.404 36.4598V6.79727C41.404 5.4861 40.8831 4.22864 39.956 3.30151C39.0289 2.37437 37.7714 1.85352 36.4603 1.85352H6.79775C5.48659 1.85352 4.22913 2.37437 3.30199 3.30151C2.37486 4.22864 1.854 5.4861 1.854 6.79727V36.4598C1.854 37.7709 2.37486 39.0284 3.30199 39.9555C4.22913 40.8827 5.48659 41.4035 6.79775 41.4035Z"
+											stroke="#7351FD"
+											strokeWidth="3.70781"
+											strokeLinecap="round"
+											strokeLinejoin="round"
+										/>
+									</svg>
+
+									<p className="relative z-10 flex items-center gap-1 text-ec-primary text-center text-sm font-medium">
+										{generatingVerbs[verbIndex]}
+										<span className="animate-pulse">…</span>
+									</p>
+								</div>
 							) : (
 								<div className="border border-solid border-ec-table-stock rounded-lg flex flex-col items-center justify-center gap-3 h-full">
 									<svg
@@ -407,9 +454,9 @@ const AiGenerateImages = ({ productTitle, setAiOpen, setAiContent }) => {
 										<path
 											d="M1.854 31.516L13.19 20.18C14.1171 19.2532 15.3743 18.7325 16.6853 18.7325C17.9962 18.7325 19.2534 19.2532 20.1805 20.18L31.5165 31.516M26.5728 26.5723L30.4931 22.6519C31.4202 21.7251 32.6775 21.2044 33.9884 21.2044C35.2993 21.2044 36.5565 21.7251 37.4836 22.6519L41.404 26.5723M26.5728 11.741H26.5975M6.79775 41.4035H36.4603C37.7714 41.4035 39.0289 40.8827 39.956 39.9555C40.8831 39.0284 41.404 37.7709 41.404 36.4598V6.79727C41.404 5.4861 40.8831 4.22864 39.956 3.30151C39.0289 2.37437 37.7714 1.85352 36.4603 1.85352H6.79775C5.48659 1.85352 4.22913 2.37437 3.30199 3.30151C2.37486 4.22864 1.854 5.4861 1.854 6.79727V36.4598C1.854 37.7709 2.37486 39.0284 3.30199 39.9555C4.22913 40.8827 5.48659 41.4035 6.79775 41.4035Z"
 											stroke="#99A1AF"
-											stroke-width="3.70781"
-											stroke-linecap="round"
-											stroke-linejoin="round"
+											strokeWidth="3.70781"
+											strokeLinecap="round"
+											strokeLinejoin="round"
 										/>
 									</svg>
 

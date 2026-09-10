@@ -5,7 +5,7 @@ Donate link: https://easycommerce.dev
 Tags: ecommerce, online store, ai ecommerce, store builder, digital downloads
 Requires at least: 6.0
 Tested up to: 7.0
-Stable tag: 1.48
+Stable tag: 1.49
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -515,6 +515,28 @@ Free community support via WordPress.org forums and the [Facebook Community](htt
 
 == Changelog ==
 
+= 1.49 - 2026-09-10 =
+
+**✨ New**
+
+- [add] Checkout block - build the checkout page in the editor and preview the real checkout in the canvas, with template and column settings in the block sidebar
+- [add] AI content tools now show a rotating status message while they work, so a long generation no longer looks stalled
+
+**🐛 Fixes**
+
+- [fix] The Product Collection grid now previews in the editor exactly as it appears on the storefront - product images, prices and card styling were all missing before
+- [fix] A shop page built with the Product Collection block is no longer told it is missing a shop block
+- [fix] The Product Collection is limited to four columns, since five and six broke the card layout, and its product images are now rounded on every corner
+- [fix] The Add to cart button on the shop no longer turns its label white on hover, which left it unreadable against the button
+- [fix] The Checkout block can be selected in the editor and shows its full block options menu
+- [fix] The Checkout block now starts on template one with a two column layout instead of no template of its own
+- [fix] Checkout and shop styles now load inside the block editor canvas, so previews match the storefront
+- [imp] The placeholder Billing Address and standalone Cart blocks are retired in favour of the Checkout block; pages already using them keep working
+
+**🧹 Internal**
+
+- [ci] Removed the end-to-end test gate from the WordPress.org release workflow
+
 = 1.48 - 2026-08-26 =
 
 **🔒 Security**
@@ -727,19 +749,6 @@ Free community support via WordPress.org forums and the [Facebook Community](htt
 - [docs] Disclosed all external services in the readme
 - [docs] Shortened the plugin display name and cleaned up readme metadata
 - [test] Fixed OrderFactory test failures from non-scalar defaults and documented the related test bugs
-
-= 1.41 - 2026-06-23 =
-
-- [add] Added a Partially Refunded order email for customers and admins
-- [security] Order details and payment endpoints are now restricted to the order owner, preventing unauthorized access to other customers' orders
-- [fix] Per-item tax is now rounded before summing to fix a tax rounding discrepancy
-- [add] Added input validation on checkout form fields
-- [add] Unified Pro license and API key into a single connectivity authentication method
-- [fix] Fixed editor modal flicker when the store is already connected
-- [fix] Fixed the dashboard stats card not showing its loading state
-- [fix] Single product report page no longer fires its data requests twice on load
-- [fix] Fixed transaction ID handling on the customer details page
-- [ui] Renamed "Dimension" to "Package Dimension" in the add product page pricing section
 
 == Upgrade Notice ==
 

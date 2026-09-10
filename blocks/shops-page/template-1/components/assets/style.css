@@ -59,10 +59,6 @@
     max-height: 320px;
     object-fit: cover;
 }
-.easycommerce-add-to-cart-shop:hover {
-    color: #fff !important;
-}
-
 .easycommerce-drawer-container {
     width: 300px;
 }

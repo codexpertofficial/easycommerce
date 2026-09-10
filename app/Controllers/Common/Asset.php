@@ -138,6 +138,23 @@ class Asset {
 
 			$this->set_spa_translations( 'easycommerce_blocks' );
 
+			// Enqueued here rather than on enqueue_block_editor_assets so the styles land inside the canvas iframe.
+			$this->enqueue_style(
+				'easycommerce_checkout',
+				EASYCOMMERCE_ASSETS_URL . 'public/css/checkout.css'
+			);
+
+			$this->enqueue_style(
+				'easycommerce_trendy_checkout',
+				EASYCOMMERCE_ASSETS_URL . 'public/css/checkout-template-3.css'
+			);
+
+			// Same load order as the front end, so its body.easycommerce rules win over checkout-template-3.css.
+			$this->enqueue_style(
+				'easycommerce-theme-compat',
+				EASYCOMMERCE_ASSETS_URL . 'public/css/theme-compat.css'
+			);
+
 			// EC block previews are Tailwind-styled, so every editor canvas needs it, not just the product one.
 			$screen = get_current_screen();
 			if ( $screen ) {
@@ -241,6 +258,39 @@ class Asset {
 		 * @param bool $load Default false.
 		 */
 		return (bool) apply_filters( 'easycommerce_load_storefront_assets', false );
+	}
+
+	/**
+	 * Whether the current front-end request renders the checkout UI.
+	 *
+	 * The checkout is reachable two ways - the configured checkout page, which
+	 * carries the [easycommerce-checkout] shortcode, and any page holding the
+	 * easycommerce/checkout block. Both need checkout.css/js and the localized
+	 * cart, so gating on the page alone leaves a block-built checkout inert.
+	 *
+	 * @param \WP_Post|null $post          The queried post, if any.
+	 * @param string        $checkout_page Configured checkout page ID.
+	 * @return bool
+	 */
+	private function needs_checkout_assets( $post, $checkout_page ) {
+
+		if ( $checkout_page && is_page( $checkout_page ) ) {
+			return true;
+		}
+
+		if ( $post instanceof \WP_Post && has_block( 'easycommerce/checkout', $post ) ) {
+			return true;
+		}
+
+		/**
+		 * Force-load the checkout CSS/JS on the current request.
+		 *
+		 * Use this when the checkout block lives in a block-theme template part
+		 * rather than in post content, where has_block() cannot see it.
+		 *
+		 * @param bool $load Default false.
+		 */
+		return (bool) apply_filters( 'easycommerce_load_checkout_assets', false );
 	}
 
 	public function add_assets() {
@@ -629,7 +679,7 @@ class Asset {
 				$this->set_spa_translations( 'easycommerce_public' );
 			}
 
-			if ( $checkout_page && is_page( $checkout_page ) ) {
+			if ( $this->needs_checkout_assets( $post, $checkout_page ) ) {
 				$this->enqueue_style(
 					'easycommerce_checkout',
 					EASYCOMMERCE_ASSETS_URL . 'public/css/checkout.css'

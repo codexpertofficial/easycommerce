@@ -172,3 +172,8 @@ body.easycommerce .easycommerce-dashboard-form-btn:focus,
 body.easycommerce #easycommerce-single-product-review-submit-btn:focus {
 	outline: none;
 }
+
+/* The shared shop card rounds only the image's top corners for a bordered body beneath it, which the collection card has not. */
+.ec-product-collection .easycommerce-single-product > div:first-child > a > div {
+	border-radius: var(--ec-radius-img, 8px);
+}

@@ -1,0 +1,20 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "easycommerce/checkout",
+    "version": "0.1.0",
+    "title": "Checkout",
+    "category": "easycommerce-checkout",
+    "description": "The EasyCommerce checkout form - billing, shipping, cart summary and payment.",
+    "keywords": [ "checkout", "cart", "payment", "order", "billing" ],
+    "supports": {
+        "html": false,
+        "multiple": false,
+        "align": [ "wide", "full" ]
+    },
+    "attributes": {
+        "template": { "type": "string", "default": "template-1" },
+        "columns": { "type": "string", "default": "2" }
+    },
+    "textdomain": "easycommerce"
+}
