@@ -306,6 +306,8 @@ class Cart extends API {
 		$shipping_address = $request->get_param( 'shipping_address' );
 		$billing_address  = $request->get_param( 'billing_address' );
 
+		$this->guard_hash_owner( $hash, $cart );
+
 		if ( ! is_null( $billing_address ) ) {
 			$billing_address                          = $this->sanitize_address( $billing_address );
 			$cart->cart['data']['address']['billing'] = $billing_address;
@@ -538,6 +540,7 @@ class Cart extends API {
 		$cart = new Cart_Model( $hash );
 		$code = $request->get_param( 'code' );
 
+		$this->guard_hash_owner( $hash, $cart );
 		$this->guard_locked( $cart );
 
 		$coupon = new Coupon( $code );
@@ -617,6 +620,7 @@ class Cart extends API {
 		$cart = new Cart_Model( $hash );
 		$code = $request->get_param( 'code' );
 
+		$this->guard_hash_owner( $hash, $cart );
 		$this->guard_locked( $cart );
 
 		$normalized_code = strtolower( (string) $code );
@@ -838,6 +842,25 @@ class Cart extends API {
 	private function guard_locked( $cart ) {
 		if ( $cart->is_locked() ) {
 			$this->response_error( __( 'Cart is locked for payment. Complete or cancel the current payment before making changes.', 'easycommerce' ), 403 );
+		}
+	}
+
+	/**
+	 * Reject a request that targets a cart hash belonging to another session.
+	 *
+	 * The hash is only usable on the caller's own cart; a hash adopted through
+	 * a recovery link is already stored in the session, so it passes the check.
+	 *
+	 * @param mixed      $hash The hash parameter from the request.
+	 * @param Cart_Model $cart The cart instance loaded with that hash.
+	 */
+	private function guard_hash_owner( $hash, $cart ) {
+		if ( ! is_string( $hash ) || '' === $hash ) {
+			return;
+		}
+
+		if ( ! $cart->is_session_hash( $hash ) ) {
+			$this->response_error( array( 'message' => __( 'You do not have permission to access this cart.', 'easycommerce' ) ), 403 );
 		}
 	}
 

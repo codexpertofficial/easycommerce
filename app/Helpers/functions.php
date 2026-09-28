@@ -800,6 +800,7 @@ function easycommerce_email_events() {
 		'refunded'   => __( 'Refunded Order', 'easycommerce' ),
 		'partially_refunded' => __( 'Partially Refunded Order', 'easycommerce' ),
 		'failed'     => __( 'Failed Order', 'easycommerce' ),
+		'restock_request' => __( 'Restock Request', 'easycommerce' ),
 	);
 }
 
@@ -990,9 +991,16 @@ function easycommerce_get_cart() {
 }
 
 function easycommerce_get_cart_hash() {
+	// A hash in the URL is only honoured when it is the caller's own cart.
 	if ( isset( $_GET['cart'] ) ) {
-		return sanitize_text_field( $_GET['cart'] );
-	} elseif ( is_user_logged_in() ) {
+		$requested = sanitize_text_field( wp_unslash( $_GET['cart'] ) );
+
+		if ( ( new Cart() )->is_session_hash( $requested ) ) {
+			return $requested;
+		}
+	}
+
+	if ( is_user_logged_in() ) {
 		return get_user_meta( get_current_user_id(), '_easycommerce_cart_hash', true );
 	} else {
 		return isset( $_COOKIE['easycommerce_cart_hash'] ) ? sanitize_text_field( $_COOKIE['easycommerce_cart_hash'] ) : null;
@@ -1424,6 +1432,14 @@ function easycommerce_menus() {
 					'slug' 			=> 'easycommerce#/customers',
 					'icon'			=> EASYCOMMERCE_ASSETS_URL . 'admin/img/menu/customers.svg',
 					'hover_icon'	=> EASYCOMMERCE_ASSETS_URL . 'admin/img/menu/customers-hover.svg',
+				],
+				[
+					'page_title' 	=> __( 'Restock Request', 'easycommerce' ),
+					'menu_title' 	=> __( 'Restock Request', 'easycommerce' ),
+					'capability' 	=> 'easycommerce_view_store', // Allow admin and editors
+					'slug' 			=> 'easycommerce#/restock-request',
+					'icon'			=> EASYCOMMERCE_ASSETS_URL . 'admin/img/menu/restock-request.svg',
+					'hover_icon'	=> EASYCOMMERCE_ASSETS_URL . 'admin/img/menu/restock-request-hover.svg',
 				],
 				[
 					'page_title' 	=> __( 'Reviews', 'easycommerce' ),

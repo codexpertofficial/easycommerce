@@ -33,6 +33,7 @@ use EasyCommerce\API\Product_Review;
 use EasyCommerce\API\Importer;
 use EasyCommerce\API\Log;
 use EasyCommerce\API\Notice;
+use EasyCommerce\API\Restock_Request;
 use EasyCommerce\API\Reports\Reports;
 use EasyCommerce\API\Reports\Overview;
 use EasyCommerce\API\Reports\Orders;
@@ -85,6 +86,7 @@ class API {
 		$this->register_importer_endpoints();
 		$this->register_log_endpoints();
 		$this->register_notice_endpoints();
+		$this->register_restock_request_endpoints();
 	}
 
 	/**
@@ -5146,6 +5148,120 @@ class API {
 					),
 				),
 				'permission' => array( $this, 'is_admin' ),
+			)
+		);
+	}
+
+	/**
+	 * Register restock request API endpoints
+	 */
+	private function register_restock_request_endpoints() {
+		$restock_request = new Restock_Request();
+
+		// Capture a shopper's restock request
+		$this->register_route(
+			'/restock-requests',
+			array(
+				'methods'	 => WP_REST_Server::CREATABLE,
+				'callback'	 => array( $restock_request, 'subscribe' ),
+				'args'		 => array(
+					'product_id'   => array(
+						'description' => __( 'Product the shopper is waiting on', 'easycommerce' ),
+						'required'	  => true,
+						'type'		  => 'integer',
+					),
+					'variation_id' => array(
+						'description' => __( 'Variation the shopper is waiting on, 0 for the whole product', 'easycommerce' ),
+						'required'	  => false,
+						'type'		  => 'integer',
+						'default'	  => 0,
+					),
+					'email'		   => array(
+						'description' => __( 'Where the notification should be sent', 'easycommerce' ),
+						'required'	  => true,
+						'type'		  => 'string',
+					),
+				),
+				'permission' => array( $this, 'is_user' ),
+			)
+		);
+
+		// Requests for the admin table
+		$this->register_route(
+			'/restock-requests',
+			array(
+				'methods'	 => WP_REST_Server::READABLE,
+				'callback'	 => array( $restock_request, 'list' ),
+				'args'		 => array(
+					'status'   => array(
+						'description' => __( 'Filter requests by status', 'easycommerce' ),
+						'required'	  => false,
+						'type'		  => 'string',
+						'default'	  => 'all',
+					),
+					'search'   => array(
+						'description' => __( 'Search requests by email or product name', 'easycommerce' ),
+						'required'	  => false,
+						'type'		  => 'string',
+					),
+					'from'	   => array(
+						'description' => __( 'Only requests made on or after this date', 'easycommerce' ),
+						'required'	  => false,
+						'type'		  => 'string',
+					),
+					'to'	   => array(
+						'description' => __( 'Only requests made on or before this date', 'easycommerce' ),
+						'required'	  => false,
+						'type'		  => 'string',
+					),
+					'page'	   => array(
+						'description' => __( 'Page of requests to return', 'easycommerce' ),
+						'required'	  => false,
+						'type'		  => 'integer',
+						'default'	  => 1,
+					),
+					'per_page' => array(
+						'description' => __( 'Number of requests per page', 'easycommerce' ),
+						'required'	  => false,
+						'type'		  => 'integer',
+						'default'	  => 20,
+					),
+				),
+				'permission' => array( $this, 'is_manager' ),
+			)
+		);
+
+		// Remove several requests at once
+		$this->register_route(
+			'/restock-requests/bulk/delete',
+			array(
+				'methods'	 => WP_REST_Server::DELETABLE,
+				'callback'	 => array( $restock_request, 'bulk_remove' ),
+				'args'		 => array(
+					'ids' => array(
+						'description' => __( 'Request IDs to remove', 'easycommerce' ),
+						'required'	  => true,
+						'type'		  => 'array',
+					),
+				),
+				'permission' => array( $this, 'is_manager' ),
+			)
+		);
+
+		// Remove a single request
+		$this->register_route(
+			'/restock-requests/(?P<id>\d+)',
+			array(
+				'methods'	 => WP_REST_Server::DELETABLE,
+				'callback'	 => array( $restock_request, 'remove' ),
+				'args'		 => array(
+					'id' => array(
+						'description' => __( 'Request ID', 'easycommerce' ),
+						'required'	  => true,
+						'type'		  => 'integer',
+					),
+				),
+				'permission' => array( $this, 'is_manager' ),
 			)
 		);
 	}

@@ -13,6 +13,8 @@ use EasyCommerce\Helpers\Utility;
 use EasyCommerce\API\Importer;
 use EasyCommerce\Models\Abandoned_Cart as Abandoned_Cart_Model;
 use EasyCommerce\Models\Cart;
+use EasyCommerce\Models\Product_Variation;
+use EasyCommerce\Models\Restock_Request;
 
 class Process {
 
@@ -37,6 +39,8 @@ class Process {
 		$this->filter( 'cron_schedules', array( $this, 'register_cron_intervals' ) );
 		$this->action( 'init', array( $this, 'sync_abandoned_cart_cron' ), 20 );
 		$this->action( 'easycommerce_send_abandoned_cart_reminders', array( $this, 'send_abandoned_cart_reminders' ) );
+		$this->action( 'easycommerce_variation_restocked', array( $this, 'queue_restock_request' ) );
+		$this->action( 'easycommerce_send_restock_request_batch', array( $this, 'send_restock_request_batch' ), 10, 2 );
 	}
 
 	/**
@@ -107,6 +111,64 @@ class Process {
 	 * install. Idempotent — reuses existing pages, so it is a no-op once the
 	 * pages exist (e.g. after the setup wizard already created them).
 	 */
+	/**
+	 * Hand a restock over to the background instead of mailing inline.
+	 *
+	 * @param Product_Variation $variation The restocked variation.
+	 */
+	public function queue_restock_request( Product_Variation $variation ) {
+		$product_id = (int) $variation->get_product_id();
+
+		if ( ! $product_id ) {
+			return;
+		}
+
+		$this->schedule(
+			'easycommerce_send_restock_request_batch',
+			array( $product_id, (int) $variation->get_id() )
+		);
+	}
+
+	/**
+	 * Mail one chunk of the shoppers waiting on a restock, then queue the next.
+	 *
+	 * @param int $product_id   Product that came back in stock.
+	 * @param int $variation_id Variation that came back in stock.
+	 */
+	public function send_restock_request_batch( $product_id, $variation_id ) {
+		$settings = get_option( 'easycommerce-email-restock_request', array() );
+
+		// Switched off: leave the rows pending, or turning it back on would reach nobody.
+		if ( isset( $settings['customer_enabled'] ) && empty( $settings['customer_enabled'] ) ) {
+			return;
+		}
+
+		$batch_size = (int) apply_filters( 'easycommerce_restock_request_batch_size', 20 );
+		$requests   = new Restock_Request();
+		$pending    = $requests->get_pending( $product_id, $variation_id, $batch_size );
+
+		if ( empty( $pending ) ) {
+			return;
+		}
+
+		foreach ( $pending as $request ) {
+			// Claim first: a row another run already took must not be mailed again.
+			if ( ! $requests->mark_notified( $request->id ) ) {
+				continue;
+			}
+
+			do_action( 'easycommerce_send_restock_request', $request );
+		}
+
+		// Anything still pending means the batch filled up, so come back for the rest.
+		if ( $requests->get_pending( $product_id, $variation_id, 1 ) ) {
+			$this->schedule(
+				'easycommerce_send_restock_request_batch',
+				array( (int) $product_id, (int) $variation_id )
+			);
+		}
+	}
+
 	public function create_store_pages() {
 		easycommerce_ensure_store_pages();
 	}

@@ -130,7 +130,11 @@ class Customer extends API {
 		$page        	= (int) ( $request->get_param( 'page' ) ?: 1 );
 		$per_page    	= (int) ( $request->get_param( 'per_page' ) ?: 10 );
 		$type        	= $request->get_param( 'type' ) ?: 'all';
-		$all_customers 	= Customer_Model::customer_list( $search, 1, -1 );
+		$from        	= strtotime( (string) $request->get_param( 'from' ) );
+		$from        	= $from ? gmdate( 'Y-m-d', $from ) : '';
+		$to          	= strtotime( (string) $request->get_param( 'to' ) );
+		$to          	= $to ? gmdate( 'Y-m-d', $to ) : '';
+		$all_customers 	= Customer_Model::customer_list( $search, 1, -1, $from, $to );
 		$all_users     	= ! empty( $all_customers['users'] ) ? $all_customers['users'] : [];
 		$statuses 		= [
 			'all'       => count( $all_customers['users'] ),

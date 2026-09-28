@@ -1,6 +1,15 @@
 jQuery(function ($) {
     const { __ } = wp.i18n;
 
+    function updateRestockForm(variationId, stockCount) {
+        const $form = $(".easycommerce-restock-request");
+
+        $form.attr("data-variation-id", variationId);
+        $form.find(".easycommerce-restock-request-message").text("").hide();
+        $form.find(".easycommerce-restock-request-button").prop("disabled", false);
+        $form.toggle(0 == stockCount);
+    }
+
     $(document).ready(function () {
         // Loop through all attribute wrappers
         $('.easycommerce-attributes-wrapper').each(function () {
@@ -176,6 +185,8 @@ jQuery(function ($) {
                             $(".easycommerce-stock-count-wrapper").show();
                         }
 
+                        updateRestockForm(variationId, stock_count);
+
                         if (stock_count == 0) {
                             $(".easycommerce-add-to-cart-button").prop("disabled", true);
                             $(".easycommerce-stock-count").text(__("Out of stock", 'easycommerce')).removeClass("text-emerald-500").addClass("text-red-500");
@@ -208,6 +219,7 @@ jQuery(function ($) {
 
                 $(".easycommerce-stock-count-wrapper").show();
                 $(".easycommerce-qunatity-input").attr("data-stock-count", partialStock);
+                updateRestockForm(0, partialStock);
 
                 if (partialStock == 0) {
                     $(".easycommerce-stock-count").text(__("Out of stock", 'easycommerce')).removeClass("text-emerald-500").addClass("text-red-500");

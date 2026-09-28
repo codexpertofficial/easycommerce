@@ -139,6 +139,25 @@ class Cart extends Model {
 	}
 
 	/**
+	 * Whether the given hash belongs to the current caller's session.
+	 *
+	 * A hash may only ever operate on the requester's own cart: for a logged-in
+	 * user that is the user-meta hash, for guests the cart cookie. Recovery links
+	 * adopt the hash into the session first (see Init::restore_cart()), so they
+	 * pass this check while a hash belonging to another customer is rejected.
+	 *
+	 * @param string $hash The cart hash from the request.
+	 * @return bool
+	 */
+	public function is_session_hash( $hash ) {
+		if ( ! is_string( $hash ) || '' === $hash ) {
+			return false;
+		}
+
+		return hash_equals( (string) $this->get_user_hash(), $hash );
+	}
+
+	/**
 	 * Free unit count on a cart line, tolerating lines saved before it existed.
 	 *
 	 * @param array|null $item The cart line.

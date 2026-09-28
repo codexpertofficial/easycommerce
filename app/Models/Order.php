@@ -503,6 +503,45 @@ class Order extends Model {
 	}
 
 	/**
+	 * Return this order's units to stock when the order is released.
+	 *
+	 * @return bool True when the units went back, false when there was nothing to do.
+	 */
+	public function restore_stock() {
+
+		// One release per order: cancel, reopen and cancel again must not return the units twice.
+		if ( ! $this->id || $this->get_meta( 'stock_restored' ) ) {
+			return false;
+		}
+
+		$items = $this->get_items();
+
+		if ( empty( $items ) ) {
+			return false;
+		}
+
+		$this->update_meta( 'stock_restored', current_time( 'mysql' ) );
+
+		foreach ( $items as $item ) {
+			if ( empty( $item->variation_id ) || empty( $item->quantity ) ) {
+				continue;
+			}
+
+			$variation = new Product_Variation( $item->variation_id );
+
+			if ( ! $variation->exists() ) {
+				continue;
+			}
+
+			$variation->increase_stock( $item->quantity );
+		}
+
+		do_action( 'easycommerce_order_stock_restored', $this->id, $this );
+
+		return true;
+	}
+
+	/**
 	 * Get all items for the order using the Order_Item class.
 	 *
 	 * @return array List of order items.

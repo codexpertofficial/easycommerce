@@ -58,6 +58,8 @@ class Copilot extends Agent {
 				return $this->tool_create_coupon( $args );
 			case 'run_analytics_query':
 				return $this->tool_run_analytics_query( $args );
+			case 'generate_alt_text':
+				return $this->tool_generate_alt_text( $args );
 			default:
 				return array( 'error' => "Unknown tool: {$name}" );
 		}
@@ -791,6 +793,144 @@ class Copilot extends Agent {
 		);
 	}
 
+	/**
+	 * Writes alt text for a product's images.
+	 *
+	 * @param array $args Tool arguments: product_id, optional overwrite.
+	 *
+	 * @return array
+	 */
+	private function tool_generate_alt_text( array $args ): array {
+		$product_id = (int) ( $args['product_id'] ?? 0 );
+		$overwrite  = ! empty( $args['overwrite'] );
+
+		if ( ! $product_id ) {
+			return array( 'error' => 'product_id is required.' );
+		}
+
+		$product = new Product( $product_id );
+
+		if ( ! $product->exists() ) {
+			return array( 'error' => 'Product not found.' );
+		}
+
+		$attachment_ids = $this->product_image_ids( $product );
+
+		if ( empty( $attachment_ids ) ) {
+			return array( 'error' => 'This product has no featured image and no gallery images.' );
+		}
+
+		$title   = $product->get_title();
+		$updated = array();
+		$skipped = 0;
+		$failed  = 0;
+
+		foreach ( $attachment_ids as $attachment_id ) {
+			$existing = get_post_meta( $attachment_id, '_wp_attachment_image_alt', true );
+
+			if ( ! $overwrite && '' !== trim( (string) $existing ) ) {
+				++$skipped;
+				continue;
+			}
+
+			$image    = $this->image_payload( $attachment_id );
+			$alt_text = '' === $image ? null : $this->ai->describe_image( $image, $title );
+
+			if ( empty( $alt_text ) ) {
+				++$failed;
+				continue;
+			}
+
+			update_post_meta( $attachment_id, '_wp_attachment_image_alt', $alt_text );
+
+			$updated[] = array(
+				'attachment_id' => $attachment_id,
+				'alt_text'      => $alt_text,
+			);
+		}
+
+		if ( ! empty( $updated ) ) {
+			do_action( 'easycommerce_log', array(
+				'object'    => 'product',
+				'action'    => 'update',
+				'object_id' => $product_id,
+				'note'      => sprintf( 'AI copilot generated alt text for %d image(s) of: %s', count( $updated ), $title ),
+			) );
+		}
+
+		return array(
+			'success'    => true,
+			'product_id' => $product_id,
+			'title'      => $title,
+			'images'     => count( $attachment_ids ),
+			'updated'    => $updated,
+			'skipped'    => $skipped,
+			'failed'     => $failed,
+			'message'    => sprintf( '%d image(s) updated, %d skipped, %d failed.', count( $updated ), $skipped, $failed ),
+		);
+	}
+
+	/**
+	 * Shop-thumbnail of an attachment as a base64 data URI, or its URL as a fallback.
+	 *
+	 * @param int $attachment_id The attachment.
+	 *
+	 * @return string Empty when the attachment has neither a readable file nor a URL.
+	 */
+	private function image_payload( int $attachment_id ): string {
+		$source = wp_get_attachment_image_src( $attachment_id, 'easycommerce-shop-thumbnail' );
+		$url    = $source ? $source[0] : wp_get_attachment_url( $attachment_id );
+
+		if ( ! $url ) {
+			return '';
+		}
+
+		$uploads = wp_get_upload_dir();
+		$path    = str_replace( $uploads['baseurl'], $uploads['basedir'], $url );
+		$type    = wp_check_filetype( $path )['type'];
+
+		// Inline the bytes: the AI service cannot fetch images from a local or private store.
+		if ( $type && is_file( $path ) && is_readable( $path ) ) {
+			$body = file_get_contents( $path ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents -- local attachment file, not an HTTP request.
+
+			if ( false !== $body ) {
+				return 'data:' . $type . ';base64,' . base64_encode( $body ); // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_encode -- data URI for the AI request.
+			}
+		}
+
+		return $url;
+	}
+
+	/**
+	 * Attachment IDs of a product: featured image first, then gallery images.
+	 *
+	 * @param Product $product The product.
+	 *
+	 * @return int[]
+	 */
+	private function product_image_ids( Product $product ): array {
+		$ids       = array();
+		$thumbnail = (int) get_post_thumbnail_id( $product->get_id() );
+
+		if ( $thumbnail ) {
+			$ids[] = $thumbnail;
+		}
+
+		$gallery = maybe_unserialize( $product->get_meta( 'gallery' ) );
+
+		if ( is_array( $gallery ) ) {
+			foreach ( $gallery as $item ) {
+				$id = (int) ( $item['id'] ?? 0 );
+
+				if ( $id ) {
+					$ids[] = $id;
+				}
+			}
+		}
+
+		return array_values( array_unique( array_filter( $ids ) ) );
+	}
+
 	// -------------------------------------------------------------------------
 	// Tool definitions & system prompt
 	// -------------------------------------------------------------------------
@@ -1022,6 +1162,21 @@ class Copilot extends Agent {
 					),
 				),
 			),
+			array(
+				'type'     => 'function',
+				'function' => array(
+					'name'        => 'generate_alt_text',
+					'description' => "Generate accessibility alt text for a product's images (featured image plus gallery) and save it to each attachment. Costs 1 AI credit per image described. Images that already have alt text are skipped unless overwrite is true. Always confirm the product and the overwrite choice with the admin before calling.",
+					'parameters'  => array(
+						'type'       => 'object',
+						'properties' => array(
+							'product_id' => array( 'type' => 'integer', 'description' => 'The product whose images should be described (use list_products to find IDs).' ),
+							'overwrite'  => array( 'type' => 'boolean', 'description' => 'Replace alt text on images that already have some. Default false.' ),
+						),
+						'required'   => array( 'product_id' ),
+					),
+				),
+			),
 		);
 	}
 
@@ -1033,7 +1188,7 @@ class Copilot extends Agent {
 
 			"ORDERS: Use list_orders to browse orders (filter by status when helpful). Use search_order for full details on a specific order. " .
 
-			"CATALOG: Use list_products to browse or search the product catalog. Use create_product to add a new simple product — collect title and price at minimum; confirm all details before calling. Use update_product to change a product's title, status, summary, or price — confirm the exact changes before calling. " .
+			"CATALOG: Use generate_alt_text to write accessibility alt text for a product's images. Use list_products to browse or search the product catalog. Use create_product to add a new simple product — collect title and price at minimum; confirm all details before calling. Use update_product to change a product's title, status, summary, or price — confirm the exact changes before calling. " .
 
 			"CUSTOMERS: Use search_customer to look up a customer by email. " .
 
@@ -1042,7 +1197,8 @@ class Copilot extends Agent {
 			"(2) delete_product: warn that deletion is irreversible for non-orderable products, confirm before calling. " .
 			"(3) update_product_stock: confirm the new quantity before calling. " .
 			"(4) issue_refund: show the admin the order total, already-refunded amount, and refundable balance; ask them to confirm the exact amount and reason before calling. Refunds cannot be undone. " .
-			"(5) create_coupon: collect name, code, type (percentage/fixed), offer value, and optional product_ids/min_spend/end_date; if the admin wants product-specific restrictions use list_products to find the IDs first; confirm all details before calling. " .
+			"(5) generate_alt_text: say how many images the product has, that each described image costs 1 AI credit, and that existing alt text is replaced only when overwrite is true; confirm before calling. " .
+			"(6) create_coupon: collect name, code, type (percentage/fixed), offer value, and optional product_ids/min_spend/end_date; if the admin wants product-specific restrictions use list_products to find the IDs first; confirm all details before calling. " .
 
 			"COMPLEX ANALYTICS: Use run_analytics_query for cross-period comparisons, multi-table joins, or any aggregation the other tools cannot produce (e.g. \"products in top 5 this month but not last month\", \"customers who bought X but never Y\"). Only wp_ec_* tables are allowed — never reference wp_users, wp_usermeta, wp_options, or any non-ec table. Tables: wp_ec_orders, wp_ec_order_items, wp_ec_products, wp_ec_product_variations, wp_ec_customers, wp_ec_coupons, wp_ec_refunds. Always prefer structured tools first — fall back to run_analytics_query only when necessary. " .
 

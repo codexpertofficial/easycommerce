@@ -28,6 +28,7 @@ class Email {
 		$this->action( 'easycommerce_user_created', array( $this, 'remind_password_reset' ), 10, 2 );
 		$this->action( 'easycommerce_order_email', array( $this, 'order_email' ), 10, 2 );
 		$this->action( 'easycommerce_send_abandoned_reminder', array( $this, 'send_abandoned_reminder' ) );
+		$this->action( 'easycommerce_send_restock_request', array( $this, 'send_restock_request' ) );
 	}
 
 	/**
@@ -127,5 +128,37 @@ class Email {
 		$placeholders = easycommerce_cart_placeholders( $cart );
 
 		do_action( 'easycommerce_email', $customer_email, $subject, $body, $placeholders );
+	}
+
+	/**
+	 * Email one shopper that the product they waited for is back.
+	 *
+	 * @param object $request The restock request row.
+	 */
+	public function send_restock_request( $request ) {
+
+		if ( empty( $request->email ) || empty( $request->consent ) ) {
+			return;
+		}
+
+		// Read the stored array: get_option() answers its default for a saved '0' and the off would never take.
+		$settings = get_option( 'easycommerce-email-restock_request', array() );
+
+		if ( isset( $settings['customer_enabled'] ) && empty( $settings['customer_enabled'] ) ) {
+			return;
+		}
+
+		$product_id = (int) $request->product_id;
+		$default    = easycommerce_email_default( 'restock_request' );
+		$subject    = Utility::get_option( 'email', 'restock_request', 'customer_subject', '' ) ?: $default['customer_subject'];
+		$body       = Utility::get_option( 'email', 'restock_request', 'customer_body', '' ) ?: $default['customer_body'];
+		$product    = new Product( $product_id );
+
+		$placeholders = array(
+			'##product_name##' => $product->get_title(),
+			'##product_url##'  => get_permalink( $product_id ),
+		);
+
+		do_action( 'easycommerce_email', $request->email, $subject, $body, $placeholders );
 	}
 }

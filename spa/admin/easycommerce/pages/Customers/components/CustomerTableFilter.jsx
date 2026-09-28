@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { __ } from "@wordpress/i18n";
+import { __, sprintf } from "@wordpress/i18n";
 import TextField from "../../../../common/components/inputs/TextField";
+import DatepickerComponent from "../../../../common/components/DatepickerComponent";
 
 const CustomerTableFilter = ({
     customersFilterted,
@@ -8,15 +9,24 @@ const CustomerTableFilter = ({
     handleSearch,
 }) => {
     const [searchValue, setSearchValue] = useState("");
+    const [dateRange, setDateRange] = useState([null, null]);
+    const hasFilter = !!(searchValue || dateRange[0] || dateRange[1]);
+
+    const today = new Date();
+    const past30 = new Date(today);
+    past30.setDate(today.getDate() - 30);
+    const fmt = (d) => d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+    const datePlaceholder = sprintf( __( 'eg. %1$s - %2$s %3$s', 'easycommerce' ), fmt(past30), fmt(today), today.getFullYear() );
 
     const handleSubmit = (e) => {
-        if (!searchValue) return;
+        if (!hasFilter) return;
 
-        handleSearch(searchValue);
+        handleSearch(searchValue, dateRange);
     };
 
     const resetFilter = () => {
         setSearchValue("");
+        setDateRange([null, null]);
 
         handleResetFilter();
     };
@@ -47,14 +57,22 @@ const CustomerTableFilter = ({
                                 value={searchValue}
                                 onChange={(e) => setSearchValue(e.target.value)}
                                 placeholder={__("Search", "easycommerce")}
-                                className="h-ec-input"
+                                className="w-[190px] h-ec-input px-3 py-2"
                             />
                         </div>
+
+                        <DatepickerComponent
+                            dateRange={dateRange}
+                            onRangeChange={setDateRange}
+                            placeholderText={datePlaceholder}
+                            width="w-[220px]"
+                            minDate={new Date("1972-01-01")}
+                        />
 
                         <button
                             type="submit"
                             className="w-[38px] h-ec-input flex justify-center ease-in-out hover:bg-ec-secondary transition duration-300  items-center bg-ec-primary rounded-lg"
-                            disabled={!searchValue}
+                            disabled={!hasFilter}
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"

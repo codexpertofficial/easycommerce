@@ -363,9 +363,11 @@ class Customer extends User {
 	 * @param string|null $search
 	 * @param int         $page
 	 * @param int         $per_page
+	 * @param string      $from Registered on or after (Y-m-d).
+	 * @param string      $to   Registered on or before (Y-m-d).
 	 * @return array List of customers with pagination info
 	 */
-	public static function customer_list( $search = null, $page = 1, $per_page = 10 ) {
+	public static function customer_list( $search = null, $page = 1, $per_page = 10, $from = '', $to = '' ) {
 
 		$args = array(
 			'number'         => $per_page,
@@ -374,6 +376,19 @@ class Customer extends User {
 			'search_columns' => array( 'user_login', 'user_email', 'display_name' ),
 			'fields'         => 'all', // get full user objects
 		);
+
+		if ( ! empty( $from ) || ! empty( $to ) ) {
+			$args['date_query'] = array(
+				array_filter(
+					array(
+						'column'    => 'user_registered',
+						'after'     => $from,
+						'before'    => $to,
+						'inclusive' => true,
+					)
+				),
+			);
+		}
 
 		$query = new User_Query( $args );
 		$users = $query->get_results();

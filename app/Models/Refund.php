@@ -348,10 +348,25 @@ class Refund extends Model {
 		$payment_gateway = isset( $args['payment_gateway'] ) ? $args['payment_gateway'] : null;
 		$from_date      = isset( $args['from_date'] ) ? trim( $args['from_date'] ) : null;
 		$to_date        = isset( $args['to_date'] ) ? trim( $args['to_date'] ) : null;
+		$search         = isset( $args['search'] ) ? trim( $args['search'] ) : null;
 		$where          = array();
 
 		if ( ! empty( $order_id ) ) {
 			$where[] = array( 'order_id' => $order_id );
+		}
+
+		if ( is_numeric( $search ) ) {
+			$where[] = array( 'order_id' => (int) $search );
+		} elseif ( ! empty( $search ) ) {
+			$customer_ids = get_users(
+				array(
+					'search'         => '*' . $search . '*',
+					'search_columns' => array( 'display_name' ),
+					'fields'         => 'ID',
+				)
+			);
+			$order_ids    = $customer_ids ? wp_list_pluck( ( new Database( 'orders' ) )->get_rows( array( array( 'customer_id' => array( 'IN', $customer_ids ) ) ) ), 'id' ) : array();
+			$where[]      = array( 'order_id' => array( 'IN', $order_ids ? $order_ids : array( 0 ) ) );
 		}
 
 		if ( ! empty( $status ) ) {

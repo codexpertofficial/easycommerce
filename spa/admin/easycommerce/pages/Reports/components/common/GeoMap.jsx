@@ -179,12 +179,6 @@ const GeoMap = ({ endpoint, params = {}, data: propData = {}, isLoading: propLoa
                 attributionControl: false,
             });
 
-            L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
-                subdomains: 'abcd',
-                maxZoom: 19,
-                noWrap: true,
-            }).addTo(map);
-
             mapInstanceRef.current = map;
 
             if (!isMountedRef.current) {
@@ -280,7 +274,22 @@ const GeoMap = ({ endpoint, params = {}, data: propData = {}, isLoading: propLoa
         // State-level polygon geojson is intentionally not bundled (the full set is
         // ~82MB) and is not fetched remotely to comply with WordPress.org guidelines.
         // State data is rendered as circle markers using coordinates from the API.
+        const response = await fetch(EASYCOMMERCE.assets + 'common/lib/geo/countries-110m.json');
+        const world    = await response.json();
+        let countryBounds = null;
+        L.geoJSON(fixGeoJSON(topojson.feature(world, world.objects.countries)), {
+            interactive: false,
+            style: { fillColor: '#E5E7EB', fillOpacity: 1, color: '#fff', weight: 0.8 },
+            onEachFeature(feature, layer) {
+                if (data?.country_numeric && String(feature.id).padStart(3, '0') === String(data.country_numeric).padStart(3, '0')) {
+                    countryBounds = layer.getBounds();
+                }
+            },
+        }).addTo(map);
+
         loadStateCircles(map, data, maxVal);
+
+        if (countryBounds) map.fitBounds(countryBounds, { padding: [30, 30] });
     };
 
     const loadStateCircles = (map, data, maxVal) => {
@@ -315,9 +324,11 @@ const GeoMap = ({ endpoint, params = {}, data: propData = {}, isLoading: propLoa
             const displayText = (stateDisplay[key]) || (aggregate === 'sum' ? `${Number(value).toLocaleString()}` : sprintf( _n( '%d order', '%d orders', value, 'easycommerce' ), value ));
             const html  = `<strong>${state.name}</strong><br/>${value > 0 ? displayText : __( 'No orders', 'easycommerce' )}`;
 
-            const circle = L.circle(
+            if (!value) return;
+
+            const circle = L.circleMarker(
                 [parseFloat(state.latitude), parseFloat(state.longitude)],
-                { color: 'white', weight: 1, fillColor: getColor(value, maxVal), fillOpacity: 0.85, radius: 60000 }
+                { color: 'white', weight: 1.5, fillColor: getColor(value, maxVal), fillOpacity: 0.9, radius: 6 + 14 * Math.sqrt(value / maxVal) }
             ).addTo(map);
 
             circle.on({
@@ -333,7 +344,7 @@ const GeoMap = ({ endpoint, params = {}, data: propData = {}, isLoading: propLoa
             <div className="w-[60%]">
                 <div
                     ref={mapRef}
-                    style={{ height: '480px', width: '100%', borderRadius: '8px', overflow: 'hidden' }}
+                    style={{ height: '480px', width: '100%', borderRadius: '8px', overflow: 'hidden', background: '#F8FAFC' }}
                 />
             </div>
 

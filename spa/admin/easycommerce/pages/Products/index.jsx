@@ -89,6 +89,8 @@ const Products = ({ page }) => {
 		search: "",
 		category: [],
 		sortBy: "",
+		dateFrom: null,
+		dateTo: null,
 	});
     const statusStyles = {
         publish: "bg-ec-liveBg text-ec-liveText",
@@ -174,6 +176,8 @@ const Products = ({ page }) => {
             search: "",
             category: [],
             sortBy: "",
+            dateFrom: null,
+            dateTo: null,
         });
         setProductsFiltered(false);
         setSearchTrigger(prev => prev + 1);
@@ -224,6 +228,15 @@ const Products = ({ page }) => {
         fetchProductsStatuses();
     }, []);
     
+    const formatDate = (date) => {
+        if (!date) return "";
+
+        const month = String(date.getMonth() + 1).padStart(2, "0");
+        const day = String(date.getDate()).padStart(2, "0");
+
+        return `${date.getFullYear()}-${month}-${day}`;
+    };
+
 	const fetchProducts = () => {
         const params = {
             categories: formState.category,
@@ -235,11 +248,15 @@ const Products = ({ page }) => {
         const searchQuery =
             formState.search.length > 0 ? `s=${formState.search}&` : "";
 
+        const dateQuery =
+            (formState.dateFrom ? `&from=${formatDate(formState.dateFrom)}` : "") +
+            (formState.dateTo ? `&to=${formatDate(formState.dateTo)}` : "");
+
         const querySep = EASYCOMMERCE.permalink ? "?" : "&";
         const statusValue = activeTab === "all" ? "any,trash" : activeTab;
         const url = !productsFiltered
             ? `${EASYCOMMERCE.rest_base}/products${querySep}page=${page}&per_page=${postPerPage}&status=${statusValue}`
-            : `${EASYCOMMERCE.rest_base}/products${querySep}${searchQuery}${categoryParamsString}&sort_by=${formState.sortBy}&page=${page}&per_page=${postPerPage}&status=${statusValue}`;
+            : `${EASYCOMMERCE.rest_base}/products${querySep}${searchQuery}${categoryParamsString}&sort_by=${formState.sortBy}${dateQuery}&page=${page}&per_page=${postPerPage}&status=${statusValue}`;
 
         setIsLoading(true);
         productsFiltered && setFilterLoader(true);
@@ -441,7 +458,7 @@ const Products = ({ page }) => {
                             />
                         ) : (
                             <div className="flex flex-wrap items-center gap-4">
-                            <div className="flex flex-wrap gap-4 border-b-2 border-[#F0EDFB]">
+                            <div className="flex flex-wrap">
                                 {tabOptions.map((tab) => {
                                     const isActive = activeTab === tab.key;
                                     const count = tabCounts[tab.key] ?? 0;
@@ -457,13 +474,9 @@ const Products = ({ page }) => {
                                                 window.location.hash =
                                                     "#/products";
                                             }}
-                                            className={`relative flex items-center gap-[3px] font-inter text-sm text-ec-body transition-colors duration-300 
-                                                ${
-                                                    isActive
-                                                        ? "after:absolute after:bottom-[-2px] after:left-0 after:right-0 after:h-[2px] after:bg-ec-primary"
-                                                        : ""
-                                                }`}>
-                                            <span>{tab.label}</span>
+                                            className={`relative flex items-center px-2 gap-[3px] border-b-[2px] pb-1.5 font-inter text-sm text-ec-body transition-colors duration-300 
+                                                ${isActive ? "border-ec-primary" : "border-[#F0EDFB]"}`}>
+                                            <span className="min-w-max">{tab.label}</span>
                                             <span
                                                 className={`text-xs font-medium px-2 py-0.5 rounded-full ${tab.bg}`}>
                                                 {count}

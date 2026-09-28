@@ -665,10 +665,8 @@ $easycommerce_settings_menus = apply_filters(
 				array_reduce(
 					array_keys( $events = easycommerce_email_events() ),
 					function ( $submenus, $event ) use ( $events ) {
-						$default = easycommerce_email_default( $event );
-						$submenus[ $event ] = array(
-							'label'    => $events[ $event ],
-							'sections' => array(
+						$default  = easycommerce_email_default( $event );
+						$sections = array(
 								array(
 									'label'  => __( 'Customer Notification', 'easycommerce' ),
 									'fields' => array(
@@ -677,6 +675,7 @@ $easycommerce_settings_menus = apply_filters(
 											'type'  => 'switch',
 											'label' => __( 'Enable', 'easycommerce' ),
 											'description' => __( 'Send this email notification to the customer.', 'easycommerce' ),
+											'default' => 'restock_request' === $event,
 										),
 										// Text field for email subject
 										'customer_subject' => array(
@@ -702,7 +701,11 @@ $easycommerce_settings_menus = apply_filters(
 										),
 									),
 								),
-								array(
+						);
+
+						// The event's defaults decide whether the store hears about it at all.
+						if ( isset( $default['admin_subject'], $default['admin_body'] ) ) {
+							$sections[] = array(
 									'label'  => __( 'Admin Notification', 'easycommerce' ),
 									'fields' => array(
 										'admin_enabled' => array(
@@ -737,8 +740,12 @@ $easycommerce_settings_menus = apply_filters(
 											),
 										),
 									),
-								),
-							),
+							);
+						}
+
+						$submenus[ $event ] = array(
+							'label'    => $events[ $event ],
+							'sections' => $sections,
 						);
 
 						return $submenus;

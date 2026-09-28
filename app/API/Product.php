@@ -29,6 +29,10 @@ class Product extends API {
 		$is_shop      = $request->get_param( 'is_shop' ) == 1;
 		$shop_name    = $request->get_param( 'shop_name' ) ?: 'template-1';
 		$view 		  = $request->get_param('view') ?: 'easycommerce-st-grid';
+		$from         = strtotime( (string) $request->get_param( 'from' ) );
+		$from         = $from ? gmdate( 'Y-m-d', $from ) : '';
+		$to           = strtotime( (string) $request->get_param( 'to' ) );
+		$to           = $to ? gmdate( 'Y-m-d', $to ) : '';
 
 		$filters = array(
 			'search'     => $search_query,
@@ -41,6 +45,8 @@ class Product extends API {
 			'min_price'  => $min_price,
 			'max_price'  => $max_price,
 			'is_shop'    => $is_shop,
+			'from'       => $from,
+			'to'         => $to,
 		);
 
 		$result          = Product_Model::list( $filters, $per_page, ( $page - 1 ) * $per_page, true, true );

@@ -10,6 +10,7 @@ use EasyCommerce\Traits\Cleaner;
 use EasyCommerce\Traits\Queue;
 use EasyCommerce\Helpers\Utility;
 use EasyCommerce\Models\Product;
+use EasyCommerce\Models\Order;
 use EasyCommerce\Models\Notice;
 use EasyCommerce\Models\Attribute_Value;
 use EasyCommerce\Models\Log as Log_Model;
@@ -63,6 +64,57 @@ class Init {
 		$this->action( 'easycommerce_review_added', array( $this, 'invalidate_cache' ) );
 
 		$this->action( 'easycommerce_clear_cache', array( $this, 'handle_clear_cache' ), 10, 2 );
+
+		// Refunds and payments go through set_status(); the admin screens announce the update instead.
+		$this->action( 'easycommerce-set_order_status', array( $this, 'restore_stock_on_set_status' ), 10, 2 );
+		$this->action( 'easycommerce_order_status_updated', array( $this, 'restore_stock_on_status_update' ), 10, 3 );
+	}
+
+	/**
+	 * Statuses that hand an order's units back to the shelf.
+	 *
+	 * @return array
+	 */
+	private function stock_releasing_statuses() {
+		// partially_refunded is absent: a refund records an amount, not a quantity.
+		return apply_filters( 'easycommerce_stock_releasing_statuses', array( 'cancelled', 'refunded', 'failed' ) );
+	}
+
+	/**
+	 * Release stock when Order::set_status() carries the order somewhere it stops.
+	 *
+	 * @param string $status The status being set.
+	 * @param Order  $order  The order, still holding its previous status.
+	 */
+	public function restore_stock_on_set_status( $status, $order ) {
+		if ( ! $order instanceof Order || ! in_array( $status, $this->stock_releasing_statuses(), true ) ) {
+			return;
+		}
+
+		if ( in_array( $order->get_status(), $this->stock_releasing_statuses(), true ) ) {
+			return;
+		}
+
+		$order->restore_stock();
+	}
+
+	/**
+	 * Release stock when an admin moves an order to a releasing status.
+	 *
+	 * @param int    $order_id   The order ID.
+	 * @param string $new_status The status it moved to.
+	 * @param string $old_status The status it came from.
+	 */
+	public function restore_stock_on_status_update( $order_id, $new_status, $old_status ) {
+		if ( ! in_array( $new_status, $this->stock_releasing_statuses(), true ) ) {
+			return;
+		}
+
+		if ( in_array( $old_status, $this->stock_releasing_statuses(), true ) ) {
+			return;
+		}
+
+		( new Order( $order_id ) )->restore_stock();
 	}
 
 	public function invalidate_cache() {

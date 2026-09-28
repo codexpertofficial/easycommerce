@@ -23,6 +23,8 @@ class Product_Review extends API {
 		$page 		= $request->get_param( 'page' ) ?: 1;
 		$search 	= $request->get_param( 'search' );
 		$order 		= $request->get_param( 'order' ) ?: 'DESC';
+		$from 		= sanitize_text_field( (string) $request->get_param( 'from' ) );
+		$to 		= sanitize_text_field( (string) $request->get_param( 'to' ) );
 
 		$reviews = Review_Model::list( array(
 			'post_id' 	=> $post_id,
@@ -30,6 +32,8 @@ class Product_Review extends API {
 			'status' 	=> $status,
 			'search' 	=> $search,
 			'order' 	=> $order,
+			'from' 		=> $from,
+			'to' 		=> $to,
 			'per_page' 	=> $per_page,
 			'page' 		=> $page
 		) );

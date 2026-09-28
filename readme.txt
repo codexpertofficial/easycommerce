@@ -5,7 +5,7 @@ Donate link: https://easycommerce.dev
 Tags: ecommerce, online store, ai ecommerce, store builder, digital downloads
 Requires at least: 6.0
 Tested up to: 7.0
-Stable tag: 1.49
+Stable tag: 1.50
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -347,7 +347,6 @@ The plugin contacts these third-party services, each only when its feature is us
 * **Braintree** (js.braintreegateway.com) — loads the Braintree Drop-in at checkout and sends card and order data to process the payment. Terms: https://www.braintreepayments.com/legal/braintree-services-agreement — Privacy: https://www.braintreepayments.com/legal/braintree-privacy-policy
 * **Square** (web.squarecdn.com) — loads the Square Web Payments SDK at checkout and sends card and order data to process the payment. Terms: https://squareup.com/us/en/legal/general/ua — Privacy: https://squareup.com/us/en/legal/general/privacy
 * **Luna** (helpwp.dev) — optional admin help widget; sends the questions you type to answer how-to queries. Terms: https://helpwp.dev/terms/ — Privacy: https://helpwp.dev/privacy/
-* **CARTO** (basemaps.cartocdn.com) — loads background map tiles for the Reports location maps; no data is sent. Terms: https://carto.com/legal/ — Privacy: https://carto.com/privacy/
 
 ---
 
@@ -514,6 +513,28 @@ Free community support via WordPress.org forums and the [Facebook Community](htt
 13. Integrations - built-in payment gateways (Stripe, PayPal, Square, Braintree, Mollie), CRM and marketing addons, WooCommerce & EDD migration, and more.
 
 == Changelog ==
+
+= 1.50 - 2026-09-28 =
+
+**🔒 Security**
+
+- [security] Shipping and coupon requests are now limited to the shopper's own cart, and a cart link carrying someone else's cart is ignored
+
+**✨ New**
+
+- [add] Restock requests - a sold out product or variation now shows a "notify me" form, shoppers are emailed automatically when it comes back in stock, and a new Restock Request page shows who is waiting on what
+- [add] The Store Copilot can now write alt text for a product's images, improving accessibility and image SEO
+- [add] Products table - filter by publish date range alongside search, category and sort, and Reset clears every filter at once
+- [add] Customers table - filter by registration date range, and Reset clears it along with the search
+- [add] Refunds table - search by order ID or customer name and filter by date range, with Reset to clear both
+- [add] Reviews table - filter by review date range, and Reset clears it along with the search
+
+**🐛 Fixes**
+
+- [fix] Stock is now returned when an order is cancelled, refunded or fails, so product counts no longer drift below what is actually on the shelf
+- [fix] Searching reviews for text containing characters such as & or # now returns the right results
+- [fix] Reports location maps no longer show "API KEY REQUIRED" watermarks, zoom in on the country when every order comes from one country, and mark only the states that have orders
+- [ui] The Products status tabs now use the same underline as the Orders tabs, and the Customers "One-time" tab now reads "One Time"
 
 = 1.49 - 2026-09-10 =
 
@@ -704,51 +725,6 @@ Free community support via WordPress.org forums and the [Facebook Community](htt
 - [add] Test-mode banner on the storefront for logged-in admins, with a "Go Live" shortcut - so admins can tell that customers are blocked at checkout while the store is in Test mode
 - [fix] Test mode now also hides single product pages and the product archive, which were still reachable by direct URL
 - [fix] "Store Launching Soon" page no longer renders a duplicate, misplaced header/footer and now shows the theme footer correctly
-
-= 1.42 - 2026-07-03 =
-
-**🔒 Security**
-
-- [security] Prevented SQL injection through ORDER BY identifier validation in database queries
-- [security] Replaced raw unserialize() with maybe_unserialize() in abandoned cart retrieval to harden against object injection
-- [security] Stripe payment intent creation now enforces order ownership
-
-**✨ New**
-
-- [add] Generate and share a payment link for unpaid orders directly from the order screen
-- [add] Editable abandoned-cart reminder email popup with an automatic daily reminder cron
-- [add] Failed payments now show a proper "Failed" order status instead of "N/A"
-
-**💳 Payments**
-
-- [fix] Cash on Delivery no longer creates a false transaction entry on order placement
-- [fix] Stripe Buy Now, Pay Later methods are hidden when the order exceeds their maximum amount
-- [fix] Rate-limited Stripe payment error logging to prevent log flooding
-
-**🛒 Cart, Checkout & Shipping**
-
-- [fix] Unified backend payment lock stops the cart from changing during payment
-- [fix] Checkout now auto-selects the cheapest available shipping method
-- [fix] A shipping maximum of 0 now correctly means "unlimited" instead of disabling the method
-- [fix] Draft and other non-published products can no longer be added to the cart
-
-**📦 Orders & Reports**
-
-- [fix] Clearer feedback and error handling for invalid or missing order IDs
-- [fix] Order amount getters now return floats for PHP 8.x strict-type safety
-- [fix] Revenue report validates its date range against the supported ranges
-
-**🎨 Storefront & Email**
-
-- [ui] Fixed the shop page on mobile and tablet: responsive product grid and full-height filter drawer
-- [content] Rewrote all default transactional email templates (order, refund, account) for clearer copy
-
-**📝 WordPress.org & Developer**
-
-- [i18n] Resolved WordPress.org guideline issues: text domain/i18n, CDN asset offloading, and composer.json
-- [docs] Disclosed all external services in the readme
-- [docs] Shortened the plugin display name and cleaned up readme metadata
-- [test] Fixed OrderFactory test failures from non-scalar defaults and documented the related test bugs
 
 == Upgrade Notice ==
 

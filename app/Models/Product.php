@@ -1091,6 +1091,18 @@ class Product extends Model {
 			$args['post__not_in'] = $filters['post__not_in'];
 		}
 
+		if ( ! empty( $filters['from'] ) || ! empty( $filters['to'] ) ) {
+			$args['date_query'] = array(
+				array_filter(
+					array(
+						'after'     => isset( $filters['from'] ) ? $filters['from'] : '',
+						'before'    => isset( $filters['to'] ) ? $filters['to'] : '',
+						'inclusive' => true,
+					)
+				),
+			);
+		}
+
 		$post__in = array();
 
 		// Add min_price and max_price filter

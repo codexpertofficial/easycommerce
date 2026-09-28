@@ -91,6 +91,8 @@ class Product_Review {
 		$order 		= isset( $args['order'] ) ? $args['order'] : 'DESC';
 		$post_id 	= isset( $args['post_id'] ) ? $args['post_id'] : null;
 		$user_id 	= isset( $args['user_id'] ) ? $args['user_id'] : null;
+		$from 		= isset( $args['from'] ) ? $args['from'] : null;
+		$to 		= isset( $args['to'] ) ? $args['to'] : null;
 		$offset     = ( $page - 1 ) * $per_page;
 
 		$where = array(
@@ -116,6 +118,18 @@ class Product_Review {
 			}
 		}
 
+		if ( ! empty( $from ) || ! empty( $to ) ) {
+			$where['date_query'] = array(
+				array_filter(
+					array(
+						'after'     => $from,
+						'before'    => $to,
+						'inclusive' => true,
+					)
+				),
+			);
+		}
+
 		$count_where = array(
 			'status'    => $where['status'],
 			'order'     => $where['order'],
@@ -130,6 +144,9 @@ class Product_Review {
 		}
 		if ( isset( $where['search'] ) ) {
 			$count_where['search'] = $where['search'];
+		}
+		if ( isset( $where['date_query'] ) ) {
+			$count_where['date_query'] = $where['date_query'];
 		}
 
 		$total    = get_comments( array_filter( $count_where ) );

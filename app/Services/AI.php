@@ -568,6 +568,91 @@ class AI {
 	}
 
 	/**
+	 * Generates accessibility alt text for a single image.
+	 *
+	 * @param string $image   The image as a publicly reachable URL or a base64 data URI.
+	 * @param string $context Optional product title to ground the description.
+	 *
+	 * @return string|null The alt text, or null when the service is unavailable or declines.
+	 */
+	public function describe_image( $image, $context = '' ) {
+
+		if ( ! $this->prepare() ) {
+			return null;
+		}
+
+		$cost = 1;
+		if ( ( $credits = easycommerce_get_ai_credits() ) < $cost ) {
+			return null;
+		}
+
+		$tool = array(
+			'type'     => 'function',
+			'function' => array(
+				'name'        => 'set_alt_text',
+				'description' => 'Return the alt text describing the supplied product image.',
+				'parameters'  => array(
+					'type'       => 'object',
+					'properties' => array(
+						'alt_text' => array(
+							'type'        => 'string',
+							'description' => 'One sentence of at most 125 characters describing what is visible: subject, colour, material, notable detail. No "image of" prefix and no marketing copy.',
+						),
+					),
+					'required'   => array( 'alt_text' ),
+				),
+			),
+		);
+
+		$system_prompt = 'You write accessibility alt text for product images in an online store. Describe only what is actually visible in the image. Keep it under 125 characters, never begin with "image of" or "photo of", and never invent a brand, material or price you cannot see. You MUST call the set_alt_text tool.';
+
+		$instruction = '' === $context
+			? 'Describe this product image.'
+			: sprintf( 'Describe this image of the product "%s".', $context );
+
+		$messages = array(
+			array(
+				'role'    => 'user',
+				'content' => array(
+					array( 'type' => 'text', 'text' => $instruction ),
+					array( 'type' => 'image_url', 'image_url' => array( 'url' => $image ) ),
+				),
+			),
+		);
+
+		$response = $this->agent( $messages, array( $tool ), $system_prompt );
+
+		if ( empty( $response->success ) || ( $response->data->finish_reason ?? '' ) !== 'tool_calls' ) {
+			return null;
+		}
+
+		foreach ( $response->data->message->tool_calls ?? array() as $call ) {
+			if ( ( $call->function->name ?? '' ) !== 'set_alt_text' ) {
+				continue;
+			}
+
+			$args     = json_decode( $call->function->arguments ?? '{}', true );
+			$alt_text = is_array( $args ) ? sanitize_text_field( $args['alt_text'] ?? '' ) : '';
+
+			if ( empty( $alt_text ) ) {
+				return null;
+			}
+
+			// One image = one usage row; the single agent turn is not auto-logged.
+			$marker = strpos( $image, ';' );
+			$logged = 0 === strpos( $image, 'data:' ) ? substr( $image, 0, false === $marker ? 32 : $marker ) : $image;
+
+			$this->log_conversation( 'alt_text', $logged, $alt_text, isset( $response->data->credit ) ? (int) $response->data->credit : $cost );
+
+			easycommerce_deduct_ai_credits( $cost, $credits );
+
+			return $alt_text;
+		}
+
+		return null;
+	}
+
+	/**
 	 * Extracts a product search keyword from a natural-language query.
 	 *
 	 * Passes the real product catalog to the AI so it can pick the closest

@@ -4,6 +4,7 @@ use EasyCommerce\Helpers\Utility;
 
 $product         = new Product_Model( get_the_ID() );
 $stock           = $product->get_stock();
+$sold_out        = 0 === $stock;
 $variations      = $product->get_variations();
 $first_variation = $variations ? $variations[0] : null;
 $type            = $first_variation ? $first_variation->get_type() : null;
@@ -48,6 +49,24 @@ $type            = $first_variation ? $first_variation->get_type() : null;
 	</button>
 
 </div>
+
+<?php if ( $sold_out || $product->is_variable() ) : ?>
+	<!-- Back in stock notification  -->
+	<form class="easycommerce-restock-request mb-8" data-product-id="<?php echo esc_attr( get_the_ID() ); ?>" data-variation-id="0"
+		<?php echo $sold_out ? '' : 'style="display:none;"'; ?>>
+		<p class="text-ec-body font-inter text-base leading-[26px] mb-3">
+			<?php esc_html_e( 'Want this back? We will email you once, the moment it returns.', 'easycommerce' ); ?>
+		</p>
+		<input type="email" name="email" required
+			class="easycommerce-restock-request-email w-full mb-3 p-3 border border-[#1203501A] rounded-md text-ec-body font-inter text-base leading-[26px]"
+			placeholder="<?php esc_attr_e( 'Your email address', 'easycommerce' ); ?>" />
+		<button type="submit"
+			class="easycommerce-restock-request-button flex items-center justify-center font-inter font-semibold text-base leading-[26px] bg-ec-primary p-3 w-full rounded-md text-white">
+			<?php esc_html_e( 'Notify me', 'easycommerce' ); ?>
+		</button>
+		<p class="easycommerce-restock-request-message font-inter text-sm leading-[22px] mt-3" style="display:none;"></p>
+	</form>
+<?php endif; ?>
 
 <!-- Go to Checkout Button -->
 <div class="easycommerce-single-product-checkout-btn">

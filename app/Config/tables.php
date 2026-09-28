@@ -687,4 +687,30 @@ $easycommerce_tables = array(
 			'engine'      => 'InnoDB',
 		),
 	),
+
+	// restock_requests Table - one row per shopper waiting on a sold out product.
+	'restock_requests' => array(
+		'columns' => array(
+			'id'           => 'BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT',
+			'product_id'   => 'BIGINT(20) UNSIGNED NOT NULL',
+			'variation_id' => 'BIGINT(20) UNSIGNED NOT NULL DEFAULT 0',
+			'user_id'      => 'BIGINT(20) UNSIGNED DEFAULT NULL',
+			'email'        => 'VARCHAR(255) NOT NULL',
+			'status'       => "ENUM('pending', 'notified', 'cancelled') NOT NULL DEFAULT 'pending'",
+			'consent'      => 'TINYINT(1) NOT NULL DEFAULT 0',
+			'created_at'   => 'TIMESTAMP DEFAULT CURRENT_TIMESTAMP',
+			'notified_at'  => 'DATETIME DEFAULT NULL',
+		),
+		'options' => array(
+			'primary_key' => 'id',
+			'unique_keys' => array(
+				'unique_subscriber' => 'product_id, variation_id, email',
+			),
+			'indexes'     => array(
+				'index_product_id' => 'product_id',
+				'index_status'     => 'status',
+			),
+			'engine'      => 'InnoDB',
+		),
+	),
 );

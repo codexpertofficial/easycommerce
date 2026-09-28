@@ -72,6 +72,11 @@ class Product_Variation extends Model {
 	public $exists = false;
 
 	/**
+	 * @var int|null Stock held in the database when this variation was loaded.
+	 */
+	protected $stored_stock = null;
+
+	/**
 	 * @var Product_Variation_Meta Variation meta instance
 	 */
 	public $meta;
@@ -107,6 +112,7 @@ class Product_Variation extends Model {
 				$this->price          = (float) $variation->price;
 				$this->sale_price     = (float) $variation->sale_price;
 				$this->stock_quantity = is_null( $variation->stock_quantity ) ? null : (int) $variation->stock_quantity;
+				$this->stored_stock   = $this->stock_quantity;
 				$this->stock_limit    = $variation->stock_limit;
 				$this->status         = $variation->status;
 				$this->exists         = true;
@@ -371,6 +377,46 @@ class Product_Variation extends Model {
 	}
 
 	/**
+	 * Put stock back in one statement, so a release cannot race a sale.
+	 *
+	 * @param int $quantity Units to return.
+	 * @return bool True when the units were returned, false when nothing changed.
+	 */
+	public function increase_stock( $quantity ) {
+		global $wpdb;
+
+		$quantity = (int) $quantity;
+
+		if ( $quantity <= 0 || ! $this->manages_stock() || ! $this->id ) {
+			return false;
+		}
+
+		$was_sold_out = (int) $this->stock_quantity <= 0;
+		$table        = $this->db->get_table();
+
+		$updated = $wpdb->query(
+			$wpdb->prepare(
+				// phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared -- table name from the Database model.
+				"UPDATE {$table} SET stock_quantity = stock_quantity + %d WHERE id = %d",
+				$quantity,
+				$this->id
+			)
+		);
+
+		if ( ! $updated ) {
+			return false;
+		}
+
+		$this->stock_quantity = (int) $this->stock_quantity + $quantity;
+
+		if ( $was_sold_out ) {
+			do_action( 'easycommerce_variation_restocked', $this );
+		}
+
+		return true;
+	}
+
+	/**
 	 * Set variation type.
 	 *
 	 * @param string $type
@@ -406,6 +452,17 @@ class Product_Variation extends Model {
 		$this->status = $status;
 	}
 
+	/**
+	 * Whether this save takes the variation from sold out back to available.
+	 *
+	 * @return bool
+	 */
+	protected function is_restocked() {
+		$was_available = is_numeric( $this->stored_stock ) && $this->stored_stock > 0;
+
+		return ! $was_available && is_numeric( $this->stock_quantity ) && $this->stock_quantity > 0;
+	}
+
  	/**
  	 * Save variation data.
  	 *
@@ -427,6 +484,13 @@ class Product_Variation extends Model {
 
   		if ( $this->id ) {
   			$this->db->update_row( $this->id, $data );
+
+  			if ( $this->is_restocked() ) {
+  				do_action( 'easycommerce_variation_restocked', $this );
+  			}
+
+  			$this->stored_stock = $this->stock_quantity;
+
   			return $this->id;
   		} else {
   			$this->id = (int) $this->db->insert_row( $data );

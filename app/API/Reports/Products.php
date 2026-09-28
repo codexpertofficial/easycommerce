@@ -1269,6 +1269,7 @@ class Products extends Reports {
 				'country'        => $single_country,
 				'country_name'   => $country_name,
 				'country_iso3'   => $country_iso3,
+				'country_numeric' => $country_info ? $country_info['numeric_code'] : '',
 				'data'           => $states,
 				'states_data'    => $states_data,
 				'states_display' => $states_display,

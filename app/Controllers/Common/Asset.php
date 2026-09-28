@@ -842,8 +842,10 @@ class Asset {
 				$this->enqueue_script(
 					'easycommerce_product_single',
 					EASYCOMMERCE_ASSETS_URL . 'public/js/product-single.js',
-					array( 'jquery' )
+					array( 'jquery', 'easycommerce', 'wp-i18n' )
 				);
+
+				$this->set_spa_translations( 'easycommerce_product_single' );
 			}
 
 			if ( $load_common_assets ) {

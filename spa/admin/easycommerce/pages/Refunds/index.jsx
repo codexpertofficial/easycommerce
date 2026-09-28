@@ -4,6 +4,7 @@ import { toast } from 'react-toastify';
 
 // Components
 import RefundsTable from './components/RefundsTable';
+import TableFilter from './components/TableFilter';
 import Pagination from '../../../common/components/Pagination';
 import NotFound from '../../../common/NotFound';
 import TableSkeleton from '../../../common/TableSkeleton';
@@ -14,12 +15,59 @@ const Refunds = ({ page }) => {
 	const [totalPage, setTotalPage] = useState(1);
 	const [refunds, setRefunds] = useState([]);
 	const [isLoading, setIsLoading] = useState(false);
+	const [refundsFiltered, setRefundsFiltered] = useState(false);
+	const [searchTrigger, setSearchTrigger] = useState(0);
+	const [formState, setFormState] = useState({
+		search: '',
+		dateFrom: null,
+		dateTo: null,
+	});
+
+	const handleSubmit = () => {
+		setRefundsFiltered(!!(formState.search.trim() || formState.dateFrom || formState.dateTo));
+		setSearchTrigger((prev) => prev + 1);
+		window.location.hash = '#/refunds';
+	};
+
+	const resetFilter = () => {
+		setFormState({
+			search: '',
+			dateFrom: null,
+			dateTo: null,
+		});
+		setRefundsFiltered(false);
+		setSearchTrigger((prev) => prev + 1);
+		window.location.hash = '#/refunds';
+	};
+
+	const formatDate = (date) => {
+		if (!date) return '';
+
+		const month = String(date.getMonth() + 1).padStart(2, '0');
+		const day = String(date.getDate()).padStart(2, '0');
+
+		return `${date.getFullYear()}-${month}-${day}`;
+	};
 
 	const fetchRefunds = async (pageNumber) => {
 		setIsLoading(true);
+
+		let url = `${EASYCOMMERCE.rest_base}/refunds?page=${pageNumber}&per_page=10`;
+		const searchValue = formState.search.trim();
+
+		if (refundsFiltered && searchValue) {
+			url += `&search=${encodeURIComponent(searchValue)}`;
+		}
+		if (refundsFiltered && formState.dateFrom) {
+			url += `&from_date=${formatDate(formState.dateFrom)}`;
+		}
+		if (refundsFiltered && formState.dateTo) {
+			url += `&to_date=${formatDate(formState.dateTo)}`;
+		}
+
 		try {
 			const response = await fetch(
-				`${EASYCOMMERCE.rest_base}/refunds?page=${pageNumber}&per_page=10`,
+				url,
 				{
 					method: 'GET',
 					headers: {
@@ -44,7 +92,7 @@ const Refunds = ({ page }) => {
 
 	useEffect(() => {
 		fetchRefunds(page);
-	}, [page]);
+	}, [page, searchTrigger]);
 
 	return (
 		<>
@@ -55,9 +103,14 @@ const Refunds = ({ page }) => {
 			</div>
 
 			<div className="w-full bg-white border border-solid border-ec-table-stock rounded-xl p-6 min-h-screen flex flex-col h-[94%]">
-				<div className="flex justify-between gap-5 mb-4">
-					{/* Status */}
-					{/* Filters */}
+				<div className="flex justify-end gap-5 mb-4">
+					<TableFilter
+						formState={formState}
+						setFormState={setFormState}
+						handleSubmit={handleSubmit}
+						refundsFiltered={refundsFiltered}
+						resetFilter={resetFilter}
+					/>
 				</div>
 
 				{isLoading ? (

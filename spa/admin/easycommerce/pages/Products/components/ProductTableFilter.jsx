@@ -1,9 +1,10 @@
 import React from "react";
-import { __ } from "@wordpress/i18n";
+import { __, sprintf } from "@wordpress/i18n";
 
 // components
 import DropdownField from "./DropdownField";
 import TextField from "../../../../common/components/inputs/TextField";
+import DatepickerComponent from "../../../../common/components/DatepickerComponent";
 
 const ProductTableFilter = ({
     categories,
@@ -50,6 +51,12 @@ const ProductTableFilter = ({
 
         filterProducts();
     };
+
+    const today = new Date();
+    const past30 = new Date(today);
+    past30.setDate(today.getDate() - 30);
+    const fmt = (d) => d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+    const datePlaceholder = sprintf( __( 'eg. %1$s - %2$s %3$s', 'easycommerce' ), fmt(past30), fmt(today), today.getFullYear() );
 
     return (
         <div className="flex justify-between items-center gap-6">
@@ -114,6 +121,20 @@ const ProductTableFilter = ({
                         />
                     </div>
                 </div>
+                <DatepickerComponent
+                    dateRange={[formState.dateFrom, formState.dateTo]}
+                    onRangeChange={(dates) => {
+                        const [start, end] = dates;
+                        setFormState((prev) => ({
+                            ...prev,
+                            dateFrom: start,
+                            dateTo: end,
+                        }));
+                    }}
+                    placeholderText={datePlaceholder}
+                    width="w-[220px]"
+                    minDate={new Date("1972-01-01")}
+                />
                 <button
                     type="submit"
                     className="w-[38px] h-ec-input flex justify-center ease-in-out hover:bg-ec-secondary transition duration-300 

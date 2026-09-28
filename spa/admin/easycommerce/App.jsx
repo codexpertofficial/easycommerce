@@ -42,6 +42,7 @@ import SingleCustomer from "./pages/Customers/SingleCustomer";
 import Coupons from "./pages/Coupons";
 import CouponDetails from "./pages/Coupons/CouponDetails";
 import AbandonedCart from "./pages/AbandonedCart";
+import RestockRequest from "./pages/RestockRequest";
 import ProductReviews from "./pages/ProductReviews";
 import Help from "./pages/Help";
 import Addons from "./pages/Addons";
@@ -129,6 +130,7 @@ const App = () => {
                 { match: "/categories", to: "/categories" },
                 { match: "/tags", to: "/tags" },
                 { match: "/brands", to: "/brands" },
+                { match: "/restock-request", to: "/restock-request" },
                 { match: "/orders", to: "/orders" },
                 { match: "/refunds", to: "/refunds" },
                 { match: "/customers", to: "/customers" },
@@ -272,6 +274,10 @@ const App = () => {
                 dispatch(setCurrentTab("/abandoned-cart"));
                 setPage(currentPage);
             },
+            "/restock-request": () => {
+                dispatch(setCurrentTab("/restock-request"));
+                setPage(currentPage);
+            },
             "/reviews": () => {
                 dispatch(setCurrentTab("/reviews"));
                 setPage(currentPage);
@@ -409,6 +415,7 @@ const App = () => {
         "/reports/customers": [__("EasyCommerce", "easycommerce"), __("Reports", "easycommerce"), __("Customers", "easycommerce")],
         "/reports/revenues": [__("EasyCommerce", "easycommerce"), __("Reports", "easycommerce"), __("Revenues", "easycommerce")],
         "/abandoned-cart": [__("EasyCommerce", "easycommerce"), __("Abandoned Cart", "easycommerce")],
+        "/restock-request": [__("EasyCommerce", "easycommerce"), __("Restock Request", "easycommerce")],
         "/reviews": [__("EasyCommerce", "easycommerce"), __("Product Reviews", "easycommerce")],
         "/addons": [__("EasyCommerce", "easycommerce"), __("Addons", "easycommerce")],
         "/help": [__("EasyCommerce", "easycommerce"), __("Help & Support", "easycommerce")],
@@ -488,6 +495,9 @@ const App = () => {
                 break;
             case "/abandoned-cart":
                 PageComponent = () => <AbandonedCart page={page} />;
+                break;
+            case "/restock-request":
+                PageComponent = () => <RestockRequest page={page} />;
                 break;
             case "/reviews":
                 PageComponent = () => <ProductReviews page={page} />;

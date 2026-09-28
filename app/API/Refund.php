@@ -23,6 +23,7 @@ class Refund extends API {
 		$payment_gateway  = $request->get_param( 'payment_gateway' );
 		$from_date        = $request->get_param( 'from_date' );
 		$to_date          = $request->get_param( 'to_date' );
+		$search           = sanitize_text_field( (string) $request->get_param( 'search' ) );
 		$per_page         = $request->get_param( 'per_page' ) ?: 10;
 		$page             = $request->get_param( 'page' ) ?: 1;
 		$offset           = ( $page - 1 ) * $per_page;
@@ -33,6 +34,7 @@ class Refund extends API {
 			'payment_gateway' => $payment_gateway,
 			'from_date'       => $from_date,
 			'to_date'         => $to_date,
+			'search'          => $search,
 		);
 
 		$result = Refund_Model::list( $filters, $per_page, $offset );

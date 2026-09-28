@@ -23,6 +23,8 @@ const ProductReviews = ({ page }) => {
 	]);
 	const [formState, setFormState] = useState({
 		search: '',
+		dateFrom: null,
+		dateTo: null,
 	});
 	const [totalPage, setTotalPage] = useState(1);
 	const [postPerPage, setPostPerPage] = useState(20);
@@ -44,7 +46,7 @@ const ProductReviews = ({ page }) => {
 	};
 
 	const handleSubmit = () => {
-		setReviewsFiltered(true);
+		setReviewsFiltered(!!(formState.search.trim() || formState.dateFrom || formState.dateTo));
 		setSearchTrigger((prev) => prev + 1);
 		window.location.hash = '#/reviews';
 	};
@@ -52,10 +54,21 @@ const ProductReviews = ({ page }) => {
 	const resetFilter = () => {
 		setFormState({
 			search: '',
+			dateFrom: null,
+			dateTo: null,
 		});
 		setReviewsFiltered(false);
 		setSearchTrigger((prev) => prev + 1);
 		window.location.hash = '#/reviews';
+	};
+
+	const formatDate = (date) => {
+		if (!date) return '';
+
+		const month = String(date.getMonth() + 1).padStart(2, '0');
+		const day = String(date.getDate()).padStart(2, '0');
+
+		return `${date.getFullYear()}-${month}-${day}`;
 	};
 
 	const fetchProductReviews = () => {
@@ -66,7 +79,13 @@ const ProductReviews = ({ page }) => {
 		let url = `${EASYCOMMERCE.rest_base}/product-reviews?page=${page}&per_page=${postPerPage}`;
 
 		if (reviewsFiltered && searchValue) {
-			url += `&search=${searchValue}`;
+			url += `&search=${encodeURIComponent(searchValue)}`;
+		}
+		if (reviewsFiltered && formState.dateFrom) {
+			url += `&from=${formatDate(formState.dateFrom)}`;
+		}
+		if (reviewsFiltered && formState.dateTo) {
+			url += `&to=${formatDate(formState.dateTo)}`;
 		}
 
 		fetch(url, {

@@ -32,6 +32,7 @@ const Customers = ({ page }) => {
 	const [totalPage, setTotalPage] = useState(1);
 	const [postPerPage] = useState(20);
 	const [searchCustomer, setSearchCustomer] = useState('');
+	const [dateRange, setDateRange] = useState([null, null]);
 	const [isFiltering, setIsFiltering] = useState(false);
 	const [searchTrigger, setSearchTrigger] = useState(0);
 	const [activeTab, setActiveTab] = useState('all');
@@ -41,8 +42,9 @@ const Customers = ({ page }) => {
 		one_time: 0,
 	});
 
-	const handleCustomerSearch = useCallback((value) => {
+	const handleCustomerSearch = useCallback((value, range) => {
 		setSearchCustomer(value);
+		setDateRange(range || [null, null]);
 		setIsFiltering(true);
 		setSearchTrigger((prev) => prev + 1);
 		window.location.hash = '#/customers';
@@ -60,7 +62,7 @@ const Customers = ({ page }) => {
 			bg: 'bg-ec-recurringBg text-ec-recurringText',
 		},
 		{
-			label: __( 'One-time', 'easycommerce' ),
+			label: __( 'One Time', 'easycommerce' ),
 			key: 'one_time',
 			bg: 'bg-ec-oneTimeBg text-ec-oneTimeText',
 		},
@@ -68,6 +70,7 @@ const Customers = ({ page }) => {
 
 	const handleResetFilter = useCallback(() => {
 		setSearchCustomer('');
+		setDateRange([null, null]);
 		setSearchTrigger((prev) => prev + 1);
 		setIsFiltering(false);
 		window.location.hash = '#/customers';
@@ -104,6 +107,15 @@ const Customers = ({ page }) => {
 		fetchCustomersStatuses();
 	}, []);
 
+	const formatDate = (date) => {
+		if (!date) return '';
+
+		const month = String(date.getMonth() + 1).padStart(2, '0');
+		const day = String(date.getDate()).padStart(2, '0');
+
+		return `${date.getFullYear()}-${month}-${day}`;
+	};
+
 	const fetchCustomers = async () => {
 		setIsLoading(true);
 		const querySep = EASYCOMMERCE.permalink ? '?' : '&';
@@ -112,6 +124,8 @@ const Customers = ({ page }) => {
 			const url =
 				`${EASYCOMMERCE.rest_base}/customers${querySep}` +
 				`${searchCustomer ? `s=${encodeURIComponent(searchCustomer)}&` : ''}` +
+				`${dateRange[0] ? `from=${formatDate(dateRange[0])}&` : ''}` +
+				`${dateRange[1] ? `to=${formatDate(dateRange[1])}&` : ''}` +
 				`page=${page}&per_page=${postPerPage}&type=${activeTab}`;
 
 			const res = await fetch(url, {
