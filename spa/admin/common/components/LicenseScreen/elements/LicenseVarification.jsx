@@ -5,7 +5,6 @@ import { __, sprintf } from "@wordpress/i18n";
 import TextField from "../../inputs/TextField";
 import TextArea from "../../inputs/TextArea";
 
-const closeIcon = `${EASYCOMMERCE.assets}admin/img/icons/modal-close.png`;
 const logo = `${EASYCOMMERCE.assets}common/img/ec-logo.png`;
 
 const LicenseVarification = ({

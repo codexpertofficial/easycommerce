@@ -7,9 +7,9 @@
  * Author: EasyCommerce
  * Author URI: https://easycommerce.dev/
  * Description: AI-Powered Ecommerce To Sell Physical & Digital Products
- * Version: 1.50
+ * Version: 1.51
  * Requires at least: 6.0
- * Tested up to: 7.0
+ * Tested up to: 7.1
  * Requires PHP: 7.4
  * Text Domain: easycommerce
  * Domain Path: /languages
@@ -32,7 +32,7 @@ namespace EasyCommerce;
 defined( 'ABSPATH' ) || exit;
 
 define( 'EASYCOMMERCE_FILE', __FILE__ );
-define( 'EASYCOMMERCE_VERSION', '1.50' );
+define( 'EASYCOMMERCE_VERSION', '1.51' );
 define( 'EASYCOMMERCE_PLUGIN_DIR', plugin_dir_path( EASYCOMMERCE_FILE ) );
 define( 'EASYCOMMERCE_PLUGIN_URL', plugin_dir_url( EASYCOMMERCE_FILE ) );
 define( 'EASYCOMMERCE_ASSETS_URL', EASYCOMMERCE_PLUGIN_URL . 'assets/' );

@@ -2543,6 +2543,7 @@ msgstr ""
 "\n"
 "诚挚问候，\n"
 "##shop_name## 团队\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/cancelled.php:25
@@ -2588,6 +2589,7 @@ msgstr ""
 "\n"
 "此致，\n"
 "##shop_name## 团队\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/completed.php:4
@@ -2639,6 +2641,7 @@ msgstr ""
 "\n"
 "诚挚问候，\n"
 "##shop_name## 团队\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/completed.php:29
@@ -2692,6 +2695,7 @@ msgstr ""
 "\n"
 "此致，\n"
 "##shop_name## 团队\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/failed.php:4
@@ -2742,6 +2746,7 @@ msgstr ""
 "您的商品仍已为您保留。您可以随时重新付款或重新下单：##checkout_page##\n"
 "\n"
 "需要帮助吗？欢迎随时联系我们——我们随时为您提供支持。\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/failed.php:30
@@ -2784,6 +2789,7 @@ msgstr ""
 "\n"
 "客户可从以下页面重新付款：##checkout_page##\n"
 "如有需要，请及时跟进。\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real account data at send time - keep them verbatim.
 #: app/Config/email-defaults/new_account.php:4
@@ -2839,6 +2845,7 @@ msgstr ""
 "\n"
 "诚挚问候，\n"
 "##shop_name## 团队\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real account data at send time - keep them verbatim.
 #: app/Config/email-defaults/new_account.php:31
@@ -2880,6 +2887,7 @@ msgstr ""
 "\n"
 "此致，\n"
 "##shop_name## 团队\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/on_hold.php:4
@@ -2923,6 +2931,7 @@ msgstr ""
 "\n"
 "诚挚问候，\n"
 "##shop_name## 团队\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/on_hold.php:25
@@ -2968,6 +2977,7 @@ msgstr ""
 "\n"
 "此致，\n"
 "##shop_name## 团队\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/partially_refunded.php:4
@@ -3019,6 +3029,7 @@ msgstr ""
 "\n"
 "诚挚问候，\n"
 "##shop_name## 团队\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/partially_refunded.php:29
@@ -3068,6 +3079,7 @@ msgstr ""
 "\n"
 "此致，\n"
 "##shop_name## 团队\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/pending.php:4
@@ -3111,6 +3123,7 @@ msgstr ""
 "\n"
 "诚挚问候，\n"
 "##shop_name## 团队\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/pending.php:25
@@ -3160,6 +3173,7 @@ msgstr ""
 "\n"
 "此致，\n"
 "##shop_name## 团队\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/processing.php:4
@@ -3211,6 +3225,7 @@ msgstr ""
 "\n"
 "诚挚问候，\n"
 "##shop_name## 团队\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/processing.php:29
@@ -3264,6 +3279,7 @@ msgstr ""
 "\n"
 "此致，\n"
 "##shop_name## 团队\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/refunded.php:4
@@ -3311,6 +3327,7 @@ msgstr ""
 "\n"
 "诚挚问候，\n"
 "##shop_name## 团队\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/refunded.php:27
@@ -3360,6 +3377,7 @@ msgstr ""
 "\n"
 "此致，\n"
 "##shop_name## 团队\n"
+""
 
 #: app/Config/settings.php:45
 msgid "&raquo; Settings"
@@ -7963,18 +7981,6 @@ msgstr "店铺即将上线！"
 msgid "We’re getting ready to welcome you. Stay tuned for the launch."
 msgstr "我们正在做好准备迎接您的到来。敬请期待正式上线。"
 
-#: assets/admin/js/email-placeholders.js:12
-msgid "Insert Email Placeholder"
-msgstr "插入邮件占位符"
-
-#: assets/admin/js/email-placeholders.js:19
-msgid "Select a placeholder:"
-msgstr "选择一个占位符："
-
-#: assets/admin/js/email-placeholders.js:23
-msgid "Select a placeholder to automatically insert it into your email template. These will be replaced with actual values when emails are sent."
-msgstr "选择一个占位符即可自动将其插入到您的邮件模板中。发送邮件时，这些占位符将被替换为实际值。"
-
 #: assets/admin/js/email-placeholders.js:31
 #: build/easycommerce.bundle.js:2
 #: build/editor.bundle.js:2
@@ -7983,10 +7989,6 @@ msgstr "选择一个占位符即可自动将其插入到您的邮件模板中。
 #: spa/admin/easycommerce/pages/Products/components/Prices/PriceItem/components/ActionButton.jsx:72
 msgid "Close"
 msgstr "关闭"
-
-#: assets/admin/js/email-placeholders.js:49
-msgid "Search for a placeholder..."
-msgstr "搜索占位符……"
 
 #: assets/admin/js/email-placeholders.js:90
 #: build/checkout.bundle.js:2
@@ -8002,23 +8004,6 @@ msgstr "搜索占位符……"
 #: spa/public/checkout/App.jsx:31
 msgid "Loading..."
 msgstr "加载中……"
-
-#: assets/admin/js/init.js:65
-msgid "Template Preview"
-msgstr "模板预览"
-
-#: assets/admin/js/notice.js:85
-msgid "Installing.."
-msgstr "安装中……"
-
-#: assets/admin/js/notice.js:100
-msgid "Migration addon activated successfully!"
-msgstr "迁移扩展激活成功！"
-
-#: assets/admin/js/notice.js:107
-#: assets/admin/js/notice.js:113
-msgid "Failed to install migration addon."
-msgstr "安装迁移扩展失败。"
 
 #: assets/admin/js/settings.js:183
 #: assets/admin/js/settings.js:193
@@ -8039,189 +8024,6 @@ msgstr "选择城市"
 msgid "Select State"
 msgstr "选择州/省"
 
-#: assets/payment/js/braintree.js:24
-msgid "Braintree.js failed to load or missing authorization token."
-msgstr "Braintree.js 加载失败或缺少授权令牌。"
-
-#: assets/payment/js/braintree.js:42
-msgid "Error initializing Braintree."
-msgstr "初始化 Braintree 时出错。"
-
-#: assets/payment/js/braintree.js:75
-msgid "Failed to get payment nonce."
-msgstr "获取支付 nonce 失败。"
-
-#: assets/payment/js/braintree.js:86
-msgid "Error processing payment."
-msgstr "处理支付时出错。"
-
-#: assets/payment/js/paypal.js:41
-#: assets/payment/js/stripe-payment.js:43
-msgid "Failed to load cart data. Please refresh the page."
-msgstr "加载购物车数据失败。请刷新页面。"
-
-#: assets/payment/js/paypal.js:133
-msgid "Purchase from EasyCommerce"
-msgstr "从 EasyCommerce 购买"
-
-#: assets/payment/js/paypal.js:135
-msgid "Item"
-msgstr "商品"
-
-#: assets/payment/js/paypal.js:163
-msgid "Your cart has been updated. Please refresh the page and try again."
-msgstr "您的购物车已更新。请刷新页面后重试。"
-
-#: assets/payment/js/paypal.js:181
-msgid "An unknown error occurred with PayPal"
-msgstr "PayPal 发生未知错误"
-
-#. translators: %s: PayPal error message.
-#: assets/payment/js/paypal.js:183
-msgid "PayPal Error: %s"
-msgstr "PayPal 错误：%s"
-
-#: assets/payment/js/stripe-payment.js:85
-msgid "Failed to create payment. Please try again."
-msgstr "创建支付失败。请重试。"
-
-#: assets/payment/js/stripe-payment.js:151
-msgid "Payment form failed to load. Please refresh."
-msgstr "支付表单加载失败。请刷新。"
-
-#: assets/payment/js/stripe-payment.js:207
-msgid "Could not verify cart. Please refresh and try again."
-msgstr "无法验证购物车。请刷新后重试。"
-
-#: assets/payment/js/stripe-payment.js:228
-msgid "Failed to create payment. Please refresh the page and try again."
-msgstr "创建支付失败。请刷新页面后重试。"
-
-#: assets/payment/js/stripe-payment.js:246
-msgid "This payment handler is not available. Please refresh and try again."
-msgstr "此支付处理程序不可用。请刷新后重试。"
-
-#: assets/payment/js/stripe-payment.js:282
-msgid "Additional verification required. Please complete the payment process."
-msgstr "需要额外验证。请完成支付流程。"
-
-#: assets/payment/js/stripe-payment.js:286
-msgid "Payment failed. Please try a different payment method."
-msgstr "支付失败。请尝试其他支付方式。"
-
-#: assets/payment/js/stripe-payment.js:290
-#: assets/payment/js/stripe-payment.js:458
-msgid "Payment was canceled. Please try again."
-msgstr "支付已取消。请重试。"
-
-#. translators: %s: Stripe payment intent status code.
-#: assets/payment/js/stripe-payment.js:295
-msgid "Payment status: %s. Please contact support if this persists."
-msgstr "支付状态：%s。如果问题持续存在，请联系支持团队。"
-
-#: assets/payment/js/stripe-payment.js:299
-msgid "Payment could not be processed. Please try again."
-msgstr "无法处理支付。请重试。"
-
-#: assets/payment/js/stripe-payment.js:304
-msgid "An error occurred while processing your payment. Please try again."
-msgstr "处理您的支付时发生错误。请重试。"
-
-#: assets/payment/js/stripe-payment.js:363
-#: assets/payment/js/stripe-payment.js:413
-msgid "Verifying payment..."
-msgstr "正在验证支付……"
-
-#: assets/payment/js/stripe-payment.js:388
-#: assets/payment/js/stripe-payment.js:447
-msgid "Payment successful! Creating order..."
-msgstr "支付成功！正在创建订单……"
-
-#. translators: %s: Stripe setup intent status code.
-#: assets/payment/js/stripe-payment.js:396
-msgid "Payment method could not be saved. Status: %s"
-msgstr "无法保存支付方式。状态：%s"
-
-#: assets/payment/js/stripe-payment.js:402
-#: assets/payment/js/stripe-payment.js:473
-msgid "Failed to verify payment. Please contact support."
-msgstr "验证支付失败。请联系支持团队。"
-
-#: assets/payment/js/stripe-payment.js:454
-msgid "Payment failed. Please try again with a different payment method."
-msgstr "支付失败。请使用其他支付方式重试。"
-
-#: assets/payment/js/stripe-payment.js:462
-msgid "Additional action required. Please complete the payment process."
-msgstr "需要额外操作。请完成支付流程。"
-
-#. translators: %s: Stripe payment intent status code.
-#: assets/payment/js/stripe-payment.js:467
-msgid "Payment could not be completed. Status: %s"
-msgstr "无法完成支付。状态：%s"
-
-#: assets/public/js/agent-chatbot.js:161
-msgid "Complete your order →"
-msgstr "完成您的订单 →"
-
-#: assets/public/js/agent-chatbot.js:258
-msgid "Sorry, something went wrong. Please try again."
-msgstr "抱歉，出错了。请重试。"
-
-#: assets/public/js/agent-chatbot.js:268
-msgid "Connection error. Please try again."
-msgstr "连接错误。请重试。"
-
-#. translators: %s: AI shopping agent name.
-#: assets/public/js/agent-chatbot.js:311
-msgid "Open %s"
-msgstr "打开 %s"
-
-#: assets/public/js/agent-chatbot.js:332
-msgid "Online"
-msgstr "在线"
-
-#: assets/public/js/agent-chatbot.js:335
-msgid "New conversation"
-msgstr "新对话"
-
-#: assets/public/js/agent-chatbot.js:338
-msgid "Minimize"
-msgstr "最小化"
-
-#: assets/public/js/agent-chatbot.js:351
-msgid "Ask about products, orders…"
-msgstr "咨询商品、订单……"
-
-#: assets/public/js/agent-chatbot.js:357
-#: build/easycommerce.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Send"
-msgstr "发送"
-
-#. translators: %s: AI shopping agent name.
-#: assets/public/js/agent-chatbot.js:379
-#: assets/public/js/agent-chatbot.js:390
-msgid "Hi! 👋 I'm %s. How can I help you today?"
-msgstr "您好！👋 我是 %s。今天有什么可以帮您？"
-
-#: assets/public/js/checkout.js:5
-msgid "Only letters, spaces, hyphens, apostrophes, and periods are allowed."
-msgstr "只能包含字母、空格、连字符、撇号和句点。"
-
-#: assets/public/js/checkout.js:7
-msgid "Please enter a valid phone number (6–20 characters)."
-msgstr "请输入有效的电话号码（6–20 个字符）。"
-
-#. translators: %s: checkout field label.
-#: assets/public/js/checkout.js:38
-msgid "%s is required."
-msgstr "%s 为必填项。"
-
-#: assets/public/js/checkout.js:377
-msgid "Enter city"
-msgstr "请输入城市"
-
 #: assets/public/js/checkout.js:521
 #: build/auth.bundle.js:2
 #: build/easycommerce.bundle.js:2
@@ -8234,10 +8036,6 @@ msgstr "请输入城市"
 #: spa/public/auth/screens/ResetRequest.jsx:30
 msgid "An error occurred. Please try again."
 msgstr "发生错误。请重试。"
-
-#: assets/public/js/init.js:28
-msgid "Your cart is empty."
-msgstr "您的购物车为空。"
 
 #: assets/public/js/init.js:41
 #: build/easycommerce.bundle.js:2
@@ -8259,38 +8057,6 @@ msgstr "商品"
 msgid "Quantity"
 msgstr "数量"
 
-#: assets/public/js/init.js:117
-msgid "Failed to load cart."
-msgstr "加载购物车失败。"
-
-#: assets/public/js/init.js:121
-msgid "Error loading cart."
-msgstr "加载购物车时出错。"
-
-#: assets/public/js/init.js:191
-#: assets/public/js/init.js:203
-#: assets/public/js/shop.js:297
-msgid "Failed to add to cart. Please try again."
-msgstr "加入购物车失败。请重试。"
-
-#. translators: 1: first result index, 2: last result index, 3: total results.
-#: assets/public/js/shop.js:180
-msgid "Showing %1$s-%2$s of %3$s result"
-msgid_plural "Showing %1$s-%2$s of %3$s results"
-msgstr[0] "显示第 %1$s-%2$s 项，共 %3$s 项结果"
-
-#: assets/public/js/shop.js:202
-msgid "No results found"
-msgstr "未找到结果"
-
-#: assets/public/js/shop.js:266
-msgid "Adding..."
-msgstr "添加中……"
-
-#: assets/public/js/shop.js:279
-msgid "Added"
-msgstr "已添加"
-
 #: blocks/checkout/billing-address/index.jsx:42
 #: build/blocks.bundle.js:2
 msgid "This is your billing address being edited."
@@ -8311,126 +8077,6 @@ msgstr "清空购物车"
 #: build/blocks.bundle.js:2
 msgid "This is your cart being edited."
 msgstr "这是您正在编辑的购物车。"
-
-#: blocks/components/typography.js:20
-#: build/blocks.bundle.js:2
-msgid "Font Size"
-msgstr "字体大小"
-
-#: blocks/components/typography.js:29
-#: build/blocks.bundle.js:2
-msgid "Font Weight"
-msgstr "字重"
-
-#: blocks/components/typography.js:32
-#: build/blocks.bundle.js:2
-msgid "100 (Thin)"
-msgstr "100（极细）"
-
-#: blocks/components/typography.js:33
-#: build/blocks.bundle.js:2
-msgid "200 (Extra Light)"
-msgstr "200（特细）"
-
-#: blocks/components/typography.js:34
-#: build/blocks.bundle.js:2
-msgid "300 (Light)"
-msgstr "300（细）"
-
-#: blocks/components/typography.js:35
-#: build/blocks.bundle.js:2
-msgid "400 (Normal)"
-msgstr "400（常规）"
-
-#: blocks/components/typography.js:36
-#: build/blocks.bundle.js:2
-msgid "500 (Medium)"
-msgstr "500（中等）"
-
-#: blocks/components/typography.js:37
-#: build/blocks.bundle.js:2
-msgid "600 (Semi Bold)"
-msgstr "600（半粗）"
-
-#: blocks/components/typography.js:38
-#: build/blocks.bundle.js:2
-msgid "700 (Bold)"
-msgstr "700（粗体）"
-
-#: blocks/components/typography.js:39
-#: build/blocks.bundle.js:2
-msgid "800 (Extra Bold)"
-msgstr "800（特粗）"
-
-#: blocks/components/typography.js:40
-#: build/blocks.bundle.js:2
-msgid "900 (Black)"
-msgstr "900（黑体）"
-
-#: blocks/components/typography.js:41
-#: blocks/components/typography.js:53
-#: blocks/components/typography.js:67
-#: build/blocks.bundle.js:2
-msgid "Default"
-msgstr "默认"
-
-#: blocks/components/typography.js:42
-#: blocks/components/typography.js:57
-#: blocks/components/typography.js:68
-#: blocks/shops-page/template-1/edit.js:271
-#: blocks/shops-page/template-1/edit.js:369
-#: blocks/shops-page/template-2/edit.js:272
-#: blocks/shops-page/template-2/edit.js:370
-#: blocks/shops-page/template-3/edit.js:294
-#: blocks/shops-page/template-3/edit.js:392
-#: build/blocks.bundle.js:2
-msgid "Normal"
-msgstr "常规"
-
-#: blocks/components/typography.js:43
-#: build/blocks.bundle.js:2
-msgid "Bold"
-msgstr "粗体"
-
-#: blocks/components/typography.js:50
-#: build/blocks.bundle.js:2
-msgid "Text Transform"
-msgstr "文本转换"
-
-#: blocks/components/typography.js:54
-#: build/blocks.bundle.js:2
-msgid "Uppercase"
-msgstr "大写"
-
-#: blocks/components/typography.js:55
-#: build/blocks.bundle.js:2
-msgid "Lowercase"
-msgstr "小写"
-
-#: blocks/components/typography.js:56
-#: build/blocks.bundle.js:2
-msgid "Capitalize"
-msgstr "首字母大写"
-
-#: blocks/components/typography.js:64
-#: build/blocks.bundle.js:2
-msgid "Text Style"
-msgstr "文本样式"
-
-#: blocks/components/typography.js:69
-#: build/blocks.bundle.js:2
-msgid "Italic"
-msgstr "斜体"
-
-#: blocks/components/typography.js:70
-#: build/blocks.bundle.js:2
-msgid "Oblique"
-msgstr "倾斜体"
-
-#: blocks/components/typography.js:77
-#: build/blocks.bundle.js:2
-msgid "Text Decoration"
-msgstr "文本修饰"
 
 #: blocks/components/typography.js:80
 #: build/blocks.bundle.js:2
@@ -8458,161 +8104,6 @@ msgstr "文本修饰"
 msgid "None"
 msgstr "无"
 
-#: blocks/components/typography.js:81
-#: build/blocks.bundle.js:2
-msgid "Underline"
-msgstr "下划线"
-
-#: blocks/components/typography.js:82
-#: build/blocks.bundle.js:2
-msgid "Overline"
-msgstr "上划线"
-
-#: blocks/components/typography.js:84
-#: build/blocks.bundle.js:2
-msgid "Line Through"
-msgstr "删除线"
-
-#: blocks/components/typography.js:93
-#: build/blocks.bundle.js:2
-msgid "Line Height"
-msgstr "行高"
-
-#: blocks/components/typography.js:102
-#: build/blocks.bundle.js:2
-msgid "Word Spacing"
-msgstr "字间距"
-
-#: blocks/shops-page/template-1/components/Filters.js:157
-#: blocks/shops-page/template-2/components/Filters.js:157
-#: blocks/shops-page/template-3/components/Filters.js:103
-#: build/blocks.bundle.js:2
-msgid "Price Range"
-msgstr "价格区间"
-
-#: blocks/shops-page/template-1/components/Filters.js:244
-#: blocks/shops-page/template-2/components/Filters.js:76
-#: build/blocks.bundle.js:2
-msgid " Search"
-msgstr " 搜索"
-
-#: blocks/shops-page/template-1/components/Rating.js:25
-#: blocks/shops-page/template-2/components/Rating.js:25
-#: blocks/shops-page/template-3/components/Rating.js:25
-#: build/blocks.bundle.js:2
-msgid "full star"
-msgstr "满星"
-
-#: blocks/shops-page/template-1/components/Rating.js:39
-#: blocks/shops-page/template-2/components/Rating.js:39
-#: blocks/shops-page/template-3/components/Rating.js:39
-#: build/blocks.bundle.js:2
-msgid "half star"
-msgstr "半星"
-
-#: blocks/shops-page/template-1/components/Rating.js:53
-#: blocks/shops-page/template-2/components/Rating.js:53
-#: blocks/shops-page/template-3/components/Rating.js:53
-#: build/blocks.bundle.js:2
-msgid "empty star"
-msgstr "空星"
-
-#: blocks/shops-page/template-1/edit.js:68
-#: blocks/shops-page/template-2/edit.js:68
-#: blocks/shops-page/template-3/edit.js:71
-#: build/blocks.bundle.js:2
-msgid "Product Settings"
-msgstr "商品设置"
-
-#: blocks/shops-page/template-1/edit.js:70
-#: blocks/shops-page/template-2/edit.js:70
-#: blocks/shops-page/template-3/edit.js:73
-#: build/blocks.bundle.js:2
-msgid "Products Per Page"
-msgstr "每页商品数量"
-
-#: blocks/shops-page/template-1/edit.js:79
-#: blocks/shops-page/template-2/edit.js:79
-#: blocks/shops-page/template-3/edit.js:83
-#: build/blocks.bundle.js:2
-msgid "Grid Settings"
-msgstr "网格设置"
-
-#: blocks/shops-page/template-1/edit.js:81
-#: blocks/shops-page/template-2/edit.js:81
-#: blocks/shops-page/template-3/edit.js:86
-#: build/blocks.bundle.js:2
-msgid "Show Filters"
-msgstr "显示筛选器"
-
-#: blocks/shops-page/template-1/edit.js:87
-#: blocks/shops-page/template-2/edit.js:87
-#: blocks/shops-page/template-3/edit.js:92
-#: build/blocks.bundle.js:2
-msgid "Show Pagination"
-msgstr "显示分页"
-
-#: blocks/shops-page/template-1/edit.js:93
-#: blocks/shops-page/template-2/edit.js:93
-#: blocks/shops-page/template-3/edit.js:104
-#: build/blocks.bundle.js:2
-msgid "Number of Columns"
-msgstr "列数"
-
-#: blocks/shops-page/template-1/edit.js:102
-#: blocks/shops-page/template-2/edit.js:127
-#: blocks/shops-page/template-3/edit.js:114
-#: build/blocks.bundle.js:2
-msgid "Product Title"
-msgstr "商品标题"
-
-#: blocks/shops-page/template-1/edit.js:108
-#: blocks/shops-page/template-1/edit.js:289
-#: blocks/shops-page/template-1/edit.js:387
-#: blocks/shops-page/template-2/edit.js:133
-#: blocks/shops-page/template-2/edit.js:290
-#: blocks/shops-page/template-2/edit.js:388
-#: blocks/shops-page/template-3/edit.js:120
-#: blocks/shops-page/template-3/edit.js:312
-#: blocks/shops-page/template-3/edit.js:410
-#: build/blocks.bundle.js:2
-msgid "Text Color"
-msgstr "文本颜色"
-
-#: blocks/shops-page/template-1/edit.js:115
-#: blocks/shops-page/template-2/edit.js:140
-#: blocks/shops-page/template-3/edit.js:127
-#: build/blocks.bundle.js:2
-msgid "Hover Text Color"
-msgstr "悬停文本颜色"
-
-#: blocks/shops-page/template-1/edit.js:134
-#: blocks/shops-page/template-2/edit.js:103
-#: build/blocks.bundle.js:2
-msgid "Product Category"
-msgstr "商品分类"
-
-#: blocks/shops-page/template-1/edit.js:158
-#: blocks/shops-page/template-2/edit.js:159
-#: blocks/shops-page/template-3/edit.js:181
-#: build/blocks.bundle.js:2
-msgid "Product Rating"
-msgstr "商品评分"
-
-#: blocks/shops-page/template-1/edit.js:161
-#: blocks/shops-page/template-2/edit.js:162
-#: blocks/shops-page/template-3/edit.js:184
-#: build/blocks.bundle.js:2
-msgid "Star Size"
-msgstr "星星大小"
-
-#: blocks/shops-page/template-1/edit.js:189
-#: blocks/shops-page/template-2/edit.js:190
-#: blocks/shops-page/template-3/edit.js:212
-#: build/blocks.bundle.js:2
-msgid "Product Price"
-msgstr "商品价格"
-
 #: blocks/shops-page/template-1/edit.js:197
 #: blocks/shops-page/template-2/edit.js:198
 #: blocks/shops-page/template-3/edit.js:220
@@ -8631,74 +8122,6 @@ msgstr "原价"
 msgid "Sale Price"
 msgstr "促销价"
 
-#: blocks/shops-page/template-1/edit.js:262
-#: blocks/shops-page/template-2/edit.js:263
-#: blocks/shops-page/template-3/edit.js:285
-#: build/blocks.bundle.js:2
-msgid "Cart Button"
-msgstr "购物车按钮"
-
-#: blocks/shops-page/template-1/edit.js:276
-#: blocks/shops-page/template-1/edit.js:374
-#: blocks/shops-page/template-2/edit.js:277
-#: blocks/shops-page/template-2/edit.js:375
-#: blocks/shops-page/template-3/edit.js:299
-#: blocks/shops-page/template-3/edit.js:397
-#: build/blocks.bundle.js:2
-msgid "Hover"
-msgstr "悬停"
-
-#: blocks/shops-page/template-1/edit.js:295
-#: blocks/shops-page/template-1/edit.js:393
-#: blocks/shops-page/template-2/edit.js:296
-#: blocks/shops-page/template-2/edit.js:394
-#: blocks/shops-page/template-3/edit.js:318
-#: blocks/shops-page/template-3/edit.js:416
-#: build/blocks.bundle.js:2
-msgid "Background Color"
-msgstr "背景颜色"
-
-#: blocks/shops-page/template-1/edit.js:301
-#: blocks/shops-page/template-2/edit.js:302
-#: blocks/shops-page/template-3/edit.js:324
-#: build/blocks.bundle.js:2
-msgid "Focus Text Color"
-msgstr "聚焦文本颜色"
-
-#: blocks/shops-page/template-1/edit.js:308
-#: blocks/shops-page/template-2/edit.js:309
-#: blocks/shops-page/template-3/edit.js:331
-#: build/blocks.bundle.js:2
-msgid "Focus Background Color"
-msgstr "聚焦背景颜色"
-
-#: blocks/shops-page/template-1/edit.js:332
-#: blocks/shops-page/template-1/edit.js:417
-#: blocks/shops-page/template-2/edit.js:333
-#: blocks/shops-page/template-2/edit.js:418
-#: blocks/shops-page/template-3/edit.js:355
-#: blocks/shops-page/template-3/edit.js:440
-#: build/blocks.bundle.js:2
-msgid "Text Color (Hover)"
-msgstr "文本颜色（悬停）"
-
-#: blocks/shops-page/template-1/edit.js:338
-#: blocks/shops-page/template-1/edit.js:423
-#: blocks/shops-page/template-2/edit.js:339
-#: blocks/shops-page/template-2/edit.js:424
-#: blocks/shops-page/template-3/edit.js:361
-#: blocks/shops-page/template-3/edit.js:446
-#: build/blocks.bundle.js:2
-msgid "Background Color (Hover)"
-msgstr "背景颜色（悬停）"
-
-#: blocks/shops-page/template-1/edit.js:360
-#: blocks/shops-page/template-2/edit.js:361
-#: blocks/shops-page/template-3/edit.js:383
-#: build/blocks.bundle.js:2
-msgid "Checkout Button"
-msgstr "结账按钮"
-
 #: blocks/shops-page/template-1/edit.js:763
 #: blocks/shops-page/template-2/edit.js:716
 #: blocks/shops-page/template-3/components/GridView.jsx:188
@@ -8707,45 +8130,6 @@ msgstr "结账按钮"
 msgid "Add To Cart"
 msgstr "加入购物车"
 
-#: blocks/shops-page/template-3/edit.js:98
-#: build/blocks.bundle.js:2
-msgid "Show Sort By"
-msgstr "显示排序方式"
-
-#: blocks/shops-page/template-3/edit.js:153
-#: build/blocks.bundle.js:2
-msgid "Description Color"
-msgstr "描述颜色"
-
-#: blocks/shops-page/template-3/edit.js:160
-#: build/blocks.bundle.js:2
-msgid "Hover Description Color"
-msgstr "悬停描述颜色"
-
-#: blocks/single-product/add-to-cart/edit.js:32
-#: blocks/single-product/attributes/edit.js:106
-#: blocks/single-product/gallery/edit.js:105
-#: blocks/single-product/price/edit.js:46
-#: blocks/single-product/product-tab/edit.js:72
-#: blocks/single-product/rating/edit.js:55
-#: blocks/single-product/stock/edit.js:63
-#: blocks/single-product/summary/edit.js:46
-#: blocks/single-product/thumbnail/edit.js:39
-#: blocks/single-product/title/edit.js:68
-#: build/blocks.bundle.js:2
-msgid "Post type is not product."
-msgstr "文章类型不是 product。"
-
-#: blocks/single-product/gallery/inspector.js:15
-#: build/blocks.bundle.js:2
-msgid "Number of Gallery Item"
-msgstr "图库项数量"
-
-#: blocks/single-product/price/inspector.js:16
-#: build/blocks.bundle.js:2
-msgid "Show Tax included"
-msgstr "显示含税"
-
 #: blocks/single-product/product-tab/components/sku.js:7
 #: blocks/single-product/rating/components/sku.js:7
 #: build/blocks.bundle.js:2
@@ -8753,50 +8137,6 @@ msgstr "显示含税"
 #: spa/admin/easycommerce/pages/Reports/components/singleProduct/ProductInfo.jsx:74
 msgid "SKU:"
 msgstr "SKU："
-
-#: blocks/single-product/product-tab/inspector.js:16
-#: blocks/single-product/rating/inspector.js:17
-#: build/blocks.bundle.js:2
-msgid "Show Rating"
-msgstr "显示评分"
-
-#: blocks/single-product/rating/inspector.js:26
-#: build/blocks.bundle.js:2
-msgid "Show SKU"
-msgstr "显示 SKU"
-
-#: blocks/single-product/rating/inspector.js:35
-#: build/blocks.bundle.js:2
-msgid "Show Favourite"
-msgstr "显示收藏"
-
-#: blocks/single-product/rating/inspector.js:43
-#: blocks/single-product/title/inspector.js:26
-#: build/blocks.bundle.js:2
-msgid "Styles"
-msgstr "样式"
-
-#: blocks/single-product/rating/inspector.js:46
-#: build/blocks.bundle.js:2
-msgid "Border"
-msgstr "边框"
-
-#. translators: %d: number of items left in stock.
-#: blocks/single-product/stock/edit.js:45
-#: build/blocks.bundle.js:2
-msgid "Only <strong>%d</strong> item left in stock"
-msgid_plural "Only <strong>%d</strong> items left in stock"
-msgstr[0] "库存仅剩 <strong>%d</strong> 件"
-
-#: blocks/single-product/title/inspector.js:18
-#: build/blocks.bundle.js:2
-msgid "Primary"
-msgstr "主色"
-
-#: blocks/single-product/title/inspector.js:19
-#: build/blocks.bundle.js:2
-msgid "Body Light"
-msgstr "正文浅色"
 
 #: blocks/single-product/title/inspector.js:20
 #: build/blocks.bundle.js:2
@@ -8999,38 +8339,6 @@ msgstr "请在下方输入您的新密码。"
 msgid "Resetting..."
 msgstr "重置中……"
 
-#: build/blocks.bundle.js:2
-msgid "Dropdown Icon"
-msgstr "下拉图标"
-
-#: build/blocks.bundle.js:2
-msgid "Showing %1$d-%2$d of %3$d Results"
-msgstr "显示第 %1$d-%2$d 项，共 %3$d 项结果"
-
-#: build/blocks.bundle.js:2
-msgid "Default Sorter"
-msgstr "默认排序"
-
-#: build/checkout.bundle.js:2
-msgid "Address line 1"
-msgstr "地址第 1 行"
-
-#: build/checkout.bundle.js:2
-msgid "Your address"
-msgstr "您的地址"
-
-#: build/checkout.bundle.js:2
-msgid "Address line 2"
-msgstr "地址第 2 行"
-
-#: build/checkout.bundle.js:2
-msgid "Select your City"
-msgstr "选择您的城市"
-
-#: build/checkout.bundle.js:2
-msgid "Select your State"
-msgstr "选择您的州/省"
-
 #: build/checkout.bundle.js:2
 #: build/dashboard.bundle.js:2
 #: spa/public/dashboard/components/tabs/Address/Components/BillingAddress.jsx:156
@@ -9038,50 +8346,6 @@ msgstr "选择您的州/省"
 #: spa/public/dashboard/components/tabs/Profile/index.jsx:260
 msgid "Select your country"
 msgstr "选择您的国家/地区"
-
-#: build/checkout.bundle.js:2
-msgid "Postal Code"
-msgstr "邮政编码"
-
-#: build/checkout.bundle.js:2
-msgid "Your Orders"
-msgstr "您的订单"
-
-#: build/checkout.bundle.js:2
-msgid "Shipping Eastimate"
-msgstr "预估运费"
-
-#: build/checkout.bundle.js:2
-msgid "Tax Eastimate"
-msgstr "预估税费"
-
-#: build/checkout.bundle.js:2
-msgid "Debit / Credit card"
-msgstr "借记卡/信用卡"
-
-#: build/checkout.bundle.js:2
-msgid "Internet banking"
-msgstr "网上银行"
-
-#: build/checkout.bundle.js:2
-msgid "Google / Apple Wallet"
-msgstr "Google / Apple 钱包"
-
-#: build/checkout.bundle.js:2
-msgid "Name on Card"
-msgstr "卡上姓名"
-
-#: build/checkout.bundle.js:2
-msgid "Enter card holder name"
-msgstr "请输入持卡人姓名"
-
-#: build/checkout.bundle.js:2
-msgid "Expiration date (MM/YY)"
-msgstr "有效期（MM/YY）"
-
-#: build/checkout.bundle.js:2
-msgid "Learn more Taxes and Shipping information"
-msgstr "了解更多税费和配送信息"
 
 #: build/dashboard.bundle.js:2
 #: spa/public/dashboard/components/Sidebar/index.jsx:31
@@ -9367,14 +8631,6 @@ msgstr "选择图片"
 #: spa/admin/easycommerce/pages/Products/components/ProductDesc/index.jsx:23
 msgid "Use selected image"
 msgstr "使用所选图片"
-
-#: build/dashboard.bundle.js:2
-msgid "user"
-msgstr "用户"
-
-#: build/dashboard.bundle.js:2
-msgid "camera"
-msgstr "相机"
 
 #: build/dashboard.bundle.js:2
 #: spa/public/dashboard/components/tabs/Profile/elements/ProfileSkeleton.jsx:11
@@ -9678,16 +8934,6 @@ msgstr "未找到订单数据"
 
 #: build/easycommerce.bundle.js:2
 #: build/settings.bundle.js:2
-msgid "Your Voice Matters"
-msgstr "您的声音很重要"
-
-#: build/easycommerce.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Help us make EasyCommerce the best it can be. Share your feedback and ideas with us!"
-msgstr "帮助我们把 EasyCommerce 打造得尽善尽美。请与我们分享您的反馈和想法！"
-
-#: build/easycommerce.bundle.js:2
-#: build/settings.bundle.js:2
 #: spa/admin/easycommerce/pages/Customers/AddNew/index.jsx:145
 msgid "Enter first name"
 msgstr "请输入名字"
@@ -9697,26 +8943,6 @@ msgstr "请输入名字"
 #: spa/admin/easycommerce/pages/Customers/AddNew/index.jsx:234
 msgid "Enter a valid email address"
 msgstr "请输入有效的电子邮箱地址"
-
-#: build/easycommerce.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Send Message"
-msgstr "发送消息"
-
-#: build/easycommerce.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Thank you for your feedback"
-msgstr "感谢您的反馈"
-
-#: build/easycommerce.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "We will use your feedback to build a better experience for everyone."
-msgstr "我们将根据您的反馈，为每位用户打造更好的体验。"
-
-#: build/easycommerce.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Feedback"
-msgstr "反馈"
 
 #: build/easycommerce.bundle.js:2
 #: build/settings.bundle.js:2
@@ -9792,21 +9018,6 @@ msgid "Remaining"
 msgstr "剩余"
 
 #: build/easycommerce.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Network response was not okay"
-msgstr "网络响应异常"
-
-#: build/easycommerce.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "No answer found"
-msgstr "未找到答案"
-
-#: build/easycommerce.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Ask a Question"
-msgstr "提问"
-
-#: build/easycommerce.bundle.js:2
 #: build/editor.bundle.js:2
 #: build/settings.bundle.js:2
 #: spa/admin/easycommerce/pages/Products/components/common/AiGenerate/AiEnhanceImage.jsx:371
@@ -9818,183 +9029,11 @@ msgid "No credits available"
 msgstr "没有可用额度"
 
 #: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Two AI Agents, One Free Key"
-msgstr "两个 AI 智能体，一个免费密钥"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Connect a free API key -"
-msgstr "连接一个免费的 API 密钥 -"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "100 AI credits"
-msgstr "100 个 AI 额度"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "free, more with"
-msgstr "免费，更多请升级"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Store Copilot - For You"
-msgstr "店铺副驾驶 - 为您服务"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Chat to run your store: ask about sales, create and edit products, and update orders - in plain English, with your approval."
-msgstr "通过聊天管理您的店铺：查询销售情况、创建和编辑商品、更新订单——用日常语言即可完成，且需经您确认。"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Shopping Agent - For Your Shoppers"
-msgstr "购物智能体 - 为您的顾客服务"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "A 24/7 storefront agent that helps customers find the right product, answers their questions, and places orders for them."
-msgstr "全天候的店铺智能体，帮助客户找到合适的商品、解答他们的疑问，并为他们下单。"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Plus"
-msgstr "另外"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "& more."
-msgstr "等更多功能。"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Each AI request transmits only the relevant records - the item you're working on, or a shopper's query and its products - to EasyCommerce's AI service. Your bulk customer and order data is never uploaded, sold, or used to train models."
-msgstr "每次 AI 请求仅将相关记录——您正在处理的商品，或顾客的查询及其相关商品——传输至 EasyCommerce 的 AI 服务。您的批量客户和订单数据绝不会被上传、出售或用于训练模型。"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Learn more."
-msgstr "了解更多。"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "I have an API key"
-msgstr "我已有 API 密钥"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "I want an API key"
-msgstr "我想要一个 API 密钥"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Please fill all the fields"
-msgstr "请填写所有字段"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Enter Your Connection Key"
-msgstr "输入您的连接密钥"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "The link in your email connects AI automatically. To do it manually, paste the key we emailed below."
-msgstr "邮件中的链接会自动连接 AI。若要手动连接，请将我们发送到邮箱的密钥粘贴到下方。"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Your Key"
-msgstr "您的密钥"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Paste your key"
-msgstr "粘贴您的密钥"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "I don't have a key"
-msgstr "我没有密钥"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Check your email and click the link to connect AI."
-msgstr "请查看您的电子邮箱并点击链接以连接 AI。"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Connect EasyCommerce AI"
-msgstr "连接 EasyCommerce AI"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Enter your name and email - we'll send a one-click link to connect AI, plus a backup key."
-msgstr "请输入您的姓名和电子邮箱——我们将发送一个一键连接 AI 的链接，以及一个备用密钥。"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Your Name"
-msgstr "您的姓名"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Enter your Name"
-msgstr "请输入您的姓名"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Email My Link"
-msgstr "将链接发送到我的邮箱"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "I already have a key"
-msgstr "我已有密钥"
-
-#: build/easycommerce.bundle.js:2
 #: build/settings.bundle.js:2
 #: spa/admin/easycommerce/pages/Dashboard/components/JoinCommunity.jsx:9
 #: spa/admin/easycommerce/pages/Dashboard/components/JoinCommunity.jsx:19
 msgid "Join Community"
 msgstr "加入社区"
-
-#: build/easycommerce.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Support"
-msgstr "支持"
-
-#: build/easycommerce.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Disconnect"
-msgstr "断开连接"
 
 #: build/easycommerce.bundle.js:2
 #: spa/admin/common/components/Notices/NoticeItem.jsx:101
@@ -10309,10 +9348,6 @@ msgid "Select status"
 msgstr "选择状态"
 
 #: build/easycommerce.bundle.js:2
-msgid "Reset"
-msgstr "重置"
-
-#: build/easycommerce.bundle.js:2
 #: build/shipping.bundle.js:2
 #: build/tax.bundle.js:2
 #: spa/admin/common/components/DeletePopup.jsx:42
@@ -10350,54 +9385,9 @@ msgid "Delete Permanently"
 msgstr "永久删除"
 
 #: build/easycommerce.bundle.js:2
-msgid "Are you sure you want to update?"
-msgstr "您确定要更新吗？"
-
-#: build/easycommerce.bundle.js:2
-msgid "You're going to update <strong>All</strong> are you sure?"
-msgstr "您即将更新<strong>全部</strong>，确定吗？"
-
-#: build/easycommerce.bundle.js:2
-msgid "No, Keep as it is"
-msgstr "不，保持原样"
-
-#: build/easycommerce.bundle.js:2
-msgid "Yes, Update"
-msgstr "是，更新"
-
-#: build/easycommerce.bundle.js:2
-msgid "Product deleted"
-msgid_plural "Products deleted"
-msgstr[0] "商品已删除"
-
-#: build/easycommerce.bundle.js:2
-msgid "Delete failed."
-msgstr "删除失败。"
-
-#: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/Help/index.jsx:100
 msgid "Something went wrong."
 msgstr "出错了。"
-
-#: build/easycommerce.bundle.js:2
-msgid "Set Status"
-msgstr "设置状态"
-
-#: build/easycommerce.bundle.js:2
-msgid "Status updated successfully"
-msgstr "状态更新成功"
-
-#: build/easycommerce.bundle.js:2
-msgid "Failed to update products."
-msgstr "更新商品失败。"
-
-#: build/easycommerce.bundle.js:2
-msgid "An error occurred while updating statuses."
-msgstr "更新状态时发生错误。"
-
-#: build/easycommerce.bundle.js:2
-msgid "Please select a valid status."
-msgstr "请选择一个有效的状态。"
 
 #: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/Products/ImportModal.jsx:22
@@ -10939,50 +9929,6 @@ msgid "Loading attribute..."
 msgstr "正在加载属性……"
 
 #: build/easycommerce.bundle.js:2
-msgid "Attribute name are required!"
-msgstr "属性名称为必填项！"
-
-#: build/easycommerce.bundle.js:2
-msgid "Attribute slug are required!"
-msgstr "属性别名为必填项！"
-
-#: build/easycommerce.bundle.js:2
-msgid "Attribute name already exists!"
-msgstr "属性名称已存在！"
-
-#: build/easycommerce.bundle.js:2
-msgid "Attribute slug already exists!"
-msgstr "属性别名已存在！"
-
-#: build/easycommerce.bundle.js:2
-msgid "Option %d must have a label!"
-msgstr "选项 %d 必须有标签！"
-
-#: build/easycommerce.bundle.js:2
-msgid "Option %d must have a label and image"
-msgstr "选项 %d 必须有标签和图片"
-
-#: build/easycommerce.bundle.js:2
-msgid "Option %d must have a label and color"
-msgstr "选项 %d 必须有标签和颜色"
-
-#: build/easycommerce.bundle.js:2
-msgid "Duplicate option labels are not allowed!"
-msgstr "不允许使用重复的选项标签！"
-
-#: build/easycommerce.bundle.js:2
-msgid "Attribute updated successfully!"
-msgstr "属性更新成功！"
-
-#: build/easycommerce.bundle.js:2
-msgid "Attribute created successfully!"
-msgstr "属性创建成功！"
-
-#: build/easycommerce.bundle.js:2
-msgid "It'll show on the single product screen"
-msgstr "它将显示在单个商品页面上"
-
-#: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/Brands/index.jsx:339
 #: spa/admin/easycommerce/pages/Categories/index.jsx:340
 #: spa/admin/easycommerce/pages/Products/components/Organize/Modals/BrandModal.jsx:164
@@ -10993,38 +9939,10 @@ msgid "Enter Name"
 msgstr "请输入名称"
 
 #: build/easycommerce.bundle.js:2
-msgid "URL-friendly slug of the attribute"
-msgstr "属性的 URL 友好别名"
-
-#: build/easycommerce.bundle.js:2
-msgid "How customers will see this on the single product screen"
-msgstr "客户在单个商品页面上看到的显示方式"
-
-#: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/Attributes/components/Table.jsx:131
 #: spa/admin/easycommerce/pages/Products/components/ProductAttr/components/AttributeModal/components/AttributeSelectionTable.jsx:161
 msgid "Options"
 msgstr "选项"
-
-#: build/easycommerce.bundle.js:2
-msgid "Options of the attribute"
-msgstr "属性的选项"
-
-#: build/easycommerce.bundle.js:2
-msgid "Select an Image"
-msgstr "选择一张图片"
-
-#: build/easycommerce.bundle.js:2
-msgid "Use this image"
-msgstr "使用此图片"
-
-#: build/easycommerce.bundle.js:2
-msgid "Update Attribute"
-msgstr "更新属性"
-
-#: build/easycommerce.bundle.js:2
-msgid "Create Attribute"
-msgstr "创建属性"
 
 #: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/Attributes/components/Table.jsx:90
@@ -12119,78 +11037,14 @@ msgid "An error occurred while updating status"
 msgstr "更新状态时发生错误"
 
 #: build/easycommerce.bundle.js:2
-msgid "Please enter an amount greater than 0 before refunding"
-msgstr "退款前请输入大于 0 的金额"
-
-#: build/easycommerce.bundle.js:2
-msgid "Failed to process refund. Please try again."
-msgstr "处理退款失败。请重试。"
-
-#: build/easycommerce.bundle.js:2
-msgid "Please enter the Refund Transaction ID."
-msgstr "请输入退款交易 ID。"
-
-#: build/easycommerce.bundle.js:2
-msgid "Please enter an amount before refunding"
-msgstr "退款前请输入金额"
-
-#: build/easycommerce.bundle.js:2
-msgid "Please select a reason before refunding"
-msgstr "退款前请选择原因"
-
-#: build/easycommerce.bundle.js:2
-msgid "Refund Payment"
-msgstr "退款"
-
-#: build/easycommerce.bundle.js:2
-msgid "Refundable"
-msgstr "可退款"
-
-#: build/easycommerce.bundle.js:2
-msgid "Refund Amount"
-msgstr "退款金额"
-
-#: build/easycommerce.bundle.js:2
-msgid "Enter amount"
-msgstr "请输入金额"
-
-#: build/easycommerce.bundle.js:2
-msgid "Refund Reason"
-msgstr "退款原因"
-
-#: build/easycommerce.bundle.js:2
-msgid "Select Refund Reason"
-msgstr "选择退款原因"
-
-#: build/easycommerce.bundle.js:2
-msgid "For %s, refunds should be processed manually outside of the system. After succesful processing, enter the Refund Transaction ID"
-msgstr "对于 %s，退款应在系统外手动处理。处理成功后，请输入退款交易 ID"
-
-#: build/easycommerce.bundle.js:2
-msgid "Enter Refund Transaction ID"
-msgstr "请输入退款交易 ID"
-
-#: build/easycommerce.bundle.js:2
-msgid "Refund now"
-msgstr "立即退款"
-
-#: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/Refunds/components/RefundsTable.jsx:7
 msgid "ID"
 msgstr "ID"
 
 #: build/easycommerce.bundle.js:2
-msgid "Fulfillment"
-msgstr "履约"
-
-#: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/Customers/SingleCustomer/index.jsx:220
 msgid "Transactions ID"
 msgstr "交易 ID"
-
-#: build/easycommerce.bundle.js:2
-msgid "Date & Time"
-msgstr "日期和时间"
 
 #: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/Orders/SingleOrder/components/OrderInfo.jsx:69
@@ -12212,23 +11066,6 @@ msgstr "选择日期范围"
 msgid "Calendar"
 msgstr "日历"
 
-#: build/easycommerce.bundle.js:2
-msgid "eg. 12 Sep - 28 Oct 2025"
-msgstr "例如：2025 年 9 月 12 日 - 10 月 28 日"
-
-#: build/easycommerce.bundle.js:2
-msgid "Order deleted permanently"
-msgid_plural "Orders deleted permanently"
-msgstr[0] "订单已永久删除"
-
-#: build/easycommerce.bundle.js:2
-msgid "Something went wrong while deleting."
-msgstr "删除时出错。"
-
-#: build/easycommerce.bundle.js:2
-msgid "Fulfill Status"
-msgstr "履约状态"
-
 #. translators: %d: number of orders placed in the country.
 #: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/Reports/components/common/GeoMap.jsx:248
@@ -12236,14 +11073,6 @@ msgstr "履约状态"
 msgid "%d order"
 msgid_plural "%d orders"
 msgstr[0] "%d 个订单"
-
-#: build/easycommerce.bundle.js:2
-msgid "Failed to update orders."
-msgstr "更新订单失败。"
-
-#: build/easycommerce.bundle.js:2
-msgid "Please select a status to update."
-msgstr "请选择要更新的状态。"
 
 #. translators: %s: order status label (e.g. Pending).
 #: build/easycommerce.bundle.js:2
@@ -12274,22 +11103,6 @@ msgid ""
 msgstr ""
 "您的店铺中没有 %s 订单。请继续推广\n"
 "您的店铺，以带来第一笔销售。"
-
-#: build/easycommerce.bundle.js:2
-msgid "Resend Order Email"
-msgstr "重新发送订单邮件"
-
-#: build/easycommerce.bundle.js:2
-msgid "Email Event"
-msgstr "邮件事件"
-
-#: build/easycommerce.bundle.js:2
-msgid "Select an event"
-msgstr "选择一个事件"
-
-#: build/easycommerce.bundle.js:2
-msgid "Email sent"
-msgstr "邮件已发送"
 
 #: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/Orders/components/OrderActions.jsx:63
@@ -12328,10 +11141,6 @@ msgid "Payment URL"
 msgstr "支付 URL"
 
 #: build/easycommerce.bundle.js:2
-msgid "date"
-msgstr "日期"
-
-#: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/Customers/components/CustomerTable.jsx:52
 #: spa/admin/easycommerce/pages/Customers/components/TableHeader.jsx:25
 #: spa/admin/easycommerce/pages/Customers/SingleCustomer/components/CustomerDetails.jsx:112
@@ -12356,54 +11165,6 @@ msgstr "原因"
 #: spa/admin/easycommerce/pages/Orders/SingleOrder/components/Refunds.jsx:42
 msgid "Refunded By"
 msgstr "退款操作者"
-
-#: build/easycommerce.bundle.js:2
-msgid "Add Note"
-msgstr "添加备注"
-
-#: build/easycommerce.bundle.js:2
-msgid "Required"
-msgstr "必填"
-
-#: build/easycommerce.bundle.js:2
-msgid "Write your note here"
-msgstr "在此填写您的备注"
-
-#: build/easycommerce.bundle.js:2
-msgid "Note To Customer"
-msgstr "给客户的备注"
-
-#: build/easycommerce.bundle.js:2
-msgid "Unable to save note. The database may need to be updated. Please contact your administrator."
-msgstr "无法保存备注。数据库可能需要更新。请联系您的管理员。"
-
-#: build/easycommerce.bundle.js:2
-msgid "Delete Note"
-msgstr "删除备注"
-
-#: build/easycommerce.bundle.js:2
-msgid "Are you sure you want to delete this note? This action cannot be undone."
-msgstr "您确定要删除此备注吗？此操作无法撤销。"
-
-#: build/easycommerce.bundle.js:2
-msgid "Unable to delete note. Please try again or contact your administrator."
-msgstr "无法删除备注。请重试或联系您的管理员。"
-
-#: build/easycommerce.bundle.js:2
-msgid "Order doesn't exist"
-msgstr "订单不存在"
-
-#: build/easycommerce.bundle.js:2
-msgid "Failed to fetch order data"
-msgstr "获取订单数据失败"
-
-#: build/easycommerce.bundle.js:2
-msgid "Unknown"
-msgstr "未知"
-
-#: build/easycommerce.bundle.js:2
-msgid "eg. %1$s - %2$s %3$s"
-msgstr "例如：%1$s - %2$s %3$s"
 
 #: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/Transactions/index.jsx:50
@@ -12590,26 +11351,9 @@ msgid "Something went wrong while updating coupon status"
 msgstr "更新优惠券状态时出错"
 
 #: build/easycommerce.bundle.js:2
-msgid "No coupons found"
-msgstr "未找到优惠券"
-
-#: build/easycommerce.bundle.js:2
-msgid "All type of Coupons activities will appear here once they occur."
-msgstr "所有类型的优惠券活动发生后都将显示在此处。"
-
-#: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/App.jsx:404
 msgid "Add Coupon"
 msgstr "添加优惠券"
-
-#: build/easycommerce.bundle.js:2
-msgid "Coupons deleted successfully"
-msgstr "优惠券删除成功"
-
-#: build/easycommerce.bundle.js:2
-msgid "%d coupon"
-msgid_plural "%d coupons"
-msgstr[0] "%d 张优惠券"
 
 #: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/Coupons/CouponDetails/elements/General.jsx:35
@@ -12631,10 +11375,6 @@ msgstr "此选项卡下未找到优惠券。"
 #: spa/admin/easycommerce/pages/Coupons/CouponDetails/index.jsx:241
 msgid "Create Coupon"
 msgstr "创建优惠券"
-
-#: build/easycommerce.bundle.js:2
-msgid "Coupon Deleted"
-msgstr "优惠券已删除"
 
 #: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/Coupons/CouponDetails/elements/General.jsx:27
@@ -12687,34 +11427,6 @@ msgid "Search for products"
 msgstr "搜索商品"
 
 #: build/easycommerce.bundle.js:2
-msgid "Conditions"
-msgstr "条件"
-
-#: build/easycommerce.bundle.js:2
-msgid "Discount applies to specific products?"
-msgstr "折扣是否适用于特定商品？"
-
-#: build/easycommerce.bundle.js:2
-msgid "Minimum Spend"
-msgstr "最低消费"
-
-#: build/easycommerce.bundle.js:2
-msgid "Maximum Spend"
-msgstr "最高消费"
-
-#: build/easycommerce.bundle.js:2
-msgid "Start Date"
-msgstr "开始日期"
-
-#: build/easycommerce.bundle.js:2
-msgid "calendar"
-msgstr "日历"
-
-#: build/easycommerce.bundle.js:2
-msgid "End Date"
-msgstr "结束日期"
-
-#: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/App.jsx:402
 #: spa/admin/easycommerce/pages/Coupons/CouponDetails/index.jsx:241
 msgid "Edit Coupon"
@@ -12746,18 +11458,6 @@ msgid "Save as Active"
 msgstr "保存为启用"
 
 #: build/easycommerce.bundle.js:2
-msgid "(No Name)"
-msgstr "（无名称）"
-
-#: build/easycommerce.bundle.js:2
-msgid "+%d more"
-msgstr "还有 %d 个"
-
-#: build/easycommerce.bundle.js:2
-msgid "Remind"
-msgstr "提醒"
-
-#: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/AbandonedCart/components/NotFound.jsx:6
 msgid "No Abandoned Carts found"
 msgstr "未找到弃购购物车"
@@ -12766,43 +11466,6 @@ msgstr "未找到弃购购物车"
 #: spa/admin/easycommerce/pages/AbandonedCart/components/NotFound.jsx:20
 msgid "All Abandoned Carts will appear here once they occur."
 msgstr "所有弃购购物车出现后都将显示在此处。"
-
-#: build/easycommerce.bundle.js:2
-msgid "Are you sure you want to send reminder?"
-msgstr "您确定要发送提醒吗？"
-
-#: build/easycommerce.bundle.js:2
-msgid "You're going to Remind"
-msgstr "您即将提醒"
-
-#: build/easycommerce.bundle.js:2
-msgid "selected?"
-msgstr "个所选购物车？"
-
-#: build/easycommerce.bundle.js:2
-msgid "Don't Send"
-msgstr "不发送"
-
-#: build/easycommerce.bundle.js:2
-msgid "Yes, Send"
-msgstr "是，发送"
-
-#: build/easycommerce.bundle.js:2
-msgid "Remind All"
-msgstr "全部提醒"
-
-#: build/easycommerce.bundle.js:2
-msgid "carts deleted successfully"
-msgstr "购物车删除成功"
-
-#: build/easycommerce.bundle.js:2
-msgid "%d cart"
-msgid_plural "%d carts"
-msgstr[0] "%d 个购物车"
-
-#: build/easycommerce.bundle.js:2
-msgid "Reminders sent successfully"
-msgstr "提醒发送成功"
 
 #: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/AbandonedCart/components/CleanAbandonedCartModal.jsx:33
@@ -12867,22 +11530,6 @@ msgid "Abandoned Cart Deleted"
 msgstr "弃购购物车已删除"
 
 #: build/easycommerce.bundle.js:2
-msgid "Approved"
-msgstr "已批准"
-
-#: build/easycommerce.bundle.js:2
-msgid "Not Approved"
-msgstr "未批准"
-
-#: build/easycommerce.bundle.js:2
-msgid "Review #%d"
-msgstr "评价 #%d"
-
-#: build/easycommerce.bundle.js:2
-msgid "Product #%d"
-msgstr "商品 #%d"
-
-#: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/ProductReviews/components/Table/THead.jsx:8
 msgid "Review Content"
 msgstr "评价内容"
@@ -12892,10 +11539,6 @@ msgstr "评价内容"
 #: spa/admin/easycommerce/pages/Reports/components/singleProduct/Reviews.jsx:143
 msgid "Rating"
 msgstr "评分"
-
-#: build/easycommerce.bundle.js:2
-msgid "Search by customer name or content"
-msgstr "按客户姓名或内容搜索"
 
 #: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/App.jsx:412
@@ -13945,59 +12588,6 @@ msgid "Build"
 msgstr "构建"
 
 #: build/shipping.bundle.js:2
-msgid "No shipping plans configured"
-msgstr "尚未配置配送方案"
-
-#: build/shipping.bundle.js:2
-msgid "Set up shipping plans to define shipping rates by region. "
-msgstr "设置配送方案，按区域定义配送费率。 "
-
-#: build/shipping.bundle.js:2
-#: build/tax.bundle.js:2
-msgid "Read docs."
-msgstr "阅读文档。"
-
-#: build/shipping.bundle.js:2
-msgid "+ Add Plan"
-msgstr "+ 添加方案"
-
-#: build/shipping.bundle.js:2
-msgid "Min Price (%s)"
-msgstr "最低价格（%s）"
-
-#: build/shipping.bundle.js:2
-msgid "Max Price (%s)"
-msgstr "最高价格（%s）"
-
-#: build/shipping.bundle.js:2
-msgid "Min Weight"
-msgstr "最小重量"
-
-#: build/shipping.bundle.js:2
-msgid "Max Weight"
-msgstr "最大重量"
-
-#: build/shipping.bundle.js:2
-msgid "Min Quantity"
-msgstr "最小数量"
-
-#: build/shipping.bundle.js:2
-msgid "Max Quantity"
-msgstr "最大数量"
-
-#: build/shipping.bundle.js:2
-msgid "Min"
-msgstr "最小"
-
-#: build/shipping.bundle.js:2
-msgid "Max"
-msgstr "最大"
-
-#: build/shipping.bundle.js:2
-msgid "Shipping name here"
-msgstr "在此填写配送名称"
-
-#: build/shipping.bundle.js:2
 #: build/tax.bundle.js:2
 #: spa/admin/tax/src/components/TaxDetails/elements/TaxFormTopInputs.jsx:40
 msgid "Write description here"
@@ -14009,127 +12599,10 @@ msgstr "在此填写描述"
 msgid "Enable/Disable"
 msgstr "启用/禁用"
 
-#: build/shipping.bundle.js:2
-#: build/tax.bundle.js:2
-msgid "Regions"
-msgstr "区域"
-
-#: build/shipping.bundle.js:2
-msgid "Zip Code"
-msgstr "邮政编码"
-
-#: build/shipping.bundle.js:2
-msgid "Calculation Base"
-msgstr "计算基准"
-
-#: build/shipping.bundle.js:2
-msgid "Select Base"
-msgstr "选择基准"
-
-#: build/shipping.bundle.js:2
-msgid "Cart Total"
-msgstr "购物车总额"
-
-#: build/shipping.bundle.js:2
-msgid "Total Weight"
-msgstr "总重量"
-
-#: build/shipping.bundle.js:2
-msgid "Item Count"
-msgstr "商品数量"
-
-#: build/shipping.bundle.js:2
-msgid "Taxable"
-msgstr "应税"
-
-#: build/shipping.bundle.js:2
-msgid "No tax rate configured for this country."
-msgstr "尚未为此国家/地区配置税率。"
-
-#: build/shipping.bundle.js:2
-msgid "Method Name"
-msgstr "方式名称"
-
-#: build/shipping.bundle.js:2
-msgid "Shipping Fee (%s)"
-msgstr "配送费用（%s）"
-
-#: build/shipping.bundle.js:2
-msgid "Write name here"
-msgstr "在此填写名称"
-
-#: build/shipping.bundle.js:2
-msgid "Write min weight"
-msgstr "填写最小重量"
-
-#: build/shipping.bundle.js:2
-msgid "Write max weight"
-msgstr "填写最大重量"
-
-#: build/shipping.bundle.js:2
-msgid "Write your fee"
-msgstr "填写您的费用"
-
-#: build/shipping.bundle.js:2
-msgid "Calculation base is required."
-msgstr "计算基准为必填项。"
-
-#: build/shipping.bundle.js:2
-msgid "Shipping plan name is required."
-msgstr "配送方案名称为必填项。"
-
-#: build/shipping.bundle.js:2
-msgid "Update Shipping Plan"
-msgstr "更新配送方案"
-
-#: build/shipping.bundle.js:2
-msgid "Save Shipping Plan"
-msgstr "保存配送方案"
-
-#: build/shipping.bundle.js:2
-msgid "Plan"
-msgstr "方案"
-
-#: build/shipping.bundle.js:2
-msgid "Add Shipping Plan"
-msgstr "添加配送方案"
-
-#: build/shipping.bundle.js:2
-msgid "Shipping Plans"
-msgstr "配送方案"
-
-#: build/shipping.bundle.js:2
-msgid "+ New Plan"
-msgstr "+ 新建方案"
-
-#: build/tax.bundle.js:2
-msgid "No tax classes configured"
-msgstr "尚未配置税种"
-
-#: build/tax.bundle.js:2
-msgid "Set up tax classes to apply the correct tax amounts to products. "
-msgstr "设置税种，为商品应用正确的税额。 "
-
-#: build/tax.bundle.js:2
-msgid "+ Add Class"
-msgstr "+ 添加税种"
-
-#: build/tax.bundle.js:2
-msgid "Add Class"
-msgstr "添加税种"
-
-#: build/tax.bundle.js:2
-msgid "Class"
-msgstr "税种"
-
 #: build/tax.bundle.js:2
 #: spa/admin/tax/src/components/TaxDetails/elements/RegionsHeader.jsx:18
 msgid "Rate (%)"
 msgstr "税率（%）"
-
-#: build/tax.bundle.js:2
-msgid "- Select -"
-msgstr "- 选择 -"
 
 #: build/tax.bundle.js:2
 #: spa/admin/tax/src/components/TaxDetails/elements/SaveButtons.jsx:19
@@ -14312,38 +12785,6 @@ msgstr "店铺仪表盘"
 #: spa/admin/wizard/src/pages/Success.jsx:277
 msgid "Add A Product"
 msgstr "添加商品"
-
-#: build/wizard.bundle.js:2
-msgid "Set up your store name, location, and contact details"
-msgstr "设置您的店铺名称、位置和联系方式"
-
-#: build/wizard.bundle.js:2
-msgid "Create essential pages like Shop, Cart, and Checkout"
-msgstr "创建店铺、购物车、结账等必要页面"
-
-#: build/wizard.bundle.js:2
-msgid "Connect payment gateways to start accepting orders"
-msgstr "连接支付网关以开始接收订单"
-
-#: build/wizard.bundle.js:2
-msgid "Welcome to EasyCommerce"
-msgstr "欢迎使用 EasyCommerce"
-
-#: build/wizard.bundle.js:2
-msgid "Start selling in a few minutes with 3 easy steps:"
-msgstr "只需 3 个简单步骤，几分钟内即可开始销售："
-
-#: build/wizard.bundle.js:2
-msgid "Get Started Now"
-msgstr "立即开始"
-
-#: build/wizard.bundle.js:2
-msgid "Demo import failed. Please try again."
-msgstr "演示导入失败。请重试。"
-
-#: build/wizard.bundle.js:2
-msgid "Skip"
-msgstr "跳过"
 
 #: spa/admin/common/components/DragNdrop/index.jsx:58
 msgid "Drag handle"

@@ -10,7 +10,6 @@ const Delete = `${EASYCOMMERCE.assets}admin/img/icons/delete.png`;
 const Edit = `${EASYCOMMERCE.assets}admin/img/icons/edit.png`;
 const Builder = `${EASYCOMMERCE.assets}admin/img/icons/builder.png`;
 const Restore = `${EASYCOMMERCE.assets}admin/img/icons/builder.png`;
-const RedDelete = `${EASYCOMMERCE.assets}admin/img/icons/delete-hover.png`;
 const DemoImage = `${EASYCOMMERCE.assets}admin/img/icons/demo-image-hd.png`;
 
 const ProductTable = ({

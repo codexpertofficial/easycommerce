@@ -2,12 +2,6 @@ import React, { useState, useEffect } from "react";
 import { __ } from "@wordpress/i18n";
 import globalToast from "../../../../common/components/globalToast";
 const arrowDown = `${EASYCOMMERCE.assets}admin/img/icons/arrowDown.png`;
-const unfulfilledStatus = `${EASYCOMMERCE.assets}admin/img/icons/Complete.png`;
-const fulfilledStatus = `${EASYCOMMERCE.assets}admin/img/icons/Cancle.png`;
-const shippedStatus = `${EASYCOMMERCE.assets}admin/img/icons/Pending.png`;
-const refundedStatus = `${EASYCOMMERCE.assets}admin/img/icons/Refunded.png`;
-const deliveredStatus = `${EASYCOMMERCE.assets}admin/img/icons/OnHold.png`;
-const returnedStatus = `${EASYCOMMERCE.assets}admin/img/icons/Processing.png`;
 
 const FullfillmentDropdown = ({
 	value,

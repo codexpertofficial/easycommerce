@@ -3,8 +3,6 @@ import { __ } from "@wordpress/i18n";
 import globalToast from "../../../../common/components/globalToast";
 
 const arrowDown = `${EASYCOMMERCE.assets}admin/img/icons/arrowDown.png`;
-const activeStatus = `${EASYCOMMERCE.assets}admin/img/icons/Complete.png`;
-const inactiveStatus = `${EASYCOMMERCE.assets}admin/img/icons/Cancle.png`;
 
 const CouponStatusDropdown = ({
 	value,

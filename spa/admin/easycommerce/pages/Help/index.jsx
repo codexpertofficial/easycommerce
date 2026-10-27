@@ -5,15 +5,12 @@ import parse from "html-react-parser";
 // Components
 import Socials from "./components/Socials";
 import Accordion from "./components/Accordian";
-import Feedback from "./components/Feedback";
 import CommonHeader from "../../../common/components/CommonHeader";
 import LoadingSkeleton from "./components/LoadingSkeleton";
 import NotFound from "../../../common/NotFound";
 import ContentSkeleton from "./components/ContentSkeleton";
 
 //Images
-const backgroundEffect = `${EASYCOMMERCE.assets}admin/img/icons/bg-effect.png`;
-const downArrow = `${EASYCOMMERCE.assets}admin/img/icons/down-arrow.png`;
 const noDataIcon = `${EASYCOMMERCE.assets}admin/img/nofound/no-data.png`;
 
 const headerBG = `${EASYCOMMERCE.assets}admin/img/help/documentation-bg.png`;

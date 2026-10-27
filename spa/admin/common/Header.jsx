@@ -4,6 +4,7 @@ import Cookies from 'universal-cookie';
 
 //components
 import Feedback from './components/Header/Feedback';
+import TestOrder from './components/Header/TestOrder';
 import AiSearch from './components/AISearchButton/AiSearch';
 // Modals
 import APIScreen from './components/APIScreen';
@@ -11,9 +12,7 @@ import APIVarification from './components/APIScreen/elements/APIVarification';
 import APICreateForm from './components/APIScreen/elements/APICreateForm';
 
 const BreadcrumbIcon = `${EASYCOMMERCE.assets}admin/img/icons/breadcump.png`;
-const rightDivider = `${EASYCOMMERCE.assets}admin/img/icons/header-right.png`;
 const logo = `${EASYCOMMERCE.assets}common/img/logo.png`;
-const BfcmDiscountImg = `${EASYCOMMERCE.assets}admin/img/banner-sale/discount.gif`;
 const userIcon = `${EASYCOMMERCE.assets}admin/img/icons/header-default-user-icon.png`;
 
 const profileIcon = `${EASYCOMMERCE.assets}admin/img/icons/profile-icon.png`;
@@ -198,7 +197,9 @@ const Header = ({
 								})}
 						</div>
 					</div>
-					<div className="relative flex justify-end items-center gap-4">
+          <div className="relative flex justify-end items-center gap-4">
+            {/* order test popup button */}
+            <TestOrder />
 						<AiSearch
 							user={user}
 							setShowAPIModal={setShowAPIModal}

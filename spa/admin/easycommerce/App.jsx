@@ -24,6 +24,7 @@ import { setCurrentTab } from "./redux-store/slices/currentTab";
 // Layout
 import MainLayout from "../common/components/MainLayout";
 import Notices from "../common/components/Notices/Notices";
+import ErrorBoundary from "../common/components/ErrorBoundary";
 
 // Pages
 import Dashboard from "./pages/Dashboard";
@@ -523,7 +524,12 @@ const App = () => {
                 </div>
 
                 <Slot name="easycommerce.beforeMainContent" fillProps={{ currentTab }} />
-                    {PageComponent && <PageComponent />}
+                    {/* A page that throws shows an error here, and the rest of the app
+                        (sidebar, navigation) keeps working. Keyed on the tab so moving
+                        to another page recovers. */}
+                    <ErrorBoundary resetKey={currentTab}>
+                        {PageComponent && <PageComponent />}
+                    </ErrorBoundary>
                 <Slot name="easycommerce.afterMainContent" fillProps={{ currentTab }} />
             </MainLayout>
         );
@@ -540,12 +546,14 @@ const App = () => {
 const container = document.getElementById("easycommerce_render");
 const root = createRoot(container);
 root.render(
-    <Provider store={store}>
-        <SlotFillProvider>
-            <PluginArea scope="easycommerce" />
-            <App />
-        </SlotFillProvider>
-    </Provider>
+    <ErrorBoundary title={__("EasyCommerce couldn't start", "easycommerce")}>
+        <Provider store={store}>
+            <SlotFillProvider>
+                <PluginArea scope="easycommerce" />
+                <App />
+            </SlotFillProvider>
+        </Provider>
+    </ErrorBoundary>
 );
 
 export default App;

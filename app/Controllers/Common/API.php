@@ -31,6 +31,7 @@ use EasyCommerce\API\Geo;
 use EasyCommerce\API\Email_Placeholder;
 use EasyCommerce\API\Product_Review;
 use EasyCommerce\API\Importer;
+use EasyCommerce\API\Test_Order;
 use EasyCommerce\API\Log;
 use EasyCommerce\API\Notice;
 use EasyCommerce\API\Restock_Request;
@@ -72,6 +73,7 @@ class API {
 		$this->register_taxonomy_endpoints();
 		$this->register_cart_endpoints();
 		$this->register_order_endpoints();
+		$this->register_test_order_endpoints();
 		$this->register_refund_endpoints();
 		$this->register_transaction_endpoints();
 		$this->register_shipping_plan_endpoints();
@@ -3255,6 +3257,59 @@ class API {
 				'methods'	 => WP_REST_Server::CREATABLE,
 				'callback'	 => array( $cart, 'clear' ),
 				'permission' => array( $this, 'is_user' ),
+			)
+		);
+	}
+
+	/**
+	 * Test order health check: the admin popup that dry-runs a checkout.
+	 */
+	private function register_test_order_endpoints() {
+		$test_order = new Test_Order();
+
+		$this->register_route(
+			'/test-order/start',
+			array(
+				'methods'	 => WP_REST_Server::CREATABLE,
+				'callback'	 => array( $test_order, 'start' ),
+				'permission' => array( $this, 'is_manager' ),
+			)
+		);
+
+		$this->register_route(
+			'/test-order/check/(?P<step>store|product|gateways)',
+			array(
+				'methods'	 => WP_REST_Server::READABLE,
+				'callback'	 => array( $test_order, 'check' ),
+				'permission' => array( $this, 'is_manager' ),
+			)
+		);
+
+		$this->register_route(
+			'/test-order/finish',
+			array(
+				'methods'	 => WP_REST_Server::CREATABLE,
+				'callback'	 => array( $test_order, 'finish' ),
+				'args'		 => array(
+					'token'   => array(
+						'required' => true,
+						'type'     => 'string',
+					),
+					'results' => array(
+						'required' => false,
+						'type'     => 'array',
+					),
+				),
+				'permission' => array( $this, 'is_manager' ),
+			)
+		);
+
+		$this->register_route(
+			'/test-order/last',
+			array(
+				'methods'	 => WP_REST_Server::READABLE,
+				'callback'	 => array( $test_order, 'last' ),
+				'permission' => array( $this, 'is_manager' ),
 			)
 		);
 	}

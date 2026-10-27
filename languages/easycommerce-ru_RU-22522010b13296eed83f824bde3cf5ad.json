@@ -1,6 +1,6 @@
 {
     "translation-revision-date": "2026-07-23 00:00+0000",
-    "generator": "WP-CLI\/2.13.0-alpha-3eb2dd7",
+    "generator": "WP-CLI\/2.12.0",
     "source": "assets\/payment\/js\/paypal.js",
     "domain": "messages",
     "locale_data": {

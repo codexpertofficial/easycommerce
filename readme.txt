@@ -4,8 +4,8 @@ Contributors: easycommerce, easysuite
 Donate link: https://easycommerce.dev
 Tags: ecommerce, online store, ai ecommerce, store builder, digital downloads
 Requires at least: 6.0
-Tested up to: 7.0
-Stable tag: 1.50
+Tested up to: 7.1
+Stable tag: 1.51
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -514,6 +514,22 @@ Free community support via WordPress.org forums and the [Facebook Community](htt
 
 == Changelog ==
 
+= 1.51 - 2026-10-27 =
+
+**✨ New**
+
+- [add] Test Order - a new button in the admin header runs a practice checkout (shop page, product, cart, payment methods and order) and shows each step as passed, warning or failed, so you can spot a broken checkout before a customer does; the practice order is removed afterwards and no payment is taken
+
+**🐛 Fixes**
+
+- [fix] EasyCommerce styles no longer load on pages that have no store content, and generic class names such as accordion content no longer hide text on theme pages like FAQs
+- [fix] Stores that place an EasyCommerce block inside a block theme template or footer now keep their storefront styles
+- [fix] If the EasyCommerce admin cannot load, it now shows what went wrong with copyable details instead of a blank page
+
+**⚡ Performance**
+
+- [perf] The plugin download is about 5 MB smaller thanks to compressed images and removal of unused files
+
 = 1.50 - 2026-09-28 =
 
 **🔒 Security**
@@ -719,12 +735,6 @@ Free community support via WordPress.org forums and the [Facebook Community](htt
 - [add] Store address State and City fields now let you type a custom value when it isn't in the list
 - [fix] Reordered the store address fields to the standard country-first order
 - [ui] Added help descriptions to the remaining settings fields
-
-= 1.42.1 - 2026-07-03 =
-
-- [add] Test-mode banner on the storefront for logged-in admins, with a "Go Live" shortcut - so admins can tell that customers are blocked at checkout while the store is in Test mode
-- [fix] Test mode now also hides single product pages and the product archive, which were still reachable by direct URL
-- [fix] "Store Launching Soon" page no longer renders a duplicate, misplaced header/footer and now shows the theme footer correctly
 
 == Upgrade Notice ==
 

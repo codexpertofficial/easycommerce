@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EasyCommerce\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-20T05:39:34+00:00\n"
-"PO-Revision-Date: 2026-07-23 12:00+0000\n"
 "Last-Translator: \n"
 "Language-Team: Japanese\n"
-"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-07-20T05:39:34+00:00\n"
+"PO-Revision-Date: 2026-07-23 12:00+0000\n"
+"Language: ja\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: WP-CLI 2.13.0-alpha-3eb2dd7\n"
 "X-Domain: easycommerce\n"
@@ -57,7 +57,16 @@ msgid ""
 "Need help? Feel free to reach out. We’re happy to assist!\n"
 "Best,\n"
 "##shop_name## Team"
-msgstr "##name##様、\n##shop_name##のカートに商品が残っているようです。##cart_total##相当のカートが、まだあなたをお待ちしています！\nカートに残っている商品は次のとおりです：\n##product_list##\nお見逃しなく—商品はすぐに売り切れてしまう可能性があります。下のボタンをクリックしてカートに戻り、ご購入を完了してください。\nチェックアウトへ 👉 ##cart_link## \nお困りですか？お気軽にお問い合わせください。喜んでサポートいたします！\nそれでは、\n##shop_name## チーム"
+msgstr ""
+"##name##様、\n"
+"##shop_name##のカートに商品が残っているようです。##cart_total##相当のカートが、まだあなたをお待ちしています！\n"
+"カートに残っている商品は次のとおりです：\n"
+"##product_list##\n"
+"お見逃しなく—商品はすぐに売り切れてしまう可能性があります。下のボタンをクリックしてカートに戻り、ご購入を完了してください。\n"
+"チェックアウトへ 👉 ##cart_link## \n"
+"お困りですか？お気軽にお問い合わせください。喜んでサポートいたします！\n"
+"それでは、\n"
+"##shop_name## チーム"
 
 #: app/API/Abandoned_Cart.php:288
 #: app/API/Cart.php:698
@@ -2517,7 +2526,24 @@ msgid ""
 "Warm regards,\n"
 "The ##shop_name## Team\n"
 ""
-msgstr "\n##customer_name##様、\n\n誠に恐れ入りますが、ご注文###order_id##はキャンセルされましたことをお知らせいたします。ご期待に沿えず申し訳ございません。\n\nキャンセルされたご注文の概要は次のとおりです：\n##product_table##\n商品点数：##number_of_items##\n合計：##order_total##\n\nこれらの商品を改めてご希望の場合は、いつでも新規にご注文いただけます：##shop_page##\n\nご不明な点がある場合や、これが誤りだとお考えの場合は、お気軽にお問い合わせください。誠意をもって対応いたします。\n\n何卒よろしくお願いいたします。\n##shop_name## チーム\n"
+msgstr ""
+"\n"
+"##customer_name##様、\n"
+"\n"
+"誠に恐れ入りますが、ご注文###order_id##はキャンセルされましたことをお知らせいたします。ご期待に沿えず申し訳ございません。\n"
+"\n"
+"キャンセルされたご注文の概要は次のとおりです：\n"
+"##product_table##\n"
+"商品点数：##number_of_items##\n"
+"合計：##order_total##\n"
+"\n"
+"これらの商品を改めてご希望の場合は、いつでも新規にご注文いただけます：##shop_page##\n"
+"\n"
+"ご不明な点がある場合や、これが誤りだとお考えの場合は、お気軽にお問い合わせください。誠意をもって対応いたします。\n"
+"\n"
+"何卒よろしくお願いいたします。\n"
+"##shop_name## チーム\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/cancelled.php:25
@@ -2545,7 +2571,25 @@ msgid ""
 "Best regards,\n"
 "The ##shop_name## Team\n"
 ""
-msgstr "\nご担当者様、\n\n##customer_name##様からのご注文###order_id##がキャンセルされました。\n\n##product_table##\n商品点数：##number_of_items##\n合計：##order_total##\n\n顧客の連絡先：\nメールアドレス：##customer_email##\n電話番号：##customer_phone##\n\n対応が必要な場合は、顧客に直接ご連絡いただくか、ダッシュボードで注文をご確認ください。\n\n何卒よろしくお願いいたします。\n##shop_name## チーム\n"
+msgstr ""
+"\n"
+"ご担当者様、\n"
+"\n"
+"##customer_name##様からのご注文###order_id##がキャンセルされました。\n"
+"\n"
+"##product_table##\n"
+"商品点数：##number_of_items##\n"
+"合計：##order_total##\n"
+"\n"
+"顧客の連絡先：\n"
+"メールアドレス：##customer_email##\n"
+"電話番号：##customer_phone##\n"
+"\n"
+"対応が必要な場合は、顧客に直接ご連絡いただくか、ダッシュボードで注文をご確認ください。\n"
+"\n"
+"何卒よろしくお願いいたします。\n"
+"##shop_name## チーム\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/completed.php:4
@@ -2576,7 +2620,28 @@ msgid ""
 "Warm regards,\n"
 "The ##shop_name## Team\n"
 ""
-msgstr "\n##customer_name##様、\n\nご注文###order_id##が完了しました。##shop_name##をご利用いただきありがとうございます！ご注文の商品にご満足いただけますと幸いです。\n\nご注文の概要：\n##product_table##\n商品点数：##number_of_items##\n合計：##order_total##\n\nお届け先：\n##shipping_first_name## ##shipping_last_name##\n##shipping_address##\n\nご注文履歴は、アカウントからいつでもご確認いただけます：##dashboard_page##\n\n不備がございましたら、お気軽にお問い合わせください。喜んでサポートいたします。\n\n何卒よろしくお願いいたします。\n##shop_name## チーム\n"
+msgstr ""
+"\n"
+"##customer_name##様、\n"
+"\n"
+"ご注文###order_id##が完了しました。##shop_name##をご利用いただきありがとうございます！ご注文の商品にご満足いただけますと幸いです。\n"
+"\n"
+"ご注文の概要：\n"
+"##product_table##\n"
+"商品点数：##number_of_items##\n"
+"合計：##order_total##\n"
+"\n"
+"お届け先：\n"
+"##shipping_first_name## ##shipping_last_name##\n"
+"##shipping_address##\n"
+"\n"
+"ご注文履歴は、アカウントからいつでもご確認いただけます：##dashboard_page##\n"
+"\n"
+"不備がございましたら、お気軽にお問い合わせください。喜んでサポートいたします。\n"
+"\n"
+"何卒よろしくお願いいたします。\n"
+"##shop_name## チーム\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/completed.php:29
@@ -2608,7 +2673,29 @@ msgid ""
 "Best regards,\n"
 "The ##shop_name## Team\n"
 ""
-msgstr "\nご担当者様、\n\n##customer_name##様からのご注文###order_id##が完了としてマークされました。\n\n##product_table##\n商品点数：##number_of_items##\n合計：##order_total##\n\n配送先：\n##shipping_first_name## ##shipping_last_name##\n##shipping_address##\n\n顧客の連絡先：\nメールアドレス：##customer_email##\n電話番号：##customer_phone##\n\n注文の詳細：##dashboard_page##\n\n何卒よろしくお願いいたします。\n##shop_name## チーム\n"
+msgstr ""
+"\n"
+"ご担当者様、\n"
+"\n"
+"##customer_name##様からのご注文###order_id##が完了としてマークされました。\n"
+"\n"
+"##product_table##\n"
+"商品点数：##number_of_items##\n"
+"合計：##order_total##\n"
+"\n"
+"配送先：\n"
+"##shipping_first_name## ##shipping_last_name##\n"
+"##shipping_address##\n"
+"\n"
+"顧客の連絡先：\n"
+"メールアドレス：##customer_email##\n"
+"電話番号：##customer_phone##\n"
+"\n"
+"注文の詳細：##dashboard_page##\n"
+"\n"
+"何卒よろしくお願いいたします。\n"
+"##shop_name## チーム\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/failed.php:4
@@ -2639,7 +2726,27 @@ msgid ""
 "\n"
 "Need help? Just reach out – we’re here to support you.\n"
 ""
-msgstr "\n##customer_name##様、\n\n誠に恐れ入りますが、ご注文###order_id##のお支払いを処理できませんでした。原因として、次のいずれかが考えられます：\n<ul>\n    <li>カードが拒否された、または残高が不足していた</li>\n    <li>カード情報または請求先情報が正しくない</li>\n    <li>お支払いが承認されなかった、またはタイムアウトした</li>\n    <li>決済プロバイダー側の一時的な問題</li>\n</ul>\n\nご注文の概要：\n##product_table##\n注文商品点数：##number_of_items##\n合計金額：##order_total##\n\nご注文の商品は保存されています。以下からお支払いを再試行いただくか、いつでも新規にご注文いただけます：##checkout_page##\n\nお困りですか？お気軽にお問い合わせください。喜んでサポートいたします。\n"
+msgstr ""
+"\n"
+"##customer_name##様、\n"
+"\n"
+"誠に恐れ入りますが、ご注文###order_id##のお支払いを処理できませんでした。原因として、次のいずれかが考えられます：\n"
+"<ul>\n"
+"    <li>カードが拒否された、または残高が不足していた</li>\n"
+"    <li>カード情報または請求先情報が正しくない</li>\n"
+"    <li>お支払いが承認されなかった、またはタイムアウトした</li>\n"
+"    <li>決済プロバイダー側の一時的な問題</li>\n"
+"</ul>\n"
+"\n"
+"ご注文の概要：\n"
+"##product_table##\n"
+"注文商品点数：##number_of_items##\n"
+"合計金額：##order_total##\n"
+"\n"
+"ご注文の商品は保存されています。以下からお支払いを再試行いただくか、いつでも新規にご注文いただけます：##checkout_page##\n"
+"\n"
+"お困りですか？お気軽にお問い合わせください。喜んでサポートいたします。\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/failed.php:30
@@ -2663,7 +2770,26 @@ msgid ""
 "The customer may retry payment from: ##checkout_page##\n"
 "Please follow up if needed.\n"
 ""
-msgstr "\nこんにちは、\n\n##customer_name##様からのご注文###order_id##のお支払いに失敗しました。原因として、次が考えられます：\n<ul>\n    <li>カードの拒否または残高不足</li>\n    <li>カード情報または請求先情報が無効</li>\n    <li>お支払いが未承認またはタイムアウト</li>\n    <li>決済ゲートウェイの一時的な問題</li>\n</ul>\n\n注文の詳細：\n##product_table##\n商品点数：##number_of_items##\n合計金額：##order_total##\n\n顧客は以下からお支払いを再試行できます：##checkout_page##\n必要に応じてフォローアップしてください。\n"
+msgstr ""
+"\n"
+"こんにちは、\n"
+"\n"
+"##customer_name##様からのご注文###order_id##のお支払いに失敗しました。原因として、次が考えられます：\n"
+"<ul>\n"
+"    <li>カードの拒否または残高不足</li>\n"
+"    <li>カード情報または請求先情報が無効</li>\n"
+"    <li>お支払いが未承認またはタイムアウト</li>\n"
+"    <li>決済ゲートウェイの一時的な問題</li>\n"
+"</ul>\n"
+"\n"
+"注文の詳細：\n"
+"##product_table##\n"
+"商品点数：##number_of_items##\n"
+"合計金額：##order_total##\n"
+"\n"
+"顧客は以下からお支払いを再試行できます：##checkout_page##\n"
+"必要に応じてフォローアップしてください。\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real account data at send time - keep them verbatim.
 #: app/Config/email-defaults/new_account.php:4
@@ -2696,7 +2822,30 @@ msgid ""
 "Warm regards,\n"
 "The ##shop_name## Team\n"
 ""
-msgstr "\n##customer_name##様、\n\n##shop_name##へようこそ！ご登録いただきありがとうございます。アカウントの準備が整いました。\n\nアカウントでは、次のことができます：\n<ul>\n    <li>注文を一か所で追跡・管理する</li>\n    <li>すべての購入履歴を閲覧する</li>\n    <li>デジタル商品をいつでもダウンロードする</li>\n    <li>次回以降、よりスムーズにチェックアウトする</li>\n</ul>\n\n最後にもう一つ—アカウントを保護するため、パスワードを設定してください：\n##password_reset_link##\n\n設定が完了すれば、お買い物を始める準備は完了です：##shop_page##\n\nご登録いただきありがとうございます。お探しの商品がきっと見つかりますように！\n\n何卒よろしくお願いいたします。\n##shop_name## チーム\n"
+msgstr ""
+"\n"
+"##customer_name##様、\n"
+"\n"
+"##shop_name##へようこそ！ご登録いただきありがとうございます。アカウントの準備が整いました。\n"
+"\n"
+"アカウントでは、次のことができます：\n"
+"<ul>\n"
+"    <li>注文を一か所で追跡・管理する</li>\n"
+"    <li>すべての購入履歴を閲覧する</li>\n"
+"    <li>デジタル商品をいつでもダウンロードする</li>\n"
+"    <li>次回以降、よりスムーズにチェックアウトする</li>\n"
+"</ul>\n"
+"\n"
+"最後にもう一つ—アカウントを保護するため、パスワードを設定してください：\n"
+"##password_reset_link##\n"
+"\n"
+"設定が完了すれば、お買い物を始める準備は完了です：##shop_page##\n"
+"\n"
+"ご登録いただきありがとうございます。お探しの商品がきっと見つかりますように！\n"
+"\n"
+"何卒よろしくお願いいたします。\n"
+"##shop_name## チーム\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real account data at send time - keep them verbatim.
 #: app/Config/email-defaults/new_account.php:31
@@ -2722,7 +2871,23 @@ msgid ""
 "Best regards,\n"
 "The ##shop_name## Team\n"
 ""
-msgstr "\nご担当者様、\n\n##shop_name##に新しい顧客がアカウントを作成しました。\n\n<ul>\n    <li>名前：##customer_name##</li>\n    <li>メールアドレス：##customer_email##</li>\n    <li>登録日：##registration_date##</li>\n</ul>\n\n管理ダッシュボードから、このプロフィールを確認・管理できます。\n\n何卒よろしくお願いいたします。\n##shop_name## チーム\n"
+msgstr ""
+"\n"
+"ご担当者様、\n"
+"\n"
+"##shop_name##に新しい顧客がアカウントを作成しました。\n"
+"\n"
+"<ul>\n"
+"    <li>名前：##customer_name##</li>\n"
+"    <li>メールアドレス：##customer_email##</li>\n"
+"    <li>登録日：##registration_date##</li>\n"
+"</ul>\n"
+"\n"
+"管理ダッシュボードから、このプロフィールを確認・管理できます。\n"
+"\n"
+"何卒よろしくお願いいたします。\n"
+"##shop_name## チーム\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/on_hold.php:4
@@ -2749,7 +2914,24 @@ msgid ""
 "Warm regards,\n"
 "The ##shop_name## Team\n"
 ""
-msgstr "\n##customer_name##様、\n\nご注文###order_id##が一時的に保留となっておりますことをお知らせいたします。できるだけ早く処理を進められるよう対応しており、進捗があり次第ご連絡いたします。\n\nご注文の概要：\n##product_table##\n商品点数：##number_of_items##\n合計：##order_total##\n\nご注文の状況は、こちらからご確認いただけます：##dashboard_page##\n\nご不明な点や、お急ぎの場合は、お気軽にお問い合わせください。喜んでサポートいたします。\n\n何卒よろしくお願いいたします。\n##shop_name## チーム\n"
+msgstr ""
+"\n"
+"##customer_name##様、\n"
+"\n"
+"ご注文###order_id##が一時的に保留となっておりますことをお知らせいたします。できるだけ早く処理を進められるよう対応しており、進捗があり次第ご連絡いたします。\n"
+"\n"
+"ご注文の概要：\n"
+"##product_table##\n"
+"商品点数：##number_of_items##\n"
+"合計：##order_total##\n"
+"\n"
+"ご注文の状況は、こちらからご確認いただけます：##dashboard_page##\n"
+"\n"
+"ご不明な点や、お急ぎの場合は、お気軽にお問い合わせください。喜んでサポートいたします。\n"
+"\n"
+"何卒よろしくお願いいたします。\n"
+"##shop_name## チーム\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/on_hold.php:25
@@ -2777,7 +2959,25 @@ msgid ""
 "Best regards,\n"
 "The ##shop_name## Team\n"
 ""
-msgstr "\nご担当者様、\n\n##customer_name##様からのご注文###order_id##が保留となりました。\n\n##product_table##\n商品点数：##number_of_items##\n合計：##order_total##\n\n顧客の連絡先：\nメールアドレス：##customer_email##\n電話番号：##customer_phone##\n\nこの注文をご確認のうえ、必要な対応を行ってください。\n\n何卒よろしくお願いいたします。\n##shop_name## チーム\n"
+msgstr ""
+"\n"
+"ご担当者様、\n"
+"\n"
+"##customer_name##様からのご注文###order_id##が保留となりました。\n"
+"\n"
+"##product_table##\n"
+"商品点数：##number_of_items##\n"
+"合計：##order_total##\n"
+"\n"
+"顧客の連絡先：\n"
+"メールアドレス：##customer_email##\n"
+"電話番号：##customer_phone##\n"
+"\n"
+"この注文をご確認のうえ、必要な対応を行ってください。\n"
+"\n"
+"何卒よろしくお願いいたします。\n"
+"##shop_name## チーム\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/partially_refunded.php:4
@@ -2808,7 +3008,28 @@ msgid ""
 "Warm regards,\n"
 "The ##shop_name## Team\n"
 ""
-msgstr "\n##customer_name##様、\n\nご注文###order_id##について、一部返金を処理いたしました。返金額は、決済プロバイダーによっては数営業日以内にアカウントに反映されます。\n\n残りの商品には影響はなく、通常どおり処理が進みます。\n\n注文商品：\n##product_table##\n商品点数：##number_of_items##\n返金額：##refunded_amount##\n\n請求先：\n##billing_first_name## ##billing_last_name##\n##billing_address##\n\nこの返金についてご不明な点がございましたら、お気軽にお問い合わせください。\n\n何卒よろしくお願いいたします。\n##shop_name## チーム\n"
+msgstr ""
+"\n"
+"##customer_name##様、\n"
+"\n"
+"ご注文###order_id##について、一部返金を処理いたしました。返金額は、決済プロバイダーによっては数営業日以内にアカウントに反映されます。\n"
+"\n"
+"残りの商品には影響はなく、通常どおり処理が進みます。\n"
+"\n"
+"注文商品：\n"
+"##product_table##\n"
+"商品点数：##number_of_items##\n"
+"返金額：##refunded_amount##\n"
+"\n"
+"請求先：\n"
+"##billing_first_name## ##billing_last_name##\n"
+"##billing_address##\n"
+"\n"
+"この返金についてご不明な点がございましたら、お気軽にお問い合わせください。\n"
+"\n"
+"何卒よろしくお願いいたします。\n"
+"##shop_name## チーム\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/partially_refunded.php:29
@@ -2838,7 +3059,27 @@ msgid ""
 "Best regards,\n"
 "The ##shop_name## Team\n"
 ""
-msgstr "\nご担当者様、\n\n##customer_name##様からのご注文###order_id##について、一部返金を処理しました。\n\n##product_table##\n商品点数：##number_of_items##\n返金額：##refunded_amount##\n\n請求先：\n##billing_first_name## ##billing_last_name##\n##billing_address##\n\n顧客の連絡先：\nメールアドレス：##customer_email##\n電話番号：##customer_phone##\n\n何卒よろしくお願いいたします。\n##shop_name## チーム\n"
+msgstr ""
+"\n"
+"ご担当者様、\n"
+"\n"
+"##customer_name##様からのご注文###order_id##について、一部返金を処理しました。\n"
+"\n"
+"##product_table##\n"
+"商品点数：##number_of_items##\n"
+"返金額：##refunded_amount##\n"
+"\n"
+"請求先：\n"
+"##billing_first_name## ##billing_last_name##\n"
+"##billing_address##\n"
+"\n"
+"顧客の連絡先：\n"
+"メールアドレス：##customer_email##\n"
+"電話番号：##customer_phone##\n"
+"\n"
+"何卒よろしくお願いいたします。\n"
+"##shop_name## チーム\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/pending.php:4
@@ -2865,7 +3106,24 @@ msgid ""
 "Warm regards,\n"
 "The ##shop_name## Team\n"
 ""
-msgstr "\n##customer_name##様、\n\nご注文いただきありがとうございます！ご注文を承り、現在お支払いの確認をお待ちしています。お支払いが確認でき次第、すぐに手続きを進めます。\n\nご注文の内容は次のとおりです：\n##product_table##\n商品点数：##number_of_items##\n合計：##order_total##\n\nお支払いがお済みでない場合は、こちらから完了できます：##checkout_page##\n\nご不明な点がございましたら、いつでもお気軽にお問い合わせください。\n\n何卒よろしくお願いいたします。\n##shop_name## チーム\n"
+msgstr ""
+"\n"
+"##customer_name##様、\n"
+"\n"
+"ご注文いただきありがとうございます！ご注文を承り、現在お支払いの確認をお待ちしています。お支払いが確認でき次第、すぐに手続きを進めます。\n"
+"\n"
+"ご注文の内容は次のとおりです：\n"
+"##product_table##\n"
+"商品点数：##number_of_items##\n"
+"合計：##order_total##\n"
+"\n"
+"お支払いがお済みでない場合は、こちらから完了できます：##checkout_page##\n"
+"\n"
+"ご不明な点がございましたら、いつでもお気軽にお問い合わせください。\n"
+"\n"
+"何卒よろしくお願いいたします。\n"
+"##shop_name## チーム\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/pending.php:25
@@ -2895,7 +3153,27 @@ msgid ""
 "Best regards,\n"
 "The ##shop_name## Team\n"
 ""
-msgstr "\nご担当者様、\n\n##customer_name##様からの新しいご注文###order_id##がお支払い待ちです。\n\n##product_table##\n商品点数：##number_of_items##\n合計：##order_total##\n\n顧客の連絡先：\nメールアドレス：##customer_email##\n電話番号：##customer_phone##\n\nチェックアウトページ：##checkout_page##\n\n対応が必要かどうかご確認ください。\n\n何卒よろしくお願いいたします。\n##shop_name## チーム\n"
+msgstr ""
+"\n"
+"ご担当者様、\n"
+"\n"
+"##customer_name##様からの新しいご注文###order_id##がお支払い待ちです。\n"
+"\n"
+"##product_table##\n"
+"商品点数：##number_of_items##\n"
+"合計：##order_total##\n"
+"\n"
+"顧客の連絡先：\n"
+"メールアドレス：##customer_email##\n"
+"電話番号：##customer_phone##\n"
+"\n"
+"チェックアウトページ：##checkout_page##\n"
+"\n"
+"対応が必要かどうかご確認ください。\n"
+"\n"
+"何卒よろしくお願いいたします。\n"
+"##shop_name## チーム\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/processing.php:4
@@ -2926,7 +3204,28 @@ msgid ""
 "Warm regards,\n"
 "The ##shop_name## Team\n"
 ""
-msgstr "\n##customer_name##様、\n\n嬉しいお知らせです—ご注文###order_id##が確定し、現在発送に向けて準備を進めています！\n\nご注文の内容：\n##product_table##\n商品点数：##number_of_items##\n合計：##order_total##\n\n配送先：\n##shipping_first_name## ##shipping_last_name##\n##shipping_address##\n\n発送が完了しましたら、改めてお知らせいたします。それまでの間、ご注文の状況はこちらでご確認いただけます：##dashboard_page##\n\nご利用いただきありがとうございます！\n\n何卒よろしくお願いいたします。\n##shop_name## チーム\n"
+msgstr ""
+"\n"
+"##customer_name##様、\n"
+"\n"
+"嬉しいお知らせです—ご注文###order_id##が確定し、現在発送に向けて準備を進めています！\n"
+"\n"
+"ご注文の内容：\n"
+"##product_table##\n"
+"商品点数：##number_of_items##\n"
+"合計：##order_total##\n"
+"\n"
+"配送先：\n"
+"##shipping_first_name## ##shipping_last_name##\n"
+"##shipping_address##\n"
+"\n"
+"発送が完了しましたら、改めてお知らせいたします。それまでの間、ご注文の状況はこちらでご確認いただけます：##dashboard_page##\n"
+"\n"
+"ご利用いただきありがとうございます！\n"
+"\n"
+"何卒よろしくお願いいたします。\n"
+"##shop_name## チーム\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/processing.php:29
@@ -2958,7 +3257,29 @@ msgid ""
 "Best regards,\n"
 "The ##shop_name## Team\n"
 ""
-msgstr "\nご担当者様、\n\n##customer_name##様からのご注文###order_id##は現在処理中で、発送の準備を進めています。\n\n##product_table##\n商品点数：##number_of_items##\n合計：##order_total##\n\n配送先：\n##shipping_first_name## ##shipping_last_name##\n##shipping_address##\n\n顧客の連絡先：\nメールアドレス：##customer_email##\n電話番号：##customer_phone##\n\nこの注文を管理：##dashboard_page##\n\n何卒よろしくお願いいたします。\n##shop_name## チーム\n"
+msgstr ""
+"\n"
+"ご担当者様、\n"
+"\n"
+"##customer_name##様からのご注文###order_id##は現在処理中で、発送の準備を進めています。\n"
+"\n"
+"##product_table##\n"
+"商品点数：##number_of_items##\n"
+"合計：##order_total##\n"
+"\n"
+"配送先：\n"
+"##shipping_first_name## ##shipping_last_name##\n"
+"##shipping_address##\n"
+"\n"
+"顧客の連絡先：\n"
+"メールアドレス：##customer_email##\n"
+"電話番号：##customer_phone##\n"
+"\n"
+"この注文を管理：##dashboard_page##\n"
+"\n"
+"何卒よろしくお願いいたします。\n"
+"##shop_name## チーム\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/refunded.php:4
@@ -2987,7 +3308,26 @@ msgid ""
 "Warm regards,\n"
 "The ##shop_name## Team\n"
 ""
-msgstr "\n##customer_name##様、\n\nご注文###order_id##の返金を処理いたしました。返金額は、決済プロバイダーによっては数営業日以内にアカウントに反映されます。\n\n返金の詳細：\n##product_table##\n商品点数：##number_of_items##\n返金額：##refunded_amount##\n\n請求先：\n##billing_first_name## ##billing_last_name##\n##billing_address##\n\nこの度はご期待に沿えず申し訳ございませんでした。改善できる点やご不明な点がございましたら、お気軽にお問い合わせください。\n\n何卒よろしくお願いいたします。\n##shop_name## チーム\n"
+msgstr ""
+"\n"
+"##customer_name##様、\n"
+"\n"
+"ご注文###order_id##の返金を処理いたしました。返金額は、決済プロバイダーによっては数営業日以内にアカウントに反映されます。\n"
+"\n"
+"返金の詳細：\n"
+"##product_table##\n"
+"商品点数：##number_of_items##\n"
+"返金額：##refunded_amount##\n"
+"\n"
+"請求先：\n"
+"##billing_first_name## ##billing_last_name##\n"
+"##billing_address##\n"
+"\n"
+"この度はご期待に沿えず申し訳ございませんでした。改善できる点やご不明な点がございましたら、お気軽にお問い合わせください。\n"
+"\n"
+"何卒よろしくお願いいたします。\n"
+"##shop_name## チーム\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/refunded.php:27
@@ -3017,7 +3357,27 @@ msgid ""
 "Best regards,\n"
 "The ##shop_name## Team\n"
 ""
-msgstr "\nご担当者様、\n\n##customer_name##様からのご注文###order_id##について、全額返金を処理しました。\n\n##product_table##\n商品点数：##number_of_items##\n返金合計：##refunded_amount##\n\n請求先：\n##billing_first_name## ##billing_last_name##\n##billing_address##\n\n顧客の連絡先：\nメールアドレス：##customer_email##\n電話番号：##customer_phone##\n\n何卒よろしくお願いいたします。\n##shop_name## チーム\n"
+msgstr ""
+"\n"
+"ご担当者様、\n"
+"\n"
+"##customer_name##様からのご注文###order_id##について、全額返金を処理しました。\n"
+"\n"
+"##product_table##\n"
+"商品点数：##number_of_items##\n"
+"返金合計：##refunded_amount##\n"
+"\n"
+"請求先：\n"
+"##billing_first_name## ##billing_last_name##\n"
+"##billing_address##\n"
+"\n"
+"顧客の連絡先：\n"
+"メールアドレス：##customer_email##\n"
+"電話番号：##customer_phone##\n"
+"\n"
+"何卒よろしくお願いいたします。\n"
+"##shop_name## チーム\n"
+""
 
 #: app/Config/settings.php:45
 msgid "&raquo; Settings"
@@ -7621,18 +7981,6 @@ msgstr "まもなくストアがオープンします！"
 msgid "We’re getting ready to welcome you. Stay tuned for the launch."
 msgstr "皆さまをお迎えする準備を進めています。オープンをお楽しみに。"
 
-#: assets/admin/js/email-placeholders.js:12
-msgid "Insert Email Placeholder"
-msgstr "メールプレースホルダーを挿入"
-
-#: assets/admin/js/email-placeholders.js:19
-msgid "Select a placeholder:"
-msgstr "プレースホルダーを選択："
-
-#: assets/admin/js/email-placeholders.js:23
-msgid "Select a placeholder to automatically insert it into your email template. These will be replaced with actual values when emails are sent."
-msgstr "プレースホルダーを選択すると、メールテンプレートに自動的に挿入されます。メール送信時に実際の値に置き換えられます。"
-
 #: assets/admin/js/email-placeholders.js:31
 #: build/easycommerce.bundle.js:2
 #: build/editor.bundle.js:2
@@ -7641,10 +7989,6 @@ msgstr "プレースホルダーを選択すると、メールテンプレート
 #: spa/admin/easycommerce/pages/Products/components/Prices/PriceItem/components/ActionButton.jsx:72
 msgid "Close"
 msgstr "閉じる"
-
-#: assets/admin/js/email-placeholders.js:49
-msgid "Search for a placeholder..."
-msgstr "プレースホルダーを検索..."
 
 #: assets/admin/js/email-placeholders.js:90
 #: build/checkout.bundle.js:2
@@ -7660,23 +8004,6 @@ msgstr "プレースホルダーを検索..."
 #: spa/public/checkout/App.jsx:31
 msgid "Loading..."
 msgstr "読み込み中..."
-
-#: assets/admin/js/init.js:65
-msgid "Template Preview"
-msgstr "テンプレートプレビュー"
-
-#: assets/admin/js/notice.js:85
-msgid "Installing.."
-msgstr "インストール中.."
-
-#: assets/admin/js/notice.js:100
-msgid "Migration addon activated successfully!"
-msgstr "移行アドオンを有効化しました！"
-
-#: assets/admin/js/notice.js:107
-#: assets/admin/js/notice.js:113
-msgid "Failed to install migration addon."
-msgstr "移行アドオンのインストールに失敗しました。"
 
 #: assets/admin/js/settings.js:183
 #: assets/admin/js/settings.js:193
@@ -7697,189 +8024,6 @@ msgstr "市区町村を選択"
 msgid "Select State"
 msgstr "都道府県を選択"
 
-#: assets/payment/js/braintree.js:24
-msgid "Braintree.js failed to load or missing authorization token."
-msgstr "Braintree.jsの読み込みに失敗したか、認証トークンがありません。"
-
-#: assets/payment/js/braintree.js:42
-msgid "Error initializing Braintree."
-msgstr "Braintreeの初期化中にエラーが発生しました。"
-
-#: assets/payment/js/braintree.js:75
-msgid "Failed to get payment nonce."
-msgstr "支払いノンスの取得に失敗しました。"
-
-#: assets/payment/js/braintree.js:86
-msgid "Error processing payment."
-msgstr "支払い処理中にエラーが発生しました。"
-
-#: assets/payment/js/paypal.js:41
-#: assets/payment/js/stripe-payment.js:43
-msgid "Failed to load cart data. Please refresh the page."
-msgstr "カートデータの読み込みに失敗しました。ページを再読み込みしてください。"
-
-#: assets/payment/js/paypal.js:133
-msgid "Purchase from EasyCommerce"
-msgstr "EasyCommerceで購入"
-
-#: assets/payment/js/paypal.js:135
-msgid "Item"
-msgstr "商品"
-
-#: assets/payment/js/paypal.js:163
-msgid "Your cart has been updated. Please refresh the page and try again."
-msgstr "カートが更新されました。ページを再読み込みしてもう一度お試しください。"
-
-#: assets/payment/js/paypal.js:181
-msgid "An unknown error occurred with PayPal"
-msgstr "PayPalで不明なエラーが発生しました"
-
-#. translators: %s: PayPal error message.
-#: assets/payment/js/paypal.js:183
-msgid "PayPal Error: %s"
-msgstr "PayPalエラー：%s"
-
-#: assets/payment/js/stripe-payment.js:85
-msgid "Failed to create payment. Please try again."
-msgstr "支払いの作成に失敗しました。もう一度お試しください。"
-
-#: assets/payment/js/stripe-payment.js:151
-msgid "Payment form failed to load. Please refresh."
-msgstr "決済フォームの読み込みに失敗しました。再読み込みしてください。"
-
-#: assets/payment/js/stripe-payment.js:207
-msgid "Could not verify cart. Please refresh and try again."
-msgstr "カートを確認できませんでした。再読み込みしてもう一度お試しください。"
-
-#: assets/payment/js/stripe-payment.js:228
-msgid "Failed to create payment. Please refresh the page and try again."
-msgstr "支払いの作成に失敗しました。ページを再読み込みしてもう一度お試しください。"
-
-#: assets/payment/js/stripe-payment.js:246
-msgid "This payment handler is not available. Please refresh and try again."
-msgstr "この支払いハンドラーは利用できません。再読み込みしてもう一度お試しください。"
-
-#: assets/payment/js/stripe-payment.js:282
-msgid "Additional verification required. Please complete the payment process."
-msgstr "追加の認証が必要です。支払い手続きを完了してください。"
-
-#: assets/payment/js/stripe-payment.js:286
-msgid "Payment failed. Please try a different payment method."
-msgstr "支払いに失敗しました。別の支払い方法をお試しください。"
-
-#: assets/payment/js/stripe-payment.js:290
-#: assets/payment/js/stripe-payment.js:458
-msgid "Payment was canceled. Please try again."
-msgstr "支払いがキャンセルされました。もう一度お試しください。"
-
-#. translators: %s: Stripe payment intent status code.
-#: assets/payment/js/stripe-payment.js:295
-msgid "Payment status: %s. Please contact support if this persists."
-msgstr "支払いステータス：%s。この状態が続く場合は、サポートにお問い合わせください。"
-
-#: assets/payment/js/stripe-payment.js:299
-msgid "Payment could not be processed. Please try again."
-msgstr "支払いを処理できませんでした。もう一度お試しください。"
-
-#: assets/payment/js/stripe-payment.js:304
-msgid "An error occurred while processing your payment. Please try again."
-msgstr "支払いの処理中にエラーが発生しました。もう一度お試しください。"
-
-#: assets/payment/js/stripe-payment.js:363
-#: assets/payment/js/stripe-payment.js:413
-msgid "Verifying payment..."
-msgstr "支払いを確認しています..."
-
-#: assets/payment/js/stripe-payment.js:388
-#: assets/payment/js/stripe-payment.js:447
-msgid "Payment successful! Creating order..."
-msgstr "支払いが完了しました！注文を作成しています..."
-
-#. translators: %s: Stripe setup intent status code.
-#: assets/payment/js/stripe-payment.js:396
-msgid "Payment method could not be saved. Status: %s"
-msgstr "支払い方法を保存できませんでした。ステータス：%s"
-
-#: assets/payment/js/stripe-payment.js:402
-#: assets/payment/js/stripe-payment.js:473
-msgid "Failed to verify payment. Please contact support."
-msgstr "支払いの確認に失敗しました。サポートにお問い合わせください。"
-
-#: assets/payment/js/stripe-payment.js:454
-msgid "Payment failed. Please try again with a different payment method."
-msgstr "支払いに失敗しました。別の支払い方法でもう一度お試しください。"
-
-#: assets/payment/js/stripe-payment.js:462
-msgid "Additional action required. Please complete the payment process."
-msgstr "追加の操作が必要です。支払い手続きを完了してください。"
-
-#. translators: %s: Stripe payment intent status code.
-#: assets/payment/js/stripe-payment.js:467
-msgid "Payment could not be completed. Status: %s"
-msgstr "支払いを完了できませんでした。ステータス：%s"
-
-#: assets/public/js/agent-chatbot.js:161
-msgid "Complete your order →"
-msgstr "注文を完了する →"
-
-#: assets/public/js/agent-chatbot.js:258
-msgid "Sorry, something went wrong. Please try again."
-msgstr "申し訳ございません。問題が発生しました。もう一度お試しください。"
-
-#: assets/public/js/agent-chatbot.js:268
-msgid "Connection error. Please try again."
-msgstr "接続エラーが発生しました。もう一度お試しください。"
-
-#. translators: %s: AI shopping agent name.
-#: assets/public/js/agent-chatbot.js:311
-msgid "Open %s"
-msgstr "%sを開く"
-
-#: assets/public/js/agent-chatbot.js:332
-msgid "Online"
-msgstr "オンライン"
-
-#: assets/public/js/agent-chatbot.js:335
-msgid "New conversation"
-msgstr "新しい会話"
-
-#: assets/public/js/agent-chatbot.js:338
-msgid "Minimize"
-msgstr "最小化"
-
-#: assets/public/js/agent-chatbot.js:351
-msgid "Ask about products, orders…"
-msgstr "商品や注文について質問…"
-
-#: assets/public/js/agent-chatbot.js:357
-#: build/easycommerce.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Send"
-msgstr "送信"
-
-#. translators: %s: AI shopping agent name.
-#: assets/public/js/agent-chatbot.js:379
-#: assets/public/js/agent-chatbot.js:390
-msgid "Hi! 👋 I'm %s. How can I help you today?"
-msgstr "こんにちは！👋 %sです。本日はどのようなご用件でしょうか？"
-
-#: assets/public/js/checkout.js:5
-msgid "Only letters, spaces, hyphens, apostrophes, and periods are allowed."
-msgstr "使用できるのは、文字・スペース・ハイフン・アポストロフィ・ピリオドのみです。"
-
-#: assets/public/js/checkout.js:7
-msgid "Please enter a valid phone number (6–20 characters)."
-msgstr "有効な電話番号を入力してください（6〜20文字）。"
-
-#. translators: %s: checkout field label.
-#: assets/public/js/checkout.js:38
-msgid "%s is required."
-msgstr "%sは必須です。"
-
-#: assets/public/js/checkout.js:377
-msgid "Enter city"
-msgstr "市区町村を入力"
-
 #: assets/public/js/checkout.js:521
 #: build/auth.bundle.js:2
 #: build/easycommerce.bundle.js:2
@@ -7892,10 +8036,6 @@ msgstr "市区町村を入力"
 #: spa/public/auth/screens/ResetRequest.jsx:30
 msgid "An error occurred. Please try again."
 msgstr "エラーが発生しました。もう一度お試しください。"
-
-#: assets/public/js/init.js:28
-msgid "Your cart is empty."
-msgstr "カートは空です。"
 
 #: assets/public/js/init.js:41
 #: build/easycommerce.bundle.js:2
@@ -7917,38 +8057,6 @@ msgstr "商品"
 msgid "Quantity"
 msgstr "数量"
 
-#: assets/public/js/init.js:117
-msgid "Failed to load cart."
-msgstr "カートの読み込みに失敗しました。"
-
-#: assets/public/js/init.js:121
-msgid "Error loading cart."
-msgstr "カートの読み込み中にエラーが発生しました。"
-
-#: assets/public/js/init.js:191
-#: assets/public/js/init.js:203
-#: assets/public/js/shop.js:297
-msgid "Failed to add to cart. Please try again."
-msgstr "カートへの追加に失敗しました。もう一度お試しください。"
-
-#. translators: 1: first result index, 2: last result index, 3: total results.
-#: assets/public/js/shop.js:180
-msgid "Showing %1$s-%2$s of %3$s result"
-msgid_plural "Showing %1$s-%2$s of %3$s results"
-msgstr[0] "%3$s件中%1$s-%2$s件を表示"
-
-#: assets/public/js/shop.js:202
-msgid "No results found"
-msgstr "結果が見つかりません"
-
-#: assets/public/js/shop.js:266
-msgid "Adding..."
-msgstr "追加中..."
-
-#: assets/public/js/shop.js:279
-msgid "Added"
-msgstr "追加しました"
-
 #: blocks/checkout/billing-address/index.jsx:42
 #: build/blocks.bundle.js:2
 msgid "This is your billing address being edited."
@@ -7969,126 +8077,6 @@ msgstr "カートを空にする"
 #: build/blocks.bundle.js:2
 msgid "This is your cart being edited."
 msgstr "編集中のカートです。"
-
-#: blocks/components/typography.js:20
-#: build/blocks.bundle.js:2
-msgid "Font Size"
-msgstr "フォントサイズ"
-
-#: blocks/components/typography.js:29
-#: build/blocks.bundle.js:2
-msgid "Font Weight"
-msgstr "フォントの太さ"
-
-#: blocks/components/typography.js:32
-#: build/blocks.bundle.js:2
-msgid "100 (Thin)"
-msgstr "100（シン）"
-
-#: blocks/components/typography.js:33
-#: build/blocks.bundle.js:2
-msgid "200 (Extra Light)"
-msgstr "200（エクストラライト）"
-
-#: blocks/components/typography.js:34
-#: build/blocks.bundle.js:2
-msgid "300 (Light)"
-msgstr "300（ライト）"
-
-#: blocks/components/typography.js:35
-#: build/blocks.bundle.js:2
-msgid "400 (Normal)"
-msgstr "400（ノーマル）"
-
-#: blocks/components/typography.js:36
-#: build/blocks.bundle.js:2
-msgid "500 (Medium)"
-msgstr "500（ミディアム）"
-
-#: blocks/components/typography.js:37
-#: build/blocks.bundle.js:2
-msgid "600 (Semi Bold)"
-msgstr "600（セミボールド）"
-
-#: blocks/components/typography.js:38
-#: build/blocks.bundle.js:2
-msgid "700 (Bold)"
-msgstr "700（ボールド）"
-
-#: blocks/components/typography.js:39
-#: build/blocks.bundle.js:2
-msgid "800 (Extra Bold)"
-msgstr "800（エクストラボールド）"
-
-#: blocks/components/typography.js:40
-#: build/blocks.bundle.js:2
-msgid "900 (Black)"
-msgstr "900（ブラック）"
-
-#: blocks/components/typography.js:41
-#: blocks/components/typography.js:53
-#: blocks/components/typography.js:67
-#: build/blocks.bundle.js:2
-msgid "Default"
-msgstr "デフォルト"
-
-#: blocks/components/typography.js:42
-#: blocks/components/typography.js:57
-#: blocks/components/typography.js:68
-#: blocks/shops-page/template-1/edit.js:271
-#: blocks/shops-page/template-1/edit.js:369
-#: blocks/shops-page/template-2/edit.js:272
-#: blocks/shops-page/template-2/edit.js:370
-#: blocks/shops-page/template-3/edit.js:294
-#: blocks/shops-page/template-3/edit.js:392
-#: build/blocks.bundle.js:2
-msgid "Normal"
-msgstr "ノーマル"
-
-#: blocks/components/typography.js:43
-#: build/blocks.bundle.js:2
-msgid "Bold"
-msgstr "ボールド"
-
-#: blocks/components/typography.js:50
-#: build/blocks.bundle.js:2
-msgid "Text Transform"
-msgstr "テキスト変換"
-
-#: blocks/components/typography.js:54
-#: build/blocks.bundle.js:2
-msgid "Uppercase"
-msgstr "大文字"
-
-#: blocks/components/typography.js:55
-#: build/blocks.bundle.js:2
-msgid "Lowercase"
-msgstr "小文字"
-
-#: blocks/components/typography.js:56
-#: build/blocks.bundle.js:2
-msgid "Capitalize"
-msgstr "先頭を大文字"
-
-#: blocks/components/typography.js:64
-#: build/blocks.bundle.js:2
-msgid "Text Style"
-msgstr "テキストスタイル"
-
-#: blocks/components/typography.js:69
-#: build/blocks.bundle.js:2
-msgid "Italic"
-msgstr "イタリック"
-
-#: blocks/components/typography.js:70
-#: build/blocks.bundle.js:2
-msgid "Oblique"
-msgstr "オブリーク"
-
-#: blocks/components/typography.js:77
-#: build/blocks.bundle.js:2
-msgid "Text Decoration"
-msgstr "テキスト装飾"
 
 #: blocks/components/typography.js:80
 #: build/blocks.bundle.js:2
@@ -8116,161 +8104,6 @@ msgstr "テキスト装飾"
 msgid "None"
 msgstr "なし"
 
-#: blocks/components/typography.js:81
-#: build/blocks.bundle.js:2
-msgid "Underline"
-msgstr "下線"
-
-#: blocks/components/typography.js:82
-#: build/blocks.bundle.js:2
-msgid "Overline"
-msgstr "上線"
-
-#: blocks/components/typography.js:84
-#: build/blocks.bundle.js:2
-msgid "Line Through"
-msgstr "打ち消し線"
-
-#: blocks/components/typography.js:93
-#: build/blocks.bundle.js:2
-msgid "Line Height"
-msgstr "行の高さ"
-
-#: blocks/components/typography.js:102
-#: build/blocks.bundle.js:2
-msgid "Word Spacing"
-msgstr "単語間隔"
-
-#: blocks/shops-page/template-1/components/Filters.js:157
-#: blocks/shops-page/template-2/components/Filters.js:157
-#: blocks/shops-page/template-3/components/Filters.js:103
-#: build/blocks.bundle.js:2
-msgid "Price Range"
-msgstr "価格帯"
-
-#: blocks/shops-page/template-1/components/Filters.js:244
-#: blocks/shops-page/template-2/components/Filters.js:76
-#: build/blocks.bundle.js:2
-msgid " Search"
-msgstr " 検索"
-
-#: blocks/shops-page/template-1/components/Rating.js:25
-#: blocks/shops-page/template-2/components/Rating.js:25
-#: blocks/shops-page/template-3/components/Rating.js:25
-#: build/blocks.bundle.js:2
-msgid "full star"
-msgstr "塗りつぶしの星"
-
-#: blocks/shops-page/template-1/components/Rating.js:39
-#: blocks/shops-page/template-2/components/Rating.js:39
-#: blocks/shops-page/template-3/components/Rating.js:39
-#: build/blocks.bundle.js:2
-msgid "half star"
-msgstr "半分の星"
-
-#: blocks/shops-page/template-1/components/Rating.js:53
-#: blocks/shops-page/template-2/components/Rating.js:53
-#: blocks/shops-page/template-3/components/Rating.js:53
-#: build/blocks.bundle.js:2
-msgid "empty star"
-msgstr "空の星"
-
-#: blocks/shops-page/template-1/edit.js:68
-#: blocks/shops-page/template-2/edit.js:68
-#: blocks/shops-page/template-3/edit.js:71
-#: build/blocks.bundle.js:2
-msgid "Product Settings"
-msgstr "商品設定"
-
-#: blocks/shops-page/template-1/edit.js:70
-#: blocks/shops-page/template-2/edit.js:70
-#: blocks/shops-page/template-3/edit.js:73
-#: build/blocks.bundle.js:2
-msgid "Products Per Page"
-msgstr "1ページあたりの商品数"
-
-#: blocks/shops-page/template-1/edit.js:79
-#: blocks/shops-page/template-2/edit.js:79
-#: blocks/shops-page/template-3/edit.js:83
-#: build/blocks.bundle.js:2
-msgid "Grid Settings"
-msgstr "グリッド設定"
-
-#: blocks/shops-page/template-1/edit.js:81
-#: blocks/shops-page/template-2/edit.js:81
-#: blocks/shops-page/template-3/edit.js:86
-#: build/blocks.bundle.js:2
-msgid "Show Filters"
-msgstr "フィルターを表示"
-
-#: blocks/shops-page/template-1/edit.js:87
-#: blocks/shops-page/template-2/edit.js:87
-#: blocks/shops-page/template-3/edit.js:92
-#: build/blocks.bundle.js:2
-msgid "Show Pagination"
-msgstr "ページネーションを表示"
-
-#: blocks/shops-page/template-1/edit.js:93
-#: blocks/shops-page/template-2/edit.js:93
-#: blocks/shops-page/template-3/edit.js:104
-#: build/blocks.bundle.js:2
-msgid "Number of Columns"
-msgstr "列数"
-
-#: blocks/shops-page/template-1/edit.js:102
-#: blocks/shops-page/template-2/edit.js:127
-#: blocks/shops-page/template-3/edit.js:114
-#: build/blocks.bundle.js:2
-msgid "Product Title"
-msgstr "商品タイトル"
-
-#: blocks/shops-page/template-1/edit.js:108
-#: blocks/shops-page/template-1/edit.js:289
-#: blocks/shops-page/template-1/edit.js:387
-#: blocks/shops-page/template-2/edit.js:133
-#: blocks/shops-page/template-2/edit.js:290
-#: blocks/shops-page/template-2/edit.js:388
-#: blocks/shops-page/template-3/edit.js:120
-#: blocks/shops-page/template-3/edit.js:312
-#: blocks/shops-page/template-3/edit.js:410
-#: build/blocks.bundle.js:2
-msgid "Text Color"
-msgstr "テキストの色"
-
-#: blocks/shops-page/template-1/edit.js:115
-#: blocks/shops-page/template-2/edit.js:140
-#: blocks/shops-page/template-3/edit.js:127
-#: build/blocks.bundle.js:2
-msgid "Hover Text Color"
-msgstr "ホバー時のテキストの色"
-
-#: blocks/shops-page/template-1/edit.js:134
-#: blocks/shops-page/template-2/edit.js:103
-#: build/blocks.bundle.js:2
-msgid "Product Category"
-msgstr "商品カテゴリー"
-
-#: blocks/shops-page/template-1/edit.js:158
-#: blocks/shops-page/template-2/edit.js:159
-#: blocks/shops-page/template-3/edit.js:181
-#: build/blocks.bundle.js:2
-msgid "Product Rating"
-msgstr "商品評価"
-
-#: blocks/shops-page/template-1/edit.js:161
-#: blocks/shops-page/template-2/edit.js:162
-#: blocks/shops-page/template-3/edit.js:184
-#: build/blocks.bundle.js:2
-msgid "Star Size"
-msgstr "星のサイズ"
-
-#: blocks/shops-page/template-1/edit.js:189
-#: blocks/shops-page/template-2/edit.js:190
-#: blocks/shops-page/template-3/edit.js:212
-#: build/blocks.bundle.js:2
-msgid "Product Price"
-msgstr "商品価格"
-
 #: blocks/shops-page/template-1/edit.js:197
 #: blocks/shops-page/template-2/edit.js:198
 #: blocks/shops-page/template-3/edit.js:220
@@ -8289,74 +8122,6 @@ msgstr "通常価格"
 msgid "Sale Price"
 msgstr "セール価格"
 
-#: blocks/shops-page/template-1/edit.js:262
-#: blocks/shops-page/template-2/edit.js:263
-#: blocks/shops-page/template-3/edit.js:285
-#: build/blocks.bundle.js:2
-msgid "Cart Button"
-msgstr "カートボタン"
-
-#: blocks/shops-page/template-1/edit.js:276
-#: blocks/shops-page/template-1/edit.js:374
-#: blocks/shops-page/template-2/edit.js:277
-#: blocks/shops-page/template-2/edit.js:375
-#: blocks/shops-page/template-3/edit.js:299
-#: blocks/shops-page/template-3/edit.js:397
-#: build/blocks.bundle.js:2
-msgid "Hover"
-msgstr "ホバー"
-
-#: blocks/shops-page/template-1/edit.js:295
-#: blocks/shops-page/template-1/edit.js:393
-#: blocks/shops-page/template-2/edit.js:296
-#: blocks/shops-page/template-2/edit.js:394
-#: blocks/shops-page/template-3/edit.js:318
-#: blocks/shops-page/template-3/edit.js:416
-#: build/blocks.bundle.js:2
-msgid "Background Color"
-msgstr "背景色"
-
-#: blocks/shops-page/template-1/edit.js:301
-#: blocks/shops-page/template-2/edit.js:302
-#: blocks/shops-page/template-3/edit.js:324
-#: build/blocks.bundle.js:2
-msgid "Focus Text Color"
-msgstr "フォーカス時のテキストの色"
-
-#: blocks/shops-page/template-1/edit.js:308
-#: blocks/shops-page/template-2/edit.js:309
-#: blocks/shops-page/template-3/edit.js:331
-#: build/blocks.bundle.js:2
-msgid "Focus Background Color"
-msgstr "フォーカス時の背景色"
-
-#: blocks/shops-page/template-1/edit.js:332
-#: blocks/shops-page/template-1/edit.js:417
-#: blocks/shops-page/template-2/edit.js:333
-#: blocks/shops-page/template-2/edit.js:418
-#: blocks/shops-page/template-3/edit.js:355
-#: blocks/shops-page/template-3/edit.js:440
-#: build/blocks.bundle.js:2
-msgid "Text Color (Hover)"
-msgstr "テキストの色（ホバー）"
-
-#: blocks/shops-page/template-1/edit.js:338
-#: blocks/shops-page/template-1/edit.js:423
-#: blocks/shops-page/template-2/edit.js:339
-#: blocks/shops-page/template-2/edit.js:424
-#: blocks/shops-page/template-3/edit.js:361
-#: blocks/shops-page/template-3/edit.js:446
-#: build/blocks.bundle.js:2
-msgid "Background Color (Hover)"
-msgstr "背景色（ホバー）"
-
-#: blocks/shops-page/template-1/edit.js:360
-#: blocks/shops-page/template-2/edit.js:361
-#: blocks/shops-page/template-3/edit.js:383
-#: build/blocks.bundle.js:2
-msgid "Checkout Button"
-msgstr "チェックアウトボタン"
-
 #: blocks/shops-page/template-1/edit.js:763
 #: blocks/shops-page/template-2/edit.js:716
 #: blocks/shops-page/template-3/components/GridView.jsx:188
@@ -8365,45 +8130,6 @@ msgstr "チェックアウトボタン"
 msgid "Add To Cart"
 msgstr "カートに追加"
 
-#: blocks/shops-page/template-3/edit.js:98
-#: build/blocks.bundle.js:2
-msgid "Show Sort By"
-msgstr "並び替えを表示"
-
-#: blocks/shops-page/template-3/edit.js:153
-#: build/blocks.bundle.js:2
-msgid "Description Color"
-msgstr "説明の色"
-
-#: blocks/shops-page/template-3/edit.js:160
-#: build/blocks.bundle.js:2
-msgid "Hover Description Color"
-msgstr "ホバー時の説明の色"
-
-#: blocks/single-product/add-to-cart/edit.js:32
-#: blocks/single-product/attributes/edit.js:106
-#: blocks/single-product/gallery/edit.js:105
-#: blocks/single-product/price/edit.js:46
-#: blocks/single-product/product-tab/edit.js:72
-#: blocks/single-product/rating/edit.js:55
-#: blocks/single-product/stock/edit.js:63
-#: blocks/single-product/summary/edit.js:46
-#: blocks/single-product/thumbnail/edit.js:39
-#: blocks/single-product/title/edit.js:68
-#: build/blocks.bundle.js:2
-msgid "Post type is not product."
-msgstr "投稿タイプが商品ではありません。"
-
-#: blocks/single-product/gallery/inspector.js:15
-#: build/blocks.bundle.js:2
-msgid "Number of Gallery Item"
-msgstr "ギャラリーアイテム数"
-
-#: blocks/single-product/price/inspector.js:16
-#: build/blocks.bundle.js:2
-msgid "Show Tax included"
-msgstr "税込みを表示"
-
 #: blocks/single-product/product-tab/components/sku.js:7
 #: blocks/single-product/rating/components/sku.js:7
 #: build/blocks.bundle.js:2
@@ -8411,50 +8137,6 @@ msgstr "税込みを表示"
 #: spa/admin/easycommerce/pages/Reports/components/singleProduct/ProductInfo.jsx:74
 msgid "SKU:"
 msgstr "SKU："
-
-#: blocks/single-product/product-tab/inspector.js:16
-#: blocks/single-product/rating/inspector.js:17
-#: build/blocks.bundle.js:2
-msgid "Show Rating"
-msgstr "評価を表示"
-
-#: blocks/single-product/rating/inspector.js:26
-#: build/blocks.bundle.js:2
-msgid "Show SKU"
-msgstr "SKUを表示"
-
-#: blocks/single-product/rating/inspector.js:35
-#: build/blocks.bundle.js:2
-msgid "Show Favourite"
-msgstr "お気に入りを表示"
-
-#: blocks/single-product/rating/inspector.js:43
-#: blocks/single-product/title/inspector.js:26
-#: build/blocks.bundle.js:2
-msgid "Styles"
-msgstr "スタイル"
-
-#: blocks/single-product/rating/inspector.js:46
-#: build/blocks.bundle.js:2
-msgid "Border"
-msgstr "枠線"
-
-#. translators: %d: number of items left in stock.
-#: blocks/single-product/stock/edit.js:45
-#: build/blocks.bundle.js:2
-msgid "Only <strong>%d</strong> item left in stock"
-msgid_plural "Only <strong>%d</strong> items left in stock"
-msgstr[0] "在庫は残り<strong>%d</strong>点のみです"
-
-#: blocks/single-product/title/inspector.js:18
-#: build/blocks.bundle.js:2
-msgid "Primary"
-msgstr "プライマリー"
-
-#: blocks/single-product/title/inspector.js:19
-#: build/blocks.bundle.js:2
-msgid "Body Light"
-msgstr "本文（ライト）"
 
 #: blocks/single-product/title/inspector.js:20
 #: build/blocks.bundle.js:2
@@ -8657,38 +8339,6 @@ msgstr "以下に新しいパスワードを入力してください。"
 msgid "Resetting..."
 msgstr "リセットしています..."
 
-#: build/blocks.bundle.js:2
-msgid "Dropdown Icon"
-msgstr "ドロップダウンアイコン"
-
-#: build/blocks.bundle.js:2
-msgid "Showing %1$d-%2$d of %3$d Results"
-msgstr "%3$d件中%1$d-%2$d件を表示"
-
-#: build/blocks.bundle.js:2
-msgid "Default Sorter"
-msgstr "デフォルトの並び替え"
-
-#: build/checkout.bundle.js:2
-msgid "Address line 1"
-msgstr "住所1"
-
-#: build/checkout.bundle.js:2
-msgid "Your address"
-msgstr "住所"
-
-#: build/checkout.bundle.js:2
-msgid "Address line 2"
-msgstr "住所2"
-
-#: build/checkout.bundle.js:2
-msgid "Select your City"
-msgstr "市区町村を選択"
-
-#: build/checkout.bundle.js:2
-msgid "Select your State"
-msgstr "都道府県を選択"
-
 #: build/checkout.bundle.js:2
 #: build/dashboard.bundle.js:2
 #: spa/public/dashboard/components/tabs/Address/Components/BillingAddress.jsx:156
@@ -8696,50 +8346,6 @@ msgstr "都道府県を選択"
 #: spa/public/dashboard/components/tabs/Profile/index.jsx:260
 msgid "Select your country"
 msgstr "国を選択"
-
-#: build/checkout.bundle.js:2
-msgid "Postal Code"
-msgstr "郵便番号"
-
-#: build/checkout.bundle.js:2
-msgid "Your Orders"
-msgstr "注文"
-
-#: build/checkout.bundle.js:2
-msgid "Shipping Eastimate"
-msgstr "配送料（見積もり）"
-
-#: build/checkout.bundle.js:2
-msgid "Tax Eastimate"
-msgstr "税（見積もり）"
-
-#: build/checkout.bundle.js:2
-msgid "Debit / Credit card"
-msgstr "デビット / クレジットカード"
-
-#: build/checkout.bundle.js:2
-msgid "Internet banking"
-msgstr "インターネットバンキング"
-
-#: build/checkout.bundle.js:2
-msgid "Google / Apple Wallet"
-msgstr "Google / Apple ウォレット"
-
-#: build/checkout.bundle.js:2
-msgid "Name on Card"
-msgstr "カード名義"
-
-#: build/checkout.bundle.js:2
-msgid "Enter card holder name"
-msgstr "カード名義人を入力"
-
-#: build/checkout.bundle.js:2
-msgid "Expiration date (MM/YY)"
-msgstr "有効期限（MM/YY）"
-
-#: build/checkout.bundle.js:2
-msgid "Learn more Taxes and Shipping information"
-msgstr "税金と配送に関する詳細はこちら"
 
 #: build/dashboard.bundle.js:2
 #: spa/public/dashboard/components/Sidebar/index.jsx:31
@@ -9025,14 +8631,6 @@ msgstr "画像を選択"
 #: spa/admin/easycommerce/pages/Products/components/ProductDesc/index.jsx:23
 msgid "Use selected image"
 msgstr "選択した画像を使用"
-
-#: build/dashboard.bundle.js:2
-msgid "user"
-msgstr "ユーザー"
-
-#: build/dashboard.bundle.js:2
-msgid "camera"
-msgstr "カメラ"
 
 #: build/dashboard.bundle.js:2
 #: spa/public/dashboard/components/tabs/Profile/elements/ProfileSkeleton.jsx:11
@@ -9336,16 +8934,6 @@ msgstr "注文データが見つかりません"
 
 #: build/easycommerce.bundle.js:2
 #: build/settings.bundle.js:2
-msgid "Your Voice Matters"
-msgstr "皆さまのご意見をお聞かせください"
-
-#: build/easycommerce.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Help us make EasyCommerce the best it can be. Share your feedback and ideas with us!"
-msgstr "EasyCommerceをより良くするためにご協力ください。フィードバックやアイデアをぜひお寄せください！"
-
-#: build/easycommerce.bundle.js:2
-#: build/settings.bundle.js:2
 #: spa/admin/easycommerce/pages/Customers/AddNew/index.jsx:145
 msgid "Enter first name"
 msgstr "名を入力"
@@ -9355,26 +8943,6 @@ msgstr "名を入力"
 #: spa/admin/easycommerce/pages/Customers/AddNew/index.jsx:234
 msgid "Enter a valid email address"
 msgstr "有効なメールアドレスを入力"
-
-#: build/easycommerce.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Send Message"
-msgstr "メッセージを送信"
-
-#: build/easycommerce.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Thank you for your feedback"
-msgstr "フィードバックをありがとうございます"
-
-#: build/easycommerce.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "We will use your feedback to build a better experience for everyone."
-msgstr "いただいたフィードバックを、すべての皆さまのより良い体験づくりに活用いたします。"
-
-#: build/easycommerce.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Feedback"
-msgstr "フィードバック"
 
 #: build/easycommerce.bundle.js:2
 #: build/settings.bundle.js:2
@@ -9450,21 +9018,6 @@ msgid "Remaining"
 msgstr "残り"
 
 #: build/easycommerce.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Network response was not okay"
-msgstr "ネットワークの応答が正常ではありませんでした"
-
-#: build/easycommerce.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "No answer found"
-msgstr "回答が見つかりません"
-
-#: build/easycommerce.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Ask a Question"
-msgstr "質問する"
-
-#: build/easycommerce.bundle.js:2
 #: build/editor.bundle.js:2
 #: build/settings.bundle.js:2
 #: spa/admin/easycommerce/pages/Products/components/common/AiGenerate/AiEnhanceImage.jsx:371
@@ -9476,183 +9029,11 @@ msgid "No credits available"
 msgstr "利用可能なクレジットがありません"
 
 #: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Two AI Agents, One Free Key"
-msgstr "2つのAIエージェント、1つの無料キー"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Connect a free API key -"
-msgstr "無料のAPIキーを接続 -"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "100 AI credits"
-msgstr "100 AIクレジット"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "free, more with"
-msgstr "無料、さらに"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Store Copilot - For You"
-msgstr "ストアコパイロット - あなたのために"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Chat to run your store: ask about sales, create and edit products, and update orders - in plain English, with your approval."
-msgstr "チャットでストアを運営：売上について質問したり、商品を作成・編集したり、注文を更新したり—わかりやすい言葉で、あなたの承認のもとに操作できます。"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Shopping Agent - For Your Shoppers"
-msgstr "ショッピングエージェント - お客様のために"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "A 24/7 storefront agent that helps customers find the right product, answers their questions, and places orders for them."
-msgstr "顧客が最適な商品を見つける手助けをし、質問に答え、代わりに注文を行う、24時間365日対応のストアフロントエージェント。"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Plus"
-msgstr "さらに"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "& more."
-msgstr "など。"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Each AI request transmits only the relevant records - the item you're working on, or a shopper's query and its products - to EasyCommerce's AI service. Your bulk customer and order data is never uploaded, sold, or used to train models."
-msgstr "各AIリクエストでは、関連するレコードのみ—操作中の商品、または買い物客のクエリとその商品—がEasyCommerceのAIサービスに送信されます。顧客や注文の一括データがアップロードされたり、販売されたり、モデルの学習に使用されたりすることは一切ありません。"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Learn more."
-msgstr "詳細はこちら。"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "I have an API key"
-msgstr "APIキーを持っています"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "I want an API key"
-msgstr "APIキーが欲しい"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Please fill all the fields"
-msgstr "すべての項目を入力してください"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Enter Your Connection Key"
-msgstr "接続キーを入力"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "The link in your email connects AI automatically. To do it manually, paste the key we emailed below."
-msgstr "メール内のリンクをクリックすると、AIが自動的に接続されます。手動で接続するには、メールでお送りしたキーを以下に貼り付けてください。"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Your Key"
-msgstr "キー"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Paste your key"
-msgstr "キーを貼り付け"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "I don't have a key"
-msgstr "キーを持っていません"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Check your email and click the link to connect AI."
-msgstr "メールを確認し、リンクをクリックしてAIを接続してください。"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Connect EasyCommerce AI"
-msgstr "EasyCommerce AIを接続"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Enter your name and email - we'll send a one-click link to connect AI, plus a backup key."
-msgstr "お名前とメールアドレスを入力してください - AIを接続するワンクリックリンクと、予備のキーをお送りします。"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Your Name"
-msgstr "お名前"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Enter your Name"
-msgstr "お名前を入力"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Email My Link"
-msgstr "リンクをメールで送る"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "I already have a key"
-msgstr "既にキーを持っています"
-
-#: build/easycommerce.bundle.js:2
 #: build/settings.bundle.js:2
 #: spa/admin/easycommerce/pages/Dashboard/components/JoinCommunity.jsx:9
 #: spa/admin/easycommerce/pages/Dashboard/components/JoinCommunity.jsx:19
 msgid "Join Community"
 msgstr "コミュニティに参加"
-
-#: build/easycommerce.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Support"
-msgstr "サポート"
-
-#: build/easycommerce.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Disconnect"
-msgstr "切断"
 
 #: build/easycommerce.bundle.js:2
 #: spa/admin/common/components/Notices/NoticeItem.jsx:101
@@ -9967,10 +9348,6 @@ msgid "Select status"
 msgstr "ステータスを選択"
 
 #: build/easycommerce.bundle.js:2
-msgid "Reset"
-msgstr "リセット"
-
-#: build/easycommerce.bundle.js:2
 #: build/shipping.bundle.js:2
 #: build/tax.bundle.js:2
 #: spa/admin/common/components/DeletePopup.jsx:42
@@ -10008,54 +9385,9 @@ msgid "Delete Permanently"
 msgstr "完全に削除"
 
 #: build/easycommerce.bundle.js:2
-msgid "Are you sure you want to update?"
-msgstr "更新してもよろしいですか？"
-
-#: build/easycommerce.bundle.js:2
-msgid "You're going to update <strong>All</strong> are you sure?"
-msgstr "<strong>すべて</strong>を更新しようとしています。よろしいですか？"
-
-#: build/easycommerce.bundle.js:2
-msgid "No, Keep as it is"
-msgstr "いいえ、このままにする"
-
-#: build/easycommerce.bundle.js:2
-msgid "Yes, Update"
-msgstr "はい、更新する"
-
-#: build/easycommerce.bundle.js:2
-msgid "Product deleted"
-msgid_plural "Products deleted"
-msgstr[0] "商品を削除しました"
-
-#: build/easycommerce.bundle.js:2
-msgid "Delete failed."
-msgstr "削除に失敗しました。"
-
-#: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/Help/index.jsx:100
 msgid "Something went wrong."
 msgstr "問題が発生しました。"
-
-#: build/easycommerce.bundle.js:2
-msgid "Set Status"
-msgstr "ステータスを設定"
-
-#: build/easycommerce.bundle.js:2
-msgid "Status updated successfully"
-msgstr "ステータスを更新しました"
-
-#: build/easycommerce.bundle.js:2
-msgid "Failed to update products."
-msgstr "商品の更新に失敗しました。"
-
-#: build/easycommerce.bundle.js:2
-msgid "An error occurred while updating statuses."
-msgstr "ステータスの更新中にエラーが発生しました。"
-
-#: build/easycommerce.bundle.js:2
-msgid "Please select a valid status."
-msgstr "有効なステータスを選択してください。"
 
 #: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/Products/ImportModal.jsx:22
@@ -10597,50 +9929,6 @@ msgid "Loading attribute..."
 msgstr "属性を読み込んでいます..."
 
 #: build/easycommerce.bundle.js:2
-msgid "Attribute name are required!"
-msgstr "属性名は必須です！"
-
-#: build/easycommerce.bundle.js:2
-msgid "Attribute slug are required!"
-msgstr "属性スラッグは必須です！"
-
-#: build/easycommerce.bundle.js:2
-msgid "Attribute name already exists!"
-msgstr "属性名は既に存在します！"
-
-#: build/easycommerce.bundle.js:2
-msgid "Attribute slug already exists!"
-msgstr "属性スラッグは既に存在します！"
-
-#: build/easycommerce.bundle.js:2
-msgid "Option %d must have a label!"
-msgstr "オプション%dにはラベルが必要です！"
-
-#: build/easycommerce.bundle.js:2
-msgid "Option %d must have a label and image"
-msgstr "オプション%dにはラベルと画像が必要です"
-
-#: build/easycommerce.bundle.js:2
-msgid "Option %d must have a label and color"
-msgstr "オプション%dにはラベルとカラーが必要です"
-
-#: build/easycommerce.bundle.js:2
-msgid "Duplicate option labels are not allowed!"
-msgstr "オプションラベルの重複は許可されていません！"
-
-#: build/easycommerce.bundle.js:2
-msgid "Attribute updated successfully!"
-msgstr "属性を更新しました！"
-
-#: build/easycommerce.bundle.js:2
-msgid "Attribute created successfully!"
-msgstr "属性を作成しました！"
-
-#: build/easycommerce.bundle.js:2
-msgid "It'll show on the single product screen"
-msgstr "商品詳細画面に表示されます"
-
-#: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/Brands/index.jsx:339
 #: spa/admin/easycommerce/pages/Categories/index.jsx:340
 #: spa/admin/easycommerce/pages/Products/components/Organize/Modals/BrandModal.jsx:164
@@ -10651,38 +9939,10 @@ msgid "Enter Name"
 msgstr "名前を入力"
 
 #: build/easycommerce.bundle.js:2
-msgid "URL-friendly slug of the attribute"
-msgstr "属性のURLに適したスラッグ"
-
-#: build/easycommerce.bundle.js:2
-msgid "How customers will see this on the single product screen"
-msgstr "商品詳細画面で顧客にどのように表示されるか"
-
-#: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/Attributes/components/Table.jsx:131
 #: spa/admin/easycommerce/pages/Products/components/ProductAttr/components/AttributeModal/components/AttributeSelectionTable.jsx:161
 msgid "Options"
 msgstr "オプション"
-
-#: build/easycommerce.bundle.js:2
-msgid "Options of the attribute"
-msgstr "属性のオプション"
-
-#: build/easycommerce.bundle.js:2
-msgid "Select an Image"
-msgstr "画像を選択"
-
-#: build/easycommerce.bundle.js:2
-msgid "Use this image"
-msgstr "この画像を使用"
-
-#: build/easycommerce.bundle.js:2
-msgid "Update Attribute"
-msgstr "属性を更新"
-
-#: build/easycommerce.bundle.js:2
-msgid "Create Attribute"
-msgstr "属性を作成"
 
 #: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/Attributes/components/Table.jsx:90
@@ -11777,78 +11037,14 @@ msgid "An error occurred while updating status"
 msgstr "ステータスの更新中にエラーが発生しました"
 
 #: build/easycommerce.bundle.js:2
-msgid "Please enter an amount greater than 0 before refunding"
-msgstr "返金する前に、0より大きい金額を入力してください"
-
-#: build/easycommerce.bundle.js:2
-msgid "Failed to process refund. Please try again."
-msgstr "返金処理に失敗しました。もう一度お試しください。"
-
-#: build/easycommerce.bundle.js:2
-msgid "Please enter the Refund Transaction ID."
-msgstr "返金取引IDを入力してください。"
-
-#: build/easycommerce.bundle.js:2
-msgid "Please enter an amount before refunding"
-msgstr "返金する前に、金額を入力してください"
-
-#: build/easycommerce.bundle.js:2
-msgid "Please select a reason before refunding"
-msgstr "返金する前に、理由を選択してください"
-
-#: build/easycommerce.bundle.js:2
-msgid "Refund Payment"
-msgstr "支払いを返金"
-
-#: build/easycommerce.bundle.js:2
-msgid "Refundable"
-msgstr "返金可能"
-
-#: build/easycommerce.bundle.js:2
-msgid "Refund Amount"
-msgstr "返金額"
-
-#: build/easycommerce.bundle.js:2
-msgid "Enter amount"
-msgstr "金額を入力"
-
-#: build/easycommerce.bundle.js:2
-msgid "Refund Reason"
-msgstr "返金理由"
-
-#: build/easycommerce.bundle.js:2
-msgid "Select Refund Reason"
-msgstr "返金理由を選択"
-
-#: build/easycommerce.bundle.js:2
-msgid "For %s, refunds should be processed manually outside of the system. After succesful processing, enter the Refund Transaction ID"
-msgstr "%sの場合、返金はシステム外で手動で処理する必要があります。処理が完了したら、返金取引IDを入力してください"
-
-#: build/easycommerce.bundle.js:2
-msgid "Enter Refund Transaction ID"
-msgstr "返金取引IDを入力"
-
-#: build/easycommerce.bundle.js:2
-msgid "Refund now"
-msgstr "今すぐ返金"
-
-#: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/Refunds/components/RefundsTable.jsx:7
 msgid "ID"
 msgstr "ID"
 
 #: build/easycommerce.bundle.js:2
-msgid "Fulfillment"
-msgstr "フルフィルメント"
-
-#: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/Customers/SingleCustomer/index.jsx:220
 msgid "Transactions ID"
 msgstr "取引ID"
-
-#: build/easycommerce.bundle.js:2
-msgid "Date & Time"
-msgstr "日時"
 
 #: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/Orders/SingleOrder/components/OrderInfo.jsx:69
@@ -11870,23 +11066,6 @@ msgstr "日付範囲を選択"
 msgid "Calendar"
 msgstr "カレンダー"
 
-#: build/easycommerce.bundle.js:2
-msgid "eg. 12 Sep - 28 Oct 2025"
-msgstr "例：2025年9月12日 - 10月28日"
-
-#: build/easycommerce.bundle.js:2
-msgid "Order deleted permanently"
-msgid_plural "Orders deleted permanently"
-msgstr[0] "注文を完全に削除しました"
-
-#: build/easycommerce.bundle.js:2
-msgid "Something went wrong while deleting."
-msgstr "削除中に問題が発生しました。"
-
-#: build/easycommerce.bundle.js:2
-msgid "Fulfill Status"
-msgstr "フルフィルメントステータス"
-
 #. translators: %d: number of orders placed in the country.
 #: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/Reports/components/common/GeoMap.jsx:248
@@ -11894,14 +11073,6 @@ msgstr "フルフィルメントステータス"
 msgid "%d order"
 msgid_plural "%d orders"
 msgstr[0] "%d件の注文"
-
-#: build/easycommerce.bundle.js:2
-msgid "Failed to update orders."
-msgstr "注文の更新に失敗しました。"
-
-#: build/easycommerce.bundle.js:2
-msgid "Please select a status to update."
-msgstr "更新するステータスを選択してください。"
 
 #. translators: %s: order status label (e.g. Pending).
 #: build/easycommerce.bundle.js:2
@@ -11919,7 +11090,9 @@ msgstr "注文が見つかりません"
 msgid ""
 "You're yet to receive any orders in your store. Keep promoting \n"
 "your store to bring in your first sale."
-msgstr "ストアではまだ注文を受け取っていません。ストアのプロモーションを続けて、\n最初の売上を獲得しましょう。"
+msgstr ""
+"ストアではまだ注文を受け取っていません。ストアのプロモーションを続けて、\n"
+"最初の売上を獲得しましょう。"
 
 #. translators: %s: order status label (e.g. Pending).
 #: build/easycommerce.bundle.js:2
@@ -11927,23 +11100,9 @@ msgstr "ストアではまだ注文を受け取っていません。ストアの
 msgid ""
 "No %s orders in your store. Keep promoting \n"
 "your store to bring in your first sale."
-msgstr "ストアに%s注文はありません。ストアのプロモーションを続けて、\n最初の売上を獲得しましょう。"
-
-#: build/easycommerce.bundle.js:2
-msgid "Resend Order Email"
-msgstr "注文メールを再送信"
-
-#: build/easycommerce.bundle.js:2
-msgid "Email Event"
-msgstr "メールイベント"
-
-#: build/easycommerce.bundle.js:2
-msgid "Select an event"
-msgstr "イベントを選択"
-
-#: build/easycommerce.bundle.js:2
-msgid "Email sent"
-msgstr "メールを送信しました"
+msgstr ""
+"ストアに%s注文はありません。ストアのプロモーションを続けて、\n"
+"最初の売上を獲得しましょう。"
 
 #: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/Orders/components/OrderActions.jsx:63
@@ -11982,10 +11141,6 @@ msgid "Payment URL"
 msgstr "支払いURL"
 
 #: build/easycommerce.bundle.js:2
-msgid "date"
-msgstr "日付"
-
-#: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/Customers/components/CustomerTable.jsx:52
 #: spa/admin/easycommerce/pages/Customers/components/TableHeader.jsx:25
 #: spa/admin/easycommerce/pages/Customers/SingleCustomer/components/CustomerDetails.jsx:112
@@ -12010,54 +11165,6 @@ msgstr "理由"
 #: spa/admin/easycommerce/pages/Orders/SingleOrder/components/Refunds.jsx:42
 msgid "Refunded By"
 msgstr "返金者"
-
-#: build/easycommerce.bundle.js:2
-msgid "Add Note"
-msgstr "メモを追加"
-
-#: build/easycommerce.bundle.js:2
-msgid "Required"
-msgstr "必須"
-
-#: build/easycommerce.bundle.js:2
-msgid "Write your note here"
-msgstr "ここにメモを入力"
-
-#: build/easycommerce.bundle.js:2
-msgid "Note To Customer"
-msgstr "顧客へのメモ"
-
-#: build/easycommerce.bundle.js:2
-msgid "Unable to save note. The database may need to be updated. Please contact your administrator."
-msgstr "メモを保存できません。データベースの更新が必要な可能性があります。管理者にお問い合わせください。"
-
-#: build/easycommerce.bundle.js:2
-msgid "Delete Note"
-msgstr "メモを削除"
-
-#: build/easycommerce.bundle.js:2
-msgid "Are you sure you want to delete this note? This action cannot be undone."
-msgstr "このメモを削除してもよろしいですか？この操作は元に戻せません。"
-
-#: build/easycommerce.bundle.js:2
-msgid "Unable to delete note. Please try again or contact your administrator."
-msgstr "メモを削除できません。もう一度お試しいただくか、管理者にお問い合わせください。"
-
-#: build/easycommerce.bundle.js:2
-msgid "Order doesn't exist"
-msgstr "注文が存在しません"
-
-#: build/easycommerce.bundle.js:2
-msgid "Failed to fetch order data"
-msgstr "注文データの取得に失敗しました"
-
-#: build/easycommerce.bundle.js:2
-msgid "Unknown"
-msgstr "不明"
-
-#: build/easycommerce.bundle.js:2
-msgid "eg. %1$s - %2$s %3$s"
-msgstr "例：%1$s - %2$s %3$s"
 
 #: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/Transactions/index.jsx:50
@@ -12170,7 +11277,9 @@ msgstr "ストアに%s顧客はいません。"
 msgid ""
 "Keep promoting \n"
 "your store to bring in your first customer."
-msgstr "ストアのプロモーションを続けて、\n最初の顧客を獲得しましょう。"
+msgstr ""
+"ストアのプロモーションを続けて、\n"
+"最初の顧客を獲得しましょう。"
 
 #: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/Customers/index.jsx:269
@@ -12242,26 +11351,9 @@ msgid "Something went wrong while updating coupon status"
 msgstr "クーポンのステータス更新中に問題が発生しました"
 
 #: build/easycommerce.bundle.js:2
-msgid "No coupons found"
-msgstr "クーポンが見つかりません"
-
-#: build/easycommerce.bundle.js:2
-msgid "All type of Coupons activities will appear here once they occur."
-msgstr "すべてのクーポンアクティビティは、発生するとここに表示されます。"
-
-#: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/App.jsx:404
 msgid "Add Coupon"
 msgstr "クーポンを追加"
-
-#: build/easycommerce.bundle.js:2
-msgid "Coupons deleted successfully"
-msgstr "クーポンを削除しました"
-
-#: build/easycommerce.bundle.js:2
-msgid "%d coupon"
-msgid_plural "%d coupons"
-msgstr[0] "%d件のクーポン"
 
 #: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/Coupons/CouponDetails/elements/General.jsx:35
@@ -12283,10 +11375,6 @@ msgstr "このタブにはクーポンが見つかりません。"
 #: spa/admin/easycommerce/pages/Coupons/CouponDetails/index.jsx:241
 msgid "Create Coupon"
 msgstr "クーポンを作成"
-
-#: build/easycommerce.bundle.js:2
-msgid "Coupon Deleted"
-msgstr "クーポンを削除しました"
 
 #: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/Coupons/CouponDetails/elements/General.jsx:27
@@ -12339,34 +11427,6 @@ msgid "Search for products"
 msgstr "商品を検索"
 
 #: build/easycommerce.bundle.js:2
-msgid "Conditions"
-msgstr "条件"
-
-#: build/easycommerce.bundle.js:2
-msgid "Discount applies to specific products?"
-msgstr "割引を特定の商品に適用しますか？"
-
-#: build/easycommerce.bundle.js:2
-msgid "Minimum Spend"
-msgstr "最低購入額"
-
-#: build/easycommerce.bundle.js:2
-msgid "Maximum Spend"
-msgstr "最高購入額"
-
-#: build/easycommerce.bundle.js:2
-msgid "Start Date"
-msgstr "開始日"
-
-#: build/easycommerce.bundle.js:2
-msgid "calendar"
-msgstr "カレンダー"
-
-#: build/easycommerce.bundle.js:2
-msgid "End Date"
-msgstr "終了日"
-
-#: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/App.jsx:402
 #: spa/admin/easycommerce/pages/Coupons/CouponDetails/index.jsx:241
 msgid "Edit Coupon"
@@ -12398,18 +11458,6 @@ msgid "Save as Active"
 msgstr "有効として保存"
 
 #: build/easycommerce.bundle.js:2
-msgid "(No Name)"
-msgstr "（名前なし）"
-
-#: build/easycommerce.bundle.js:2
-msgid "+%d more"
-msgstr "他%d件"
-
-#: build/easycommerce.bundle.js:2
-msgid "Remind"
-msgstr "リマインダーを送信"
-
-#: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/AbandonedCart/components/NotFound.jsx:6
 msgid "No Abandoned Carts found"
 msgstr "放棄カートが見つかりません"
@@ -12418,43 +11466,6 @@ msgstr "放棄カートが見つかりません"
 #: spa/admin/easycommerce/pages/AbandonedCart/components/NotFound.jsx:20
 msgid "All Abandoned Carts will appear here once they occur."
 msgstr "すべての放棄カートは、発生するとここに表示されます。"
-
-#: build/easycommerce.bundle.js:2
-msgid "Are you sure you want to send reminder?"
-msgstr "リマインダーを送信してもよろしいですか？"
-
-#: build/easycommerce.bundle.js:2
-msgid "You're going to Remind"
-msgstr "選択した"
-
-#: build/easycommerce.bundle.js:2
-msgid "selected?"
-msgstr "件にリマインダーを送信します。よろしいですか？"
-
-#: build/easycommerce.bundle.js:2
-msgid "Don't Send"
-msgstr "送信しない"
-
-#: build/easycommerce.bundle.js:2
-msgid "Yes, Send"
-msgstr "はい、送信する"
-
-#: build/easycommerce.bundle.js:2
-msgid "Remind All"
-msgstr "すべてにリマインダーを送信"
-
-#: build/easycommerce.bundle.js:2
-msgid "carts deleted successfully"
-msgstr "カートを削除しました"
-
-#: build/easycommerce.bundle.js:2
-msgid "%d cart"
-msgid_plural "%d carts"
-msgstr[0] "%d件のカート"
-
-#: build/easycommerce.bundle.js:2
-msgid "Reminders sent successfully"
-msgstr "リマインダーを送信しました"
 
 #: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/AbandonedCart/components/CleanAbandonedCartModal.jsx:33
@@ -12519,22 +11530,6 @@ msgid "Abandoned Cart Deleted"
 msgstr "放棄カートを削除しました"
 
 #: build/easycommerce.bundle.js:2
-msgid "Approved"
-msgstr "承認済み"
-
-#: build/easycommerce.bundle.js:2
-msgid "Not Approved"
-msgstr "未承認"
-
-#: build/easycommerce.bundle.js:2
-msgid "Review #%d"
-msgstr "レビュー #%d"
-
-#: build/easycommerce.bundle.js:2
-msgid "Product #%d"
-msgstr "商品 #%d"
-
-#: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/ProductReviews/components/Table/THead.jsx:8
 msgid "Review Content"
 msgstr "レビュー内容"
@@ -12544,10 +11539,6 @@ msgstr "レビュー内容"
 #: spa/admin/easycommerce/pages/Reports/components/singleProduct/Reviews.jsx:143
 msgid "Rating"
 msgstr "評価"
-
-#: build/easycommerce.bundle.js:2
-msgid "Search by customer name or content"
-msgstr "顧客名または内容で検索"
 
 #: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/App.jsx:412
@@ -13597,59 +12588,6 @@ msgid "Build"
 msgstr "作成"
 
 #: build/shipping.bundle.js:2
-msgid "No shipping plans configured"
-msgstr "配送プランが設定されていません"
-
-#: build/shipping.bundle.js:2
-msgid "Set up shipping plans to define shipping rates by region. "
-msgstr "配送プランを設定して、地域ごとの配送料を定義します。 "
-
-#: build/shipping.bundle.js:2
-#: build/tax.bundle.js:2
-msgid "Read docs."
-msgstr "ドキュメントを読む。"
-
-#: build/shipping.bundle.js:2
-msgid "+ Add Plan"
-msgstr "+ プランを追加"
-
-#: build/shipping.bundle.js:2
-msgid "Min Price (%s)"
-msgstr "最低価格（%s）"
-
-#: build/shipping.bundle.js:2
-msgid "Max Price (%s)"
-msgstr "最高価格（%s）"
-
-#: build/shipping.bundle.js:2
-msgid "Min Weight"
-msgstr "最小重量"
-
-#: build/shipping.bundle.js:2
-msgid "Max Weight"
-msgstr "最大重量"
-
-#: build/shipping.bundle.js:2
-msgid "Min Quantity"
-msgstr "最小数量"
-
-#: build/shipping.bundle.js:2
-msgid "Max Quantity"
-msgstr "最大数量"
-
-#: build/shipping.bundle.js:2
-msgid "Min"
-msgstr "最小"
-
-#: build/shipping.bundle.js:2
-msgid "Max"
-msgstr "最大"
-
-#: build/shipping.bundle.js:2
-msgid "Shipping name here"
-msgstr "ここに配送名を入力"
-
-#: build/shipping.bundle.js:2
 #: build/tax.bundle.js:2
 #: spa/admin/tax/src/components/TaxDetails/elements/TaxFormTopInputs.jsx:40
 msgid "Write description here"
@@ -13661,127 +12599,10 @@ msgstr "ここに説明を入力"
 msgid "Enable/Disable"
 msgstr "有効/無効"
 
-#: build/shipping.bundle.js:2
-#: build/tax.bundle.js:2
-msgid "Regions"
-msgstr "地域"
-
-#: build/shipping.bundle.js:2
-msgid "Zip Code"
-msgstr "郵便番号"
-
-#: build/shipping.bundle.js:2
-msgid "Calculation Base"
-msgstr "計算基準"
-
-#: build/shipping.bundle.js:2
-msgid "Select Base"
-msgstr "基準を選択"
-
-#: build/shipping.bundle.js:2
-msgid "Cart Total"
-msgstr "カート合計"
-
-#: build/shipping.bundle.js:2
-msgid "Total Weight"
-msgstr "総重量"
-
-#: build/shipping.bundle.js:2
-msgid "Item Count"
-msgstr "商品点数"
-
-#: build/shipping.bundle.js:2
-msgid "Taxable"
-msgstr "課税対象"
-
-#: build/shipping.bundle.js:2
-msgid "No tax rate configured for this country."
-msgstr "この国の税率が設定されていません。"
-
-#: build/shipping.bundle.js:2
-msgid "Method Name"
-msgstr "方法名"
-
-#: build/shipping.bundle.js:2
-msgid "Shipping Fee (%s)"
-msgstr "配送料（%s）"
-
-#: build/shipping.bundle.js:2
-msgid "Write name here"
-msgstr "ここに名前を入力"
-
-#: build/shipping.bundle.js:2
-msgid "Write min weight"
-msgstr "最小重量を入力"
-
-#: build/shipping.bundle.js:2
-msgid "Write max weight"
-msgstr "最大重量を入力"
-
-#: build/shipping.bundle.js:2
-msgid "Write your fee"
-msgstr "料金を入力"
-
-#: build/shipping.bundle.js:2
-msgid "Calculation base is required."
-msgstr "計算基準は必須です。"
-
-#: build/shipping.bundle.js:2
-msgid "Shipping plan name is required."
-msgstr "配送プラン名は必須です。"
-
-#: build/shipping.bundle.js:2
-msgid "Update Shipping Plan"
-msgstr "配送プランを更新"
-
-#: build/shipping.bundle.js:2
-msgid "Save Shipping Plan"
-msgstr "配送プランを保存"
-
-#: build/shipping.bundle.js:2
-msgid "Plan"
-msgstr "プラン"
-
-#: build/shipping.bundle.js:2
-msgid "Add Shipping Plan"
-msgstr "配送プランを追加"
-
-#: build/shipping.bundle.js:2
-msgid "Shipping Plans"
-msgstr "配送プラン"
-
-#: build/shipping.bundle.js:2
-msgid "+ New Plan"
-msgstr "+ 新しいプラン"
-
-#: build/tax.bundle.js:2
-msgid "No tax classes configured"
-msgstr "税クラスが設定されていません"
-
-#: build/tax.bundle.js:2
-msgid "Set up tax classes to apply the correct tax amounts to products. "
-msgstr "税クラスを設定して、商品に正しい税額を適用します。 "
-
-#: build/tax.bundle.js:2
-msgid "+ Add Class"
-msgstr "+ クラスを追加"
-
-#: build/tax.bundle.js:2
-msgid "Add Class"
-msgstr "クラスを追加"
-
-#: build/tax.bundle.js:2
-msgid "Class"
-msgstr "クラス"
-
 #: build/tax.bundle.js:2
 #: spa/admin/tax/src/components/TaxDetails/elements/RegionsHeader.jsx:18
 msgid "Rate (%)"
 msgstr "税率（%）"
-
-#: build/tax.bundle.js:2
-msgid "- Select -"
-msgstr "- 選択 -"
 
 #: build/tax.bundle.js:2
 #: spa/admin/tax/src/components/TaxDetails/elements/SaveButtons.jsx:19
@@ -13964,38 +12785,6 @@ msgstr "ストアダッシュボード"
 #: spa/admin/wizard/src/pages/Success.jsx:277
 msgid "Add A Product"
 msgstr "商品を追加"
-
-#: build/wizard.bundle.js:2
-msgid "Set up your store name, location, and contact details"
-msgstr "店舗名、所在地、連絡先を設定します"
-
-#: build/wizard.bundle.js:2
-msgid "Create essential pages like Shop, Cart, and Checkout"
-msgstr "ショップ、カート、チェックアウトなどの必須ページを作成します"
-
-#: build/wizard.bundle.js:2
-msgid "Connect payment gateways to start accepting orders"
-msgstr "決済ゲートウェイを接続して、注文の受け付けを開始します"
-
-#: build/wizard.bundle.js:2
-msgid "Welcome to EasyCommerce"
-msgstr "EasyCommerceへようこそ"
-
-#: build/wizard.bundle.js:2
-msgid "Start selling in a few minutes with 3 easy steps:"
-msgstr "3つの簡単なステップで、数分で販売を開始できます："
-
-#: build/wizard.bundle.js:2
-msgid "Get Started Now"
-msgstr "今すぐ始める"
-
-#: build/wizard.bundle.js:2
-msgid "Demo import failed. Please try again."
-msgstr "デモのインポートに失敗しました。もう一度お試しください。"
-
-#: build/wizard.bundle.js:2
-msgid "Skip"
-msgstr "スキップ"
 
 #: spa/admin/common/components/DragNdrop/index.jsx:58
 msgid "Drag handle"

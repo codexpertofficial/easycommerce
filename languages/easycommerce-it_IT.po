@@ -57,7 +57,16 @@ msgid ""
 "Need help? Feel free to reach out. We’re happy to assist!\n"
 "Best,\n"
 "##shop_name## Team"
-msgstr "Ciao ##name##,\nAbbiamo notato che hai lasciato alcuni articoli nel tuo carrello su ##shop_name##. Il tuo carrello, del valore di ##cart_total##, ti sta ancora aspettando!\nEcco cosa hai lasciato:\n##product_list##\nNon perdere l'occasione—i tuoi articoli potrebbero esaurirsi presto! Clicca qui sotto per tornare al tuo carrello e completare l'acquisto.\nVai alla Cassa 👉 ##cart_link## \nHai bisogno di aiuto? Non esitare a contattarci. Saremo felici di assisterti!\nA presto,\nIl team di ##shop_name##"
+msgstr ""
+"Ciao ##name##,\n"
+"Abbiamo notato che hai lasciato alcuni articoli nel tuo carrello su ##shop_name##. Il tuo carrello, del valore di ##cart_total##, ti sta ancora aspettando!\n"
+"Ecco cosa hai lasciato:\n"
+"##product_list##\n"
+"Non perdere l'occasione—i tuoi articoli potrebbero esaurirsi presto! Clicca qui sotto per tornare al tuo carrello e completare l'acquisto.\n"
+"Vai alla Cassa 👉 ##cart_link## \n"
+"Hai bisogno di aiuto? Non esitare a contattarci. Saremo felici di assisterti!\n"
+"A presto,\n"
+"Il team di ##shop_name##"
 
 #: app/API/Abandoned_Cart.php:288
 #: app/API/Cart.php:698
@@ -2518,7 +2527,24 @@ msgid ""
 "Warm regards,\n"
 "The ##shop_name## Team\n"
 ""
-msgstr "\nCiao ##customer_name##,\n\nCi dispiace informarti che il tuo ordine ###order_id## è stato annullato. Comprendiamo che non è ciò che speravi di sentire.\n\nEcco un riepilogo dell'ordine annullato:\n##product_table##\nArticoli: ##number_of_items##\nTotale: ##order_total##\n\nSe desideri comunque acquistare questi articoli, puoi effettuare un nuovo ordine in qualsiasi momento: ##shop_page##\n\nSe hai domande o pensi che si tratti di un errore, non esitare a contattarci - saremo felici di rimediare.\n\nCordiali saluti,\nIl team di ##shop_name##\n"
+msgstr ""
+"\n"
+"Ciao ##customer_name##,\n"
+"\n"
+"Ci dispiace informarti che il tuo ordine ###order_id## è stato annullato. Comprendiamo che non è ciò che speravi di sentire.\n"
+"\n"
+"Ecco un riepilogo dell'ordine annullato:\n"
+"##product_table##\n"
+"Articoli: ##number_of_items##\n"
+"Totale: ##order_total##\n"
+"\n"
+"Se desideri comunque acquistare questi articoli, puoi effettuare un nuovo ordine in qualsiasi momento: ##shop_page##\n"
+"\n"
+"Se hai domande o pensi che si tratti di un errore, non esitare a contattarci - saremo felici di rimediare.\n"
+"\n"
+"Cordiali saluti,\n"
+"Il team di ##shop_name##\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/cancelled.php:25
@@ -2546,7 +2572,25 @@ msgid ""
 "Best regards,\n"
 "The ##shop_name## Team\n"
 ""
-msgstr "\nSalve,\n\nL'ordine ###order_id## di ##customer_name## è stato annullato.\n\n##product_table##\nArticoli: ##number_of_items##\nTotale: ##order_total##\n\nContatto del cliente:\nEmail: ##customer_email##\nTelefono: ##customer_phone##\n\nSe richiede la tua attenzione, puoi contattare direttamente il cliente o esaminare l'ordine nella tua bacheca.\n\nCordiali saluti,\nIl team di ##shop_name##\n"
+msgstr ""
+"\n"
+"Salve,\n"
+"\n"
+"L'ordine ###order_id## di ##customer_name## è stato annullato.\n"
+"\n"
+"##product_table##\n"
+"Articoli: ##number_of_items##\n"
+"Totale: ##order_total##\n"
+"\n"
+"Contatto del cliente:\n"
+"Email: ##customer_email##\n"
+"Telefono: ##customer_phone##\n"
+"\n"
+"Se richiede la tua attenzione, puoi contattare direttamente il cliente o esaminare l'ordine nella tua bacheca.\n"
+"\n"
+"Cordiali saluti,\n"
+"Il team di ##shop_name##\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/completed.php:4
@@ -2577,7 +2621,28 @@ msgid ""
 "Warm regards,\n"
 "The ##shop_name## Team\n"
 ""
-msgstr "\nCiao ##customer_name##,\n\nIl tuo ordine ###order_id## è stato completato - grazie per aver acquistato su ##shop_name##! Speriamo che tu sia soddisfatto di ciò che hai ordinato.\n\nRiepilogo dell'ordine:\n##product_table##\nArticoli: ##number_of_items##\nTotale: ##order_total##\n\nConsegnato a:\n##shipping_first_name## ##shipping_last_name##\n##shipping_address##\n\nPuoi consultare lo storico dei tuoi ordini in qualsiasi momento dal tuo account: ##dashboard_page##\n\nSe qualcosa non va, siamo qui per aiutarti - contattaci pure.\n\nCordiali saluti,\nIl team di ##shop_name##\n"
+msgstr ""
+"\n"
+"Ciao ##customer_name##,\n"
+"\n"
+"Il tuo ordine ###order_id## è stato completato - grazie per aver acquistato su ##shop_name##! Speriamo che tu sia soddisfatto di ciò che hai ordinato.\n"
+"\n"
+"Riepilogo dell'ordine:\n"
+"##product_table##\n"
+"Articoli: ##number_of_items##\n"
+"Totale: ##order_total##\n"
+"\n"
+"Consegnato a:\n"
+"##shipping_first_name## ##shipping_last_name##\n"
+"##shipping_address##\n"
+"\n"
+"Puoi consultare lo storico dei tuoi ordini in qualsiasi momento dal tuo account: ##dashboard_page##\n"
+"\n"
+"Se qualcosa non va, siamo qui per aiutarti - contattaci pure.\n"
+"\n"
+"Cordiali saluti,\n"
+"Il team di ##shop_name##\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/completed.php:29
@@ -2609,7 +2674,29 @@ msgid ""
 "Best regards,\n"
 "The ##shop_name## Team\n"
 ""
-msgstr "\nSalve,\n\nL'ordine ###order_id## di ##customer_name## è stato contrassegnato come completato.\n\n##product_table##\nArticoli: ##number_of_items##\nTotale: ##order_total##\n\nSpedito a:\n##shipping_first_name## ##shipping_last_name##\n##shipping_address##\n\nContatto del cliente:\nEmail: ##customer_email##\nTelefono: ##customer_phone##\n\nDettagli completi dell'ordine: ##dashboard_page##\n\nCordiali saluti,\nIl team di ##shop_name##\n"
+msgstr ""
+"\n"
+"Salve,\n"
+"\n"
+"L'ordine ###order_id## di ##customer_name## è stato contrassegnato come completato.\n"
+"\n"
+"##product_table##\n"
+"Articoli: ##number_of_items##\n"
+"Totale: ##order_total##\n"
+"\n"
+"Spedito a:\n"
+"##shipping_first_name## ##shipping_last_name##\n"
+"##shipping_address##\n"
+"\n"
+"Contatto del cliente:\n"
+"Email: ##customer_email##\n"
+"Telefono: ##customer_phone##\n"
+"\n"
+"Dettagli completi dell'ordine: ##dashboard_page##\n"
+"\n"
+"Cordiali saluti,\n"
+"Il team di ##shop_name##\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/failed.php:4
@@ -2640,7 +2727,27 @@ msgid ""
 "\n"
 "Need help? Just reach out – we’re here to support you.\n"
 ""
-msgstr "\nCiao ##customer_name##,\n\nPurtroppo non siamo riusciti a elaborare il pagamento per il tuo ordine ###order_id##. Ciò potrebbe essere dovuto a uno dei seguenti motivi:\n<ul>\n    <li>La carta è stata rifiutata o aveva fondi insufficienti</li>\n    <li>Dati della carta o informazioni di fatturazione errati</li>\n    <li>Il pagamento non è stato autorizzato o è scaduto</li>\n    <li>Un problema temporaneo con il fornitore di pagamenti</li>\n</ul>\n\nRiepilogo dell'ordine:\n##product_table##\nArticoli nell'ordine: ##number_of_items##\nImporto totale: ##order_total##\n\nI tuoi articoli sono ancora salvati. Puoi riprovare il pagamento o effettuare un nuovo ordine in qualsiasi momento su: ##checkout_page##\n\nHai bisogno di aiuto? Contattaci pure – siamo qui per supportarti.\n"
+msgstr ""
+"\n"
+"Ciao ##customer_name##,\n"
+"\n"
+"Purtroppo non siamo riusciti a elaborare il pagamento per il tuo ordine ###order_id##. Ciò potrebbe essere dovuto a uno dei seguenti motivi:\n"
+"<ul>\n"
+"    <li>La carta è stata rifiutata o aveva fondi insufficienti</li>\n"
+"    <li>Dati della carta o informazioni di fatturazione errati</li>\n"
+"    <li>Il pagamento non è stato autorizzato o è scaduto</li>\n"
+"    <li>Un problema temporaneo con il fornitore di pagamenti</li>\n"
+"</ul>\n"
+"\n"
+"Riepilogo dell'ordine:\n"
+"##product_table##\n"
+"Articoli nell'ordine: ##number_of_items##\n"
+"Importo totale: ##order_total##\n"
+"\n"
+"I tuoi articoli sono ancora salvati. Puoi riprovare il pagamento o effettuare un nuovo ordine in qualsiasi momento su: ##checkout_page##\n"
+"\n"
+"Hai bisogno di aiuto? Contattaci pure – siamo qui per supportarti.\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/failed.php:30
@@ -2664,7 +2771,26 @@ msgid ""
 "The customer may retry payment from: ##checkout_page##\n"
 "Please follow up if needed.\n"
 ""
-msgstr "\nSalve,\n\nIl pagamento per l'ordine ###order_id## di ##customer_name## non è riuscito. L'errore potrebbe essere dovuto a:\n<ul>\n    <li>Carta rifiutata o fondi insufficienti</li>\n    <li>Dati della carta o di fatturazione non validi</li>\n    <li>Pagamento non autorizzato o scaduto</li>\n    <li>Un problema temporaneo con il gateway di pagamento</li>\n</ul>\n\nDettagli dell'ordine:\n##product_table##\nNumero di articoli: ##number_of_items##\nImporto totale: ##order_total##\n\nIl cliente può riprovare il pagamento da: ##checkout_page##\nSi prega di dare seguito se necessario.\n"
+msgstr ""
+"\n"
+"Salve,\n"
+"\n"
+"Il pagamento per l'ordine ###order_id## di ##customer_name## non è riuscito. L'errore potrebbe essere dovuto a:\n"
+"<ul>\n"
+"    <li>Carta rifiutata o fondi insufficienti</li>\n"
+"    <li>Dati della carta o di fatturazione non validi</li>\n"
+"    <li>Pagamento non autorizzato o scaduto</li>\n"
+"    <li>Un problema temporaneo con il gateway di pagamento</li>\n"
+"</ul>\n"
+"\n"
+"Dettagli dell'ordine:\n"
+"##product_table##\n"
+"Numero di articoli: ##number_of_items##\n"
+"Importo totale: ##order_total##\n"
+"\n"
+"Il cliente può riprovare il pagamento da: ##checkout_page##\n"
+"Si prega di dare seguito se necessario.\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real account data at send time - keep them verbatim.
 #: app/Config/email-defaults/new_account.php:4
@@ -2697,7 +2823,30 @@ msgid ""
 "Warm regards,\n"
 "The ##shop_name## Team\n"
 ""
-msgstr "\nCiao ##customer_name##,\n\nBenvenuto su ##shop_name##! Siamo felici di averti con noi. Il tuo account è pronto.\n\nCon il tuo account puoi:\n<ul>\n    <li>Tracciare e gestire i tuoi ordini in un unico posto</li>\n    <li>Consultare l'intero storico dei tuoi acquisti</li>\n    <li>Scaricare gli acquisti digitali in qualsiasi momento</li>\n    <li>Completare l'acquisto più rapidamente la prossima volta</li>\n</ul>\n\nUn ultimo passaggio - imposta la tua password per proteggere il tuo account:\n##password_reset_link##\n\nDopodiché sei pronto per iniziare a fare acquisti: ##shop_page##\n\nGrazie per esserti unito a noi. Speriamo che tu trovi esattamente ciò che cerchi!\n\nCordiali saluti,\nIl team di ##shop_name##\n"
+msgstr ""
+"\n"
+"Ciao ##customer_name##,\n"
+"\n"
+"Benvenuto su ##shop_name##! Siamo felici di averti con noi. Il tuo account è pronto.\n"
+"\n"
+"Con il tuo account puoi:\n"
+"<ul>\n"
+"    <li>Tracciare e gestire i tuoi ordini in un unico posto</li>\n"
+"    <li>Consultare l'intero storico dei tuoi acquisti</li>\n"
+"    <li>Scaricare gli acquisti digitali in qualsiasi momento</li>\n"
+"    <li>Completare l'acquisto più rapidamente la prossima volta</li>\n"
+"</ul>\n"
+"\n"
+"Un ultimo passaggio - imposta la tua password per proteggere il tuo account:\n"
+"##password_reset_link##\n"
+"\n"
+"Dopodiché sei pronto per iniziare a fare acquisti: ##shop_page##\n"
+"\n"
+"Grazie per esserti unito a noi. Speriamo che tu trovi esattamente ciò che cerchi!\n"
+"\n"
+"Cordiali saluti,\n"
+"Il team di ##shop_name##\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real account data at send time - keep them verbatim.
 #: app/Config/email-defaults/new_account.php:31
@@ -2723,7 +2872,23 @@ msgid ""
 "Best regards,\n"
 "The ##shop_name## Team\n"
 ""
-msgstr "\nSalve,\n\nUn nuovo cliente ha appena creato un account su ##shop_name##.\n\n<ul>\n    <li>Nome: ##customer_name##</li>\n    <li>Email: ##customer_email##</li>\n    <li>Registrato: ##registration_date##</li>\n</ul>\n\nPuoi visualizzare e gestire il suo profilo dalla bacheca di amministrazione.\n\nCordiali saluti,\nIl team di ##shop_name##\n"
+msgstr ""
+"\n"
+"Salve,\n"
+"\n"
+"Un nuovo cliente ha appena creato un account su ##shop_name##.\n"
+"\n"
+"<ul>\n"
+"    <li>Nome: ##customer_name##</li>\n"
+"    <li>Email: ##customer_email##</li>\n"
+"    <li>Registrato: ##registration_date##</li>\n"
+"</ul>\n"
+"\n"
+"Puoi visualizzare e gestire il suo profilo dalla bacheca di amministrazione.\n"
+"\n"
+"Cordiali saluti,\n"
+"Il team di ##shop_name##\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/on_hold.php:4
@@ -2750,7 +2915,24 @@ msgid ""
 "Warm regards,\n"
 "The ##shop_name## Team\n"
 ""
-msgstr "\nCiao ##customer_name##,\n\nVolevamo avvisarti che il tuo ordine ###order_id## è temporaneamente in sospeso. Stiamo lavorando per farlo procedere il prima possibile e ti terremo aggiornato.\n\nRiepilogo dell'ordine:\n##product_table##\nArticoli: ##number_of_items##\nTotale: ##order_total##\n\nPuoi controllare il tuo ordine qui: ##dashboard_page##\n\nSe hai domande o hai bisogno di risolvere rapidamente, contattaci pure - saremo felici di aiutarti.\n\nCordiali saluti,\nIl team di ##shop_name##\n"
+msgstr ""
+"\n"
+"Ciao ##customer_name##,\n"
+"\n"
+"Volevamo avvisarti che il tuo ordine ###order_id## è temporaneamente in sospeso. Stiamo lavorando per farlo procedere il prima possibile e ti terremo aggiornato.\n"
+"\n"
+"Riepilogo dell'ordine:\n"
+"##product_table##\n"
+"Articoli: ##number_of_items##\n"
+"Totale: ##order_total##\n"
+"\n"
+"Puoi controllare il tuo ordine qui: ##dashboard_page##\n"
+"\n"
+"Se hai domande o hai bisogno di risolvere rapidamente, contattaci pure - saremo felici di aiutarti.\n"
+"\n"
+"Cordiali saluti,\n"
+"Il team di ##shop_name##\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/on_hold.php:25
@@ -2778,7 +2960,25 @@ msgid ""
 "Best regards,\n"
 "The ##shop_name## Team\n"
 ""
-msgstr "\nSalve,\n\nL'ordine ###order_id## di ##customer_name## è stato messo in sospeso.\n\n##product_table##\nArticoli: ##number_of_items##\nTotale: ##order_total##\n\nContatto del cliente:\nEmail: ##customer_email##\nTelefono: ##customer_phone##\n\nSi prega di esaminare questo ordine e di intraprendere le azioni necessarie.\n\nCordiali saluti,\nIl team di ##shop_name##\n"
+msgstr ""
+"\n"
+"Salve,\n"
+"\n"
+"L'ordine ###order_id## di ##customer_name## è stato messo in sospeso.\n"
+"\n"
+"##product_table##\n"
+"Articoli: ##number_of_items##\n"
+"Totale: ##order_total##\n"
+"\n"
+"Contatto del cliente:\n"
+"Email: ##customer_email##\n"
+"Telefono: ##customer_phone##\n"
+"\n"
+"Si prega di esaminare questo ordine e di intraprendere le azioni necessarie.\n"
+"\n"
+"Cordiali saluti,\n"
+"Il team di ##shop_name##\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/partially_refunded.php:4
@@ -2809,7 +3009,28 @@ msgid ""
 "Warm regards,\n"
 "The ##shop_name## Team\n"
 ""
-msgstr "\nCiao ##customer_name##,\n\nAbbiamo elaborato un rimborso parziale per il tuo ordine ###order_id##. L'importo dovrebbe comparire sul tuo conto entro pochi giorni lavorativi, a seconda del tuo fornitore di pagamenti.\n\nGli altri articoli non sono interessati e proseguiranno normalmente.\n\nArticoli dell'ordine:\n##product_table##\nArticoli: ##number_of_items##\nRimborsato: ##refunded_amount##\n\nFatturato a:\n##billing_first_name## ##billing_last_name##\n##billing_address##\n\nSe hai domande su questo rimborso, non esitare a contattarci.\n\nCordiali saluti,\nIl team di ##shop_name##\n"
+msgstr ""
+"\n"
+"Ciao ##customer_name##,\n"
+"\n"
+"Abbiamo elaborato un rimborso parziale per il tuo ordine ###order_id##. L'importo dovrebbe comparire sul tuo conto entro pochi giorni lavorativi, a seconda del tuo fornitore di pagamenti.\n"
+"\n"
+"Gli altri articoli non sono interessati e proseguiranno normalmente.\n"
+"\n"
+"Articoli dell'ordine:\n"
+"##product_table##\n"
+"Articoli: ##number_of_items##\n"
+"Rimborsato: ##refunded_amount##\n"
+"\n"
+"Fatturato a:\n"
+"##billing_first_name## ##billing_last_name##\n"
+"##billing_address##\n"
+"\n"
+"Se hai domande su questo rimborso, non esitare a contattarci.\n"
+"\n"
+"Cordiali saluti,\n"
+"Il team di ##shop_name##\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/partially_refunded.php:29
@@ -2839,7 +3060,27 @@ msgid ""
 "Best regards,\n"
 "The ##shop_name## Team\n"
 ""
-msgstr "\nSalve,\n\nÈ stato elaborato un rimborso parziale per l'ordine ###order_id## di ##customer_name##.\n\n##product_table##\nArticoli: ##number_of_items##\nRimborsato: ##refunded_amount##\n\nFatturato a:\n##billing_first_name## ##billing_last_name##\n##billing_address##\n\nContatto del cliente:\nEmail: ##customer_email##\nTelefono: ##customer_phone##\n\nCordiali saluti,\nIl team di ##shop_name##\n"
+msgstr ""
+"\n"
+"Salve,\n"
+"\n"
+"È stato elaborato un rimborso parziale per l'ordine ###order_id## di ##customer_name##.\n"
+"\n"
+"##product_table##\n"
+"Articoli: ##number_of_items##\n"
+"Rimborsato: ##refunded_amount##\n"
+"\n"
+"Fatturato a:\n"
+"##billing_first_name## ##billing_last_name##\n"
+"##billing_address##\n"
+"\n"
+"Contatto del cliente:\n"
+"Email: ##customer_email##\n"
+"Telefono: ##customer_phone##\n"
+"\n"
+"Cordiali saluti,\n"
+"Il team di ##shop_name##\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/pending.php:4
@@ -2866,7 +3107,24 @@ msgid ""
 "Warm regards,\n"
 "The ##shop_name## Team\n"
 ""
-msgstr "\nCiao ##customer_name##,\n\nGrazie per il tuo ordine! Lo abbiamo ricevuto ed è attualmente in attesa di conferma del pagamento. Una volta approvato il pagamento, ci metteremo subito al lavoro.\n\nEcco cosa hai ordinato:\n##product_table##\nArticoli: ##number_of_items##\nTotale: ##order_total##\n\nSe devi ancora completare il pagamento, puoi farlo qui: ##checkout_page##\n\nDomande? Siamo sempre a disposizione - contattaci pure.\n\nCordiali saluti,\nIl team di ##shop_name##\n"
+msgstr ""
+"\n"
+"Ciao ##customer_name##,\n"
+"\n"
+"Grazie per il tuo ordine! Lo abbiamo ricevuto ed è attualmente in attesa di conferma del pagamento. Una volta approvato il pagamento, ci metteremo subito al lavoro.\n"
+"\n"
+"Ecco cosa hai ordinato:\n"
+"##product_table##\n"
+"Articoli: ##number_of_items##\n"
+"Totale: ##order_total##\n"
+"\n"
+"Se devi ancora completare il pagamento, puoi farlo qui: ##checkout_page##\n"
+"\n"
+"Domande? Siamo sempre a disposizione - contattaci pure.\n"
+"\n"
+"Cordiali saluti,\n"
+"Il team di ##shop_name##\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/pending.php:25
@@ -2896,7 +3154,27 @@ msgid ""
 "Best regards,\n"
 "The ##shop_name## Team\n"
 ""
-msgstr "\nSalve,\n\nUn nuovo ordine ###order_id## di ##customer_name## è in attesa di pagamento.\n\n##product_table##\nArticoli: ##number_of_items##\nTotale: ##order_total##\n\nContatto del cliente:\nEmail: ##customer_email##\nTelefono: ##customer_phone##\n\nPagina di cassa: ##checkout_page##\n\nSi prega di verificare se è necessaria un'azione da parte tua.\n\nCordiali saluti,\nIl team di ##shop_name##\n"
+msgstr ""
+"\n"
+"Salve,\n"
+"\n"
+"Un nuovo ordine ###order_id## di ##customer_name## è in attesa di pagamento.\n"
+"\n"
+"##product_table##\n"
+"Articoli: ##number_of_items##\n"
+"Totale: ##order_total##\n"
+"\n"
+"Contatto del cliente:\n"
+"Email: ##customer_email##\n"
+"Telefono: ##customer_phone##\n"
+"\n"
+"Pagina di cassa: ##checkout_page##\n"
+"\n"
+"Si prega di verificare se è necessaria un'azione da parte tua.\n"
+"\n"
+"Cordiali saluti,\n"
+"Il team di ##shop_name##\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/processing.php:4
@@ -2927,7 +3205,28 @@ msgid ""
 "Warm regards,\n"
 "The ##shop_name## Team\n"
 ""
-msgstr "\nCiao ##customer_name##,\n\nBuone notizie - il tuo ordine ###order_id## è stato confermato e lo stiamo preparando per te!\n\nCosa hai ordinato:\n##product_table##\nArticoli: ##number_of_items##\nTotale: ##order_total##\n\nSpedizione a:\n##shipping_first_name## ##shipping_last_name##\n##shipping_address##\n\nTi invieremo un altro aggiornamento non appena verrà spedito. Nel frattempo, puoi tenere d'occhio il tuo ordine qui: ##dashboard_page##\n\nGrazie per aver acquistato da noi - lo apprezziamo molto!\n\nCordiali saluti,\nIl team di ##shop_name##\n"
+msgstr ""
+"\n"
+"Ciao ##customer_name##,\n"
+"\n"
+"Buone notizie - il tuo ordine ###order_id## è stato confermato e lo stiamo preparando per te!\n"
+"\n"
+"Cosa hai ordinato:\n"
+"##product_table##\n"
+"Articoli: ##number_of_items##\n"
+"Totale: ##order_total##\n"
+"\n"
+"Spedizione a:\n"
+"##shipping_first_name## ##shipping_last_name##\n"
+"##shipping_address##\n"
+"\n"
+"Ti invieremo un altro aggiornamento non appena verrà spedito. Nel frattempo, puoi tenere d'occhio il tuo ordine qui: ##dashboard_page##\n"
+"\n"
+"Grazie per aver acquistato da noi - lo apprezziamo molto!\n"
+"\n"
+"Cordiali saluti,\n"
+"Il team di ##shop_name##\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/processing.php:29
@@ -2959,7 +3258,29 @@ msgid ""
 "Best regards,\n"
 "The ##shop_name## Team\n"
 ""
-msgstr "\nSalve,\n\nL'ordine ###order_id## di ##customer_name## è ora in elaborazione e in preparazione per la spedizione.\n\n##product_table##\nArticoli: ##number_of_items##\nTotale: ##order_total##\n\nSpedizione a:\n##shipping_first_name## ##shipping_last_name##\n##shipping_address##\n\nContatto del cliente:\nEmail: ##customer_email##\nTelefono: ##customer_phone##\n\nGestisci questo ordine: ##dashboard_page##\n\nCordiali saluti,\nIl team di ##shop_name##\n"
+msgstr ""
+"\n"
+"Salve,\n"
+"\n"
+"L'ordine ###order_id## di ##customer_name## è ora in elaborazione e in preparazione per la spedizione.\n"
+"\n"
+"##product_table##\n"
+"Articoli: ##number_of_items##\n"
+"Totale: ##order_total##\n"
+"\n"
+"Spedizione a:\n"
+"##shipping_first_name## ##shipping_last_name##\n"
+"##shipping_address##\n"
+"\n"
+"Contatto del cliente:\n"
+"Email: ##customer_email##\n"
+"Telefono: ##customer_phone##\n"
+"\n"
+"Gestisci questo ordine: ##dashboard_page##\n"
+"\n"
+"Cordiali saluti,\n"
+"Il team di ##shop_name##\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/refunded.php:4
@@ -2988,7 +3309,26 @@ msgid ""
 "Warm regards,\n"
 "The ##shop_name## Team\n"
 ""
-msgstr "\nCiao ##customer_name##,\n\nIl tuo rimborso per l'ordine ###order_id## è stato elaborato. L'importo dovrebbe comparire sul tuo conto entro pochi giorni lavorativi, a seconda del tuo fornitore di pagamenti.\n\nDettagli del rimborso:\n##product_table##\nArticoli: ##number_of_items##\nRimborsato: ##refunded_amount##\n\nFatturato a:\n##billing_first_name## ##billing_last_name##\n##billing_address##\n\nCi dispiace che le cose non siano andate come previsto questa volta. Se c'è qualcosa che possiamo migliorare o se hai domande, contattaci pure - saremo felici di sentirti.\n\nCordiali saluti,\nIl team di ##shop_name##\n"
+msgstr ""
+"\n"
+"Ciao ##customer_name##,\n"
+"\n"
+"Il tuo rimborso per l'ordine ###order_id## è stato elaborato. L'importo dovrebbe comparire sul tuo conto entro pochi giorni lavorativi, a seconda del tuo fornitore di pagamenti.\n"
+"\n"
+"Dettagli del rimborso:\n"
+"##product_table##\n"
+"Articoli: ##number_of_items##\n"
+"Rimborsato: ##refunded_amount##\n"
+"\n"
+"Fatturato a:\n"
+"##billing_first_name## ##billing_last_name##\n"
+"##billing_address##\n"
+"\n"
+"Ci dispiace che le cose non siano andate come previsto questa volta. Se c'è qualcosa che possiamo migliorare o se hai domande, contattaci pure - saremo felici di sentirti.\n"
+"\n"
+"Cordiali saluti,\n"
+"Il team di ##shop_name##\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/refunded.php:27
@@ -3018,7 +3358,27 @@ msgid ""
 "Best regards,\n"
 "The ##shop_name## Team\n"
 ""
-msgstr "\nSalve,\n\nÈ stato elaborato un rimborso completo per l'ordine ###order_id## di ##customer_name##.\n\n##product_table##\nArticoli: ##number_of_items##\nTotale rimborsato: ##refunded_amount##\n\nFatturato a:\n##billing_first_name## ##billing_last_name##\n##billing_address##\n\nContatto del cliente:\nEmail: ##customer_email##\nTelefono: ##customer_phone##\n\nCordiali saluti,\nIl team di ##shop_name##\n"
+msgstr ""
+"\n"
+"Salve,\n"
+"\n"
+"È stato elaborato un rimborso completo per l'ordine ###order_id## di ##customer_name##.\n"
+"\n"
+"##product_table##\n"
+"Articoli: ##number_of_items##\n"
+"Totale rimborsato: ##refunded_amount##\n"
+"\n"
+"Fatturato a:\n"
+"##billing_first_name## ##billing_last_name##\n"
+"##billing_address##\n"
+"\n"
+"Contatto del cliente:\n"
+"Email: ##customer_email##\n"
+"Telefono: ##customer_phone##\n"
+"\n"
+"Cordiali saluti,\n"
+"Il team di ##shop_name##\n"
+""
 
 #: app/Config/settings.php:45
 msgid "&raquo; Settings"
@@ -7624,18 +7984,6 @@ msgstr "Il negozio sarà lanciato a breve!"
 msgid "We’re getting ready to welcome you. Stay tuned for the launch."
 msgstr "Ci stiamo preparando ad accoglierti. Resta sintonizzato per il lancio."
 
-#: assets/admin/js/email-placeholders.js:12
-msgid "Insert Email Placeholder"
-msgstr "Inserisci segnaposto email"
-
-#: assets/admin/js/email-placeholders.js:19
-msgid "Select a placeholder:"
-msgstr "Seleziona un segnaposto:"
-
-#: assets/admin/js/email-placeholders.js:23
-msgid "Select a placeholder to automatically insert it into your email template. These will be replaced with actual values when emails are sent."
-msgstr "Seleziona un segnaposto per inserirlo automaticamente nel tuo template email. Verranno sostituiti con i valori effettivi al momento dell'invio delle email."
-
 #: assets/admin/js/email-placeholders.js:31
 #: build/easycommerce.bundle.js:2
 #: build/editor.bundle.js:2
@@ -7644,10 +7992,6 @@ msgstr "Seleziona un segnaposto per inserirlo automaticamente nel tuo template e
 #: spa/admin/easycommerce/pages/Products/components/Prices/PriceItem/components/ActionButton.jsx:72
 msgid "Close"
 msgstr "Chiudi"
-
-#: assets/admin/js/email-placeholders.js:49
-msgid "Search for a placeholder..."
-msgstr "Cerca un segnaposto..."
 
 #: assets/admin/js/email-placeholders.js:90
 #: build/checkout.bundle.js:2
@@ -7663,23 +8007,6 @@ msgstr "Cerca un segnaposto..."
 #: spa/public/checkout/App.jsx:31
 msgid "Loading..."
 msgstr "Caricamento..."
-
-#: assets/admin/js/init.js:65
-msgid "Template Preview"
-msgstr "Anteprima del template"
-
-#: assets/admin/js/notice.js:85
-msgid "Installing.."
-msgstr "Installazione.."
-
-#: assets/admin/js/notice.js:100
-msgid "Migration addon activated successfully!"
-msgstr "Addon di migrazione attivato con successo!"
-
-#: assets/admin/js/notice.js:107
-#: assets/admin/js/notice.js:113
-msgid "Failed to install migration addon."
-msgstr "Installazione dell'addon di migrazione non riuscita."
 
 #: assets/admin/js/settings.js:183
 #: assets/admin/js/settings.js:193
@@ -7700,189 +8027,6 @@ msgstr "Seleziona la città"
 msgid "Select State"
 msgstr "Seleziona lo stato"
 
-#: assets/payment/js/braintree.js:24
-msgid "Braintree.js failed to load or missing authorization token."
-msgstr "Impossibile caricare Braintree.js o token di autorizzazione mancante."
-
-#: assets/payment/js/braintree.js:42
-msgid "Error initializing Braintree."
-msgstr "Errore durante l'inizializzazione di Braintree."
-
-#: assets/payment/js/braintree.js:75
-msgid "Failed to get payment nonce."
-msgstr "Impossibile ottenere il nonce di pagamento."
-
-#: assets/payment/js/braintree.js:86
-msgid "Error processing payment."
-msgstr "Errore durante l'elaborazione del pagamento."
-
-#: assets/payment/js/paypal.js:41
-#: assets/payment/js/stripe-payment.js:43
-msgid "Failed to load cart data. Please refresh the page."
-msgstr "Impossibile caricare i dati del carrello. Aggiorna la pagina."
-
-#: assets/payment/js/paypal.js:133
-msgid "Purchase from EasyCommerce"
-msgstr "Acquisto da EasyCommerce"
-
-#: assets/payment/js/paypal.js:135
-msgid "Item"
-msgstr "Articolo"
-
-#: assets/payment/js/paypal.js:163
-msgid "Your cart has been updated. Please refresh the page and try again."
-msgstr "Il tuo carrello è stato aggiornato. Aggiorna la pagina e riprova."
-
-#: assets/payment/js/paypal.js:181
-msgid "An unknown error occurred with PayPal"
-msgstr "Si è verificato un errore sconosciuto con PayPal"
-
-#. translators: %s: PayPal error message.
-#: assets/payment/js/paypal.js:183
-msgid "PayPal Error: %s"
-msgstr "Errore PayPal: %s"
-
-#: assets/payment/js/stripe-payment.js:85
-msgid "Failed to create payment. Please try again."
-msgstr "Creazione del pagamento non riuscita. Riprova."
-
-#: assets/payment/js/stripe-payment.js:151
-msgid "Payment form failed to load. Please refresh."
-msgstr "Impossibile caricare il modulo di pagamento. Aggiorna la pagina."
-
-#: assets/payment/js/stripe-payment.js:207
-msgid "Could not verify cart. Please refresh and try again."
-msgstr "Impossibile verificare il carrello. Aggiorna la pagina e riprova."
-
-#: assets/payment/js/stripe-payment.js:228
-msgid "Failed to create payment. Please refresh the page and try again."
-msgstr "Creazione del pagamento non riuscita. Aggiorna la pagina e riprova."
-
-#: assets/payment/js/stripe-payment.js:246
-msgid "This payment handler is not available. Please refresh and try again."
-msgstr "Questo gestore di pagamento non è disponibile. Aggiorna la pagina e riprova."
-
-#: assets/payment/js/stripe-payment.js:282
-msgid "Additional verification required. Please complete the payment process."
-msgstr "È richiesta un'ulteriore verifica. Completa il processo di pagamento."
-
-#: assets/payment/js/stripe-payment.js:286
-msgid "Payment failed. Please try a different payment method."
-msgstr "Pagamento non riuscito. Prova un metodo di pagamento diverso."
-
-#: assets/payment/js/stripe-payment.js:290
-#: assets/payment/js/stripe-payment.js:458
-msgid "Payment was canceled. Please try again."
-msgstr "Il pagamento è stato annullato. Riprova."
-
-#. translators: %s: Stripe payment intent status code.
-#: assets/payment/js/stripe-payment.js:295
-msgid "Payment status: %s. Please contact support if this persists."
-msgstr "Stato del pagamento: %s. Contatta il supporto se il problema persiste."
-
-#: assets/payment/js/stripe-payment.js:299
-msgid "Payment could not be processed. Please try again."
-msgstr "Impossibile elaborare il pagamento. Riprova."
-
-#: assets/payment/js/stripe-payment.js:304
-msgid "An error occurred while processing your payment. Please try again."
-msgstr "Si è verificato un errore durante l'elaborazione del pagamento. Riprova."
-
-#: assets/payment/js/stripe-payment.js:363
-#: assets/payment/js/stripe-payment.js:413
-msgid "Verifying payment..."
-msgstr "Verifica del pagamento in corso..."
-
-#: assets/payment/js/stripe-payment.js:388
-#: assets/payment/js/stripe-payment.js:447
-msgid "Payment successful! Creating order..."
-msgstr "Pagamento riuscito! Creazione dell'ordine in corso..."
-
-#. translators: %s: Stripe setup intent status code.
-#: assets/payment/js/stripe-payment.js:396
-msgid "Payment method could not be saved. Status: %s"
-msgstr "Impossibile salvare il metodo di pagamento. Stato: %s"
-
-#: assets/payment/js/stripe-payment.js:402
-#: assets/payment/js/stripe-payment.js:473
-msgid "Failed to verify payment. Please contact support."
-msgstr "Verifica del pagamento non riuscita. Contatta il supporto."
-
-#: assets/payment/js/stripe-payment.js:454
-msgid "Payment failed. Please try again with a different payment method."
-msgstr "Pagamento non riuscito. Riprova con un metodo di pagamento diverso."
-
-#: assets/payment/js/stripe-payment.js:462
-msgid "Additional action required. Please complete the payment process."
-msgstr "È richiesta un'azione aggiuntiva. Completa il processo di pagamento."
-
-#. translators: %s: Stripe payment intent status code.
-#: assets/payment/js/stripe-payment.js:467
-msgid "Payment could not be completed. Status: %s"
-msgstr "Impossibile completare il pagamento. Stato: %s"
-
-#: assets/public/js/agent-chatbot.js:161
-msgid "Complete your order →"
-msgstr "Completa il tuo ordine →"
-
-#: assets/public/js/agent-chatbot.js:258
-msgid "Sorry, something went wrong. Please try again."
-msgstr "Spiacenti, qualcosa è andato storto. Riprova."
-
-#: assets/public/js/agent-chatbot.js:268
-msgid "Connection error. Please try again."
-msgstr "Errore di connessione. Riprova."
-
-#. translators: %s: AI shopping agent name.
-#: assets/public/js/agent-chatbot.js:311
-msgid "Open %s"
-msgstr "Apri %s"
-
-#: assets/public/js/agent-chatbot.js:332
-msgid "Online"
-msgstr "Online"
-
-#: assets/public/js/agent-chatbot.js:335
-msgid "New conversation"
-msgstr "Nuova conversazione"
-
-#: assets/public/js/agent-chatbot.js:338
-msgid "Minimize"
-msgstr "Riduci a icona"
-
-#: assets/public/js/agent-chatbot.js:351
-msgid "Ask about products, orders…"
-msgstr "Chiedi informazioni su prodotti, ordini…"
-
-#: assets/public/js/agent-chatbot.js:357
-#: build/easycommerce.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Send"
-msgstr "Invia"
-
-#. translators: %s: AI shopping agent name.
-#: assets/public/js/agent-chatbot.js:379
-#: assets/public/js/agent-chatbot.js:390
-msgid "Hi! 👋 I'm %s. How can I help you today?"
-msgstr "Ciao! 👋 Sono %s. Come posso aiutarti oggi?"
-
-#: assets/public/js/checkout.js:5
-msgid "Only letters, spaces, hyphens, apostrophes, and periods are allowed."
-msgstr "Sono consentiti solo lettere, spazi, trattini, apostrofi e punti."
-
-#: assets/public/js/checkout.js:7
-msgid "Please enter a valid phone number (6–20 characters)."
-msgstr "Inserisci un numero di telefono valido (6–20 caratteri)."
-
-#. translators: %s: checkout field label.
-#: assets/public/js/checkout.js:38
-msgid "%s is required."
-msgstr "%s è obbligatorio."
-
-#: assets/public/js/checkout.js:377
-msgid "Enter city"
-msgstr "Inserisci la città"
-
 #: assets/public/js/checkout.js:521
 #: build/auth.bundle.js:2
 #: build/easycommerce.bundle.js:2
@@ -7895,10 +8039,6 @@ msgstr "Inserisci la città"
 #: spa/public/auth/screens/ResetRequest.jsx:30
 msgid "An error occurred. Please try again."
 msgstr "Si è verificato un errore. Riprova."
-
-#: assets/public/js/init.js:28
-msgid "Your cart is empty."
-msgstr "Il tuo carrello è vuoto."
 
 #: assets/public/js/init.js:41
 #: build/easycommerce.bundle.js:2
@@ -7920,39 +8060,6 @@ msgstr "Prodotto"
 msgid "Quantity"
 msgstr "Quantità"
 
-#: assets/public/js/init.js:117
-msgid "Failed to load cart."
-msgstr "Impossibile caricare il carrello."
-
-#: assets/public/js/init.js:121
-msgid "Error loading cart."
-msgstr "Errore durante il caricamento del carrello."
-
-#: assets/public/js/init.js:191
-#: assets/public/js/init.js:203
-#: assets/public/js/shop.js:297
-msgid "Failed to add to cart. Please try again."
-msgstr "Impossibile aggiungere al carrello. Riprova."
-
-#. translators: 1: first result index, 2: last result index, 3: total results.
-#: assets/public/js/shop.js:180
-msgid "Showing %1$s-%2$s of %3$s result"
-msgid_plural "Showing %1$s-%2$s of %3$s results"
-msgstr[0] "Visualizzazione di %1$s-%2$s di %3$s risultato"
-msgstr[1] "Visualizzazione di %1$s-%2$s di %3$s risultati"
-
-#: assets/public/js/shop.js:202
-msgid "No results found"
-msgstr "Nessun risultato trovato"
-
-#: assets/public/js/shop.js:266
-msgid "Adding..."
-msgstr "Aggiunta in corso..."
-
-#: assets/public/js/shop.js:279
-msgid "Added"
-msgstr "Aggiunto"
-
 #: blocks/checkout/billing-address/index.jsx:42
 #: build/blocks.bundle.js:2
 msgid "This is your billing address being edited."
@@ -7973,126 +8080,6 @@ msgstr "Svuota carrello"
 #: build/blocks.bundle.js:2
 msgid "This is your cart being edited."
 msgstr "Questo è il tuo carrello in fase di modifica."
-
-#: blocks/components/typography.js:20
-#: build/blocks.bundle.js:2
-msgid "Font Size"
-msgstr "Dimensione del carattere"
-
-#: blocks/components/typography.js:29
-#: build/blocks.bundle.js:2
-msgid "Font Weight"
-msgstr "Spessore del carattere"
-
-#: blocks/components/typography.js:32
-#: build/blocks.bundle.js:2
-msgid "100 (Thin)"
-msgstr "100 (Sottile)"
-
-#: blocks/components/typography.js:33
-#: build/blocks.bundle.js:2
-msgid "200 (Extra Light)"
-msgstr "200 (Extra leggero)"
-
-#: blocks/components/typography.js:34
-#: build/blocks.bundle.js:2
-msgid "300 (Light)"
-msgstr "300 (Leggero)"
-
-#: blocks/components/typography.js:35
-#: build/blocks.bundle.js:2
-msgid "400 (Normal)"
-msgstr "400 (Normale)"
-
-#: blocks/components/typography.js:36
-#: build/blocks.bundle.js:2
-msgid "500 (Medium)"
-msgstr "500 (Medio)"
-
-#: blocks/components/typography.js:37
-#: build/blocks.bundle.js:2
-msgid "600 (Semi Bold)"
-msgstr "600 (Semi grassetto)"
-
-#: blocks/components/typography.js:38
-#: build/blocks.bundle.js:2
-msgid "700 (Bold)"
-msgstr "700 (Grassetto)"
-
-#: blocks/components/typography.js:39
-#: build/blocks.bundle.js:2
-msgid "800 (Extra Bold)"
-msgstr "800 (Extra grassetto)"
-
-#: blocks/components/typography.js:40
-#: build/blocks.bundle.js:2
-msgid "900 (Black)"
-msgstr "900 (Nero)"
-
-#: blocks/components/typography.js:41
-#: blocks/components/typography.js:53
-#: blocks/components/typography.js:67
-#: build/blocks.bundle.js:2
-msgid "Default"
-msgstr "Predefinito"
-
-#: blocks/components/typography.js:42
-#: blocks/components/typography.js:57
-#: blocks/components/typography.js:68
-#: blocks/shops-page/template-1/edit.js:271
-#: blocks/shops-page/template-1/edit.js:369
-#: blocks/shops-page/template-2/edit.js:272
-#: blocks/shops-page/template-2/edit.js:370
-#: blocks/shops-page/template-3/edit.js:294
-#: blocks/shops-page/template-3/edit.js:392
-#: build/blocks.bundle.js:2
-msgid "Normal"
-msgstr "Normale"
-
-#: blocks/components/typography.js:43
-#: build/blocks.bundle.js:2
-msgid "Bold"
-msgstr "Grassetto"
-
-#: blocks/components/typography.js:50
-#: build/blocks.bundle.js:2
-msgid "Text Transform"
-msgstr "Trasformazione del testo"
-
-#: blocks/components/typography.js:54
-#: build/blocks.bundle.js:2
-msgid "Uppercase"
-msgstr "Maiuscolo"
-
-#: blocks/components/typography.js:55
-#: build/blocks.bundle.js:2
-msgid "Lowercase"
-msgstr "Minuscolo"
-
-#: blocks/components/typography.js:56
-#: build/blocks.bundle.js:2
-msgid "Capitalize"
-msgstr "Iniziali maiuscole"
-
-#: blocks/components/typography.js:64
-#: build/blocks.bundle.js:2
-msgid "Text Style"
-msgstr "Stile del testo"
-
-#: blocks/components/typography.js:69
-#: build/blocks.bundle.js:2
-msgid "Italic"
-msgstr "Corsivo"
-
-#: blocks/components/typography.js:70
-#: build/blocks.bundle.js:2
-msgid "Oblique"
-msgstr "Obliquo"
-
-#: blocks/components/typography.js:77
-#: build/blocks.bundle.js:2
-msgid "Text Decoration"
-msgstr "Decorazione del testo"
 
 #: blocks/components/typography.js:80
 #: build/blocks.bundle.js:2
@@ -8120,161 +8107,6 @@ msgstr "Decorazione del testo"
 msgid "None"
 msgstr "Nessuna"
 
-#: blocks/components/typography.js:81
-#: build/blocks.bundle.js:2
-msgid "Underline"
-msgstr "Sottolineato"
-
-#: blocks/components/typography.js:82
-#: build/blocks.bundle.js:2
-msgid "Overline"
-msgstr "Sopralineato"
-
-#: blocks/components/typography.js:84
-#: build/blocks.bundle.js:2
-msgid "Line Through"
-msgstr "Barrato"
-
-#: blocks/components/typography.js:93
-#: build/blocks.bundle.js:2
-msgid "Line Height"
-msgstr "Altezza della riga"
-
-#: blocks/components/typography.js:102
-#: build/blocks.bundle.js:2
-msgid "Word Spacing"
-msgstr "Spaziatura tra le parole"
-
-#: blocks/shops-page/template-1/components/Filters.js:157
-#: blocks/shops-page/template-2/components/Filters.js:157
-#: blocks/shops-page/template-3/components/Filters.js:103
-#: build/blocks.bundle.js:2
-msgid "Price Range"
-msgstr "Fascia di prezzo"
-
-#: blocks/shops-page/template-1/components/Filters.js:244
-#: blocks/shops-page/template-2/components/Filters.js:76
-#: build/blocks.bundle.js:2
-msgid " Search"
-msgstr " Cerca"
-
-#: blocks/shops-page/template-1/components/Rating.js:25
-#: blocks/shops-page/template-2/components/Rating.js:25
-#: blocks/shops-page/template-3/components/Rating.js:25
-#: build/blocks.bundle.js:2
-msgid "full star"
-msgstr "stella piena"
-
-#: blocks/shops-page/template-1/components/Rating.js:39
-#: blocks/shops-page/template-2/components/Rating.js:39
-#: blocks/shops-page/template-3/components/Rating.js:39
-#: build/blocks.bundle.js:2
-msgid "half star"
-msgstr "mezza stella"
-
-#: blocks/shops-page/template-1/components/Rating.js:53
-#: blocks/shops-page/template-2/components/Rating.js:53
-#: blocks/shops-page/template-3/components/Rating.js:53
-#: build/blocks.bundle.js:2
-msgid "empty star"
-msgstr "stella vuota"
-
-#: blocks/shops-page/template-1/edit.js:68
-#: blocks/shops-page/template-2/edit.js:68
-#: blocks/shops-page/template-3/edit.js:71
-#: build/blocks.bundle.js:2
-msgid "Product Settings"
-msgstr "Impostazioni del prodotto"
-
-#: blocks/shops-page/template-1/edit.js:70
-#: blocks/shops-page/template-2/edit.js:70
-#: blocks/shops-page/template-3/edit.js:73
-#: build/blocks.bundle.js:2
-msgid "Products Per Page"
-msgstr "Prodotti per pagina"
-
-#: blocks/shops-page/template-1/edit.js:79
-#: blocks/shops-page/template-2/edit.js:79
-#: blocks/shops-page/template-3/edit.js:83
-#: build/blocks.bundle.js:2
-msgid "Grid Settings"
-msgstr "Impostazioni della griglia"
-
-#: blocks/shops-page/template-1/edit.js:81
-#: blocks/shops-page/template-2/edit.js:81
-#: blocks/shops-page/template-3/edit.js:86
-#: build/blocks.bundle.js:2
-msgid "Show Filters"
-msgstr "Mostra i filtri"
-
-#: blocks/shops-page/template-1/edit.js:87
-#: blocks/shops-page/template-2/edit.js:87
-#: blocks/shops-page/template-3/edit.js:92
-#: build/blocks.bundle.js:2
-msgid "Show Pagination"
-msgstr "Mostra la paginazione"
-
-#: blocks/shops-page/template-1/edit.js:93
-#: blocks/shops-page/template-2/edit.js:93
-#: blocks/shops-page/template-3/edit.js:104
-#: build/blocks.bundle.js:2
-msgid "Number of Columns"
-msgstr "Numero di colonne"
-
-#: blocks/shops-page/template-1/edit.js:102
-#: blocks/shops-page/template-2/edit.js:127
-#: blocks/shops-page/template-3/edit.js:114
-#: build/blocks.bundle.js:2
-msgid "Product Title"
-msgstr "Titolo del prodotto"
-
-#: blocks/shops-page/template-1/edit.js:108
-#: blocks/shops-page/template-1/edit.js:289
-#: blocks/shops-page/template-1/edit.js:387
-#: blocks/shops-page/template-2/edit.js:133
-#: blocks/shops-page/template-2/edit.js:290
-#: blocks/shops-page/template-2/edit.js:388
-#: blocks/shops-page/template-3/edit.js:120
-#: blocks/shops-page/template-3/edit.js:312
-#: blocks/shops-page/template-3/edit.js:410
-#: build/blocks.bundle.js:2
-msgid "Text Color"
-msgstr "Colore del testo"
-
-#: blocks/shops-page/template-1/edit.js:115
-#: blocks/shops-page/template-2/edit.js:140
-#: blocks/shops-page/template-3/edit.js:127
-#: build/blocks.bundle.js:2
-msgid "Hover Text Color"
-msgstr "Colore del testo al passaggio del mouse"
-
-#: blocks/shops-page/template-1/edit.js:134
-#: blocks/shops-page/template-2/edit.js:103
-#: build/blocks.bundle.js:2
-msgid "Product Category"
-msgstr "Categoria del prodotto"
-
-#: blocks/shops-page/template-1/edit.js:158
-#: blocks/shops-page/template-2/edit.js:159
-#: blocks/shops-page/template-3/edit.js:181
-#: build/blocks.bundle.js:2
-msgid "Product Rating"
-msgstr "Valutazione del prodotto"
-
-#: blocks/shops-page/template-1/edit.js:161
-#: blocks/shops-page/template-2/edit.js:162
-#: blocks/shops-page/template-3/edit.js:184
-#: build/blocks.bundle.js:2
-msgid "Star Size"
-msgstr "Dimensione delle stelle"
-
-#: blocks/shops-page/template-1/edit.js:189
-#: blocks/shops-page/template-2/edit.js:190
-#: blocks/shops-page/template-3/edit.js:212
-#: build/blocks.bundle.js:2
-msgid "Product Price"
-msgstr "Prezzo del prodotto"
-
 #: blocks/shops-page/template-1/edit.js:197
 #: blocks/shops-page/template-2/edit.js:198
 #: blocks/shops-page/template-3/edit.js:220
@@ -8293,74 +8125,6 @@ msgstr "Prezzo normale"
 msgid "Sale Price"
 msgstr "Prezzo scontato"
 
-#: blocks/shops-page/template-1/edit.js:262
-#: blocks/shops-page/template-2/edit.js:263
-#: blocks/shops-page/template-3/edit.js:285
-#: build/blocks.bundle.js:2
-msgid "Cart Button"
-msgstr "Pulsante del carrello"
-
-#: blocks/shops-page/template-1/edit.js:276
-#: blocks/shops-page/template-1/edit.js:374
-#: blocks/shops-page/template-2/edit.js:277
-#: blocks/shops-page/template-2/edit.js:375
-#: blocks/shops-page/template-3/edit.js:299
-#: blocks/shops-page/template-3/edit.js:397
-#: build/blocks.bundle.js:2
-msgid "Hover"
-msgstr "Passaggio del mouse"
-
-#: blocks/shops-page/template-1/edit.js:295
-#: blocks/shops-page/template-1/edit.js:393
-#: blocks/shops-page/template-2/edit.js:296
-#: blocks/shops-page/template-2/edit.js:394
-#: blocks/shops-page/template-3/edit.js:318
-#: blocks/shops-page/template-3/edit.js:416
-#: build/blocks.bundle.js:2
-msgid "Background Color"
-msgstr "Colore di sfondo"
-
-#: blocks/shops-page/template-1/edit.js:301
-#: blocks/shops-page/template-2/edit.js:302
-#: blocks/shops-page/template-3/edit.js:324
-#: build/blocks.bundle.js:2
-msgid "Focus Text Color"
-msgstr "Colore del testo in focus"
-
-#: blocks/shops-page/template-1/edit.js:308
-#: blocks/shops-page/template-2/edit.js:309
-#: blocks/shops-page/template-3/edit.js:331
-#: build/blocks.bundle.js:2
-msgid "Focus Background Color"
-msgstr "Colore di sfondo in focus"
-
-#: blocks/shops-page/template-1/edit.js:332
-#: blocks/shops-page/template-1/edit.js:417
-#: blocks/shops-page/template-2/edit.js:333
-#: blocks/shops-page/template-2/edit.js:418
-#: blocks/shops-page/template-3/edit.js:355
-#: blocks/shops-page/template-3/edit.js:440
-#: build/blocks.bundle.js:2
-msgid "Text Color (Hover)"
-msgstr "Colore del testo (passaggio del mouse)"
-
-#: blocks/shops-page/template-1/edit.js:338
-#: blocks/shops-page/template-1/edit.js:423
-#: blocks/shops-page/template-2/edit.js:339
-#: blocks/shops-page/template-2/edit.js:424
-#: blocks/shops-page/template-3/edit.js:361
-#: blocks/shops-page/template-3/edit.js:446
-#: build/blocks.bundle.js:2
-msgid "Background Color (Hover)"
-msgstr "Colore di sfondo (passaggio del mouse)"
-
-#: blocks/shops-page/template-1/edit.js:360
-#: blocks/shops-page/template-2/edit.js:361
-#: blocks/shops-page/template-3/edit.js:383
-#: build/blocks.bundle.js:2
-msgid "Checkout Button"
-msgstr "Pulsante della cassa"
-
 #: blocks/shops-page/template-1/edit.js:763
 #: blocks/shops-page/template-2/edit.js:716
 #: blocks/shops-page/template-3/components/GridView.jsx:188
@@ -8369,45 +8133,6 @@ msgstr "Pulsante della cassa"
 msgid "Add To Cart"
 msgstr "Aggiungi al carrello"
 
-#: blocks/shops-page/template-3/edit.js:98
-#: build/blocks.bundle.js:2
-msgid "Show Sort By"
-msgstr "Mostra Ordina per"
-
-#: blocks/shops-page/template-3/edit.js:153
-#: build/blocks.bundle.js:2
-msgid "Description Color"
-msgstr "Colore della descrizione"
-
-#: blocks/shops-page/template-3/edit.js:160
-#: build/blocks.bundle.js:2
-msgid "Hover Description Color"
-msgstr "Colore della descrizione al passaggio del mouse"
-
-#: blocks/single-product/add-to-cart/edit.js:32
-#: blocks/single-product/attributes/edit.js:106
-#: blocks/single-product/gallery/edit.js:105
-#: blocks/single-product/price/edit.js:46
-#: blocks/single-product/product-tab/edit.js:72
-#: blocks/single-product/rating/edit.js:55
-#: blocks/single-product/stock/edit.js:63
-#: blocks/single-product/summary/edit.js:46
-#: blocks/single-product/thumbnail/edit.js:39
-#: blocks/single-product/title/edit.js:68
-#: build/blocks.bundle.js:2
-msgid "Post type is not product."
-msgstr "Il tipo di contenuto non è prodotto."
-
-#: blocks/single-product/gallery/inspector.js:15
-#: build/blocks.bundle.js:2
-msgid "Number of Gallery Item"
-msgstr "Numero di elementi della galleria"
-
-#: blocks/single-product/price/inspector.js:16
-#: build/blocks.bundle.js:2
-msgid "Show Tax included"
-msgstr "Mostra imposta inclusa"
-
 #: blocks/single-product/product-tab/components/sku.js:7
 #: blocks/single-product/rating/components/sku.js:7
 #: build/blocks.bundle.js:2
@@ -8415,51 +8140,6 @@ msgstr "Mostra imposta inclusa"
 #: spa/admin/easycommerce/pages/Reports/components/singleProduct/ProductInfo.jsx:74
 msgid "SKU:"
 msgstr "SKU:"
-
-#: blocks/single-product/product-tab/inspector.js:16
-#: blocks/single-product/rating/inspector.js:17
-#: build/blocks.bundle.js:2
-msgid "Show Rating"
-msgstr "Mostra valutazione"
-
-#: blocks/single-product/rating/inspector.js:26
-#: build/blocks.bundle.js:2
-msgid "Show SKU"
-msgstr "Mostra SKU"
-
-#: blocks/single-product/rating/inspector.js:35
-#: build/blocks.bundle.js:2
-msgid "Show Favourite"
-msgstr "Mostra preferiti"
-
-#: blocks/single-product/rating/inspector.js:43
-#: blocks/single-product/title/inspector.js:26
-#: build/blocks.bundle.js:2
-msgid "Styles"
-msgstr "Stili"
-
-#: blocks/single-product/rating/inspector.js:46
-#: build/blocks.bundle.js:2
-msgid "Border"
-msgstr "Bordo"
-
-#. translators: %d: number of items left in stock.
-#: blocks/single-product/stock/edit.js:45
-#: build/blocks.bundle.js:2
-msgid "Only <strong>%d</strong> item left in stock"
-msgid_plural "Only <strong>%d</strong> items left in stock"
-msgstr[0] "Solo <strong>%d</strong> articolo rimasto in magazzino"
-msgstr[1] "Solo <strong>%d</strong> articoli rimasti in magazzino"
-
-#: blocks/single-product/title/inspector.js:18
-#: build/blocks.bundle.js:2
-msgid "Primary"
-msgstr "Primario"
-
-#: blocks/single-product/title/inspector.js:19
-#: build/blocks.bundle.js:2
-msgid "Body Light"
-msgstr "Corpo chiaro"
 
 #: blocks/single-product/title/inspector.js:20
 #: build/blocks.bundle.js:2
@@ -8662,38 +8342,6 @@ msgstr "Inserisci la tua nuova password qui sotto."
 msgid "Resetting..."
 msgstr "Reimpostazione in corso..."
 
-#: build/blocks.bundle.js:2
-msgid "Dropdown Icon"
-msgstr "Icona a discesa"
-
-#: build/blocks.bundle.js:2
-msgid "Showing %1$d-%2$d of %3$d Results"
-msgstr "Visualizzazione di %1$d-%2$d di %3$d risultati"
-
-#: build/blocks.bundle.js:2
-msgid "Default Sorter"
-msgstr "Ordinamento predefinito"
-
-#: build/checkout.bundle.js:2
-msgid "Address line 1"
-msgstr "Indirizzo riga 1"
-
-#: build/checkout.bundle.js:2
-msgid "Your address"
-msgstr "Il tuo indirizzo"
-
-#: build/checkout.bundle.js:2
-msgid "Address line 2"
-msgstr "Indirizzo riga 2"
-
-#: build/checkout.bundle.js:2
-msgid "Select your City"
-msgstr "Seleziona la tua città"
-
-#: build/checkout.bundle.js:2
-msgid "Select your State"
-msgstr "Seleziona il tuo stato"
-
 #: build/checkout.bundle.js:2
 #: build/dashboard.bundle.js:2
 #: spa/public/dashboard/components/tabs/Address/Components/BillingAddress.jsx:156
@@ -8701,50 +8349,6 @@ msgstr "Seleziona il tuo stato"
 #: spa/public/dashboard/components/tabs/Profile/index.jsx:260
 msgid "Select your country"
 msgstr "Seleziona il tuo paese"
-
-#: build/checkout.bundle.js:2
-msgid "Postal Code"
-msgstr "Codice postale"
-
-#: build/checkout.bundle.js:2
-msgid "Your Orders"
-msgstr "I tuoi ordini"
-
-#: build/checkout.bundle.js:2
-msgid "Shipping Eastimate"
-msgstr "Stima della spedizione"
-
-#: build/checkout.bundle.js:2
-msgid "Tax Eastimate"
-msgstr "Stima delle imposte"
-
-#: build/checkout.bundle.js:2
-msgid "Debit / Credit card"
-msgstr "Carta di debito / credito"
-
-#: build/checkout.bundle.js:2
-msgid "Internet banking"
-msgstr "Home banking"
-
-#: build/checkout.bundle.js:2
-msgid "Google / Apple Wallet"
-msgstr "Google / Apple Wallet"
-
-#: build/checkout.bundle.js:2
-msgid "Name on Card"
-msgstr "Nome sulla carta"
-
-#: build/checkout.bundle.js:2
-msgid "Enter card holder name"
-msgstr "Inserisci il nome del titolare della carta"
-
-#: build/checkout.bundle.js:2
-msgid "Expiration date (MM/YY)"
-msgstr "Data di scadenza (MM/AA)"
-
-#: build/checkout.bundle.js:2
-msgid "Learn more Taxes and Shipping information"
-msgstr "Scopri di più sulle informazioni relative a imposte e spedizione"
 
 #: build/dashboard.bundle.js:2
 #: spa/public/dashboard/components/Sidebar/index.jsx:31
@@ -9030,14 +8634,6 @@ msgstr "Seleziona immagine"
 #: spa/admin/easycommerce/pages/Products/components/ProductDesc/index.jsx:23
 msgid "Use selected image"
 msgstr "Usa l'immagine selezionata"
-
-#: build/dashboard.bundle.js:2
-msgid "user"
-msgstr "utente"
-
-#: build/dashboard.bundle.js:2
-msgid "camera"
-msgstr "fotocamera"
 
 #: build/dashboard.bundle.js:2
 #: spa/public/dashboard/components/tabs/Profile/elements/ProfileSkeleton.jsx:11
@@ -9341,16 +8937,6 @@ msgstr "Nessun dato dell'ordine trovato"
 
 #: build/easycommerce.bundle.js:2
 #: build/settings.bundle.js:2
-msgid "Your Voice Matters"
-msgstr "La tua opinione conta"
-
-#: build/easycommerce.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Help us make EasyCommerce the best it can be. Share your feedback and ideas with us!"
-msgstr "Aiutaci a rendere EasyCommerce il migliore possibile. Condividi con noi i tuoi feedback e le tue idee!"
-
-#: build/easycommerce.bundle.js:2
-#: build/settings.bundle.js:2
 #: spa/admin/easycommerce/pages/Customers/AddNew/index.jsx:145
 msgid "Enter first name"
 msgstr "Inserisci il nome"
@@ -9360,26 +8946,6 @@ msgstr "Inserisci il nome"
 #: spa/admin/easycommerce/pages/Customers/AddNew/index.jsx:234
 msgid "Enter a valid email address"
 msgstr "Inserisci un indirizzo email valido"
-
-#: build/easycommerce.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Send Message"
-msgstr "Invia messaggio"
-
-#: build/easycommerce.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Thank you for your feedback"
-msgstr "Grazie per il tuo feedback"
-
-#: build/easycommerce.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "We will use your feedback to build a better experience for everyone."
-msgstr "Useremo il tuo feedback per creare un'esperienza migliore per tutti."
-
-#: build/easycommerce.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Feedback"
-msgstr "Feedback"
 
 #: build/easycommerce.bundle.js:2
 #: build/settings.bundle.js:2
@@ -9457,21 +9023,6 @@ msgid "Remaining"
 msgstr "Rimanenti"
 
 #: build/easycommerce.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Network response was not okay"
-msgstr "La risposta della rete non è andata a buon fine"
-
-#: build/easycommerce.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "No answer found"
-msgstr "Nessuna risposta trovata"
-
-#: build/easycommerce.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Ask a Question"
-msgstr "Fai una domanda"
-
-#: build/easycommerce.bundle.js:2
 #: build/editor.bundle.js:2
 #: build/settings.bundle.js:2
 #: spa/admin/easycommerce/pages/Products/components/common/AiGenerate/AiEnhanceImage.jsx:371
@@ -9483,183 +9034,11 @@ msgid "No credits available"
 msgstr "Nessun credito disponibile"
 
 #: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Two AI Agents, One Free Key"
-msgstr "Due agenti AI, una chiave gratuita"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Connect a free API key -"
-msgstr "Connetti una chiave API gratuita -"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "100 AI credits"
-msgstr "100 crediti AI"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "free, more with"
-msgstr "gratis, di più con"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Store Copilot - For You"
-msgstr "Store Copilot - Per te"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Chat to run your store: ask about sales, create and edit products, and update orders - in plain English, with your approval."
-msgstr "Chatta per gestire il tuo negozio: chiedi informazioni sulle vendite, crea e modifica prodotti e aggiorna gli ordini - in linguaggio naturale, con la tua approvazione."
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Shopping Agent - For Your Shoppers"
-msgstr "Agente di acquisto - Per i tuoi acquirenti"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "A 24/7 storefront agent that helps customers find the right product, answers their questions, and places orders for them."
-msgstr "Un agente attivo 24 ore su 24, 7 giorni su 7 sulla vetrina che aiuta i clienti a trovare il prodotto giusto, risponde alle loro domande ed effettua ordini per loro."
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Plus"
-msgstr "In più"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "& more."
-msgstr "e altro ancora."
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Each AI request transmits only the relevant records - the item you're working on, or a shopper's query and its products - to EasyCommerce's AI service. Your bulk customer and order data is never uploaded, sold, or used to train models."
-msgstr "Ogni richiesta AI trasmette solo i record pertinenti - l'elemento su cui stai lavorando o la query di un acquirente e i relativi prodotti - al servizio AI di EasyCommerce. I tuoi dati aggregati di clienti e ordini non vengono mai caricati, venduti o utilizzati per addestrare modelli."
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Learn more."
-msgstr "Scopri di più."
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "I have an API key"
-msgstr "Ho una chiave API"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "I want an API key"
-msgstr "Voglio una chiave API"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Please fill all the fields"
-msgstr "Compila tutti i campi"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Enter Your Connection Key"
-msgstr "Inserisci la tua chiave di connessione"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "The link in your email connects AI automatically. To do it manually, paste the key we emailed below."
-msgstr "Il link nella tua email collega automaticamente l'AI. Per farlo manualmente, incolla qui sotto la chiave che ti abbiamo inviato via email."
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Your Key"
-msgstr "La tua chiave"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Paste your key"
-msgstr "Incolla la tua chiave"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "I don't have a key"
-msgstr "Non ho una chiave"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Check your email and click the link to connect AI."
-msgstr "Controlla la tua email e clicca sul link per collegare l'AI."
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Connect EasyCommerce AI"
-msgstr "Collega l'AI di EasyCommerce"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Enter your name and email - we'll send a one-click link to connect AI, plus a backup key."
-msgstr "Inserisci il tuo nome e la tua email - ti invieremo un link con un solo clic per collegare l'AI, oltre a una chiave di backup."
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Your Name"
-msgstr "Il tuo nome"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Enter your Name"
-msgstr "Inserisci il tuo nome"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Email My Link"
-msgstr "Inviami il link via email"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "I already have a key"
-msgstr "Ho già una chiave"
-
-#: build/easycommerce.bundle.js:2
 #: build/settings.bundle.js:2
 #: spa/admin/easycommerce/pages/Dashboard/components/JoinCommunity.jsx:9
 #: spa/admin/easycommerce/pages/Dashboard/components/JoinCommunity.jsx:19
 msgid "Join Community"
 msgstr "Unisciti alla community"
-
-#: build/easycommerce.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Support"
-msgstr "Supporto"
-
-#: build/easycommerce.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Disconnect"
-msgstr "Disconnetti"
 
 #: build/easycommerce.bundle.js:2
 #: spa/admin/common/components/Notices/NoticeItem.jsx:101
@@ -9974,10 +9353,6 @@ msgid "Select status"
 msgstr "Seleziona lo stato"
 
 #: build/easycommerce.bundle.js:2
-msgid "Reset"
-msgstr "Reimposta"
-
-#: build/easycommerce.bundle.js:2
 #: build/shipping.bundle.js:2
 #: build/tax.bundle.js:2
 #: spa/admin/common/components/DeletePopup.jsx:42
@@ -10015,55 +9390,9 @@ msgid "Delete Permanently"
 msgstr "Elimina definitivamente"
 
 #: build/easycommerce.bundle.js:2
-msgid "Are you sure you want to update?"
-msgstr "Sei sicuro di voler aggiornare?"
-
-#: build/easycommerce.bundle.js:2
-msgid "You're going to update <strong>All</strong> are you sure?"
-msgstr "Stai per aggiornare <strong>Tutto</strong>, sei sicuro?"
-
-#: build/easycommerce.bundle.js:2
-msgid "No, Keep as it is"
-msgstr "No, lascia com'è"
-
-#: build/easycommerce.bundle.js:2
-msgid "Yes, Update"
-msgstr "Sì, aggiorna"
-
-#: build/easycommerce.bundle.js:2
-msgid "Product deleted"
-msgid_plural "Products deleted"
-msgstr[0] "Prodotto eliminato"
-msgstr[1] "Prodotti eliminati"
-
-#: build/easycommerce.bundle.js:2
-msgid "Delete failed."
-msgstr "Eliminazione non riuscita."
-
-#: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/Help/index.jsx:100
 msgid "Something went wrong."
 msgstr "Qualcosa è andato storto."
-
-#: build/easycommerce.bundle.js:2
-msgid "Set Status"
-msgstr "Imposta lo stato"
-
-#: build/easycommerce.bundle.js:2
-msgid "Status updated successfully"
-msgstr "Stato aggiornato con successo"
-
-#: build/easycommerce.bundle.js:2
-msgid "Failed to update products."
-msgstr "Aggiornamento dei prodotti non riuscito."
-
-#: build/easycommerce.bundle.js:2
-msgid "An error occurred while updating statuses."
-msgstr "Si è verificato un errore durante l'aggiornamento degli stati."
-
-#: build/easycommerce.bundle.js:2
-msgid "Please select a valid status."
-msgstr "Seleziona uno stato valido."
 
 #: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/Products/ImportModal.jsx:22
@@ -10607,50 +9936,6 @@ msgid "Loading attribute..."
 msgstr "Caricamento dell'attributo..."
 
 #: build/easycommerce.bundle.js:2
-msgid "Attribute name are required!"
-msgstr "Il nome dell'attributo è obbligatorio!"
-
-#: build/easycommerce.bundle.js:2
-msgid "Attribute slug are required!"
-msgstr "Lo slug dell'attributo è obbligatorio!"
-
-#: build/easycommerce.bundle.js:2
-msgid "Attribute name already exists!"
-msgstr "Il nome dell'attributo esiste già!"
-
-#: build/easycommerce.bundle.js:2
-msgid "Attribute slug already exists!"
-msgstr "Lo slug dell'attributo esiste già!"
-
-#: build/easycommerce.bundle.js:2
-msgid "Option %d must have a label!"
-msgstr "L'opzione %d deve avere un'etichetta!"
-
-#: build/easycommerce.bundle.js:2
-msgid "Option %d must have a label and image"
-msgstr "L'opzione %d deve avere un'etichetta e un'immagine"
-
-#: build/easycommerce.bundle.js:2
-msgid "Option %d must have a label and color"
-msgstr "L'opzione %d deve avere un'etichetta e un colore"
-
-#: build/easycommerce.bundle.js:2
-msgid "Duplicate option labels are not allowed!"
-msgstr "Le etichette di opzione duplicate non sono consentite!"
-
-#: build/easycommerce.bundle.js:2
-msgid "Attribute updated successfully!"
-msgstr "Attributo aggiornato con successo!"
-
-#: build/easycommerce.bundle.js:2
-msgid "Attribute created successfully!"
-msgstr "Attributo creato con successo!"
-
-#: build/easycommerce.bundle.js:2
-msgid "It'll show on the single product screen"
-msgstr "Verrà mostrato nella schermata del singolo prodotto"
-
-#: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/Brands/index.jsx:339
 #: spa/admin/easycommerce/pages/Categories/index.jsx:340
 #: spa/admin/easycommerce/pages/Products/components/Organize/Modals/BrandModal.jsx:164
@@ -10661,38 +9946,10 @@ msgid "Enter Name"
 msgstr "Inserisci il nome"
 
 #: build/easycommerce.bundle.js:2
-msgid "URL-friendly slug of the attribute"
-msgstr "Slug adatto agli URL dell'attributo"
-
-#: build/easycommerce.bundle.js:2
-msgid "How customers will see this on the single product screen"
-msgstr "Come i clienti lo vedranno nella schermata del singolo prodotto"
-
-#: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/Attributes/components/Table.jsx:131
 #: spa/admin/easycommerce/pages/Products/components/ProductAttr/components/AttributeModal/components/AttributeSelectionTable.jsx:161
 msgid "Options"
 msgstr "Opzioni"
-
-#: build/easycommerce.bundle.js:2
-msgid "Options of the attribute"
-msgstr "Opzioni dell'attributo"
-
-#: build/easycommerce.bundle.js:2
-msgid "Select an Image"
-msgstr "Seleziona un'immagine"
-
-#: build/easycommerce.bundle.js:2
-msgid "Use this image"
-msgstr "Usa questa immagine"
-
-#: build/easycommerce.bundle.js:2
-msgid "Update Attribute"
-msgstr "Aggiorna attributo"
-
-#: build/easycommerce.bundle.js:2
-msgid "Create Attribute"
-msgstr "Crea attributo"
 
 #: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/Attributes/components/Table.jsx:90
@@ -11787,78 +11044,14 @@ msgid "An error occurred while updating status"
 msgstr "Si è verificato un errore durante l'aggiornamento dello stato"
 
 #: build/easycommerce.bundle.js:2
-msgid "Please enter an amount greater than 0 before refunding"
-msgstr "Inserisci un importo maggiore di 0 prima di rimborsare"
-
-#: build/easycommerce.bundle.js:2
-msgid "Failed to process refund. Please try again."
-msgstr "Elaborazione del rimborso non riuscita. Riprova."
-
-#: build/easycommerce.bundle.js:2
-msgid "Please enter the Refund Transaction ID."
-msgstr "Inserisci l'ID della transazione di rimborso."
-
-#: build/easycommerce.bundle.js:2
-msgid "Please enter an amount before refunding"
-msgstr "Inserisci un importo prima di rimborsare"
-
-#: build/easycommerce.bundle.js:2
-msgid "Please select a reason before refunding"
-msgstr "Seleziona un motivo prima di rimborsare"
-
-#: build/easycommerce.bundle.js:2
-msgid "Refund Payment"
-msgstr "Rimborsa pagamento"
-
-#: build/easycommerce.bundle.js:2
-msgid "Refundable"
-msgstr "Rimborsabile"
-
-#: build/easycommerce.bundle.js:2
-msgid "Refund Amount"
-msgstr "Importo del rimborso"
-
-#: build/easycommerce.bundle.js:2
-msgid "Enter amount"
-msgstr "Inserisci l'importo"
-
-#: build/easycommerce.bundle.js:2
-msgid "Refund Reason"
-msgstr "Motivo del rimborso"
-
-#: build/easycommerce.bundle.js:2
-msgid "Select Refund Reason"
-msgstr "Seleziona il motivo del rimborso"
-
-#: build/easycommerce.bundle.js:2
-msgid "For %s, refunds should be processed manually outside of the system. After succesful processing, enter the Refund Transaction ID"
-msgstr "Per %s, i rimborsi devono essere elaborati manualmente al di fuori del sistema. Dopo l'elaborazione riuscita, inserisci l'ID della transazione di rimborso"
-
-#: build/easycommerce.bundle.js:2
-msgid "Enter Refund Transaction ID"
-msgstr "Inserisci l'ID della transazione di rimborso"
-
-#: build/easycommerce.bundle.js:2
-msgid "Refund now"
-msgstr "Rimborsa ora"
-
-#: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/Refunds/components/RefundsTable.jsx:7
 msgid "ID"
 msgstr "ID"
 
 #: build/easycommerce.bundle.js:2
-msgid "Fulfillment"
-msgstr "Evasione"
-
-#: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/Customers/SingleCustomer/index.jsx:220
 msgid "Transactions ID"
 msgstr "ID transazione"
-
-#: build/easycommerce.bundle.js:2
-msgid "Date & Time"
-msgstr "Data e ora"
 
 #: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/Orders/SingleOrder/components/OrderInfo.jsx:69
@@ -11880,24 +11073,6 @@ msgstr "Seleziona l'intervallo di date"
 msgid "Calendar"
 msgstr "Calendario"
 
-#: build/easycommerce.bundle.js:2
-msgid "eg. 12 Sep - 28 Oct 2025"
-msgstr "es. 12 set - 28 ott 2025"
-
-#: build/easycommerce.bundle.js:2
-msgid "Order deleted permanently"
-msgid_plural "Orders deleted permanently"
-msgstr[0] "Ordine eliminato definitivamente"
-msgstr[1] "Ordini eliminati definitivamente"
-
-#: build/easycommerce.bundle.js:2
-msgid "Something went wrong while deleting."
-msgstr "Qualcosa è andato storto durante l'eliminazione."
-
-#: build/easycommerce.bundle.js:2
-msgid "Fulfill Status"
-msgstr "Stato di evasione"
-
 #. translators: %d: number of orders placed in the country.
 #: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/Reports/components/common/GeoMap.jsx:248
@@ -11906,14 +11081,6 @@ msgid "%d order"
 msgid_plural "%d orders"
 msgstr[0] "%d ordine"
 msgstr[1] "%d ordini"
-
-#: build/easycommerce.bundle.js:2
-msgid "Failed to update orders."
-msgstr "Aggiornamento degli ordini non riuscito."
-
-#: build/easycommerce.bundle.js:2
-msgid "Please select a status to update."
-msgstr "Seleziona uno stato da aggiornare."
 
 #. translators: %s: order status label (e.g. Pending).
 #: build/easycommerce.bundle.js:2
@@ -11931,7 +11098,9 @@ msgstr "Nessun ordine trovato"
 msgid ""
 "You're yet to receive any orders in your store. Keep promoting \n"
 "your store to bring in your first sale."
-msgstr "Non hai ancora ricevuto alcun ordine nel tuo negozio. Continua a promuovere \nil tuo negozio per ottenere la tua prima vendita."
+msgstr ""
+"Non hai ancora ricevuto alcun ordine nel tuo negozio. Continua a promuovere \n"
+"il tuo negozio per ottenere la tua prima vendita."
 
 #. translators: %s: order status label (e.g. Pending).
 #: build/easycommerce.bundle.js:2
@@ -11939,23 +11108,9 @@ msgstr "Non hai ancora ricevuto alcun ordine nel tuo negozio. Continua a promuov
 msgid ""
 "No %s orders in your store. Keep promoting \n"
 "your store to bring in your first sale."
-msgstr "Nessun ordine %s nel tuo negozio. Continua a promuovere \nil tuo negozio per ottenere la tua prima vendita."
-
-#: build/easycommerce.bundle.js:2
-msgid "Resend Order Email"
-msgstr "Reinvia email dell'ordine"
-
-#: build/easycommerce.bundle.js:2
-msgid "Email Event"
-msgstr "Evento email"
-
-#: build/easycommerce.bundle.js:2
-msgid "Select an event"
-msgstr "Seleziona un evento"
-
-#: build/easycommerce.bundle.js:2
-msgid "Email sent"
-msgstr "Email inviata"
+msgstr ""
+"Nessun ordine %s nel tuo negozio. Continua a promuovere \n"
+"il tuo negozio per ottenere la tua prima vendita."
 
 #: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/Orders/components/OrderActions.jsx:63
@@ -11994,10 +11149,6 @@ msgid "Payment URL"
 msgstr "URL di pagamento"
 
 #: build/easycommerce.bundle.js:2
-msgid "date"
-msgstr "data"
-
-#: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/Customers/components/CustomerTable.jsx:52
 #: spa/admin/easycommerce/pages/Customers/components/TableHeader.jsx:25
 #: spa/admin/easycommerce/pages/Customers/SingleCustomer/components/CustomerDetails.jsx:112
@@ -12022,54 +11173,6 @@ msgstr "Motivo"
 #: spa/admin/easycommerce/pages/Orders/SingleOrder/components/Refunds.jsx:42
 msgid "Refunded By"
 msgstr "Rimborsato da"
-
-#: build/easycommerce.bundle.js:2
-msgid "Add Note"
-msgstr "Aggiungi nota"
-
-#: build/easycommerce.bundle.js:2
-msgid "Required"
-msgstr "Obbligatorio"
-
-#: build/easycommerce.bundle.js:2
-msgid "Write your note here"
-msgstr "Scrivi qui la tua nota"
-
-#: build/easycommerce.bundle.js:2
-msgid "Note To Customer"
-msgstr "Nota al cliente"
-
-#: build/easycommerce.bundle.js:2
-msgid "Unable to save note. The database may need to be updated. Please contact your administrator."
-msgstr "Impossibile salvare la nota. Il database potrebbe dover essere aggiornato. Contatta il tuo amministratore."
-
-#: build/easycommerce.bundle.js:2
-msgid "Delete Note"
-msgstr "Elimina nota"
-
-#: build/easycommerce.bundle.js:2
-msgid "Are you sure you want to delete this note? This action cannot be undone."
-msgstr "Sei sicuro di voler eliminare questa nota? Questa azione non può essere annullata."
-
-#: build/easycommerce.bundle.js:2
-msgid "Unable to delete note. Please try again or contact your administrator."
-msgstr "Impossibile eliminare la nota. Riprova o contatta il tuo amministratore."
-
-#: build/easycommerce.bundle.js:2
-msgid "Order doesn't exist"
-msgstr "L'ordine non esiste"
-
-#: build/easycommerce.bundle.js:2
-msgid "Failed to fetch order data"
-msgstr "Recupero dei dati dell'ordine non riuscito"
-
-#: build/easycommerce.bundle.js:2
-msgid "Unknown"
-msgstr "Sconosciuto"
-
-#: build/easycommerce.bundle.js:2
-msgid "eg. %1$s - %2$s %3$s"
-msgstr "es. %1$s - %2$s %3$s"
 
 #: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/Transactions/index.jsx:50
@@ -12182,7 +11285,9 @@ msgstr "Nessun cliente %s nel tuo negozio."
 msgid ""
 "Keep promoting \n"
 "your store to bring in your first customer."
-msgstr "Continua a promuovere \nil tuo negozio per ottenere il tuo primo cliente."
+msgstr ""
+"Continua a promuovere \n"
+"il tuo negozio per ottenere il tuo primo cliente."
 
 #: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/Customers/index.jsx:269
@@ -12254,27 +11359,9 @@ msgid "Something went wrong while updating coupon status"
 msgstr "Qualcosa è andato storto durante l'aggiornamento dello stato del coupon"
 
 #: build/easycommerce.bundle.js:2
-msgid "No coupons found"
-msgstr "Nessun coupon trovato"
-
-#: build/easycommerce.bundle.js:2
-msgid "All type of Coupons activities will appear here once they occur."
-msgstr "Tutti i tipi di attività dei coupon compariranno qui una volta che si verificano."
-
-#: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/App.jsx:404
 msgid "Add Coupon"
 msgstr "Aggiungi coupon"
-
-#: build/easycommerce.bundle.js:2
-msgid "Coupons deleted successfully"
-msgstr "Coupon eliminati con successo"
-
-#: build/easycommerce.bundle.js:2
-msgid "%d coupon"
-msgid_plural "%d coupons"
-msgstr[0] "%d coupon"
-msgstr[1] "%d coupon"
 
 #: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/Coupons/CouponDetails/elements/General.jsx:35
@@ -12296,10 +11383,6 @@ msgstr "Nessun coupon trovato per questa scheda."
 #: spa/admin/easycommerce/pages/Coupons/CouponDetails/index.jsx:241
 msgid "Create Coupon"
 msgstr "Crea coupon"
-
-#: build/easycommerce.bundle.js:2
-msgid "Coupon Deleted"
-msgstr "Coupon eliminato"
 
 #: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/Coupons/CouponDetails/elements/General.jsx:27
@@ -12352,34 +11435,6 @@ msgid "Search for products"
 msgstr "Cerca prodotti"
 
 #: build/easycommerce.bundle.js:2
-msgid "Conditions"
-msgstr "Condizioni"
-
-#: build/easycommerce.bundle.js:2
-msgid "Discount applies to specific products?"
-msgstr "Lo sconto si applica a prodotti specifici?"
-
-#: build/easycommerce.bundle.js:2
-msgid "Minimum Spend"
-msgstr "Spesa minima"
-
-#: build/easycommerce.bundle.js:2
-msgid "Maximum Spend"
-msgstr "Spesa massima"
-
-#: build/easycommerce.bundle.js:2
-msgid "Start Date"
-msgstr "Data di inizio"
-
-#: build/easycommerce.bundle.js:2
-msgid "calendar"
-msgstr "calendario"
-
-#: build/easycommerce.bundle.js:2
-msgid "End Date"
-msgstr "Data di fine"
-
-#: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/App.jsx:402
 #: spa/admin/easycommerce/pages/Coupons/CouponDetails/index.jsx:241
 msgid "Edit Coupon"
@@ -12411,18 +11466,6 @@ msgid "Save as Active"
 msgstr "Salva come attivo"
 
 #: build/easycommerce.bundle.js:2
-msgid "(No Name)"
-msgstr "(Senza nome)"
-
-#: build/easycommerce.bundle.js:2
-msgid "+%d more"
-msgstr "+%d in più"
-
-#: build/easycommerce.bundle.js:2
-msgid "Remind"
-msgstr "Ricorda"
-
-#: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/AbandonedCart/components/NotFound.jsx:6
 msgid "No Abandoned Carts found"
 msgstr "Nessun carrello abbandonato trovato"
@@ -12431,44 +11474,6 @@ msgstr "Nessun carrello abbandonato trovato"
 #: spa/admin/easycommerce/pages/AbandonedCart/components/NotFound.jsx:20
 msgid "All Abandoned Carts will appear here once they occur."
 msgstr "Tutti i carrelli abbandonati compariranno qui una volta che si verificano."
-
-#: build/easycommerce.bundle.js:2
-msgid "Are you sure you want to send reminder?"
-msgstr "Sei sicuro di voler inviare il promemoria?"
-
-#: build/easycommerce.bundle.js:2
-msgid "You're going to Remind"
-msgstr "Stai per inviare un promemoria a"
-
-#: build/easycommerce.bundle.js:2
-msgid "selected?"
-msgstr "selezionati?"
-
-#: build/easycommerce.bundle.js:2
-msgid "Don't Send"
-msgstr "Non inviare"
-
-#: build/easycommerce.bundle.js:2
-msgid "Yes, Send"
-msgstr "Sì, invia"
-
-#: build/easycommerce.bundle.js:2
-msgid "Remind All"
-msgstr "Ricorda a tutti"
-
-#: build/easycommerce.bundle.js:2
-msgid "carts deleted successfully"
-msgstr "carrelli eliminati con successo"
-
-#: build/easycommerce.bundle.js:2
-msgid "%d cart"
-msgid_plural "%d carts"
-msgstr[0] "%d carrello"
-msgstr[1] "%d carrelli"
-
-#: build/easycommerce.bundle.js:2
-msgid "Reminders sent successfully"
-msgstr "Promemoria inviati con successo"
 
 #: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/AbandonedCart/components/CleanAbandonedCartModal.jsx:33
@@ -12533,22 +11538,6 @@ msgid "Abandoned Cart Deleted"
 msgstr "Carrello abbandonato eliminato"
 
 #: build/easycommerce.bundle.js:2
-msgid "Approved"
-msgstr "Approvato"
-
-#: build/easycommerce.bundle.js:2
-msgid "Not Approved"
-msgstr "Non approvato"
-
-#: build/easycommerce.bundle.js:2
-msgid "Review #%d"
-msgstr "Recensione #%d"
-
-#: build/easycommerce.bundle.js:2
-msgid "Product #%d"
-msgstr "Prodotto #%d"
-
-#: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/ProductReviews/components/Table/THead.jsx:8
 msgid "Review Content"
 msgstr "Contenuto della recensione"
@@ -12558,10 +11547,6 @@ msgstr "Contenuto della recensione"
 #: spa/admin/easycommerce/pages/Reports/components/singleProduct/Reviews.jsx:143
 msgid "Rating"
 msgstr "Valutazione"
-
-#: build/easycommerce.bundle.js:2
-msgid "Search by customer name or content"
-msgstr "Cerca per nome del cliente o contenuto"
 
 #: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/App.jsx:412
@@ -13613,59 +12598,6 @@ msgid "Build"
 msgstr "Crea"
 
 #: build/shipping.bundle.js:2
-msgid "No shipping plans configured"
-msgstr "Nessun piano di spedizione configurato"
-
-#: build/shipping.bundle.js:2
-msgid "Set up shipping plans to define shipping rates by region. "
-msgstr "Configura i piani di spedizione per definire le tariffe di spedizione per regione. "
-
-#: build/shipping.bundle.js:2
-#: build/tax.bundle.js:2
-msgid "Read docs."
-msgstr "Leggi la documentazione."
-
-#: build/shipping.bundle.js:2
-msgid "+ Add Plan"
-msgstr "+ Aggiungi piano"
-
-#: build/shipping.bundle.js:2
-msgid "Min Price (%s)"
-msgstr "Prezzo min (%s)"
-
-#: build/shipping.bundle.js:2
-msgid "Max Price (%s)"
-msgstr "Prezzo max (%s)"
-
-#: build/shipping.bundle.js:2
-msgid "Min Weight"
-msgstr "Peso min"
-
-#: build/shipping.bundle.js:2
-msgid "Max Weight"
-msgstr "Peso max"
-
-#: build/shipping.bundle.js:2
-msgid "Min Quantity"
-msgstr "Quantità min"
-
-#: build/shipping.bundle.js:2
-msgid "Max Quantity"
-msgstr "Quantità max"
-
-#: build/shipping.bundle.js:2
-msgid "Min"
-msgstr "Min"
-
-#: build/shipping.bundle.js:2
-msgid "Max"
-msgstr "Max"
-
-#: build/shipping.bundle.js:2
-msgid "Shipping name here"
-msgstr "Nome della spedizione qui"
-
-#: build/shipping.bundle.js:2
 #: build/tax.bundle.js:2
 #: spa/admin/tax/src/components/TaxDetails/elements/TaxFormTopInputs.jsx:40
 msgid "Write description here"
@@ -13677,127 +12609,10 @@ msgstr "Scrivi qui la descrizione"
 msgid "Enable/Disable"
 msgstr "Attiva/Disattiva"
 
-#: build/shipping.bundle.js:2
-#: build/tax.bundle.js:2
-msgid "Regions"
-msgstr "Regioni"
-
-#: build/shipping.bundle.js:2
-msgid "Zip Code"
-msgstr "CAP"
-
-#: build/shipping.bundle.js:2
-msgid "Calculation Base"
-msgstr "Base di calcolo"
-
-#: build/shipping.bundle.js:2
-msgid "Select Base"
-msgstr "Seleziona la base"
-
-#: build/shipping.bundle.js:2
-msgid "Cart Total"
-msgstr "Totale del carrello"
-
-#: build/shipping.bundle.js:2
-msgid "Total Weight"
-msgstr "Peso totale"
-
-#: build/shipping.bundle.js:2
-msgid "Item Count"
-msgstr "Numero di articoli"
-
-#: build/shipping.bundle.js:2
-msgid "Taxable"
-msgstr "Tassabile"
-
-#: build/shipping.bundle.js:2
-msgid "No tax rate configured for this country."
-msgstr "Nessuna aliquota fiscale configurata per questo paese."
-
-#: build/shipping.bundle.js:2
-msgid "Method Name"
-msgstr "Nome del metodo"
-
-#: build/shipping.bundle.js:2
-msgid "Shipping Fee (%s)"
-msgstr "Tariffa di spedizione (%s)"
-
-#: build/shipping.bundle.js:2
-msgid "Write name here"
-msgstr "Scrivi qui il nome"
-
-#: build/shipping.bundle.js:2
-msgid "Write min weight"
-msgstr "Scrivi il peso minimo"
-
-#: build/shipping.bundle.js:2
-msgid "Write max weight"
-msgstr "Scrivi il peso massimo"
-
-#: build/shipping.bundle.js:2
-msgid "Write your fee"
-msgstr "Scrivi la tua tariffa"
-
-#: build/shipping.bundle.js:2
-msgid "Calculation base is required."
-msgstr "La base di calcolo è obbligatoria."
-
-#: build/shipping.bundle.js:2
-msgid "Shipping plan name is required."
-msgstr "Il nome del piano di spedizione è obbligatorio."
-
-#: build/shipping.bundle.js:2
-msgid "Update Shipping Plan"
-msgstr "Aggiorna piano di spedizione"
-
-#: build/shipping.bundle.js:2
-msgid "Save Shipping Plan"
-msgstr "Salva piano di spedizione"
-
-#: build/shipping.bundle.js:2
-msgid "Plan"
-msgstr "Piano"
-
-#: build/shipping.bundle.js:2
-msgid "Add Shipping Plan"
-msgstr "Aggiungi piano di spedizione"
-
-#: build/shipping.bundle.js:2
-msgid "Shipping Plans"
-msgstr "Piani di spedizione"
-
-#: build/shipping.bundle.js:2
-msgid "+ New Plan"
-msgstr "+ Nuovo piano"
-
-#: build/tax.bundle.js:2
-msgid "No tax classes configured"
-msgstr "Nessuna classe fiscale configurata"
-
-#: build/tax.bundle.js:2
-msgid "Set up tax classes to apply the correct tax amounts to products. "
-msgstr "Configura le classi fiscali per applicare i corretti importi delle imposte ai prodotti. "
-
-#: build/tax.bundle.js:2
-msgid "+ Add Class"
-msgstr "+ Aggiungi classe"
-
-#: build/tax.bundle.js:2
-msgid "Add Class"
-msgstr "Aggiungi classe"
-
-#: build/tax.bundle.js:2
-msgid "Class"
-msgstr "Classe"
-
 #: build/tax.bundle.js:2
 #: spa/admin/tax/src/components/TaxDetails/elements/RegionsHeader.jsx:18
 msgid "Rate (%)"
 msgstr "Aliquota (%)"
-
-#: build/tax.bundle.js:2
-msgid "- Select -"
-msgstr "- Seleziona -"
 
 #: build/tax.bundle.js:2
 #: spa/admin/tax/src/components/TaxDetails/elements/SaveButtons.jsx:19
@@ -13980,38 +12795,6 @@ msgstr "Bacheca del negozio"
 #: spa/admin/wizard/src/pages/Success.jsx:277
 msgid "Add A Product"
 msgstr "Aggiungi un prodotto"
-
-#: build/wizard.bundle.js:2
-msgid "Set up your store name, location, and contact details"
-msgstr "Configura il nome, la sede e i dati di contatto del tuo negozio"
-
-#: build/wizard.bundle.js:2
-msgid "Create essential pages like Shop, Cart, and Checkout"
-msgstr "Crea le pagine essenziali come Negozio, Carrello e Cassa"
-
-#: build/wizard.bundle.js:2
-msgid "Connect payment gateways to start accepting orders"
-msgstr "Collega i gateway di pagamento per iniziare ad accettare ordini"
-
-#: build/wizard.bundle.js:2
-msgid "Welcome to EasyCommerce"
-msgstr "Benvenuto in EasyCommerce"
-
-#: build/wizard.bundle.js:2
-msgid "Start selling in a few minutes with 3 easy steps:"
-msgstr "Inizia a vendere in pochi minuti con 3 semplici passaggi:"
-
-#: build/wizard.bundle.js:2
-msgid "Get Started Now"
-msgstr "Inizia ora"
-
-#: build/wizard.bundle.js:2
-msgid "Demo import failed. Please try again."
-msgstr "Importazione dei demo non riuscita. Riprova."
-
-#: build/wizard.bundle.js:2
-msgid "Skip"
-msgstr "Salta"
 
 #: spa/admin/common/components/DragNdrop/index.jsx:58
 msgid "Drag handle"

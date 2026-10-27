@@ -1,8 +1,6 @@
 import { __ } from '@wordpress/i18n';
 import React, { useEffect } from "react";
 
-const bg = `${EASYCOMMERCE.assets}admin/img/icons/bg.png`;
-
 const Business = ({ formValues, setFormValues }) => {
 
     const { business_type: businessTypes, countries } = EASYCOMMERCE;

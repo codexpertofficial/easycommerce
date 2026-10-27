@@ -9,7 +9,6 @@ const orderDateIcon = `${EASYCOMMERCE.assets}admin/img/icons/order/date.png`;
 const orderTotalIcon = `${EASYCOMMERCE.assets}admin/img/icons/order/total.png`;
 const orderStatusIcon = `${EASYCOMMERCE.assets}admin/img/icons/order/status.png`;
 const paymentMethodIcon = `${EASYCOMMERCE.assets}admin/img/icons/order/payment.png`;
-const statusEditIcon = `${EASYCOMMERCE.assets}admin/img/icons/order/edit.png`;
 const fulfillmentIcon = `${EASYCOMMERCE.assets}admin/img/icons/order/fullfillment.png`;
 const transectionId = `${EASYCOMMERCE.assets}admin/img/icons/order/transaction.png`;
 

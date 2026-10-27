@@ -36,7 +36,7 @@
 		</div>
 
 		<div class="easycommerce-survey-header">
-			<img src="<?php echo EASYCOMMERCE_ASSETS_URL . '/admin/img/survey.gif'; ?>" alt="">
+			<img src="<?php echo EASYCOMMERCE_ASSETS_URL . '/admin/img/survey.webp'; ?>" alt="">
 			<h2><?php esc_html_e( 'Thanks for trying! What made you deactivate EasyCommerce?', 'easycommerce' ); ?></h2>
 
 			<p><?php esc_html_e( 'Building a store is hard, and so is building the tool behind it. Your honest feedback is what makes EasyCommerce better, and we read every single response.', 'easycommerce' ); ?></p>

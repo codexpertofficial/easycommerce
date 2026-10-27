@@ -7,8 +7,7 @@ import { __ } from "@wordpress/i18n";
 const crossIcon = `${EASYCOMMERCE.assets}admin/img/icons/cross.png`;
 
 //Images
-const modalImage = `${EASYCOMMERCE.assets}admin/img/icons/modal.png`;
-const modalImageGif = `${EASYCOMMERCE.assets}admin/img/icons/modal.gif`;
+const modalImageGif = `${EASYCOMMERCE.assets}admin/img/icons/modal.webp`;
 
 const Modal = ({ setShowModal }) => {
     const [showMessage, setShowMessage] = useState(false);

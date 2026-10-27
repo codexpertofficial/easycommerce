@@ -248,6 +248,12 @@ class Asset {
 			}
 		}
 
+		// EasyCommerce block in the block-theme template (or one of its template parts)
+		// that is rendering this request, e.g. a shop block in a header or footer.
+		if ( $this->template_has_easycommerce_block() ) {
+			return true;
+		}
+
 		/**
 		 * Force-load the shared storefront bundle on the current request.
 		 *
@@ -258,6 +264,72 @@ class Asset {
 		 * @param bool $load Default false.
 		 */
 		return (bool) apply_filters( 'easycommerce_load_storefront_assets', false );
+	}
+
+	/**
+	 * Whether the block template rendering this request, or a template part it
+	 * references, contains an EasyCommerce block.
+	 *
+	 * Block-theme templates and parts are not part of the post content, so the
+	 * post_content check cannot see them. WordPress stores the resolved template
+	 * markup in `$_wp_current_template_content` before wp_enqueue_scripts runs;
+	 * parts appear in it only as `wp:template-part` references, which are looked up
+	 * here. Nesting is followed a few levels deep and the result is cached.
+	 *
+	 * @return bool
+	 */
+	private function template_has_easycommerce_block() {
+		static $result = null;
+
+		if ( null !== $result ) {
+			return $result;
+		}
+
+		global $_wp_current_template_content;
+
+		$result = ! empty( $_wp_current_template_content )
+			&& easycommerce_is_block_theme()
+			&& $this->markup_has_easycommerce_block( (string) $_wp_current_template_content, 3 );
+
+		return $result;
+	}
+
+	/**
+	 * Look for an EasyCommerce block in block markup, following template-part references.
+	 *
+	 * @param string $markup Block markup.
+	 * @param int    $depth  How many levels of nested template parts to follow.
+	 * @return bool
+	 */
+	private function markup_has_easycommerce_block( $markup, $depth ) {
+		if ( false !== strpos( $markup, 'wp:easycommerce/' ) ) {
+			return true;
+		}
+
+		if ( $depth < 1 || false === strpos( $markup, 'wp:template-part' ) ) {
+			return false;
+		}
+
+		if ( ! preg_match_all( '/<!--\s*wp:template-part\s+(\{.*?\})\s*\/-->/s', $markup, $matches ) ) {
+			return false;
+		}
+
+		foreach ( $matches[1] as $json ) {
+			$args = json_decode( $json, true );
+
+			if ( empty( $args['slug'] ) ) {
+				continue;
+			}
+
+			$theme = ! empty( $args['theme'] ) ? $args['theme'] : get_stylesheet();
+			$part  = get_block_template( $theme . '//' . $args['slug'], 'wp_template_part' );
+
+			if ( $part && ! empty( $part->content ) && $this->markup_has_easycommerce_block( $part->content, $depth - 1 ) ) {
+				return true;
+			}
+		}
+
+		return false;
 	}
 
 	/**
@@ -664,10 +736,22 @@ class Asset {
 				);
 			}
 
-			$this->enqueue_style(
-				'style',
-				EASYCOMMERCE_ASSETS_URL . 'public/css/style.css'
-			);
+			// Everything below that styles the storefront (the base stylesheet and the
+			// theme-compat layer) loads only where EasyCommerce content renders, so the
+			// theme's own pages are left alone (#3351). The base stylesheet's handle is
+			// namespaced: a bare `style` handle can collide with a theme or plugin that
+			// registers the same one, and whichever registers first wins.
+			$needs_checkout     = $this->needs_checkout_assets( $post, $checkout_page );
+			$is_storefront_page = $load_common_assets
+				|| $needs_checkout
+				|| ( $payment_page && is_page( $payment_page ) );
+
+			if ( $is_storefront_page ) {
+				$this->enqueue_style(
+					'easycommerce-style',
+					EASYCOMMERCE_ASSETS_URL . 'public/css/style.css'
+				);
+			}
 
 			if ( $load_common_assets ) {
 				$this->enqueue_script(
@@ -679,7 +763,7 @@ class Asset {
 				$this->set_spa_translations( 'easycommerce_public' );
 			}
 
-			if ( $this->needs_checkout_assets( $post, $checkout_page ) ) {
+			if ( $needs_checkout ) {
 				$this->enqueue_style(
 					'easycommerce_checkout',
 					EASYCOMMERCE_ASSETS_URL . 'public/css/checkout.css'
@@ -875,16 +959,20 @@ class Asset {
 			 * after the baseline and layers theme-specific fine-tuning on top.
 			 * See GitHub issue #2862.
 			 */
-			$this->enqueue_style(
-				'easycommerce-theme-compat',
-				EASYCOMMERCE_ASSETS_URL . 'public/css/theme-compat.css'
-			);
-
-			if ( file_exists( EASYCOMMERCE_PLUGIN_DIR . 'assets/public/css/themes/' . ( $theme = get_template() ) . '.css' ) ) {
+			if ( $is_storefront_page ) {
 				$this->enqueue_style(
-					"easycommerce-{$theme}",
-					EASYCOMMERCE_PLUGIN_URL . "assets/public/css/themes/{$theme}.css"
+					'easycommerce-theme-compat',
+					EASYCOMMERCE_ASSETS_URL . 'public/css/theme-compat.css'
 				);
+
+				$theme = get_template();
+
+				if ( file_exists( EASYCOMMERCE_PLUGIN_DIR . 'assets/public/css/themes/' . $theme . '.css' ) ) {
+					$this->enqueue_style(
+						"easycommerce-{$theme}",
+						EASYCOMMERCE_PLUGIN_URL . "assets/public/css/themes/{$theme}.css"
+					);
+				}
 			}
 		}
 

@@ -1304,6 +1304,40 @@ function easycommerce_currency_format_options() {
 	);
 }
 
+/**
+ * What the admin app's container shows until the JavaScript app mounts.
+ *
+ * React replaces everything inside the container when it renders, so this only
+ * stays on screen when the bundle never starts (a blocked or failed script, a
+ * JavaScript error on load). The first line is the usual "Loading.."; the second
+ * stays invisible for a few seconds and then appears, so a slow load is not
+ * mistaken for a failure but a dead one no longer looks like a blank page.
+ *
+ * @return string Escaped HTML.
+ */
+function easycommerce_admin_boot_markup() {
+	// No `notice` class on purpose: WordPress admin JS moves every `.notice` to the
+	// top of the page, out of this container, which would also drop the delay below.
+	$css = '.ec-boot-failed{opacity:0;height:0;overflow:hidden;margin:12px 0;padding:0 12px;background:#fff;border-left:4px solid #d63638;box-shadow:0 1px 1px rgba(0,0,0,.04);animation:ec-boot-reveal 0s 12s forwards}'
+		. '@keyframes ec-boot-reveal{to{opacity:1;height:auto;overflow:visible}}';
+
+	// Records the first script error raised by one of this plugin's own files into the
+	// message, so a "didn't finish loading" report says what actually failed.
+	$js = 'window.addEventListener("error",function(e){var b=document.querySelector(".ec-boot-failed");'
+		. 'if(!b||b.querySelector(".ec-boot-error")||!e.filename||e.filename.indexOf("/plugins/easycommerce/")<0){return;}'
+		. 'var p=document.createElement("p");p.className="ec-boot-error";p.style.cssText="font-family:monospace;font-size:12px;word-break:break-all";'
+		. 'p.textContent=e.message+" ("+e.filename.split("/").pop().split("?")[0]+":"+e.lineno+")";b.appendChild(p);});';
+
+	return '<style>' . $css . '</style><script>' . $js . '</script>'
+		. '<p>' . esc_html__( 'Loading..', 'easycommerce' ) . '</p>'
+		. '<div class="ec-boot-failed"><p><strong>'
+		. esc_html__( "EasyCommerce didn't finish loading.", 'easycommerce' )
+		. '</strong> '
+		. esc_html__( 'Reload the page. If this message stays, a script may have been blocked or failed: open your browser console (F12) to see the error, and try again with caching and security plugins turned off.', 'easycommerce' )
+		. ' <a href="' . esc_url( easycommerce_community_url() ) . '" target="_blank" rel="noopener noreferrer">' . esc_html__( 'Get help', 'easycommerce' ) . '</a>'
+		. ' <small>(EasyCommerce ' . esc_html( EASYCOMMERCE_VERSION ) . ', WordPress ' . esc_html( get_bloginfo( 'version' ) ) . ', PHP ' . esc_html( PHP_VERSION ) . ')</small></p></div>';
+}
+
 function easycommerce_menus() {
 	$licensed 	= apply_filters( 'easycommerce-pro_licensed', false );
 	$pro_active = apply_filters( 'easycommerce-pro_activated', false );
@@ -1332,7 +1366,7 @@ function easycommerce_menus() {
 					'<div class="wrap">
 						<div id="easycommerce_render">%1$s</div>
 					</div>',
-					esc_html__( 'Loading..', 'easycommerce' )
+					easycommerce_admin_boot_markup() // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped inside.
 				);
 			},
 			'icon' 			=> EASYCOMMERCE_ASSETS_URL . 'admin/img/icons/logo/easycommerce.png',
@@ -1562,7 +1596,6 @@ function easycommerce_settings_menus() {
 function easycommerce_render_sidebar() {
 	$sidebar	= '';
 	$menus		= easycommerce_menus();
-	$user_icon	= EASYCOMMERCE_ASSETS_URL . 'admin/img/icons/header-default-user-icon.png';
 
 	foreach ( $menus as $menu ) {
 

@@ -1,7 +1,6 @@
 import React from "react";
 import { __ } from '@wordpress/i18n';
 
-const deletePopUpClose = `${EASYCOMMERCE.assets}admin/img/icons/delete-popup-close.png`;
 const deleteWarningBg = `${EASYCOMMERCE.assets}admin/img/delete-warning-bg.png`;
 const deleteIcon = `${EASYCOMMERCE.assets}admin/img/common-delete.png`;
 

@@ -9,9 +9,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2026-07-20T05:39:34+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Language: bn_BD\n"
 "X-Generator: WP-CLI 2.13.0-alpha-3eb2dd7\n"
 "X-Domain: easycommerce\n"
-"Language: bn_BD\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: app/Abstracts/Agent.php:36
@@ -2544,6 +2544,7 @@ msgstr ""
 "\n"
 "শুভেচ্ছান্তে,\n"
 "##shop_name## টিম\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/cancelled.php:25
@@ -2589,6 +2590,7 @@ msgstr ""
 "\n"
 "শুভেচ্ছান্তে,\n"
 "##shop_name## টিম\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/completed.php:4
@@ -2640,6 +2642,7 @@ msgstr ""
 "\n"
 "শুভেচ্ছান্তে,\n"
 "##shop_name## টিম\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/completed.php:29
@@ -2693,6 +2696,7 @@ msgstr ""
 "\n"
 "শুভেচ্ছান্তে,\n"
 "##shop_name## টিম\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/failed.php:4
@@ -2743,6 +2747,7 @@ msgstr ""
 "আপনার পণ্যগুলো এখনও সংরক্ষিত আছে। আপনি যেকোনো সময় পুনরায় পেমেন্ট করতে পারেন অথবা নতুন অর্ডার করতে পারেন: ##checkout_page##\n"
 "\n"
 "সাহায্য দরকার? শুধু যোগাযোগ করুন – আমরা আপনার পাশে আছি।\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/failed.php:30
@@ -2785,6 +2790,7 @@ msgstr ""
 "\n"
 "ক্রেতা এখান থেকে পুনরায় পেমেন্ট করার চেষ্টা করতে পারেন: ##checkout_page##\n"
 "প্রয়োজনে অনুগ্রহ করে ফলো-আপ করুন।\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real account data at send time - keep them verbatim.
 #: app/Config/email-defaults/new_account.php:4
@@ -2840,6 +2846,7 @@ msgstr ""
 "\n"
 "শুভেচ্ছান্তে,\n"
 "##shop_name## টিম\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real account data at send time - keep them verbatim.
 #: app/Config/email-defaults/new_account.php:31
@@ -2881,6 +2888,7 @@ msgstr ""
 "\n"
 "শুভেচ্ছান্তে,\n"
 "##shop_name## টিম\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/on_hold.php:4
@@ -2924,6 +2932,7 @@ msgstr ""
 "\n"
 "শুভেচ্ছান্তে,\n"
 "##shop_name## টিম\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/on_hold.php:25
@@ -2969,6 +2978,7 @@ msgstr ""
 "\n"
 "শুভেচ্ছান্তে,\n"
 "##shop_name## টিম\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/partially_refunded.php:4
@@ -3020,6 +3030,7 @@ msgstr ""
 "\n"
 "শুভেচ্ছান্তে,\n"
 "##shop_name## টিম\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/partially_refunded.php:29
@@ -3069,6 +3080,7 @@ msgstr ""
 "\n"
 "শুভেচ্ছান্তে,\n"
 "##shop_name## টিম\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/pending.php:4
@@ -3112,6 +3124,7 @@ msgstr ""
 "\n"
 "শুভেচ্ছান্তে,\n"
 "##shop_name## টিম\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/pending.php:25
@@ -3161,6 +3174,7 @@ msgstr ""
 "\n"
 "শুভেচ্ছান্তে,\n"
 "##shop_name## টিম\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/processing.php:4
@@ -3212,6 +3226,7 @@ msgstr ""
 "\n"
 "শুভেচ্ছান্তে,\n"
 "##shop_name## টিম\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/processing.php:29
@@ -3265,6 +3280,7 @@ msgstr ""
 "\n"
 "শুভেচ্ছান্তে,\n"
 "##shop_name## টিম\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/refunded.php:4
@@ -3312,6 +3328,7 @@ msgstr ""
 "\n"
 "শুভেচ্ছান্তে,\n"
 "##shop_name## টিম\n"
+""
 
 #. translators: the ##...## tokens are merge placeholders substituted with real order data at send time - keep them verbatim.
 #: app/Config/email-defaults/refunded.php:27
@@ -3361,6 +3378,7 @@ msgstr ""
 "\n"
 "শুভেচ্ছান্তে,\n"
 "##shop_name## টিম\n"
+""
 
 #: app/Config/settings.php:45
 msgid "&raquo; Settings"
@@ -7966,18 +7984,6 @@ msgstr "স্টোর শীঘ্রই চালু হচ্ছে!"
 msgid "We’re getting ready to welcome you. Stay tuned for the launch."
 msgstr "আমরা আপনাকে স্বাগত জানানোর প্রস্তুতি নিচ্ছি। লঞ্চের জন্য অপেক্ষায় থাকুন।"
 
-#: assets/admin/js/email-placeholders.js:12
-msgid "Insert Email Placeholder"
-msgstr "ইমেইল প্লেসহোল্ডার যুক্ত করুন"
-
-#: assets/admin/js/email-placeholders.js:19
-msgid "Select a placeholder:"
-msgstr "একটি প্লেসহোল্ডার নির্বাচন করুন:"
-
-#: assets/admin/js/email-placeholders.js:23
-msgid "Select a placeholder to automatically insert it into your email template. These will be replaced with actual values when emails are sent."
-msgstr "আপনার ইমেইল টেমপ্লেটে স্বয়ংক্রিয়ভাবে যুক্ত করতে একটি প্লেসহোল্ডার নির্বাচন করুন। ইমেইল পাঠানোর সময় এগুলো প্রকৃত মান দিয়ে প্রতিস্থাপিত হবে।"
-
 #: assets/admin/js/email-placeholders.js:31
 #: build/easycommerce.bundle.js:2
 #: build/editor.bundle.js:2
@@ -7986,10 +7992,6 @@ msgstr "আপনার ইমেইল টেমপ্লেটে স্বয
 #: spa/admin/easycommerce/pages/Products/components/Prices/PriceItem/components/ActionButton.jsx:72
 msgid "Close"
 msgstr "বন্ধ করুন"
-
-#: assets/admin/js/email-placeholders.js:49
-msgid "Search for a placeholder..."
-msgstr "প্লেসহোল্ডার অনুসন্ধান করুন..."
 
 #: assets/admin/js/email-placeholders.js:90
 #: build/checkout.bundle.js:2
@@ -8005,23 +8007,6 @@ msgstr "প্লেসহোল্ডার অনুসন্ধান কর�
 #: spa/public/checkout/App.jsx:31
 msgid "Loading..."
 msgstr "লোড হচ্ছে..."
-
-#: assets/admin/js/init.js:65
-msgid "Template Preview"
-msgstr "টেমপ্লেট প্রিভিউ"
-
-#: assets/admin/js/notice.js:85
-msgid "Installing.."
-msgstr "ইনস্টল হচ্ছে.."
-
-#: assets/admin/js/notice.js:100
-msgid "Migration addon activated successfully!"
-msgstr "মাইগ্রেশন অ্যাডঅন সফলভাবে সক্রিয় করা হয়েছে!"
-
-#: assets/admin/js/notice.js:107
-#: assets/admin/js/notice.js:113
-msgid "Failed to install migration addon."
-msgstr "মাইগ্রেশন অ্যাডঅন ইনস্টল করতে ব্যর্থ হয়েছে।"
 
 #: assets/admin/js/settings.js:183
 #: assets/admin/js/settings.js:193
@@ -8042,189 +8027,6 @@ msgstr "শহর নির্বাচন করুন"
 msgid "Select State"
 msgstr "রাজ্য নির্বাচন করুন"
 
-#: assets/payment/js/braintree.js:24
-msgid "Braintree.js failed to load or missing authorization token."
-msgstr "Braintree.js লোড হতে ব্যর্থ হয়েছে অথবা অথরাইজেশন টোকেন অনুপস্থিত।"
-
-#: assets/payment/js/braintree.js:42
-msgid "Error initializing Braintree."
-msgstr "Braintree চালু করতে সমস্যা হয়েছে।"
-
-#: assets/payment/js/braintree.js:75
-msgid "Failed to get payment nonce."
-msgstr "পেমেন্ট nonce পেতে ব্যর্থ হয়েছে।"
-
-#: assets/payment/js/braintree.js:86
-msgid "Error processing payment."
-msgstr "পেমেন্ট প্রক্রিয়াকরণে সমস্যা হয়েছে।"
-
-#: assets/payment/js/paypal.js:41
-#: assets/payment/js/stripe-payment.js:43
-msgid "Failed to load cart data. Please refresh the page."
-msgstr "কার্টের ডেটা লোড করতে ব্যর্থ হয়েছে। অনুগ্রহ করে পেজটি রিফ্রেশ করুন।"
-
-#: assets/payment/js/paypal.js:133
-msgid "Purchase from EasyCommerce"
-msgstr "EasyCommerce থেকে কেনাকাটা"
-
-#: assets/payment/js/paypal.js:135
-msgid "Item"
-msgstr "আইটেম"
-
-#: assets/payment/js/paypal.js:163
-msgid "Your cart has been updated. Please refresh the page and try again."
-msgstr "আপনার কার্ট আপডেট করা হয়েছে। অনুগ্রহ করে পেজটি রিফ্রেশ করে আবার চেষ্টা করুন।"
-
-#: assets/payment/js/paypal.js:181
-msgid "An unknown error occurred with PayPal"
-msgstr "PayPal-এ একটি অজানা সমস্যা হয়েছে"
-
-#. translators: %s: PayPal error message.
-#: assets/payment/js/paypal.js:183
-msgid "PayPal Error: %s"
-msgstr "PayPal ত্রুটি: %s"
-
-#: assets/payment/js/stripe-payment.js:85
-msgid "Failed to create payment. Please try again."
-msgstr "পেমেন্ট তৈরি করতে ব্যর্থ হয়েছে। অনুগ্রহ করে আবার চেষ্টা করুন।"
-
-#: assets/payment/js/stripe-payment.js:151
-msgid "Payment form failed to load. Please refresh."
-msgstr "পেমেন্ট ফর্ম লোড হতে ব্যর্থ হয়েছে। অনুগ্রহ করে রিফ্রেশ করুন।"
-
-#: assets/payment/js/stripe-payment.js:207
-msgid "Could not verify cart. Please refresh and try again."
-msgstr "কার্ট যাচাই করা যায়নি। অনুগ্রহ করে রিফ্রেশ করে আবার চেষ্টা করুন।"
-
-#: assets/payment/js/stripe-payment.js:228
-msgid "Failed to create payment. Please refresh the page and try again."
-msgstr "পেমেন্ট তৈরি করতে ব্যর্থ হয়েছে। অনুগ্রহ করে পেজটি রিফ্রেশ করে আবার চেষ্টা করুন।"
-
-#: assets/payment/js/stripe-payment.js:246
-msgid "This payment handler is not available. Please refresh and try again."
-msgstr "এই পেমেন্ট হ্যান্ডলারটি উপলব্ধ নয়। অনুগ্রহ করে রিফ্রেশ করে আবার চেষ্টা করুন।"
-
-#: assets/payment/js/stripe-payment.js:282
-msgid "Additional verification required. Please complete the payment process."
-msgstr "অতিরিক্ত যাচাইকরণ প্রয়োজন। অনুগ্রহ করে পেমেন্ট প্রক্রিয়াটি সম্পন্ন করুন।"
-
-#: assets/payment/js/stripe-payment.js:286
-msgid "Payment failed. Please try a different payment method."
-msgstr "পেমেন্ট ব্যর্থ হয়েছে। অনুগ্রহ করে ভিন্ন একটি পেমেন্ট পদ্ধতি ব্যবহার করে দেখুন।"
-
-#: assets/payment/js/stripe-payment.js:290
-#: assets/payment/js/stripe-payment.js:458
-msgid "Payment was canceled. Please try again."
-msgstr "পেমেন্ট বাতিল করা হয়েছে। অনুগ্রহ করে আবার চেষ্টা করুন।"
-
-#. translators: %s: Stripe payment intent status code.
-#: assets/payment/js/stripe-payment.js:295
-msgid "Payment status: %s. Please contact support if this persists."
-msgstr "পেমেন্ট স্ট্যাটাস: %s। সমস্যাটি থেকে গেলে অনুগ্রহ করে সাপোর্টে যোগাযোগ করুন।"
-
-#: assets/payment/js/stripe-payment.js:299
-msgid "Payment could not be processed. Please try again."
-msgstr "পেমেন্ট প্রক্রিয়া করা যায়নি। অনুগ্রহ করে আবার চেষ্টা করুন।"
-
-#: assets/payment/js/stripe-payment.js:304
-msgid "An error occurred while processing your payment. Please try again."
-msgstr "আপনার পেমেন্ট প্রক্রিয়াকরণের সময় একটি সমস্যা হয়েছে। অনুগ্রহ করে আবার চেষ্টা করুন।"
-
-#: assets/payment/js/stripe-payment.js:363
-#: assets/payment/js/stripe-payment.js:413
-msgid "Verifying payment..."
-msgstr "পেমেন্ট যাচাই করা হচ্ছে..."
-
-#: assets/payment/js/stripe-payment.js:388
-#: assets/payment/js/stripe-payment.js:447
-msgid "Payment successful! Creating order..."
-msgstr "পেমেন্ট সফল! অর্ডার তৈরি করা হচ্ছে..."
-
-#. translators: %s: Stripe setup intent status code.
-#: assets/payment/js/stripe-payment.js:396
-msgid "Payment method could not be saved. Status: %s"
-msgstr "পেমেন্ট পদ্ধতি সংরক্ষণ করা যায়নি। স্ট্যাটাস: %s"
-
-#: assets/payment/js/stripe-payment.js:402
-#: assets/payment/js/stripe-payment.js:473
-msgid "Failed to verify payment. Please contact support."
-msgstr "পেমেন্ট যাচাই করতে ব্যর্থ হয়েছে। অনুগ্রহ করে সাপোর্টে যোগাযোগ করুন।"
-
-#: assets/payment/js/stripe-payment.js:454
-msgid "Payment failed. Please try again with a different payment method."
-msgstr "পেমেন্ট ব্যর্থ হয়েছে। অনুগ্রহ করে ভিন্ন একটি পেমেন্ট পদ্ধতি দিয়ে আবার চেষ্টা করুন।"
-
-#: assets/payment/js/stripe-payment.js:462
-msgid "Additional action required. Please complete the payment process."
-msgstr "অতিরিক্ত পদক্ষেপ প্রয়োজন। অনুগ্রহ করে পেমেন্ট প্রক্রিয়াটি সম্পন্ন করুন।"
-
-#. translators: %s: Stripe payment intent status code.
-#: assets/payment/js/stripe-payment.js:467
-msgid "Payment could not be completed. Status: %s"
-msgstr "পেমেন্ট সম্পন্ন করা যায়নি। স্ট্যাটাস: %s"
-
-#: assets/public/js/agent-chatbot.js:161
-msgid "Complete your order →"
-msgstr "আপনার অর্ডার সম্পন্ন করুন →"
-
-#: assets/public/js/agent-chatbot.js:258
-msgid "Sorry, something went wrong. Please try again."
-msgstr "দুঃখিত, কিছু একটা সমস্যা হয়েছে। অনুগ্রহ করে আবার চেষ্টা করুন।"
-
-#: assets/public/js/agent-chatbot.js:268
-msgid "Connection error. Please try again."
-msgstr "সংযোগে সমস্যা। অনুগ্রহ করে আবার চেষ্টা করুন।"
-
-#. translators: %s: AI shopping agent name.
-#: assets/public/js/agent-chatbot.js:311
-msgid "Open %s"
-msgstr "%s খুলুন"
-
-#: assets/public/js/agent-chatbot.js:332
-msgid "Online"
-msgstr "অনলাইন"
-
-#: assets/public/js/agent-chatbot.js:335
-msgid "New conversation"
-msgstr "নতুন কথোপকথন"
-
-#: assets/public/js/agent-chatbot.js:338
-msgid "Minimize"
-msgstr "মিনিমাইজ"
-
-#: assets/public/js/agent-chatbot.js:351
-msgid "Ask about products, orders…"
-msgstr "পণ্য, অর্ডার সম্পর্কে জিজ্ঞাসা করুন…"
-
-#: assets/public/js/agent-chatbot.js:357
-#: build/easycommerce.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Send"
-msgstr "পাঠান"
-
-#. translators: %s: AI shopping agent name.
-#: assets/public/js/agent-chatbot.js:379
-#: assets/public/js/agent-chatbot.js:390
-msgid "Hi! 👋 I'm %s. How can I help you today?"
-msgstr "হ্যালো! 👋 আমি %s। আজ আমি আপনাকে কীভাবে সাহায্য করতে পারি?"
-
-#: assets/public/js/checkout.js:5
-msgid "Only letters, spaces, hyphens, apostrophes, and periods are allowed."
-msgstr "শুধুমাত্র অক্ষর, স্পেস, হাইফেন, অ্যাপোস্ট্রফি এবং পিরিয়ড ব্যবহার করা যাবে।"
-
-#: assets/public/js/checkout.js:7
-msgid "Please enter a valid phone number (6–20 characters)."
-msgstr "অনুগ্রহ করে একটি বৈধ ফোন নম্বর লিখুন (6–20 অক্ষর)।"
-
-#. translators: %s: checkout field label.
-#: assets/public/js/checkout.js:38
-msgid "%s is required."
-msgstr "%s প্রয়োজন।"
-
-#: assets/public/js/checkout.js:377
-msgid "Enter city"
-msgstr "শহর লিখুন"
-
 #: assets/public/js/checkout.js:521
 #: build/auth.bundle.js:2
 #: build/easycommerce.bundle.js:2
@@ -8237,10 +8039,6 @@ msgstr "শহর লিখুন"
 #: spa/public/auth/screens/ResetRequest.jsx:30
 msgid "An error occurred. Please try again."
 msgstr "একটি ত্রুটি ঘটেছে। অনুগ্রহ করে আবার চেষ্টা করুন।"
-
-#: assets/public/js/init.js:28
-msgid "Your cart is empty."
-msgstr "আপনার কার্ট খালি।"
 
 #: assets/public/js/init.js:41
 #: build/easycommerce.bundle.js:2
@@ -8262,39 +8060,6 @@ msgstr "পণ্য"
 msgid "Quantity"
 msgstr "পরিমাণ"
 
-#: assets/public/js/init.js:117
-msgid "Failed to load cart."
-msgstr "কার্ট লোড করা যায়নি।"
-
-#: assets/public/js/init.js:121
-msgid "Error loading cart."
-msgstr "কার্ট লোড করতে ত্রুটি।"
-
-#: assets/public/js/init.js:191
-#: assets/public/js/init.js:203
-#: assets/public/js/shop.js:297
-msgid "Failed to add to cart. Please try again."
-msgstr "কার্টে যোগ করতে ব্যর্থ হয়েছে। অনুগ্রহ করে আবার চেষ্টা করুন।"
-
-#. translators: 1: first result index, 2: last result index, 3: total results.
-#: assets/public/js/shop.js:180
-msgid "Showing %1$s-%2$s of %3$s result"
-msgid_plural "Showing %1$s-%2$s of %3$s results"
-msgstr[0] "%3$sটি ফলাফলের মধ্যে %1$s-%2$s দেখানো হচ্ছে"
-msgstr[1] "%3$sটি ফলাফলের মধ্যে %1$s-%2$s দেখানো হচ্ছে"
-
-#: assets/public/js/shop.js:202
-msgid "No results found"
-msgstr "কোনো ফলাফল পাওয়া যায়নি"
-
-#: assets/public/js/shop.js:266
-msgid "Adding..."
-msgstr "যোগ করা হচ্ছে..."
-
-#: assets/public/js/shop.js:279
-msgid "Added"
-msgstr "যোগ করা হয়েছে"
-
 #: blocks/checkout/billing-address/index.jsx:42
 #: build/blocks.bundle.js:2
 msgid "This is your billing address being edited."
@@ -8315,126 +8080,6 @@ msgstr "কার্ট খালি করুন"
 #: build/blocks.bundle.js:2
 msgid "This is your cart being edited."
 msgstr "এটি আপনার কার্ট, যা সম্পাদনা করা হচ্ছে।"
-
-#: blocks/components/typography.js:20
-#: build/blocks.bundle.js:2
-msgid "Font Size"
-msgstr "ফন্ট সাইজ"
-
-#: blocks/components/typography.js:29
-#: build/blocks.bundle.js:2
-msgid "Font Weight"
-msgstr "ফন্ট ওয়েট"
-
-#: blocks/components/typography.js:32
-#: build/blocks.bundle.js:2
-msgid "100 (Thin)"
-msgstr "100 (থিন)"
-
-#: blocks/components/typography.js:33
-#: build/blocks.bundle.js:2
-msgid "200 (Extra Light)"
-msgstr "200 (এক্সট্রা লাইট)"
-
-#: blocks/components/typography.js:34
-#: build/blocks.bundle.js:2
-msgid "300 (Light)"
-msgstr "300 (লাইট)"
-
-#: blocks/components/typography.js:35
-#: build/blocks.bundle.js:2
-msgid "400 (Normal)"
-msgstr "400 (নরমাল)"
-
-#: blocks/components/typography.js:36
-#: build/blocks.bundle.js:2
-msgid "500 (Medium)"
-msgstr "500 (মিডিয়াম)"
-
-#: blocks/components/typography.js:37
-#: build/blocks.bundle.js:2
-msgid "600 (Semi Bold)"
-msgstr "600 (সেমি বোল্ড)"
-
-#: blocks/components/typography.js:38
-#: build/blocks.bundle.js:2
-msgid "700 (Bold)"
-msgstr "700 (বোল্ড)"
-
-#: blocks/components/typography.js:39
-#: build/blocks.bundle.js:2
-msgid "800 (Extra Bold)"
-msgstr "800 (এক্সট্রা বোল্ড)"
-
-#: blocks/components/typography.js:40
-#: build/blocks.bundle.js:2
-msgid "900 (Black)"
-msgstr "900 (ব্ল্যাক)"
-
-#: blocks/components/typography.js:41
-#: blocks/components/typography.js:53
-#: blocks/components/typography.js:67
-#: build/blocks.bundle.js:2
-msgid "Default"
-msgstr "ডিফল্ট"
-
-#: blocks/components/typography.js:42
-#: blocks/components/typography.js:57
-#: blocks/components/typography.js:68
-#: blocks/shops-page/template-1/edit.js:271
-#: blocks/shops-page/template-1/edit.js:369
-#: blocks/shops-page/template-2/edit.js:272
-#: blocks/shops-page/template-2/edit.js:370
-#: blocks/shops-page/template-3/edit.js:294
-#: blocks/shops-page/template-3/edit.js:392
-#: build/blocks.bundle.js:2
-msgid "Normal"
-msgstr "নরমাল"
-
-#: blocks/components/typography.js:43
-#: build/blocks.bundle.js:2
-msgid "Bold"
-msgstr "বোল্ড"
-
-#: blocks/components/typography.js:50
-#: build/blocks.bundle.js:2
-msgid "Text Transform"
-msgstr "টেক্সট ট্রান্সফর্ম"
-
-#: blocks/components/typography.js:54
-#: build/blocks.bundle.js:2
-msgid "Uppercase"
-msgstr "আপারকেস"
-
-#: blocks/components/typography.js:55
-#: build/blocks.bundle.js:2
-msgid "Lowercase"
-msgstr "লোয়ারকেস"
-
-#: blocks/components/typography.js:56
-#: build/blocks.bundle.js:2
-msgid "Capitalize"
-msgstr "ক্যাপিটালাইজ"
-
-#: blocks/components/typography.js:64
-#: build/blocks.bundle.js:2
-msgid "Text Style"
-msgstr "টেক্সট স্টাইল"
-
-#: blocks/components/typography.js:69
-#: build/blocks.bundle.js:2
-msgid "Italic"
-msgstr "ইটালিক"
-
-#: blocks/components/typography.js:70
-#: build/blocks.bundle.js:2
-msgid "Oblique"
-msgstr "অবলিক"
-
-#: blocks/components/typography.js:77
-#: build/blocks.bundle.js:2
-msgid "Text Decoration"
-msgstr "টেক্সট ডেকোরেশন"
 
 #: blocks/components/typography.js:80
 #: build/blocks.bundle.js:2
@@ -8462,161 +8107,6 @@ msgstr "টেক্সট ডেকোরেশন"
 msgid "None"
 msgstr "কোনোটিই নয়"
 
-#: blocks/components/typography.js:81
-#: build/blocks.bundle.js:2
-msgid "Underline"
-msgstr "আন্ডারলাইন"
-
-#: blocks/components/typography.js:82
-#: build/blocks.bundle.js:2
-msgid "Overline"
-msgstr "ওভারলাইন"
-
-#: blocks/components/typography.js:84
-#: build/blocks.bundle.js:2
-msgid "Line Through"
-msgstr "লাইন থ্রু"
-
-#: blocks/components/typography.js:93
-#: build/blocks.bundle.js:2
-msgid "Line Height"
-msgstr "লাইন হাইট"
-
-#: blocks/components/typography.js:102
-#: build/blocks.bundle.js:2
-msgid "Word Spacing"
-msgstr "ওয়ার্ড স্পেসিং"
-
-#: blocks/shops-page/template-1/components/Filters.js:157
-#: blocks/shops-page/template-2/components/Filters.js:157
-#: blocks/shops-page/template-3/components/Filters.js:103
-#: build/blocks.bundle.js:2
-msgid "Price Range"
-msgstr "দামের পরিসর"
-
-#: blocks/shops-page/template-1/components/Filters.js:244
-#: blocks/shops-page/template-2/components/Filters.js:76
-#: build/blocks.bundle.js:2
-msgid " Search"
-msgstr " অনুসন্ধান"
-
-#: blocks/shops-page/template-1/components/Rating.js:25
-#: blocks/shops-page/template-2/components/Rating.js:25
-#: blocks/shops-page/template-3/components/Rating.js:25
-#: build/blocks.bundle.js:2
-msgid "full star"
-msgstr "পূর্ণ তারকা"
-
-#: blocks/shops-page/template-1/components/Rating.js:39
-#: blocks/shops-page/template-2/components/Rating.js:39
-#: blocks/shops-page/template-3/components/Rating.js:39
-#: build/blocks.bundle.js:2
-msgid "half star"
-msgstr "অর্ধ তারকা"
-
-#: blocks/shops-page/template-1/components/Rating.js:53
-#: blocks/shops-page/template-2/components/Rating.js:53
-#: blocks/shops-page/template-3/components/Rating.js:53
-#: build/blocks.bundle.js:2
-msgid "empty star"
-msgstr "খালি তারকা"
-
-#: blocks/shops-page/template-1/edit.js:68
-#: blocks/shops-page/template-2/edit.js:68
-#: blocks/shops-page/template-3/edit.js:71
-#: build/blocks.bundle.js:2
-msgid "Product Settings"
-msgstr "পণ্য সেটিংস"
-
-#: blocks/shops-page/template-1/edit.js:70
-#: blocks/shops-page/template-2/edit.js:70
-#: blocks/shops-page/template-3/edit.js:73
-#: build/blocks.bundle.js:2
-msgid "Products Per Page"
-msgstr "প্রতি পৃষ্ঠায় পণ্য"
-
-#: blocks/shops-page/template-1/edit.js:79
-#: blocks/shops-page/template-2/edit.js:79
-#: blocks/shops-page/template-3/edit.js:83
-#: build/blocks.bundle.js:2
-msgid "Grid Settings"
-msgstr "গ্রিড সেটিংস"
-
-#: blocks/shops-page/template-1/edit.js:81
-#: blocks/shops-page/template-2/edit.js:81
-#: blocks/shops-page/template-3/edit.js:86
-#: build/blocks.bundle.js:2
-msgid "Show Filters"
-msgstr "ফিল্টার দেখান"
-
-#: blocks/shops-page/template-1/edit.js:87
-#: blocks/shops-page/template-2/edit.js:87
-#: blocks/shops-page/template-3/edit.js:92
-#: build/blocks.bundle.js:2
-msgid "Show Pagination"
-msgstr "পেজিনেশন দেখান"
-
-#: blocks/shops-page/template-1/edit.js:93
-#: blocks/shops-page/template-2/edit.js:93
-#: blocks/shops-page/template-3/edit.js:104
-#: build/blocks.bundle.js:2
-msgid "Number of Columns"
-msgstr "কলামের সংখ্যা"
-
-#: blocks/shops-page/template-1/edit.js:102
-#: blocks/shops-page/template-2/edit.js:127
-#: blocks/shops-page/template-3/edit.js:114
-#: build/blocks.bundle.js:2
-msgid "Product Title"
-msgstr "পণ্যের শিরোনাম"
-
-#: blocks/shops-page/template-1/edit.js:108
-#: blocks/shops-page/template-1/edit.js:289
-#: blocks/shops-page/template-1/edit.js:387
-#: blocks/shops-page/template-2/edit.js:133
-#: blocks/shops-page/template-2/edit.js:290
-#: blocks/shops-page/template-2/edit.js:388
-#: blocks/shops-page/template-3/edit.js:120
-#: blocks/shops-page/template-3/edit.js:312
-#: blocks/shops-page/template-3/edit.js:410
-#: build/blocks.bundle.js:2
-msgid "Text Color"
-msgstr "টেক্সটের রঙ"
-
-#: blocks/shops-page/template-1/edit.js:115
-#: blocks/shops-page/template-2/edit.js:140
-#: blocks/shops-page/template-3/edit.js:127
-#: build/blocks.bundle.js:2
-msgid "Hover Text Color"
-msgstr "হোভার টেক্সটের রঙ"
-
-#: blocks/shops-page/template-1/edit.js:134
-#: blocks/shops-page/template-2/edit.js:103
-#: build/blocks.bundle.js:2
-msgid "Product Category"
-msgstr "পণ্যের ক্যাটাগরি"
-
-#: blocks/shops-page/template-1/edit.js:158
-#: blocks/shops-page/template-2/edit.js:159
-#: blocks/shops-page/template-3/edit.js:181
-#: build/blocks.bundle.js:2
-msgid "Product Rating"
-msgstr "পণ্যের রেটিং"
-
-#: blocks/shops-page/template-1/edit.js:161
-#: blocks/shops-page/template-2/edit.js:162
-#: blocks/shops-page/template-3/edit.js:184
-#: build/blocks.bundle.js:2
-msgid "Star Size"
-msgstr "তারকার সাইজ"
-
-#: blocks/shops-page/template-1/edit.js:189
-#: blocks/shops-page/template-2/edit.js:190
-#: blocks/shops-page/template-3/edit.js:212
-#: build/blocks.bundle.js:2
-msgid "Product Price"
-msgstr "পণ্যের দাম"
-
 #: blocks/shops-page/template-1/edit.js:197
 #: blocks/shops-page/template-2/edit.js:198
 #: blocks/shops-page/template-3/edit.js:220
@@ -8635,74 +8125,6 @@ msgstr "নিয়মিত দাম"
 msgid "Sale Price"
 msgstr "ছাড়ের দাম"
 
-#: blocks/shops-page/template-1/edit.js:262
-#: blocks/shops-page/template-2/edit.js:263
-#: blocks/shops-page/template-3/edit.js:285
-#: build/blocks.bundle.js:2
-msgid "Cart Button"
-msgstr "কার্ট বাটন"
-
-#: blocks/shops-page/template-1/edit.js:276
-#: blocks/shops-page/template-1/edit.js:374
-#: blocks/shops-page/template-2/edit.js:277
-#: blocks/shops-page/template-2/edit.js:375
-#: blocks/shops-page/template-3/edit.js:299
-#: blocks/shops-page/template-3/edit.js:397
-#: build/blocks.bundle.js:2
-msgid "Hover"
-msgstr "হোভার"
-
-#: blocks/shops-page/template-1/edit.js:295
-#: blocks/shops-page/template-1/edit.js:393
-#: blocks/shops-page/template-2/edit.js:296
-#: blocks/shops-page/template-2/edit.js:394
-#: blocks/shops-page/template-3/edit.js:318
-#: blocks/shops-page/template-3/edit.js:416
-#: build/blocks.bundle.js:2
-msgid "Background Color"
-msgstr "ব্যাকগ্রাউন্ডের রঙ"
-
-#: blocks/shops-page/template-1/edit.js:301
-#: blocks/shops-page/template-2/edit.js:302
-#: blocks/shops-page/template-3/edit.js:324
-#: build/blocks.bundle.js:2
-msgid "Focus Text Color"
-msgstr "ফোকাস টেক্সটের রঙ"
-
-#: blocks/shops-page/template-1/edit.js:308
-#: blocks/shops-page/template-2/edit.js:309
-#: blocks/shops-page/template-3/edit.js:331
-#: build/blocks.bundle.js:2
-msgid "Focus Background Color"
-msgstr "ফোকাস ব্যাকগ্রাউন্ডের রঙ"
-
-#: blocks/shops-page/template-1/edit.js:332
-#: blocks/shops-page/template-1/edit.js:417
-#: blocks/shops-page/template-2/edit.js:333
-#: blocks/shops-page/template-2/edit.js:418
-#: blocks/shops-page/template-3/edit.js:355
-#: blocks/shops-page/template-3/edit.js:440
-#: build/blocks.bundle.js:2
-msgid "Text Color (Hover)"
-msgstr "টেক্সটের রঙ (হোভার)"
-
-#: blocks/shops-page/template-1/edit.js:338
-#: blocks/shops-page/template-1/edit.js:423
-#: blocks/shops-page/template-2/edit.js:339
-#: blocks/shops-page/template-2/edit.js:424
-#: blocks/shops-page/template-3/edit.js:361
-#: blocks/shops-page/template-3/edit.js:446
-#: build/blocks.bundle.js:2
-msgid "Background Color (Hover)"
-msgstr "ব্যাকগ্রাউন্ডের রঙ (হোভার)"
-
-#: blocks/shops-page/template-1/edit.js:360
-#: blocks/shops-page/template-2/edit.js:361
-#: blocks/shops-page/template-3/edit.js:383
-#: build/blocks.bundle.js:2
-msgid "Checkout Button"
-msgstr "চেকআউট বাটন"
-
 #: blocks/shops-page/template-1/edit.js:763
 #: blocks/shops-page/template-2/edit.js:716
 #: blocks/shops-page/template-3/components/GridView.jsx:188
@@ -8711,45 +8133,6 @@ msgstr "চেকআউট বাটন"
 msgid "Add To Cart"
 msgstr "কার্টে যোগ করুন"
 
-#: blocks/shops-page/template-3/edit.js:98
-#: build/blocks.bundle.js:2
-msgid "Show Sort By"
-msgstr "সাজানোর অপশন দেখান"
-
-#: blocks/shops-page/template-3/edit.js:153
-#: build/blocks.bundle.js:2
-msgid "Description Color"
-msgstr "বিবরণের রঙ"
-
-#: blocks/shops-page/template-3/edit.js:160
-#: build/blocks.bundle.js:2
-msgid "Hover Description Color"
-msgstr "হোভার বিবরণের রঙ"
-
-#: blocks/single-product/add-to-cart/edit.js:32
-#: blocks/single-product/attributes/edit.js:106
-#: blocks/single-product/gallery/edit.js:105
-#: blocks/single-product/price/edit.js:46
-#: blocks/single-product/product-tab/edit.js:72
-#: blocks/single-product/rating/edit.js:55
-#: blocks/single-product/stock/edit.js:63
-#: blocks/single-product/summary/edit.js:46
-#: blocks/single-product/thumbnail/edit.js:39
-#: blocks/single-product/title/edit.js:68
-#: build/blocks.bundle.js:2
-msgid "Post type is not product."
-msgstr "পোস্ট টাইপ পণ্য নয়।"
-
-#: blocks/single-product/gallery/inspector.js:15
-#: build/blocks.bundle.js:2
-msgid "Number of Gallery Item"
-msgstr "গ্যালারি আইটেমের সংখ্যা"
-
-#: blocks/single-product/price/inspector.js:16
-#: build/blocks.bundle.js:2
-msgid "Show Tax included"
-msgstr "কর অন্তর্ভুক্ত দেখান"
-
 #: blocks/single-product/product-tab/components/sku.js:7
 #: blocks/single-product/rating/components/sku.js:7
 #: build/blocks.bundle.js:2
@@ -8757,51 +8140,6 @@ msgstr "কর অন্তর্ভুক্ত দেখান"
 #: spa/admin/easycommerce/pages/Reports/components/singleProduct/ProductInfo.jsx:74
 msgid "SKU:"
 msgstr "SKU:"
-
-#: blocks/single-product/product-tab/inspector.js:16
-#: blocks/single-product/rating/inspector.js:17
-#: build/blocks.bundle.js:2
-msgid "Show Rating"
-msgstr "রেটিং দেখান"
-
-#: blocks/single-product/rating/inspector.js:26
-#: build/blocks.bundle.js:2
-msgid "Show SKU"
-msgstr "SKU দেখান"
-
-#: blocks/single-product/rating/inspector.js:35
-#: build/blocks.bundle.js:2
-msgid "Show Favourite"
-msgstr "ফেভারিট দেখান"
-
-#: blocks/single-product/rating/inspector.js:43
-#: blocks/single-product/title/inspector.js:26
-#: build/blocks.bundle.js:2
-msgid "Styles"
-msgstr "স্টাইল"
-
-#: blocks/single-product/rating/inspector.js:46
-#: build/blocks.bundle.js:2
-msgid "Border"
-msgstr "বর্ডার"
-
-#. translators: %d: number of items left in stock.
-#: blocks/single-product/stock/edit.js:45
-#: build/blocks.bundle.js:2
-msgid "Only <strong>%d</strong> item left in stock"
-msgid_plural "Only <strong>%d</strong> items left in stock"
-msgstr[0] "স্টকে মাত্র <strong>%d</strong>টি আইটেম বাকি"
-msgstr[1] "স্টকে মাত্র <strong>%d</strong>টি আইটেম বাকি"
-
-#: blocks/single-product/title/inspector.js:18
-#: build/blocks.bundle.js:2
-msgid "Primary"
-msgstr "প্রাইমারি"
-
-#: blocks/single-product/title/inspector.js:19
-#: build/blocks.bundle.js:2
-msgid "Body Light"
-msgstr "বডি লাইট"
 
 #: blocks/single-product/title/inspector.js:20
 #: build/blocks.bundle.js:2
@@ -9004,38 +8342,6 @@ msgstr "নিচে আপনার নতুন পাসওয়ার্ড
 msgid "Resetting..."
 msgstr "রিসেট করা হচ্ছে..."
 
-#: build/blocks.bundle.js:2
-msgid "Dropdown Icon"
-msgstr "ড্রপডাউন আইকন"
-
-#: build/blocks.bundle.js:2
-msgid "Showing %1$d-%2$d of %3$d Results"
-msgstr "%3$dটি ফলাফলের মধ্যে %1$d-%2$d দেখানো হচ্ছে"
-
-#: build/blocks.bundle.js:2
-msgid "Default Sorter"
-msgstr "ডিফল্ট সর্টার"
-
-#: build/checkout.bundle.js:2
-msgid "Address line 1"
-msgstr "ঠিকানার লাইন 1"
-
-#: build/checkout.bundle.js:2
-msgid "Your address"
-msgstr "আপনার ঠিকানা"
-
-#: build/checkout.bundle.js:2
-msgid "Address line 2"
-msgstr "ঠিকানার লাইন 2"
-
-#: build/checkout.bundle.js:2
-msgid "Select your City"
-msgstr "আপনার শহর নির্বাচন করুন"
-
-#: build/checkout.bundle.js:2
-msgid "Select your State"
-msgstr "আপনার রাজ্য নির্বাচন করুন"
-
 #: build/checkout.bundle.js:2
 #: build/dashboard.bundle.js:2
 #: spa/public/dashboard/components/tabs/Address/Components/BillingAddress.jsx:156
@@ -9043,50 +8349,6 @@ msgstr "আপনার রাজ্য নির্বাচন করুন"
 #: spa/public/dashboard/components/tabs/Profile/index.jsx:260
 msgid "Select your country"
 msgstr "আপনার দেশ নির্বাচন করুন"
-
-#: build/checkout.bundle.js:2
-msgid "Postal Code"
-msgstr "পোস্টাল কোড"
-
-#: build/checkout.bundle.js:2
-msgid "Your Orders"
-msgstr "আপনার অর্ডারসমূহ"
-
-#: build/checkout.bundle.js:2
-msgid "Shipping Eastimate"
-msgstr "আনুমানিক শিপিং"
-
-#: build/checkout.bundle.js:2
-msgid "Tax Eastimate"
-msgstr "আনুমানিক কর"
-
-#: build/checkout.bundle.js:2
-msgid "Debit / Credit card"
-msgstr "ডেবিট / ক্রেডিট কার্ড"
-
-#: build/checkout.bundle.js:2
-msgid "Internet banking"
-msgstr "ইন্টারনেট ব্যাংকিং"
-
-#: build/checkout.bundle.js:2
-msgid "Google / Apple Wallet"
-msgstr "Google / Apple ওয়ালেট"
-
-#: build/checkout.bundle.js:2
-msgid "Name on Card"
-msgstr "কার্ডে থাকা নাম"
-
-#: build/checkout.bundle.js:2
-msgid "Enter card holder name"
-msgstr "কার্ডধারীর নাম লিখুন"
-
-#: build/checkout.bundle.js:2
-msgid "Expiration date (MM/YY)"
-msgstr "মেয়াদ শেষের তারিখ (MM/YY)"
-
-#: build/checkout.bundle.js:2
-msgid "Learn more Taxes and Shipping information"
-msgstr "কর ও শিপিং সম্পর্কে আরও জানুন"
 
 #: build/dashboard.bundle.js:2
 #: spa/public/dashboard/components/Sidebar/index.jsx:31
@@ -9372,14 +8634,6 @@ msgstr "ছবি নির্বাচন করুন"
 #: spa/admin/easycommerce/pages/Products/components/ProductDesc/index.jsx:23
 msgid "Use selected image"
 msgstr "নির্বাচিত ছবি ব্যবহার করুন"
-
-#: build/dashboard.bundle.js:2
-msgid "user"
-msgstr "ব্যবহারকারী"
-
-#: build/dashboard.bundle.js:2
-msgid "camera"
-msgstr "ক্যামেরা"
 
 #: build/dashboard.bundle.js:2
 #: spa/public/dashboard/components/tabs/Profile/elements/ProfileSkeleton.jsx:11
@@ -9683,16 +8937,6 @@ msgstr "কোনো অর্ডারের তথ্য পাওয়া �
 
 #: build/easycommerce.bundle.js:2
 #: build/settings.bundle.js:2
-msgid "Your Voice Matters"
-msgstr "আপনার মতামত গুরুত্বপূর্ণ"
-
-#: build/easycommerce.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Help us make EasyCommerce the best it can be. Share your feedback and ideas with us!"
-msgstr "EasyCommerce-কে সেরা করে তুলতে আমাদের সাহায্য করুন। আপনার মতামত ও ধারণা আমাদের সাথে শেয়ার করুন!"
-
-#: build/easycommerce.bundle.js:2
-#: build/settings.bundle.js:2
 #: spa/admin/easycommerce/pages/Customers/AddNew/index.jsx:145
 msgid "Enter first name"
 msgstr "নামের প্রথম অংশ লিখুন"
@@ -9702,26 +8946,6 @@ msgstr "নামের প্রথম অংশ লিখুন"
 #: spa/admin/easycommerce/pages/Customers/AddNew/index.jsx:234
 msgid "Enter a valid email address"
 msgstr "একটি বৈধ ইমেইল ঠিকানা লিখুন"
-
-#: build/easycommerce.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Send Message"
-msgstr "বার্তা পাঠান"
-
-#: build/easycommerce.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Thank you for your feedback"
-msgstr "আপনার মতামতের জন্য ধন্যবাদ"
-
-#: build/easycommerce.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "We will use your feedback to build a better experience for everyone."
-msgstr "সবার জন্য আরও ভালো অভিজ্ঞতা তৈরি করতে আমরা আপনার মতামত কাজে লাগাব।"
-
-#: build/easycommerce.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Feedback"
-msgstr "মতামত"
 
 #: build/easycommerce.bundle.js:2
 #: build/settings.bundle.js:2
@@ -9799,21 +9023,6 @@ msgid "Remaining"
 msgstr "অবশিষ্ট"
 
 #: build/easycommerce.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Network response was not okay"
-msgstr "নেটওয়ার্ক রেসপন্স ঠিক ছিল না"
-
-#: build/easycommerce.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "No answer found"
-msgstr "কোনো উত্তর পাওয়া যায়নি"
-
-#: build/easycommerce.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Ask a Question"
-msgstr "একটি প্রশ্ন জিজ্ঞাসা করুন"
-
-#: build/easycommerce.bundle.js:2
 #: build/editor.bundle.js:2
 #: build/settings.bundle.js:2
 #: spa/admin/easycommerce/pages/Products/components/common/AiGenerate/AiEnhanceImage.jsx:371
@@ -9825,183 +9034,11 @@ msgid "No credits available"
 msgstr "কোনো ক্রেডিট নেই"
 
 #: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Two AI Agents, One Free Key"
-msgstr "দুটি AI এজেন্ট, একটি ফ্রি কী"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Connect a free API key -"
-msgstr "একটি ফ্রি API কী সংযুক্ত করুন -"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "100 AI credits"
-msgstr "১০০ AI ক্রেডিট"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "free, more with"
-msgstr "ফ্রি, আরও পাবেন"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Store Copilot - For You"
-msgstr "Store Copilot - আপনার জন্য"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Chat to run your store: ask about sales, create and edit products, and update orders - in plain English, with your approval."
-msgstr "চ্যাটের মাধ্যমে আপনার স্টোর চালান: বিক্রয় সম্পর্কে জানতে চান, পণ্য তৈরি ও সম্পাদনা করুন এবং অর্ডার হালনাগাদ করুন - সহজ ভাষায়, আপনার অনুমোদনসহ।"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Shopping Agent - For Your Shoppers"
-msgstr "Shopping Agent - আপনার ক্রেতাদের জন্য"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "A 24/7 storefront agent that helps customers find the right product, answers their questions, and places orders for them."
-msgstr "২৪/৭ চালু একটি স্টোরফ্রন্ট এজেন্ট, যা ক্রেতাদের সঠিক পণ্য খুঁজে পেতে সাহায্য করে, তাদের প্রশ্নের উত্তর দেয় এবং তাদের হয়ে অর্ডার করে।"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Plus"
-msgstr "প্লাস"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "& more."
-msgstr "ও আরও অনেক কিছু।"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Each AI request transmits only the relevant records - the item you're working on, or a shopper's query and its products - to EasyCommerce's AI service. Your bulk customer and order data is never uploaded, sold, or used to train models."
-msgstr "প্রতিটি AI অনুরোধে শুধুমাত্র প্রাসঙ্গিক রেকর্ডগুলো - আপনি যে আইটেম নিয়ে কাজ করছেন, অথবা কোনো ক্রেতার প্রশ্ন ও তার সংশ্লিষ্ট পণ্য - EasyCommerce-এর AI সার্ভিসে পাঠানো হয়। আপনার সামগ্রিক ক্রেতা ও অর্ডার ডেটা কখনোই আপলোড করা হয় না, বিক্রি করা হয় না বা মডেল প্রশিক্ষণে ব্যবহার করা হয় না।"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Learn more."
-msgstr "আরও জানুন।"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "I have an API key"
-msgstr "আমার কাছে একটি API কী আছে"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "I want an API key"
-msgstr "আমি একটি API কী চাই"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Please fill all the fields"
-msgstr "অনুগ্রহ করে সব ঘর পূরণ করুন"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Enter Your Connection Key"
-msgstr "আপনার কানেকশন কী লিখুন"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "The link in your email connects AI automatically. To do it manually, paste the key we emailed below."
-msgstr "আপনার ইমেইলে থাকা লিঙ্কটি স্বয়ংক্রিয়ভাবে AI সংযুক্ত করে। ম্যানুয়ালি করতে চাইলে, আমরা ইমেইলে যে কী পাঠিয়েছি সেটি নিচে পেস্ট করুন।"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Your Key"
-msgstr "আপনার কী"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Paste your key"
-msgstr "আপনার কী পেস্ট করুন"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "I don't have a key"
-msgstr "আমার কাছে কোনো কী নেই"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Check your email and click the link to connect AI."
-msgstr "AI সংযুক্ত করতে আপনার ইমেইল দেখুন এবং লিঙ্কে ক্লিক করুন।"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Connect EasyCommerce AI"
-msgstr "EasyCommerce AI সংযুক্ত করুন"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Enter your name and email - we'll send a one-click link to connect AI, plus a backup key."
-msgstr "আপনার নাম ও ইমেইল লিখুন - আমরা AI সংযুক্ত করার জন্য এক-ক্লিক লিঙ্ক এবং একটি ব্যাকআপ কী পাঠাব।"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Your Name"
-msgstr "আপনার নাম"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Enter your Name"
-msgstr "আপনার নাম লিখুন"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Email My Link"
-msgstr "আমার লিঙ্ক ইমেইল করুন"
-
-#: build/easycommerce.bundle.js:2
-#: build/editor.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "I already have a key"
-msgstr "আমার কাছে ইতিমধ্যেই একটি কী আছে"
-
-#: build/easycommerce.bundle.js:2
 #: build/settings.bundle.js:2
 #: spa/admin/easycommerce/pages/Dashboard/components/JoinCommunity.jsx:9
 #: spa/admin/easycommerce/pages/Dashboard/components/JoinCommunity.jsx:19
 msgid "Join Community"
 msgstr "কমিউনিটিতে যোগ দিন"
-
-#: build/easycommerce.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Support"
-msgstr "সাপোর্ট"
-
-#: build/easycommerce.bundle.js:2
-#: build/settings.bundle.js:2
-msgid "Disconnect"
-msgstr "সংযোগ বিচ্ছিন্ন করুন"
 
 #: build/easycommerce.bundle.js:2
 #: spa/admin/common/components/Notices/NoticeItem.jsx:101
@@ -10316,10 +9353,6 @@ msgid "Select status"
 msgstr "স্ট্যাটাস নির্বাচন করুন"
 
 #: build/easycommerce.bundle.js:2
-msgid "Reset"
-msgstr "রিসেট"
-
-#: build/easycommerce.bundle.js:2
 #: build/shipping.bundle.js:2
 #: build/tax.bundle.js:2
 #: spa/admin/common/components/DeletePopup.jsx:42
@@ -10357,55 +9390,9 @@ msgid "Delete Permanently"
 msgstr "স্থায়ীভাবে মুছুন"
 
 #: build/easycommerce.bundle.js:2
-msgid "Are you sure you want to update?"
-msgstr "আপনি কি নিশ্চিতভাবে হালনাগাদ করতে চান?"
-
-#: build/easycommerce.bundle.js:2
-msgid "You're going to update <strong>All</strong> are you sure?"
-msgstr "আপনি <strong>সব</strong> হালনাগাদ করতে যাচ্ছেন, আপনি কি নিশ্চিত?"
-
-#: build/easycommerce.bundle.js:2
-msgid "No, Keep as it is"
-msgstr "না, যেমন আছে থাক"
-
-#: build/easycommerce.bundle.js:2
-msgid "Yes, Update"
-msgstr "হ্যাঁ, হালনাগাদ করুন"
-
-#: build/easycommerce.bundle.js:2
-msgid "Product deleted"
-msgid_plural "Products deleted"
-msgstr[0] "পণ্য মুছে ফেলা হয়েছে"
-msgstr[1] "পণ্যগুলো মুছে ফেলা হয়েছে"
-
-#: build/easycommerce.bundle.js:2
-msgid "Delete failed."
-msgstr "মুছে ফেলা ব্যর্থ হয়েছে।"
-
-#: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/Help/index.jsx:100
 msgid "Something went wrong."
 msgstr "কিছু একটা ভুল হয়েছে।"
-
-#: build/easycommerce.bundle.js:2
-msgid "Set Status"
-msgstr "স্ট্যাটাস নির্ধারণ করুন"
-
-#: build/easycommerce.bundle.js:2
-msgid "Status updated successfully"
-msgstr "স্ট্যাটাস সফলভাবে হালনাগাদ হয়েছে"
-
-#: build/easycommerce.bundle.js:2
-msgid "Failed to update products."
-msgstr "পণ্য হালনাগাদ করতে ব্যর্থ।"
-
-#: build/easycommerce.bundle.js:2
-msgid "An error occurred while updating statuses."
-msgstr "স্ট্যাটাস হালনাগাদের সময় একটি ত্রুটি ঘটেছে।"
-
-#: build/easycommerce.bundle.js:2
-msgid "Please select a valid status."
-msgstr "অনুগ্রহ করে একটি বৈধ স্ট্যাটাস নির্বাচন করুন।"
 
 #: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/Products/ImportModal.jsx:22
@@ -10949,50 +9936,6 @@ msgid "Loading attribute..."
 msgstr "অ্যাট্রিবিউট লোড হচ্ছে..."
 
 #: build/easycommerce.bundle.js:2
-msgid "Attribute name are required!"
-msgstr "অ্যাট্রিবিউটের নাম আবশ্যক!"
-
-#: build/easycommerce.bundle.js:2
-msgid "Attribute slug are required!"
-msgstr "অ্যাট্রিবিউটের স্লাগ আবশ্যক!"
-
-#: build/easycommerce.bundle.js:2
-msgid "Attribute name already exists!"
-msgstr "অ্যাট্রিবিউটের নাম ইতিমধ্যেই বিদ্যমান!"
-
-#: build/easycommerce.bundle.js:2
-msgid "Attribute slug already exists!"
-msgstr "অ্যাট্রিবিউটের স্লাগ ইতিমধ্যেই বিদ্যমান!"
-
-#: build/easycommerce.bundle.js:2
-msgid "Option %d must have a label!"
-msgstr "অপশন %d-এর একটি লেবেল থাকতে হবে!"
-
-#: build/easycommerce.bundle.js:2
-msgid "Option %d must have a label and image"
-msgstr "অপশন %d-এর একটি লেবেল ও ছবি থাকতে হবে"
-
-#: build/easycommerce.bundle.js:2
-msgid "Option %d must have a label and color"
-msgstr "অপশন %d-এর একটি লেবেল ও রঙ থাকতে হবে"
-
-#: build/easycommerce.bundle.js:2
-msgid "Duplicate option labels are not allowed!"
-msgstr "একই রকম অপশন লেবেল অনুমোদিত নয়!"
-
-#: build/easycommerce.bundle.js:2
-msgid "Attribute updated successfully!"
-msgstr "অ্যাট্রিবিউট সফলভাবে হালনাগাদ হয়েছে!"
-
-#: build/easycommerce.bundle.js:2
-msgid "Attribute created successfully!"
-msgstr "অ্যাট্রিবিউট সফলভাবে তৈরি হয়েছে!"
-
-#: build/easycommerce.bundle.js:2
-msgid "It'll show on the single product screen"
-msgstr "এটি একক পণ্যের পেজে দেখানো হবে"
-
-#: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/Brands/index.jsx:339
 #: spa/admin/easycommerce/pages/Categories/index.jsx:340
 #: spa/admin/easycommerce/pages/Products/components/Organize/Modals/BrandModal.jsx:164
@@ -11003,38 +9946,10 @@ msgid "Enter Name"
 msgstr "নাম লিখুন"
 
 #: build/easycommerce.bundle.js:2
-msgid "URL-friendly slug of the attribute"
-msgstr "অ্যাট্রিবিউটের URL-বান্ধব স্লাগ"
-
-#: build/easycommerce.bundle.js:2
-msgid "How customers will see this on the single product screen"
-msgstr "একক পণ্যের পেজে ক্রেতারা এটি কীভাবে দেখবেন"
-
-#: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/Attributes/components/Table.jsx:131
 #: spa/admin/easycommerce/pages/Products/components/ProductAttr/components/AttributeModal/components/AttributeSelectionTable.jsx:161
 msgid "Options"
 msgstr "অপশন"
-
-#: build/easycommerce.bundle.js:2
-msgid "Options of the attribute"
-msgstr "অ্যাট্রিবিউটের অপশনসমূহ"
-
-#: build/easycommerce.bundle.js:2
-msgid "Select an Image"
-msgstr "একটি ছবি নির্বাচন করুন"
-
-#: build/easycommerce.bundle.js:2
-msgid "Use this image"
-msgstr "এই ছবিটি ব্যবহার করুন"
-
-#: build/easycommerce.bundle.js:2
-msgid "Update Attribute"
-msgstr "অ্যাট্রিবিউট হালনাগাদ করুন"
-
-#: build/easycommerce.bundle.js:2
-msgid "Create Attribute"
-msgstr "অ্যাট্রিবিউট তৈরি করুন"
 
 #: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/Attributes/components/Table.jsx:90
@@ -12129,78 +11044,14 @@ msgid "An error occurred while updating status"
 msgstr "স্ট্যাটাস হালনাগাদের সময় একটি ত্রুটি ঘটেছে"
 
 #: build/easycommerce.bundle.js:2
-msgid "Please enter an amount greater than 0 before refunding"
-msgstr "রিফান্ড করার আগে অনুগ্রহ করে ০-এর চেয়ে বড় একটি পরিমাণ লিখুন"
-
-#: build/easycommerce.bundle.js:2
-msgid "Failed to process refund. Please try again."
-msgstr "রিফান্ড প্রক্রিয়া করতে ব্যর্থ। অনুগ্রহ করে আবার চেষ্টা করুন।"
-
-#: build/easycommerce.bundle.js:2
-msgid "Please enter the Refund Transaction ID."
-msgstr "অনুগ্রহ করে রিফান্ড লেনদেন ID লিখুন।"
-
-#: build/easycommerce.bundle.js:2
-msgid "Please enter an amount before refunding"
-msgstr "রিফান্ড করার আগে অনুগ্রহ করে একটি পরিমাণ লিখুন"
-
-#: build/easycommerce.bundle.js:2
-msgid "Please select a reason before refunding"
-msgstr "রিফান্ড করার আগে অনুগ্রহ করে একটি কারণ নির্বাচন করুন"
-
-#: build/easycommerce.bundle.js:2
-msgid "Refund Payment"
-msgstr "পেমেন্ট রিফান্ড করুন"
-
-#: build/easycommerce.bundle.js:2
-msgid "Refundable"
-msgstr "রিফান্ডযোগ্য"
-
-#: build/easycommerce.bundle.js:2
-msgid "Refund Amount"
-msgstr "রিফান্ডের পরিমাণ"
-
-#: build/easycommerce.bundle.js:2
-msgid "Enter amount"
-msgstr "পরিমাণ লিখুন"
-
-#: build/easycommerce.bundle.js:2
-msgid "Refund Reason"
-msgstr "রিফান্ডের কারণ"
-
-#: build/easycommerce.bundle.js:2
-msgid "Select Refund Reason"
-msgstr "রিফান্ডের কারণ নির্বাচন করুন"
-
-#: build/easycommerce.bundle.js:2
-msgid "For %s, refunds should be processed manually outside of the system. After succesful processing, enter the Refund Transaction ID"
-msgstr "%s-এর ক্ষেত্রে, রিফান্ড সিস্টেমের বাইরে ম্যানুয়ালি প্রক্রিয়া করতে হবে। সফলভাবে প্রক্রিয়া করার পর, রিফান্ড লেনদেন ID লিখুন"
-
-#: build/easycommerce.bundle.js:2
-msgid "Enter Refund Transaction ID"
-msgstr "রিফান্ড লেনদেন ID লিখুন"
-
-#: build/easycommerce.bundle.js:2
-msgid "Refund now"
-msgstr "এখনই রিফান্ড করুন"
-
-#: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/Refunds/components/RefundsTable.jsx:7
 msgid "ID"
 msgstr "ID"
 
 #: build/easycommerce.bundle.js:2
-msgid "Fulfillment"
-msgstr "ফুলফিলমেন্ট"
-
-#: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/Customers/SingleCustomer/index.jsx:220
 msgid "Transactions ID"
 msgstr "লেনদেন ID"
-
-#: build/easycommerce.bundle.js:2
-msgid "Date & Time"
-msgstr "তারিখ ও সময়"
 
 #: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/Orders/SingleOrder/components/OrderInfo.jsx:69
@@ -12222,24 +11073,6 @@ msgstr "তারিখের পরিসর নির্বাচন করু
 msgid "Calendar"
 msgstr "ক্যালেন্ডার"
 
-#: build/easycommerce.bundle.js:2
-msgid "eg. 12 Sep - 28 Oct 2025"
-msgstr "যেমন ১২ সেপ - ২৮ অক্টো ২০২৫"
-
-#: build/easycommerce.bundle.js:2
-msgid "Order deleted permanently"
-msgid_plural "Orders deleted permanently"
-msgstr[0] "অর্ডার স্থায়ীভাবে মুছে ফেলা হয়েছে"
-msgstr[1] "অর্ডারগুলো স্থায়ীভাবে মুছে ফেলা হয়েছে"
-
-#: build/easycommerce.bundle.js:2
-msgid "Something went wrong while deleting."
-msgstr "মুছে ফেলার সময় কিছু একটা ভুল হয়েছে।"
-
-#: build/easycommerce.bundle.js:2
-msgid "Fulfill Status"
-msgstr "ফুলফিল স্ট্যাটাস"
-
 #. translators: %d: number of orders placed in the country.
 #: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/Reports/components/common/GeoMap.jsx:248
@@ -12248,14 +11081,6 @@ msgid "%d order"
 msgid_plural "%d orders"
 msgstr[0] "%d অর্ডার"
 msgstr[1] "%d অর্ডার"
-
-#: build/easycommerce.bundle.js:2
-msgid "Failed to update orders."
-msgstr "অর্ডার আপডেট করা যায়নি।"
-
-#: build/easycommerce.bundle.js:2
-msgid "Please select a status to update."
-msgstr "আপডেট করার জন্য একটি স্ট্যাটাস নির্বাচন করুন।"
 
 #. translators: %s: order status label (e.g. Pending).
 #: build/easycommerce.bundle.js:2
@@ -12286,22 +11111,6 @@ msgid ""
 msgstr ""
 "আপনার স্টোরে কোনো %s অর্ডার নেই। প্রথম বিক্রি আনতে \n"
 "আপনার স্টোরের প্রচার চালিয়ে যান।"
-
-#: build/easycommerce.bundle.js:2
-msgid "Resend Order Email"
-msgstr "অর্ডার ইমেইল পুনরায় পাঠান"
-
-#: build/easycommerce.bundle.js:2
-msgid "Email Event"
-msgstr "ইমেইল ইভেন্ট"
-
-#: build/easycommerce.bundle.js:2
-msgid "Select an event"
-msgstr "একটি ইভেন্ট নির্বাচন করুন"
-
-#: build/easycommerce.bundle.js:2
-msgid "Email sent"
-msgstr "ইমেইল পাঠানো হয়েছে"
 
 #: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/Orders/components/OrderActions.jsx:63
@@ -12340,10 +11149,6 @@ msgid "Payment URL"
 msgstr "পেমেন্ট URL"
 
 #: build/easycommerce.bundle.js:2
-msgid "date"
-msgstr "তারিখ"
-
-#: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/Customers/components/CustomerTable.jsx:52
 #: spa/admin/easycommerce/pages/Customers/components/TableHeader.jsx:25
 #: spa/admin/easycommerce/pages/Customers/SingleCustomer/components/CustomerDetails.jsx:112
@@ -12368,54 +11173,6 @@ msgstr "কারণ"
 #: spa/admin/easycommerce/pages/Orders/SingleOrder/components/Refunds.jsx:42
 msgid "Refunded By"
 msgstr "রিফান্ড করেছেন"
-
-#: build/easycommerce.bundle.js:2
-msgid "Add Note"
-msgstr "নোট যোগ করুন"
-
-#: build/easycommerce.bundle.js:2
-msgid "Required"
-msgstr "আবশ্যক"
-
-#: build/easycommerce.bundle.js:2
-msgid "Write your note here"
-msgstr "এখানে আপনার নোট লিখুন"
-
-#: build/easycommerce.bundle.js:2
-msgid "Note To Customer"
-msgstr "ক্রেতাকে নোট"
-
-#: build/easycommerce.bundle.js:2
-msgid "Unable to save note. The database may need to be updated. Please contact your administrator."
-msgstr "নোট সংরক্ষণ করা যায়নি। ডেটাবেস আপডেট করার প্রয়োজন হতে পারে। অনুগ্রহ করে আপনার অ্যাডমিনিস্ট্রেটরের সাথে যোগাযোগ করুন।"
-
-#: build/easycommerce.bundle.js:2
-msgid "Delete Note"
-msgstr "নোট মুছুন"
-
-#: build/easycommerce.bundle.js:2
-msgid "Are you sure you want to delete this note? This action cannot be undone."
-msgstr "আপনি কি নিশ্চিত এই নোটটি মুছে ফেলতে চান? এই কাজটি আর ফেরানো যাবে না।"
-
-#: build/easycommerce.bundle.js:2
-msgid "Unable to delete note. Please try again or contact your administrator."
-msgstr "নোট মুছে ফেলা যায়নি। অনুগ্রহ করে আবার চেষ্টা করুন বা আপনার অ্যাডমিনিস্ট্রেটরের সাথে যোগাযোগ করুন।"
-
-#: build/easycommerce.bundle.js:2
-msgid "Order doesn't exist"
-msgstr "অর্ডারটির অস্তিত্ব নেই"
-
-#: build/easycommerce.bundle.js:2
-msgid "Failed to fetch order data"
-msgstr "অর্ডারের ডেটা আনা যায়নি"
-
-#: build/easycommerce.bundle.js:2
-msgid "Unknown"
-msgstr "অজানা"
-
-#: build/easycommerce.bundle.js:2
-msgid "eg. %1$s - %2$s %3$s"
-msgstr "যেমন %1$s - %2$s %3$s"
 
 #: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/Transactions/index.jsx:50
@@ -12602,27 +11359,9 @@ msgid "Something went wrong while updating coupon status"
 msgstr "কুপনের স্ট্যাটাস আপডেট করার সময় কিছু একটা ভুল হয়েছে"
 
 #: build/easycommerce.bundle.js:2
-msgid "No coupons found"
-msgstr "কোনো কুপন পাওয়া যায়নি"
-
-#: build/easycommerce.bundle.js:2
-msgid "All type of Coupons activities will appear here once they occur."
-msgstr "সব ধরনের কুপন কার্যক্রম ঘটার পর এখানে দেখা যাবে।"
-
-#: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/App.jsx:404
 msgid "Add Coupon"
 msgstr "কুপন যোগ করুন"
-
-#: build/easycommerce.bundle.js:2
-msgid "Coupons deleted successfully"
-msgstr "কুপন সফলভাবে মুছে ফেলা হয়েছে"
-
-#: build/easycommerce.bundle.js:2
-msgid "%d coupon"
-msgid_plural "%d coupons"
-msgstr[0] "%d কুপন"
-msgstr[1] "%d কুপন"
 
 #: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/Coupons/CouponDetails/elements/General.jsx:35
@@ -12644,10 +11383,6 @@ msgstr "এই ট্যাবের জন্য কোনো কুপন প�
 #: spa/admin/easycommerce/pages/Coupons/CouponDetails/index.jsx:241
 msgid "Create Coupon"
 msgstr "কুপন তৈরি করুন"
-
-#: build/easycommerce.bundle.js:2
-msgid "Coupon Deleted"
-msgstr "কুপন মুছে ফেলা হয়েছে"
 
 #: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/Coupons/CouponDetails/elements/General.jsx:27
@@ -12700,34 +11435,6 @@ msgid "Search for products"
 msgstr "পণ্য অনুসন্ধান করুন"
 
 #: build/easycommerce.bundle.js:2
-msgid "Conditions"
-msgstr "শর্তাবলি"
-
-#: build/easycommerce.bundle.js:2
-msgid "Discount applies to specific products?"
-msgstr "ছাড় কি নির্দিষ্ট পণ্যের ক্ষেত্রে প্রযোজ্য?"
-
-#: build/easycommerce.bundle.js:2
-msgid "Minimum Spend"
-msgstr "ন্যূনতম খরচ"
-
-#: build/easycommerce.bundle.js:2
-msgid "Maximum Spend"
-msgstr "সর্বোচ্চ খরচ"
-
-#: build/easycommerce.bundle.js:2
-msgid "Start Date"
-msgstr "শুরুর তারিখ"
-
-#: build/easycommerce.bundle.js:2
-msgid "calendar"
-msgstr "ক্যালেন্ডার"
-
-#: build/easycommerce.bundle.js:2
-msgid "End Date"
-msgstr "শেষের তারিখ"
-
-#: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/App.jsx:402
 #: spa/admin/easycommerce/pages/Coupons/CouponDetails/index.jsx:241
 msgid "Edit Coupon"
@@ -12759,18 +11466,6 @@ msgid "Save as Active"
 msgstr "সক্রিয় হিসেবে সংরক্ষণ"
 
 #: build/easycommerce.bundle.js:2
-msgid "(No Name)"
-msgstr "(নাম নেই)"
-
-#: build/easycommerce.bundle.js:2
-msgid "+%d more"
-msgstr "+%d আরও"
-
-#: build/easycommerce.bundle.js:2
-msgid "Remind"
-msgstr "মনে করিয়ে দিন"
-
-#: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/AbandonedCart/components/NotFound.jsx:6
 msgid "No Abandoned Carts found"
 msgstr "কোনো পরিত্যক্ত কার্ট পাওয়া যায়নি"
@@ -12779,44 +11474,6 @@ msgstr "কোনো পরিত্যক্ত কার্ট পাওয়
 #: spa/admin/easycommerce/pages/AbandonedCart/components/NotFound.jsx:20
 msgid "All Abandoned Carts will appear here once they occur."
 msgstr "সব পরিত্যক্ত কার্ট ঘটার পর এখানে দেখা যাবে।"
-
-#: build/easycommerce.bundle.js:2
-msgid "Are you sure you want to send reminder?"
-msgstr "আপনি কি নিশ্চিত রিমাইন্ডার পাঠাতে চান?"
-
-#: build/easycommerce.bundle.js:2
-msgid "You're going to Remind"
-msgstr "আপনি মনে করিয়ে দিতে যাচ্ছেন"
-
-#: build/easycommerce.bundle.js:2
-msgid "selected?"
-msgstr "নির্বাচিত?"
-
-#: build/easycommerce.bundle.js:2
-msgid "Don't Send"
-msgstr "পাঠাবেন না"
-
-#: build/easycommerce.bundle.js:2
-msgid "Yes, Send"
-msgstr "হ্যাঁ, পাঠান"
-
-#: build/easycommerce.bundle.js:2
-msgid "Remind All"
-msgstr "সবাইকে মনে করিয়ে দিন"
-
-#: build/easycommerce.bundle.js:2
-msgid "carts deleted successfully"
-msgstr "কার্ট সফলভাবে মুছে ফেলা হয়েছে"
-
-#: build/easycommerce.bundle.js:2
-msgid "%d cart"
-msgid_plural "%d carts"
-msgstr[0] "%d কার্ট"
-msgstr[1] "%d কার্ট"
-
-#: build/easycommerce.bundle.js:2
-msgid "Reminders sent successfully"
-msgstr "রিমাইন্ডার সফলভাবে পাঠানো হয়েছে"
 
 #: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/AbandonedCart/components/CleanAbandonedCartModal.jsx:33
@@ -12881,22 +11538,6 @@ msgid "Abandoned Cart Deleted"
 msgstr "পরিত্যক্ত কার্ট মুছে ফেলা হয়েছে"
 
 #: build/easycommerce.bundle.js:2
-msgid "Approved"
-msgstr "অনুমোদিত"
-
-#: build/easycommerce.bundle.js:2
-msgid "Not Approved"
-msgstr "অনুমোদিত নয়"
-
-#: build/easycommerce.bundle.js:2
-msgid "Review #%d"
-msgstr "রিভিউ #%d"
-
-#: build/easycommerce.bundle.js:2
-msgid "Product #%d"
-msgstr "পণ্য #%d"
-
-#: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/pages/ProductReviews/components/Table/THead.jsx:8
 msgid "Review Content"
 msgstr "রিভিউয়ের বিষয়বস্তু"
@@ -12906,10 +11547,6 @@ msgstr "রিভিউয়ের বিষয়বস্তু"
 #: spa/admin/easycommerce/pages/Reports/components/singleProduct/Reviews.jsx:143
 msgid "Rating"
 msgstr "রেটিং"
-
-#: build/easycommerce.bundle.js:2
-msgid "Search by customer name or content"
-msgstr "ক্রেতার নাম বা বিষয়বস্তু দিয়ে অনুসন্ধান করুন"
 
 #: build/easycommerce.bundle.js:2
 #: spa/admin/easycommerce/App.jsx:412
@@ -13961,59 +12598,6 @@ msgid "Build"
 msgstr "তৈরি করুন"
 
 #: build/shipping.bundle.js:2
-msgid "No shipping plans configured"
-msgstr "কোনো শিপিং প্ল্যান কনফিগার করা হয়নি"
-
-#: build/shipping.bundle.js:2
-msgid "Set up shipping plans to define shipping rates by region. "
-msgstr "অঞ্চলভেদে শিপিং হার নির্ধারণ করতে শিপিং প্ল্যান সেট আপ করুন। "
-
-#: build/shipping.bundle.js:2
-#: build/tax.bundle.js:2
-msgid "Read docs."
-msgstr "ডকুমেন্টেশন পড়ুন।"
-
-#: build/shipping.bundle.js:2
-msgid "+ Add Plan"
-msgstr "+ প্ল্যান যোগ করুন"
-
-#: build/shipping.bundle.js:2
-msgid "Min Price (%s)"
-msgstr "সর্বনিম্ন দাম (%s)"
-
-#: build/shipping.bundle.js:2
-msgid "Max Price (%s)"
-msgstr "সর্বোচ্চ দাম (%s)"
-
-#: build/shipping.bundle.js:2
-msgid "Min Weight"
-msgstr "সর্বনিম্ন ওজন"
-
-#: build/shipping.bundle.js:2
-msgid "Max Weight"
-msgstr "সর্বোচ্চ ওজন"
-
-#: build/shipping.bundle.js:2
-msgid "Min Quantity"
-msgstr "সর্বনিম্ন পরিমাণ"
-
-#: build/shipping.bundle.js:2
-msgid "Max Quantity"
-msgstr "সর্বোচ্চ পরিমাণ"
-
-#: build/shipping.bundle.js:2
-msgid "Min"
-msgstr "সর্বনিম্ন"
-
-#: build/shipping.bundle.js:2
-msgid "Max"
-msgstr "সর্বোচ্চ"
-
-#: build/shipping.bundle.js:2
-msgid "Shipping name here"
-msgstr "এখানে শিপিংয়ের নাম"
-
-#: build/shipping.bundle.js:2
 #: build/tax.bundle.js:2
 #: spa/admin/tax/src/components/TaxDetails/elements/TaxFormTopInputs.jsx:40
 msgid "Write description here"
@@ -14025,127 +12609,10 @@ msgstr "এখানে বিবরণ লিখুন"
 msgid "Enable/Disable"
 msgstr "চালু/বন্ধ"
 
-#: build/shipping.bundle.js:2
-#: build/tax.bundle.js:2
-msgid "Regions"
-msgstr "অঞ্চল"
-
-#: build/shipping.bundle.js:2
-msgid "Zip Code"
-msgstr "জিপ কোড"
-
-#: build/shipping.bundle.js:2
-msgid "Calculation Base"
-msgstr "গণনার ভিত্তি"
-
-#: build/shipping.bundle.js:2
-msgid "Select Base"
-msgstr "ভিত্তি নির্বাচন করুন"
-
-#: build/shipping.bundle.js:2
-msgid "Cart Total"
-msgstr "কার্টের মোট"
-
-#: build/shipping.bundle.js:2
-msgid "Total Weight"
-msgstr "মোট ওজন"
-
-#: build/shipping.bundle.js:2
-msgid "Item Count"
-msgstr "আইটেমের সংখ্যা"
-
-#: build/shipping.bundle.js:2
-msgid "Taxable"
-msgstr "করযোগ্য"
-
-#: build/shipping.bundle.js:2
-msgid "No tax rate configured for this country."
-msgstr "এই দেশের জন্য কোনো করের হার কনফিগার করা হয়নি।"
-
-#: build/shipping.bundle.js:2
-msgid "Method Name"
-msgstr "পদ্ধতির নাম"
-
-#: build/shipping.bundle.js:2
-msgid "Shipping Fee (%s)"
-msgstr "শিপিং ফি (%s)"
-
-#: build/shipping.bundle.js:2
-msgid "Write name here"
-msgstr "এখানে নাম লিখুন"
-
-#: build/shipping.bundle.js:2
-msgid "Write min weight"
-msgstr "সর্বনিম্ন ওজন লিখুন"
-
-#: build/shipping.bundle.js:2
-msgid "Write max weight"
-msgstr "সর্বোচ্চ ওজন লিখুন"
-
-#: build/shipping.bundle.js:2
-msgid "Write your fee"
-msgstr "আপনার ফি লিখুন"
-
-#: build/shipping.bundle.js:2
-msgid "Calculation base is required."
-msgstr "গণনার ভিত্তি আবশ্যক।"
-
-#: build/shipping.bundle.js:2
-msgid "Shipping plan name is required."
-msgstr "শিপিং প্ল্যানের নাম আবশ্যক।"
-
-#: build/shipping.bundle.js:2
-msgid "Update Shipping Plan"
-msgstr "শিপিং প্ল্যান আপডেট করুন"
-
-#: build/shipping.bundle.js:2
-msgid "Save Shipping Plan"
-msgstr "শিপিং প্ল্যান সংরক্ষণ করুন"
-
-#: build/shipping.bundle.js:2
-msgid "Plan"
-msgstr "প্ল্যান"
-
-#: build/shipping.bundle.js:2
-msgid "Add Shipping Plan"
-msgstr "শিপিং প্ল্যান যোগ করুন"
-
-#: build/shipping.bundle.js:2
-msgid "Shipping Plans"
-msgstr "শিপিং প্ল্যান"
-
-#: build/shipping.bundle.js:2
-msgid "+ New Plan"
-msgstr "+ নতুন প্ল্যান"
-
-#: build/tax.bundle.js:2
-msgid "No tax classes configured"
-msgstr "কোনো কর শ্রেণি কনফিগার করা হয়নি"
-
-#: build/tax.bundle.js:2
-msgid "Set up tax classes to apply the correct tax amounts to products. "
-msgstr "পণ্যে সঠিক করের পরিমাণ প্রয়োগ করতে কর শ্রেণি সেট আপ করুন। "
-
-#: build/tax.bundle.js:2
-msgid "+ Add Class"
-msgstr "+ শ্রেণি যোগ করুন"
-
-#: build/tax.bundle.js:2
-msgid "Add Class"
-msgstr "শ্রেণি যোগ করুন"
-
-#: build/tax.bundle.js:2
-msgid "Class"
-msgstr "শ্রেণি"
-
 #: build/tax.bundle.js:2
 #: spa/admin/tax/src/components/TaxDetails/elements/RegionsHeader.jsx:18
 msgid "Rate (%)"
 msgstr "হার (%)"
-
-#: build/tax.bundle.js:2
-msgid "- Select -"
-msgstr "- নির্বাচন করুন -"
 
 #: build/tax.bundle.js:2
 #: spa/admin/tax/src/components/TaxDetails/elements/SaveButtons.jsx:19
@@ -14328,38 +12795,6 @@ msgstr "স্টোর ড্যাশবোর্ড"
 #: spa/admin/wizard/src/pages/Success.jsx:277
 msgid "Add A Product"
 msgstr "একটি পণ্য যোগ করুন"
-
-#: build/wizard.bundle.js:2
-msgid "Set up your store name, location, and contact details"
-msgstr "আপনার স্টোরের নাম, অবস্থান ও যোগাযোগের তথ্য সেট আপ করুন"
-
-#: build/wizard.bundle.js:2
-msgid "Create essential pages like Shop, Cart, and Checkout"
-msgstr "শপ, কার্ট ও চেকআউটের মতো প্রয়োজনীয় পেজ তৈরি করুন"
-
-#: build/wizard.bundle.js:2
-msgid "Connect payment gateways to start accepting orders"
-msgstr "অর্ডার নেওয়া শুরু করতে পেমেন্ট গেটওয়ে সংযুক্ত করুন"
-
-#: build/wizard.bundle.js:2
-msgid "Welcome to EasyCommerce"
-msgstr "EasyCommerce-এ স্বাগতম"
-
-#: build/wizard.bundle.js:2
-msgid "Start selling in a few minutes with 3 easy steps:"
-msgstr "৩টি সহজ ধাপে কয়েক মিনিটেই বিক্রি শুরু করুন:"
-
-#: build/wizard.bundle.js:2
-msgid "Get Started Now"
-msgstr "এখনই শুরু করুন"
-
-#: build/wizard.bundle.js:2
-msgid "Demo import failed. Please try again."
-msgstr "ডেমো ইমপোর্ট ব্যর্থ হয়েছে। অনুগ্রহ করে আবার চেষ্টা করুন।"
-
-#: build/wizard.bundle.js:2
-msgid "Skip"
-msgstr "এড়িয়ে যান"
 
 #: spa/admin/common/components/DragNdrop/index.jsx:58
 msgid "Drag handle"
