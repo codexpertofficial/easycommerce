@@ -3,6 +3,7 @@ import { __ } from "@wordpress/i18n";
 import Cookies from "universal-cookie";
 
 // components
+import BfcmBanner from "../Pro/components/BfcmBanner";
 import Card from "./components/Card";
 import FilterTabs from "./components/FilterTabs";
 import CommonHeader from "../../../common/components/CommonHeader";
@@ -104,6 +105,8 @@ const Addons = ({ category = null }) => {
             /> */}
 
             <div className="mt-3 bg-white max-w-full py-[50px] px-[30px] rounded-xl">
+                <BfcmBanner medium="addons-page" />
+
                 <div className="easycommerce-addons-heading text-center">
                     <h2 className="text-center text-[32px] font-inter font-normal text-ec-title leading-[48px] mb-3">
                         {__("EasyCommerce Addons", "easycommerce")}

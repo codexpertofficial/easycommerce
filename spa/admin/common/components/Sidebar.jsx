@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { __ } from '@wordpress/i18n';
 
 const SideBar = () => {
 	const [currentPage, setCurrentPage] = useState('');
@@ -115,6 +116,11 @@ const SideBar = () => {
 							/>
 						)}
 						{item.menu_title?.replace(/&nbsp;/g, '\u00A0')}
+						{'easycommerce#/get-pro' === item.slug && '1' === String(EASYCOMMERCE.promo?.active) && (
+							<span class="ml-1.5 inline-block rounded bg-[#fa9624] px-[9px] py-1 text-xs leading-normal font-medium whitespace-nowrap text-black">
+								{__('70% Off', 'easycommerce')}
+							</span>
+						)}
 						{hasSubmenus && (
 							<img
 								src={`${EASYCOMMERCE.assets}admin/img/menu/up.png`}

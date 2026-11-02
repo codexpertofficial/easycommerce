@@ -1338,6 +1338,95 @@ function easycommerce_admin_boot_markup() {
 		. ' <small>(EasyCommerce ' . esc_html( EASYCOMMERCE_VERSION ) . ', WordPress ' . esc_html( get_bloginfo( 'version' ) ) . ', PHP ' . esc_html( PHP_VERSION ) . ')</small></p></div>';
 }
 
+/**
+ * The instant the BFCM promo starts, as a UTC Unix timestamp (inclusive).
+ *
+ * Read from the `easycommerce_promo_start_date` option (a `Y-m-d H:i:s` string
+ * in UTC), falling back to `2026-10-29 00:00:00 UTC` when unset or malformed.
+ *
+ * @return int
+ */
+function easycommerce_promo_start_timestamp() {
+	$default   = '2026-10-29 00:00:00';
+	$timestamp = strtotime( (string) get_option( 'easycommerce_promo_start_date', $default ) . ' UTC' );
+
+	return (int) ( false === $timestamp ? strtotime( $default . ' UTC' ) : $timestamp );
+}
+
+/**
+ * The instant the BFCM promo ends, as a UTC Unix timestamp (exclusive).
+ *
+ * Read from the `easycommerce_promo_end_date` option (a `Y-m-d H:i:s` string
+ * in UTC), falling back to `2026-12-11 00:00:00 UTC` when unset or malformed,
+ * so the sale stays live through `2026-12-10 23:59:59 UTC`.
+ *
+ * @return int
+ */
+function easycommerce_promo_end_timestamp() {
+	$default   = '2026-12-11 00:00:00';
+	$timestamp = strtotime( (string) get_option( 'easycommerce_promo_end_date', $default ) . ' UTC' );
+
+	return (int) ( false === $timestamp ? strtotime( $default . ' UTC' ) : $timestamp );
+}
+
+/**
+ * Whether the BFCM campaign is running.
+ *
+ * The one gate every promo surface reads (admin bar, menu badge, Pro page
+ * banner). It flips off by itself when the end date passes.
+ *
+ * @return bool
+ */
+function easycommerce_promo_active() {
+	$now    = time();
+	$active = $now >= easycommerce_promo_start_timestamp() && $now < easycommerce_promo_end_timestamp();
+
+	return (bool) apply_filters( 'easycommerce_promo_active', $active );
+}
+
+/**
+ * Whether the BFCM offer should be shown on this site: the campaign is running
+ * and the site is not already on Pro.
+ *
+ * @return bool
+ */
+function easycommerce_promo_offer_on() {
+	$pro = apply_filters( 'easycommerce-pro_licensed', false ) || apply_filters( 'easycommerce-pro_activated', false );
+
+	return easycommerce_promo_active() && ! $pro;
+}
+
+/**
+ * The pricing page, tagged for the BFCM 2026 campaign.
+ *
+ * @param string $medium Where the click came from, e.g. `admin-bar`.
+ * @return string
+ */
+function easycommerce_promo_pricing_url( $medium ) {
+	return add_query_arg(
+		array(
+			'utm_source'   => 'inplugin',
+			'utm_medium'   => $medium,
+			'utm_campaign' => 'BFCM2026',
+		),
+		'https://easycommerce.dev/pricing'
+	);
+}
+
+/**
+ * Whether the Pro page banner was dismissed within the last 7 days.
+ *
+ * The dismissal time is stamped by the server, so the banner comes back on its
+ * own once the week is up.
+ *
+ * @return bool
+ */
+function easycommerce_promo_banner_hidden() {
+	$dismissed_at = (int) get_option( 'easycommerce_promo_banner_dismissed_at', 0 );
+
+	return $dismissed_at > 0 && ( time() - $dismissed_at ) < 7 * DAY_IN_SECONDS;
+}
+
 function easycommerce_menus() {
 	$licensed 	= apply_filters( 'easycommerce-pro_licensed', false );
 	$pro_active = apply_filters( 'easycommerce-pro_activated', false );
@@ -1639,6 +1728,10 @@ function easycommerce_render_menu_item( $item ) {
 	}
 
 	$output .= esc_html( $item['menu_title'] );
+
+	if ( 'easycommerce#/get-pro' === $item['slug'] && easycommerce_promo_offer_on() ) {
+		$output .= ' <span class="ml-1.5 inline-block rounded bg-[#fa9624] px-[9px] py-1 text-xs leading-normal font-medium whitespace-nowrap text-black">' . esc_html__( '70% Off', 'easycommerce' ) . '</span>';
+	}
 
 	if ( $has_submenus ) {
 		$arrow = EASYCOMMERCE_ASSETS_URL . 'admin/img/menu/up.png';

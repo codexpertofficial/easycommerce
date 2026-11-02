@@ -1,5 +1,6 @@
 import React from 'react';
 import { __ } from '@wordpress/i18n';
+import { pricingUrl } from '../../../../common/promoUrl';
 
 const yesIcon = (
     <svg className='mx-auto' width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -71,7 +72,7 @@ const CompareTable = () => {
                     <span className='col-span-3'></span>
                     <span className='col-span-1 text-center block'>{__('Your Current Plan', 'easycommerce')}</span>
                     <span className='col-span-1'>
-                        <a href='https://easycommerce.dev/pricing?utm_source=inplugin&utm_medium=propage&utm_campaign=BFCM' target='_blank' className="group flex items-center w-max gap-2.5 h-[48px] px-4 text-ec-title text-base font-medium rounded-lg border border-[#F99D1D] bg-[#F99D1D] mx-auto">
+                        <a href={pricingUrl('propage')} target='_blank' className="group flex items-center w-max gap-2.5 h-[48px] px-4 text-ec-title text-base font-medium rounded-lg border border-[#F99D1D] bg-[#F99D1D] mx-auto">
                             {__('Upgrade to PRO', 'easycommerce')}
                         </a>
                     </span>

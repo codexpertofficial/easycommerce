@@ -425,6 +425,10 @@ class Asset {
 					array_flip( (array) Utility::get_option( 'tax', 'settings', 'countries', array() ) )
 				),
 			),
+			'promo'	=> [
+				'active'		=> (int) easycommerce_promo_offer_on(),
+				'banner_hidden'	=> (int) easycommerce_promo_banner_hidden(),
+			],
 			'pro'	=> [
 				'activated' => apply_filters( 'easycommerce-pro_activated', false ),
 				'licensed'	=> apply_filters( 'easycommerce-pro_licensed', false ),

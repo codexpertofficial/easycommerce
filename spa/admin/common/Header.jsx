@@ -4,7 +4,6 @@ import Cookies from 'universal-cookie';
 
 //components
 import Feedback from './components/Header/Feedback';
-import TestOrder from './components/Header/TestOrder';
 import AiSearch from './components/AISearchButton/AiSearch';
 // Modals
 import APIScreen from './components/APIScreen';
@@ -198,8 +197,6 @@ const Header = ({
 						</div>
 					</div>
           <div className="relative flex justify-end items-center gap-4">
-            {/* order test popup button */}
-            <TestOrder />
 						<AiSearch
 							user={user}
 							setShowAPIModal={setShowAPIModal}

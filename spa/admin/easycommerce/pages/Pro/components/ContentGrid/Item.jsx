@@ -1,5 +1,6 @@
 import React from 'react';
 import { __ } from '@wordpress/i18n';
+import { pricingUrl } from '../../../../../common/promoUrl';
 
 const Item = ({image, title, desc, comingSoon}) => {
 	return (
@@ -20,7 +21,7 @@ const Item = ({image, title, desc, comingSoon}) => {
                     {__('Coming Soon', 'easycommerce')}
                 </span>
             ) : (
-                <a href='https://easycommerce.dev/pricing?utm_source=inplugin&utm_medium=button&utm_campaign=BFCM' target='_blank' className="!flex gap-[10px] items-center font-medium text-sm px-4 py-1.5 rounded-full duration-300 text-ec-primary bg-ec-primary/10 w-max hover:bg-ec-primary hover:text-white">
+                <a href={pricingUrl('propage', 'button')} target='_blank' className="!flex gap-[10px] items-center font-medium text-sm px-4 py-1.5 rounded-full duration-300 text-ec-primary bg-ec-primary/10 w-max hover:bg-ec-primary hover:text-white">
                     {__('Upgrade to PRO', 'easycommerce')}
                     <svg
                         width="14"

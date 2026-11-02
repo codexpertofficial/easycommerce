@@ -42,6 +42,7 @@ use EasyCommerce\API\Reports\Products;
 use EasyCommerce\API\Reports\LegacyReports;
 use EasyCommerce\API\Reports\Revenue;
 use EasyCommerce\API\Reports\Customers;
+use EasyCommerce\API\Promo;
 
 class API {
 
@@ -89,6 +90,7 @@ class API {
 		$this->register_log_endpoints();
 		$this->register_notice_endpoints();
 		$this->register_restock_request_endpoints();
+		$this->register_promo_endpoints();
 	}
 
 	/**
@@ -5202,6 +5204,23 @@ class API {
 						'required'	  => true,
 					),
 				),
+				'permission' => array( $this, 'is_admin' ),
+			)
+		);
+	}
+
+	/**
+	 * Register BFCM promo API endpoints
+	 */
+	private function register_promo_endpoints() {
+		$promo = new Promo();
+
+		// Dismiss the Pro page promo banner for 7 days
+		$this->register_route(
+			'/promo/banner/dismiss',
+			array(
+				'methods'	 => WP_REST_Server::CREATABLE,
+				'callback'	 => array( $promo, 'dismiss_banner' ),
 				'permission' => array( $this, 'is_admin' ),
 			)
 		);

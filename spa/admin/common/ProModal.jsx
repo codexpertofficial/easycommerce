@@ -1,5 +1,6 @@
 import React from 'react';
 import { __, sprintf } from '@wordpress/i18n';
+import { pricingUrl } from './promoUrl';
 
 const ProModal = ({ setShowPopup, addonName, addonDescription }) => {
 	const closeButton = (
@@ -72,7 +73,7 @@ const ProModal = ({ setShowPopup, addonName, addonDescription }) => {
 
 						{(!EASYCOMMERCE.pro.activated && !EASYCOMMERCE.pro.licensed) ? (
 							<a
-								href="https://easycommerce.dev/pricing?utm_source=inplugin&utm_medium=button&utm_campaign=BFCM"
+								href={pricingUrl('button')}
 								target="_blank"
 								rel="noopener noreferrer"
 								className="w-full h-12 flex flex-1 justify-center items-center font-medium font-inter text-base leading-[26px] text-white bg-ec-primary rounded-lg hover:bg-ec-secondary transition-all ease-in-out duration-300"

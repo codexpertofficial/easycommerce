@@ -5,7 +5,7 @@ Donate link: https://easycommerce.dev
 Tags: ecommerce, online store, ai ecommerce, store builder, digital downloads
 Requires at least: 6.0
 Tested up to: 7.1
-Stable tag: 1.51
+Stable tag: 1.52
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -514,6 +514,11 @@ Free community support via WordPress.org forums and the [Facebook Community](htt
 
 == Changelog ==
 
+= 1.52 - 2026-11-02 =
+
+- [imp] Compatibility tested with WordPress v7.1.4
+- [ui] The Test Order button has been removed from the admin header
+
 = 1.51 - 2026-10-27 =
 
 **✨ New**
@@ -728,13 +733,6 @@ Free community support via WordPress.org forums and the [Facebook Community](htt
 - [add] Order API responses now include coupon, shipping method, and shipping method label data
 - [add] Extensibility slot on the order details page for addons to inject custom content
 - [ui] Responsive layout improvements across all admin pages - dashboard, products, orders, customers, reports, coupons, attributes, brands, categories, tags, shipping, tax, and help
-
-= 1.42.2 - 2026-07-04 =
-
-- [add] Select settings fields can now allow free-text input - pick from the list or type your own value
-- [add] Store address State and City fields now let you type a custom value when it isn't in the list
-- [fix] Reordered the store address fields to the standard country-first order
-- [ui] Added help descriptions to the remaining settings fields
 
 == Upgrade Notice ==
 

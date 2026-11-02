@@ -40,6 +40,145 @@ class Init {
         $this->action( 'admin_init', array( $this, 'handle_cart_sessions_migration' ) );
         $this->action( 'admin_init', array( $this, 'connect_via_magic_link' ) );
         $this->action( 'wp_ajax_ec_ai_reset_logs', array( $this, 'reset_ai_logs' ) ); 
+        $this->action( 'admin_bar_menu', array( $this, 'add_offer_admin_bar_node' ), 100 );
+        $this->action( 'admin_head', array( $this, 'render_offer_admin_bar_assets' ) );
+        $this->action( 'wp_ajax_easycommerce_dismiss_offer', array( $this, 'dismiss_offer_admin_bar' ) );
+    }
+
+    /**
+     * User meta key recording that the current campaign's offer bar was dismissed.
+     *
+     * Each campaign gets its own key, so dismissing one offer does not silently
+     * hide every future one. Bump this when the campaign changes.
+     */
+    protected const OFFER_DISMISSED_META = 'easycommerce_bfcm_offer_dismissed';
+
+    /**
+     * Whether the BFCM offer should be shown to the current user.
+     *
+     * Hidden when Pro is active, outside the campaign window, when the user
+     * cannot manage options, or once the user has dismissed it.
+     *
+     * @return bool
+     */
+    protected function should_show_offer(): bool {
+        if ( ! is_user_logged_in() || ! current_user_can( 'manage_options' ) ) {
+            return false;
+        }
+
+        if ( ! easycommerce_promo_offer_on() ) {
+            return false;
+        }
+
+        return ! get_user_meta( get_current_user_id(), self::OFFER_DISMISSED_META, true );
+    }
+
+    /**
+     * Add the BFCM offer node to the admin bar.
+     *
+     * @param \WP_Admin_Bar $wp_admin_bar The admin bar instance.
+     * @return void
+     */
+    public function add_offer_admin_bar_node( $wp_admin_bar ) {
+        if ( ! $this->should_show_offer() ) {
+            return;
+        }
+
+        $title = sprintf(
+            '<span class="ec-offer-text">%1$s</span><span class="ec-offer-dismiss" role="button" tabindex="0" aria-label="%2$s" title="%2$s">&times;</span>',
+            esc_html__( 'EasyCommerce: BFCM - 70% OFF', 'easycommerce' ),
+            esc_attr__( 'Dismiss', 'easycommerce' )
+        );
+
+        $wp_admin_bar->add_node( array(
+            'id'    => 'easycommerce-offer',
+            'title' => $title,
+            'href'  => easycommerce_promo_pricing_url( 'admin-bar' ),
+            'meta'  => array(
+                'class'  => 'ec-offer-node',
+                'target' => '_blank',
+                'rel'    => 'noopener noreferrer',
+            ),
+        ) );
+    }
+
+    /**
+     * Inline CSS/JS for the offer node: orange styling and dismiss handling
+     * (persisted through admin-ajax so it never returns for that user).
+     *
+     * @return void
+     */
+    public function render_offer_admin_bar_assets() {
+        if ( ! $this->should_show_offer() ) {
+            return;
+        }
+
+        $nonce = wp_create_nonce( 'easycommerce_dismiss_offer' );
+        ?>
+        <style>
+            #wpadminbar #wp-admin-bar-easycommerce-offer > .ab-item,
+            #wpadminbar #wp-admin-bar-easycommerce-offer .ab-item * {
+                background: #fa9624;
+                color: #0b0b0f !important;
+                font-weight: 500 !important;
+            }
+            #wpadminbar #wp-admin-bar-easycommerce-offer .ec-offer-dismiss {
+                margin-left: 8px;
+                font-size: 16px;
+                line-height: 1;
+                opacity: 0.85;
+                cursor: pointer;
+            }
+            #wpadminbar #wp-admin-bar-easycommerce-offer .ec-offer-dismiss:hover {
+                opacity: 1;
+            }
+        </style>
+        <script>
+            ( function() {
+                document.addEventListener( 'click', function( e ) {
+                    var btn = e.target.closest( '#wp-admin-bar-easycommerce-offer .ec-offer-dismiss' );
+                    if ( ! btn ) {
+                        return;
+                    }
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    var node = document.getElementById( 'wp-admin-bar-easycommerce-offer' );
+                    if ( node ) {
+                        node.parentNode.removeChild( node );
+                    }
+
+                    var body = new URLSearchParams();
+                    body.append( 'action', 'easycommerce_dismiss_offer' );
+                    body.append( 'nonce', '<?php echo esc_js( $nonce ); ?>' );
+
+                    window.fetch( '<?php echo esc_url( admin_url( 'admin-ajax.php' ) ); ?>', {
+                        method: 'POST',
+                        credentials: 'same-origin',
+                        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                        body: body.toString(),
+                    } );
+                }, true );
+            } )();
+        </script>
+        <?php
+    }
+
+    /**
+     * AJAX handler: persist dismissal of the BFCM offer for the current user.
+     *
+     * @return void
+     */
+    public function dismiss_offer_admin_bar() {
+        check_ajax_referer( 'easycommerce_dismiss_offer', 'nonce' );
+
+        if ( ! current_user_can( 'manage_options' ) ) {
+            wp_send_json_error( array( 'message' => __( 'Permission denied.', 'easycommerce' ) ), 403 );
+        }
+
+        update_user_meta( get_current_user_id(), self::OFFER_DISMISSED_META, 1 );
+
+        wp_send_json_success();
     }
 
     /**

@@ -363,4 +363,58 @@ class FunctionsTest extends EasyCommerceTestCase {
 		$this->assertIsString( $formatted_mb );
 		$this->assertStringContainsString( 'MB', $formatted_mb );
 	}
+
+	/**
+	 * The BFCM gate is on inside the window and off at and after the exclusive end.
+	 */
+	public function test_easycommerce_promo_active_window() {
+		update_option( 'easycommerce_promo_start_date', gmdate( 'Y-m-d H:i:s', time() - HOUR_IN_SECONDS ) );
+		update_option( 'easycommerce_promo_end_date', gmdate( 'Y-m-d H:i:s', time() + HOUR_IN_SECONDS ) );
+		$this->assertTrue( easycommerce_promo_active() );
+
+		update_option( 'easycommerce_promo_end_date', gmdate( 'Y-m-d H:i:s', time() - 1 ) );
+		$this->assertFalse( easycommerce_promo_active() );
+
+		update_option( 'easycommerce_promo_start_date', gmdate( 'Y-m-d H:i:s', time() + HOUR_IN_SECONDS ) );
+		update_option( 'easycommerce_promo_end_date', gmdate( 'Y-m-d H:i:s', time() + 2 * HOUR_IN_SECONDS ) );
+		$this->assertFalse( easycommerce_promo_active() );
+	}
+
+	/**
+	 * A malformed date falls back to the campaign window (2026-10-29 to 2026-12-11 UTC).
+	 */
+	public function test_easycommerce_promo_dates_fall_back_when_malformed() {
+		update_option( 'easycommerce_promo_start_date', 'not a date' );
+		update_option( 'easycommerce_promo_end_date', 'not a date' );
+
+		$this->assertSame( strtotime( '2026-10-29 00:00:00 UTC' ), easycommerce_promo_start_timestamp() );
+		$this->assertSame( strtotime( '2026-12-11 00:00:00 UTC' ), easycommerce_promo_end_timestamp() );
+	}
+
+	/**
+	 * The offer is hidden once Pro is active, even inside the window.
+	 */
+	public function test_easycommerce_promo_offer_hidden_on_pro() {
+		add_filter( 'easycommerce_promo_active', '__return_true' );
+		$this->assertTrue( easycommerce_promo_offer_on() );
+
+		add_filter( 'easycommerce-pro_activated', '__return_true' );
+		$this->assertFalse( easycommerce_promo_offer_on() );
+
+		remove_filter( 'easycommerce-pro_activated', '__return_true' );
+		remove_filter( 'easycommerce_promo_active', '__return_true' );
+	}
+
+	/**
+	 * The Pro page banner stays hidden for seven days after a dismissal, then returns.
+	 */
+	public function test_easycommerce_promo_banner_hidden_for_seven_days() {
+		$this->assertFalse( easycommerce_promo_banner_hidden() );
+
+		update_option( 'easycommerce_promo_banner_dismissed_at', time() - DAY_IN_SECONDS );
+		$this->assertTrue( easycommerce_promo_banner_hidden() );
+
+		update_option( 'easycommerce_promo_banner_dismissed_at', time() - 8 * DAY_IN_SECONDS );
+		$this->assertFalse( easycommerce_promo_banner_hidden() );
+	}
 }

@@ -1,7 +1,9 @@
 import React from 'react';
 import { __ } from '@wordpress/i18n';
+import { pricingUrl } from '../../../../common/promoUrl';
 
 // components
+import BfcmBanner from './BfcmBanner';
 import ContentGrid from './ContentGrid';
 import CompareTable from './CompareTable';
 import Reviews from './Reviews';
@@ -29,6 +31,8 @@ const proIcon = (
 const FreeComponent = () => {
 	return (
 		<div className="py-[32px]">
+			<BfcmBanner />
+
 			<div className="flex items-center justify-between">
 				<h1 className="capitalize text-5xl leading-[58px] font-medium text-ec-title">
 					{__('Free is perfect for starters', 'easycommerce')}
@@ -37,7 +41,7 @@ const FreeComponent = () => {
 
 				<div className="flex gap-4">
 					<a
-						href="https://easycommerce.dev/pricing?utm_source=inplugin&utm_medium=propage&utm_campaign=BFCM"
+						href={pricingUrl('propage')}
 						target="_blank"
 						className="group flex items-center gap-2.5 h-[60px] px-8 text-ec-title text-base font-medium rounded-lg border border-[#F99D1D] bg-[#F99D1D]"
 					>
@@ -70,7 +74,7 @@ const FreeComponent = () => {
 					{__('Enhance your experience with powerful features to increase performance and flexibility.', 'easycommerce')}
 				</p>
 				<a
-					href="https://easycommerce.dev/pricing?utm_source=inplugin&utm_medium=propage&utm_campaign=BFCM"
+					href={pricingUrl('propage')}
 					target="_blank"
 					className="group mt-8 flex items-center w-max gap-2.5 h-[60px] px-8 text-ec-title text-base font-medium rounded-lg border border-[#F99D1D] bg-[#F99D1D] mx-auto"
 				>

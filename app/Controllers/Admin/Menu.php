@@ -20,6 +20,7 @@ class Menu {
 	public function __construct() {
 		$this->action( 'admin_menu', array( $this, 'register' ) );
 		$this->action( 'admin_menu', array( $this, 'hide_menu' ) );
+		$this->action( 'admin_menu', array( $this, 'add_promo_badge' ), 999 );
 		$this->action( 'easycommerce-settings', array( $this, 'render_settings' ) );
 		$this->filter( 'plugin_action_links_' . plugin_basename( EASYCOMMERCE_FILE ), array( $this, 'add_action_links' ) );
 		$this->action( 'admin_footer', array( $this, 'survey_popup' ) );
@@ -70,6 +71,29 @@ class Menu {
  			remove_menu_page( 'easycommerce-wizard' );
  		}
  	}
+
+	/**
+	 * Put the BFCM badge beside the "Get Pro" row while the promotion runs and
+	 * the site is not already on Pro. Only the WP menu label carries the markup.
+	 */
+	public function add_promo_badge() {
+		global $submenu;
+
+		if ( ! easycommerce_promo_offer_on() || empty( $submenu['easycommerce'] ) ) {
+			return;
+		}
+
+		foreach ( $submenu['easycommerce'] as $i => $item ) {
+			if ( 'easycommerce#/get-pro' !== $item[2] ) {
+				continue;
+			}
+
+			$submenu['easycommerce'][ $i ][0] .= sprintf(
+				' <span class="easycommerce-menu-badge" style="display:inline-block;margin-left:6px;padding:4px 9px;border-radius:4px;background:#fa9624;color:#000;font-size:12px;font-weight:500;line-height:1.5;white-space:nowrap;">%s</span>',
+				esc_html__( '70% Off', 'easycommerce' )
+			);
+		}
+	}
 
 	public function render_settings() {
 		echo Utility::get_template( 'settings/layout.php' );
