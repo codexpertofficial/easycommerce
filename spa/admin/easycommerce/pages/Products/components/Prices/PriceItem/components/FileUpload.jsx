@@ -481,7 +481,7 @@ const FileUpload = ({ wpNonce, setDownloads, prevFiles }) => {
 
                         <p className="text-sm text-ec-body font-inter mt-2">
                             <span className="text-ec-primary">
-                                {__('Click to update', 'easycommerce')}
+                                {__('Click to upload', 'easycommerce')}
                             </span>{' '}
                             {__('or Drag and drop', 'easycommerce')}
                         </p>

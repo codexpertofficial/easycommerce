@@ -923,7 +923,7 @@ $easycommerce_settings_menus = apply_filters(
 									'label'       => __( 'Body', 'easycommerce' ),
 									'description' => sprintf(
 										/* translators: %s: URL of the email placeholders documentation page. The <a> markup must be kept. */
-										__( 'To find all the related placesholders <a href="%s" target="_blank">click here.</a>', 'easycommerce' ),
+										__( 'To find all the related placeholders <a href="%s" target="_blank">click here.</a>', 'easycommerce' ),
 										easycommerce_dev_docs( '/settings/email-placeholders-list/' )
 									),
 									'placeholder' => __( 'Enter email Body', 'easycommerce' ),

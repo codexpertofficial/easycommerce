@@ -212,7 +212,7 @@ const SingleCustomer = ({ id, page = 1, setBreadcrumbTitle }) => {
                                                     {__("Status", "easycommerce")}
                                                 </th>
                                                 <th className="w-[15%] font-inter font-normal text-sm text-ec-title text-left py-3 pl-5">
-                                                    {__("Fullfillment", "easycommerce")}
+                                                    {__("Fulfillment", "easycommerce")}
                                                 </th>
                                                 <th className="w-[12%] font-inter font-normal text-center text-sm text-ec-title text-left py-3">
                                                     {__("Products", "easycommerce")}

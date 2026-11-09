@@ -52,6 +52,10 @@ const Prices = ({ productTitle, productAttributes, prevData, globalAttributes })
 		prevData && prevData.length > 0 ? prevData : [pricingStructure]
 	);
 
+	// The first item has no id until saved, so fall back to a fixed key.
+	const itemKey = (item) => item?.id ?? 'initial';
+	const [expandedKey, setExpandedKey] = useState(() => itemKey(priceItems[0]));
+
 	let isInitialMount = true;
 	const titleRef = useRef();
 
@@ -59,10 +63,9 @@ const Prices = ({ productTitle, productAttributes, prevData, globalAttributes })
 	 * Adds a new price item using the base pricing structure.
 	 */
 	const handleAddPriceItem = () => {
-		setPriceItems((prev) => [
-			...prev,
-			{ ...pricingStructure, id: Date.now() + prev.length },
-		]);
+		const newId = Date.now() + priceItems.length;
+		setPriceItems((prev) => [...prev, { ...pricingStructure, id: newId }]);
+		setExpandedKey(newId);
 	};
 
 	/**
@@ -142,15 +145,16 @@ const Prices = ({ productTitle, productAttributes, prevData, globalAttributes })
 			const attributeNames = attributes.map((attr) => attr.value_slug);
 
 			return {
-				...JSON.parse(JSON.stringify(pricingStructure)),
+				...JSON.parse(JSON.stringify(idx === 0 ? { ...pricingStructure, ...priceItems[0], downloads: Array.isArray(priceItems[0]?.downloads) ? { downloads: priceItems[0].downloads } : priceItems[0]?.downloads } : pricingStructure)),
 				id: Date.now() + idx,
 				attributes,
 				name: attributeNames.join('/'),
-				sku: (productTitle + attributeNames.join()).replace(/[^a-zA-Z0-9]+/g, '').toUpperCase(),
+				sku: idx === 0 && priceItems[0]?.sku ? priceItems[0].sku : (productTitle + attributeNames.join()).replace(/[^a-zA-Z0-9]+/g, '').toUpperCase(),
 			};
 		});
 
 		setPriceItems(() => [...items]);
+		setExpandedKey(itemKey(items[0]));
 	};
 
 	/**
@@ -190,6 +194,8 @@ const Prices = ({ productTitle, productAttributes, prevData, globalAttributes })
 		applyFilters('easycommerce_price_items', priceItems);
 	}, [priceItems]);
 
+	const firstCollapsedIndex = priceItems.findIndex((item) => itemKey(item) !== expandedKey);
+
 	return (
 		<div>
 			<div class="bg-white rounded-xl border-ec-table-stock border border-solid">
@@ -219,7 +225,7 @@ const Prices = ({ productTitle, productAttributes, prevData, globalAttributes })
 							<button
 								type="button"
 								data-tooltip-id="auto-generate-variant"
-								data-tooltip-content={__('Add attributes to enable variant generation', 'easycommerce')}
+								data-tooltip-content={__('Add attributes to enable variation generation', 'easycommerce')}
 								class={
 									`text-ec-body py-2 px-0 font-inter text-sm w-max duration-300 focus:shadow-none border-0 border-b-[1px] border-solid rounded-none rounded-tr-xl` +
 									(productAttributes.length > 0 &&
@@ -243,7 +249,7 @@ const Prices = ({ productTitle, productAttributes, prevData, globalAttributes })
 									}
 								}}
 							>
-								<span>{__('Auto Generate Variants', 'easycommerce')}</span>
+								<span>{__('Generate Variations', 'easycommerce')}</span>
 							</button>
 						)}
 
@@ -303,6 +309,11 @@ const Prices = ({ productTitle, productAttributes, prevData, globalAttributes })
 											index={index}
 											setItem={setItem(item)}
 											id={item.id}
+											expanded={expandedKey === itemKey(item)}
+											showLabels={index === firstCollapsedIndex}
+											onToggle={() =>
+												setExpandedKey((prev) => (prev === itemKey(item) ? null : itemKey(item)))
+											}
 											productTitle={productTitle}
 											productAttributes={productAttributes}
 											globalAttributes={globalAttributes}
@@ -319,8 +330,20 @@ const Prices = ({ productTitle, productAttributes, prevData, globalAttributes })
 							)}
 						</div>
 						<div class="flex items-center justify-end gap-5">
+							<Tooltip
+								id="add-variation"
+								style={{
+									backgroundColor: '#7351fd',
+									color: '#fff',
+									fontSize: '14px',
+									width: '260px',
+									textAlign: 'center',
+								}}
+							/>
 							<button
 								type="button"
+								data-tooltip-id="add-variation"
+								data-tooltip-content={__('Add a variation manually, e.g. a combination not created by Generate Variations.', 'easycommerce')}
 								class={
 									`easycommerce-outline-button group flex gap-[6px] items-center ` +
 									(productAttributes?.length === 0 &&
@@ -356,7 +379,7 @@ const Prices = ({ productTitle, productAttributes, prevData, globalAttributes })
 								>
 									<path d="M6.5 0C6.1119 0 5.7973 0.314618 5.7973 0.702703V5.79732H0.702703C0.314618 5.79732 0 6.11192 0 6.50002C0 6.88812 0.314618 7.20272 0.702703 7.20272H5.7973V12.2973C5.7973 12.6854 6.1119 13 6.5 13C6.8881 13 7.2027 12.6854 7.2027 12.2973V7.20272H12.2973C12.6854 7.20272 13 6.88812 13 6.50002C13 6.11192 12.6854 5.79732 12.2973 5.79732H7.2027V0.702703C7.2027 0.314618 6.8881 0 6.5 0Z" />
 								</svg>
-								{__('Add New Price', 'easycommerce')}
+								{__('Add Variation', 'easycommerce')}
 							</button>
 						</div>
 

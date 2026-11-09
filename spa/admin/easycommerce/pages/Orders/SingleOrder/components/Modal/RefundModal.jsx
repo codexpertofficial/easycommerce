@@ -207,7 +207,7 @@ const RefundModal = ({ hideModal, order, updateOrder }) => {
                                         {
                                             // translators: %s: payment gateway name.
                                             sprintf(
-                                                __( 'For %s, refunds should be processed manually outside of the system. After succesful processing, enter the Refund Transaction ID', 'easycommerce' ),
+                                                __( 'For %s, refunds should be processed manually outside of the system. After successful processing, enter the Refund Transaction ID', 'easycommerce' ),
                                                 EASYCOMMERCE.payment_methods[order.transactions?.payment_gateway ?? order.payment_method]?.title ?? order.payment_method
                                             )
                                         }

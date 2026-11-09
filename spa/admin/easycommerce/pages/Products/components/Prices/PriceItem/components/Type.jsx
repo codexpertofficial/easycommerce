@@ -23,7 +23,7 @@ const Type = ({ priceItem, setPriceItem, id }) => {
                         <input
                             type="radio"
                             id={`${type}-${id}`}
-                            name={`product-type`}
+                            name={`product-type-${id}`}
                             className={"easycommerce-input-type-radio " + (priceItem.type === type ? 'checked' : '')}
                             value={type}
                             checked={priceItem.type === type}

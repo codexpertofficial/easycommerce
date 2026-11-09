@@ -5,7 +5,7 @@ Donate link: https://easycommerce.dev
 Tags: ecommerce, online store, ai ecommerce, store builder, digital downloads
 Requires at least: 6.0
 Tested up to: 7.1
-Stable tag: 1.52
+Stable tag: 1.53
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -514,6 +514,16 @@ Free community support via WordPress.org forums and the [Facebook Community](htt
 
 == Changelog ==
 
+= 1.53 - 2026-11-09 =
+
+- [fix] Adding attributes to a product no longer hides its pricing fields; the first variation opens with the price, sale price, SKU, product type and files you already entered
+- [ui] Variations open one at a time, and clicking a collapsed row opens it
+- [ui] Collapsed variation rows label the Regular Price and show the sale price when one is set
+- [ui] "Add New Price" is now "Add Variation", with a tooltip, and "Auto Generate Variants" is now "Generate Variations"
+- [fix] Each variation now shows its own Digital or Physical product type
+- [fix] The attribute value box no longer shows a grey block once every value is picked
+- [fix] Corrected spelling mistakes in several admin screens
+
 = 1.52 - 2026-11-02 =
 
 - [imp] Compatibility tested with WordPress v7.1.4
@@ -726,13 +736,6 @@ Free community support via WordPress.org forums and the [Facebook Community](htt
 - [ui] Shop page filter bar now scrolls horizontally on narrow screens, with corrected filter dropdown positioning
 - [add] AI settings now show connection-aware Connectivity and Usage tabs, plus a "Connect AI" admin-bar shortcut when the store is disconnected
 - [fix] Success toaster now appears after connecting AI from the Settings page popup
-
-= 1.43 - 2026-07-06 =
-
-- [add] Orders now store the selected shipping method and display its name in the order details
-- [add] Order API responses now include coupon, shipping method, and shipping method label data
-- [add] Extensibility slot on the order details page for addons to inject custom content
-- [ui] Responsive layout improvements across all admin pages - dashboard, products, orders, customers, reports, coupons, attributes, brands, categories, tags, shipping, tax, and help
 
 == Upgrade Notice ==
 

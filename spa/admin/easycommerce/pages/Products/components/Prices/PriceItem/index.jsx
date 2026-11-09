@@ -54,6 +54,9 @@ const generateRandomSKU = () => {
  * @param {Array<Object>} props.itemAttributes - Attributes specific to this price item.
  * @param {Function} props.handleDuplicate - Handler to duplicate this price item.
  * @param {Function} props.handleDelete - Handler to delete this price item.
+ * @param {boolean} props.expanded - Whether this item's full form is open.
+ * @param {Function} props.onToggle - Opens or closes this item's full form.
+ * @param {boolean} props.showLabels - Whether this collapsed row shows the column labels.
  *
  * @returns {JSX.Element} The rendered PriceItem component.
  */
@@ -67,9 +70,11 @@ const PriceItem = ({
 	globalAttributes,
 	handleDuplicate,
 	handleDelete,
-	prevData
+	prevData,
+	expanded = false,
+	onToggle = () => {},
+	showLabels = index === 0,
 }) => {
-	const [expanded, setExpanded] = useState(false);
 	const [isVariableProduct, setIsVariableProduct] = useState(true);
 	const initialSKU = item.sku || generateRandomSKU();
 
@@ -145,7 +150,14 @@ const PriceItem = ({
 					}}
 					style={{ display: expanded ? 'none' : 'block' }}
 				>
-					<div className="flex items-end gap-3">
+					<div
+						className="flex items-end gap-3 cursor-pointer"
+						onClick={(e) => {
+							if (!e.target.closest('input, button, textarea, select, a')) {
+								onToggle();
+							}
+						}}
+					>
 						<div className="flex items-end gap-3">
 							<Thumbnail
 								priceItem={priceItem}
@@ -157,7 +169,7 @@ const PriceItem = ({
 
 							<div className="grid grid-cols-3 gap-3 w-[calc(100%_-_62px)]">
 								<div className="col-span-1">
-									{index === 0 && (
+									{showLabels && (
 										<label className="text-ec-title font-normal text-sm block mb-2">
 											{__('Variation Name', 'easycommerce')}
 										</label>
@@ -172,9 +184,9 @@ const PriceItem = ({
 
 								<div className="col-span-1">
 									{/* Currency icon overlay */}
-									{index === 0 && (
+									{showLabels && (
 										<label className="text-ec-title font-normal text-sm block mb-2">
-											{__('Price', 'easycommerce')}
+											{__('Regular Price', 'easycommerce')}
 										</label>
 									)}
 
@@ -202,11 +214,17 @@ const PriceItem = ({
 												}));
 											}}
 										/>
+										{Number(priceItem.sale_price) > 0 && (
+											<span className="absolute right-4 top-1/2 -translate-y-1/2 text-sm pointer-events-none">
+												<del className="text-gray-400">{EASYCOMMERCE.currency_symbol}{Number(priceItem.regular_price)}</del>{' '}
+												<span className="text-ec-primary">{EASYCOMMERCE.currency_symbol}{Number(priceItem.sale_price)}</span>
+											</span>
+										)}
 									</div>
 								</div>
 
 								<div>
-									{index === 0 && (
+									{showLabels && (
 										<label className="text-ec-title font-normal text-sm block mb-2">
 											{__('SKU', 'easycommerce')}
 										</label>
@@ -226,7 +244,7 @@ const PriceItem = ({
 						{/* Action buttons: Expand, Duplicate, Delete */}
 						<div className="flex gap-3">
 							{/* Expand Button */}
-							<ActionButton onClick={() => setExpanded(true)} icon="plus" />
+							<ActionButton onClick={onToggle} icon="plus" />
 
 							{/* Duplicate Button */}
 							<ActionButton onClick={handleDuplicate} icon="copy" />
@@ -305,7 +323,7 @@ const PriceItem = ({
 							{/* Collapse */}
 							<ActionButton
 								icon="minus"
-								onClick={() => setExpanded(false)}
+								onClick={onToggle}
 								color="ec-primary"
 							/>
 

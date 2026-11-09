@@ -36,7 +36,7 @@ const AiGenerate = ({ contentType, productTitle, setAiOpen, setAiContent }) => {
 		switch (contentType) {
 			case 'summary':
 				setInput(
-					__('Write a short, compelling product sumamry with key features and benefits.', 'easycommerce')
+					__('Write a short, compelling product summary with key features and benefits.', 'easycommerce')
 				);
 				break;
 			case 'description':

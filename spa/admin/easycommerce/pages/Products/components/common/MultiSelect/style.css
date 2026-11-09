@@ -7,6 +7,7 @@
     border: none !important;
     padding: 0 !important;
     box-shadow: unset !important;
+    background: transparent !important;
 }
 .easycommerce .easycommerce-multiselect-input::placeholder {
     color: var(--color-ec-placeholder) !important;

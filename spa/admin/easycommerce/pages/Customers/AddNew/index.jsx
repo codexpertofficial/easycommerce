@@ -319,7 +319,7 @@ const AddNewCustomer = ({ setIsAddNew }) => {
                                     <input
                                         id="easycommerce-password-again"
                                         type="password"
-                                        placeholder={__("Re-ender password to confirm", "easycommerce")}
+                                        placeholder={__("Re-enter password to confirm", "easycommerce")}
                                         name="password_again"
                                         required
                                         defaultValue=""
